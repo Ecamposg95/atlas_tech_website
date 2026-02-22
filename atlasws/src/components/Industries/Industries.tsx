@@ -16,7 +16,7 @@ const IndustriesSection: React.FC = () => {
     // ✅ Set background dynamically (optional)
     const section = document.querySelector<HTMLElement>(".industries.bg-wrap");
     if (section) {
-      section.style.backgroundImage = `url(${bgImg})`;
+      section.style.backgroundImage = `linear-gradient(rgba(0, 26, 26, 0.9), rgba(0, 77, 61, 0.9)), url(${bgImg})`;
     }
   }, []);
 

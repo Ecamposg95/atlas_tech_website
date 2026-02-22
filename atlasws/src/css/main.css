@@ -47,11 +47,11 @@
     
 
 -----------------------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --font-body: "DM Sans", sans-serif;
-  --font-heading: 'SportingGrotesque';
+  --font-body: "Montserrat", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
   --color-primary: #00c853;
   --color-secondary: #00010a;
   --color-heading: #fff;
@@ -65,8 +65,8 @@
 }
 
 .xb-header-logo img {
-  max-height: 40px;
-  max-width: 160px;
+  max-height: 80px;
+  max-width: 320px;
   width: auto;
   object-fit: contain;
 }
@@ -4194,7 +4194,7 @@ body[data-aos-easing=ease] [data-aos] {
   align-items: center;
   justify-content: center;
   border-radius: 100px;
-  background: #15192f;
+  background: #002b2b;
   color: var(--color-white);
   border: 1px solid #373946;
 }
@@ -4204,7 +4204,7 @@ body[data-aos-easing=ease] [data-aos] {
 }
 
 .header-style--one .main-menu>ul>li>a {
-  background: #15192f;
+  background: #002b2b;
   padding: 4px 20px 6px;
   border-radius: 23px;
   -webkit-border-radius: 23px;
@@ -4216,7 +4216,7 @@ body[data-aos-easing=ease] [data-aos] {
 
 .header-style--one .main-menu>ul>li:hover>a>span::after,
 .header-style--one .main-menu>ul>li.active>a>span::after {
-  color: #00020F;
+  color: #001a1a;
   background: var(--color-primary);
 }
 
@@ -4732,7 +4732,7 @@ Drop Down menu end
   list-style: none;
   visibility: hidden;
   top: calc(100% + 20px);
-  background: #15192f;
+  background: #002b2b;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -4856,7 +4856,7 @@ Drop Down menu end
   padding: 30px;
   overflow: hidden;
   padding-bottom: 40px;
-  background: #222746;
+  background: #003333;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -4880,7 +4880,7 @@ Drop Down menu end
   width: 100%;
   opacity: 0.9;
   filter: blur(20.5px);
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 .main-menu ul li.megamenu .submenu {
@@ -4977,7 +4977,7 @@ Drop Down menu end
   transition: 0.3s;
   margin-bottom: 10px !important;
   padding: 12px 15px !important;
-  background: #00020f !important;
+  background: #001a1a !important;
   border-radius: 10px !important;
   -webkit-border-radius: 10px !important;
   -moz-border-radius: 10px !important;
@@ -5001,7 +5001,7 @@ Drop Down menu end
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -5109,7 +5109,7 @@ Drop Down menu end
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   border: 1px solid #525568;
-  background-color: rgba(0, 2, 15, 0.3);
+  background-color: rgba(0, 26, 26, 0.3);
 }
 
 .review_short_info_2 .review_admin_logo {
@@ -5191,7 +5191,7 @@ Drop Down menu end
   display: flex;
   overflow: hidden;
   align-items: center;
-  background: #00020f;
+  background: #001a1a;
   padding: 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -5403,7 +5403,7 @@ Drop Down menu end
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   justify-content: space-between;
-  background: linear-gradient(61deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(61deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 .service_link .xb-item--holder {
@@ -5796,7 +5796,7 @@ Drop Down menu end
   -o-border-radius: 7px;
   transform: translateY(-42px);
   backdrop-filter: blur(40px);
-  background: #0b2336;
+  background: #003333;
   box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
 }
 
@@ -5864,7 +5864,7 @@ Drop Down menu end
 
 .ac-brand-marquee {
   padding: 36px 0;
-  background: #00020f;
+  background: #001a1a;
   position: relative;
 }
 
@@ -5876,7 +5876,7 @@ Drop Down menu end
   left: 0;
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(0, 2, 15, 0.01) 0%, rgba(255, 255, 255, 0.3) 52.02%, rgba(0, 2, 15, 0.01) 100%);
+  background: linear-gradient(90deg, rgba(0, 26, 26, 0.01) 0%, rgba(255, 255, 255, 0.3) 52.02%, rgba(0, 26, 26, 0.01) 100%);
 }
 
 .ac-brand-marquee::after {
@@ -6120,7 +6120,7 @@ Drop Down menu end
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  background: rgba(0, 2, 15, 0.5);
+  background: rgba(0, 26, 26, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -6251,7 +6251,7 @@ Drop Down menu end
 }
 
 .xb-marquee-item .tag {
-  background: #0c2627;
+  background: #003333;
   color: var(--color-primary);
 }
 
@@ -6261,7 +6261,7 @@ Drop Down menu end
 }
 
 .xb-marquee-item .number {
-  color: #2c32fe;
+  color: #008b45;
   border: 1px solid #181daa;
 }
 
@@ -6473,7 +6473,7 @@ Drop Down menu end
   -o-border-radius: 10px;
   backdrop-filter: blur(40px);
   box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
-  background: linear-gradient(209deg, rgba(0, 2, 15, 0.6) 0%, rgba(0, 2, 15, 0.6) 100%);
+  background: linear-gradient(209deg, rgba(0, 26, 26, 0.6) 0%, rgba(0, 26, 26, 0.6) 100%);
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -6977,7 +6977,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   opacity: 0;
-  background: rgba(0, 2, 15, 0.5);
+  background: rgba(0, 26, 26, 0.5);
 }
 
 @media (max-width: 1199px) {
@@ -7194,7 +7194,7 @@ Drop Down menu end
   width: 112.5%;
   z-index: 1;
   filter: blur(35px);
-  background: #00020f;
+  background: #001a1a;
 }
 
 .process-title .xb-heading-btn {
@@ -7517,7 +7517,7 @@ Drop Down menu end
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 @media (max-width: 767px) {
@@ -7556,7 +7556,7 @@ Drop Down menu end
   width: 110%;
   height: 201px;
   filter: blur(25px);
-  background: #00020f;
+  background: #001a1a;
 }
 
 .integration-logo-wrap .xb-shape .shape--1 {
@@ -7598,7 +7598,7 @@ Drop Down menu end
   padding: 13px 0 6px;
   text-align: center;
   letter-spacing: -0.04em;
-  background: #15192f;
+  background: #002b2b;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -7681,7 +7681,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #00020f 100%);
+  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #001a1a 100%);
 }
 
 .comparison-container {
@@ -7768,7 +7768,7 @@ Drop Down menu end
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 @media (max-width: 767px) {
@@ -7807,7 +7807,7 @@ Drop Down menu end
   width: 110%;
   height: 201px;
   filter: blur(25px);
-  background: #00020f;
+  background: #001a1a;
 }
 
 .integration-logo-wrap .xb-shape .shape--1 {
@@ -7849,7 +7849,7 @@ Drop Down menu end
   padding: 13px 0 6px;
   text-align: center;
   letter-spacing: -0.04em;
-  background: #15192f;
+  background: #002b2b;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -7932,7 +7932,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #00020f 100%);
+  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #001a1a 100%);
 }
 
 .comparison-container {
@@ -9453,7 +9453,7 @@ Drop Down menu end
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
   transform: translateX(-50%);
-  background: rgba(0, 2, 15, 0.2);
+  background: rgba(0, 26, 26, 0.2);
 }
 
 @media (max-width: 1199px) {
@@ -9631,7 +9631,7 @@ Drop Down menu end
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 2, 15, 0.2);
+  background: rgba(0, 26, 26, 0.2);
 }
 
 .service-det-img .btn-video {
@@ -9988,7 +9988,7 @@ Drop Down menu end
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 2, 15, 0.3);
+  background: rgba(0, 26, 26, 0.3);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -10445,6 +10445,25 @@ Drop Down menu end
   align-items: center;
 }
 
+.feature-section--green {
+  color: #fff;
+}
+
+.feature-section--green .sub-title,
+.feature-section--green .title,
+.feature-section--green .xb-item--title {
+  color: #fff !important;
+}
+
+.feature-section--green .sub-title {
+  color: #01ff97 !important;
+}
+
+.feature-section--green .xb-item--inner {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
 .xb-feature-shape {
   position: relative;
 }
@@ -10830,7 +10849,7 @@ Drop Down menu end
   top: 0;
   height: 100%;
   width: 1px;
-  background: linear-gradient(180deg, #00020f 0%, rgba(0, 2, 15, 0.46) 4.31%, rgba(255, 255, 255, 0.2) 44.6%, rgba(255, 255, 255, 0.07) 80.86%, rgba(0, 2, 15, 0.2) 100%);
+  background: linear-gradient(180deg, #001a1a 0%, rgba(0, 26, 26, 0.46) 4.31%, rgba(255, 255, 255, 0.2) 44.6%, rgba(255, 255, 255, 0.07) 80.86%, rgba(0, 26, 26, 0.2) 100%);
 }
 
 .cp-details-wrap::after {
@@ -12068,12 +12087,12 @@ Drop Down menu end
   box-shadow: none;
   border-radius: 2px;
   border: 1px solid #fff;
-  background-color: #00020f;
+  background-color: #001a1a;
 }
 
 .xb-comment-form .form-check .form-check-input:checked {
   border-color: #fff;
-  background-color: #00020f;
+  background-color: #001a1a;
 }
 
 .xb-comment-form .form-check label {
@@ -12481,7 +12500,7 @@ Drop Down menu end
   z-index: -2;
   width: 100%;
   height: 262px;
-  background: linear-gradient(180deg, rgba(0, 2, 15, 0) 0%, #00020f 100%);
+  background: linear-gradient(180deg, rgba(0, 26, 26, 0) 0%, #001a1a 100%);
 }
 
 @media (max-width: 991px) {
@@ -12500,7 +12519,7 @@ Drop Down menu end
   bottom: 57px;
   width: 100%;
   height: 161px;
-  background: #00020f;
+  background: #001a1a;
   filter: blur(40px);
 }
 
@@ -12521,7 +12540,7 @@ Drop Down menu end
   top: 44px;
   height: 88.5%;
   width: 199px;
-  background: #00020f;
+  background: #001a1a;
   filter: blur(95.3000030518px);
 }
 
@@ -12542,7 +12561,7 @@ Drop Down menu end
   top: 44px;
   height: 88.5%;
   width: 199px;
-  background: #00020f;
+  background: #001a1a;
   filter: blur(95.3000030518px);
 }
 
@@ -12573,7 +12592,7 @@ Drop Down menu end
   font-weight: 700;
   font-size: 110px;
   letter-spacing: -0.05em;
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -12654,7 +12673,7 @@ Drop Down menu end
 .xb-testimonial-item .xb-item--rating {
   gap: 9px;
   padding: 7px 10px;
-  background: #00020f;
+  background: #001a1a;
   display: inline-flex;
   border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -13392,7 +13411,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   filter: blur(119px);
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
   opacity: 0.2;
 }
 
@@ -13554,7 +13573,7 @@ Drop Down menu end
 .xb-faq .accordion_box .block .content {
   font-size: 16px;
   line-height: 28px;
-  background: #15192f;
+  background: #002b2b;
   padding: 30px 140px 42px 40px;
   border: 1px solid rgba(128, 128, 135, 0.2);
 }
@@ -13591,7 +13610,7 @@ Drop Down menu end
   bottom: 0;
   height: 81px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0, 2, 15, 0) 0%, #00020f 100%);
+  background: linear-gradient(180deg, rgba(0, 26, 26, 0) 0%, #001a1a 100%);
 }
 
 .service_process_faq .accordion {
@@ -13711,14 +13730,14 @@ Drop Down menu end
   position: relative;
   color: var(--bs-white);
   border-color: var(--bs-primary);
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 .content_layer_group>li.active span {
   position: relative;
   color: var(--bs-white);
   border-color: var(--bs-primary);
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
 }
 
 .content_layer_group span {
@@ -14100,7 +14119,7 @@ Drop Down menu end
 }
 
 .xb-contact-inner {
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
   padding: 140px 35px 40px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -14371,7 +14390,7 @@ Drop Down menu end
   padding: 7px 40px;
   color: var(--color-white);
   border: 1px solid #4c4e57;
-  background: rgba(0, 2, 15, 0.1) !important;
+  background: rgba(0, 26, 26, 0.1) !important;
 }
 
 .xb-contact-items .form-btn .xb-icon {
@@ -15947,7 +15966,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   bottom: -45px;
   width: 102%;
   height: 65px;
-  background: #00020f;
+  background: #001a1a;
   filter: blur(10px);
 }
 
@@ -17116,7 +17135,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   z-index: -1;
   height: 100%;
   width: 100%;
-  background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
   background-size: 200% 200%;
   animation: gradient 5s ease-in-out infinite alternate;
 }
@@ -17703,7 +17722,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   width: 100%;
   z-index: -1;
   transform: rotate(-180deg);
-  background: radial-gradient(85.63% 149.89% at -2.12% 64.17%, #00ff97 0%, rgba(0, 2, 15, 0) 100%);
+  background: radial-gradient(85.63% 149.89% at -2.12% 64.17%, #00ff97 0%, rgba(0, 26, 26, 0) 100%);
 }
 
 .xb-footer-input-form button::after {

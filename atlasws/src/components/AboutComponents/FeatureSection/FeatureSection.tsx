@@ -42,9 +42,9 @@ const FeatureSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="feature-section parallax-section"
+      className="feature-section parallax-section feature-section--green"
       style={{
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `linear-gradient(135deg, rgba(0, 26, 26, 0.92) 0%, rgba(0, 50, 40, 0.95) 100%), url(${bgImage})`,
       }}
     >
       <div className="container">

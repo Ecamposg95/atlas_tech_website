@@ -30,7 +30,7 @@ const BlogSection: React.FC = () => {
             <div className="sec-title blog-sec-title mb-70">
               <span className="sub-title mb-15">Nuestras Últimas Noticias</span>
               <h2 className="title">
-                Nuestras últimas noticias <img src={gifShape} alt="shape" />
+                Nuestras últimas noticias
               </h2>
             </div>
             <div className="blog-btn">

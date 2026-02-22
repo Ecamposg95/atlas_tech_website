@@ -25,10 +25,10 @@ const BlogSidebar: React.FC = () => {
 
         {/* SEARCH WIDGET */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Search</h3>
+          <h3 className="sidebar_widget_title">Buscar</h3>
 
           <div className="form-group">
-            <input className="form-control" type="search" placeholder="Search..." />
+            <input className="form-control" type="search" placeholder="Buscar..." />
 
             <button type="submit" className="search_icon">
               <span>{Icons.search}</span>
@@ -38,34 +38,34 @@ const BlogSidebar: React.FC = () => {
 
         {/* RELATED POSTS */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Related posts</h3>
+          <h3 className="sidebar_widget_title">Artículos relacionados</h3>
 
           <ul className="recent_post_block list-unstyled">
 
             <li className="recent_post_item xb-border">
               <h3 className="post-title border-effect-2">
-                <Link to="/blog-details">Why your business needs an AI strategy in 2025..</Link>
+                <Link to="/blog-details">Por qué tu empresa necesita una estrategia de IA en 2026..</Link>
               </h3>
               <span>
-                <img src={profileIcon} alt="author" /> By Michael David
+                <img src={profileIcon} alt="author" /> Por Michael David
               </span>
             </li>
 
             <li className="recent_post_item xb-border">
               <h3 className="post-title border-effect-2">
-                <Link to="/blog-details">AI chatbots vs live chat, which is better?..</Link>
+                <Link to="/blog-details">Chatbots de IA vs chat en vivo, ¿cuál es mejor?..</Link>
               </h3>
               <span>
-                <img src={profileIcon} alt="author" /> By Christopher
+                <img src={profileIcon} alt="author" /> Por Christopher
               </span>
             </li>
 
             <li className="recent_post_item xb-border">
               <h3 className="post-title border-effect-2">
-                <Link to="/blog-details">How AI transforms data into business insights..</Link>
+                <Link to="/blog-details">Cómo la IA transforma los datos en perspectivas de negocio..</Link>
               </h3>
               <span>
-                <img src={profileIcon} alt="author" /> By William Thomas
+                <img src={profileIcon} alt="author" /> Por William Thomas
               </span>
             </li>
 
@@ -74,48 +74,48 @@ const BlogSidebar: React.FC = () => {
 
         {/* CATEGORIES */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Categories</h3>
+          <h3 className="sidebar_widget_title">Categorías</h3>
 
           <ul className="category_list_block list-unstyled">
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Cybersecurity</span>
+                <span><i className="far fa-arrow-right"></i> Ciberseguridad</span>
                 <span>(05)</span>
               </Link>
             </li>
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Digital Transformation</span>
+                <span><i className="far fa-arrow-right"></i> Transformación Digital</span>
                 <span>(02)</span>
               </Link>
             </li>
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Ai Business Growth</span>
+                <span><i className="far fa-arrow-right"></i> Crecimiento Empresarial TS</span>
                 <span>(02)</span>
               </Link>
             </li>
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Security Alerts</span>
+                <span><i className="far fa-arrow-right"></i> Alertas de Seguridad</span>
                 <span>(04)</span>
               </Link>
             </li>
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Investor Highlights</span>
+                <span><i className="far fa-arrow-right"></i> Destacados para Inversores</span>
                 <span>(07)</span>
               </Link>
             </li>
 
             <li>
               <Link to="/blog-details">
-                <span><i className="far fa-arrow-right"></i> Cloud Computing</span>
+                <span><i className="far fa-arrow-right"></i> Cómputo en la Nube</span>
                 <span>(07)</span>
               </Link>
             </li>
@@ -125,18 +125,18 @@ const BlogSidebar: React.FC = () => {
 
         {/* TAGS */}
         <div className="sidebar_widget">
-          <h3 className="sidebar_widget_title">Tags</h3>
+          <h3 className="sidebar_widget_title">Etiquetas</h3>
 
           <ul className="tags_block list-unstyled">
             {[
-              "AI Solutions",
+              "Soluciones IA",
               "Data Science",
               "SaaS",
-              "AI Consulting",
-              "Enterprise AI",
-              "AI",
-              "Helpdesk",
-              "24/7 Chatbot",
+              "Consultoría",
+              "IA Corporativa",
+              "Analítica",
+              "Atención",
+              "Chatbot 24/7",
             ].map((tag, i) => (
               <li key={i}>
                 <Link className="xb-border" to="#!">{tag}</Link>

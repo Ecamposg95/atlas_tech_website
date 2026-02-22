@@ -11,8 +11,8 @@ import featureIcon3 from "../../images/icon/feature-icon03.svg";
 const HeroSection: React.FC = () => {
   return (
     <section
-      className="hero hero-style pos-rel bg_img"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      className="hero hero-style pos-rel"
+      style={{ backgroundImage: `linear-gradient(rgba(0, 26, 26, 0.8), rgba(0, 77, 61, 0.8)), url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <div className="container">
         <div className="row">
@@ -20,10 +20,10 @@ const HeroSection: React.FC = () => {
           <div className="col-lg-9 col-md-9">
             <div className="hero-content">
               <h2 className="title scale-animation wow">
-                Potencia tu negocio con una agencia de IA más inteligente
+                Desarrollamos soluciones empresariales modernas para la transformación digital en Latinoamérica
               </h2>
               <p className="sub-title scale-animation wow">
-                Impulsa el crecimiento y la eficiencia con soluciones de IA a medida. Utilizamos automatización y estrategias basadas en datos para ayudarte a innovar y escalar.
+                Como startup tecnológica y venture studio, creamos plataformas escalables que integran ERP, POS, Inteligencia Artificial, analítica y tecnologías Web3 para resolver necesidades reales de operación en sectores como retail, distribución e industria.
               </p>
               <div className="hero-btn scale-animation wow">
                 <Link className="thm-btn agency-btn" to="/about">

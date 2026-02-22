@@ -13,7 +13,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ pageTitle, pagesub }) => {
     <section
       className="breadcrumb bg_img"
       style={{
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `linear-gradient(135deg, rgba(0, 50, 40, 0.6) 0%, rgba(0, 80, 60, 0.7) 100%), url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

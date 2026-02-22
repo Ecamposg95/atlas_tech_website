@@ -37,7 +37,7 @@ const Icons = {
 const BlogList: React.FC = () => {
   return (
     <div>
-      <BlogSlider/>
+      <BlogSlider />
       <section className="blog_details_section pt-120">
         <div className="container">
           <div className="row mt-none-50 g-0 align-items-start">
@@ -53,21 +53,21 @@ const BlogList: React.FC = () => {
                   </div>
 
                   <div className="xb-item--holder">
-                    <Link to="/blog-details" className="xb-item--tag">#ai tools tips</Link>
+                    <Link to="/blog-details" className="xb-item--tag">#herramientas ia</Link>
 
                     <h3 className="xb-item--title border-effect-2">
                       <Link to="/blog-details">
-                        How our AI agency delivers next-gen automation tools..
+                        Cómo nuestra agencia de IA crea herramientas de automatización de última generación..
                       </Link>
                     </h3>
 
                     <span className="xb-item--content">
-                      Our AI agency creates smart automation tools simplify.
+                      Nuestra agencia de IA crea herramientas inteligentes de automatización que simplifican el flujo.
                     </span>
 
                     <div className="xb-item--button mt-40">
                       <Link className="thm-btn agency-btn" to="/blog-details">
-                        <span className="text">Read more</span>
+                        <span className="text">Leer más</span>
                         <span className="arrow">
                           <span className="arrow-icon">{Icons.arrow}</span>
                         </span>
@@ -82,16 +82,16 @@ const BlogList: React.FC = () => {
                     <Link to="/blog-details" className="xb-item--tag">#chatbots tips</Link>
 
                     <h3 className="xb-item--title border-effect-2">
-                      <Link to="/blog-details">From lead generation to sales conversion...</Link>
+                      <Link to="/blog-details">De la generación de leads a la conversión de ventas...</Link>
                     </h3>
 
                     <span className="xb-item--content">
-                      Smart chatbots are transforming the way businesses interact with customers—from the first touchpoint to the final sale. By engaging visitors.
+                      Los chatbots inteligentes están transformando la manera en que las empresas interactúan con los clientes, desde el primer contacto hasta la venta final.
                     </span>
 
                     <div className="xb-item--button mt-40">
                       <Link className="thm-btn agency-btn" to="/blog-details">
-                        <span className="text">Read more</span>
+                        <span className="text">Leer más</span>
                         <span className="arrow"><span className="arrow-icon">{Icons.arrow}</span></span>
                       </Link>
                     </div>
@@ -107,21 +107,21 @@ const BlogList: React.FC = () => {
                   </div>
 
                   <div className="xb-item--holder">
-                    <Link to="/blog-details" className="xb-item--tag">#chatbots tips</Link>
+                    <Link to="/blog-details" className="xb-item--tag">#ecommerce ia</Link>
 
                     <h3 className="xb-item--title border-effect-2">
                       <Link to="/blog-details">
-                        How AI chatbots are boosting sales for E-commerce brands..
+                        Cómo los chatbots de IA están impulsando las ventas en el E-commerce..
                       </Link>
                     </h3>
 
                     <span className="xb-item--content">
-                      AI chatbots are becoming powerful sales tools.
+                      Los chatbots de IA se están convirtiendo en potentes herramientas de venta en línea.
                     </span>
 
                     <div className="xb-item--button mt-40">
                       <Link className="thm-btn agency-btn" to="/blog-details">
-                        <span className="text">Read more</span>
+                        <span className="text">Leer más</span>
                         <span className="arrow"><span className="arrow-icon">{Icons.arrow}</span></span>
                       </Link>
                     </div>
@@ -131,19 +131,19 @@ const BlogList: React.FC = () => {
                 {/* ITEM 4 */}
                 <div className="blog_details_item xb-border">
                   <div className="xb-item--inner">
-                    <Link to="/blog-details" className="xb-item--tag">#ai marketing</Link>
+                    <Link to="/blog-details" className="xb-item--tag">#marketing ia</Link>
 
                     <h3 className="xb-item--title border-effect-2">
-                      <Link to="/blog-details">10 Real-world ways AI improves efficiency...</Link>
+                      <Link to="/blog-details">10 formas reales en que la IA mejora la eficiencia...</Link>
                     </h3>
 
                     <span className="xb-item--content">
-                     AI is no longer a future concept—it's actively reshaping how businesses run today. From automating back-office tasks to optimizing ad spend and streamlining.
+                      La IA ya no es un concepto futuro; está remodelando activamente cómo operan las empresas hoy. Desde automatización de back-office hasta logística y ventas.
                     </span>
 
                     <div className="xb-item--button mt-40">
                       <Link className="thm-btn agency-btn" to="/blog-details">
-                        <span className="text">Read more</span>
+                        <span className="text">Leer más</span>
                         <span className="arrow"><span className="arrow-icon">{Icons.arrow}</span></span>
                       </Link>
                     </div>
@@ -159,19 +159,19 @@ const BlogList: React.FC = () => {
                   </div>
 
                   <div className="xb-item--holder">
-                    <Link to="/blog-details" className="xb-item--tag">#ai tips</Link>
+                    <Link to="/blog-details" className="xb-item--tag">#ia tips</Link>
 
                     <h3 className="xb-item--title border-effect-2">
-                      <Link to="/blog-details">Is your business AI-ready?</Link>
+                      <Link to="/blog-details">¿Tu negocio está listo para la IA?</Link>
                     </h3>
 
                     <span className="xb-item--content">
-                      Adopting AI can be a game-changer...
+                      Adoptar la Inteligencia Artificial puede transformar por completo tus operaciones y escalabilidad...
                     </span>
 
                     <div className="xb-item--button mt-40">
                       <Link className="thm-btn agency-btn" to="/blog-details">
-                        <span className="text">Read more</span>
+                        <span className="text">Leer más</span>
                         <span className="arrow"><span className="arrow-icon">{Icons.arrow}</span></span>
                       </Link>
                     </div>
@@ -189,7 +189,7 @@ const BlogList: React.FC = () => {
 
               </div>
             </div>
-            <BlogSidebar/>
+            <BlogSidebar />
           </div>
         </div>
       </section>

@@ -28,18 +28,7 @@ const AboutSection: React.FC = () => {
         <div className="sec-title about-sec-title mb-75">
           <span className="sub-title">¿Quiénes somos?</span>
           <h2 className="title">
-            Ayudamos a
-            <span>
-              <img src={gif1} alt="animation" />
-            </span>{" "}
-            los negocios a crecer y
-            <span>
-              <img src={gif2} alt="animation" />
-            </span>
-            escalar con una agencia de IA inteligente{" "}
-            <span>
-              <img src={gif3} alt="animation" />
-            </span>
+            Transformamos industrias con infraestructura tecnológica de nueva generación
           </h2>
         </div>
       </div>

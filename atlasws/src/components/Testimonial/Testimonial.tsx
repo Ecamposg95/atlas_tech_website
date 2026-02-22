@@ -88,8 +88,7 @@ const TestimonialSection: React.FC = () => {
         <div className="sec-title sec-title-center tes-sec-title text-center mb-50">
           <span className="sub-title mb-15">Nuestros Testimonios</span>
           <h2 className="title">
-            Escucha de nuestros
-            <img src={gifShape} alt="shape" /> clientes satisfechos
+            Nuestros clientes satisfechos
           </h2>
         </div>
       </div>

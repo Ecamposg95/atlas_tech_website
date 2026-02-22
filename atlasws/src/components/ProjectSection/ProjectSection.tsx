@@ -25,7 +25,7 @@ const ProjectSection: React.FC = () => {
     // ✅ Set dynamic background image
     const bgElement = document.querySelector<HTMLElement>(".project.bg_img");
     if (bgElement) {
-      bgElement.style.backgroundImage = `url(${projectBg})`;
+      bgElement.style.backgroundImage = `linear-gradient(rgba(0, 26, 26, 0.9), rgba(0, 77, 61, 0.9)), url(${projectBg})`;
     }
 
     // ✅ Scroll activation logic
@@ -80,9 +80,6 @@ const ProjectSection: React.FC = () => {
         <div className="sec-title custom-sec-title xb-sec-padding text-center">
           <span className="sub-title">Nuestros Proyectos</span>
           <h2 className="title">
-            <span className="round-img">
-              <img src={gifRound} alt="animation" />
-            </span>{" "}
             Mira los resultados que reflejan nuestro arduo trabajo
           </h2>
           <div className="xb-heading-btn d-inline">

@@ -14,31 +14,31 @@ import shapeRight from "../../images/shape/next-shape.png";
 const blogSlides = [
   {
     img: blog1,
-    tag: "# ai business tips",
-    title: "We’re live! explore our smart AI solutions for the future of business.",
+    tag: "# tips de negocios ia",
+    title: "¡Estamos en vivo! Explora nuestras soluciones inteligentes de IA para el futuro de los negocios.",
     content:
-      "We’re live! Discover our smart AI solutions designed to help businesses automate tasks, gain insights, and grow faster.",
+      "Descubre nuestras soluciones de IA diseñadas para ayudar a las empresas a automatizar tareas, obtener información valiosa y crecer más rápido.",
   },
   {
     img: blog2,
     tag: "# chatbots tips",
-    title: "Why AI chatbots are the next big thing in business communication..",
+    title: "Por qué los chatbots de IA son el próximo gran avance en la comunicación empresarial..",
     content:
-      "AI chatbots are reshaping communication with instant support and personalized responses, reducing business costs.",
+      "Los chatbots están reformando la comunicación con soporte instantáneo y respuestas personalizadas, reduciendo los costos operativos.",
   },
   {
     img: blog3,
-    tag: "# ai business tips",
-    title: "How AI agencies help small businesses compete with global brands..",
+    tag: "# tips de negocios ia",
+    title: "Cómo las agencias de IA ayudan a las pymes a competir con marcas globales..",
     content:
-      "AI agencies empower small businesses with tools like analytics, automation, and personalized marketing.",
+      "Potenciamos a las empresas con herramientas avanzadas como analítica, automatización y marketing hiper-personalizado.",
   },
   {
     img: blog4,
-    tag: "# ai business tips",
-    title: "Top services you should expect from a modern AI agency..",
+    tag: "# tips de negocios ia",
+    title: "Los principales servicios que debes esperar de una firma moderna de ingeniería e IA..",
     content:
-      "Modern AI agencies offer chatbots, predictive analytics, personalized marketing, and process automation.",
+      "Las firmas modernas ofrecen desde chatbots y análisis predictivos, hasta automatización de procesos y arquitecturas Web3.",
   },
 ];
 

@@ -70,7 +70,7 @@ const ServiceSection: React.FC = () => {
 
   useEffect(() => {
     const bgEl = document.querySelector<HTMLElement>(".xb-service-wrap");
-    if (bgEl) bgEl.style.backgroundImage = `url(${aboutBg})`;
+    if (bgEl) bgEl.style.backgroundImage = `linear-gradient(rgba(0, 26, 26, 0.8), rgba(0, 77, 61, 0.8)), url(${aboutBg})`;
   }, []);
 
   return (
@@ -81,10 +81,7 @@ const ServiceSection: React.FC = () => {
             <div className="sec-title custom-sec-title xb-sec-padding text-center">
               <span className="sub-title">Nuestros Servicios Principales</span>
               <h2 className="title">
-                <span className="round-img">
-                  <img src={gif} alt="gif" />
-                </span>{" "}
-                Ayudándote a crecer con el poder de la IA
+                Ayudándote a crecer con tecnología avanzada
               </h2>
               <div className="xb-heading-btn d-inline">
                 <Link className="thm-btn agency-btn" to="/service">

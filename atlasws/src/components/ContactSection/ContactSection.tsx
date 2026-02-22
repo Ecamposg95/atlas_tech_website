@@ -47,7 +47,7 @@ const ContactSection: React.FC = () => {
     <section
       className="contact-section pt-150 pb-140 bg_img"
       ref={sectionRef}
-      style={{ backgroundImage: `url(${contactBg})` }}
+      style={{ backgroundImage: `linear-gradient(135deg, rgba(0, 50, 40, 0.6) 0%, rgba(0, 80, 60, 0.7) 100%), url(${contactBg})` }}
     >
       <div className="container">
         <div className="row mt-none-50 justify-content-center">
@@ -57,8 +57,7 @@ const ContactSection: React.FC = () => {
               <div className="sec-title contact-sec-title">
                 <span className="sub-title mb-15">Nuestros Logros</span>
                 <h2 className="title horizontal-shape">
-                  Somos una agencia{" "}
-                  <img src={gifShape} alt="animated-shape" /> de IA confiable
+                  Somos una agencia de IA confiable
                 </h2>
               </div>
 

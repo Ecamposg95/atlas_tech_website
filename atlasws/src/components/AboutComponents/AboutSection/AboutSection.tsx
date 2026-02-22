@@ -90,17 +90,11 @@ const AboutSection: React.FC = () => {
           <span className="sub-title mb-10">¿Quiénes Somos?</span>
 
           <h2 className="title">
-            Ayudamos a
-            <span><img src={gif1} alt="gif" /></span>
-            crecer negocios y
-            <span><img src={gif2} alt="gif" /></span>
-            escalar con
-            <span><img src={gif3} alt="gif" /></span>
-            IA inteligente y basada en datos
+            Construyendo la nueva generación de sistemas de operación empresarial
           </h2>
 
           <p className="content">
-            Ayudamos a crecer y escalar tu negocio ofreciendo soluciones de IA inteligentes y basadas en datos, adaptadas a tus necesidades. Nuestra tecnología optimiza las operaciones, mejora la toma de decisiones y descubre nuevas oportunidades de crecimiento.
+            Atlas Tech es una startup tecnológica en crecimiento que desarrolla soluciones empresariales modernas para la transformación digital de negocios en Latinoamérica. Como venture studio y firma de ingeniería, crea plataformas escalables que integran ERP, POS, inteligencia artificial, analítica y tecnologías Web3, enfocadas en resolver necesidades reales de operación en sectores como retail, distribución e industria. Su visión es construir una nueva generación de sistemas de operación empresarial que permitan a las organizaciones trabajar con mayor eficiencia, inteligencia operativa y capacidad de crecimiento.
           </p>
         </div>
 
