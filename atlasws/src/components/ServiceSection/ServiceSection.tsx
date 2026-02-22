@@ -250,7 +250,7 @@ const ServiceSection: React.FC = () => {
                   <div className="xb-item--img xb-img">
                     {[...Array(4)].map((_, i) => (
                       <Link to={service.link} key={i}>
-                        <img src={service.img} alt={service.title} />
+                        <img src={service.img} alt={service.title} className="service-img-green" />
                       </Link>
                     ))}
                   </div>

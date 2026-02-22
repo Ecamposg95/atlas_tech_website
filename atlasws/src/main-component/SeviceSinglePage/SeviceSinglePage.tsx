@@ -12,7 +12,7 @@ const SeviceSinglePage: React.FC = () => {
                 <div className="body_wrap o-clip">
                     <Header />
                     <main>
-                        <PageTitle pageTitle="Service details" pagesub="Service details" />
+                        <PageTitle pageTitle="Detalles de servicio" pagesub="Detalles de servicio" />
                         <ServiceDetails />
                     </main>
                     <Footer />

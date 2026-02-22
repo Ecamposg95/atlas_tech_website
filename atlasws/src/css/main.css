@@ -10464,6 +10464,37 @@ Drop Down menu end
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+.testimonial--green .sub-title,
+.testimonial--green .title,
+.testimonial--green .xb-item--content,
+.testimonial--green .xb-item--name,
+.testimonial--green .xb-item--desig {
+  color: #fff !important;
+}
+
+.testimonial--green .xb-item--inner {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.avatar-green {
+  filter: sepia(20%) hue-rotate(140deg) saturate(120%) brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.avatar-green:hover {
+  filter: sepia(10%) hue-rotate(130deg) saturate(150%) brightness(1);
+}
+
+.service-img-green {
+  filter: sepia(15%) hue-rotate(150deg) saturate(110%) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.service-img-green:hover {
+  filter: sepia(5%) hue-rotate(140deg) saturate(130%) brightness(1.05);
+}
+
 .xb-feature-shape {
   position: relative;
 }

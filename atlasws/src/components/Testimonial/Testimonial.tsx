@@ -79,11 +79,11 @@ const testimonials = [
 const TestimonialSection: React.FC = () => {
   useEffect(() => {
     const bgEl = document.querySelector<HTMLElement>(".testimonial.bg_img");
-    if (bgEl) bgEl.style.backgroundImage = `url(${bgImage})`;
+    if (bgEl) bgEl.style.backgroundImage = `linear-gradient(135deg, rgba(0, 50, 40, 0.6) 0%, rgba(0, 80, 60, 0.7) 100%), url(${bgImage})`;
   }, []);
 
   return (
-    <section className="testimonial pb-150 bg_img">
+    <section className="testimonial pb-150 bg_img testimonial--green">
       <div className="container">
         <div className="sec-title sec-title-center tes-sec-title text-center mb-50">
           <span className="sub-title mb-15">Nuestros Testimonios</span>
@@ -126,7 +126,7 @@ const TestimonialSection: React.FC = () => {
                   <p className="xb-item--content">{item.content}</p>
                   <div className="xb-item--author ul_li">
                     <div className="xb-item--avatar">
-                      <img src={item.avatar} alt={item.name} />
+                      <img src={item.avatar} alt={item.name} className="avatar-green" />
                     </div>
                     <div className="xb-item--holder">
                       <h3 className="xb-item--name">{item.name}</h3>

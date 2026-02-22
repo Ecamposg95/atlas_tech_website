@@ -26,12 +26,12 @@ const ServiceDetails: React.FC = () => {
 
 
     const outcomeItems = [
-        "AI-Powered Data Analysis.",
-        "Real-Time Analytics.",
-        "Scalable Data Infrastructure.",
-        "Enterprise System Integration.",
-        "Automated Data Processing.",
-        "Smart Decision Support.",
+        "Análisis de Datos con IA.",
+        "Analítica en Tiempo Real.",
+        "Infraestructura de Datos Escalable.",
+        "Integración de Sistemas Empresariales.",
+        "Procesamiento Automatizado de Datos.",
+        "Soporte Inteligente de Decisiones.",
     ];
 
 
@@ -63,15 +63,15 @@ const ServiceDetails: React.FC = () => {
                 </div>
                 {/* ========= TITLE & TEXT ========= */}
                 <h2 className="details-content-title mb-15">
-                    Data and intelligence solutions for smarter.
+                    Soluciones de inteligencia y datos para decisiones más inteligentes.
                 </h2>
 
                 <p>
-                    Unlock the true value of your data with our comprehensive AI-driven data and intelligence solutions. We help businesses collect, organize, and analyze vast amounts of information to extract meaningful insights and make smarter, faster decisions. By leveraging advanced analytics, machine learning, and real-time data processing, we transform raw data into powerful tools for innovation, strategy, and growth. Whether you're looking to optimize operations, improve customer experiences, or forecast trends, our solutions provide the intelligence you need to stay ahead in a competitive, data-driven world.
+                    Desbloquea el verdadero valor de tus datos con nuestras soluciones integrales de inteligencia y datos impulsadas por IA. Ayudamos a las empresas a recopilar, organizar y analizar grandes cantidades de información para extraer información valiosa y tomar decisiones más inteligentes y rápidas. Al aprovechar la analítica avanzada, el aprendizaje automático y el procesamiento de datos en tiempo real, transformamos los datos sin procesar en herramientas poderosas para la innovación, la estrategia y el crecimiento. Ya sea que busques optimizar operaciones, mejorar las experiencias de los clientes o pronosticar tendencias, nuestras soluciones brindan la inteligencia que necesitas para mantenerte a la vanguardia.
                 </p>
 
                 <p className="mt-30">
-                    We turn complex information into clear, actionable insights. These insights empower smarter decisions, streamline operations, enhance customer experiences, and drive measurable business growth. Whether you're navigating market trends, optimizing workflows, or building data-driven strategies, we provide the tools and expertise to help you lead with confidence in a data-first world.
+                    Convertimos la información compleja en perspectivas claras y procesables. Estas perspectivas potencian decisiones más inteligentes, agilizan las operaciones, mejoran las experiencias de los clientes e impulsan un crecimiento empresarial medible. Ya sea navegando por las tendencias del mercado, optimizando flujos de trabajo o construyendo estrategias basadas en datos, proporcionamos las herramientas y la experiencia para ayudarte a liderar con confianza.
                 </p>
 
                 {/* ========= SERVICE PROCESS ========= */}
@@ -80,9 +80,9 @@ const ServiceDetails: React.FC = () => {
 
                 {/* ========= SERVICES OUTCOME ========= */}
                 <div className="services-outcome-wrap">
-                    <h2 className="details-content-title mb-15">Services outcome</h2>
+                    <h2 className="details-content-title mb-15">Resultados del servicio</h2>
                     <p>
-                        We help Fortune 500 companies accelerate innovation through advanced data and intelligence solutions. Using AI, machine learning, and real-time analytics, we turn complex data into actionable insights. Our services empower smarter decisions, improve performance.
+                        Ayudamos a las empresas a acelerar la innovación a través de soluciones avanzadas de inteligencia y datos. Utilizando IA, aprendizaje automático y análisis en tiempo real, convertimos datos complejos en información procesable. Nuestros servicios potencian decisiones más inteligentes y mejoran el rendimiento.
                     </p>
 
                     <ul className="service-outcome-list list-unstyled mt-35">
@@ -115,7 +115,7 @@ const ServiceDetails: React.FC = () => {
                 </div>
 
                 {/* ========= GALLERY ========= */}
-                <GallerySection/>
+                <GallerySection />
 
             </div>
 
