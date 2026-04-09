@@ -54,7 +54,7 @@ const HeaderTwo: React.FC = () => {
             {/* ===== Logo ===== */}
             <div className="xb-header-logo">
               <Link to="/" className="logo1">
-                <img src={logo} alt="Aivora Logo" />
+                <img src={logo} alt="Atlas Tech Logo" />
               </Link>
             </div>
 
@@ -69,7 +69,7 @@ const HeaderTwo: React.FC = () => {
                     <ul className="submenu">
                       <li>
                         <Link to="/">
-                          <span>Ai Agency</span>
+                          <span>Startup tecnologica B2B</span>
                         </Link>
                       </li>
                       <li>
@@ -232,7 +232,7 @@ const HeaderTwo: React.FC = () => {
                 ></div>
                 <div className="xb-logo-mobile xb-hide-xl">
                   <Link to="/" rel="home">
-                    <img src={logo} alt="Aivora Logo" />
+                    <img src={logo} alt="Atlas Tech Logo" />
                   </Link>
                 </div>
                 <div className="xb-header-mobile-search xb-hide-xl">

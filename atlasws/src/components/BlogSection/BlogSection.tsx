@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import blogBg from "../../images/bg/blog-bg.png";
-import gifShape from "../../images/icon/original-9e54f87f13d.gif";
 
 // Blog images
 import img01 from "../../images/blog/img01.jpg";

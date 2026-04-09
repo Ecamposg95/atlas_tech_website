@@ -6,7 +6,6 @@ import "swiper/css/autoplay";
 
 // ✅ Images
 import bgImage from "../../images/bg/testimonial-bg.png";
-import gifShape from "../../images/icon/animated-gif03.gif";
 import avatar1 from "../../images/avatar/img01.jpg";
 import avatar2 from "../../images/avatar/img02.jpg";
 import avatar3 from "../../images/avatar/img03.jpg";

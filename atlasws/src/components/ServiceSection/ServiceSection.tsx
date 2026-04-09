@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import aboutBg from "../../images/bg/service-bg.png";
 import { Link } from "react-router-dom";
-import gif from "../../images/icon/b10c3e43e836d32554bf.gif";
 import arrowIcon from "../../images/icon/rotate-arrow-black.svg";
 
 // Service images

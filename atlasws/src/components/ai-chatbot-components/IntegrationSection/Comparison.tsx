@@ -10,7 +10,7 @@ interface ComparisonItem {
 const ComparisonSection: React.FC = () => {
   const comparisons: ComparisonItem[] = [
     {
-      title: "Without Aivora AI chatbot",
+      title: "Without Atlas Tech AI chatbot",
       icon: "❌",
       points: [
         "Losing customers from slow support",
@@ -22,7 +22,7 @@ const ComparisonSection: React.FC = () => {
       ],
     },
     {
-      title: "With Aivora AI chatbot",
+      title: "With Atlas Tech AI chatbot",
       icon: "✅",
       points: [
         "Instant 24/7 answers in 90+ languages",

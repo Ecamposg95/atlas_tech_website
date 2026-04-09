@@ -484,7 +484,7 @@ const MegaMenu1: React.FC = () => {
                             Sebastian Patel
                           </h4>
                           <span className="author_designation text-white">
-                            CEO & Chairman at, <Link to="/">Aivora</Link>
+                            CEO & Chairman at, <Link to="/">Atlas Tech</Link>
                           </span>
                         </div>
                       </div>

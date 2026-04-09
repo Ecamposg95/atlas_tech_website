@@ -34,7 +34,7 @@ const Projects: ProjectItem[] = [
     slug: "Jenifer-Harry",
     pimg1: pimg2,
     date: "Jan 2019",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "3",
@@ -42,7 +42,7 @@ const Projects: ProjectItem[] = [
     slug: "Miller-Aiyana",
     pimg1: pimg3,
     date: "Mar 2020",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "4",
@@ -50,7 +50,7 @@ const Projects: ProjectItem[] = [
     slug: "Jane-Peter",
     pimg1: pimg4,
     date: "Apr 2020",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "5",
@@ -58,7 +58,7 @@ const Projects: ProjectItem[] = [
     slug: "James-Amelia",
     pimg1: pimg5,
     date: "Jun 2023",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "6",
@@ -70,7 +70,7 @@ const Projects: ProjectItem[] = [
     slug: "Jenifer-Harrys",
     pimg1: pimg7,
     date: "Jan 2019",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "8",
@@ -78,7 +78,7 @@ const Projects: ProjectItem[] = [
     slug: "Miller-Aiyanas",
     pimg1: pimg8,
     date: "Mar 2020",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "9",
@@ -86,7 +86,7 @@ const Projects: ProjectItem[] = [
     slug: "Jane-Peters",
     pimg1: pimg9,
     date: "Apr 2020",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "10",
@@ -94,7 +94,7 @@ const Projects: ProjectItem[] = [
     slug: "James-Amelias",
     pimg1: pimg10,
     date: "Jun 2023",
-    location: "Austria",
+    location: "Mexico",
   },
   {
     id: "11",
@@ -102,7 +102,7 @@ const Projects: ProjectItem[] = [
     slug: "pitar-alizas",
     pimg1: pimg11,
     date: "Jun 2023",
-    location: "USA",
+    location: "Mexico",
   },
   {
     id: "12",
@@ -110,7 +110,7 @@ const Projects: ProjectItem[] = [
     slug: "Miller-Aiyanas",
     pimg1: pimg8,
     date: "Mar 2020",
-    location: "Austria",
+    location: "Mexico",
   },
 ];
 

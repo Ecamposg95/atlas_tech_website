@@ -16,7 +16,7 @@ import Scrollbar from "../../components/scrollbar/scrollbar";
 
 const HomePage: React.FC = () => {
   useEffect(() => {
-    document.title = "Atlas Tech | Agencia de IA y Tecnología";
+    document.title = "Atlas Tech | Startup tecnologica B2B";
   }, []);
 
   return (

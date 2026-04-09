@@ -27,7 +27,7 @@ const CareerDetails: React.FC = () => {
                                             <li><span>Department :</span> Technical Project Manager</li>
                                             <li><span>No. of Openings :</span> (3)</li>
                                             <li><span>FullJob Type :</span> -Time</li>
-                                            <li><span>Location :</span> San Francisco, USA.</li>
+                                            <li><span>Location :</span> Ciudad de Mexico, Mexico.</li>
                                             <li><span>Working days :</span> $80k to $100k (Based on your experience).</li>
                                             <li><span>Deadline :</span> December 10, 2025</li>
                                             <li><span>Experience Required :</span> 5+ Years</li>
@@ -35,7 +35,7 @@ const CareerDetails: React.FC = () => {
 
                                         <p className="mb-30">
                                             We’re looking for a Technical Project Manager and knowledgeable Product Designer
-                                            to join our technical team in Warsaw, Poland. You’ll be expected to utilize
+                                            to join our technical team in Ciudad de Mexico, Mexico. You’ll be expected to utilize
                                             bleeding-edge technology and robust techniques. You should be an excellent
                                             communicator and comfortable managing multiple tasks. You also need to be a
                                             team player and have a problem-solving aptitude.

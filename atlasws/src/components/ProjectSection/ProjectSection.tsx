@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 // ✅ Import images
 import projectBg from "../../images/bg/project-bg.png";
-import gifRound from "../../images/icon/b10c3e43e836d32554bf.gif";
 import projectImg01 from "../../images/project/project-img01.jpg";
 import projectImg02 from "../../images/project/project-img02.jpg";
 import projectImg03 from "../../images/project/project-img03.jpg";
@@ -182,7 +181,7 @@ const ProjectSection: React.FC = () => {
                 title: "Proyectos de Chatbots y NLP..",
                 desc: "Construimos chatbots inteligentes y herramientas de NLP que comprenden y responden de forma natural. Desde atención al cliente hasta análisis de documentos, nuestras soluciones automatizan la comunicación.",
                 industry: "Procesamiento de Datos",
-                country: "Alemania, Issum",
+                country: "Ciudad de Mexico, Mexico",
                 techs: [icon01, icon02, icon03],
               },
               {
@@ -190,7 +189,7 @@ const ProjectSection: React.FC = () => {
                 title: "E-commerce y marketing..",
                 desc: "Creamos soluciones de IA que impulsan las ventas y el compromiso del cliente, como recomendaciones inteligentes y precios dinámicos. Nuestras herramientas ayudan a las marcas a crecer más rápido.",
                 industry: "Inteligencia Artificial",
-                country: "Singapur",
+                country: "Monterrey, Mexico",
                 techs: [icon01, icon08, icon09],
               },
               {
@@ -198,7 +197,7 @@ const ProjectSection: React.FC = () => {
                 title: "Proyectos de visión artificial..",
                 desc: "Desarrollamos sistemas de IA que ven y entienden datos visuales: detección de objetos, patrones y automatización de inspecciones. Nuestras soluciones mejoran la precisión y la toma de decisiones.",
                 industry: "Visión Artificial",
-                country: "Estados Unidos",
+                country: "Guadalajara, Mexico",
                 techs: [icon10, icon11, icon01],
               },
               {
@@ -206,7 +205,7 @@ const ProjectSection: React.FC = () => {
                 title: "Analítica de ciencia de datos..",
                 desc: "Convertimos datos complejos en información clara y accionable. Desde modelos predictivos hasta tableros en tiempo real, nuestra analítica ayuda a las empresas a decidir con confianza.",
                 industry: "Ciencia de Datos",
-                country: "Canadá",
+                country: "Queretaro, Mexico",
                 techs: [icon08, icon12, icon13],
               },
             ].map((project, index) => (

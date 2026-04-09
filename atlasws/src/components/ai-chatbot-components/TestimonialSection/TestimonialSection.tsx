@@ -67,7 +67,7 @@ const TestimonialSection: React.FC = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">
-                  "Aivora now automates over 70% of our customer queries,
+                  "Atlas Tech now automates over 70% of our customer queries,
                   saving hours of manual work daily. It’s improved both our
                   response time and overall customer satisfaction."
                 </p>
@@ -90,7 +90,7 @@ const TestimonialSection: React.FC = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">
-                  "We launched Aivora in just minutes, and the impact was
+                  "We launched Atlas Tech in just minutes, and the impact was
                   immediate. Our support costs dropped by 50%, and customers
                   receive answers instantly, 24/7."
                 </p>
@@ -113,7 +113,7 @@ const TestimonialSection: React.FC = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">
-                  "Aivora’s powerful analytics give us deep insights into
+                  "Atlas Tech's powerful analytics give us deep insights into
                   customer needs. We’ve optimized our chatbot flows and seen
                   noticeable growth in conversions."
                 </p>
@@ -136,7 +136,7 @@ const TestimonialSection: React.FC = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">
-                  "Aivora now automates over 70% of our customer queries,
+                  "Atlas Tech now automates over 70% of our customer queries,
                   saving hours of manual work daily. It’s improved both our
                   response time and overall customer satisfaction."
                 </p>
@@ -159,7 +159,7 @@ const TestimonialSection: React.FC = () => {
               </div>
               <div className="xb-item--holder">
                 <p className="xb-item--content">
-                  "Aivora’s powerful analytics give us deep insights into
+                  "Atlas Tech's powerful analytics give us deep insights into
                   customer needs. We’ve optimized our chatbot flows and seen
                   noticeable growth in conversions."
                 </p>

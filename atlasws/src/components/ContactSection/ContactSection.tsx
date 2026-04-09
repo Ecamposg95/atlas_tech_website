@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import contactBg from "../../images/bg/contact-bg.png";
-import gifShape from "../../images/icon/b10c3e43e836d32554bf.gif";
 import shape1 from "../../images/shape/contact-shape01.png";
 import shape2 from "../../images/shape/contact-shape02.png";
 import ContactForm from "../ContactFrom/ContactForm";

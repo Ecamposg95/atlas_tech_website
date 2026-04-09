@@ -1,7 +1,7 @@
 {
-  "name": "Aivora",
+  "name": "atlas-tech",
   "version": "0.1.0",
-  "homepage": "https://aivora-react.netlify.app",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

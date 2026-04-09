@@ -8,10 +8,6 @@ import img08 from "../../../images/about/img08.jpg";
 
 import videoPoster from "../../../images/about/video-img.png";
 
-import gif1 from "../../../images/icon/original-66948a0d81d.gif";
-import gif2 from "../../../images/icon/0deec720000b2066289b.gif";
-import gif3 from "../../../images/icon/b10c3e43e836d32554bf.gif";
-
 import featureIcon1 from "../../../images/icon/feature-icon01.svg";
 import featureIcon2 from "../../../images/icon/feature-icon02.svg";
 import featureIcon3 from "../../../images/icon/feature-icon03.svg";

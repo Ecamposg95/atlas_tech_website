@@ -23,13 +23,13 @@ import bgSmall from "../../images/team/noice-bg.png";
 const teamMembers = [
   {
     name: "Sebastian Patel",
-    role: "CEO & Chairman at, Aivora",
+    role: "CEO & Chairman at, Atlas Tech",
     img: img09,
     big: true,
   },
   {
     name: "Lennox Gabriel",
-    role: "Chief Operating Officer at, Aivora",
+    role: "Chief Operating Officer at, Atlas Tech",
     img: img10,
     big: true,
   },
