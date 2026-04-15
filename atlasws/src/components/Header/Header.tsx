@@ -83,12 +83,6 @@ const Header: React.FC = () => {
                   </li>
 
                   <li>
-                    <Link to="/blog" onClick={handleClick}>
-                      <span>Blog</span>
-                    </Link>
-                  </li>
-
-                  <li>
                     <Link to="/contact" onClick={handleClick}>
                       <span>Contacto</span>
                     </Link>

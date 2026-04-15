@@ -13,47 +13,47 @@ import { Link } from "react-router-dom";
 const jobs = [
   {
     id: 1,
-    title: "Machine learning engineer.",
+    title: "Ingeniero/a de machine learning.",
     category: ["cat2", "cat4"],
     location: "Ciudad de Mexico, Mexico",
-    type: "Full time",
+    type: "Tiempo completo",
   },
   {
     id: 2,
-    title: "NLP (natural language processing) engineer.",
+    title: "Ingeniero/a de NLP (procesamiento de lenguaje natural).",
     category: ["cat1", "cat2"],
     location: "Monterrey, Mexico",
-    type: "Full time",
+    type: "Tiempo completo",
   },
   {
     id: 3,
-    title: "Technical project manager (AI).",
+    title: "Project Manager tecnico (IA).",
     category: ["cat1", "cat3"],
     location: "Guadalajara, Mexico",
-    type: "Full time",
+    type: "Tiempo completo",
   },
   {
     id: 4,
-    title: "Conversational UX designer.",
+    title: "Disenador/a UX conversacional.",
     category: ["cat3", "cat4"],
     location: "Queretaro, Mexico",
-    type: "Full time",
+    type: "Tiempo completo",
   },
   {
     id: 5,
-    title: "HR & talent manager (AI Sector).",
+    title: "Manager de RRHH y talento (sector IA).",
     category: ["cat4", "cat1"],
     location: "Ciudad de Mexico, Mexico",
-    type: "Full time",
+    type: "Tiempo completo",
   },
 ];
 
 const filters = [
-  { label: "View all", value: "*" },
-  { label: "Technical", value: "cat1" },
-  { label: "Business", value: "cat2" },
+  { label: "Ver todo", value: "*" },
+  { label: "Tecnico", value: "cat1" },
+  { label: "Negocio", value: "cat2" },
   { label: "Marketing", value: "cat3" },
-  { label: "Leadership", value: "cat4" },
+  { label: "Liderazgo", value: "cat4" },
 ];
 
 const JobSection: React.FC = () => {
@@ -96,13 +96,13 @@ const JobSection: React.FC = () => {
 
         {/* TITLE */}
         <div className="sec-title sec-title-center fea-sec-title text-center mb-40">
-          <span className="sub-title">Open Positions</span>
+          <span className="sub-title">Vacantes abiertas</span>
           <h2 className="title">
-            Be part of{" "}
+            Se parte del{" "}
             <span>
               <img src={diamondIcon} alt="icon" />
             </span>
-            the team
+            equipo
           </h2>
         </div>
 
@@ -149,7 +149,7 @@ const JobSection: React.FC = () => {
               {/* BUTTON */}
               <div className="team-btn">
                 <Link className="thm-btn agency-btn" to="/career-details">
-                  <span className="text">view job</span>
+                  <span className="text">ver vacante</span>
                   <span className="arrow">
                     <span className="arrow-icon">
                       {/* Your SVG ICON */}

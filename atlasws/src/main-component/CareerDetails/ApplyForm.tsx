@@ -30,7 +30,7 @@ const ApplyForm: React.FC = () => {
     e.preventDefault();
 
     if (validator.allValid()) {
-      alert("Form submitted successfully!");
+      alert("Formulario enviado correctamente!");
       // API submit here...
     } else {
       validator.showMessages();
@@ -41,9 +41,9 @@ const ApplyForm: React.FC = () => {
   return (
     <div className="xb-contact-form details-contact-form xb-border mt-100">
       <div className="form-heading mb-20">
-        <h3 className="title">Apply for this job</h3>
+        <h3 className="title">Postulate a esta vacante</h3>
         <p className="sub-title">
-          Atlas Tech doesn’t accept unsolicited resumes from recruiters or employment agencies.
+          Atlas Tech no acepta curriculums no solicitados de reclutadores o agencias de empleo.
         </p>
       </div>
 
@@ -52,7 +52,7 @@ const ApplyForm: React.FC = () => {
           
           {/* Name */}
           <div className="col-lg-6 col-md-6 mt-20">
-            <label htmlFor="author-name">Your Name*</label>
+            <label htmlFor="author-name">Nombre*</label>
             <div className="xb-input-field">
               <input
                 id="author-name"
@@ -68,7 +68,7 @@ const ApplyForm: React.FC = () => {
 
           {/* Email */}
           <div className="col-lg-6 col-md-6 mt-20">
-            <label htmlFor="author-email">Email*</label>
+            <label htmlFor="author-email">Correo*</label>
             <div className="xb-input-field">
               <input
                 id="author-email"
@@ -84,7 +84,7 @@ const ApplyForm: React.FC = () => {
 
           {/* Phone */}
           <div className="col-lg-6 col-md-6 mt-20">
-            <label htmlFor="author-phone">Phone*</label>
+            <label htmlFor="author-phone">Telefono*</label>
             <div className="xb-input-field">
               <input
                 id="author-phone"
@@ -100,7 +100,7 @@ const ApplyForm: React.FC = () => {
 
           {/* Address */}
           <div className="col-lg-6 col-md-6 mt-20">
-            <label htmlFor="author-address">Address*</label>
+            <label htmlFor="author-address">Ciudad*</label>
             <div className="xb-input-field">
               <input
                 id="author-address"
@@ -116,7 +116,7 @@ const ApplyForm: React.FC = () => {
 
           {/* Message */}
           <div className="col-lg-12 col-md-12 mt-20">
-            <label htmlFor="massage">Message</label>
+            <label htmlFor="massage">Mensaje</label>
             <div className="xb-input-field xb-massage-field">
               <textarea
                 id="massage"
@@ -133,12 +133,12 @@ const ApplyForm: React.FC = () => {
         {/* File Upload */}
         <div className="cp-contact-bottom ul_li_between mt-70">
           <div className="xb-upload_file">
-            <label htmlFor="file">Upload your resume / CV</label>
+            <label htmlFor="file">Sube tu CV</label>
             <input id="file" type="file" onChange={handleFileChange} />
 
             <p className="xb-content">
-              <span>Accepted file types :</span> pdf, doc, jpg  
-              <span> file size:</span> 15 MB.
+              <span>Tipos de archivo aceptados:</span> pdf, doc, jpg
+              <span> tamano maximo:</span> 15 MB.
             </p>
 
             <span className="text-danger">
@@ -158,7 +158,7 @@ const ApplyForm: React.FC = () => {
           {/* Submit Button */}
           <div className="form-submit-btn">
             <button className="thm-btn agency-btn" type="submit">
-              <span className="text">Submit now</span>
+              <span className="text">Enviar</span>
               <span className="arrow">
                 <span className="arrow-icon">
                   {/* You can keep your SVG icons */}

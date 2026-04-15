@@ -7,21 +7,20 @@ const NewsletterBox: React.FC = () => {
     <div className="item_details-newslatter xb-border mt-80">
       <div className="xb-item--holder ul_li_between align-items-start">
         <div className="xb-item-heading_info">
-          <h3 className="item_details_info_heading">Subscribe to our updates</h3>
+          <h3 className="item_details_info_heading">Suscribete a nuestras novedades</h3>
           <p>
-            Stay up to date! Get all of our resources and news <br />
-            delivered straight to your inbox.
+            Recibe recursos y actualizaciones directo en tu correo.
           </p>
         </div>
 
         <Link to="#" className="xb-item--bell-icon xb-border">
-          <img src={iconBell} alt="Notification Bell" />
+          <img src={iconBell} alt="Notificaciones" />
         </Link>
       </div>
 
       <div className="xb-item--item-input_field pos-rel">
         <input type="email" placeholder="contacto@atlastech.mx" />
-        <button type="submit">Subscribe</button>
+        <button type="submit">Suscribirme</button>
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ const FAQSection: React.FC = () => {
             data-wow-delay="150ms"
             data-wow-duration="600ms"
           >
-            Have a question Look here
+            Tienes dudas? Revisa aqui
           </h2>
         </div>
 

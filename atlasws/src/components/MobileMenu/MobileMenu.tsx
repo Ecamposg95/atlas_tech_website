@@ -33,11 +33,6 @@ const menus: MenuItem[] = [
   },
   {
     id: 5,
-    title: "Noticias",
-    link: "/blog",
-  },
-  {
-    id: 6,
     title: "Contacto",
     link: "/contact",
   },

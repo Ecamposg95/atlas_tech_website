@@ -12,7 +12,7 @@ const CareerDetails: React.FC = () => {
                 <div className="body_wrap o-clip">
                     <Header />
                     <main>
-                        <PageTitle pageTitle="Career details" pagesub="Career details" />
+                        <PageTitle pageTitle="Detalle de vacante" pagesub="Vacantes" />
                         <section className="career-details">
                             <div className="container">
                                 <div className="cp-details-wrap">
@@ -20,86 +20,82 @@ const CareerDetails: React.FC = () => {
                                     {/* Manager Info */}
                                     <div className="cp-manager_info">
                                         <h2 className="details-content-title mb-30">
-                                            Technical project manager - (Full-time)
+                                            Project Manager tecnico - (Tiempo completo)
                                         </h2>
 
                                         <ul className="xb-details-content list-unstyled mb-35">
-                                            <li><span>Department :</span> Technical Project Manager</li>
-                                            <li><span>No. of Openings :</span> (3)</li>
-                                            <li><span>FullJob Type :</span> -Time</li>
-                                            <li><span>Location :</span> Ciudad de Mexico, Mexico.</li>
-                                            <li><span>Working days :</span> $80k to $100k (Based on your experience).</li>
-                                            <li><span>Deadline :</span> December 10, 2025</li>
-                                            <li><span>Experience Required :</span> 5+ Years</li>
+                                            <li><span>Departamento :</span> Project Management</li>
+                                            <li><span>Vacantes :</span> (3)</li>
+                                            <li><span>Tipo :</span> Tiempo completo</li>
+                                            <li><span>Ubicacion :</span> Ciudad de Mexico, Mexico.</li>
+                                            <li><span>Rango salarial :</span> $80k a $100k (segun experiencia).</li>
+                                            <li><span>Fecha limite :</span> 10 de diciembre de 2025</li>
+                                            <li><span>Experiencia requerida :</span> 5+ anos</li>
                                         </ul>
 
                                         <p className="mb-30">
-                                            We’re looking for a Technical Project Manager and knowledgeable Product Designer
-                                            to join our technical team in Ciudad de Mexico, Mexico. You’ll be expected to utilize
-                                            bleeding-edge technology and robust techniques. You should be an excellent
-                                            communicator and comfortable managing multiple tasks. You also need to be a
-                                            team player and have a problem-solving aptitude.
+                                            Buscamos un/a Project Manager tecnico/a y un/a Product Designer con experiencia
+                                            para unirse a nuestro equipo en Ciudad de Mexico, Mexico. Trabajaras con tecnologia
+                                            moderna y practicas de ingenieria solidas. Necesitamos a alguien con comunicacion
+                                            clara, capaz de coordinar multiples frentes y con mentalidad resolutiva.
                                         </p>
 
                                         <p>
-                                            Working quickly and creatively should come naturally to you, as well as being
-                                            an innovative problem-solver who takes pride in producing logical, simple, and
-                                            effective solutions to what are often very new and complex issues.
+                                            Esperamos que trabajes con rapidez y criterio, con enfoque en soluciones simples,
+                                            logicas y efectivas para retos nuevos y complejos.
                                         </p>
                                     </div>
 
-                                    {/* What you'll do */}
+                                    {/* Responsabilidades */}
                                     <div className="xb-details-item">
-                                        <h3 className="details-title mt-70">What you'll get to do...</h3>
+                                        <h3 className="details-title mt-70">Lo que haras...</h3>
                                         <ul className="content-list mt-25">
-                                            <li>Refactor current code to service-oriented architecture.</li>
-                                            <li>Collaborate with engineering, product, and operations team members.</li>
-                                            <li>Solve technical problems that few have solved before.</li>
-                                            <li>Participate in decision-making — we want you to speak up.</li>
-                                            <li>Mentor team members and share engineering passion.</li>
-                                            <li>Improve quality, performance, and scalability.</li>
-                                            <li>Participate in on-call rotation.</li>
+                                            <li>Mejorar procesos y estandares de entrega del equipo.</li>
+                                            <li>Colaborar con ingenieria, producto y operaciones.</li>
+                                            <li>Desbloquear problemas tecnicos y de coordinacion en proyectos complejos.</li>
+                                            <li>Participar en decisiones y proponer mejoras.</li>
+                                            <li>Dar seguimiento a tiempos, alcance y riesgos.</li>
+                                            <li>Elevar calidad, performance y escalabilidad con el equipo.</li>
                                         </ul>
                                     </div>
 
-                                    {/* Experience section */}
+                                    {/* Experiencia */}
                                     <div className="xb-details-item">
-                                        <h3 className="details-title mt-70">Your experience should include...</h3>
+                                        <h3 className="details-title mt-70">Tu experiencia debe incluir...</h3>
                                         <ul className="content-list mt-25">
-                                            <li>6+ years of professional Project Management experience.</li>
-                                            <li><span>Technical Expertise:</span> Strong technical understanding.</li>
-                                            <li><span>Stakeholder Management:</span> Proven alignment skills.</li>
-                                            <li><span>Agile Methodologies:</span> Hands-on Agile experience.</li>
-                                            <li><span>Risk Management:</span> Identify and mitigate risks.</li>
-                                            <li><span>Team Leadership:</span> Inspire and motivate teams.</li>
-                                            <li><span>Communication Skills:</span> Excellent technical communication.</li>
-                                            <li><span>Problem-Solving:</span> Proactive critical thinker.</li>
-                                            <li><span>Quality Assurance:</span> Maintain high standards.</li>
+                                            <li>6+ anos de experiencia en Project Management.</li>
+                                            <li><span>Conocimiento tecnico:</span> buen entendimiento tecnico.</li>
+                                            <li><span>Stakeholders:</span> capacidad probada de alineacion.</li>
+                                            <li><span>Agile:</span> experiencia practica en metodologias agiles.</li>
+                                            <li><span>Riesgos:</span> identificar y mitigar riesgos.</li>
+                                            <li><span>Liderazgo:</span> coordinar y motivar equipos.</li>
+                                            <li><span>Comunicacion:</span> comunicacion clara con perfil tecnico.</li>
+                                            <li><span>Resolucion:</span> pensamiento critico y proactivo.</li>
+                                            <li><span>Calidad:</span> mantener estandares altos.</li>
                                         </ul>
                                     </div>
 
-                                    {/* You might have */}
+                                    {/* Plus */}
                                     <div className="xb-details-item">
-                                        <h3 className="details-title mt-70">You might also have...</h3>
+                                        <h3 className="details-title mt-70">Es un plus si tienes...</h3>
                                         <ul className="content-list mt-25">
-                                            <li>Experience with AWS.</li>
-                                            <li>Experience building CI/CD automation pipelines.</li>
-                                            <li>Experience with Puppet or infrastructure-as-code.</li>
-                                            <li>Passion for technology and innovation.</li>
-                                            <li>High standards and desire to create real impact.</li>
-                                            <li>Continuous improvement mindset.</li>
+                                            <li>Experiencia con AWS.</li>
+                                            <li>Experiencia construyendo pipelines de CI/CD.</li>
+                                            <li>Experiencia con infraestructura como codigo.</li>
+                                            <li>Interes genuino por tecnologia e innovacion.</li>
+                                            <li>Estandares altos y enfoque en impacto.</li>
+                                            <li>Mentalidad de mejora continua.</li>
                                         </ul>
                                     </div>
 
-                                    {/* Benefits */}
+                                    {/* Beneficios */}
                                     <div className="xb-details-item">
-                                        <h3 className="details-title mt-70">Great benefits...</h3>
+                                        <h3 className="details-title mt-70">Beneficios...</h3>
                                         <ul className="content-list mt-25">
-                                            <li>Company-wide 401(k) plan.</li>
-                                            <li>Life & disability insurance.</li>
-                                            <li>Competitive salary, bonus & equity.</li>
-                                            <li>Medical, dental, and vision coverage.</li>
-                                            <li>Flexible paid time off & sick leave.</li>
+                                            <li>Compensacion competitiva.</li>
+                                            <li>Bonos y equity (segun rol y desempeno).</li>
+                                            <li>Prestaciones de ley y superiores (segun politica vigente).</li>
+                                            <li>Flexibilidad y enfoque en resultados.</li>
                                         </ul>
                                     </div>
                                     

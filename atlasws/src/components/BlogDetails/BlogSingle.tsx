@@ -89,7 +89,7 @@ const BlogDetailsSection: React.FC = () => {
               </h3>
 
               <p className="mb-40">
-                Automating repetitive tasks with intelligent AI tools allows businesses to save time, reduce errors, and focus on higher-value work. Instead of relying on manual input for routine processes like data entry, report generation, or customer queries, intelligent automation uses machine learning and smart algorithms to handle them efficiently. These systems learn patterns, adapt to changes, and operate 24/7—ensuring consistency and speed. As a result, teams become more productive, workflows become more streamlined, and businesses can scale without increasing overhead.
+                Automatizar tareas repetitivas con herramientas inteligentes permite ahorrar tiempo, reducir errores y enfocarse en trabajo de mayor valor. En lugar de depender de procesos manuales como captura de datos, reportes o atencion al cliente, la automatizacion usa modelos y reglas para ejecutarlo de forma consistente. Con esto, los equipos ganan productividad, los flujos se simplifican y la operacion escala con menos friccion.
               </p>
 
               {/* IMAGE + LIST */}
@@ -100,22 +100,22 @@ const BlogDetailsSection: React.FC = () => {
 
                 <div className="col-md-6 mt-30">
                   <ul className="iconlist_block">
-                    <li><span className="iconlist_text">Automated Task Detection.</span></li>
-                    <li><span className="iconlist_text">24/7 Autonomous Execution.</span></li>
-                    <li><span className="iconlist_text">Cross-Platform Integration.</span></li>
-                    <li><span className="iconlist_text">Parallel Task Processing.</span></li>
-                    <li><span className="iconlist_text">Instant Trigger Automation.</span></li>
-                    <li><span className="iconlist_text">Low-Code Setup.</span></li>
+                    <li><span className="iconlist_text">Deteccion automatica de tareas.</span></li>
+                    <li><span className="iconlist_text">Ejecucion autonoma 24/7.</span></li>
+                    <li><span className="iconlist_text">Integracion multiplataforma.</span></li>
+                    <li><span className="iconlist_text">Procesamiento en paralelo.</span></li>
+                    <li><span className="iconlist_text">Automatizacion por disparadores.</span></li>
+                    <li><span className="iconlist_text">Configuracion low-code.</span></li>
                   </ul>
                 </div>
               </div>
 
-              <h3 className="item_details_info_heading mb-25">3 reasons automation transforms tasks.</h3>
+              <h3 className="item_details_info_heading mb-25">3 razones por las que la automatizacion transforma tareas</h3>
 
               <ul className="iconlist_block numlist_block list-unstyled">
-                <li><span className="iconlist_text">1. Streamlining Routine Workflows.</span></li>
-                <li><span className="iconlist_text">2. Reducing Errors and Increasing Accuracy..</span></li>
-                <li><span className="iconlist_text">3. Enhancing Employee Productivity and Focus.</span></li>
+                <li><span className="iconlist_text">1. Estandariza flujos rutinarios.</span></li>
+                <li><span className="iconlist_text">2. Reduce errores y aumenta precision.</span></li>
+                <li><span className="iconlist_text">3. Mejora enfoque y productividad.</span></li>
               </ul>
 
               {/* AUTHOR BLOCK */}

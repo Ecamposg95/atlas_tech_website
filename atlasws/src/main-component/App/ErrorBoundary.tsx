@@ -27,10 +27,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
         if (this.state.hasError) {
             return (
                 <div className="error-boundary text-center p-5">
-                    <h2>Something went wrong 😢</h2>
-                    <p>Try refreshing the page or go back to home.</p>
+                    <h2>Ocurrio un error</h2>
+                    <p>Intenta recargar la pagina o vuelve al inicio.</p>
                     <Link className="thm-btn agency-btn" to="/">
-                        <span className="text">Back to Home</span>
+                        <span className="text">Volver al inicio</span>
                         <span className="arrow">
                             <span className="arrow-icon">
                                 <svg

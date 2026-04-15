@@ -22,12 +22,12 @@ const ErrorPage: React.FC = () => {
                         <h2>404</h2>
                       </div>
                       <div className="error-page__content mb-50">
-                        <h2>Hi Sorry We Can’t Find That Page!</h2>
-                        <p>Oops! The page you are looking for does not exist. It might have been moved or deleted.</p>
+                        <h2>No encontramos esta pagina.</h2>
+                        <p>La pagina que buscas no existe o fue movida.</p>
 
                         <div className="error-page-button">
                           <Link className="thm-btn agency-btn" to="/">
-                            <span className="text">Back to Home</span>
+                            <span className="text">Volver al inicio</span>
                             <span className="arrow">
                               <span className="arrow-icon">
                                 <svg

@@ -7,33 +7,33 @@ const HiringProcess: React.FC = () => {
   const steps = [
     {
       number: "01",
-      title: "_Send your CV",
+      title: "_Envia tu CV",
       content:
-        "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+        "Postulate enviando tu CV o compartiendo tu perfil de LinkedIn. Es el primer paso para sumarte al equipo.",
     },
     {
       number: "02",
-      title: "_Initial screening",
+      title: "_Filtro inicial",
       content:
-        "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+        "Revisamos tu perfil y validamos el match con el rol y el equipo.",
     },
     {
       number: "03",
-      title: "_Job interview",
+      title: "_Entrevista",
       content:
-        "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+        "Hacemos una entrevista para conocer tu experiencia, enfoque y forma de trabajar.",
     },
     {
       number: "04",
-      title: "_Test task",
+      title: "_Prueba tecnica",
       content:
-        "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+        "Si aplica, compartimos una prueba corta para evaluar el rol en contexto real.",
     },
     {
       number: "05",
-      title: "_You’re hired!",
+      title: "_Listo",
       content:
-        "Apply for a position by sending us your CV or providing a link to your LinkedIn profile, and take the first step toward joining our team.",
+        "Cerramos oferta, definimos fecha de inicio y arrancamos onboarding.",
     },
   ];
 
@@ -49,8 +49,8 @@ const HiringProcess: React.FC = () => {
           {/* LEFT SIDE - TEXT & ACCORDION */}
           <div className="col-lg-6 mt-50">
             <div className="sec-title sec-title-center mb-35">
-              <span className="sub-title mb-20">Hiring Process</span>
-              <h2 className="title title-line_height">Our hiring process</h2>
+              <span className="sub-title mb-20">Proceso de contratacion</span>
+              <h2 className="title title-line_height">Nuestro proceso</h2>
             </div>
 
             <div className="xb-faq career-faq">
@@ -95,7 +95,7 @@ const HiringProcess: React.FC = () => {
           {/* RIGHT SIDE - IMAGE */}
           <div className="col-lg-6 mt-50">
             <div className="process-img">
-              <img src={processImg} alt="hiring process" />
+              <img src={processImg} alt="proceso de contratacion" />
             </div>
           </div>
 

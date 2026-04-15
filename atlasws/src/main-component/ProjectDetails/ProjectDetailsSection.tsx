@@ -26,21 +26,21 @@ const CheckIcon: React.FC = () => (
 // ==== full component ====
 const ProjectDetailsSection: React.FC = () => {
     const projectMeta = [
-        { icon: icon4, label: "services :", value: "Ai solutions" },
-        { icon: icon5, label: "client :", value: "Atlas Tech" },
-        { icon: icon6, label: "location :", value: "Ciudad de Mexico, Mexico" },
-        { icon: icon7, label: "completed date :", value: "20-12-2025" },
+        { icon: icon4, label: "servicios :", value: "Soluciones de IA" },
+        { icon: icon5, label: "cliente :", value: "Atlas Tech" },
+        { icon: icon6, label: "ubicacion :", value: "Ciudad de Mexico, Mexico" },
+        { icon: icon7, label: "fecha de entrega :", value: "20-12-2025" },
     ];
 
     const requirementList = [
-        "Intelligent Process Automation.",
-        "Smart Alerts & Notifications",
-        "Real-Time Data Monitoring.",
-        "Natural Language Processing (NLP)",
-        "Custom Dashboard Interface.",
-        "Predictive Maintenance.",
-        "Supply Chain Optimization.",
-        "AI-Powered Decision Support.",
+        "Automatizacion inteligente de procesos.",
+        "Alertas y notificaciones.",
+        "Monitoreo de datos en tiempo real.",
+        "Procesamiento de lenguaje natural (NLP).",
+        "Interfaz de tableros personalizada.",
+        "Mantenimiento predictivo.",
+        "Optimizacion de cadena de suministro.",
+        "Soporte a decisiones con IA.",
     ];
 
     return (
@@ -52,15 +52,15 @@ const ProjectDetailsSection: React.FC = () => {
                 </div>
 
                 <h2 className="details-content-title mb-15">
-                    AI solutions for smarter operations.
+                    Soluciones de IA para operaciones mas inteligentes.
                 </h2>
 
                 <p>
-                    Our AI solutions are designed to transform how businesses operate by automating repetitive tasks, optimizing workflows, and enabling data-driven decision-making. We develop intelligent systems that adapt to your unique processes—whether it's managing supply chains, improving customer service, or enhancing internal operations. With real-time analytics, predictive insights, and seamless integrations, our solutions help reduce operational costs, increase productivity, and deliver measurable outcomes. From startups to enterprise-level organizations, we tailor each project to support long-term efficiency and scalable growth powered by smart automation and machine learning.
+                    Nuestras soluciones de IA transforman la operacion al automatizar tareas repetitivas, optimizar flujos de trabajo y habilitar decisiones basadas en datos. Construimos sistemas que se adaptan a tus procesos, ya sea para gestionar cadena de suministro, mejorar atencion al cliente o elevar eficiencia interna. Con analitica en tiempo real, insights predictivos e integraciones, ayudamos a reducir costos, aumentar productividad y entregar resultados medibles.
                 </p>
 
                 <p className="mt-30">
-                    By leveraging cutting-edge technologies like machine learning, natural language processing, and real-time data processing, we ensure our AI systems evolve with your business needs. Our goal isn’t just to implement tools—it’s to empower your teams with intelligent capabilities.
+                    Usando tecnologias como machine learning, NLP y procesamiento de datos en tiempo real, aseguramos que los sistemas evolucionen con tu negocio. El objetivo no es solo implementar herramientas, sino habilitar a tus equipos con capacidades inteligentes.
                 </p>
 
                 {/* meta icons */}
@@ -75,10 +75,10 @@ const ProjectDetailsSection: React.FC = () => {
 
                 {/* requirements section */}
                 <div className="services-outcome-wrap mt-115 mb-125">
-                    <h2 className="details-content-title mb-15">Project requirement</h2>
+                    <h2 className="details-content-title mb-15">Requerimientos del proyecto</h2>
 
                     <p>
-                        The project aims to develop an AI-powered solution designed to optimize business operations through intelligent automation and real-time decision-making. The system should be capable of handling large volumes of data, generating actionable insights.
+                        El proyecto busca desarrollar una solucion con IA para optimizar operaciones mediante automatizacion inteligente y decision en tiempo real. El sistema debe manejar altos volumenes de datos y generar insights accionables.
                     </p>
 
                     <ul className="service-outcome-list project-requerment list-unstyled mt-35">
@@ -93,14 +93,14 @@ const ProjectDetailsSection: React.FC = () => {
                     </ul>
                 </div>
 
-                <h2 className="details-content-title mb-15">Solution and result</h2>
+                <h2 className="details-content-title mb-15">Solucion y resultados</h2>
 
                 <p>
-                    The proposed AI solution leverages advanced machine learning algorithms, real-time data analytics, and automation technologies to transform traditional operations into intelligent, adaptive processes. By integrating predictive analytics, the system anticipates potential disruptions, optimizes resource allocation, and automates routine tasks, enabling businesses to operate with greater precision and efficiency.
+                    La solucion propuesta combina algoritmos de machine learning, analitica en tiempo real y automatizacion para convertir operaciones tradicionales en procesos inteligentes y adaptativos. Al integrar analitica predictiva, el sistema anticipa disrupciones, optimiza recursos y automatiza tareas, habilitando una operacion mas precisa y eficiente.
                 </p>
 
                 <p className="mt-30">
-                    he AI-driven insights empower decision-makers to respond swiftly to changing conditions, reducing downtime and operational costs significantly. Furthermore, continuous learning capabilities ensure that the system evolves alongside the business environment.
+                    Los insights impulsados por IA permiten responder rapido a cambios en el entorno, reduciendo tiempos muertos y costos operativos. Ademas, las capacidades de aprendizaje continuo permiten que el sistema evolucione con el negocio.
                 </p>
             </div>
         </section>

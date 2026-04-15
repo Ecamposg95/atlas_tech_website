@@ -57,12 +57,12 @@ const Footer: React.FC = () => {
                     <div className="pos-rel z-1">
                         {/* === Footer Nav === */}
                         <ul className="ac-footer-nav list-unstyled ul_li">
-                            <li><a className="scrollspy-btn" href="#features">Features</a></li>
-                            <li><a className="scrollspy-btn" href="#process">Process</a></li>
-                            <li><a className="scrollspy-btn" href="#integration">Integration</a></li>
-                            <li><a className="scrollspy-btn" href="#pricing">Pricing</a></li>
+                            <li><a className="scrollspy-btn" href="#features">Funcionalidades</a></li>
+                            <li><a className="scrollspy-btn" href="#process">Proceso</a></li>
+                            <li><a className="scrollspy-btn" href="#integration">Integracion</a></li>
+                            <li><a className="scrollspy-btn" href="#pricing">Precios</a></li>
                             <li><a className="scrollspy-btn" href="#faq">Faq’s</a></li>
-                            <li><Link to="/contact">Contact us</Link></li>
+                            <li><Link to="/contact">Contacto</Link></li>
                         </ul>
 
                         <div className="xb-footer-inner">
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                                 {/* === Social Media === */}
                                 <div className="col-lg-3 col-md-5 footer-col">
                                     <div className="xb-footer-item xb-social_media">
-                                        <p className="sub-title">Join our social group</p>
+                                        <p className="sub-title">Unete a la comunidad</p>
                                         <ul className="xb-social_icon ul_li list-unstyled">
                                             <li>
                                                 <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
@@ -120,13 +120,13 @@ const Footer: React.FC = () => {
                                 {/* === Newsletter === */}
                                 <div className="col-lg-6 col-md-7 footer-col">
                                     <div className="xb-footer-item xb-newsletter">
-                                        <p className="sub-title">Subscribe to our newsletter</p>
+                                        <p className="sub-title">Suscribete al newsletter</p>
                                         <form
                                             className="xb-footer-input-form"
                                             onSubmit={handleSubmit}
                                         >
-                                            <input type="email" placeholder="Enter your email" required />
-                                            <button type="submit">Submit</button>
+                                            <input type="email" placeholder="Ingresa tu correo" required />
+                                            <button type="submit">Enviar</button>
                                         </form>
                                     </div>
                                 </div>
@@ -134,10 +134,10 @@ const Footer: React.FC = () => {
                                 {/* === CTA Button === */}
                                 <div className="col-lg-3 col-md-5 footer-col">
                                     <div className="xb-footer-item xb-footer-btn">
-                                        <p className="sub-title">You can’t afford it?</p>
+                                        <p className="sub-title">Quieres empezar?</p>
                                         <div className="footer-btn">
                                             <Link className="thm-btn chatbot-btn" to="/contact">
-                                                start for free
+                                                empezar
                                                 <span className="arrow-icon">
                                                     {[...Array(2)].map((_, i) => (
                                                         <svg

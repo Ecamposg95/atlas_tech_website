@@ -57,7 +57,7 @@ const ContactInfoSection: React.FC = () => {
                     <span className="xb-item--contact_info">{item.email}</span>
 
                     <Link to="/contact" className="thm-btn form-btn mt-45">
-                      VIEW LOCATION
+                      VER UBICACION
                       <span className="xb-icon">
                         <img src={arrowWhite} alt="icon" />
                         <img src={arrowBlack} alt="icon" />

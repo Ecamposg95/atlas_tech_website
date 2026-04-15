@@ -17,7 +17,7 @@ const VideoSection: React.FC = () => {
             src="https://www.pexels.com/download/video/7693469/"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
+          Tu navegador no soporta video.
         </video>
       </div>
     </div>

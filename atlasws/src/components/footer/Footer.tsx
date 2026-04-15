@@ -152,12 +152,6 @@ const Footer: React.FC = () => {
               <Link to="/project">Nuestros proyectos</Link>
             </h2>
           </div>
-          <div className="xb-footer-nav-item">
-            <span className="sub-title">¿Noticias?</span>
-            <h2 className="title">
-              <Link to="/blog">Noticias</Link>
-            </h2>
-          </div>
         </div>
 
         {/* Social Media Section */}

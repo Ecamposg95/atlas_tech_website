@@ -90,7 +90,7 @@ const TeamPage: React.FC = () => {
         <div className="body_wrap o-clip">
           <Header />
           <main>
-            <PageTitle pageTitle="Our team" pagesub="Our team" />
+            <PageTitle pageTitle="Nuestro equipo" pagesub="Equipo" />
             <section className="team">
               <div className="container">
                 <div className="row mt-none-55">

@@ -28,11 +28,9 @@ const MegaMenu1: React.FC = () => {
                             <small className="iconbox_icon">
                               <img src={icon1} alt="Service Icon" />
                             </small>
-                            <small className="iconbox_title">Services</small>
+                            <small className="iconbox_title">Servicios</small>
                           </span>
-                          <span className="description mb-0">
-                            Happy to help you!
-                          </span>
+                          <span className="description mb-0">Listos para ayudarte.</span>
                         </Link>
                       </div>
 
@@ -45,13 +43,9 @@ const MegaMenu1: React.FC = () => {
                             <small className="iconbox_icon">
                               <img src={icon1} alt="Service Details Icon" />
                             </small>
-                            <small className="iconbox_title">
-                              Service details
-                            </small>
+                            <small className="iconbox_title">Detalles de servicio</small>
                           </span>
-                          <span className="description mb-0">
-                            Happy to help you!
-                          </span>
+                          <span className="description mb-0">Listos para ayudarte.</span>
                         </Link>
                       </div>
 
@@ -61,12 +55,10 @@ const MegaMenu1: React.FC = () => {
                             <span className="iconbox_icon">
                               <img src={icon3} alt="Career Icon" />
                             </span>
-                            <small className="iconbox_title">Career</small>
-                            <span className="badge">We’re Hiring</span>
+                            <small className="iconbox_title">Vacantes</small>
+                            <span className="badge">Estamos contratando</span>
                           </span>
-                          <span className="description mb-0">
-                            Open jobs to join our team.
-                          </span>
+                          <span className="description mb-0">Vacantes para unirte al equipo.</span>
                         </Link>
                       </div>
 
@@ -76,13 +68,9 @@ const MegaMenu1: React.FC = () => {
                             <span className="iconbox_icon">
                               <img src={icon2} alt="Career Details Icon" />
                             </span>
-                            <small className="iconbox_title">
-                              Career details
-                            </small>
+                            <small className="iconbox_title">Detalle de vacante</small>
                           </span>
-                          <span className="description mb-0">
-                            We are friendly — join our team.
-                          </span>
+                          <span className="description mb-0">Suma tu talento al equipo.</span>
                         </Link>
                       </div>
 
@@ -92,11 +80,9 @@ const MegaMenu1: React.FC = () => {
                             <span className="iconbox_icon">
                               <img src={icon3} alt="Project Icon" />
                             </span>
-                            <small className="iconbox_title">Project</small>
+                            <small className="iconbox_title">Proyectos</small>
                           </span>
-                          <span className="description mb-0">
-                            Explore our all case studies.
-                          </span>
+                          <span className="description mb-0">Explora nuestros casos de estudio.</span>
                         </Link>
                       </div>
 
@@ -106,13 +92,9 @@ const MegaMenu1: React.FC = () => {
                             <span className="iconbox_icon">
                               <img src={icon3} alt="Project Details Icon" />
                             </span>
-                            <small className="iconbox_title">
-                              Project details
-                            </small>
+                            <small className="iconbox_title">Detalle de proyecto</small>
                           </span>
-                          <span className="description mb-0">
-                            Explore our all case studies.
-                          </span>
+                          <span className="description mb-0">Explora nuestros casos de estudio.</span>
                         </Link>
                       </div>
 
@@ -122,11 +104,9 @@ const MegaMenu1: React.FC = () => {
                             <span className="iconbox_icon">
                               <img src={icon4} alt="Team Icon" />
                             </span>
-                            <small className="iconbox_title">Our team</small>
+                            <small className="iconbox_title">Nuestro equipo</small>
                           </span>
-                          <span className="description mb-0">
-                            We are friendly — join our team.
-                          </span>
+                          <span className="description mb-0">Suma tu talento al equipo.</span>
                         </Link>
                       </div>
                     </div>
@@ -135,7 +115,7 @@ const MegaMenu1: React.FC = () => {
                     <ul className="btns_group mt-80 p-0 ul_li_between">
                       <li>
                         <Link className="thm-btn agency-btn megamenu-btn" to="/contact">
-                          <span className="text">Get free consultation</span>
+                          <span className="text">Agenda una demo</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg
@@ -324,14 +304,14 @@ const MegaMenu1: React.FC = () => {
                   <div className="mega_menu_left">
                     <div className="author_box">
                       <div className="author_image">
-                        <img src={robot} alt="AI Robot" />
+                        <img src={robot} alt="Robot" />
                       </div>
                       <div className="author_box_content">
                         <h3 className="mb-60 text-white">
-                          Looking for custom AI solutions tailored to you?
+                          Buscas soluciones a la medida?
                         </h3>
                         <Link className="thm-btn agency-btn megamenu-btn" to="/contact">
-                          <span className="text">Contact us now</span>
+                          <span className="text">Contactanos</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg

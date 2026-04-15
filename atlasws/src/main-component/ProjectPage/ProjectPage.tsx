@@ -12,7 +12,7 @@ const ProjectPage: React.FC = () => {
         <div className="body_wrap o-clip">
           <Header />
           <main>
-            <PageTitle pageTitle="Our projects" pagesub="Our projects" />
+            <PageTitle pageTitle="Proyectos" pagesub="Proyectos" />
             <ProjectSection/>
           </main>
           <Footer />

@@ -15,7 +15,7 @@ const CareerSection: React.FC = () => {
         <div className="body_wrap o-clip">
           <Header />
           <main>
-            <PageTitle pageTitle="Careers" pagesub="Careers" />
+            <PageTitle pageTitle="Vacantes" pagesub="Vacantes" />
             <GallerySection />
             <HiringProcess />
             <JobSection />

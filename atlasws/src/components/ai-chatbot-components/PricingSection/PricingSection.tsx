@@ -49,7 +49,7 @@ const PricingSection: React.FC = () => {
         {/* === Section Title === */}
         <div className="sec-title sec-title--two pricing-sec-title text-center mb-30">
           <span className="sub-title wow fadeInUp" data-wow-duration="600ms">
-            <img src={iconLeft} alt="icon" /> Pricing Plans{" "}
+            <img src={iconLeft} alt="icon" /> Planes de precios{" "}
             <img src={iconRight} alt="icon" />
           </span>
           <h2
@@ -57,7 +57,7 @@ const PricingSection: React.FC = () => {
             data-wow-delay="150ms"
             data-wow-duration="600ms"
           >
-            Simple & <img src={moneyGif} alt="shape" /> flexible pricing
+            Precios simples y <img src={moneyGif} alt="shape" /> flexibles
           </h2>
         </div>
 

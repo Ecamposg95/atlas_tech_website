@@ -199,7 +199,7 @@ const ProcessSection: React.FC = () => {
                   <img src={processImg01} alt="Step 1" />
                   <h2 className="step-number">01</h2>
                 </div>
-                <h2 className="step-name">Sign Up & Build</h2>
+                <h2 className="step-name">Registro y configuracion</h2>
               </div>
 
               <div className="xb-process-step xb-border">
@@ -207,7 +207,7 @@ const ProcessSection: React.FC = () => {
                   <img src={processImg01} alt="Step 2" />
                   <h2 className="step-number">02</h2>
                 </div>
-                <h2 className="step-name">Connect Channels</h2>
+                <h2 className="step-name">Conecta canales</h2>
               </div>
 
               <div className="xb-process-step xb-border">
@@ -215,7 +215,7 @@ const ProcessSection: React.FC = () => {
                   <img src={processImg01} alt="Step 3" />
                   <h2 className="step-number">03</h2>
                 </div>
-                <h2 className="step-name">Analyze & Optimize</h2>
+                <h2 className="step-name">Analiza y optimiza</h2>
               </div>
             </div>
           </div>
@@ -228,17 +228,17 @@ const ProcessSection: React.FC = () => {
             >
               <div className="xb-process-item mt-30">
                 <div className="xb-img">
-                  <img src={processImg02} alt="Process 1" />
+                  <img src={processImg02} alt="Proceso 1" />
                 </div>
               </div>
               <div className="xb-process-item mt-30">
                 <div className="xb-img">
-                  <img src={processImg03} alt="Process 2" />
+                  <img src={processImg03} alt="Proceso 2" />
                 </div>
               </div>
               <div className="xb-process-item mt-30">
                 <div className="xb-img">
-                  <img src={processImg04} alt="Process 3" />
+                  <img src={processImg04} alt="Proceso 3" />
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ pageTitle, pagesub }) => {
         <div className="breadcrumb__content">
           <ul className="breadcrumb__list clearfix list-unstyled">
             <li className="breadcrumb-item">
-               <Link to="/home">Home</Link>
+               <Link to="/">Inicio</Link>
             </li>
              {pagesub && <li className="breadcrumb-item">{pagesub}</li>}
           </ul>

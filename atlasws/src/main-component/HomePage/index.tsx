@@ -9,7 +9,6 @@ import IndustriesMarqueeSection from "../../components/IndustriesMarqueeSection/
 import IndustriesSection from "../../components/Industries/Industries";
 import ContactSection from "../../components/ContactSection/ContactSection";
 import TestimonialSection from "../../components/Testimonial/Testimonial";
-import BlogSection from "../../components/BlogSection/BlogSection";
 import Footer from "../../components/footer/Footer";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 
@@ -34,7 +33,6 @@ const HomePage: React.FC = () => {
             <IndustriesSection />
             <ContactSection />
             <TestimonialSection />
-            <BlogSection />
           </main>
           <Footer />
           <Scrollbar />

@@ -50,30 +50,30 @@ const IntegrationComparisonSection: React.FC = () => {
                                 <div className="sec-title sec-title--two process-title mb-10">
                                     <span className="sub-title d-block mb-30">
                                         <img src={subIcon} alt="icon" />
-                                        Easy integrations
+                                        Integraciones faciles
                                     </span>
-                                    <h2 className="title">Connect your favourite tools</h2>
+                                    <h2 className="title">Conecta tus herramientas</h2>
                                 </div>
 
-                                <ul className="integration-list list-unstyled">
-                                    <li>
-                                        <span>✔</span> Messaging Platforms Integration.
-                                    </li>
-                                    <li>
-                                        <span>✔</span> Web & E-commerce Integration.
-                                    </li>
-                                    <li>
-                                        <span>✔</span> Customer Support & CRM Integration.
-                                    </li>
-                                    <li>
-                                        <span>✔</span> Automation & API Tools Integration.
-                                    </li>
-                                </ul>
+                                    <ul className="integration-list list-unstyled">
+                                        <li>
+                                        <span>✔</span> Integracion con mensajeria.
+                                        </li>
+                                        <li>
+                                        <span>✔</span> Integracion web y e-commerce.
+                                        </li>
+                                        <li>
+                                        <span>✔</span> Integracion con soporte y CRM.
+                                        </li>
+                                        <li>
+                                        <span>✔</span> Integracion con automatizacion y APIs.
+                                        </li>
+                                    </ul>
 
                                 <div className="integration-btn mt-45">
                                     <div className="cta-btn mt-40 wow fadeInUp" data-wow-duration="600ms">
                                         <a className="thm-btn chatbot-btn" href="/contact">
-                                            Build your AI chatbot — it’s free
+                                            Crea tu chatbot de IA
                                             <span className="arrow-icon">
                                                 {/* Arrow animation (two layers for motion) */}
                                                 {[...Array(2)].map((_, i) => (

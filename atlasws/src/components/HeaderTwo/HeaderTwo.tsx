@@ -64,7 +64,7 @@ const HeaderTwo: React.FC = () => {
                 <ul>
                   <li className="menu-item-has-children active">
                     <Link to="/">
-                      <span>Home</span>
+                      <span>Inicio</span>
                     </Link>
                     <ul className="submenu">
                       <li>
@@ -87,14 +87,14 @@ const HeaderTwo: React.FC = () => {
 
                   <li>
                     <Link to="/about">
-                      <span>About Us</span>
+                      <span>Nosotros</span>
                     </Link>
                   </li>
 
                   {/* Pages */}
                   <li className="menu-item-has-children megamenu">
                     <Link to="#">
-                      <span>Pages</span>
+                      <span>Paginas</span>
                     </Link>
                     <MegaMenu1 />
                   </li>
@@ -102,33 +102,14 @@ const HeaderTwo: React.FC = () => {
                   {/* Services */}
                   <li className="menu-item-has-children megamenu">
                     <Link to="#">
-                      <span>Services</span>
+                      <span>Servicios</span>
                     </Link>
                     <MegaMenuServices />
                   </li>
 
-                  {/* Blog */}
-                  <li className="menu-item-has-children">
-                    <Link to="/blog">
-                      <span>Blog</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link to="/blog">
-                          <span>Blog</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/blog-details">
-                          <span>Blog Details</span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
                   <li>
                     <Link to="/contact">
-                      <span>Contact Us</span>
+                      <span>Contacto</span>
                     </Link>
                   </li>
                 </ul>

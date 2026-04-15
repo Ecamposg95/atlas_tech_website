@@ -13,19 +13,19 @@ interface FunFactProps {
 const funFactData: FunFactItem[] = [
   {
     title: "3210",
-    subTitle: "Happy Couples",
+    subTitle: "Clientes atendidos",
   },
   {
     title: "230",
-    subTitle: "Location",
+    subTitle: "Ciudades",
   },
   {
     title: "3325",
-    subTitle: "Wedding",
+    subTitle: "Implementaciones",
   },
   {
     title: "526",
-    subTitle: "Decoration",
+    subTitle: "Integraciones",
   },
 ];
 

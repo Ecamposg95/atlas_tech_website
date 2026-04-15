@@ -36,37 +36,37 @@ const ArrowIcon = () => (
 // PROJECT DATA
 const projectData = [
   {
-    title: "Chatbot and NLP projects..",
+    title: "Proyectos de chatbots y NLP..",
     content:
-      "We build smart chatbots and NLP tools that understand and respond naturally. From customer support to document analysis, our AI solutions automate communication, save time, and improve user experience.",
+      "Construimos chatbots y herramientas de NLP que entienden y responden de forma natural. Desde atencion al cliente hasta analisis de documentos, automatizamos comunicacion, ahorramos tiempo y mejoramos la experiencia.",
     images: [img02, img02, img02, img02],
     reverse: false,
   },
   {
-    title: "General AI projects..",
+    title: "Proyectos de IA aplicada..",
     content:
-      "We deliver AI solutions that streamline operations, boost efficiency, and enable smarter decisions. From automation to data insights, our projects are built to solve real business challenges with intelligent technology.",
+      "Entregamos soluciones de IA que simplifican operaciones, elevan eficiencia y habilitan decisiones mas inteligentes. De automatizacion a analitica, construimos tecnologia para resolver retos reales.",
     images: [img03, img03, img03, img03],
     reverse: true,
   },
   {
-    title: "Computer vision projects..",
+    title: "Proyectos de vision computacional..",
     content:
-      "We develop AI systems that see and understand visual data—detecting objects, recognizing patterns, and automating inspections. Our computer vision solutions help businesses improve accuracy, decision-making.",
+      "Desarrollamos sistemas que entienden datos visuales: deteccion de objetos, reconocimiento de patrones y automatizacion de inspecciones. Esto mejora precision y toma de decisiones.",
     images: [img04, img04, img04, img04],
     reverse: false,
   },
   {
-    title: "E-commerce and marketing..",
+    title: "E-commerce y crecimiento..",
     content:
-      "We create AI solutions that boost sales and customer engagement—like smart product recommendations, dynamic pricing, and behavior-based targeting. Our tools help brands personalize experiences and grow faster.",
+      "Creamos soluciones que impulsan conversion y engagement: recomendaciones, precios dinamicos y segmentacion basada en comportamiento. Ayudamos a personalizar experiencias y crecer mas rapido.",
     images: [img05, img05, img05, img05],
     reverse: true,
   },
   {
-    title: "Data science analytics..",
+    title: "Analitica y ciencia de datos..",
     content:
-      "We turn complex data into clear, actionable insights. From predictive models to real-time dashboards, our AI-powered analytics help businesses make smarter, faster decisions with confidence.",
+      "Convertimos datos complejos en insights accionables. De modelos predictivos a tableros en tiempo real, ayudamos a decidir mas rapido y con confianza.",
     images: [img06, img06, img06, img06],
     reverse: false,
   },
@@ -91,7 +91,7 @@ const ProjectSection: React.FC = () => {
 
                       <div className="xb-item--btn mt-40">
                         <Link className="thm-btn agency-btn" to="/project-details">
-                          <span className="text">read more</span>
+                          <span className="text">leer mas</span>
                           <span className="arrow">
                             <span className="arrow-icon"><ArrowIcon /></span>
                           </span>
@@ -131,7 +131,7 @@ const ProjectSection: React.FC = () => {
 
                       <div className="xb-item--btn mt-40">
                         <Link className="thm-btn agency-btn" to="/project-details">
-                          <span className="text">read more</span>
+                          <span className="text">leer mas</span>
                           <span className="arrow">
                             <span className="arrow-icon"><ArrowIcon /></span>
                           </span>

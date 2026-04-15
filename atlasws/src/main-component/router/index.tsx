@@ -14,8 +14,6 @@ import ProjectPage from "../ProjectPage/ProjectPage";
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import TeamPage from "../TeamPage/TeamPage";
 import ScrollToTop from "./ScrollToTop";
-import BlogPage from "../BlogPage/BlogPage";
-import BlogDetails from "../BlogDetails/BlogDetails";
 import ContactPage from "../ContactPage/ContactPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
@@ -40,8 +38,6 @@ const AllRoute: React.FC = () => {
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/project-details" element={<ProjectDetails />} />
           <Route path="/team" element={<TeamPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog-details" element={<BlogDetails />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* ✅ Error Page */}
           <Route path="/404" element={<ErrorPage />} />

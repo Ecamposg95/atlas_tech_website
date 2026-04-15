@@ -32,18 +32,18 @@ const FeatureSection: React.FC = () => {
         <div className="container">
           <div className="sec-title sec-title--two custom-sec-title feature-sec-title text-center mb-45">
             <span className="sub-title">
-              <img src={subLeftIcon} alt="icon" /> Atlas Tech AI Chatbot Features
+              <img src={subLeftIcon} alt="icon" /> Funcionalidades de chatbot
             </span>
             <h2 className="title">
               <span>
                 <img src={aiGif} alt="AI Animation" />
               </span>
-              Build the perfect customer-facing AI agent
+              Construye un agente de IA orientado a clientes
             </h2>
 
             <div className="xb-heading-btn d-inline">
               <Link className="thm-btn chatbot-btn" to="/contact">
-                build your ai chatbot - it’s free
+                crea tu chatbot de IA
                 <span className="arrow-icon">
                   {[...Array(2)].map((_, i) => (
                     <svg

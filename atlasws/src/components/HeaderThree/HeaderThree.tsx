@@ -91,7 +91,7 @@ const HeaderThree: React.FC = () => {
                 <ul>
                   <li className="menu-item-has-children active">
                     <Link to="/">
-                      <span>Home</span>
+                      <span>Inicio</span>
                     </Link>
                     <ul className="submenu">
                       <li>
@@ -113,27 +113,27 @@ const HeaderThree: React.FC = () => {
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#features">
-                      <span>Features</span>
+                      <span>Funcionalidades</span>
                     </a>
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#process">
-                      <span>Process</span>
+                      <span>Proceso</span>
                     </a>
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#integration">
-                      <span>Integration</span>
+                      <span>Integracion</span>
                     </a>
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#pricing">
-                      <span>Pricing</span>
+                      <span>Precios</span>
                     </a>
                   </li>
                   <li>
                     <Link to="/contact">
-                      <span>Contact Us</span>
+                      <span>Contacto</span>
                     </Link>
                   </li>
                 </ul>
@@ -145,7 +145,7 @@ const HeaderThree: React.FC = () => {
               <div className="header-btn">
                 <div className="header-btn">
                   <Link className="thm-btn chatbot-btn" to="/contact">
-                    Contact Us
+                    Contacto
                     <span className="rotate-icon">
                       <svg
                         width="19"
@@ -273,27 +273,27 @@ const HeaderThree: React.FC = () => {
                   <ul className="xb-menu-primary clearfix">
                     <li>
                       <a className="scrollspy-btn" href="#features">
-                        <span>Features</span>
+                        <span>Funcionalidades</span>
                       </a>
                     </li>
                     <li>
                       <a className="scrollspy-btn" href="#process">
-                        <span>Process</span>
+                        <span>Proceso</span>
                       </a>
                     </li>
                     <li>
                       <a className="scrollspy-btn" href="#integration">
-                        <span>Integration</span>
+                        <span>Integracion</span>
                       </a>
                     </li>
                     <li>
                       <a className="scrollspy-btn" href="#pricing">
-                        <span>Pricing</span>
+                        <span>Precios</span>
                       </a>
                     </li>
                     <li>
                       <Link to="/contact">
-                        <span>Contact Us</span>
+                        <span>Contacto</span>
                       </Link>
                     </li>
                   </ul>
