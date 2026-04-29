@@ -69,7 +69,7 @@ const ServiceSection: React.FC = () => {
 
   useEffect(() => {
     const bgEl = document.querySelector<HTMLElement>(".xb-service-wrap");
-    if (bgEl) bgEl.style.backgroundImage = `linear-gradient(rgba(0, 26, 26, 0.8), rgba(0, 77, 61, 0.8)), url(${aboutBg})`;
+    if (bgEl) bgEl.style.backgroundImage = `linear-gradient(rgba(7, 7, 16, 0.8), rgba(46, 16, 101, 0.8)), url(${aboutBg})`;
   }, []);
 
   return (
@@ -337,3 +337,4 @@ const ServiceSection: React.FC = () => {
 };
 
 export default ServiceSection;
+

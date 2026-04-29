@@ -1,108 +1,60 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import contactBg from "../../images/bg/contact-bg.png";
-import shape1 from "../../images/shape/contact-shape01.png";
-import shape2 from "../../images/shape/contact-shape02.png";
 import ContactForm from "../ContactFrom/ContactForm";
 
 const ContactSection: React.FC = () => {
-  const [projectCount, setProjectCount] = useState(0);
-  const [clientSatisfaction, setClientSatisfaction] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // ✅ Animate numbers when section becomes visible
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            let project = 0;
-            let client = 0;
-
-            const projectInterval = setInterval(() => {
-              project += 1;
-              if (project >= 5) clearInterval(projectInterval);
-              setProjectCount(project);
-            }, 200);
-
-            const clientInterval = setInterval(() => {
-              client += 5;
-              if (client >= 95) clearInterval(clientInterval);
-              setClientSatisfaction(client);
-            }, 50);
-
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      className="contact-section pt-150 pb-140 bg_img"
-      ref={sectionRef}
-      style={{ backgroundImage: `linear-gradient(135deg, rgba(0, 50, 40, 0.6) 0%, rgba(0, 80, 60, 0.7) 100%), url(${contactBg})` }}
+      className="contact-section pt-120 pb-120 bg_img"
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(15, 10, 30, 0.85) 0%, rgba(40, 20, 80, 0.9) 100%), url(${contactBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <div className="container">
-        <div className="row mt-none-50 justify-content-center">
-          {/* Left side - Text and Stats */}
-          <div className="col-lg-6 mt-50">
-            <div className="xb-content-wrap">
-              <div className="sec-title contact-sec-title">
-                <span className="sub-title mb-15">Nuestros Logros</span>
-                <h2 className="title horizontal-shape">
-                  Somos una agencia de IA confiable
-                </h2>
-              </div>
-
-              <div className="xb-contact-conent">
-                <div className="xb-contact-inner ul_li_between">
-                  <div className="xb-contact-item">
-                    <h3 className="xb-item--number">
-                      <span className="xbo">{projectCount}</span>
-                      <span className="suffix">K+</span>
-                    </h3>
-                    <p className="xb-item--content">
-                      Proyectos Entregados con Éxito
-                    </p>
-                  </div>
-
-                  <div className="xb-contact-item">
-                    <h3 className="xb-item--number">
-                      <span className="xbo">{clientSatisfaction}</span>
-                      <span className="suffix">%</span>
-                    </h3>
-                    <p className="xb-item--content">
-                      Tasa de Satisfacción de Clientes
-                    </p>
-                  </div>
-                </div>
-
-                {/* Shapes */}
-                <div className="shape shape--1">
-                  <img src={shape1} alt="shape" />
-                </div>
-                <div className="shape shape--2">
-                  <img src={shape2} alt="shape" />
-                </div>
-              </div>
-            </div>
+        <div className="row justify-content-center">
+          {/* Heading */}
+          <div className="col-lg-8 text-center mb-50">
+            <span
+              className="sub-title d-block mb-15"
+              style={{ color: "#a855f7", letterSpacing: "0.2em", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" }}
+            >
+              Contáctanos
+            </span>
+            <h2
+              className="title"
+              style={{
+                backgroundImage: "linear-gradient(110deg, #ffffff 0%, #9333ea 55%, #a855f7 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.03em",
+                lineHeight: 1.1,
+              }}
+            >
+              ¿Listo para transformar<br />tu negocio?
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.55)", marginTop: "16px", fontSize: "1rem", lineHeight: 1.7 }}>
+              Cuéntanos tu proyecto. Un solo mensaje puede ser el punto de partida de algo extraordinario.
+            </p>
           </div>
 
-          {/* Right side - Form */}
-          <div className="col-lg-6 mt-50">
-            <div className="xb-contact-form xb-border">
-              <div className="form-heading text-center mb-30">
-                <h3 className="title">¿Listo para colaborar con nosotros?</h3>
-                <p className="sub-title">
-                  Quién sabe a dónde podría llevarte un solo mensaje.
-                </p>
-              </div>
+          {/* Form */}
+          <div className="col-lg-8">
+            <div
+              className="xb-contact-form"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "16px",
+                padding: "40px",
+              }}
+            >
               <ContactForm />
             </div>
           </div>

@@ -55,19 +55,19 @@
 </filter>
 <clipPath id="bgblur_3_743_3970_clip_path" transform="translate(-3.30469 -6.38477)"><path d="M30.2614 47.9124C25.8443 47.918 21.5118 46.7007 17.7439 44.3955C13.9761 42.0902 10.9199 38.7868 8.91404 34.8514C6.90814 30.916 6.03082 26.5021 6.37925 22.0988C6.72769 17.6954 8.28828 13.4744 10.8881 9.90346C10.9953 9.75627 11.1331 9.63404 11.292 9.54517C11.4509 9.4563 11.6272 9.4029 11.8087 9.38864C11.9902 9.37438 12.1727 9.3996 12.3435 9.46257C12.5144 9.52554 12.6695 9.62476 12.7984 9.75342L44.4638 41.4189C44.5925 41.5477 44.6917 41.7029 44.7547 41.8737C44.8177 42.0446 44.8429 42.227 44.8286 42.4085C44.8144 42.5901 44.761 42.7663 44.6721 42.9252C44.5832 43.0842 44.461 43.2219 44.3138 43.3291C40.2359 46.3117 35.3136 47.9172 30.2614 47.9124Z"/>
 </clipPath><linearGradient id="paint0_linear_743_3970" x1="29" y1="6.30469" x2="51.279" y2="11.9617" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00FF97"/>
+<stop stop-color="#A855F7"/>
 <stop offset="0.703125" stop-color="#2C32FE"/>
 </linearGradient>
 <linearGradient id="paint1_linear_743_3970" x1="3.7832" y1="32.7832" x2="33.4885" y2="40.326" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00FF97"/>
+<stop stop-color="#A855F7"/>
 <stop offset="0.703125" stop-color="#2C32FE"/>
 </linearGradient>
 <linearGradient id="paint2_linear_743_3970" x1="21.752" y1="18.9121" x2="38.8297" y2="23.2477" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00FF97"/>
+<stop stop-color="#A855F7"/>
 <stop offset="0.703125" stop-color="#2C32FE"/>
 </linearGradient>
 <linearGradient id="paint3_linear_743_3970" x1="29" y1="12.6094" x2="43.8527" y2="16.3807" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00FF97"/>
+<stop stop-color="#A855F7"/>
 <stop offset="0.703125" stop-color="#2C32FE"/>
 </linearGradient>
 <linearGradient id="paint4_linear_743_3970" x1="29" y1="6.30469" x2="51.279" y2="11.9617" gradientUnits="userSpaceOnUse">
@@ -99,3 +99,4 @@
 </clipPath>
 </defs>
 </svg>
+

@@ -1,86 +1,17 @@
 import React from "react";
 
 // ==== Import Images ====
-import img05 from "../../../images/about/img05.jpg";
-import img06 from "../../../images/about/img06.jpg";
-import img07 from "../../../images/about/img07.jpg";
-import img08 from "../../../images/about/img08.jpg";
-
-import videoPoster from "../../../images/about/video-img.png";
-
 import featureIcon1 from "../../../images/icon/feature-icon01.svg";
 import featureIcon2 from "../../../images/icon/feature-icon02.svg";
 import featureIcon3 from "../../../images/icon/feature-icon03.svg";
 
 import aboutBg from "../../../images/bg/about-bg02.png";
-import { Link } from "react-router-dom";
 
 const AboutSection: React.FC = () => {
   return (
     <section className="about pos-rel pb-140">
 
       <div className="container">
-        {/* ===== Top Scrolling Images ===== */}
-        <div className="about-top-image ul_li_between align-items-start">
-
-          {/* Column 1 */}
-          <div className="img-hove-effect">
-            <div className="xb-img">
-              {[img05, img05, img05, img05].map((img, i) => (
-                <Link key={i} to="/about">
-                  <img src={img} alt="about" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 2 */}
-          <div className="img-hove-effect">
-            <div className="xb-img">
-              {[img06, img06, img06, img06].map((img, i) => (
-                <Link key={i} to="/about">
-                  <img src={img} alt="about" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Video */}
-          <div className="xb-video">
-            <video
-              loop
-              muted
-              playsInline
-              autoPlay
-              poster={videoPoster}
-            >
-              <source src="https://www.pexels.com/download/video/18069701/" />
-            </video>
-          </div>
-
-          {/* Column 3 */}
-          <div className="img-hove-effect">
-            <div className="xb-img">
-              {[img07, img07, img07, img07].map((img, i) => (
-                <Link key={i} to="/about">
-                  <img src={img} alt="about" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 4 */}
-          <div className="img-hove-effect">
-            <div className="xb-img">
-              {[img08, img08, img08, img08].map((img, i) => (
-                <Link key={i} to="/about">
-                  <img src={img} alt="about" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* ===== Title Section ===== */}
         <div className="sec-title sec-title-center about-sec-title about-sec-title-two mt-45">
           <span className="sub-title mb-10">¿Quiénes Somos?</span>

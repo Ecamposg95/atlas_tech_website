@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Adjust these imports based on your image folder
 import m05 from "../../images/icon/m_05.svg";
-import serviceImg from "../../images/service/img21.png";
+
 
 const MegaMenuServices: React.FC = () => {
   return (
@@ -13,8 +13,8 @@ const MegaMenuServices: React.FC = () => {
           <div className="container-fluid p-0">
             <div className="mega_menu_wrapper_inner megamenu_widget_wrapper">
               <div className="row justify-content-lg-between">
-                {/* ---------- Left Main Column ---------- */}
-                <div className="col-xl-9 col-lg-8">
+                {/* ---------- Main Column ---------- */}
+                <div className="col-xl-12 col-lg-12">
                   <div className="mega_menu_box">
                     <div className="megamenu_widget_inner">
                       <div className="row">
@@ -267,160 +267,7 @@ const MegaMenuServices: React.FC = () => {
                   </div>
                 </div>
 
-                {/* ---------- Right Image Column ---------- */}
-                <div className="col-xl-3 col-lg-4">
-                  <div className="megamenu_case">
-                    <div className="xb-item--inner">
-                      <div className="xb-item--img">
-                        <img src={serviceImg} alt="AI Service" />
-                      </div>
-                      <div className="xb-item--holder">
-                        <h3 className="xb-item--title">Proyectos generales de IA.</h3>
-                        <p className="xb-item--text">
-                          Ofrecemos soluciones de IA que optimizan las operaciones y
-                          aumentan la eficiencia.
-                        </p>
-                        <Link className="thm-btn agency-btn megamenu-btn" to="/project">
-                          <span className="text">ver más proyectos</span>
-                          <span className="arrow">
-                            <span className="arrow-icon">
-                              <svg
-                                width="25"
-                                height="25"
-                                viewBox="0 0 25 25"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="5.22852"
-                                  y="17.3296"
-                                  width="17.888"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 5.22852 17.3296)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="7.75781"
-                                  y="6.25635"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 7.75781 6.25635)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="10.959"
-                                  y="6.52002"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 10.959 6.52002)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="14.1562"
-                                  y="6.78516"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 14.1562 6.78516)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="17.0957"
-                                  y="10.25"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 17.0957 10.25)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="16.832"
-                                  y="13.4517"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 16.832 13.4517)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="16.5684"
-                                  y="16.6538"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 16.5684 16.6538)"
-                                  fill="white"
-                                />
-                              </svg>
-
-                              <svg
-                                width="25"
-                                height="25"
-                                viewBox="0 0 25 25"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="5.22852"
-                                  y="17.3296"
-                                  width="17.888"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 5.22852 17.3296)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="7.75781"
-                                  y="6.25635"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 7.75781 6.25635)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="10.959"
-                                  y="6.52002"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 10.959 6.52002)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="14.1562"
-                                  y="6.78516"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 14.1562 6.78516)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="17.0957"
-                                  y="10.25"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 17.0957 10.25)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="16.832"
-                                  y="13.4517"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 16.832 13.4517)"
-                                  fill="white"
-                                />
-                                <rect
-                                  x="16.5684"
-                                  y="16.6538"
-                                  width="2.27149"
-                                  height="2.27149"
-                                  transform="rotate(-40.2798 16.5684 16.6538)"
-                                  fill="white"
-                                />
-                              </svg>
-                            </span>
-                          </span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* ---------- END Right Column ---------- */}
+                {/* ---------- END Main Column ---------- */}
               </div>
             </div>
           </div>

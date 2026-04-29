@@ -8,11 +8,11 @@ import AboutPage from "../AboutPage/AboutPage";
 
 import ServicePage from "../ServicePage/ServicePage";
 import SeviceSinglePage from "../SeviceSinglePage/SeviceSinglePage";
-import CareerSection from "../CareerSection/CareerSection";
-import CareerDetails from "../CareerDetails/CareerDetails";
+
+
 import ProjectPage from "../ProjectPage/ProjectPage";
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
-import TeamPage from "../TeamPage/TeamPage";
+
 import ScrollToTop from "./ScrollToTop";
 import ContactPage from "../ContactPage/ContactPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
@@ -33,11 +33,11 @@ const AllRoute: React.FC = () => {
 
           <Route path="/service" element={<ServicePage />} />
           <Route path="/service-details" element={<SeviceSinglePage />} />
-          <Route path="/career" element={<CareerSection />} />
-          <Route path="/career-details" element={<CareerDetails />} />
+
+
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/project-details" element={<ProjectDetails />} />
-          <Route path="/team" element={<TeamPage />} />
+
           <Route path="/contact" element={<ContactPage />} />
           {/* ✅ Error Page */}
           <Route path="/404" element={<ErrorPage />} />

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas — Sosteniendo el Mundo Digital</title>
+
+  <!-- Tailwind (CDN play) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- React + Babel + Three.js -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    html, body { margin: 0; padding: 0; background: #020617; font-family: 'Plus Jakarta Sans', sans-serif; color: #fff; overflow-x: hidden; }
+    .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+    /* Glassmorphism */
+    .atlas-glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Textura de grano premium */
+    .atlas-noise {
+      position: absolute; inset: 0; z-index: 12; pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+
+    /* Animaciones de entrada */
+    .atlas-reveal { opacity: 0; transform: translateY(16px); animation: atlasReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .atlas-delay-1 { animation-delay: 0.18s; }
+    .atlas-delay-2 { animation-delay: 0.36s; }
+    @keyframes atlasReveal { to { opacity: 1; transform: translateY(0); } }
+
+    /* Stage = pantalla completa */
+    .atlas-stage { position: relative; width: 100vw; min-height: 100vh; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" data-presets="env,react">
+    const { useEffect, useRef } = React;
+
+    // ============================================================
+    // MOTOR 3D — Network Globe sólido con puntos de luz
+    // (Variante: HORIZONTE — planeta en la base de la pantalla)
+    // ============================================================
+    function useNetworkGlobe(canvasRef, opts) {
+      const {
+        accentA = '#6366f1',
+        accentB = '#a855f7',
+        intensity = 1.0,
+        starDensity = 2000,
+        pointDensity = 1.0,
+      } = opts;
+
+      useEffect(() => {
+        const container = canvasRef.current;
+        if (!container || !window.THREE) return;
+        const THREE = window.THREE;
+
+        let raf = 0;
+        let running = true;
+        let mouseX = 0, mouseY = 0;
+
+        const W = () => container.clientWidth;
+        const H = () => container.clientHeight;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, W() / H(), 0.1, 2000);
+        camera.position.z = 28;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(W(), H());
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Configuración de la variante Horizonte
+        const cfg = { radius: 11, posY: -10.5, posX: 0, posZ: 0, tilt: 0.35 };
+
+        const globeGroup = new THREE.Group();
+        globeGroup.position.set(cfg.posX, cfg.posY, cfg.posZ);
+        globeGroup.rotation.z = cfg.tilt;
+
+        // ---- Núcleo sólido ----
+        const coreGeo = new THREE.SphereGeometry(cfg.radius * 0.985, 64, 64);
+        const coreMat = new THREE.MeshPhongMaterial({
+          color: 0x05060f,
+          emissive: new THREE.Color(accentA),
+          emissiveIntensity: 0.06 * intensity,
+          shininess: 30,
+          transparent: true,
+          opacity: 0.92,
+        });
+        const core = new THREE.Mesh(coreGeo, coreMat);
+        globeGroup.add(core);
+
+        // ---- Atmósfera (shader Fresnel) ----
+        const atmoGeo = new THREE.SphereGeometry(cfg.radius * 1.08, 64, 64);
+        const atmoMat = new THREE.ShaderMaterial({
+          uniforms: {
+            uColorA: { value: new THREE.Color(accentA) },
+            uColorB: { value: new THREE.Color(accentB) },
+            uIntensity: { value: intensity },
+          },
+          vertexShader: `
+            varying vec3 vNormal;
+            varying vec3 vPos;
+            void main() {
+              vNormal = normalize(normalMatrix * normal);
+              vec4 mv = modelViewMatrix * vec4(position, 1.0);
+              vPos = mv.xyz;
+              gl_Position = projectionMatrix * mv;
+            }
+          `,
+          fragmentShader: `
+            varying vec3 vNormal;
+            varying vec3 vPos;
+            uniform vec3 uColorA;
+            uniform vec3 uColorB;
+            uniform float uIntensity;
+            void main() {
+              vec3 viewDir = normalize(-vPos);
+              float fres = pow(1.0 - max(dot(vNormal, viewDir), 0.0), 2.5);
+              vec3 col = mix(uColorA, uColorB, fres);
+              gl_FragColor = vec4(col, fres * 0.55 * uIntensity);
+            }
+          `,
+          transparent: true,
+          blending: THREE.AdditiveBlending,
+          side: THREE.BackSide,
+          depthWrite: false,
+        });
+        const atmo = new THREE.Mesh(atmoGeo, atmoMat);
+        globeGroup.add(atmo);
+
+        // ---- Puntos de red (distribución Fibonacci) ----
+        const basePts = Math.floor(1400 * pointDensity);
+        const pts = [];
+        const pointColors = [];
+        const colA = new THREE.Color(accentA);
+        const colB = new THREE.Color(accentB);
+        const phi = Math.PI * (3 - Math.sqrt(5));
+        for (let i = 0; i < basePts; i++) {
+          const y = 1 - (i / (basePts - 1)) * 2;
+          const r = Math.sqrt(1 - y * y);
+          const theta = phi * i;
+          const x = Math.cos(theta) * r;
+          const z = Math.sin(theta) * r;
+          pts.push(x * cfg.radius, y * cfg.radius, z * cfg.radius);
+          const t = (y + 1) / 2;
+          const c = colA.clone().lerp(colB, t);
+          pointColors.push(c.r, c.g, c.b);
+        }
+        const pointsGeo = new THREE.BufferGeometry();
+        pointsGeo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+        pointsGeo.setAttribute('color', new THREE.Float32BufferAttribute(pointColors, 3));
+
+        // Sprite circular para los puntos
+        const dotCanvas = document.createElement('canvas');
+        dotCanvas.width = 64; dotCanvas.height = 64;
+        const dctx = dotCanvas.getContext('2d');
+        const grd = dctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grd.addColorStop(0, 'rgba(255,255,255,1)');
+        grd.addColorStop(0.4, 'rgba(255,255,255,0.6)');
+        grd.addColorStop(1, 'rgba(255,255,255,0)');
+        dctx.fillStyle = grd;
+        dctx.fillRect(0, 0, 64, 64);
+        const dotTex = new THREE.CanvasTexture(dotCanvas);
+
+        const pointsMat = new THREE.PointsMaterial({
+          size: 0.18,
+          map: dotTex,
+          vertexColors: true,
+          transparent: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+          opacity: 0.9 * intensity,
+        });
+        const networkPoints = new THREE.Points(pointsGeo, pointsMat);
+        globeGroup.add(networkPoints);
+
+        // ---- Hubs (puntos destacados) ----
+        const hubCount = Math.max(8, Math.floor(18 * pointDensity));
+        const hubPos = [];
+        const hubColors = [];
+        for (let i = 0; i < hubCount; i++) {
+          const idx = Math.floor((i / hubCount) * basePts);
+          hubPos.push(pts[idx * 3], pts[idx * 3 + 1], pts[idx * 3 + 2]);
+          const c = colA.clone().lerp(colB, Math.random());
+          hubColors.push(c.r, c.g, c.b);
+        }
+        const hubGeo = new THREE.BufferGeometry();
+        hubGeo.setAttribute('position', new THREE.Float32BufferAttribute(hubPos, 3));
+        hubGeo.setAttribute('color', new THREE.Float32BufferAttribute(hubColors, 3));
+        const hubMat = new THREE.PointsMaterial({
+          size: 0.55,
+          map: dotTex,
+          vertexColors: true,
+          transparent: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+          opacity: intensity,
+        });
+        const hubs = new THREE.Points(hubGeo, hubMat);
+        globeGroup.add(hubs);
+
+        // ---- Arcos entre hubs ----
+        const arcs = new THREE.Group();
+        const arcMat = new THREE.LineBasicMaterial({
+          color: new THREE.Color(accentA).lerp(colB, 0.5),
+          transparent: true,
+          opacity: 0.35 * intensity,
+          blending: THREE.AdditiveBlending,
+        });
+        const arcCount = Math.min(14, Math.floor(hubCount * 0.7));
+        for (let i = 0; i < arcCount; i++) {
+          const a = i % hubCount;
+          const b = (i * 3 + 2) % hubCount;
+          if (a === b) continue;
+          const pa = new THREE.Vector3(hubPos[a*3], hubPos[a*3+1], hubPos[a*3+2]);
+          const pb = new THREE.Vector3(hubPos[b*3], hubPos[b*3+1], hubPos[b*3+2]);
+          const mid = pa.clone().add(pb).multiplyScalar(0.5);
+          mid.normalize().multiplyScalar(cfg.radius * 1.18);
+          const curve = new THREE.QuadraticBezierCurve3(pa, mid, pb);
+          const arcGeo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(40));
+          arcs.add(new THREE.Line(arcGeo, arcMat));
+        }
+        globeGroup.add(arcs);
+
+        scene.add(globeGroup);
+
+        // ---- Luces ----
+        scene.add(new THREE.AmbientLight(0x222244, 0.4));
+        const l1 = new THREE.PointLight(new THREE.Color(accentA), 2.2 * intensity, 80);
+        l1.position.set(15, 10, 18);
+        scene.add(l1);
+        const l2 = new THREE.PointLight(new THREE.Color(accentB), 1.6 * intensity, 80);
+        l2.position.set(-15, -8, 8);
+        scene.add(l2);
+        const l3 = new THREE.DirectionalLight(0xffffff, 0.25);
+        l3.position.set(0, 1, 1);
+        scene.add(l3);
+
+        // ---- Estrellas ----
+        const starGeo = new THREE.BufferGeometry();
+        const starVerts = [];
+        const starColors = [];
+        for (let i = 0; i < starDensity; i++) {
+          const x = (Math.random() - 0.5) * 1600;
+          const y = (Math.random() - 0.5) * 1600;
+          const z = (Math.random() - 0.5) * 1600;
+          starVerts.push(x, y, z);
+          const t = Math.random();
+          const sc = (t > 0.92) ? colB : (t > 0.8 ? colA : new THREE.Color(0xffffff));
+          starColors.push(sc.r, sc.g, sc.b);
+        }
+        starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starVerts, 3));
+        starGeo.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
+        const starMat = new THREE.PointsMaterial({
+          size: 0.7,
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.7,
+          depthWrite: false,
+          sizeAttenuation: true,
+        });
+        const stars = new THREE.Points(starGeo, starMat);
+        scene.add(stars);
+
+        // ---- Animación ----
+        let groupRotY = 0, groupRotX = 0;
+        const baseRotY = globeGroup.rotation.y;
+        const baseRotX = globeGroup.rotation.x;
+        const basePosX = globeGroup.position.x;
+        const basePosY = globeGroup.position.y;
+
+        const tick = () => {
+          if (!running) return;
+          groupRotY += 0.0015;
+          groupRotX += 0.0003;
+          globeGroup.rotation.y = baseRotY + groupRotY + mouseX * 0.25;
+          globeGroup.rotation.x = baseRotX + groupRotX + mouseY * 0.12;
+          globeGroup.position.x += (basePosX + mouseX * 0.6 - globeGroup.position.x) * 0.04;
+          globeGroup.position.y += (basePosY + (-mouseY) * 0.3 - globeGroup.position.y) * 0.04;
+
+          stars.rotation.y += 0.00025;
+          stars.rotation.x += 0.0001;
+
+          const t = performance.now() * 0.001;
+          hubs.material.size = 0.45 + Math.sin(t * 1.6) * 0.12;
+          hubs.material.opacity = (0.85 + Math.sin(t * 2.0) * 0.15) * intensity;
+          arcs.children.forEach((line, i) => {
+            line.material.opacity = (0.25 + Math.sin(t * 1.2 + i * 0.6) * 0.18) * intensity;
+          });
+
+          renderer.render(scene, camera);
+          raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+
+        // ---- Eventos ----
+        const onMove = (e) => {
+          const rect = container.getBoundingClientRect();
+          mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+          mouseY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+        };
+        window.addEventListener('mousemove', onMove);
+
+        const onResize = () => {
+          camera.aspect = W() / H();
+          camera.updateProjectionMatrix();
+          renderer.setSize(W(), H());
+        };
+        const ro = new ResizeObserver(onResize);
+        ro.observe(container);
+
+        // Pausar fuera de pestaña (optimización)
+        const onVis = () => {
+          if (document.hidden) {
+            running = false;
+            cancelAnimationFrame(raf);
+          } else if (!running) {
+            running = true;
+            raf = requestAnimationFrame(tick);
+          }
+        };
+        document.addEventListener('visibilitychange', onVis);
+
+        return () => {
+          running = false;
+          cancelAnimationFrame(raf);
+          window.removeEventListener('mousemove', onMove);
+          document.removeEventListener('visibilitychange', onVis);
+          ro.disconnect();
+          renderer.dispose();
+          pointsGeo.dispose(); hubGeo.dispose();
+          coreGeo.dispose(); atmoGeo.dispose(); starGeo.dispose();
+          pointsMat.dispose(); hubMat.dispose();
+          coreMat.dispose(); atmoMat.dispose(); starMat.dispose();
+          arcs.children.forEach(l => { l.geometry.dispose(); });
+          arcMat.dispose();
+          dotTex.dispose();
+          if (renderer.domElement.parentNode === container) {
+            container.removeChild(renderer.domElement);
+          }
+        };
+      }, [accentA, accentB, intensity, starDensity, pointDensity]);
+    }
+
+    // ============================================================
+    // COMPONENTES UI
+    // ============================================================
+    function GlassNav({ accentA }) {
+      return (
+        <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-30 w-[calc(100%-2.5rem)] max-w-4xl">
+          <div className="atlas-glass rounded-2xl py-3 px-6 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <div
+                className="w-6 h-6 rounded-md rotate-45 flex items-center justify-center"
+                style={{ background: `linear-gradient(135deg, ${accentA}, #a855f7)` }}
+              >
+                <span className="text-[9px] -rotate-45 font-black text-white">A</span>
+              </div>
+              <span className="font-extrabold tracking-tight text-base text-white">
+                ATLAS<span style={{ color: accentA }}>.</span>
+              </span>
+            </div>
+            <div className="hidden md:flex items-center gap-7 text-[10px] font-bold uppercase tracking-[0.22em] text-white/45">
+              <a href="#" className="hover:text-white transition-colors">Tecnología</a>
+              <a href="#" className="hover:text-white transition-colors">Ecosistema</a>
+              <a href="#" className="hover:text-white transition-colors">Global</a>
+            </div>
+            <a href="#" className="bg-white text-black px-4 py-1.5 rounded-md text-[10px] font-bold hover:bg-white/90 transition-all uppercase tracking-[0.15em]">
+              Acceso Beta
+            </a>
+          </div>
+        </nav>
+      );
+    }
+
+    function StatusBadge({ accentA }) {
+      return (
+        <div className="inline-flex items-center gap-2 atlas-glass px-3 py-1.5 rounded-full">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping" style={{ background: accentA }} />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ background: accentA }} />
+          </span>
+          <span className="text-[9px] uppercase tracking-[0.22em] font-bold text-white/65">
+            Atlas Tech · Global Network
+          </span>
+        </div>
+      );
+    }
+
+    function CTAButtons({ accentA, accentB }) {
+      return (
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <button
+            className="px-7 py-3 rounded-lg font-bold text-[11px] uppercase tracking-[0.2em] text-white transition-all hover:-translate-y-0.5"
+            style={{
+              background: `linear-gradient(135deg, ${accentA} 0%, ${accentB} 100%)`,
+              boxShadow: `0 0 30px ${accentA}55, 0 8px 24px ${accentA}33`,
+            }}
+          >
+            Empezar Ahora
+          </button>
+          <button className="atlas-glass px-7 py-3 rounded-lg font-bold text-[11px] hover:bg-white/[0.06] transition-all uppercase tracking-[0.2em] text-white/85">
+            Documentación
+          </button>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // HERO — VARIANTE HORIZONTE
+    // ============================================================
+    function HeroHorizonte() {
+      const accentA = '#6366f1';
+      const accentB = '#a855f7';
+      const intensity = 1.0;
+      const starDensity = 2000;
+
+      const canvasRef = useRef(null);
+      useNetworkGlobe(canvasRef, { accentA, accentB, intensity, starDensity });
+
+      return (
+        <div className="atlas-stage" style={{ background: '#020617' }}>
+          {/* Mesh gradient base */}
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(ellipse at 50% 30%, #0f172a 0%, #020617 70%)'
+          }} />
+
+          {/* Canvas 3D */}
+          <div ref={canvasRef} className="absolute inset-0 z-0" />
+
+          {/* Grano */}
+          <div className="atlas-noise" />
+
+          {/* Horizon glow */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+            style={{
+              bottom: '-15%', width: '130%', height: '55%',
+              background: `radial-gradient(ellipse at center, ${accentA}33 0%, transparent 65%)`,
+              filter: 'blur(80px)',
+            }}
+          />
+
+          <GlassNav accentA={accentA} />
+
+          <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-8 text-center pt-16">
+            <div className="atlas-reveal mb-5">
+              <StatusBadge accentA={accentA} />
+            </div>
+            <h1 className="atlas-reveal atlas-delay-1 text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-[-0.04em] mb-5 leading-[0.98] text-white max-w-4xl">
+              Sosteniendo el<br/>
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: `linear-gradient(110deg, #ffffff 0%, ${accentA}ee 55%, ${accentB} 100%)` }}
+              >
+                Mundo Digital.
+              </span>
+            </h1>
+            <p className="atlas-reveal atlas-delay-2 text-white/55 max-w-lg text-base md:text-[17px] font-light mb-9 leading-relaxed">
+              Infraestructura de IA descentralizada para la nueva era.
+              Seguridad inquebrantable y control absoluto sobre tus datos.
+            </p>
+            <div className="atlas-reveal atlas-delay-2">
+              <CTAButtons accentA={accentA} accentB={accentB} />
+            </div>
+
+            {/* Indicador de scroll */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30">
+              <div className="w-5 h-8 border border-white/60 rounded-full flex justify-center pt-1.5">
+                <div className="w-1 h-1 bg-white rounded-full animate-bounce" />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<HeroHorizonte />);
+  </script>
+</body>
+</html>

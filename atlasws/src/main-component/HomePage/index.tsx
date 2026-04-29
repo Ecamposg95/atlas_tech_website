@@ -5,10 +5,8 @@ import AboutSection from "../../components/about/about";
 import ServiceSection from "../../components/ServiceSection/ServiceSection";
 import FeatureSection from "../../components/FeatureSection/FeatureSection";
 import ProjectSection from "../../components/ProjectSection/ProjectSection";
-import IndustriesMarqueeSection from "../../components/IndustriesMarqueeSection/IndustriesMarqueeSection";
 import IndustriesSection from "../../components/Industries/Industries";
 import ContactSection from "../../components/ContactSection/ContactSection";
-import TestimonialSection from "../../components/Testimonial/Testimonial";
 import Footer from "../../components/footer/Footer";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 
@@ -21,7 +19,7 @@ const HomePage: React.FC = () => {
   return (
     <Fragment>
       <div className='ai-agency'>
-        <div className="body_wrap o-clip">
+        <div className="body_wrap">
           <Header />
           <main>
             <HeroSection />
@@ -29,10 +27,8 @@ const HomePage: React.FC = () => {
             <ServiceSection />
             <FeatureSection />
             <ProjectSection />
-            <IndustriesMarqueeSection />
             <IndustriesSection />
             <ContactSection />
-            <TestimonialSection />
           </main>
           <Footer />
           <Scrollbar />

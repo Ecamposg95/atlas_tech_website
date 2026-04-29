@@ -3,7 +3,6 @@ import Header from "../../components/Header/Header";
 import PageTitle from "../../components/pagetitle/PageTitle";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 import Footer from "../../components/footer/Footer";
-import ContactInfoSection from "./ContactInfoSection";
 import ContactForm from "../../components/ContactFrom/ContactForm";
 
 // import background image
@@ -17,7 +16,7 @@ const ContactPage: React.FC = () => {
           <Header />
           <main>
             <PageTitle pageTitle="Contáctanos" pagesub="Contáctanos" />
-            <ContactInfoSection />
+            
             <section className="contact">
               <div className="container">
                 <div

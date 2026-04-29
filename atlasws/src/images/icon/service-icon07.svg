@@ -50,7 +50,7 @@
 </linearGradient>
 <linearGradient id="paint1_linear_743_3251" x1="50.5458" y1="3.27251" x2="53.7138" y2="65.2952" gradientUnits="userSpaceOnUse">
 <stop offset="0.022112" stop-color="#2C32FE"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 <linearGradient id="paint2_linear_743_3251" x1="4.72583" y1="0" x2="80.0888" y2="41.7514" gradientUnits="userSpaceOnUse">
 <stop stop-color="#87FFE1"/>
@@ -66,3 +66,4 @@
 </linearGradient>
 </defs>
 </svg>
+

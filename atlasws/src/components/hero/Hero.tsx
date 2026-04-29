@@ -8,13 +8,121 @@ import featureIcon1 from "../../images/icon/feature-icon01.svg";
 import featureIcon2 from "../../images/icon/feature-icon02.svg";
 import featureIcon3 from "../../images/icon/feature-icon03.svg";
 
+import NetworkGlobe from "./NetworkGlobe";
+
 const HeroSection: React.FC = () => {
   return (
     <section
-      className="hero hero-style pos-rel"
-      style={{ backgroundImage: `linear-gradient(rgba(0, 26, 26, 0.8), rgba(0, 77, 61, 0.8)), url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="hero pos-rel p-0"
+      style={{ background: '#020617', overflow: 'visible' }}
     >
-      <div className="container">
+      {/* ---------- Sticky 3D Background ---------- */}
+      <div className="position-absolute w-100 h-100 top-0 start-0" style={{ zIndex: 0 }}>
+        <div className="position-sticky top-0 start-0 w-100" style={{ height: '100vh', overflow: 'hidden' }}>
+          {/* Mesh gradient base */}
+          <div className="position-absolute w-100 h-100" style={{ background: 'radial-gradient(ellipse at 50% 30%, #0f172a 0%, #020617 70%)', inset: 0 }} />
+          
+          {/* Canvas 3D */}
+          <NetworkGlobe accentA="#9333ea" accentB="#a855f7" />
+          
+          {/* Grano */}
+          <div className="atlas-noise" />
+          
+          {/* Horizon glow */}
+          <div
+            className="position-absolute start-50 translate-middle-x"
+            style={{
+              bottom: '-15%', width: '130%', height: '55%',
+              background: `radial-gradient(ellipse at center, rgba(147, 51, 234, 0.2) 0%, transparent 65%)`,
+              filter: 'blur(80px)',
+              pointerEvents: 'none'
+            }}
+          />
+        </div>
+      </div>
+
+      {/* ---------- Content Layer ---------- */}
+      <div className="position-relative z-1">
+        
+        {/* ---------- New 3D Initial Block ---------- */}
+        <div className="atlas-stage d-flex flex-column" style={{ background: 'transparent' }}>
+          <div className="position-relative z-2 d-flex flex-column align-items-center justify-content-center px-4 text-center flex-grow-1" style={{ paddingTop: '100px', minHeight: '100vh' }}>
+            <div className="atlas-reveal mb-4">
+              <div className="d-inline-flex align-items-center atlas-glass px-3 py-2 rounded-pill" style={{ gap: '0.5rem' }}>
+                <span className="position-relative d-flex" style={{ width: '6px', height: '6px' }}>
+                  <span className="position-absolute w-100 h-100 rounded-circle opacity-75" style={{ background: '#9333ea', animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite' }} />
+                  <span className="position-relative rounded-circle w-100 h-100" style={{ background: '#9333ea' }} />
+                </span>
+                <span className="text-uppercase fw-bold text-white-50" style={{ fontSize: '10px', letterSpacing: '0.2em' }}>
+                  Atlas Tech · Early Stage Startup
+                </span>
+              </div>
+            </div>
+
+            <h1 className="atlas-reveal atlas-delay-1 fw-bolder mb-4 text-white" style={{ fontSize: 'clamp(2.8rem, 7vw, 5rem)', letterSpacing: '-0.04em', lineHeight: 1.0, maxWidth: '860px' }}>
+              Construimos el futuro con<br />
+              <span
+                className="text-transparent"
+                style={{ 
+                  backgroundImage: `linear-gradient(110deg, #ffffff 0%, #9333ea 55%, #a855f7 100%)`, 
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                IA &amp; Blockchain.
+              </span>
+            </h1>
+
+            <p className="atlas-reveal atlas-delay-2 fw-light mb-5 text-white-50" style={{ fontSize: '1.1rem', maxWidth: '620px', lineHeight: 1.7 }}>
+              Somos una startup en etapa temprana que construye plataformas inteligentes
+              integrando Inteligencia Artificial y Blockchain para transformar la
+              operación empresarial en Latinoamérica.
+            </p>
+
+            <div className="atlas-reveal atlas-delay-2">
+              <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <Link
+                  to="/contact"
+                  className="btn text-white text-uppercase fw-bold border-0 transition-all"
+                  style={{
+                    padding: '12px 28px',
+                    fontSize: '11px',
+                    letterSpacing: '0.2em',
+                    background: `linear-gradient(135deg, #9333ea 0%, #a855f7 100%)`,
+                    boxShadow: `0 0 30px rgba(147, 51, 234, 0.3), 0 8px 24px rgba(147, 51, 234, 0.2)`,
+                    borderRadius: '8px'
+                  }}
+                >
+                  Empezar Ahora
+                </Link>
+                <Link
+                  to="/about"
+                  className="btn atlas-glass text-white-50 text-uppercase fw-bold transition-all"
+                  style={{
+                    padding: '12px 28px',
+                    fontSize: '11px',
+                    letterSpacing: '0.2em',
+                    borderRadius: '8px'
+                  }}
+                >
+                  Documentación
+                </Link>
+              </div>
+            </div>
+
+            {/* Indicador de scroll */}
+            <div className="position-absolute start-50 translate-middle-x" style={{ bottom: '2rem', opacity: 0.3 }}>
+              <div className="border border-light rounded-pill d-flex justify-content-center" style={{ width: '20px', height: '32px', paddingTop: '6px' }}>
+                <div className="bg-white rounded-circle" style={{ width: '4px', height: '4px', animation: 'bounce 2s infinite' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ---------- Original Content with Acrylic Effect ---------- */}
+        <div className="container position-relative z-2 mb-5">
+          <div className="atlas-glass p-4 p-md-5 rounded-4 shadow-lg">
         <div className="row">
           {/* ---------- Left Content ---------- */}
           <div className="col-lg-9 col-md-9">
@@ -237,6 +345,8 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>

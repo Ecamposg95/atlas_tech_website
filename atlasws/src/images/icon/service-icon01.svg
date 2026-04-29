@@ -25,15 +25,16 @@
 <clipPath id="bgblur_0_743_3160_clip_path" transform="translate(-3 -17)"><path d="M70 21H14C12.1435 21 10.363 21.7375 9.05025 23.0503C7.7375 24.363 7 26.1435 7 28V42C7 43.8565 7.7375 45.637 9.05025 46.9497C10.363 48.2625 12.1435 49 14 49H28V45.5C28 44.5717 28.3687 43.6815 29.0251 43.0251C29.6815 42.3687 30.5717 42 31.5 42C32.4283 42 33.3185 42.3687 33.9749 43.0251C34.6312 43.6815 35 44.5717 35 45.5V49H49V45.5C49 44.5717 49.3687 43.6815 50.0251 43.0251C50.6815 42.3687 51.5717 42 52.5 42C53.4283 42 54.3185 42.3687 54.9749 43.0251C55.6312 43.6815 56 44.5717 56 45.5V49H70C71.8565 49 73.637 48.2625 74.9497 46.9497C76.2625 45.637 77 43.8565 77 42V28C77 26.1435 76.2625 24.363 74.9497 23.0503C73.637 21.7375 71.8565 21 70 21Z"/>
 </clipPath><linearGradient id="paint0_linear_743_3160" x1="42" y1="10.5" x2="42" y2="28" gradientUnits="userSpaceOnUse">
 <stop offset="0.451042" stop-color="#273FF6"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 <linearGradient id="paint1_linear_743_3160" x1="42" y1="38.5" x2="42" y2="52.5" gradientUnits="userSpaceOnUse">
 <stop offset="0.451042" stop-color="#2C32FE"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 <linearGradient id="paint2_linear_743_3160" x1="42" y1="38.5" x2="42" y2="73.5" gradientUnits="userSpaceOnUse">
 <stop offset="0.211062" stop-color="#273FF6"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 </defs>
 </svg>
+

@@ -72,7 +72,7 @@
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_743_3674"/>
 </filter>
 <linearGradient id="paint0_linear_743_3674" x1="7.72414" y1="-2.48276" x2="38.1847" y2="15.0369" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00FF97"/>
+<stop stop-color="#A855F7"/>
 <stop offset="0.664482" stop-color="#2C32FE"/>
 </linearGradient>
 <linearGradient id="paint1_linear_743_3674" x1="10.7734" y1="6.26416" x2="22.8858" y2="9.68398" gradientUnits="userSpaceOnUse">
@@ -93,3 +93,4 @@
 </linearGradient>
 </defs>
 </svg>
+

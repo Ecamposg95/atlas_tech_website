@@ -49,15 +49,15 @@
 :root {
   --font-body: "Montserrat", sans-serif;
   --font-heading: "Montserrat", sans-serif;
-  --color-primary: #00c853;
+  --color-primary: #9333ea;
   --color-secondary: #00010a;
   --color-heading: #fff;
   --color-default: #b2b3b7;
-  --color-border: #004d3d;
+  --color-border: #2e1065;
   --color-gray: #b2b3b7;
   --color-white: #fff;
   --color-black: #000;
-  --color-body: #001a1a;
+  --color-body: #070710;
   --easing: cubic-bezier(0.67, 0.04, 0.3, 0.91);
 }
 
@@ -69,7 +69,7 @@
 }
 
 .ai-marketing {
-  --color-primary: #00c853;
+  --color-primary: #9333ea;
 }
 
 /* reset css start */
@@ -4191,7 +4191,7 @@ body[data-aos-easing=ease] [data-aos] {
   align-items: center;
   justify-content: center;
   border-radius: 100px;
-  background: #002b2b;
+  background: #0b0b1a;
   color: var(--color-white);
   border: 1px solid #373946;
 }
@@ -4201,7 +4201,7 @@ body[data-aos-easing=ease] [data-aos] {
 }
 
 .header-style--one .main-menu>ul>li>a {
-  background: #002b2b;
+  background: #0b0b1a;
   padding: 4px 20px 6px;
   border-radius: 23px;
   -webkit-border-radius: 23px;
@@ -4213,7 +4213,7 @@ body[data-aos-easing=ease] [data-aos] {
 
 .header-style--one .main-menu>ul>li:hover>a>span::after,
 .header-style--one .main-menu>ul>li.active>a>span::after {
-  color: #001a1a;
+  color: #070710;
   background: var(--color-primary);
 }
 
@@ -4729,7 +4729,7 @@ Drop Down menu end
   list-style: none;
   visibility: hidden;
   top: calc(100% + 20px);
-  background: #002b2b;
+  background: #0b0b1a;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -4853,7 +4853,7 @@ Drop Down menu end
   padding: 30px;
   overflow: hidden;
   padding-bottom: 40px;
-  background: #003333;
+  background: #110b29;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -4877,7 +4877,7 @@ Drop Down menu end
   width: 100%;
   opacity: 0.9;
   filter: blur(20.5px);
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 .main-menu ul li.megamenu .submenu {
@@ -4974,7 +4974,7 @@ Drop Down menu end
   transition: 0.3s;
   margin-bottom: 10px !important;
   padding: 12px 15px !important;
-  background: #001a1a !important;
+  background: #070710 !important;
   border-radius: 10px !important;
   -webkit-border-radius: 10px !important;
   -moz-border-radius: 10px !important;
@@ -4998,7 +4998,7 @@ Drop Down menu end
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -5106,7 +5106,7 @@ Drop Down menu end
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   border: 1px solid #525568;
-  background-color: rgba(0, 26, 26, 0.3);
+  background-color: rgba(7, 7, 16, 0.3);
 }
 
 .review_short_info_2 .review_admin_logo {
@@ -5188,7 +5188,7 @@ Drop Down menu end
   display: flex;
   overflow: hidden;
   align-items: center;
-  background: #001a1a;
+  background: #070710;
   padding: 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -5385,7 +5385,7 @@ Drop Down menu end
 }
 
 .mega_menu_wrapper .social_icons_list li a:hover svg path {
-  fill: #00ff97;
+  fill: #d8b4fe;
 }
 
 .service_link {
@@ -5400,7 +5400,7 @@ Drop Down menu end
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   justify-content: space-between;
-  background: linear-gradient(61deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(61deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 .service_link .xb-item--holder {
@@ -5793,7 +5793,7 @@ Drop Down menu end
   -o-border-radius: 7px;
   transform: translateY(-42px);
   backdrop-filter: blur(40px);
-  background: #003333;
+  background: #110b29;
   box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
 }
 
@@ -5861,7 +5861,7 @@ Drop Down menu end
 
 .ac-brand-marquee {
   padding: 36px 0;
-  background: #001a1a;
+  background: #070710;
   position: relative;
 }
 
@@ -5873,7 +5873,7 @@ Drop Down menu end
   left: 0;
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(0, 26, 26, 0.01) 0%, rgba(255, 255, 255, 0.3) 52.02%, rgba(0, 26, 26, 0.01) 100%);
+  background: linear-gradient(90deg, rgba(7, 7, 16, 0.01) 0%, rgba(255, 255, 255, 0.3) 52.02%, rgba(7, 7, 16, 0.01) 100%);
 }
 
 .ac-brand-marquee::after {
@@ -6117,7 +6117,7 @@ Drop Down menu end
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  background: rgba(0, 26, 26, 0.5);
+  background: rgba(7, 7, 16, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -6248,7 +6248,7 @@ Drop Down menu end
 }
 
 .xb-marquee-item .tag {
-  background: #003333;
+  background: #110b29;
   color: var(--color-primary);
 }
 
@@ -6258,7 +6258,7 @@ Drop Down menu end
 }
 
 .xb-marquee-item .number {
-  color: #008b45;
+  color: #7e22ce;
   border: 1px solid #181daa;
 }
 
@@ -6377,7 +6377,7 @@ Drop Down menu end
   height: 780px;
   width: 1px;
   z-index: -1;
-  background: linear-gradient(0deg, rgba(0, 164, 175, 0) 0%, rgba(0, 255, 151, 0.5) 50%, rgba(0, 164, 175, 0) 100%);
+  background: linear-gradient(0deg, rgba(139, 92, 246, 0) 0%, rgba(168, 85, 247, 0.5) 50%, rgba(139, 92, 246, 0) 100%);
 }
 
 @media (max-width: 767px) {
@@ -6470,7 +6470,7 @@ Drop Down menu end
   -o-border-radius: 10px;
   backdrop-filter: blur(40px);
   box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
-  background: linear-gradient(209deg, rgba(0, 26, 26, 0.6) 0%, rgba(0, 26, 26, 0.6) 100%);
+  background: linear-gradient(209deg, rgba(7, 7, 16, 0.6) 0%, rgba(7, 7, 16, 0.6) 100%);
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -6763,7 +6763,7 @@ Drop Down menu end
 }
 
 .xb-project-pagination li.active::before {
-  border: 1px solid #00ff97;
+  border: 1px solid #d8b4fe;
 }
 
 .custom-sec-title .title {
@@ -6974,7 +6974,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   opacity: 0;
-  background: rgba(0, 26, 26, 0.5);
+  background: rgba(7, 7, 16, 0.5);
 }
 
 @media (max-width: 1199px) {
@@ -7191,7 +7191,7 @@ Drop Down menu end
   width: 112.5%;
   z-index: 1;
   filter: blur(35px);
-  background: #001a1a;
+  background: #070710;
 }
 
 .process-title .xb-heading-btn {
@@ -7351,7 +7351,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/pricing/tag-noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -7492,7 +7492,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url(../images/integration/bg.png);
+  background-image: none;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -7514,7 +7514,7 @@ Drop Down menu end
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 @media (max-width: 767px) {
@@ -7553,7 +7553,7 @@ Drop Down menu end
   width: 110%;
   height: 201px;
   filter: blur(25px);
-  background: #001a1a;
+  background: #070710;
 }
 
 .integration-logo-wrap .xb-shape .shape--1 {
@@ -7595,7 +7595,7 @@ Drop Down menu end
   padding: 13px 0 6px;
   text-align: center;
   letter-spacing: -0.04em;
-  background: #002b2b;
+  background: #0b0b1a;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -7678,7 +7678,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #001a1a 100%);
+  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #d8b4fe 0%, #070710 100%);
 }
 
 .comparison-container {
@@ -7743,7 +7743,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url(../images/integration/bg.png);
+  background-image: none;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -7765,7 +7765,7 @@ Drop Down menu end
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 @media (max-width: 767px) {
@@ -7804,7 +7804,7 @@ Drop Down menu end
   width: 110%;
   height: 201px;
   filter: blur(25px);
-  background: #001a1a;
+  background: #070710;
 }
 
 .integration-logo-wrap .xb-shape .shape--1 {
@@ -7846,7 +7846,7 @@ Drop Down menu end
   padding: 13px 0 6px;
   text-align: center;
   letter-spacing: -0.04em;
-  background: #002b2b;
+  background: #0b0b1a;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -7929,7 +7929,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #00ff97 0%, #001a1a 100%);
+  background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, #d8b4fe 0%, #070710 100%);
 }
 
 .comparison-container {
@@ -9450,7 +9450,7 @@ Drop Down menu end
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
   transform: translateX(-50%);
-  background: rgba(0, 26, 26, 0.2);
+  background: rgba(7, 7, 16, 0.2);
 }
 
 @media (max-width: 1199px) {
@@ -9628,7 +9628,7 @@ Drop Down menu end
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 26, 26, 0.2);
+  background: rgba(7, 7, 16, 0.2);
 }
 
 .service-det-img .btn-video {
@@ -9985,7 +9985,7 @@ Drop Down menu end
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 26, 26, 0.3);
+  background: rgba(7, 7, 16, 0.3);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -10877,7 +10877,7 @@ Drop Down menu end
   top: 0;
   height: 100%;
   width: 1px;
-  background: linear-gradient(180deg, #001a1a 0%, rgba(0, 26, 26, 0.46) 4.31%, rgba(255, 255, 255, 0.2) 44.6%, rgba(255, 255, 255, 0.07) 80.86%, rgba(0, 26, 26, 0.2) 100%);
+  background: linear-gradient(180deg, #070710 0%, rgba(7, 7, 16, 0.46) 4.31%, rgba(255, 255, 255, 0.2) 44.6%, rgba(255, 255, 255, 0.07) 80.86%, rgba(7, 7, 16, 0.2) 100%);
 }
 
 .cp-details-wrap::after {
@@ -11123,7 +11123,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11261,7 +11261,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11383,7 +11383,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11501,7 +11501,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11614,7 +11614,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11680,7 +11680,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11780,7 +11780,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11847,7 +11847,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11895,7 +11895,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -12115,12 +12115,12 @@ Drop Down menu end
   box-shadow: none;
   border-radius: 2px;
   border: 1px solid #fff;
-  background-color: #001a1a;
+  background-color: #070710;
 }
 
 .xb-comment-form .form-check .form-check-input:checked {
   border-color: #fff;
-  background-color: #001a1a;
+  background-color: #070710;
 }
 
 .xb-comment-form .form-check label {
@@ -12239,7 +12239,7 @@ Drop Down menu end
   z-index: -1;
   height: 100%;
   width: 100%;
-  background-image: url(../images/testimonial/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -12368,7 +12368,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   opacity: 0;
-  background: rgba(0, 255, 153, 0.2);
+  background: rgba(168, 85, 247, 0.2);
 }
 
 .xb-video-nav-item .nav-link.active {
@@ -12528,7 +12528,7 @@ Drop Down menu end
   z-index: -2;
   width: 100%;
   height: 262px;
-  background: linear-gradient(180deg, rgba(0, 26, 26, 0) 0%, #001a1a 100%);
+  background: linear-gradient(180deg, rgba(7, 7, 16, 0) 0%, #070710 100%);
 }
 
 @media (max-width: 991px) {
@@ -12547,7 +12547,7 @@ Drop Down menu end
   bottom: 57px;
   width: 100%;
   height: 161px;
-  background: #001a1a;
+  background: #070710;
   filter: blur(40px);
 }
 
@@ -12568,7 +12568,7 @@ Drop Down menu end
   top: 44px;
   height: 88.5%;
   width: 199px;
-  background: #001a1a;
+  background: #070710;
   filter: blur(95.3000030518px);
 }
 
@@ -12589,7 +12589,7 @@ Drop Down menu end
   top: 44px;
   height: 88.5%;
   width: 199px;
-  background: #001a1a;
+  background: #070710;
   filter: blur(95.3000030518px);
 }
 
@@ -12620,7 +12620,7 @@ Drop Down menu end
   font-weight: 700;
   font-size: 110px;
   letter-spacing: -0.05em;
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -12701,7 +12701,7 @@ Drop Down menu end
 .xb-testimonial-item .xb-item--rating {
   gap: 9px;
   padding: 7px 10px;
-  background: #001a1a;
+  background: #070710;
   display: inline-flex;
   border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -13263,7 +13263,7 @@ Drop Down menu end
   z-index: -1;
   height: 100%;
   width: 100%;
-  background-image: url(../images/testimonial/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -13439,7 +13439,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   filter: blur(119px);
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
   opacity: 0.2;
 }
 
@@ -13601,7 +13601,7 @@ Drop Down menu end
 .xb-faq .accordion_box .block .content {
   font-size: 16px;
   line-height: 28px;
-  background: #002b2b;
+  background: #0b0b1a;
   padding: 30px 140px 42px 40px;
   border: 1px solid rgba(128, 128, 135, 0.2);
 }
@@ -13638,7 +13638,7 @@ Drop Down menu end
   bottom: 0;
   height: 81px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0, 26, 26, 0) 0%, #001a1a 100%);
+  background: linear-gradient(180deg, rgba(7, 7, 16, 0) 0%, #070710 100%);
 }
 
 .service_process_faq .accordion {
@@ -13758,14 +13758,14 @@ Drop Down menu end
   position: relative;
   color: var(--bs-white);
   border-color: var(--bs-primary);
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 .content_layer_group>li.active span {
   position: relative;
   color: var(--bs-white);
   border-color: var(--bs-primary);
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
 }
 
 .content_layer_group span {
@@ -13814,7 +13814,7 @@ Drop Down menu end
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: linear-gradient(49deg, #4cbdd4 0.01%, #00ff97 61.5%, #4cbdd4 100%);
+  background: linear-gradient(49deg, #4cbdd4 0.01%, #d8b4fe 61.5%, #4cbdd4 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -14147,7 +14147,7 @@ Drop Down menu end
 }
 
 .xb-contact-inner {
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
   padding: 140px 35px 40px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -14418,7 +14418,7 @@ Drop Down menu end
   padding: 7px 40px;
   color: var(--color-white);
   border: 1px solid #4c4e57;
-  background: rgba(0, 26, 26, 0.1) !important;
+  background: rgba(7, 7, 16, 0.1) !important;
 }
 
 .xb-contact-items .form-btn .xb-icon {
@@ -14449,7 +14449,7 @@ Drop Down menu end
 
 .xb-contact-wrap::after {
   z-index: 1 !important;
-  background: linear-gradient(52deg, rgba(44, 50, 254, 0.5) 0%, rgba(0, 164, 175, 0.5) 49%, rgba(0, 255, 151, 0.5) 100%) !important;
+  background: linear-gradient(52deg, rgba(44, 50, 254, 0.5) 0%, rgba(139, 92, 246, 0.5) 49%, rgba(168, 85, 247, 0.5) 100%) !important;
 }
 
 .xb-main-contact {
@@ -14588,7 +14588,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -14701,7 +14701,7 @@ Drop Down menu end
   height: 100%;
   width: 100%;
   border-radius: inherit;
-  background-image: url(../images/blog/noise.png);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -15994,7 +15994,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   bottom: -45px;
   width: 102%;
   height: 65px;
-  background: #001a1a;
+  background: #070710;
   filter: blur(10px);
 }
 
@@ -17163,7 +17163,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   z-index: -1;
   height: 100%;
   width: 100%;
-  background: linear-gradient(52deg, #008b45 0%, #00e676 49%, #00ff97 100%);
+  background: linear-gradient(52deg, #7e22ce 0%, #9333ea 49%, #d8b4fe 100%);
   background-size: 200% 200%;
   animation: gradient 5s ease-in-out infinite alternate;
 }
@@ -17750,7 +17750,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   width: 100%;
   z-index: -1;
   transform: rotate(-180deg);
-  background: radial-gradient(85.63% 149.89% at -2.12% 64.17%, #00ff97 0%, rgba(0, 26, 26, 0) 100%);
+  background: radial-gradient(85.63% 149.89% at -2.12% 64.17%, #d8b4fe 0%, rgba(7, 7, 16, 0) 100%);
 }
 
 .xb-footer-input-form button::after {
@@ -18415,3 +18415,28 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
   display: flex;
   align-items: center
 }
+
+
+
+
+/* --- Atlas Hero Horizonte Styles --- */
+.atlas-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.atlas-noise {
+  position: absolute; inset: 0; z-index: 12; pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+.atlas-reveal { opacity: 0; transform: translateY(16px); animation: atlasReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.atlas-delay-1 { animation-delay: 0.18s; }
+.atlas-delay-2 { animation-delay: 0.36s; }
+@keyframes atlasReveal { to { opacity: 1; transform: translateY(0); } }
+
+.atlas-stage { position: relative; width: 100%; min-height: 100vh; overflow: hidden; background: #020617; }

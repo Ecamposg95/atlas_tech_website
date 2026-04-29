@@ -149,7 +149,7 @@ const FeaturesAndBrands: React.FC = () => {
                       <defs>
                         <linearGradient id="paint0_linear_743_3666" x1="-7.0258" y1="239.726" x2="163.705" y2="-106.496" gradientUnits="userSpaceOnUse">
                           <stop offset="0.0001" stopColor="#4CBDD4" />
-                          <stop offset="0.615" stopColor="#00FF97" />
+                          <stop offset="0.615" stopColor="#A855F7" />
                           <stop offset="1" stopColor="#4CBDD4" />
                         </linearGradient>
                       </defs>
@@ -166,7 +166,7 @@ const FeaturesAndBrands: React.FC = () => {
                       <defs>
                         <linearGradient id="paint0_linear_743_3666" x1="-7.0258" y1="239.726" x2="163.705" y2="-106.496" gradientUnits="userSpaceOnUse">
                           <stop offset="0.0001" stopColor="#4CBDD4" />
-                          <stop offset="0.615" stopColor="#00FF97" />
+                          <stop offset="0.615" stopColor="#A855F7" />
                           <stop offset="1" stopColor="#4CBDD4" />
                         </linearGradient>
                       </defs>

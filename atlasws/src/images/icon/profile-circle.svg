@@ -6,17 +6,18 @@
 <linearGradient id="paint0_linear_1481_2009" x1="6.20835" y1="8.76374" x2="11.4638" y2="4.66724" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2C32FE"/>
 <stop offset="0.49" stop-color="#00A4AF"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 <linearGradient id="paint1_linear_1481_2009" x1="3.26367" y1="15.6767" x2="8.14872" y2="7.86997" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2C32FE"/>
 <stop offset="0.49" stop-color="#00A4AF"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 <linearGradient id="paint2_linear_1481_2009" x1="0.487714" y1="13.9918" x2="16.5288" y2="1.50709" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2C32FE"/>
 <stop offset="0.49" stop-color="#00A4AF"/>
-<stop offset="1" stop-color="#00FF97"/>
+<stop offset="1" stop-color="#A855F7"/>
 </linearGradient>
 </defs>
 </svg>
+

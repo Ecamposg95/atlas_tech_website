@@ -17,14 +17,14 @@ import icon10 from "../../images/icon/project-icon10.svg";
 import icon11 from "../../images/icon/project-icon11.svg";
 import icon12 from "../../images/icon/project-icon12.svg";
 import icon13 from "../../images/icon/project-icon13.svg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProjectSection: React.FC = () => {
   useEffect(() => {
     // ✅ Set dynamic background image
     const bgElement = document.querySelector<HTMLElement>(".project.bg_img");
     if (bgElement) {
-      bgElement.style.backgroundImage = `linear-gradient(rgba(0, 26, 26, 0.9), rgba(0, 77, 61, 0.9)), url(${projectBg})`;
+      bgElement.style.backgroundImage = `linear-gradient(rgba(7, 7, 16, 0.9), rgba(46, 16, 101, 0.9)), url(${projectBg})`;
     }
 
     // ✅ Scroll activation logic
@@ -181,7 +181,7 @@ const ProjectSection: React.FC = () => {
                 title: "Proyectos de Chatbots y NLP..",
                 desc: "Construimos chatbots inteligentes y herramientas de NLP que comprenden y responden de forma natural. Desde atención al cliente hasta análisis de documentos, nuestras soluciones automatizan la comunicación.",
                 industry: "Procesamiento de Datos",
-                country: "Ciudad de Mexico, Mexico",
+                country: "CDMX, México",
                 techs: [icon01, icon02, icon03],
               },
               {
@@ -189,7 +189,7 @@ const ProjectSection: React.FC = () => {
                 title: "E-commerce y marketing..",
                 desc: "Creamos soluciones de IA que impulsan las ventas y el compromiso del cliente, como recomendaciones inteligentes y precios dinámicos. Nuestras herramientas ayudan a las marcas a crecer más rápido.",
                 industry: "Inteligencia Artificial",
-                country: "Monterrey, Mexico",
+                country: "Toluca, Edo México",
                 techs: [icon01, icon08, icon09],
               },
               {
@@ -197,7 +197,7 @@ const ProjectSection: React.FC = () => {
                 title: "Proyectos de visión artificial..",
                 desc: "Desarrollamos sistemas de IA que ven y entienden datos visuales: detección de objetos, patrones y automatización de inspecciones. Nuestras soluciones mejoran la precisión y la toma de decisiones.",
                 industry: "Visión Artificial",
-                country: "Guadalajara, Mexico",
+                country: "Edo México, México",
                 techs: [icon10, icon11, icon01],
               },
               {
@@ -205,7 +205,7 @@ const ProjectSection: React.FC = () => {
                 title: "Analítica de ciencia de datos..",
                 desc: "Convertimos datos complejos en información clara y accionable. Desde modelos predictivos hasta tableros en tiempo real, nuestra analítica ayuda a las empresas a decidir con confianza.",
                 industry: "Ciencia de Datos",
-                country: "Queretaro, Mexico",
+                country: "Lerma, Edo México",
                 techs: [icon08, icon12, icon13],
               },
             ].map((project, index) => (

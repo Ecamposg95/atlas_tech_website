@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       className="footer footer-style-one pt-145 bg_img"
-      style={{ backgroundImage: `linear-gradient(rgba(0, 26, 26, 0.95), rgba(0, 77, 61, 0.95)), url(${footerBg})` }}
+      style={{ backgroundImage: `linear-gradient(rgba(7, 7, 16, 0.95), rgba(46, 16, 101, 0.95)), url(${footerBg})` }}
     >
       <div className="xb-footer-wrap">
         {/* Footer Heading */}
@@ -204,3 +204,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
