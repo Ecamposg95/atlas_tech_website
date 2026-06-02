@@ -83,6 +83,18 @@ const Header: React.FC = () => {
                   </li>
 
                   <li>
+                    <Link to="/proyectos/atlas-one" onClick={handleClick}>
+                      <span>Atlas One</span>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="/proyectos" onClick={handleClick}>
+                      <span>Proyectos</span>
+                    </Link>
+                  </li>
+
+                  <li>
                     <Link to="/contact" onClick={handleClick}>
                       <span>Contacto</span>
                     </Link>

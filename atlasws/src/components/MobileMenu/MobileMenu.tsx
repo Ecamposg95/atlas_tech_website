@@ -28,11 +28,16 @@ const menus: MenuItem[] = [
   },
   {
     id: 4,
-    title: "Proyectos",
-    link: "/project",
+    title: "Atlas One",
+    link: "/proyectos/atlas-one",
   },
   {
     id: 5,
+    title: "Proyectos",
+    link: "/proyectos",
+  },
+  {
+    id: 6,
     title: "Contacto",
     link: "/contact",
   },
