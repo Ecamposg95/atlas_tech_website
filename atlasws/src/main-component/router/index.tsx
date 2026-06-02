@@ -11,6 +11,7 @@ import ProjectPage from "../ProjectPage/ProjectPage";
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import ProjectsPage from "../ProjectsPage/ProjectsPage";
 import ProjectDetailPage from "../ProjectsPage/ProjectDetailPage";
+import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
 import ContactPage from "../ContactPage/ContactPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
@@ -39,6 +40,7 @@ const AllRoute: React.FC = () => {
 
           {/* ✅ Proyectos data-driven (nueva sección) */}
           <Route path="/proyectos" element={<ProjectsPage />} />
+          <Route path="/proyectos/harvestt" element={<HarvesttDetailPage />} />
           <Route path="/proyectos/:slug" element={<ProjectDetailPage />} />
 
           {/* Contacto */}

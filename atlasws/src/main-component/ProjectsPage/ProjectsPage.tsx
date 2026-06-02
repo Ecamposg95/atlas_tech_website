@@ -12,6 +12,7 @@ const StatusBadge: React.FC<{ estado: string }> = ({ estado }) => {
     Activo:          { bg: "rgba(34,197,94,0.12)",  color: "#16a34a", dot: "#22c55e" },
     Beta:            { bg: "rgba(168,85,247,0.15)", color: "#a855f7", dot: "#a855f7" },
     Completado:      { bg: "rgba(99,102,241,0.12)", color: "#6366f1", dot: "#6366f1" },
+    Premiado:        { bg: "rgba(245,200,66,0.14)", color: "#d4a017", dot: "#f5c842" },
   };
   const s = map[estado] ?? map["Activo"];
   return (

@@ -10,13 +10,24 @@ export interface ProjectPreset {
   desc: string;
 }
 
+// Reconocimiento internacional (para el roadmap de premios)
+export interface Award {
+  year: string;
+  title: string;            // Ej. "The Best Invention of North America"
+  medal: "gold" | "silver" | "bronze" | "honor" | "special";
+  event: string;            // Ej. "ICAN"
+  place: string;            // Ej. "Toronto, Canadá"
+  flag: string;             // Emoji bandera
+  note?: string;            // Distinción adicional
+}
+
 export interface Project {
   slug: string;
   titulo: string;
   subtitulo: string;
   tagline: string;
   categoria: string;
-  estado: "Activo" | "En desarrollo" | "Beta" | "Completado";
+  estado: "Activo" | "En desarrollo" | "Beta" | "Completado" | "Premiado";
   año: string;
   descripcion: string;
   features: string[];
@@ -30,6 +41,10 @@ export interface Project {
   imagenCard: string;
   colorAccent: string;
   colorAccent2: string;
+  // Campos opcionales usados por proyectos con historia/hardware (ej. Harvestt)
+  creators?: string[];
+  institution?: string;
+  awards?: Award[];
 }
 
 export const projects: Project[] = [
@@ -87,6 +102,74 @@ export const projects: Project[] = [
     colorAccent: "#2563EB",
     colorAccent2: "#A78BFA",
     imagenCard: "/images/projects/atlas-one-card.jpg",
+  },
+  {
+    slug: "harvestt",
+    titulo: "Harvestt",
+    subtitulo: "Agrotecnología con IA, premiada internacionalmente",
+    tagline: "Germinar, cultivar y monitorear — desde tu casa hasta entornos extremos",
+    categoria: "AgroTech / IoT / IA",
+    estado: "Premiado",
+    año: "2017–2026",
+    descripcion:
+      "Harvestt es un sistema automatizado de agrotecnología que integra inteligencia artificial: un invernadero controlado que acelera la germinación y el cultivo sin exposición al aire libre. Nacido en la ESIME Zacatenco del IPN, combina electrónica, termodinámica y software en una cámara a presión atmosférica con control de humedad, temperatura y fotoperiodo. Usa lógica difusa y visión por computadora con machine learning para identificar plantas por inspección de hojas y entregar nutrientes de forma óptima. Su evolución 2026 es un invernadero geodésico modular y desplegable, pensado para seguridad alimentaria en condiciones adversas.",
+    features: [
+      "Cámara controlada: humedad, temperatura y fotoperiodo",
+      "Iluminación LED full-spectrum auto-ajustable",
+      "Dispensador de nutrientes con base de datos de minerales",
+      "Visión por computadora + machine learning (reconoce plantas por la hoja)",
+      "Control por lógica difusa y análisis matemático",
+      "App Harvestt: alertas, plan de cultivo y comunidad HarvesttER",
+      "Invernadero geodésico modular y desplegable (visión 2026)",
+      "Energías limpias y componentes reciclables",
+    ],
+    stack: ["IoT", "Computer Vision", "Machine Learning", "Lógica difusa", "Electrónica", "Termodinámica", "App móvil"],
+    creators: [
+      "Emmanuel Campos Genaro",
+      "José Israel Romero Flores",
+      "Leonardo Tonatiuh González García",
+      "Luis Antonio Hernández Moha",
+    ],
+    institution: "ESIME Zacatenco · Instituto Politécnico Nacional (IPN)",
+    awards: [
+      {
+        year: "2017",
+        title: "Silver Medal",
+        medal: "silver",
+        event: "INTARG · International Invention & Innovation Show",
+        place: "Katowice, Polonia",
+        flag: "🇵🇱",
+        note: "Categoría AgroTech",
+      },
+      {
+        year: "2018",
+        title: "The Best Invention of North America",
+        medal: "special",
+        event: "ICAN · TISIAS",
+        place: "Toronto, Canadá",
+        flag: "🇨🇦",
+        note: "Única representación nacional y latinoamericana ganadora",
+      },
+      {
+        year: "2019",
+        title: "Gold Medal",
+        medal: "gold",
+        event: "ICAN · International Invention Innovation Competition",
+        place: "Canadá",
+        flag: "🇨🇦",
+      },
+      {
+        year: "2021",
+        title: "Honorary Medal",
+        medal: "honor",
+        event: "ICAN · Romanian Polytechnic University",
+        place: "Rumania",
+        flag: "🇷🇴",
+      },
+    ],
+    colorAccent: "#10B981",
+    colorAccent2: "#34D399",
+    imagenCard: "/images/projects/harvestt/harvestt-product.jpg",
   },
 ];
 
