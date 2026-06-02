@@ -75,7 +75,7 @@ const MegaMenu1: React.FC = () => {
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" to="/project">
+                        <Link className="iconbox_block_2" to="/proyectos">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
                               <img src={icon3} alt="Project Icon" />
