@@ -82,7 +82,7 @@ const ProjectSection: React.FC = () => {
             Mira los resultados que reflejan nuestro arduo trabajo
           </h2>
           <div className="xb-heading-btn d-inline">
-            <Link className="thm-btn agency-btn" to="/project">
+            <Link className="thm-btn agency-btn" to="/proyectos">
               <span className="text">ver más proyectos</span>
               <span className="arrow">
                 <span className="arrow-icon">
