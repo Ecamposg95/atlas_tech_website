@@ -1,0 +1,394 @@
+import React from "react";
+import {
+  N, ATLAS_FONT, ATLAS_MONO, ATLAS_SERIF,
+  Icon, mxn, mxnInt,
+  PRESETS,
+  Sidebar, SidebarUser, Topbar, SearchInput, Button,
+  Card, SectionTitle, Kpi, BarChart, Badge,
+  Stat, Avatar, Wordmark,
+  LaptopFrame, TabletFrame,
+} from "../shared";
+import type { PresetConfig, IconProps } from "../shared";
+
+// ─── Local types ──────────────────────────────────────────────
+
+interface SidebarItem {
+  header?: string;
+  icon?: React.FC<IconProps>;
+  label?: string;
+  badge?: string;
+}
+
+// ─── Shared sidebar items ─────────────────────────────────────
+
+const cafeSidebarItems: SidebarItem[] = [
+  { header: 'Barra' },
+  { icon: Icon.coffee,   label: 'POS rápido' },
+  { icon: Icon.utensils, label: 'Menú visual' },
+  { icon: Icon.flame,    label: 'Pedidos',       badge: '6' },
+  { header: 'Cocina' },
+  { icon: Icon.beaker,   label: 'Recetas' },
+  { icon: Icon.pkg,      label: 'Insumos',       badge: '!' },
+  { icon: Icon.warning,  label: 'Merma' },
+  { header: 'Negocio' },
+  { icon: Icon.users,    label: 'Frecuentes' },
+  { icon: Icon.chart,    label: 'Reportes' },
+  { icon: Icon.cog,      label: 'Ajustes' },
+];
+
+// ─── 01 · Desktop · Ventas + recetas + insumos ────────────────
+
+export const CafeDesktop: React.FC = () => {
+  const p = PRESETS.cafe;
+  return (
+    <div style={{ display: 'flex', width: 1440, height: 900, background: '#F7EFE3', fontFamily: ATLAS_FONT, textAlign: 'left' }}>
+      <Sidebar preset={p} active="POS rápido" items={cafeSidebarItems}
+        footer={<SidebarUser preset={p} name="Bruno Cano" role="Barista líder" branch="Roma Norte" />} />
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        <Topbar
+          title="Operación · sábado 26 de noviembre"
+          sub="TURNO MAÑANA · BARRA ABIERTA 07:00 · 248 ÓRDENES · MERMA <2%"
+          preset={p}
+          right={
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <SearchInput preset={p} placeholder="Buscar bebida, combo o insumo…" width={300} />
+              <Button label="Nueva orden" kind="primary" preset={p} icon={Icon.plus} />
+            </div>
+          }
+        />
+
+        <div style={{ flex: 1, padding: '20px 26px', background: '#FBF6EE', overflow: 'hidden' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 16 }}>
+            <Kpi label="Ventas del turno" value={mxnInt(18420)} delta="+14%" trend={[3,5,4,7,6,9,8,11,12,10,14,18]} accent={p.accent} />
+            <Kpi label="Órdenes" value="248" sub="ticket prom. $74.30" />
+            <Kpi label="Hora pico" value="08:30" sub="42 órdenes / hora" />
+            <Kpi label="Margen promedio" value="68%" delta="+2.4 pp" trend={[6,6,7,7,8,7,8,8,9,8,9,9]} accent={p.accent2} />
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: 14 }}>
+            <Card pad={20}>
+              <SectionTitle action="Ver detalle →">Ventas por hora · hoy</SectionTitle>
+              <BarChart
+                data={[
+                  { label: '07', value: 12 }, { label: '08', value: 42, highlight: true },
+                  { label: '09', value: 38, highlight: true }, { label: '10', value: 22 },
+                  { label: '11', value: 18 }, { label: '12', value: 26 }, { label: '13', value: 32 },
+                  { label: '14', value: 24 }, { label: '15', value: 14 }, { label: '16', value: 10 },
+                ]}
+                width={460} height={170} color={p.accent} soft={N.line}
+              />
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginTop: 14, paddingTop: 14, borderTop: `1px solid ${N.line}` }}>
+                <Stat label="Bebida estrella" value="Latte vainilla" sub="62 vendidos · 25%" />
+                <Stat label="Combo más popular" value="Café + concha" sub="48 vendidos · margen 71%" />
+                <Stat label="Pedidos para llevar" value="58%" sub="↑ vs barra · 42%" />
+              </div>
+            </Card>
+
+            <Card pad={20}>
+              <SectionTitle>Recetas · costo y margen</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {[
+                  { name: 'Latte vainilla 12 oz', cost: 14.20, price: 52, margin: 73 },
+                  { name: 'Espresso doble',       cost:  6.80, price: 36, margin: 81 },
+                  { name: 'Cold brew',            cost: 16.50, price: 58, margin: 72 },
+                  { name: 'Croissant mantequilla',cost: 12.40, price: 45, margin: 72 },
+                  { name: 'Concha vainilla',      cost:  5.20, price: 22, margin: 76 },
+                  { name: 'Sandwich pavo',        cost: 28.00, price: 70, margin: 60 },
+                ].map((r: { name: string; cost: number; price: number; margin: number }, i: number) => (
+                  <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 60px 60px', gap: 8, alignItems: 'center', padding: '6px 0', borderTop: i ? `1px solid ${N.line}` : 'none' }}>
+                    <div>
+                      <div style={{ fontSize: 12.5, fontWeight: 500 }}>{r.name}</div>
+                      <div style={{ fontFamily: ATLAS_MONO, fontSize: 10, color: N.muted, marginTop: 2 }}>Costo {mxn(r.cost)} · Precio {mxn(r.price)}</div>
+                    </div>
+                    <div style={{ fontFamily: ATLAS_MONO, fontSize: 12, fontWeight: 600, color: r.margin >= 70 ? '#0E8A4E' : '#9A6610', textAlign: 'right' }}>{r.margin}%</div>
+                    <div>
+                      <div style={{ height: 4, background: N.line, borderRadius: 2 }}>
+                        <div style={{ width: `${r.margin}%`, height: '100%', background: r.margin >= 70 ? '#0E8A4E' : '#9A6610', borderRadius: 2 }} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            <Card pad={20}>
+              <SectionTitle action="Generar orden →">Insumos · estado</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[
+                  { name: 'Café especialidad',  cur: 2.2,  unit: 'kg', target: 8,  status: 'crit',  rate: '6.4 kg/sem' },
+                  { name: 'Leche entera',       cur: 24,   unit: 'L',  target: 80, status: 'low',   rate: '120 L/sem' },
+                  { name: 'Vainilla en jarabe', cur: 1.8,  unit: 'L',  target: 4,  status: 'low',   rate: '2.5 L/sem' },
+                  { name: 'Harina de trigo',    cur: 18,   unit: 'kg', target: 24, status: 'ok',    rate: '14 kg/sem' },
+                  { name: 'Mantequilla',        cur: 6.4,  unit: 'kg', target: 8,  status: 'ok',    rate: '5 kg/sem' },
+                ].map((it: { name: string; cur: number; unit: string; target: number; status: string; rate: string }, i: number) => {
+                  const pct = (it.cur / it.target) * 100;
+                  const c = it.status === 'crit' ? '#B43E2E' : it.status === 'low' ? '#9A6610' : '#0E8A4E';
+                  return (
+                    <div key={i}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginBottom: 4 }}>
+                        <span style={{ fontWeight: 500 }}>{it.name}</span>
+                        <span style={{ fontFamily: ATLAS_MONO, color: c, fontWeight: 600 }}>{it.cur} / {it.target} {it.unit}</span>
+                      </div>
+                      <div style={{ height: 4, background: N.line, borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.min(pct, 100)}%`, height: '100%', background: c }} />
+                      </div>
+                      <div style={{ fontFamily: ATLAS_MONO, fontSize: 10, color: N.muted, marginTop: 3 }}>Consumo · {it.rate}</div>
+                    </div>
+                  );
+                })}
+                <div style={{ marginTop: 4, padding: 10, background: p.accentSoft, borderRadius: 7, fontSize: 11.5, color: p.accentInk, display: 'flex', alignItems: 'center', gap: 7 }}>
+                  <Icon.sparkles size={14} color={p.accent} />
+                  <span><strong>Pedido sugerido</strong> · 8 kg café + 80 L leche · {mxn(4280)}</span>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── 02 · POS barra rápida con modificadores ──────────────────
+
+export const CafeTouch: React.FC = () => {
+  const p = PRESETS.cafe;
+  const drinks: { name: string; price: number; kind: string }[] = [
+    { name: 'Americano',         price: 38, kind: 'café' },
+    { name: 'Espresso',          price: 28, kind: 'café' },
+    { name: 'Latte',             price: 48, kind: 'café' },
+    { name: 'Capuchino',         price: 44, kind: 'café' },
+    { name: 'Mocha',             price: 56, kind: 'café' },
+    { name: 'Cold brew',         price: 58, kind: 'frío' },
+    { name: 'Frappé chocolate',  price: 62, kind: 'frío' },
+    { name: 'Matcha latte',      price: 64, kind: 'specialty' },
+    { name: 'Té chai',           price: 52, kind: 'specialty' },
+  ];
+  const modifiers: { name: string; active?: boolean; extra: number }[] = [
+    { name: 'Leche entera',      active: true,  extra: 0 },
+    { name: 'Leche deslactosada', extra: 6 },
+    { name: 'Leche de avena',    extra: 12 },
+    { name: 'Leche de almendra', extra: 12 },
+    { name: 'Extra shot',        extra: 14 },
+    { name: 'Crema batida',      extra: 8 },
+    { name: 'Vainilla',          extra: 6 },
+    { name: 'Caramelo',          extra: 6 },
+  ];
+
+  return (
+    <div style={{ width: 1280, height: 800, background: '#F7EFE3', display: 'flex', fontFamily: ATLAS_FONT, textAlign: 'left' }}>
+      {/* Left: menu */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 22px', background: '#FFF', borderBottom: `1px solid ${N.line}` }}>
+          <Wordmark color={N.ink} accent={p.accent} size={14} sub="CAFÉ · ROMA NORTE" />
+          <div style={{ width: 1, height: 22, background: N.line }} />
+          <Badge color={p.accent} soft={p.accentSoft} dot>Barra · Bruno C.</Badge>
+          <div style={{ flex: 1 }} />
+          <div style={{ fontFamily: ATLAS_MONO, fontSize: 11, color: N.muted }}>SÁBADO 08:24 · TURNO MAÑANA</div>
+        </div>
+
+        <div style={{ flex: 1, padding: 22, overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 14 }}>
+          {/* Category strip */}
+          <div style={{ display: 'flex', gap: 6 }}>
+            {[
+              { name: 'Café caliente', n: 12, active: true },
+              { name: 'Bebidas frías', n: 8 },
+              { name: 'Especialidad',  n: 6 },
+              { name: 'Panadería',     n: 14 },
+              { name: 'Sandwiches',    n: 7 },
+              { name: 'Combos',        n: 5 },
+            ].map((c: { name: string; n: number; active?: boolean }, i: number) => (
+              <div key={i} style={{
+                padding: '10px 16px', borderRadius: 8, fontSize: 13,
+                background: c.active ? p.accent : '#FFF',
+                color: c.active ? '#fff' : N.body,
+                border: c.active ? 'none' : `1px solid ${N.line}`,
+                display: 'flex', alignItems: 'center', gap: 6, fontWeight: c.active ? 500 : 400,
+              }}>
+                {c.name}
+                <span style={{ fontFamily: ATLAS_MONO, fontSize: 10.5, opacity: 0.7 }}>{c.n}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Drinks grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, flex: 1 }}>
+            {drinks.map((d: { name: string; price: number; kind: string }, i: number) => (
+              <div key={i} style={{
+                background: i === 2 ? p.accent : '#FFF', color: i === 2 ? '#fff' : N.ink,
+                border: i === 2 ? 'none' : `1px solid ${N.line}`,
+                borderRadius: 14, padding: 16, display: 'flex', flexDirection: 'column', position: 'relative',
+              }}>
+                <div style={{
+                  width: 44, height: 44, borderRadius: 10,
+                  background: i === 2 ? 'rgba(255,255,255,0.15)' : p.accentSoft,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <Icon.coffee size={22} color={i === 2 ? '#fff' : p.accent} />
+                </div>
+                <div style={{ fontSize: 15, fontWeight: 600, marginTop: 14 }}>{d.name}</div>
+                <div style={{ fontFamily: ATLAS_MONO, fontSize: 11, color: i === 2 ? 'rgba(255,255,255,0.75)' : N.muted, marginTop: 2, textTransform: 'capitalize' }}>{d.kind}</div>
+                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                  <div style={{ fontFamily: ATLAS_MONO, fontSize: 18, fontWeight: 600 }}>{mxn(d.price)}</div>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: i === 2 ? '#fff' : p.accent, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon.plus size={16} color={i === 2 ? p.accent : '#fff'} strokeWidth={2.2} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Right: order with modifier panel for Latte */}
+      <div style={{ width: 380, background: '#FFF', borderLeft: `1px solid ${N.line}`, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: '16px 20px', background: '#F7EFE3', borderBottom: `1px solid ${N.line}` }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <div>
+              <div style={{ fontSize: 11, fontFamily: ATLAS_MONO, color: N.muted, letterSpacing: 0.8, textTransform: 'uppercase' }}>Orden · C-248</div>
+              <div style={{ fontSize: 20, fontWeight: 600, marginTop: 4 }}>Para llevar</div>
+            </div>
+            <Badge color={p.accent} soft={p.accentSoft} dot>Cliente · Mariana</Badge>
+          </div>
+        </div>
+
+        {/* Modifier panel for the active item */}
+        <div style={{ padding: '16px 20px', borderBottom: `1px solid ${N.line}` }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+            <div style={{ width: 36, height: 36, borderRadius: 8, background: p.accent, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: ATLAS_MONO, fontWeight: 600 }}>1×</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 14, fontWeight: 600 }}>Latte vainilla 12 oz</div>
+              <div style={{ fontSize: 11, color: N.muted, fontFamily: ATLAS_MONO }}>Base $48 + modificadores</div>
+            </div>
+            <div style={{ fontFamily: ATLAS_MONO, fontSize: 16, fontWeight: 600 }}>{mxn(60)}</div>
+          </div>
+          <div style={{ fontFamily: ATLAS_MONO, fontSize: 10, color: N.muted, letterSpacing: 0.5, textTransform: 'uppercase', marginBottom: 6 }}>Modificadores</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+            {modifiers.map((m: { name: string; active?: boolean; extra: number }, i: number) => (
+              <div key={i} style={{
+                padding: '6px 10px', borderRadius: 999, fontSize: 11.5,
+                background: m.active ? p.accent : '#F7EFE3',
+                color: m.active ? '#fff' : N.body,
+                fontWeight: m.active ? 500 : 400,
+                display: 'inline-flex', gap: 5,
+              }}>
+                {m.name}{m.extra > 0 && <span style={{ fontFamily: ATLAS_MONO, opacity: 0.7 }}>+${m.extra}</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Order items */}
+        <div style={{ flex: 1, padding: '6px 20px 12px', overflow: 'hidden' }}>
+          {[
+            { qty: 1, name: 'Latte vainilla 12 oz', price: 60, mods: 'Avena +12' },
+            { qty: 2, name: 'Croissant mantequilla', price: 45 },
+            { qty: 1, name: 'Cold brew + leche avena', price: 70, mods: 'Sin azúcar' },
+            { qty: 1, name: 'Sandwich pavo',  price: 70 },
+          ].map((it: { qty: number; name: string; price: number; mods?: string }, i: number) => (
+            <div key={i} style={{
+              display: 'grid', gridTemplateColumns: '36px 1fr 80px',
+              gap: 10, padding: '12px 0', alignItems: 'center',
+              borderBottom: i < 3 ? `1px solid ${N.line}` : 'none',
+            }}>
+              <div style={{ width: 30, height: 30, borderRadius: 6, background: p.accentSoft, color: p.accent, fontFamily: ATLAS_MONO, fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{it.qty}</div>
+              <div>
+                <div style={{ fontSize: 13.5, fontWeight: 500 }}>{it.name}</div>
+                {it.mods && <div style={{ fontSize: 10.5, color: p.accent, fontFamily: ATLAS_MONO, marginTop: 2 }}>↳ {it.mods}</div>}
+              </div>
+              <div style={{ textAlign: 'right', fontFamily: ATLAS_MONO, fontSize: 14, fontWeight: 600 }}>{mxn(it.price * it.qty)}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Total */}
+        <div style={{ padding: '16px 20px', background: '#F7EFE3', borderTop: `1px solid ${N.line}` }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
+            <span style={{ fontSize: 13, color: N.muted }}>Total</span>
+            <span style={{ fontFamily: ATLAS_MONO, fontSize: 28, fontWeight: 600, letterSpacing: -0.6 }}>{mxn(290.00)}</span>
+          </div>
+          <Button label="Cobrar y mandar a barra" kind="primary" preset={p} icon={Icon.arrowRight} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── 03 · Hero ────────────────────────────────────────────────
+
+export const CafeHero: React.FC = () => {
+  const p = PRESETS.cafe;
+  return (
+    <div style={{ width: '100%', height: '100%', background: '#FBF5EA', position: 'relative', overflow: 'hidden', fontFamily: ATLAS_FONT, textAlign: 'left' }}>
+      <div style={{ position: 'absolute', inset: 0,
+        backgroundImage: `radial-gradient(circle at 90% 110%, ${p.accent}25, transparent 50%), radial-gradient(circle at 5% 0%, ${p.accent2}40, transparent 50%)`,
+      }} />
+      <div style={{ width: '100%', height: '100%', display: 'flex', padding: '60px 70px', gap: 36, position: 'relative' }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 22 }}>
+            <div style={{ padding: '5px 10px', background: p.accent, color: '#fff', borderRadius: 999, fontFamily: ATLAS_MONO, fontSize: 11, letterSpacing: 0.6, fontWeight: 500 }}>PRESET 07</div>
+            <div style={{ fontFamily: ATLAS_MONO, fontSize: 11, color: p.accentInk, letterSpacing: 1.4, textTransform: 'uppercase' }}>Barra · recetas · insumos</div>
+          </div>
+          <div style={{ fontFamily: ATLAS_SERIF, fontSize: 60, fontWeight: 500, lineHeight: 1, letterSpacing: -1.5, color: N.ink }}>
+            Atlas One <em style={{ color: p.accent, fontStyle: 'italic' }}>Café</em>
+          </div>
+          <div style={{ fontFamily: ATLAS_SERIF, fontSize: 26, fontWeight: 400, lineHeight: 1.15, marginTop: 14, letterSpacing: -0.3, color: N.body }}>
+            Para barras donde un buen latte vale tanto como una operación impecable.
+          </div>
+          <div style={{ fontSize: 15, color: N.body, lineHeight: 1.6, margin: '22px 0 28px', maxWidth: 480 }}>
+            POS visual para barra rápida, modificadores con un toque, recetas con costo en vivo, control de insumos y merma. Café de especialidad, panadería y mostrador para llevar.
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {[['42 órdenes/h', 'en hora pico'], ['68%', 'margen promedio'], ['<2%', 'merma controlada']].map(([k, v]: string[], i: number) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
+                <div style={{ fontSize: 28, fontWeight: 600, color: p.accent, letterSpacing: -0.6, minWidth: 130 }}>{k}</div>
+                <div style={{ fontSize: 13, color: N.body }}>{v}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 10, marginTop: 28 }}>
+            <Button label="Probar 1 mes gratis" kind="primary" preset={p} icon={Icon.arrowRight} />
+            <Button label="Ver demo" kind="secondary" />
+          </div>
+        </div>
+
+        <div style={{ flex: 1, position: 'relative' }}>
+          <div style={{ position: 'absolute', top: 20, right: 0 }}>
+            <TabletFrame width={520}>
+              <div style={{ width: 1280, height: 800, transform: 'scale(0.39)', transformOrigin: 'top left' }}>
+                <CafeTouch />
+              </div>
+            </TabletFrame>
+          </div>
+          <div style={{ position: 'absolute', bottom: 20, left: 0 }}>
+            <LaptopFrame width={520}>
+              <div style={{ width: 1440, height: 900, transform: 'scale(0.347)', transformOrigin: 'top left' }}>
+                <CafeDesktop />
+              </div>
+            </LaptopFrame>
+          </div>
+          <div style={{
+            position: 'absolute', top: 360, right: 40, padding: 14,
+            background: '#fff', borderRadius: 12, width: 190, transform: 'rotate(3deg)',
+            border: `1.5px solid ${p.accent}`, boxShadow: `0 10px 30px ${p.accent}30`,
+          }}>
+            <div style={{ fontFamily: ATLAS_MONO, fontSize: 9.5, color: N.muted, letterSpacing: 0.5, textTransform: 'uppercase' }}>Margen · Latte vainilla</div>
+            <div style={{ fontSize: 32, fontWeight: 600, color: p.accent, marginTop: 4, letterSpacing: -0.6, fontFamily: ATLAS_FONT }}>73%</div>
+            <div style={{ fontFamily: ATLAS_MONO, fontSize: 10, color: N.muted, marginTop: 2 }}>Costo $14.20 · Precio $52</div>
+          </div>
+        </div>
+      </div>
+      <div style={{
+        position: 'absolute', left: 0, right: 0, bottom: 0,
+        padding: '14px 70px', display: 'flex', alignItems: 'center', gap: 16,
+        borderTop: `1px solid ${p.accent}20`, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)',
+      }}>
+        <Wordmark color={N.ink} accent={p.accent} size={13} />
+        <div style={{ width: 1, height: 18, background: N.line2 }} />
+        <div style={{ fontFamily: ATLAS_MONO, fontSize: 10.5, color: N.muted, letterSpacing: 0.6 }}>MENÚ VISUAL · MODIFICADORES · RECETAS · INSUMOS · MERMA</div>
+        <div style={{ flex: 1 }} />
+        <div style={{ fontFamily: ATLAS_MONO, fontSize: 10.5, color: N.muted }}>atlas.tech / cafe</div>
+      </div>
+    </div>
+  );
+};
