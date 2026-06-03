@@ -8,6 +8,7 @@ Para la documentación técnica del proyecto, ver el [README raíz](../README.md
 
 | Archivo / carpeta | Qué es | Página / uso en el sitio |
 |---|---|---|
+| `INFORME-estado-2026-06.md` | **Informe de estado** del sitio (formato Obsidian) — resumen ejecutivo, SEO, deploy, pendientes | Todo el proyecto |
 | `open_cashback_master_brief.md` | Brief técnico maestro de Open Cashback (ledger, blockchain, MVP, API) | `/proyectos/open-cashback` |
 | `sigma.mb` | Contexto de la división **Atlas GovTech** y el producto **SIGMA** | `/proyectos/sigma` |
 | `harvestt_fotos_prompt_maestro.mb` | Prompt maestro para generar las fotos de Harvestt (estética SpaceX) | `/proyectos/harvestt` |
@@ -25,4 +26,6 @@ nuevos se prefiere `.md` (GitHub los renderiza).
 
 4 proyectos publicados: **Atlas One** (SaaS/POS/ERP), **Harvestt** (AgroTech/IA, premiado),
 **SIGMA** (GovTech) y **Open Cashback** (Blockchain/fintech). Sitio con SEO por ruta,
-responsividad reforzada e imágenes optimizadas a WebP. Dominio: **atlastech.mx** (Hostinger).
+responsividad reforzada, imágenes WebP, favicon/branding Atlas, redes reales
+(Instagram, WhatsApp +52 722 149 5215, Facebook) y logos de clientes reales.
+Dominio: **atlastech.mx** (Hostinger). Detalle completo en `INFORME-estado-2026-06.md`.
