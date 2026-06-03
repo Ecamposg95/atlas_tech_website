@@ -237,7 +237,7 @@ const ProjectSection: React.FC = () => {
                       </ul>
                     </div>
                     <div className="xb-item---btn mt-70">
-                      <Link className="thm-btn agency-btn" to="/project-details">
+                      <Link className="thm-btn agency-btn" to="/proyectos">
                         <span className="text">leer más</span>
                         <span className="arrow">
                           <span className="arrow-icon">

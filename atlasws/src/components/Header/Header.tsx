@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo/logo.png";
 import MegaMenuServices from "./MegaMenu2";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
@@ -55,7 +54,7 @@ const Header: React.FC = () => {
             {/* Logo */}
             <div className="xb-header-logo">
               <Link to="/" className="logo1" onClick={handleClick}>
-                <img src={logo} alt="Logo" />
+                <img src="/images/logo_atlas.png" alt="Atlas Tech" />
               </Link>
             </div>
 
@@ -132,7 +131,7 @@ const Header: React.FC = () => {
 
                 <div className="xb-logo-mobile xb-hide-xl">
                   <Link to="/" rel="home">
-                    <img src={logo} alt="Logo" />
+                    <img src="/images/logo_atlas.png" alt="Atlas Tech" />
                   </Link>
                 </div>
 

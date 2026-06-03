@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
           <div className="xb-footer-nav-item">
             <span className="sub-title">¿En qué somos buenos?</span>
             <h2 className="title">
-              <Link to="/project">Nuestros proyectos</Link>
+              <Link to="/proyectos">Nuestros proyectos</Link>
             </h2>
           </div>
         </div>

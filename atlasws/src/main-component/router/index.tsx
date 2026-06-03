@@ -8,8 +8,6 @@ import Homepage from "../HomePage";
 import AboutPage from "../AboutPage/AboutPage";
 import ServicePage from "../ServicePage/ServicePage";
 import SeviceSinglePage from "../SeviceSinglePage/SeviceSinglePage";
-import ProjectPage from "../ProjectPage/ProjectPage";
-import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import ProjectsPage from "../ProjectsPage/ProjectsPage";
 import ProjectDetailPage from "../ProjectsPage/ProjectDetailPage";
 import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
@@ -37,10 +35,6 @@ const AllRoute: React.FC = () => {
           {/* Servicios */}
           <Route path="/service" element={<ServicePage />} />
           <Route path="/service-details" element={<SeviceSinglePage />} />
-
-          {/* Proyectos (legacy routes) */}
-          <Route path="/project" element={<ProjectPage />} />
-          <Route path="/project-details" element={<ProjectDetails />} />
 
           {/* ✅ Proyectos data-driven (nueva sección) */}
           <Route path="/proyectos" element={<ProjectsPage />} />
