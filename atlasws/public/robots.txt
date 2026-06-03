@@ -1,3 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
+# NOTA: scripts/seo-build.cjs regenera este archivo en /build con la línea
+# Sitemap apuntando al dominio real (siteUrl de src/seo/seo.config.json).
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /404
+
+Sitemap: https://atlastech.mx/sitemap.xml

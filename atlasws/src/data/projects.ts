@@ -21,6 +21,15 @@ export interface Award {
   note?: string;            // Distinción adicional
 }
 
+// Módulo de una suite GovTech (usado por SIGMA)
+export interface SigmaModule {
+  code: string;             // "01"
+  key: string;              // "tramites"
+  name: string;             // "SIGMA Trámites"
+  desc: string;             // descripción corta
+  future?: boolean;         // módulo a futuro (ej. IA Pública)
+}
+
 export interface Project {
   slug: string;
   titulo: string;
@@ -45,6 +54,9 @@ export interface Project {
   creators?: string[];
   institution?: string;
   awards?: Award[];
+  // Campos opcionales para productos GovTech / suite modular (ej. SIGMA)
+  division?: string;        // división de Atlas que lo opera (ej. "Atlas GovTech")
+  modules?: SigmaModule[];  // suite modular
 }
 
 export const projects: Project[] = [
@@ -170,6 +182,103 @@ export const projects: Project[] = [
     colorAccent: "#10B981",
     colorAccent2: "#34D399",
     imagenCard: "/images/projects/harvestt/harvestt-product.jpg",
+  },
+  {
+    slug: "sigma",
+    titulo: "SIGMA",
+    subtitulo: "Sistema Integral de Gestión y Modernización Administrativa",
+    tagline: "Gobierno digital, operación inteligente",
+    categoria: "GovTech / Sector Público",
+    estado: "En desarrollo",
+    año: "2026",
+    division: "Atlas GovTech",
+    descripcion:
+      "SIGMA es una plataforma GovTech modular, escalable y profesional para modernizar la gestión administrativa pública. Digitaliza trámites, expedientes, procesos internos, dictámenes, pagos, atención ciudadana y tableros ejecutivos en una sola arquitectura institucional, trazable y medible. Es el producto central de Atlas GovTech, la división de Atlas Tech dedicada a gobiernos, municipios, dependencias y organismos públicos. SIGMA convierte la operación pública en una plataforma digital: del trámite al dato, y del dato a la decisión.",
+    features: [
+      "Trámites ciudadanos de inicio a resolución con folio único",
+      "Expediente electrónico institucional con trazabilidad total",
+      "Ventanilla digital para atención ciudadana 24/7",
+      "Flujos internos, turnos y dictámenes entre áreas",
+      "Pagos de derechos y conciliación integrados",
+      "Inspecciones de campo con evidencia y georreferencia",
+      "Tableros ejecutivos y BI de gobierno en tiempo real",
+      "Interoperabilidad por APIs con sistemas existentes",
+      "Bitácoras y evidencia para transparencia y contraloría",
+      "Arquitectura modular con roles, permisos y despliegue gradual",
+    ],
+    stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "APIs", "Cloud seguro"],
+    industrias: [
+      "Municipios",
+      "Gobiernos estatales",
+      "Dependencias federales",
+      "Organismos descentralizados",
+      "Catastro",
+      "Obras públicas",
+      "Mejora regulatoria",
+      "Atención ciudadana",
+      "Transparencia",
+      "Finanzas públicas",
+    ],
+    modules: [
+      { code: "01", key: "tramites",        name: "SIGMA Trámites",          desc: "Trámites ciudadanos de inicio a resolución: folio único, requisitos, etapas, prevenciones y resoluciones." },
+      { code: "02", key: "expedientes",     name: "SIGMA Expedientes",       desc: "Expediente electrónico por ciudadano, empresa, predio o proceso, con historial, versiones y metadatos." },
+      { code: "03", key: "ventanilla",      name: "SIGMA Ventanilla Digital", desc: "Portal ciudadano para iniciar, consultar y dar seguimiento a solicitudes en línea." },
+      { code: "04", key: "gestion",         name: "SIGMA Gestión Interna",   desc: "Solicitudes internas, oficios, turnos, autorizaciones y flujos entre áreas con semáforos." },
+      { code: "05", key: "dictamen",        name: "SIGMA Dictamen",          desc: "Motor de revisión, prevención, aprobación o rechazo con reglas de negocio y plantillas." },
+      { code: "06", key: "pagos",           name: "SIGMA Pagos",             desc: "Referencias, pago de derechos, validación, comprobantes y conciliación bancaria." },
+      { code: "07", key: "archivo",         name: "SIGMA Archivo y Documentos", desc: "Gestión documental pública: clasificación, resguardo, plantillas, oficios y resoluciones." },
+      { code: "08", key: "inspecciones",    name: "SIGMA Inspecciones",      desc: "Módulo móvil de campo: agenda, evidencia fotográfica, georreferencia, actas y firma digital." },
+      { code: "09", key: "atencion",        name: "SIGMA Atención Ciudadana", desc: "Peticiones, quejas y solicitudes con asignación, seguimiento, tiempos y encuestas." },
+      { code: "10", key: "bi",              name: "SIGMA BI Gobierno",       desc: "Tableros ejecutivos: KPIs por área, tiempos, cuellos de botella, cargas y productividad." },
+      { code: "11", key: "interoperabilidad", name: "SIGMA Interoperabilidad", desc: "APIs, webhooks y conectores con padrones, pagos, identidad, firma electrónica y legacy." },
+      { code: "12", key: "ia",              name: "SIGMA IA Pública",        desc: "Asistente para servidores públicos, clasificación automática, búsqueda semántica y resúmenes.", future: true },
+    ],
+    pricingDesde: "A medida",
+    pricingDesc: "Implementación por módulos con despliegue gradual. Diagnóstico, configuración, capacitación y evolución según la institución.",
+    colorAccent: "#2e6fb0",
+    colorAccent2: "#5b9bd5",
+    imagenCard: "/images/projects/sigma-card.jpg",
+  },
+  {
+    slug: "open-cashback",
+    titulo: "Open Cashback",
+    subtitulo: "Infraestructura abierta de cashback, lealtad y recompensas programables",
+    tagline: "Convierte cada compra en una recompensa programable",
+    categoria: "Blockchain / Fintech / Loyalty",
+    estado: "En desarrollo",
+    año: "2026",
+    division: "Atlas Web3",
+    descripcion:
+      "Open Cashback es una plataforma abierta y API-first de cashback, lealtad y recompensas programables para comercios físicos y digitales. Cada compra genera valor de regreso para el cliente —cashback, puntos o saldo de recompensa— mientras el negocio obtiene datos accionables de recompra, frecuencia y lifetime value. Arranca como un ledger transaccional confiable en PostgreSQL y está diseñada para evolucionar hacia una capa blockchain de auditoría: hashes de integridad, batch anchoring y, eventualmente, smart contracts y recompensas tokenizadas. Se integra con POS, ERP y e-commerce, y forma parte del ecosistema de productos de Atlas Tech.",
+    features: [
+      "Wallet de recompensas por cliente",
+      "Motor de reglas de cashback configurable",
+      "Ledger transaccional auditable (fuente de verdad)",
+      "Flujo de redención con validaciones antifraude",
+      "Motor de campañas por fecha, categoría y sucursal",
+      "API-first para POS, ERP y e-commerce con webhooks",
+      "Arquitectura multi-tenant por organización y sucursal",
+      "Hashes de integridad encadenados + batch anchoring on-chain",
+      "Idempotencia en ventas, cashback y redenciones",
+      "Reportes de pasivo, redención y comportamiento comercial",
+    ],
+    stack: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "React", "Solidity", "Hardhat", "Web3.py"],
+    industrias: [
+      "Retail y conveniencia",
+      "Restaurantes y cafeterías",
+      "Cadenas y franquicias",
+      "Mayoristas y distribuidores",
+      "E-commerce",
+      "Plataformas POS / ERP",
+      "Gimnasios y clínicas",
+      "Marketplaces",
+    ],
+    pricingDesde: "SaaS + add-on",
+    pricingDesc: "Modelo SaaS por comercio o sucursal, comisión por transacción, white-label para marcas y add-on premium para Atlas POS / Atlas ERP.",
+    repoUrl: "https://github.com/Ecamposg95/open-cashback",
+    colorAccent: "#8b5cf6",
+    colorAccent2: "#22d3ee",
+    imagenCard: "/images/projects/open-cashback-card.jpg",
   },
 ];
 

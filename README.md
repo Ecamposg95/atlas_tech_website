@@ -20,6 +20,10 @@ Construimos el futuro con **IA & Blockchain**. Desarrollamos plataformas intelig
 | Estilos | CSS personalizado + Bootstrap 5 |
 | Animaciones | GSAP 3, WOW.js, Lenis (smooth scroll) |
 | Build | Create React App (react-scripts 5) |
+| Proyectos | Data-driven (`src/data/projects.ts`) + páginas custom premium |
+| SEO | Meta por ruta + inyector estático en build + JSON-LD + sitemap |
+| Imágenes | Optimización a WebP con `sharp` |
+| Deploy | Hostinger (Apache) — **atlastech.mx** |
 | Idioma | Español (LATAM) |
 
 ---
@@ -57,40 +61,78 @@ atlas_tech_website/
 ├── atlasws/                        # App React principal
 │   ├── public/
 │   │   ├── favicon.svg             # Favicon personalizado (hexágono violeta + A)
-│   │   └── index.html
+│   │   ├── .htaccess               # Apache/Hostinger: SPA + HTTPS + cache + seguridad
+│   │   ├── robots.txt
+│   │   └── index.html              # Bloque SEO base (reemplazado por ruta en build)
+│   ├── scripts/
+│   │   ├── seo-build.cjs           # Post-build: inyecta meta por ruta + sitemap + robots
+│   │   └── optimize-images.cjs     # Convierte imágenes pesadas a WebP (sharp)
 │   └── src/
-│       ├── components/
-│       │   ├── hero/
-│       │   │   ├── Hero.tsx        # Sección hero principal (layout + copy)
-│       │   │   └── NetworkGlobe.tsx # Globo 3D Three.js (nuevo)
-│       │   ├── Header/             # Menú de navegación + Mega Menu
-│       │   ├── ContactSection/     # Formulario de contacto (glassmorphism)
-│       │   ├── about/              # Sección "Acerca de"
-│       │   ├── ServiceSection/     # Servicios
-│       │   ├── FeatureSection/     # Características destacadas
-│       │   ├── ProjectSection/     # Proyectos / Portafolio
-│       │   ├── Industries/         # Industrias verticales
-│       │   └── footer/             # Pie de página
+│       ├── components/             # Hero 3D, Header (+ menú móvil), AtlasOneDemos, footer…
+│       ├── data/
+│       │   └── projects.ts         # ★ Fuente de datos de proyectos (interfaz + array)
+│       ├── seo/
+│       │   ├── seo.config.json     # ★ Fuente única SEO (dominio, meta y JSON-LD por ruta)
+│       │   ├── resolveSeo.ts        # Resuelve meta por pathname
+│       │   └── SeoRouter.tsx        # Aplica meta al <head> en cada navegación (sin deps)
 │       ├── main-component/
-│       │   ├── HomePage/           # Composición de la página principal
-│       │   ├── router/             # Configuración de rutas
-│       │   ├── AboutPage/
-│       │   ├── ContactPage/
-│       │   └── SeviceSinglePage/
+│       │   ├── HomePage/  AboutPage/  ContactPage/  SeviceSinglePage/
+│       │   ├── router/             # Rutas (incluye páginas de proyecto + SeoRouter)
+│       │   └── ProjectsPage/
+│       │       ├── ProjectsPage.tsx          # /proyectos — grid auto de cards
+│       │       ├── ProjectDetailPage.tsx     # /proyectos/:slug — detalle genérico
+│       │       ├── HarvesttDetailPage.tsx    # Página custom (SpaceX / AgroTech)
+│       │       ├── SigmaDetailPage.tsx       # Página custom (GovTech / institucional)
+│       │       └── OpenCashbackDetailPage.tsx# Página custom (Web3 / fintech)
 │       ├── css/
-│       │   └── main.css            # Estilos globales + tokens de diseño
-│       └── images/                 # Assets visuales, logos e iconos SVG
-├── contex/                         # Documentación y prototipos de referencia
-│   ├── Atlas Hero - Horizonte.html # Prototipo HTML del hero 3D
-│   └── Hero 3D Horizonte - Patrones UI.md  # Skill / guía de patrones UI
+│       │   ├── main.css            # Estilos globales + tokens de diseño
+│       │   └── responsive.css      # .r-stack (colapso de grids) + safety overflow
+│       └── images/                 # Assets visuales, logos e iconos SVG (WebP donde pesa)
+├── contex/                         # Documentación, briefs y prototipos de referencia
+│   ├── open_cashback_master_brief.md      # Brief técnico de Open Cashback
+│   ├── sigma.mb                            # Contexto / brief de SIGMA (GovTech)
+│   ├── harvestt_fotos_prompt_maestro.mb    # Prompt maestro para fotos de Harvestt
+│   ├── Atlas Hero - Horizonte.html         # Prototipo HTML del hero 3D
+│   └── Hero 3D Horizonte - Patrones UI.md  # Guía de patrones UI
 └── README.md
 ```
 
 ---
 
+## 🗂️ Proyectos & Portafolio
+
+La sección de proyectos es **data-driven**: todo sale de `src/data/projects.ts`.
+
+- `/proyectos` → `ProjectsPage.tsx` lista automáticamente cada proyecto del array como card.
+- `/proyectos/:slug` → `ProjectDetailPage.tsx` genera una página de detalle genérica (agregar al array = página gratis).
+- Algunos proyectos tienen **página custom premium** (ruta explícita antes de `:slug`):
+
+| Proyecto | Slug | Categoría | Estética |
+|---|---|---|---|
+| **Atlas One** | `atlas-one` | SaaS / POS / ERP | Detalle genérico + demo player interactivo |
+| **Harvestt** | `harvestt` | AgroTech / IoT / IA | SpaceX — negro, fotografía full-bleed |
+| **SIGMA** | `sigma` | GovTech / Sector Público | Institucional — navy + azul acero |
+| **Open Cashback** | `open-cashback` | Blockchain / Fintech | Web3 — neón violeta + cyan |
+
+> Para agregar un proyecto: mínimo, añade una entrada a `projects.ts`. Para algo espectacular, crea un `*DetailPage.tsx` y registra la ruta antes de `:slug`.
+
+**Responsive:** las páginas custom usan estilos inline; `src/css/responsive.css` aporta la clase `.r-stack` (colapsa grids de 2→1 columna < 860px) y las rejillas auto-fit usan `minmax(min(Npx, 100%), 1fr)` para no desbordar. El demo de Atlas One se auto-escala con un componente `FitStage`.
+
+---
+
+## 🔍 SEO
+
+SEO potente sobre CRA, sin migrar de framework. **Fuente única de verdad:** `src/seo/seo.config.json`.
+
+- **Runtime** (`SeoRouter.tsx`): sin dependencias (compatible con React 19); actualiza `<title>`, meta, Open Graph, Twitter, canonical y JSON-LD en cada navegación.
+- **Build** (`scripts/seo-build.cjs`, corre solo en `postbuild`): genera un `index.html` por ruta con su meta real (clave para crawlers sociales que no ejecutan JS) + `sitemap.xml` + `robots.txt`.
+- **Cambiar el dominio** = editar `siteUrl` en `seo.config.json` (actual: `https://atlastech.mx`) y reconstruir.
+
+---
+
 ## 🛠️ Instalación y Desarrollo Local
 
-Requisitos: **Node.js ≥ 16**
+Requisitos: **Node.js ≥ 18** (recomendado 20+; `sharp` requiere ≥ 18)
 
 ```bash
 # 1. Entrar al directorio de la app
@@ -105,28 +147,40 @@ npm start
 
 ---
 
-## 📦 Build de Producción
+## 📦 Build de Producción y Despliegue (Hostinger)
 
 ```bash
 cd atlasws
-npm run build
+
+# (opcional) re-optimizar imágenes pesadas a WebP
+npm run optimize-images
+
+# build de producción — el postbuild inyecta SEO por ruta + sitemap + robots
+CI=false npm run build
 ```
 
-Los archivos optimizados se generan en `atlasws/build/`. Sube el **contenido** de esa carpeta a tu hosting (Apache, Nginx, cPanel, etc.).
+Esto genera `atlasws/build/` con: HTML por ruta (SEO), `sitemap.xml`, `robots.txt` y `.htaccess`.
 
-> ⚠️ **Nota para hosting sin SPA support:** Si tu servidor no soporta rutas SPA, agrega un archivo `.htaccess` en la raíz del hosting con redirección a `index.html`:
-> ```apache
-> RewriteEngine On
-> RewriteBase /
-> RewriteRule ^index\.html$ - [L]
-> RewriteCond %{REQUEST_FILENAME} !-f
-> RewriteCond %{REQUEST_FILENAME} !-d
-> RewriteRule . /index.html [L]
-> ```
+**Subir a Hostinger:**
+1. hPanel → Administrador de archivos → `public_html` (vacíalo si hay algo viejo).
+2. Sube **todo el contenido de `atlasws/build/`** — incluido el `.htaccess` oculto.
+3. Confirma **SSL activo** para `atlastech.mx`.
+4. Verifica: abre una subruta directa (p. ej. `atlastech.mx/proyectos/sigma`, sin 404), prueba el Open Graph en el [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) y envía `sitemap.xml` en Google Search Console.
+
+> El `.htaccess` (en `atlasws/public/`, se copia al build) maneja el rewrite SPA respetando el HTML por ruta, fuerza HTTPS y www→no-www, compresión, cache y headers de seguridad.
 
 ---
 
 ## 📝 Historial de Cambios
+
+### v3.0 — Portafolio, SEO y Optimización (2026-06)
+- **Proyectos data-driven**: nueva sección `/proyectos` con cards automáticas desde `src/data/projects.ts`
+- **Páginas custom premium**: **SIGMA** (GovTech, institucional navy), **Open Cashback** (Web3, neón violeta/cyan) y rediseño de **Harvestt** (estética SpaceX, fotografía full-bleed)
+- **SEO potente** sobre CRA: meta por ruta + Open Graph + Twitter + JSON-LD vía `SeoRouter` (runtime, sin deps) y un inyector estático en `postbuild` (`scripts/seo-build.cjs`) que escribe HTML por ruta + `sitemap.xml` + `robots.txt`. Dominio: `atlastech.mx`
+- **`.htaccess`** completo para Apache/Hostinger: SPA, HTTPS, www→no-www, cache, compresión y seguridad
+- **Responsividad**: `responsive.css` (`.r-stack`), rejillas auto-fit blindadas con `min(…,100%)` y `FitStage` que auto-escala el demo de Atlas One
+- **Optimización de imágenes**: conversión a **WebP** con `sharp` (`scripts/optimize-images.cjs`) — imágenes de Harvestt y del template −90/96%
+- **Fundamentos**: `lang="es"`, `homepage:"/"`, canonical, theme-color
 
 ### v2.0 — Renovación Visual Completa (2026-04)
 - **Hero 3D**: Nuevo bloque inicial con globo interactivo Three.js (variante "Horizonte"), sticky background y capa acrílica de glassmorphism

@@ -175,7 +175,7 @@ const ProjectDetailPage: React.FC = () => {
             {/* ── DESCRIPCIÓN ────────────────────────────────── */}
             <section style={{ background: "#020617", padding: "80px 0" }}>
               <div className="container">
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+                <div className="r-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
                   <div>
                     <div style={{ fontSize: 11, color: "#a855f7", fontFamily: "monospace", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16, fontWeight: 700 }}>
                       Sobre el proyecto
@@ -249,7 +249,7 @@ const ProjectDetailPage: React.FC = () => {
             {/* ── STACK TÉCNICO ──────────────────────────────── */}
             <section style={{ background: "#07090f", padding: "80px 0" }}>
               <div className="container">
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
+                <div className="r-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
                   <div>
                     <div style={{ fontSize: 11, color: "#a855f7", fontFamily: "monospace", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12, fontWeight: 700 }}>
                       Stack tecnológico
@@ -317,7 +317,7 @@ const ProjectDetailPage: React.FC = () => {
                     La inteligencia artificial se integra como apoyo práctico para entender ventas, inventario y oportunidades. Recomendaciones accionables — no magia.
                   </p>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16, maxWidth: 960, margin: "0 auto" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))", gap: 16, maxWidth: 960, margin: "0 auto" }}>
                   {[
                     { q: "¿Qué productos se están vendiendo menos?", hint: "↓ ventas vs. mes pasado", color: "#A78BFA" },
                     { q: "¿Qué día conviene comprar más inventario?", hint: "Predicción de demanda · 14 días", color: "#22D3EE" },

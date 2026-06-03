@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import {
   N, ATLAS_FONT, ATLAS_MONO, ATLAS_SERIF,
   Icon, mxn, mxnInt,
@@ -8,6 +8,15 @@ import {
   LaptopFrame, TabletFrame, PhoneFrame, PRESETS, GenericHero,
 } from "./shared";
 import type { PresetConfig, IconProps } from "./shared";
+import { CafeDesktop, CafeTouch, CafeHero } from "./screens/cafe";
+import { BeautyDesktop, BeautyTouch, BeautyHero } from "./screens/beauty";
+import { HealthDesktop, HealthTouch, HealthHero } from "./screens/health";
+import { BarDesktop, BarTouch, BarHero } from "./screens/bar";
+import { ServicesDesktop, ServicesTouch, ServicesHero } from "./screens/services";
+import { EnterpriseDesktop, EnterpriseTouch, EnterpriseHero } from "./screens/enterprise";
+import { CustomDesktop, CustomTouch, CustomHero } from "./screens/custom";
+import { BarberMobile, BarberHero } from "./screens/barber";
+import { RestaurantTouch, RestaurantMobile, RestaurantHero } from "./screens/restaurant";
 
 // Re-export del sistema de diseño para los módulos screens/<preset>.tsx
 // (deben importar de "../AtlasOneDemos"; shared se evalúa primero, evitando TDZ)
@@ -21,15 +30,6 @@ export {
 };
 export type { PresetConfig, IconProps };
 
-import { CafeDesktop, CafeTouch, CafeHero } from "./screens/cafe";
-import { BeautyDesktop, BeautyTouch, BeautyHero } from "./screens/beauty";
-import { HealthDesktop, HealthTouch, HealthHero } from "./screens/health";
-import { BarDesktop, BarTouch, BarHero } from "./screens/bar";
-import { ServicesDesktop, ServicesTouch, ServicesHero } from "./screens/services";
-import { EnterpriseDesktop, EnterpriseTouch, EnterpriseHero } from "./screens/enterprise";
-import { CustomDesktop, CustomTouch, CustomHero } from "./screens/custom";
-import { BarberMobile, BarberHero } from "./screens/barber";
-import { RestaurantTouch, RestaurantMobile, RestaurantHero } from "./screens/restaurant";
 // ============================================================
 // 1. PRESET: POS (SCREEN VIEWS)
 // ============================================================
@@ -815,6 +815,41 @@ const SCREENS: Record<string, { desktop: React.FC; tablet?: React.FC; mobile?: R
   custom:     { desktop: CustomDesktop,     tablet: CustomTouch,     hero: CustomHero },
 };
 
+// Escala automáticamente un marco de tamaño fijo para que quepa en el ancho
+// disponible (móvil/tablet) sin desbordar, conservando la proporción.
+const FitStage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const outer = useRef<HTMLDivElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  const [dims, setDims] = useState<{ w?: number; h?: number }>({});
+
+  useLayoutEffect(() => {
+    const o = outer.current, i = inner.current;
+    if (!o || !i) return;
+    const fit = () => {
+      const natW = i.offsetWidth, natH = i.offsetHeight; // no afectados por transform
+      if (!natW) return;
+      const s = Math.min(1, o.clientWidth / natW);
+      setScale(s);
+      setDims({ w: natW * s, h: natH * s });
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(o);
+    return () => ro.disconnect();
+  }, [children]);
+
+  return (
+    <div ref={outer} style={{ width: "100%" }}>
+      <div style={{ width: dims.w, height: dims.h, maxWidth: "100%", margin: "0 auto", position: "relative" }}>
+        <div ref={inner} style={{ transform: `scale(${scale})`, transformOrigin: "top left", position: "absolute", top: 0, left: 0 }}>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const AtlasOneDemosPlayer: React.FC = () => {
   const [activePreset, setActivePreset] = useState<string>("pos");
   const [activeScreen, setActiveScreen] = useState<string>("desktop");
@@ -845,33 +880,39 @@ export const AtlasOneDemosPlayer: React.FC = () => {
     if (activeScreen === "tablet" && entry.tablet) {
       const Tablet = entry.tablet;
       return (
-        <TabletFrame width={600}>
-          <div style={{ width: 1280, height: 800, transform: "scale(0.468)", transformOrigin: "top left" }}>
-            <Tablet />
-          </div>
-        </TabletFrame>
+        <FitStage>
+          <TabletFrame width={600}>
+            <div style={{ width: 1280, height: 800, transform: "scale(0.468)", transformOrigin: "top left" }}>
+              <Tablet />
+            </div>
+          </TabletFrame>
+        </FitStage>
       );
     }
 
     if (activeScreen === "mobile" && entry.mobile) {
       const Mobile = entry.mobile;
       return (
-        <PhoneFrame width={250}>
-          <div style={{ width: 390, height: 844, transform: "scale(0.597)", transformOrigin: "top left" }}>
-            <Mobile />
-          </div>
-        </PhoneFrame>
+        <FitStage>
+          <PhoneFrame width={250}>
+            <div style={{ width: 390, height: 844, transform: "scale(0.597)", transformOrigin: "top left" }}>
+              <Mobile />
+            </div>
+          </PhoneFrame>
+        </FitStage>
       );
     }
 
     // Por defecto: vista de escritorio
     const Desktop = entry.desktop;
     return (
-      <LaptopFrame width={760}>
-        <div style={{ width: 1440, height: 900, transform: "scale(0.527)", transformOrigin: "top left" }}>
-          <Desktop />
-        </div>
-      </LaptopFrame>
+      <FitStage>
+        <LaptopFrame width={760}>
+          <div style={{ width: 1440, height: 900, transform: "scale(0.527)", transformOrigin: "top left" }}>
+            <Desktop />
+          </div>
+        </LaptopFrame>
+      </FitStage>
     );
   };
 

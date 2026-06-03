@@ -13,6 +13,7 @@ import "./css/mousecursor.css";
 import "./css/imageRevealHover.css";
 import "./css/custom-fonts.css";
 import "./css/main.css";
+import "./css/responsive.css";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = ReactDOM.createRoot(rootElement);

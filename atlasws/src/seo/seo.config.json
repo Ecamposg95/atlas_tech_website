@@ -1,0 +1,152 @@
+{
+  "siteUrl": "https://atlastech.mx",
+  "brand": "Atlas Tech",
+  "titleTemplate": "%s | Atlas Tech",
+  "locale": "es_MX",
+  "twitter": "@atlastech",
+  "defaultImage": "/images/projects/harvestt/mars-domes-branded.png",
+  "themeColor": "#0a0a12",
+  "organization": {
+    "name": "Atlas Tech",
+    "legalName": "Atlas Tech",
+    "description": "Venture studio, consultoría IT e ingeniería de software. Construimos plataformas empresariales, IA, blockchain y productos digitales a la medida para Latinoamérica.",
+    "sameAs": []
+  },
+  "routes": [
+    {
+      "path": "/",
+      "title": "Atlas Tech — Venture studio e ingeniería de software en Latinoamérica",
+      "description": "Atlas Tech construye plataformas empresariales, IA, blockchain y productos digitales a la medida para negocios e instituciones en México y Latinoamérica.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "Atlas Tech, venture studio, software a la medida, ERP, POS, IA, blockchain, transformación digital, Latinoamérica",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Atlas Tech",
+          "url": "{siteUrl}/",
+          "logo": "{siteUrl}/logo512.png",
+          "description": "Venture studio, consultoría IT e ingeniería de software para Latinoamérica.",
+          "sameAs": []
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Atlas Tech",
+          "url": "{siteUrl}/"
+        }
+      ]
+    },
+    {
+      "path": "/about",
+      "title": "Nosotros",
+      "description": "Conoce a Atlas Tech: venture studio e ingeniería de software que moderniza la operación de negocios e instituciones con tecnología modular, segura y escalable.",
+      "type": "website",
+      "keywords": "Atlas Tech, sobre nosotros, equipo, venture studio, ingeniería de software"
+    },
+    {
+      "path": "/service",
+      "title": "Servicios — software, IA y blockchain a la medida",
+      "description": "Desarrollo de plataformas empresariales, ERP, POS, CRM, automatización, dashboards, IA, blockchain e integraciones. Consultoría tecnológica y transformación digital.",
+      "type": "website",
+      "keywords": "desarrollo de software, ERP, POS, CRM, inteligencia artificial, blockchain, APIs, consultoría tecnológica"
+    },
+    {
+      "path": "/proyectos",
+      "title": "Proyectos — lo que estamos construyendo",
+      "description": "Productos reales de IA, GovTech, AgroTech y blockchain en construcción para negocios e instituciones de Latinoamérica.",
+      "type": "website",
+      "keywords": "proyectos Atlas Tech, Atlas One, Harvestt, SIGMA, Open Cashback, IA, blockchain"
+    },
+    {
+      "path": "/proyectos/atlas-one",
+      "title": "Atlas One — software todo-en-uno para vender, controlar y crecer",
+      "description": "Plataforma modular de software comercial (POS, caja, inventario, clientes y reportes) con 11 configuraciones de industria, para negocios físicos en México y Latinoamérica.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "Atlas One, POS, punto de venta, ERP, inventario, software para negocios, México",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Atlas One",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Windows, macOS, Linux, Web, Móvil",
+          "description": "Software comercial modular: POS, caja, inventario, clientes y reportes con 11 presets de industria.",
+          "brand": { "@type": "Brand", "name": "Atlas Tech" }
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/harvestt",
+      "title": "Harvestt — agrotecnología con IA, premiada internacionalmente",
+      "description": "Sistema automatizado de agrotecnología con IA: invernadero controlado y domos geodésicos modulares. Premiado en Polonia, Canadá y Rumania. Nacido en el IPN.",
+      "type": "website",
+      "image": "/images/projects/harvestt/hero-dome.png",
+      "keywords": "Harvestt, agrotecnología, AgroTech, IA, invernadero geodésico, IPN, seguridad alimentaria",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Harvestt",
+          "description": "Sistema automatizado de agrotecnología con IA: invernadero controlado y domos geodésicos modulares.",
+          "brand": { "@type": "Brand", "name": "Atlas Tech" },
+          "category": "AgroTech"
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/sigma",
+      "title": "SIGMA — plataforma GovTech de modernización administrativa",
+      "description": "Sistema Integral de Gestión y Modernización Administrativa: plataforma GovTech modular para digitalizar trámites, expedientes, dictámenes, pagos y tableros ejecutivos del sector público.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "SIGMA, GovTech, gobierno digital, modernización administrativa, trámites, sector público, Atlas GovTech",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "SIGMA",
+          "applicationCategory": "GovernmentApplication",
+          "operatingSystem": "Web",
+          "description": "Plataforma GovTech modular para modernizar la gestión administrativa pública.",
+          "brand": { "@type": "Brand", "name": "Atlas GovTech" }
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/open-cashback",
+      "title": "Open Cashback — cashback, loyalty y rewards programables",
+      "description": "Infraestructura abierta y API-first de cashback, lealtad y recompensas para POS, ERP y e-commerce. Ledger transaccional auditable con capa blockchain de anchoring.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "Open Cashback, cashback, loyalty, rewards, blockchain, wallet, POS, e-commerce, Web3",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Open Cashback",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Plataforma API-first de cashback, lealtad y recompensas programables con capa blockchain de auditoría.",
+          "brand": { "@type": "Brand", "name": "Atlas Web3" }
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "title": "Contacto",
+      "description": "Hablemos de tu proyecto. Agenda una demo o cuéntanos qué quieres construir con Atlas Tech.",
+      "type": "website",
+      "keywords": "contacto Atlas Tech, agenda demo, cotización software"
+    },
+    {
+      "path": "/404",
+      "title": "Página no encontrada",
+      "description": "La página que buscas no existe o fue movida.",
+      "type": "website",
+      "noindex": true
+    }
+  ]
+}

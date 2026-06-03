@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import img13 from "../../images/service/img13.png";
+import img13 from "../../images/service/img13.webp";
 import ServiceFaq from "./ServiceFaq";
 import GallerySection from "./GallerySection";
 

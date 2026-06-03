@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WowInit from "../../components/wowInit/wowInit";
+import SeoRouter from "../../seo/SeoRouter";
 
 // ✅ Pages
 import Homepage from "../HomePage";
@@ -12,6 +13,8 @@ import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import ProjectsPage from "../ProjectsPage/ProjectsPage";
 import ProjectDetailPage from "../ProjectsPage/ProjectDetailPage";
 import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
+import SigmaDetailPage from "../ProjectsPage/SigmaDetailPage";
+import OpenCashbackDetailPage from "../ProjectsPage/OpenCashbackDetailPage";
 import ContactPage from "../ContactPage/ContactPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
@@ -23,6 +26,7 @@ const AllRoute: React.FC = () => {
       <BrowserRouter>
         <WowInit />
         <ScrollToTop />
+        <SeoRouter />
 
         <Routes>
           {/* Home */}
@@ -41,6 +45,8 @@ const AllRoute: React.FC = () => {
           {/* ✅ Proyectos data-driven (nueva sección) */}
           <Route path="/proyectos" element={<ProjectsPage />} />
           <Route path="/proyectos/harvestt" element={<HarvesttDetailPage />} />
+          <Route path="/proyectos/sigma" element={<SigmaDetailPage />} />
+          <Route path="/proyectos/open-cashback" element={<OpenCashbackDetailPage />} />
           <Route path="/proyectos/:slug" element={<ProjectDetailPage />} />
 
           {/* Contacto */}

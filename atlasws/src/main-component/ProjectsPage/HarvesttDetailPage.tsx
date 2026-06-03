@@ -8,8 +8,9 @@ import { getProjectBySlug, Award } from "../../data/projects";
 // ── Estética SpaceX ───────────────────────────────────────────
 const SX_FONT = "'Barlow', 'D-DIN', Arial, Helvetica, sans-serif";
 const TEXT = "#F0F0FA";
-const GEO = "/images/projects/harvestt/geodesic-hero.jpg";
-const PROD = "/images/projects/harvestt/harvestt-product.jpg";
+const GEO = "/images/projects/harvestt/hero-dome.webp";          // Panel 1 · domo solo
+const VISION = "/images/projects/harvestt/geodesic-vision.webp"; // Panel 2 · cluster de domos
+const PROD = "/images/projects/harvestt/product-node.webp";      // Panel 7 · macro nodo + plántula
 
 const medalAccent: Record<Award["medal"], string> = {
   gold: "#F5C842", silver: "#D5DBE3", bronze: "#D69A6A", honor: "#B7A3F2", special: "#34D399",
@@ -88,7 +89,7 @@ const HarvesttDetailPage: React.FC = () => {
 
             {/* ── PANEL 1 · HERO ─────────────────────────────── */}
             <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", overflow: "hidden", background: "#000" }}>
-              <img src={GEO} alt="Invernadero geodésico Harvestt" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 14%" }} />
+              <img src={GEO} alt="Invernadero geodésico Harvestt" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 42%" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.5) 45%, rgba(0,0,0,.25) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg, #000 2%, transparent 38%, transparent 78%, rgba(0,0,0,.7) 100%)" }} />
 
@@ -124,7 +125,7 @@ const HarvesttDetailPage: React.FC = () => {
 
             {/* ── PANEL 2 · VISIÓN GEODÉSICA ─────────────────── */}
             <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", overflow: "hidden", background: "#000" }}>
-              <img src={GEO} alt="Domos geodésicos" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%", transform: "scale(1.15)" }} />
+              <img src={VISION} alt="Domos geodésicos" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 55%", transform: "scale(1.08)" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.35) 60%, transparent 100%)" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg, #000 1%, transparent 40%, transparent 80%, rgba(0,0,0,.6) 100%)" }} />
               <div className="container" style={{ position: "relative", paddingBottom: 100, paddingTop: 120 }}>
@@ -154,7 +155,7 @@ const HarvesttDetailPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 0 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 0 }}>
                   {[
                     { n: "01", tag: "Hoy · Indoor", title: "Invernaderos en casa", desc: "La grow-box doméstica: germina y cultiva con clima, luz y nutrientes por IA.", icon: <IconIndoor /> },
                     { n: "02", tag: "Escalando · Urbano", title: "Granjas verticales urbanas", desc: "Módulos apilables que llevan el cultivo local, fresco y sin pesticidas a la ciudad.", icon: <IconUrban /> },
@@ -175,7 +176,7 @@ const HarvesttDetailPage: React.FC = () => {
             {/* ── PANEL 4 · TECNOLOGÍA ───────────────────────── */}
             <section style={{ background: "#050505", borderTop: "1px solid rgba(240,240,250,.08)", padding: "120px 0" }}>
               <div className="container">
-                <div style={{ display: "grid", gridTemplateColumns: "minmax(280px, 0.8fr) 1.2fr", gap: 70, alignItems: "start" }}>
+                <div className="r-stack" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 0.8fr) 1.2fr", gap: 70, alignItems: "start" }}>
                   <div>
                     {eyebrow("Núcleo tecnológico")}
                     <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", lineHeight: 1.0, letterSpacing: "-0.01em", color: "#fff", margin: "0 0 22px" }}>
@@ -216,7 +217,7 @@ const HarvesttDetailPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 0 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: 0 }}>
                   {awards.map((a, i) => {
                     const c = medalAccent[a.medal];
                     return (
@@ -239,7 +240,7 @@ const HarvesttDetailPage: React.FC = () => {
             {/* ── PANEL 6 · ORIGEN ───────────────────────────── */}
             <section style={{ background: "#050505", borderTop: "1px solid rgba(240,240,250,.08)", padding: "120px 0" }}>
               <div className="container">
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 70, alignItems: "start" }}>
+                <div className="r-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 70, alignItems: "start" }}>
                   <div>
                     {eyebrow("Origen")}
                     <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", lineHeight: 1.0, letterSpacing: "-0.01em", color: "#fff", margin: "0 0 24px" }}>

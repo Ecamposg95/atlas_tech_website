@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import img14 from "../../images/service/img14.png";
-import img15 from "../../images/service/img15.png";
-import img16 from "../../images/service/img16.png";
+import img14 from "../../images/service/img14.webp";
+import img15 from "../../images/service/img15.webp";
+import img16 from "../../images/service/img16.webp";
 
 
 const GallerySection: React.FC = () => {

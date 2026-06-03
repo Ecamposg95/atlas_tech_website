@@ -1,0 +1,108 @@
+# Atlas GovTech / SIGMA — Contexto
+
+Brief que define la división **Atlas GovTech** y su producto insignia **SIGMA**.
+Implementado en el sitio como página custom: `/proyectos/sigma`
+(`src/main-component/ProjectsPage/SigmaDetailPage.tsx`) + entrada en `src/data/projects.ts`.
+
+---
+
+## La división — Atlas GovTech
+
+Unidad de Atlas Tech dedicada a diseñar, implementar y evolucionar plataformas
+tecnológicas para gobiernos, municipios, dependencias y organismos públicos.
+Identidad **seria, institucional y premium** — distinta al lenguaje de startups:
+confianza, cumplimiento, trazabilidad, seguridad y visión de largo plazo.
+
+> *Soluciones digitales para gobiernos modernos.*
+
+- **Visión:** ser el brazo tecnológico que permita al sector público modernizar su
+  operación administrativa con plataformas seguras, modulares y trazables, y
+  prepararse para el gobierno digital y la inteligencia pública.
+- **Misión:** diseñar, implementar y escalar soluciones que permitan a las
+  instituciones operar con mayor eficiencia, trazabilidad, transparencia y
+  orientación ciudadana.
+- **Modelo:** SIGMA como producto central y punto de entrada, + consultoría,
+  implementación, capacitación y evolución continua.
+
+---
+
+## El producto — SIGMA
+
+**Sistema Integral de Gestión y Modernización Administrativa.**
+Plataforma GovTech modular, escalable y profesional. El **sistema nervioso digital**
+de la administración pública: conecta personas, procesos, documentos, trámites,
+áreas, reglas y decisiones, con la ciudadanía en el centro.
+
+- *Gobierno digital, operación inteligente.*
+- *Del trámite al dato. Del dato a la decisión.*
+
+**SIGMA SÍ es:** infraestructura de modernización administrativa; suite modular;
+trazabilidad, evidencia y datos para decidir; adaptable a municipios, estados,
+dependencias y organismos.
+**SIGMA NO es:** una app genérica; un gestor de trámites básico; un CRM adaptado;
+un sistema de tickets; un dashboard decorativo; una solución de campaña.
+
+---
+
+## El problema
+
+Procesos fragmentados y difíciles de medir: trámites lentos, dependencia del papel,
+expedientes dispersos, Excel/WhatsApp/carpetas locales, información duplicada,
+sistemas aislados, sin trazabilidad de quién hizo qué, reportes difíciles,
+baja visibilidad ejecutiva, procesos sin estandarización, decisiones no auditables.
+
+## Propuesta de valor (5 pilares)
+
+1. **Digitalización** — trámites/expedientes/procesos físicos → flujos digitales.
+2. **Trazabilidad** — acciones, cambios, responsables, fechas, dictámenes.
+3. **Eficiencia** — menos tiempos, reprocesos, duplicidades y cargas.
+4. **Transparencia** — evidencia institucional y seguimiento.
+5. **Inteligencia operativa** — la operación diaria convertida en datos para decidir.
+
+---
+
+## Los 12 módulos (suite modular)
+
+| # | Módulo | Qué hace |
+|---|---|---|
+| 01 | Trámites | Tramitación ciudadana de inicio a resolución (folio, etapas, prevenciones) |
+| 02 | Expedientes | Expediente electrónico por ciudadano/empresa/predio/proceso |
+| 03 | Ventanilla Digital | Portal ciudadano: iniciar, consultar y dar seguimiento |
+| 04 | Gestión Interna | Solicitudes, oficios, turnos, autorizaciones y flujos entre áreas |
+| 05 | Dictamen | Motor de revisión/prevención/aprobación/rechazo con reglas |
+| 06 | Pagos | Referencias, pago de derechos, validación y conciliación |
+| 07 | Archivo y Documentos | Gestión documental: clasificación, resguardo, plantillas |
+| 08 | Inspecciones | Módulo móvil: evidencia, georreferencia, actas, firma digital |
+| 09 | Atención Ciudadana | Peticiones/quejas con asignación, tiempos y encuestas |
+| 10 | BI Gobierno | Tableros ejecutivos: KPIs, tiempos, cuellos de botella, productividad |
+| 11 | Interoperabilidad | APIs, webhooks y conectores (padrones, pagos, identidad, firma, legacy) |
+| 12 | IA Pública *(a futuro)* | Asistente, clasificación automática, búsqueda semántica, resúmenes |
+
+---
+
+## Arquitectura del trámite electrónico (flujo)
+
+Captura → validación de requisitos → integración de expediente → revisión por área →
+dictamen → prevención/aprobación/rechazo → pago (si aplica) → resolución y entrega →
+registro de evidencia → incorporación a tableros y reportes.
+
+## Beneficios por perfil
+
+Alta dirección · Secretarías y direcciones · Servidores públicos operativos ·
+Ciudadanía · Áreas de TI · Transparencia y contraloría.
+
+## Dónde aplica
+
+Municipios, gobiernos estatales, dependencias federales, organismos descentralizados,
+catastro, obras públicas, mejora regulatoria, atención ciudadana, transparencia,
+finanzas públicas, RRHH, archivo, contraloría.
+
+---
+
+## Decisiones de diseño de la página (implementadas)
+
+- **Estética:** "Institucional Profundo" — navy `#0a1a2f` + acento azul acero
+  `#2e6fb0` / `#5b9bd5`. Distinta a Harvestt (negro) y Atlas One (azul/púrpura).
+- **Marca:** división + producto 50/50 — presenta Atlas GovTech como nueva división
+  Y SIGMA como su producto.
+- **Tipografía:** Inter / IBM Plex Sans.

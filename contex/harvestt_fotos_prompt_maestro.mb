@@ -1,0 +1,111 @@
+# Harvestt — Prompt Maestro para Generación de Fotos
+
+Imágenes full-bleed estilo **SpaceX** para las primeras secciones de la página de Harvestt
+(`/proyectos/harvestt`). Fondo negro, overlay oscuro de izquierda (donde va el texto) a derecha,
+y fundido a negro abajo.
+
+**Reglas de composición (por cómo está construida la página):**
+- Espacio negativo a la **IZQUIERDA** y **ABAJO** (ahí van título y botones).
+- Sujeto pesado a la **DERECHA / centro**.
+- Cinematográfico, hora azul / atardecer, escala épica, sin gente, fotorrealista.
+- Los prompts van en **inglés** (los generadores rinden mejor), aunque el brief sea en español.
+
+---
+
+## 🎬 PROMPT MAESTRO (columna vertebral de estilo — reusar en todas)
+
+```
+MASTER STYLE SPINE:
+
+cinematic photograph, SpaceX-launch aesthetic, epic minimalist futurism,
+shot on 35mm full-frame, anamorphic lens, ultra-wide establishing shot,
+blue hour / twilight lighting, volumetric god rays, atmospheric haze,
+deep blacks and crushed shadows, high dynamic range, photorealistic,
+muted desaturated palette with a single emerald-green accent glow (#10B981),
+clean negative space on the LEFT and BOTTOM third of the frame for text,
+subject weighted to the RIGHT, no people, no text, no logos,
+hyper-detailed, 8k, color graded like a sci-fi film still
+--ar 16:9 --style raw --v 6.1
+```
+
+---
+
+## 1️⃣ HERO — "Cultivar vida en cualquier lugar"
+Archivo destino: `atlasws/public/images/projects/harvestt/geodesic-hero.jpg`
+Recorte en la página: `object-position: center 14%` (parte alta de la imagen).
+
+```
+A single futuristic geodesic greenhouse dome standing alone on a vast,
+barren high-altitude plateau at blue hour. Translucent triangular glass
+panels glowing softly from within with warm full-spectrum grow-light,
+faint emerald-green bioluminescent tint leaking through the panels.
+Dramatic overcast twilight sky, distant mountains, thin ground fog.
+The dome sits on the RIGHT side of the frame; the LEFT and lower third
+are dark empty atmosphere and terrain for headline text.
+Lonely, awe-inspiring, hopeful, pristine engineering.
+
+[+ MASTER STYLE SPINE]
+--ar 16:9
+```
+
+---
+
+## 2️⃣ VISIÓN GEODÉSICA — "Fuera de este mundo"
+(Actualmente reusa la misma imagen del hero en `object-position: center 70%`.
+ Si se separa en su propio archivo, sugerido: `geodesic-vision.jpg`.)
+
+```
+A cluster of modular geodesic greenhouse domes deployed across an alien,
+Mars-like red-and-grey landscape under a dramatic dusk sky. Domes glowing
+from inside with green-tinted grow light, connected by low habitat tunnels,
+clean-energy panels and slender wind turbines nearby, distant horizon curve
+suggesting an extreme/off-world frontier. Cinematic colonization vibe,
+self-sufficient outpost. Negative dark space on the LEFT for text,
+domes and activity weighted RIGHT and center.
+
+[+ MASTER STYLE SPINE]
+--ar 16:9
+```
+
+---
+
+## 3️⃣ (Bonus) PRODUCTO / CTA — se usa muy oscurecido de fondo (opacidad 0.22)
+Archivo destino: `atlasws/public/images/projects/harvestt/harvestt-product.jpg`
+
+```
+Macro detail of a single triangular geodesic panel node — brushed-aluminum
+hub connecting struts, a tender green seedling sprouting under soft
+full-spectrum LED glow, water droplets, shallow depth of field, dark
+background. Product-photography precision, premium hardware, emerald accent.
+
+[+ MASTER STYLE SPINE]   (puede ir --ar 16:9 o 3:2)
+```
+
+---
+
+## ⚙️ Ajustes por herramienta
+
+| Herramienta | Qué cambiar |
+|---|---|
+| **Midjourney v6.1** | Deja `--ar 16:9 --style raw`. Usa `--sref` con una referencia para consistencia entre las 3. |
+| **Flux 1.1 / Ideogram** | Quita los `--flags`; describe "16:9 widescreen". Respeta muy bien "negative space on the left". |
+| **DALL·E 3** | Quita flags: "wide cinematic 16:9, leave the left side dark and empty for text overlay". Pide "muted, desaturated, filmic" (tiende a saturar). |
+
+## 📐 Especificaciones técnicas (para que calce con la página)
+- **Resolución:** ≥ 2560×1440 (las secciones son `min-height:100vh` full-bleed).
+- **Formato:** `.jpg` ~80% de calidad.
+- **Carpeta:** `atlasws/public/images/projects/harvestt/`.
+- **Nombres exactos:** `geodesic-hero.jpg`, `harvestt-product.jpg`
+  (+ `geodesic-vision.jpg` si se separa el panel 2).
+- **Punto focal compartido:** el hero recorta en `center 14%` (arriba) y el panel 2 reusa
+  la misma imagen en `center 70%` (abajo). Para que **ambos** crops luzcan con una sola foto,
+  generar una versión más alta (**--ar 2:3** o **9:16**) con interés visual arriba *y* abajo.
+  Si se prefiere control total, generar dos imágenes separadas (una por panel).
+
+---
+
+## 🎨 Paleta y marca
+- Fondo: negro puro (#000) / casi-negro.
+- Acento verde Harvestt: **#10B981** (emerald) / **#34D399** (mint).
+- Texto sobre las fotos: blanco roto **#F0F0FA**, tipografía D-DIN / Barlow (uppercase).
+- Mood: ingeniería limpia, esperanza, seguridad alimentaria, frontera / fuera de este mundo.

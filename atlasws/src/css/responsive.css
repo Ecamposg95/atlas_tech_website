@@ -1,0 +1,33 @@
+/* ============================================================
+   Responsive fixes para las páginas custom de proyectos
+   (SIGMA, Open Cashback, Harvestt, ProjectDetail, Projects).
+   Los estilos inline de esas páginas usan rejillas de 2 columnas;
+   .r-stack las colapsa a 1 columna en móvil/tablet.
+   El !important es necesario para ganarle al style inline.
+   ============================================================ */
+
+/* Tablet vertical y móvil: 2 columnas → 1 columna */
+@media (max-width: 860px) {
+  .r-stack {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  /* Desactiva sticky cuando ya está apilado (evita huecos raros) */
+  .r-stack > * {
+    position: static !important;
+  }
+}
+
+/* Móvil chico: gaps más compactos */
+@media (max-width: 600px) {
+  .r-stack {
+    gap: 28px !important;
+  }
+}
+
+/* Red de seguridad: nada debe provocar scroll horizontal.
+   'clip' (no 'hidden') para NO romper position:sticky en desktop. */
+html,
+body {
+  overflow-x: clip;
+}
