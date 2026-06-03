@@ -1,11 +1,11 @@
 {
   "short_name": "Atlas Tech",
-  "name": "Atlas Tech | Startup tecnologica B2B",
+  "name": "Atlas Tech — Venture studio e ingeniería de software",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
     },
     {
       "src": "logo192.png",
@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#141416",
-  "background_color": "#141416"
+  "theme_color": "#0a0a12",
+  "background_color": "#0a0a12"
 }

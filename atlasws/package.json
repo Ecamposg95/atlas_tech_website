@@ -45,6 +45,7 @@
     "postbuild": "node scripts/seo-build.cjs",
     "seo": "node scripts/seo-build.cjs",
     "optimize-images": "node scripts/optimize-images.cjs",
+    "gen-favicons": "node scripts/gen-favicons.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

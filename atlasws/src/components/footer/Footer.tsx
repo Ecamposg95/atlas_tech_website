@@ -75,12 +75,11 @@ const Footer: React.FC = () => {
     </svg>
   );
 
-  // ONLY YOUR ORIGINAL 4 SOCIALS
   const socials = [
     {
       icon: <i className="fa-brands fa-facebook"></i>,
       name: "Facebook",
-      url: "https://www.facebook.com/",
+      url: "https://www.facebook.com/share/1MBcRaVy8t/?mibextid=wwXIfr",
     },
     {
       icon: (
@@ -106,9 +105,14 @@ const Footer: React.FC = () => {
       url: "https://www.linkedin.com/",
     },
     {
-      icon: <i className="fa-brands fa-square-youtube"></i>,
-      name: "YouTube",
-      url: "https://www.youtube.com/",
+      icon: <i className="fa-brands fa-instagram"></i>,
+      name: "Instagram",
+      url: "https://www.instagram.com/atlas_tech.mx/",
+    },
+    {
+      icon: <i className="fa-brands fa-whatsapp"></i>,
+      name: "WhatsApp",
+      url: "https://wa.me/527221495215",
     },
   ];
 
@@ -185,16 +189,16 @@ const Footer: React.FC = () => {
 
           <div className="contact-item copyright-item">
             <p>
-              Copyright © 2025 <Link to="/">Atlas Tech</Link>, Todos los derechos reservados.
+              Copyright © 2026 <Link to="/">Atlas Tech</Link>, Todos los derechos reservados.
             </p>
           </div>
 
           <div className="contact-item">
-            <a href="tel:+112304528597">
-              <img src={callIcon} alt="call" />
+            <a href="https://wa.me/527221495215" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <img src={callIcon} alt="WhatsApp" />
             </a>
-            <a className="contact-method" href="tel:+112304528597">
-              +(1)1230 452 8597
+            <a className="contact-method" href="https://wa.me/527221495215" target="_blank" rel="noopener noreferrer">
+              +52 722 149 5215
             </a>
           </div>
         </div>

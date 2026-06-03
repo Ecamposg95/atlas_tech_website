@@ -106,7 +106,7 @@ const Header: React.FC = () => {
             {/* Button */}
             <div className="header-btn">
               <Link to="/contact" className="thm-btn" onClick={handleClick}>
-                Agenda una demo
+                Contáctanos
               </Link>
             </div>
 

@@ -1,6 +1,5 @@
 import React from "react";
 import featureBg from "../../images/bg/features-gradient-bg.png";
-import diamondIcon from "../../images/icon/diamond-icon02.gif";
 import feaIcon01 from "../../images/icon/fea-small-icon01.svg";
 import feaIcon02 from "../../images/icon/fea-small-icon02.svg";
 import feaIcon03 from "../../images/icon/fea-small-icon03.svg";
@@ -26,11 +25,7 @@ const FeaturesAndBrands: React.FC = () => {
           <div className="sec-title sec-title-center fea-sec-title text-center mb-50">
             <span className="sub-title">¿Por qué elegirnos?</span>
             <h2 className="title">
-              Tu éxito{" "}
-              <span>
-                <img src={diamondIcon} alt="icon" />
-              </span>{" "}
-              es nuestra misión
+              Tu éxito es nuestra misión
             </h2>
           </div>
 

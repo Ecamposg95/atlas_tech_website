@@ -115,7 +115,7 @@ const MegaMenu1: React.FC = () => {
                     <ul className="btns_group mt-80 p-0 ul_li_between">
                       <li>
                         <Link className="thm-btn agency-btn megamenu-btn" to="/contact">
-                          <span className="text">Agenda una demo</span>
+                          <span className="text">Contáctanos</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg
