@@ -1,0 +1,21 @@
+import React from "react";
+
+interface Props { className?: string; title?: string }
+
+/** Marca Atlas (contex/atlas startup/assets/atlas-mark.svg) como SVG inline sobre currentColor. */
+export const AtlasMark: React.FC<Props> = ({ className = "mst-mark", title }) => (
+  <svg
+    className={className}
+    viewBox="0 0 1404.76 1552.38"
+    xmlns="http://www.w3.org/2000/svg"
+    role={title ? "img" : undefined}
+    aria-hidden={title ? undefined : true}
+  >
+    {title ? <title>{title}</title> : null}
+    <g fill="currentColor">
+      <polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92" />
+      <polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46" />
+      <path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z" />
+    </g>
+  </svg>
+);
