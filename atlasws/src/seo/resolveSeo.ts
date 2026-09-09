@@ -70,7 +70,7 @@ export function resolveSeo(pathname: string): ResolvedSeo {
     }
   }
 
-  const isHome = path === "/";
+  const isHome = path === "/" || path === "/en";
 
   if (!route) {
     // Default genérico
