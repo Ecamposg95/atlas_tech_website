@@ -50,6 +50,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^lucide-react$": "<rootDir>/node_modules/lucide-react/dist/cjs/lucide-react.js"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
