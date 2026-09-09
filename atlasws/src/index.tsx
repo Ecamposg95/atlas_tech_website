@@ -14,6 +14,8 @@ import "./css/imageRevealHover.css";
 import "./css/custom-fonts.css";
 import "./css/main.css";
 import "./css/responsive.css";
+import "./modernist/modernist.css";
+import "./modernist/home.css";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = ReactDOM.createRoot(rootElement);
