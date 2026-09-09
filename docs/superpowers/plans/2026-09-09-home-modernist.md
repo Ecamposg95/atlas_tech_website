@@ -1709,9 +1709,10 @@ const wrap = (ui: React.ReactElement, path = "/") => render(<MemoryRouter initia
 
 test("header links to existing routes and marks the current language", () => {
   wrap(<MstHeader dict={es} lang="es" />);
-  expect(screen.getByRole("link", { name: /nosotros/i })).toHaveAttribute("href", "/about");
-  expect(screen.getByRole("link", { name: /proyectos/i })).toHaveAttribute("href", "/proyectos");
-  expect(screen.getByRole("link", { name: /contacto/i })).toHaveAttribute("href", "/contact");
+  // Los enlaces aparecen dos veces: nav de escritorio y <details> móvil (jsdom renderiza ambos).
+  expect(screen.getAllByRole("link", { name: /nosotros/i })[0]).toHaveAttribute("href", "/about");
+  expect(screen.getAllByRole("link", { name: /proyectos/i })[0]).toHaveAttribute("href", "/proyectos");
+  expect(screen.getAllByRole("link", { name: /contacto/i })[0]).toHaveAttribute("href", "/contact");
   const esToggle = screen.getByRole("link", { name: "ES" });
   const enToggle = screen.getByRole("link", { name: "EN" });
   expect(esToggle).toHaveAttribute("aria-current", "true");
