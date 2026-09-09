@@ -48,7 +48,18 @@ const SeoRouter: React.FC = () => {
     upsertMeta("property", "og:description", s.description);
     upsertMeta("property", "og:url", s.canonical);
     upsertMeta("property", "og:image", s.image);
-    upsertMeta("property", "og:locale", seoConfig.locale);
+    upsertMeta("property", "og:locale", s.locale);
+    document.documentElement.lang = s.lang;
+
+    // hreflang: se regeneran completos en cada navegación
+    document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+    for (const a of s.alternates) {
+      const link = document.createElement("link");
+      link.rel = "alternate";
+      link.hreflang = a.hreflang;
+      link.href = a.href;
+      document.head.appendChild(link);
+    }
 
     // Twitter
     upsertMeta("name", "twitter:card", "summary_large_image");

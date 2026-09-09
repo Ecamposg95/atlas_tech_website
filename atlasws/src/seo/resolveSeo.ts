@@ -16,6 +16,9 @@ export interface ResolvedSeo {
   keywords?: string;
   noindex: boolean;
   jsonld: unknown[];
+  lang: string;         // "es" | "en"
+  locale: string;       // "es_MX" | "en_US"
+  alternates: { hreflang: string; href: string }[];
 }
 
 const SITE = seo.siteUrl.replace(/\/$/, "");
@@ -35,6 +38,11 @@ const hydrateJsonld = (nodes: unknown[] | undefined): unknown[] => {
   const raw = JSON.stringify(nodes).replace(/\{siteUrl\}/g, SITE);
   return JSON.parse(raw);
 };
+
+const langOf = (locale: string): string => locale.split(/[_-]/)[0].toLowerCase();
+
+const alternatesOf = (map: Record<string, string> | undefined) =>
+  map ? Object.entries(map).map(([hreflang, p]) => ({ hreflang, href: abs(p) })) : [];
 
 const normalize = (pathname: string): string => {
   if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
@@ -74,6 +82,9 @@ export function resolveSeo(pathname: string): ResolvedSeo {
       type: "website",
       noindex: false,
       jsonld: [],
+      lang: langOf(seo.locale),
+      locale: seo.locale,
+      alternates: [],
     };
   }
 
@@ -86,6 +97,9 @@ export function resolveSeo(pathname: string): ResolvedSeo {
     keywords: route.keywords,
     noindex: !!route.noindex,
     jsonld: hydrateJsonld(route.jsonld),
+    lang: langOf(route.locale || seo.locale),
+    locale: route.locale || seo.locale,
+    alternates: alternatesOf(route.alternates),
   };
 }
 

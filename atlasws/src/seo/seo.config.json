@@ -15,11 +15,13 @@
   "routes": [
     {
       "path": "/",
-      "title": "Atlas Tech — Venture studio e ingeniería de software en Latinoamérica",
-      "description": "Atlas Tech construye plataformas empresariales, IA, blockchain y productos digitales a la medida para negocios e instituciones en México y Latinoamérica.",
+      "title": "Atlas Tech — Infraestructura para la organización agéntica",
+      "description": "Atlas Tech construye la infraestructura para que empresas, industrias y gobiernos entiendan su contexto, ejecuten con criterio y aprendan de cada decisión. Ciudad de México, desde 2016.",
       "type": "website",
       "image": "/images/projects/harvestt/mars-domes-branded.png",
       "keywords": "Atlas Tech, venture studio, software a la medida, ERP, POS, IA, blockchain, transformación digital, Latinoamérica",
+      "locale": "es_MX",
+      "alternates": { "es-MX": "/", "en": "/en", "x-default": "/" },
       "jsonld": [
         {
           "@context": "https://schema.org",
@@ -35,6 +37,27 @@
           "@type": "WebSite",
           "name": "Atlas Tech",
           "url": "{siteUrl}/"
+        }
+      ]
+    },
+    {
+      "path": "/en",
+      "title": "Atlas Tech — Infrastructure for the agentic organization",
+      "description": "Atlas Tech builds the infrastructure for companies, industries and governments to understand their context, act with judgment and learn from every decision. Mexico City, since 2016.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "Atlas Tech, agentic organization, Atlas ONE, Atlas Cortex, business OS, AI agents, Mexico",
+      "locale": "en_US",
+      "alternates": { "es-MX": "/", "en": "/en", "x-default": "/" },
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Atlas Tech",
+          "url": "{siteUrl}/",
+          "logo": "{siteUrl}/logo512.png",
+          "description": "Infrastructure for the agentic organization: Atlas ONE, Atlas Core and Atlas Cortex.",
+          "sameAs": []
         }
       ]
     },
