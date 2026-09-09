@@ -6,3 +6,8 @@ import '@testing-library/jest-dom';
 import { TextEncoder } from 'util';
 
 global.TextEncoder = TextEncoder;
+
+// Mock lucide-react for Jest (simple stub)
+jest.mock('lucide-react', () => ({
+  Menu: () => null,
+}));
