@@ -97,22 +97,23 @@ atlas_tech_website/
 └── README.md
 ```
 
-### Home Modernist (`/` y `/en`)
+### Home (`/` y `/en`) — lenguaje oscuro del deck
 
-El Home se construye con el sistema visual **Modernist** (fondo claro `#f3f2f2`, tinta `#201e1d`,
-acento rojo `#ec3013`, Archivo, cero radio, reglas de 2px). Vive en:
+El Home cuenta la narrativa de `Atlas Tech Startup Story v3` con el sistema visual de los decks:
+fondo negro, tinta `#e8e8e8`, acento lima `#C6FF3D`, Barlow Condensed para display, Barlow para cuerpo,
+JetBrains Mono para etiquetas técnicas, cero radio, reglas de 1px translúcidas y renders a sangre. Vive en:
 
-- `src/modernist/modernist.css` — tokens y clases del sistema con scope `.mst`.
-- `src/modernist/home.css` — layout del Home.
+- `src/modernist/modernist.css` — tokens y clases del sistema con scope `.mst` (el nombre de carpeta viene de la v1 clara; el tema vigente es el oscuro).
+- `src/modernist/home.css` — layout del Home (hero a sangre, grid con reglas, poster lima, contacto).
 - `src/i18n/` — copy ES/EN tipado (`es.ts`, `en.ts`) y `useLang`.
 - `src/pages/home/` — `HomePage.tsx`, una sección por archivo en `sections/`, `ContactForm.tsx`.
 - `src/components/mst/` — `Band`, `Grid`, `StatRow`, `MstHeader`, `MstFooter`, `AtlasMark`.
 - `public/api/contact.php` — endpoint de correo (Hostinger PHP) a `hola@atlastech.mx`.
 - `scripts/prepare-home-images.cjs` — regenera `public/images/home/` desde `contex/atlas startup/assets`.
 
-Reglas de contenido: toda cifra publicada lleva fuente, periodo y fecha de corte. Fotos siempre en `.grayscale`.
-El rojo solo aparece en el CTA del hero, las cifras de la sección 05 y el poster de la sección 07.
-Spec: `docs/superpowers/specs/2026-09-09-home-modernist-design.md`.
+Reglas de contenido: toda cifra publicada lleva fuente, periodo y fecha de corte. La foto de fundadores va en `.grayscale`;
+los renders van a color con velo negro. El lima aparece en el CTA del hero, las cifras de la sección 05 y el poster de la 07.
+Spec: `docs/superpowers/specs/2026-09-09-home-modernist-design.md` (ver el addendum v2 al final).
 
 ---
 

@@ -207,3 +207,38 @@ usa `--color-accent-700`. Hover y pressed desde la rampa; focus con `outline: 2p
 
 Página Atlas ONE en Modernist, página de gobierno, rediseño de páginas internas, EN para páginas
 internas, borrado de componentes legacy, cambio de dominio o correo.
+
+---
+
+## Addendum v2 (2026-09-09, misma sesión) — giro a lenguaje oscuro del deck
+
+Decisión del cliente al ver la versión Modernist clara en local: el Home debe ser oscuro y "épico",
+con el mismo sistema visual que los decks canónicos (`Atlas Tech Startup Story v3`, `Epic Deck`).
+
+**Qué cambia**
+
+| Elemento | v1 Modernist | v2 Deck |
+|---|---|---|
+| Fondo / tinta | `#f3f2f2` / `#201e1d` | `#000` / `#e8e8e8`, grises `#c4c4c4`, `#8a8a8a`, `#5c5c5c` |
+| Acento | Rojo `#ec3013` | Lima `#C6FF3D` con texto negro encima |
+| Display / cuerpo | Archivo / Archivo | Barlow Condensed 800 / Barlow 400–600 |
+| Etiquetas técnicas | Archivo caja alta | JetBrains Mono |
+| Reglas | 2px sólidas | 1px translúcidas `rgba(255,255,255,.14)` |
+| Imágenes | Todo en `.grayscale` | Renders a color a sangre con velo negro; solo la foto de fundadores en B/N |
+| Poster 07 | Banda roja | Banda lima con texto negro |
+| Movimiento | Ninguno | Una sola entrada en el hero, respeta `prefers-reduced-motion` |
+
+**Qué no cambia:** estructura de nueve secciones + contacto, componentes (`Band`, `Grid`, `StatRow`,
+header, footer), i18n `/` y `/en`, SEO con hreflang, formulario y endpoint PHP, cifras autorizadas y
+sus pies, cero radio, todo flush left, scope `.mst` y atributo `html[data-theme="modernist"]` (el
+nombre se conserva por compatibilidad del código; el tema es el oscuro).
+
+**Imaginería** (generada por `scripts/prepare-home-images.cjs` desde `contex/atlas startup/assets`):
+- Hero: `hero-datacenter.webp` (archivo fuente `img-orbit-network.png`, que es el render del datacenter).
+- Sección 07: `cortex-laptop.webp` detrás de las dos columnas, con opacidad y degradado a negro.
+- Sección 05: captura del panel, ya oscura, sin filtro.
+- Sección 09: `founders-intarg-2017.webp` en `.grayscale`.
+- Fuera a propósito: el render del coche (`img-datacenter-tower.png`) y el POS (`img-knowledge-building.png`).
+
+**Regla del acento (v2):** lima solo en el CTA del hero, las cuatro cifras de 05, el poster de 07, los
+índices de sección/celda, el nombre de Cortex y los enlaces. Ningún fondo lima fuera del poster y el CTA.
