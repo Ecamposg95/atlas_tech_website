@@ -127,6 +127,7 @@ html[data-theme="modernist"] body {
   background: transparent; border: 1px solid transparent;
   padding: 14px 20px;
   border-radius: var(--radius-md);
+  text-align: left;
 }
 .mst .btn svg { display: block; }
 .mst .btn:disabled { opacity: 0.45; cursor: not-allowed; }
@@ -148,12 +149,12 @@ html[data-theme="modernist"] body {
   margin-bottom: 6px; color: var(--color-muted);
 }
 .mst .input {
-  width: 100%; min-height: 44px; padding: 10px 12px; font: inherit;
+  width: 100%; min-height: 44px; height: auto; padding: 10px 12px; font: inherit;
   font-size: 15px; color: var(--color-text); caret-color: var(--color-accent);
   background: var(--color-surface);
   border: 1px solid var(--color-divider-strong); border-radius: var(--radius-md);
 }
-.mst .input::placeholder { color: var(--color-dim); }
+.mst .input::placeholder { color: var(--color-muted); }
 .mst .input:hover { border-color: var(--color-muted); }
 .mst .input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
 .mst textarea.input { min-height: 120px; resize: vertical; }
@@ -221,6 +222,7 @@ html[data-theme="modernist"] body {
   display: flex; align-items: center; gap: var(--space-6);
   padding: var(--space-3) var(--space-6);
   border-bottom: 1px solid var(--color-divider);
+  flex-wrap: nowrap;
 }
 .mst .nav-brand {
   font-family: var(--font-heading); font-weight: var(--font-heading-weight);
