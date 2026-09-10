@@ -195,8 +195,6 @@
 }
 @media (max-width: 520px) {
   .mst .mst-wrap { padding: 0 var(--space-4); }
-  /* En pantallas estrechas la marca se reduce a la A: el texto no cabe junto a Menú y ES/EN. */
-  .mst .nav-brand span { display: none; }
   .mst .nav { gap: var(--space-3); }
   .mst .mst-band { padding-top: calc(var(--space-8) * 1.5); }
   .mst .mst-band > .hr { margin-top: calc(var(--space-8) * 1.5); }
@@ -206,4 +204,8 @@
   .mst .mst-grid > *:nth-child(n+2) { border-top: 1px solid var(--color-divider); padding-left: 0; border-left: 0; }
   .mst .mst-band .btn { width: 100%; }
   .mst .mst-hero-bg img { object-position: 62% 50%; }
+}
+@media (max-width: 400px) {
+  /* Por debajo de 400px la marca se reduce a la A: el texto no cabe junto a Menú y ES/EN. */
+  .mst .nav-brand span { display: none; }
 }
