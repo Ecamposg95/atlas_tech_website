@@ -16,6 +16,13 @@
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
+  # --- /en sin redirección ---
+  # mod_dir añade la barra final automáticamente cuando la ruta pedida es un
+  # directorio (/en → 301 a /en/), lo que le mete un salto extra a la versión
+  # en inglés. Serví el index.html generado por el SEO build directamente para
+  # que /en y /en/ respondan 200 sin ese redirect.
+  RewriteRule ^en/?$ /en/index.html [L]
+
   # --- SPA fallback ---
   # Si el archivo o carpeta existe (incluye los index.html por ruta que
   # genera el SEO), Apache lo sirve tal cual. Si no, carga la app.
