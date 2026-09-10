@@ -1,5 +1,5 @@
 /* Modernist — tokens y clases del sistema, con scope .mst para convivir con el template legado.
-   Fuente: contex/atlas startup/_ds/modernist-*/styles.css. Cambiar tokens aquí, no en los componentes. */
+   Fuente: contex/atlas startup/_ds/modernist-<id>/styles.css. Cambiar tokens aquí, no en los componentes. */
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap');
 
 :root {
