@@ -4,6 +4,7 @@
  *  - Captura del panel Atlas ONE recortada a cabecera + Revenue/Tickets/AOV.
  *    Fuera: Tenants, MRR proxy, tasas y gráfica histórica (no autorizados).
  *  - Foto INTARG 2017 reducida a 1600px.
+ *  - Renders datacenter (hero) y laptop Cortex (sección 07) a 1920px.
  * Uso: node scripts/prepare-home-images.cjs
  * ============================================================ */
 const path = require("path");
@@ -26,6 +27,17 @@ async function main() {
     .resize({ width: 1600, withoutEnlargement: true })
     .webp({ quality: 80 })
     .toFile(path.join(OUT, "founders-intarg-2017.webp"));
+
+  // Renders cinematográficos (a color, a sangre): hero y sección 07.
+  await sharp(path.join(SRC, "img-datacenter-tower.png"))
+    .resize({ width: 1920, withoutEnlargement: true })
+    .webp({ quality: 74 })
+    .toFile(path.join(OUT, "hero-datacenter.webp"));
+
+  await sharp(path.join(SRC, "img-cortex-laptop.png"))
+    .resize({ width: 1920, withoutEnlargement: true })
+    .webp({ quality: 74 })
+    .toFile(path.join(OUT, "cortex-laptop.webp"));
 
   for (const f of fs.readdirSync(OUT)) {
     const { width, height } = await sharp(path.join(OUT, f)).metadata();

@@ -28,12 +28,13 @@ test("uses the English dictionary on /en", () => {
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(en.hero.title);
 });
 
-test("accent poster appears exactly once and every photo is grayscale", () => {
+test("accent poster appears exactly once; only the founders photo is grayscale", () => {
   const { container } = mount("es");
   expect(container.querySelectorAll(".mst-poster")).toHaveLength(1);
-  container.querySelectorAll("img").forEach((img) => {
-    if (img.closest("svg")) return;
-    expect(img.closest(".grayscale")).not.toBeNull();
-  });
+  const founders = container.querySelector('img[src="/images/home/founders-intarg-2017.webp"]')!;
+  expect(founders.closest(".grayscale")).not.toBeNull();
+  const decorative = container.querySelectorAll(".mst-hero-bg img, .mst-band-bg img");
+  expect(decorative).toHaveLength(2);
+  decorative.forEach((img) => expect(img).toHaveAttribute("alt", ""));
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(es.hero.title);
 });

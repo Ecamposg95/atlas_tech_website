@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 
 const FILES = ["modernist.css", "home.css"];
-const ALLOWED = /^(\.mst\b|:root\b|html\[data-theme="modernist"\])/;
+// Pasos de @keyframes (from / to / 50%) no son selectores de elementos y quedan permitidos.
+const ALLOWED = /^(\.mst\b|:root\b|html\[data-theme="modernist"\]|from$|to$|\d+%$)/;
 
 const selectorsOf = (css: string): string[] => {
   const clean = css.replace(/\/\*[\s\S]*?\*\//g, "");

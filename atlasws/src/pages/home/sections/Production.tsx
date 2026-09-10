@@ -8,7 +8,7 @@ export const Production: React.FC<{ dict: HomeDict }> = ({ dict }) => {
   return (
     <Band n="05" kicker={production.kicker} title={production.title}>
       <p className="mst-meta">{production.lead}</p>
-      <figure className="grayscale mst-figure">
+      <figure className="mst-figure">
         <img
           src="/images/home/atlasone-metrics-crop.webp"
           alt={production.figureAlt}

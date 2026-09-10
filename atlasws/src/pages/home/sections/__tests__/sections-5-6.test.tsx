@@ -6,9 +6,9 @@ import { es } from "../../../../i18n/es";
 import { en } from "../../../../i18n/en";
 
 describe.each([["es", es], ["en", en]])("sections 05-06 in %s", (_, dict) => {
-  test("Production: grayscale figure, four figures, source with cutoff", () => {
+  test("Production: panel figure, four figures, source with cutoff", () => {
     const { container } = render(<Production dict={dict} />);
-    const fig = container.querySelector("figure.grayscale.mst-figure")!;
+    const fig = container.querySelector("figure.mst-figure")!;
     expect(fig).toBeInTheDocument();
     expect(fig.querySelector("img")).toHaveAttribute("src", "/images/home/atlasone-metrics-crop.webp");
     expect(fig.querySelector("img")).toHaveAttribute("alt", dict.production.figureAlt);
