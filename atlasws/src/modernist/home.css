@@ -179,6 +179,7 @@
   .mst .mst-grid-6 > *:nth-child(n+4) { border-top: 1px solid var(--color-divider); }
 }
 @media (max-width: 860px) {
+  .mst .nav { gap: var(--space-4); padding: var(--space-3) var(--space-4); }
   .mst .mst-nav-links { display: none; }
   .mst .mst-nav-mobile { display: block; }
   .mst .mst-layer { grid-template-columns: 1fr; gap: var(--space-3); }
@@ -194,6 +195,9 @@
 }
 @media (max-width: 520px) {
   .mst .mst-wrap { padding: 0 var(--space-4); }
+  /* En pantallas estrechas la marca se reduce a la A: el texto no cabe junto a Menú y ES/EN. */
+  .mst .nav-brand span { display: none; }
+  .mst .nav { gap: var(--space-3); }
   .mst .mst-band { padding-top: calc(var(--space-8) * 1.5); }
   .mst .mst-band > .hr { margin-top: calc(var(--space-8) * 1.5); }
   .mst .mst-grid > * { padding: var(--space-4); }
