@@ -18,6 +18,18 @@ test("seoBlock for /en emits hreflang links and en_US locale", () => {
   expect(block).toContain(`<link rel="canonical" href="https://atlastech.mx/en" />`);
 });
 
+test("seoBlock emits a preload hint when the route declares preloadImage", () => {
+  const withPreload = seoBlock({
+    path: "/", title: "T", description: "D", preloadImage: "/images/home/hero-datacenter.webp",
+  });
+  expect(withPreload).toContain(
+    `<link rel="preload" as="image" href="/images/home/hero-datacenter.webp" fetchpriority="high" />`
+  );
+
+  const withoutPreload = seoBlock({ path: "/about", title: "T", description: "D" });
+  expect(withoutPreload).not.toContain(`rel="preload"`);
+});
+
 test("buildAll writes /en/index.html with lang=en and sitemap includes /en", () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "seo-"));
   fs.writeFileSync(path.join(dir, "index.html"), TEMPLATE);

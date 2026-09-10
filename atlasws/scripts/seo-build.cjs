@@ -57,6 +57,9 @@ function seoBlock(route) {
     `<meta name="robots" content="${robots}" />`,
     `<link rel="canonical" href="${canonical}" />`,
     ...alternates,
+    route.preloadImage
+      ? `<link rel="preload" as="image" href="${esc(route.preloadImage)}" fetchpriority="high" />`
+      : "",
     `<meta property="og:type" content="${type}" />`,
     `<meta property="og:site_name" content="${esc(cfg.brand)}" />`,
     `<meta property="og:title" content="${esc(title)}" />`,
