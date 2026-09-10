@@ -3,7 +3,7 @@
  * Genera los assets del Home Modernist a partir de contex/atlas startup/assets.
  *  - Captura del panel Atlas ONE recortada a cabecera + Revenue/Tickets/AOV.
  *    Fuera: Tenants, MRR proxy, tasas y gráfica histórica (no autorizados).
- *  - Foto INTARG 2017 reducida a 1600px.
+ *  - Foto INTARG 2017 recortada a 1600×700 (16:7) para que coincida con el marco del Home.
  *  - Renders datacenter (hero, archivo img-orbit-network.png) y laptop Cortex (sección 07) a 1920px.
  * Uso: node scripts/prepare-home-images.cjs
  * ============================================================ */
@@ -24,7 +24,7 @@ async function main() {
     .toFile(path.join(OUT, "atlasone-metrics-crop.webp"));
 
   await sharp(path.join(SRC, "photo-intarg-2017.jpg"))
-    .resize({ width: 1600, withoutEnlargement: true })
+    .resize({ width: 1600, height: 700, fit: "cover", position: "attention" })
     .webp({ quality: 80 })
     .toFile(path.join(OUT, "founders-intarg-2017.webp"));
 

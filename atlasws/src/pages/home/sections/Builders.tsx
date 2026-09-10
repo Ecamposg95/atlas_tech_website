@@ -12,9 +12,9 @@ export const Builders: React.FC<{ dict: HomeDict }> = ({ dict }) => {
           src="/images/home/founders-intarg-2017.webp"
           alt={builders.photoAlt}
           width={1600}
-          height={1600}
+          height={700}
           loading="lazy"
-          style={{ aspectRatio: "16 / 7", objectFit: "cover", objectPosition: "50% 45%" }}
+          style={{ objectFit: "cover", objectPosition: "50% 45%" }}
         />
         <figcaption>{builders.photoCaption}</figcaption>
       </figure>
