@@ -16,9 +16,17 @@ test("header links to existing routes and marks the current language", () => {
   expect(screen.getAllByRole("link", { name: /contacto/i })[0]).toHaveAttribute("href", "/contact");
   const esToggle = screen.getByRole("link", { name: "ES" });
   const enToggle = screen.getByRole("link", { name: "EN" });
-  expect(esToggle).toHaveAttribute("aria-current", "true");
+  expect(esToggle).toHaveAttribute("aria-current", "page");
   expect(enToggle).toHaveAttribute("href", "/en");
   expect(enToggle).not.toHaveAttribute("aria-current");
+});
+
+test("header marks the current route with aria-current=page", () => {
+  wrap(<MstHeader dict={es} lang="es" />, "/about");
+  const aboutLinks = screen.getAllByRole("link", { name: /nosotros/i });
+  aboutLinks.forEach((link) => expect(link).toHaveAttribute("aria-current", "page"));
+  const contactLinks = screen.getAllByRole("link", { name: /contacto/i });
+  contactLinks.forEach((link) => expect(link).not.toHaveAttribute("aria-current"));
 });
 
 test("header in English points the brand to /en", () => {

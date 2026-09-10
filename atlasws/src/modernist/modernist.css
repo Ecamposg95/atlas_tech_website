@@ -182,8 +182,8 @@ html[data-theme="modernist"] body {
   color: var(--color-text-2); text-decoration: none;
 }
 .mst .seg-opt + .seg-opt { border-left: 1px solid var(--color-divider-strong); }
-.mst .seg-opt:has(input:checked), .mst .seg-opt[aria-current="true"] { background: var(--color-accent); color: var(--color-accent-ink); }
-.mst .seg-opt:not(:has(input:checked)):not([aria-current="true"]):hover { color: var(--color-text); background: var(--color-neutral-800); }
+.mst .seg-opt:has(input:checked), .mst .seg-opt[aria-current="page"] { background: var(--color-accent); color: var(--color-accent-ink); }
+.mst .seg-opt:not(:has(input:checked)):not([aria-current="page"]):hover { color: var(--color-text); background: var(--color-neutral-800); }
 .mst .seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
 
 /* — cards — */
