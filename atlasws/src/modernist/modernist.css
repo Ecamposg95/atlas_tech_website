@@ -4,7 +4,7 @@
    JetBrains Mono para etiquetas técnicas. */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-:root {
+.mst, html[data-theme="modernist"] {
   --color-bg: #000000;
   --color-surface: #0d0d0d;
   --color-text: #e8e8e8;
