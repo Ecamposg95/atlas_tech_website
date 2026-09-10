@@ -16,6 +16,7 @@ Para la documentación técnica del proyecto, ver el [README raíz](../README.md
 | `harvestt2026/` | Referencias visuales de Harvestt 2026 | `/proyectos/harvestt` |
 | `Atlas Hero - Horizonte.html` | Prototipo HTML del hero 3D | Home (`NetworkGlobe`) |
 | `Hero 3D Horizonte - Patrones UI.md` | Guía de patrones UI del hero | Home |
+| `atlas startup/` | Decks canónicos (`Atlas Tech Startup Story v3.dc.html`), assets y el bundle del sistema Modernist (`_ds/`) | Home (`/`, `/en`) |
 
 ## Convención de extensiones
 

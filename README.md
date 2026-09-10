@@ -97,6 +97,23 @@ atlas_tech_website/
 └── README.md
 ```
 
+### Home Modernist (`/` y `/en`)
+
+El Home se construye con el sistema visual **Modernist** (fondo claro `#f3f2f2`, tinta `#201e1d`,
+acento rojo `#ec3013`, Archivo, cero radio, reglas de 2px). Vive en:
+
+- `src/modernist/modernist.css` — tokens y clases del sistema con scope `.mst`.
+- `src/modernist/home.css` — layout del Home.
+- `src/i18n/` — copy ES/EN tipado (`es.ts`, `en.ts`) y `useLang`.
+- `src/pages/home/` — `HomePage.tsx`, una sección por archivo en `sections/`, `ContactForm.tsx`.
+- `src/components/mst/` — `Band`, `Grid`, `StatRow`, `MstHeader`, `MstFooter`, `AtlasMark`.
+- `public/api/contact.php` — endpoint de correo (Hostinger PHP) a `hola@atlastech.mx`.
+- `scripts/prepare-home-images.cjs` — regenera `public/images/home/` desde `contex/atlas startup/assets`.
+
+Reglas de contenido: toda cifra publicada lleva fuente, periodo y fecha de corte. Fotos siempre en `.grayscale`.
+El rojo solo aparece en el CTA del hero, las cifras de la sección 05 y el poster de la sección 07.
+Spec: `docs/superpowers/specs/2026-09-09-home-modernist-design.md`.
+
 ---
 
 ## 🗂️ Proyectos & Portafolio
