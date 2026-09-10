@@ -4,7 +4,7 @@ import WowInit from "../../components/wowInit/wowInit";
 import SeoRouter from "../../seo/SeoRouter";
 
 // ✅ Pages
-import Homepage from "../HomePage";
+import { HomePage } from "../../pages/home/HomePage";
 import AboutPage from "../AboutPage/AboutPage";
 import ServicePage from "../ServicePage/ServicePage";
 import SeviceSinglePage from "../SeviceSinglePage/SeviceSinglePage";
@@ -27,9 +27,10 @@ const AllRoute: React.FC = () => {
         <SeoRouter />
 
         <Routes>
-          {/* Home */}
-          <Route path="/" element={<Homepage />} />
-          <Route path="/home" element={<Homepage />} />
+          {/* Home Modernist (ES / EN) */}
+          <Route path="/" element={<HomePage lang="es" />} />
+          <Route path="/home" element={<HomePage lang="es" />} />
+          <Route path="/en" element={<HomePage lang="en" />} />
           <Route path="/about" element={<AboutPage />} />
 
           {/* Servicios */}
