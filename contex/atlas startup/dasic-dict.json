@@ -1,0 +1,3697 @@
+[
+ {
+  "title": "Usuarios y seguridad",
+  "file": "app/models/users.py",
+  "tables": [
+   {
+    "table": "usuarios",
+    "cls": "Usuario",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(100)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "email (único, idx)",
+      "type": "varchar(100)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "password_hash",
+      "type": "varchar(200)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "rol",
+      "type": "varchar(17)",
+      "nulo": "",
+      "def": "RolUsuario.VENTAS",
+      "ref": ""
+     },
+     {
+      "name": "activo",
+      "type": "boolean",
+      "nulo": "",
+      "def": "True",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Clientes y proveedores",
+  "file": "app/models/clients.py",
+  "tables": [
+   {
+    "table": "cliente_merge_log",
+    "cls": "ClienteMergeLog",
+    "note": "Auditoría de fusiones de empresas (Sub-3). Sin FK a clientes a propósito:",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "survivor_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "loser_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "loser_nombre",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "loser_rfc",
+      "type": "varchar(50)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "loser_saldo",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "n_ordenes",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "n_transacciones",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "n_remisiones",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "n_contactos",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "merged_by_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "merged_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "clientes",
+    "cls": "Cliente",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre_empresa (idx)",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "contacto_nombre",
+      "type": "varchar(100)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "rfc_tax_id",
+      "type": "varchar(50)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "email",
+      "type": "varchar(100)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "telefono",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "direccion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "saldo_actual",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "limite_credito",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "dias_credito",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "dia_corte",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda_credito",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "estatus",
+      "type": "varchar(12)",
+      "nulo": "NO",
+      "def": "activo",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     }
+    ]
+   },
+   {
+    "table": "contactos",
+    "cls": "Contacto",
+    "note": "Persona de contacto de una empresa (cliente). Varias por empresa.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(120)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cargo",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "email",
+      "type": "varchar(120)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "telefono",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "es_principal",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "false",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "notas_empresa",
+    "cls": "NotaEmpresa",
+    "note": "Bitácora append-only por empresa (sub vista 360). Solo crear/borrar.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "autor_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "→ usuarios.id",
+      "type": "texto",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "texto",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "proveedores",
+    "cls": "Proveedor",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre_empresa (idx)",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "contacto_nombre",
+      "type": "varchar(100)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "telefono",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "email",
+      "type": "varchar(100)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "saldo_actual",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Catálogo de productos",
+  "file": "app/models/catalog.py",
+  "tables": [
+   {
+    "table": "marcas",
+    "cls": "Marca",
+    "note": "Taxonomía de marcas para SKU interno y agrupación de catálogo.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "abreviatura (único, idx)",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(150)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "categoria",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "productos",
+    "cls": "Producto",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sku (único, idx)",
+      "type": "varchar(50)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sku_comercial (idx)",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre (idx)",
+      "type": "varchar(150)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "imagen_url",
+      "type": "varchar(255)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca (idx)",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "marcas.id"
+     },
+     {
+      "name": "unidad",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "PZA",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_principal_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "proveedor_alterno_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "tiempo_entrega_dias",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "es_servicio",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "stock_actual",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "stock_minimo",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda_compra",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "costo_compra",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "precio_publico",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "precio_mayorista",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "precio_distribuidor",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "clave_prod_serv (idx)",
+      "type": "varchar(8)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "objeto_imp",
+      "type": "varchar(2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_fiscal",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "categoria (idx)",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "promociones",
+    "cls": "Promocion",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "producto_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "nombre_promo",
+      "type": "varchar(100)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descuento_porcentaje",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha_inicio",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha_fin",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activa",
+      "type": "boolean",
+      "nulo": "",
+      "def": "True",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Productos fantasma",
+  "file": "app/models/fantasmas.py",
+  "tables": [
+   {
+    "table": "productos_fantasma",
+    "cls": "ProductoFantasma",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_normalizada (idx)",
+      "type": "varchar(500)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_original",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sku_libre (idx)",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "marcas.id"
+     },
+     {
+      "name": "clave_prod_serv",
+      "type": "varchar(8)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "observaciones",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "costo_referencia",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda_referencia",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_sugerido_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "estado (idx)",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "PENDIENTE",
+      "ref": ""
+     },
+     {
+      "name": "promovido_a_producto_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "veces_solicitado",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "ultimo_visto_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Precios por proveedor",
+  "file": "app/models/precios.py",
+  "tables": [
+   {
+    "table": "precios_proveedor",
+    "cls": "PrecioProveedor",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "producto_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "descripcion_busqueda (idx)",
+      "type": "varchar(500)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sku_libre (idx)",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "precio",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "fecha_vigencia_desde",
+      "type": "date",
+      "nulo": "NO",
+      "def": "CURRENT_DATE",
+      "ref": ""
+     },
+     {
+      "name": "fecha_vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "notas",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fuente",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "MANUAL",
+      "ref": ""
+     },
+     {
+      "name": "referencia_oc_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_compra.id"
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Inventario auditable",
+  "file": "app/models/inventory.py",
+  "tables": [
+   {
+    "table": "movimientos_stock",
+    "cls": "MovimientoStock",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "producto_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "tipo",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cantidad",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "referencia_tipo",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "referencia_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "motivo",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "usuario_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en (idx)",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "stock_resultante",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Ventas y cotizaciones",
+  "file": "app/models/sales.py",
+  "tables": [
+   {
+    "table": "detalles_orden",
+    "cls": "DetalleOrden",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "producto_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "servicio_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "servicios.id"
+     },
+     {
+      "name": "sku_libre",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_libre",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda_origen_linea",
+      "type": "varchar(3)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "costo_base_linea",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_prod_serv",
+      "type": "varchar(8)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "mostrar_marca",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "false",
+      "ref": ""
+     },
+     {
+      "name": "cantidad",
+      "type": "numeric(12, 3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "unidad",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "precio_unitario",
+      "type": "decimal(10, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "utilidad_aplicada",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "descuento_aplicado",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "descuento_proveedor",
+      "type": "decimal(5, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "subtotal",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tipo_linea",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "producto_catalogo",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_sugerido_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "fantasma_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos_fantasma.id"
+     },
+     {
+      "name": "entrega_min",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "entrega_max",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "entrega_unidad",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "observaciones_linea",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "ordenes_venta",
+    "cls": "OrdenVenta",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "folio (único, idx)",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "contacto_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "contactos.id"
+     },
+     {
+      "name": "vendedor_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "fecha_creacion",
+      "type": "date",
+      "nulo": "",
+      "def": "hoy_negocio()",
+      "ref": ""
+     },
+     {
+      "name": "fecha_vencimiento",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estatus",
+      "type": "varchar(50)",
+      "nulo": "",
+      "def": "EstatusOrden.COTIZACION",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "tipo_cambio",
+      "type": "decimal(12, 6)",
+      "nulo": "NO",
+      "def": "1.0",
+      "ref": ""
+     },
+     {
+      "name": "tc_mn_a_usd",
+      "type": "decimal(12, 6)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tc_usd_a_mn",
+      "type": "decimal(12, 6)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tolerancia_tc",
+      "type": "decimal(3, 2)",
+      "nulo": "NO",
+      "def": "1.0",
+      "ref": ""
+     },
+     {
+      "name": "total",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "0.0",
+      "ref": ""
+     },
+     {
+      "name": "observaciones",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "terminos_condiciones",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "pdf_unificado",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "concepto_unificado",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cotizacion_origen_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "version",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "remision_origen_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "remisiones.id"
+     },
+     {
+      "name": "enviada_at (idx)",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "pdf_generado_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Plantillas de cotización",
+  "file": "app/models/plantillas.py",
+  "tables": [
+   {
+    "table": "plantillas_cotizacion",
+    "cls": "PlantillaCotizacion",
+    "note": "Combinación de líneas frecuente que un usuario puede recargar.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(120)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "usuario_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "lineas",
+      "type": "text",
+      "nulo": "NO",
+      "def": "[]",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Compras",
+  "file": "app/models/purchases.py",
+  "tables": [
+   {
+    "table": "detalles_compra",
+    "cls": "DetalleCompra",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_compra_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_compra.id"
+     },
+     {
+      "name": "producto_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "productos.id"
+     },
+     {
+      "name": "sku_libre",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_libre",
+      "type": "varchar(255)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda_origen_linea",
+      "type": "varchar(3)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "costo_base_linea",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cantidad",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "costo_unitario",
+      "type": "decimal(10, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "marca",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_prod_serv",
+      "type": "varchar(8)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cantidad_recibida",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha_recepcion",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "ordenes_compra",
+    "cls": "OrdenCompra",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "fecha",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "total",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estatus",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "borrador",
+      "ref": ""
+     },
+     {
+      "name": "folio (único, idx)",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "tipo_cambio",
+      "type": "decimal(12, 6)",
+      "nulo": "NO",
+      "def": "1.0",
+      "ref": ""
+     },
+     {
+      "name": "cotizacion_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Remisiones",
+  "file": "app/models/remisiones.py",
+  "tables": [
+   {
+    "table": "detalles_remision",
+    "cls": "DetalleRemision",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "remision_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "remisiones.id"
+     },
+     {
+      "name": "detalle_orden_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "detalles_orden.id"
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sku",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cantidad",
+      "type": "numeric(12, 3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "unidad",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "observaciones_linea",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "precio_unitario",
+      "type": "decimal(10, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "subtotal",
+      "type": "decimal(12, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "remisiones",
+    "cls": "Remision",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "folio (único, idx)",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_venta_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "fecha_remision",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "transportista",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "recibido_por",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "recibido_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "observaciones",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "mostrar_precios",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "false",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "estado (idx)",
+      "type": "varchar(50)",
+      "nulo": "NO",
+      "def": "'BORRADOR'",
+      "ref": ""
+     },
+     {
+      "name": "emitida_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "emitida_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "cancelada_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cancelada_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "motivo_cancelacion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "sobre_entrega_autorizada_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "stock_descontado",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "false",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Finanzas — transacciones",
+  "file": "app/models/finance.py",
+  "tables": [
+   {
+    "table": "transacciones_clientes",
+    "cls": "TransaccionCliente",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "tipo",
+      "type": "varchar(50)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "monto",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "varchar(200)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "referencia_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_venta_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "fecha_vencimiento",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estatus_pago (idx)",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "pendiente",
+      "ref": ""
+     },
+     {
+      "name": "monto_pagado",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "transacciones_proveedores",
+    "cls": "TransaccionProveedor",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "proveedor_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "proveedores.id"
+     },
+     {
+      "name": "tipo",
+      "type": "varchar(50)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "monto",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "varchar(200)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Finanzas — gastos",
+  "file": "app/models/expenses.py",
+  "tables": [
+   {
+    "table": "gastos",
+    "cls": "Gasto",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "categoria (idx)",
+      "type": "varchar(80)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "monto",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "fecha (idx)",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "usuario_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Tipo de cambio",
+  "file": "app/models/fx.py",
+  "tables": [
+   {
+    "table": "tipos_cambio_dia",
+    "cls": "TipoCambioDia",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha (único, idx)",
+      "type": "date",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "usd_mxn",
+      "type": "decimal(12, 6)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fuente",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "obtenido_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "nota",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_por",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "CRM",
+  "file": "app/models/crm.py",
+  "tables": [
+   {
+    "table": "deal_actividades",
+    "cls": "DealActividad",
+    "note": "Timeline de actividades de un deal (notas, llamadas, eventos de sistema).",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "organization_id (idx)",
+      "type": "varchar(36)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "deal_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "deals.id"
+     },
+     {
+      "name": "tipo",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "usuario_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "deals",
+    "cls": "Deal",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "organization_id (idx)",
+      "type": "varchar(36)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "pipeline_id",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "pipelines.id"
+     },
+     {
+      "name": "stage_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "pipeline_stages.id"
+     },
+     {
+      "name": "titulo",
+      "type": "varchar(200)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "orden_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "monto",
+      "type": "decimal(14, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "owner_user_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "orden_en_stage",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "probabilidad",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha_cierre_estimada",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "proximo_paso",
+      "type": "varchar(300)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "notas",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cerrado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "pipeline_stages",
+    "cls": "PipelineStage",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "organization_id (idx)",
+      "type": "varchar(36)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "pipeline_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "pipelines.id"
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(80)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "color",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "es_ganado",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "es_perdido",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "pipelines",
+    "cls": "Pipeline",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "organization_id (idx)",
+      "type": "varchar(36)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(120)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "es_default",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Base instalada",
+  "file": "app/models/instalaciones.py",
+  "tables": [
+   {
+    "table": "activos_instalados",
+    "cls": "ActivoInstalado",
+    "note": "Equipo instalado en un cliente, opcionalmente ubicado en una planta.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "planta_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "plantas.id"
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(200)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tipo",
+      "type": "varchar(80)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fabricante",
+      "type": "varchar(120)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "modelo",
+      "type": "varchar(120)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "serie",
+      "type": "varchar(120)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "ubicacion",
+      "type": "varchar(200)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "fecha_instalacion",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "garantia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estado",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "'operativo'",
+      "ref": ""
+     },
+     {
+      "name": "notas",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "plantas",
+    "cls": "Planta",
+    "note": "Sitio/planta física de un cliente. Varias por cliente.",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(160)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "direccion",
+      "type": "varchar(300)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "ciudad",
+      "type": "varchar(120)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "notas",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Servicios",
+  "file": "app/models/services.py",
+  "tables": [
+   {
+    "table": "servicios",
+    "cls": "Servicio",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "organization_id (idx)",
+      "type": "varchar(36)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "codigo",
+      "type": "varchar(30)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre (idx)",
+      "type": "varchar(150)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "categoria_servicio (idx)",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "costo",
+      "type": "decimal(12, 2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "moneda",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "MXN",
+      "ref": ""
+     },
+     {
+      "name": "tiempo_estimado",
+      "type": "decimal(8, 2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "unidad_tiempo",
+      "type": "varchar(10)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_prod_serv",
+      "type": "varchar(8)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "clave_unidad_sat",
+      "type": "varchar(10)",
+      "nulo": "NO",
+      "def": "E48",
+      "ref": ""
+     },
+     {
+      "name": "objeto_imp",
+      "type": "varchar(2)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion_fiscal",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Reportes de servicio",
+  "file": "app/models/reportes_servicio.py",
+  "tables": [
+   {
+    "table": "reportes_servicio",
+    "cls": "ReporteServicio",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "folio (único, idx)",
+      "type": "varchar(40)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_venta_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "fecha_reporte",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "tecnico_nombre",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cliente_recibe_nombre",
+      "type": "varchar(150)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "recibido_at",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "observaciones",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Auditoría de cotizaciones",
+  "file": "app/models/quote_events.py",
+  "tables": [
+   {
+    "table": "quote_events",
+    "cls": "QuoteEvent",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "canal",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "direccion",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estatus",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "asunto",
+      "type": "varchar(255)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "cuerpo",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "destinatario",
+      "type": "varchar(255)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "metadata_json",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Recordatorios",
+  "file": "app/models/recordatorios.py",
+  "tables": [
+   {
+    "table": "recordatorios",
+    "cls": "Recordatorio",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "orden_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "ordenes_venta.id"
+     },
+     {
+      "name": "cliente_id (idx)",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "clientes.id"
+     },
+     {
+      "name": "usuario_id (idx)",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "fecha_proximo_contacto (idx)",
+      "type": "timestamp",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tipo_accion",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "llamada",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "estado",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "pendiente",
+      "ref": ""
+     },
+     {
+      "name": "creado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": "usuarios.id"
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     },
+     {
+      "name": "completado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Unidades de medida",
+  "file": "app/models/unidades.py",
+  "tables": [
+   {
+    "table": "unidades_medida",
+    "cls": "UnidadMedida",
+    "note": "",
+    "cols": [
+     {
+      "name": "id · PK",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre (único)",
+      "type": "varchar(40)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "abreviatura",
+      "type": "varchar(20)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activa",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "true",
+      "ref": ""
+     },
+     {
+      "name": "orden",
+      "type": "integer",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Configuración de plataforma",
+  "file": "app/models/platform.py",
+  "tables": [
+   {
+    "table": "platform_config",
+    "cls": "PlatformConfig",
+    "note": "",
+    "cols": [
+     {
+      "name": "clave · PK",
+      "type": "varchar(60)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "valor",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_por_id",
+      "type": "integer",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "actualizado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Catálogos SAT",
+  "file": "app/models/sat.py",
+  "tables": [
+   {
+    "table": "sat_clave_prodserv",
+    "cls": "SatClaveProdServ",
+    "note": "c_ClaveProdServ — ~52K productos y servicios SAT.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(8)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "palabras_clave",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "incluir_iva_basico",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_desde",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_clave_unidad",
+    "cls": "SatClaveUnidad",
+    "note": "c_ClaveUnidad — ~2.4K unidades de medida SAT (UN/CEFACT).",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "nombre",
+      "type": "varchar(150)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "simbolo",
+      "type": "varchar(20)",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_forma_pago",
+    "cls": "SatFormaPago",
+    "note": "c_FormaPago — Forma en que se realiza el pago.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_desde",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_impuesto",
+    "cls": "SatImpuesto",
+    "note": "c_Impuesto — ISR (001), IVA (002), IEPS (003).",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "aplica_traslado",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "aplica_retencion",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_metodo_pago",
+    "cls": "SatMetodoPago",
+    "note": "c_MetodoPago — PUE / PPD.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_desde",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_moneda",
+    "cls": "SatMoneda",
+    "note": "c_Moneda — ISO 4217 + decimales SAT.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "decimales",
+      "type": "varchar(2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_objeto_imp",
+    "cls": "SatObjetoImp",
+    "note": "c_ObjetoImp — Objeto del impuesto por concepto.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_regimen_fiscal",
+    "cls": "SatRegimenFiscal",
+    "note": "c_RegimenFiscal — Régimen tributario del contribuyente.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "aplica_persona_fisica",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "aplica_persona_moral",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_desde",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_tasa_o_cuota",
+    "cls": "SatTasaOCuota",
+    "note": "c_TasaOCuota — Tasas y cuotas válidas por impuesto.",
+    "cols": [
+     {
+      "name": "id_local · PK",
+      "type": "varchar(30)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "impuesto (idx)",
+      "type": "varchar(3)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "tipo_factor",
+      "type": "varchar(10)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "valor",
+      "type": "decimal(7, 6)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "es_retencion (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "False",
+      "ref": ""
+     },
+     {
+      "name": "activo",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_tipo_comprobante",
+    "cls": "SatTipoDeComprobante",
+    "note": "c_TipoDeComprobante — I/E/T/N/P.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(2)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_tipo_factor",
+    "cls": "SatTipoFactor",
+    "note": "c_TipoFactor — Tasa / Cuota / Exento.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(10)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   },
+   {
+    "table": "sat_uso_cfdi",
+    "cls": "SatUsoCfdi",
+    "note": "c_UsoCFDI — Uso que el receptor le dará al comprobante.",
+    "cols": [
+     {
+      "name": "codigo · PK",
+      "type": "varchar(5)",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "descripcion",
+      "type": "text",
+      "nulo": "NO",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "activo (idx)",
+      "type": "boolean",
+      "nulo": "NO",
+      "def": "True",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_desde",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "vigencia_hasta",
+      "type": "date",
+      "nulo": "",
+      "def": "",
+      "ref": ""
+     },
+     {
+      "name": "creado_en",
+      "type": "timestamp",
+      "nulo": "",
+      "def": "now()",
+      "ref": ""
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" />
+<style>
+doc-page:not(:defined){visibility:hidden}
+body{margin:0}
+a{color:#236A9A;text-decoration:none}
+a:hover{color:#158A91}
+table{break-inside:avoid}
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+<doc-page size="a4">
+
+<section class="page" data-screen-label="01 Portada" style="box-sizing:border-box;display:flex;flex-direction:column;padding:76px 68px 60px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px">
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg viewBox="0 0 375.71 340" style="width:34px;height:auto;color:#123B5D" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><polygon points="252.36 236.3 195.47 110.84 140.66 236.21 98.8 235.8 174.88 71.93 216.92 71.85 295.23 235.73 252.36 236.3"/><polygon points="235.1 264.18 156.85 264.18 169.04 236.37 222.59 236.45 235.1 264.18"/><path d="M322.77,271.46c-5.63,7.02-12.31,13.43-18.68,19.74-31,30.74-75.65,46.25-119.14,44.73-92.04-3.23-164.14-80-162.22-171.68C24.29,89.2,76.26,23.61,149.63,4.95,164.96,1.05,180.47-.39,196.78.09c49.74,1.45,95.91,25.54,126.33,64.35,47.43,60.52,48.14,146.58-.34,207.02ZM285.77,268.38c61.55-58.4,56.66-157.12-9.84-209.36-54.27-42.64-132.41-38.36-181.82,10.11-54.43,53.4-55.5,140.38-2.56,195.07,52.52,54.26,139.28,56.32,194.22,4.19Z"/></g></svg>
+      <div style="font-size:12px;font-weight:800;letter-spacing:.14em;color:#123B5D">ATLAS<span style="font-weight:500">_TECH</span></div>
+    </div>
+    <div style="font-size:10.8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;text-align:right;line-height:1.6">Documento de trabajo<br />Versión 3</div>
+  </div>
+
+  <div style="height:1px;background:#123B5D;margin-top:16px"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 0 40px">
+    <div style="font-size:11.2px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#236A9A;margin-bottom:26px">Atlas ONE · DASIC Industrial</div>
+    <h1 style="margin:0;font-size:43px;font-weight:700;line-height:1.1;letter-spacing:-.015em;color:#123B5D;text-wrap:balance">Entendimiento y marco técnico de ejecución</h1>
+    <div style="display:flex;gap:10px;margin:26px 0 22px">
+      <div style="width:64px;height:3px;background:#236A9A"></div>
+      <div style="width:34px;height:3px;background:#158A91"></div>
+    </div>
+    <p style="margin:0;font-size:16px;font-weight:500;line-height:1.5;color:#28323B;max-width:520px">Mejoras para remisiones, trazabilidad documental, facturación y pago</p>
+
+    <div style="display:grid;grid-template-columns:118px 1fr;gap:0;margin-top:46px;max-width:520px;border-top:1px solid #DCE4E8">
+      <div style="padding:10px 0;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #EEF2F4">Dirigido a</div>
+      <div style="padding:10px 0;font-size:13.4px;font-weight:600;color:#28323B;border-bottom:1px solid #EEF2F4">Equipo DASIC</div>
+      <div style="padding:10px 0;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #EEF2F4">Fecha</div>
+      <div style="padding:10px 0;font-size:13.4px;font-weight:600;color:#28323B;border-bottom:1px solid #EEF2F4">5 de agosto de 2026</div>
+      <div style="padding:10px 0;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #EEF2F4">Clasificación</div>
+      <div style="padding:10px 0;font-size:13.4px;font-weight:600;color:#28323B;border-bottom:1px solid #EEF2F4">Propuesta técnica para validación funcional</div>
+    </div>
+  </div>
+
+  <div style="background:#EEF2F4;border-left:3px solid #123B5D;padding:16px 20px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#123B5D;margin-bottom:7px">Base documental</div>
+    <p style="margin:0;font-size:12.8px;line-height:1.55;color:#28323B;text-wrap:pretty">El contenido se construyó a partir del estatus productivo compartido por Atlas, del documento “Solicitudes de ERP” proporcionado por miembros de DASIC y del backlog técnico preparado para su ejecución. Las capacidades reportadas como construidas permanecen sujetas a validación funcional y pruebas de aceptación.</p>
+  </div>
+  <div style="margin-top:14px;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Elaborado por Atlas Tech</div>
+</section>
+
+<section class="page" data-screen-label="02 Propósito" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Índice y propósito</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#236A9A;margin-bottom:8px">Contenido</div>
+    <h2 style="margin:0 0 20px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Índice del documento</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:0;font-size:12.6px;border-top:1px solid #DCE4E8">
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">01</b> &nbsp;Propósito del documento</span><span style="color:#69777F">2</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">09</b> &nbsp;Backlog técnico priorizado</span><span style="color:#69777F">9</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">02</b> &nbsp;Contexto operativo</span><span style="color:#69777F">3</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">10</b> &nbsp;Criterios de aceptación por épica</span><span style="color:#69777F">11</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">03</b> &nbsp;North Star y objetivo de producto</span><span style="color:#69777F">4</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">11</b> &nbsp;Casos UAT mínimos</span><span style="color:#69777F">13</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">04</b> &nbsp;Flujo a consolidar</span><span style="color:#69777F">4</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">12</b> &nbsp;Riesgos técnicos y controles</span><span style="color:#69777F">14</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">05</b> &nbsp;Matriz de entendimiento y cobertura</span><span style="color:#69777F">5</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">13</b> &nbsp;Forma de trabajo y aceptación</span><span style="color:#69777F">14</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">06</b> &nbsp;Supuestos y principios técnicos</span><span style="color:#69777F">6</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">14</b> &nbsp;Responsabilidades</span><span style="color:#69777F">15</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">07</b> &nbsp;Reglas de negocio propuestas</span><span style="color:#69777F">7</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">15</b> &nbsp;Criterios de éxito</span><span style="color:#69777F">15</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">08</b> &nbsp;Definition of Ready / Definition of Done</span><span style="color:#69777F">8</span></div>
+      <div style="display:flex;justify-content:space-between;gap:10px;padding:6.5px 0;border-bottom:1px solid #EEF2F4"><span><b style="color:#69777F;font-weight:700">A</b> &nbsp;&nbsp;Anexo. Fuente y alcance</span><span style="color:#69777F">16</span></div>
+    </div>
+
+    <div style="display:flex;gap:34px;margin-top:38px">
+      <div style="width:112px;flex:0 0 112px;padding-top:4px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">01</div>
+        <div style="width:28px;height:2px;background:#236A9A;margin:8px 0 10px"></div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5">Entendimiento</div>
+      </div>
+      <div style="flex:1">
+        <h2 style="margin:0 0 12px;font-size:25px;font-weight:700;line-height:1.2;color:#123B5D">Propósito del documento</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#28323B;text-wrap:pretty">Este documento resume lo que Atlas entiende de las solicitudes compartidas por el equipo DASIC, distingue lo que ya fue reportado como construido de lo que todavía debe validarse o desarrollarse, y establece el marco funcional y técnico con el que se ejecutarán los cambios. Su objetivo es alinear alcance, invariantes de dominio, prioridades y criterios de aceptación antes de liberar modificaciones en producción.</p>
+        <div style="background:#EEF2F4;border-left:3px solid #2E8B72;padding:15px 18px;margin-top:22px">
+          <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#2E8B72;margin-bottom:7px">Resultado esperado</div>
+          <p style="margin:0;font-size:13.2px;line-height:1.55;color:#28323B;text-wrap:pretty">Consolidar un flujo confiable de cotización a entrega y cobranza, evitando recaptura, manteniendo la trazabilidad de documentos y permitiendo remisiones parciales sin alterar la cotización de origen.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#DCE4E8;margin-top:22px">
+          <div style="background:#fff;padding:12px 14px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#236A9A;margin-bottom:5px">Contexto</div><div style="font-size:12.4px;line-height:1.45">Dónde estamos y qué parte del flujo se trata.</div></div>
+          <div style="background:#fff;padding:12px 14px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#236A9A;margin-bottom:5px">Especificación</div><div style="font-size:12.4px;line-height:1.45">Qué comportamiento funcional o técnico se espera.</div></div>
+          <div style="background:#fff;padding:12px 14px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#158A91;margin-bottom:5px">Control</div><div style="font-size:12.4px;line-height:1.45">Cómo se valida y qué condiciones no deben romperse.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>2</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="03 Contexto operativo" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Contexto operativo</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="display:flex;gap:34px">
+      <div style="width:112px;flex:0 0 112px;padding-top:4px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">02</div>
+        <div style="width:28px;height:2px;background:#236A9A;margin:8px 0 10px"></div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5">Estado actual</div>
+      </div>
+      <div style="flex:1">
+        <h2 style="margin:0 0 14px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Contexto operativo</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;text-wrap:pretty">Atlas ONE · DASIC Industrial ya opera con datos reales. El cotizador es el núcleo de uso diario y el módulo de remisiones comenzó a utilizarse durante la semana actual. El estatus técnico más reciente reporta remisiones v2 con entregas parciales, cantidades pendientes, unidades comerciales, conversión desde cotización y un editor híbrido semejante al cotizador. Por ello, varias solicitudes pueden encontrarse implementadas total o parcialmente y deben validarse antes de generar código adicional.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#DCE4E8;margin-top:32px;border-top:2px solid #123B5D">
+      <div style="background:#fff;padding:14px 12px"><div style="font-size:23px;font-weight:700;color:#123B5D;letter-spacing:-.02em">192</div><div style="font-size:11px;font-weight:600;color:#69777F;margin-top:3px;line-height:1.35">cotizaciones<br />618 líneas</div></div>
+      <div style="background:#fff;padding:14px 12px"><div style="font-size:23px;font-weight:700;color:#123B5D;letter-spacing:-.02em">11</div><div style="font-size:11px;font-weight:600;color:#69777F;margin-top:3px;line-height:1.35">remisiones<br />emitidas</div></div>
+      <div style="background:#fff;padding:14px 12px"><div style="font-size:23px;font-weight:700;color:#123B5D;letter-spacing:-.02em">1,026</div><div style="font-size:11px;font-weight:600;color:#69777F;margin-top:3px;line-height:1.35">movimientos<br />de stock</div></div>
+      <div style="background:#fff;padding:14px 12px"><div style="font-size:23px;font-weight:700;color:#123B5D;letter-spacing:-.02em">61 / 75</div><div style="font-size:11px;font-weight:600;color:#69777F;margin-top:3px;line-height:1.35">canceladas /<br />pendientes</div></div>
+      <div style="background:#fff;padding:14px 12px"><div style="font-size:23px;font-weight:700;color:#158A91;letter-spacing:-.02em">32</div><div style="font-size:11px;font-weight:600;color:#69777F;margin-top:3px;line-height:1.35">endpoints<br />sin interfaz</div></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;margin:34px 0 10px">Lectura técnica de la señal productiva</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead><tr style="background:#123B5D;color:#fff"><th style="text-align:left;padding:9px 12px;font-size:10.8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;width:31%">Señal productiva</th><th style="text-align:left;padding:9px 12px;font-size:10.8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Lectura</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 12px;font-weight:600;color:#123B5D">192 cotizaciones y 618 líneas</td><td style="padding:10px 12px;line-height:1.45">El proceso comercial ya es crítico y debe preservarse durante los cambios.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:10px 12px;font-weight:600;color:#123B5D">11 remisiones emitidas</td><td style="padding:10px 12px;line-height:1.45">El flujo está entrando en operación y debe estabilizarse con usuarios reales.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 12px;font-weight:600;color:#123B5D">1,026 movimientos de stock</td><td style="padding:10px 12px;line-height:1.45">Las remisiones deben respetar reservas, liberaciones y cantidades pendientes.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:10px 12px;font-weight:600;color:#123B5D">61 canceladas y 75 pendientes</td><td style="padding:10px 12px;line-height:1.45">Se requiere mayor trazabilidad de estados y causas antes de interpretar conversión.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 12px;font-weight:600;color:#123B5D">32 endpoints sin interfaz</td><td style="padding:10px 12px;line-height:1.45">Existen capacidades de backend que pueden activarse sin reconstruir el dominio.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>3</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="04 North Star" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">North Star y golden path</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">03</div>
+    <h2 style="margin:8px 0 20px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">North Star y objetivo de producto</h2>
+
+    <div style="border-top:2px solid #123B5D;border-bottom:1px solid #DCE4E8;padding:20px 0 22px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#236A9A;margin-bottom:10px">Product Goal</div>
+      <p style="margin:0;font-size:19px;font-weight:500;line-height:1.4;color:#123B5D;max-width:600px;text-wrap:pretty">Cerrar el flujo cotización → remisión parcial/total → entrega → factura → CxC → pago dentro de Atlas ONE, con trazabilidad, permisos y datos consistentes, sin recaptura y sin alterar documentos aprobados.</p>
+    </div>
+
+    <p style="margin:20px 0 0;font-size:14px;line-height:1.6;text-wrap:pretty">La prioridad no es agregar módulos aislados, sino completar el golden path operativo que ya tiene uso real. Cada cambio deberá demostrar que mejora la continuidad del flujo, la calidad del dato o el control operativo.</p>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A;margin-top:34px">04</div>
+    <h3 style="margin:8px 0 18px;font-size:24px;font-weight:700;line-height:1.2;color:#123B5D">Flujo que entendemos que se desea consolidar</h3>
+
+    <div style="display:flex;align-items:stretch;gap:0;border-top:1px solid #DCE4E8;border-bottom:1px solid #DCE4E8;padding:20px 0">
+      <div style="flex:1;padding-right:8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">01</div><div style="width:7px;height:7px;background:#236A9A;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Cotización</div></div>
+      <div style="flex:1;padding:0 8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">02</div><div style="width:7px;height:7px;background:#236A9A;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Selección de partidas</div></div>
+      <div style="flex:1;padding:0 8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">03</div><div style="width:7px;height:7px;background:#236A9A;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Remisión parcial o total</div></div>
+      <div style="flex:1;padding:0 8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">04</div><div style="width:7px;height:7px;background:#236A9A;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Entrega</div></div>
+      <div style="flex:1;padding:0 8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">05</div><div style="width:7px;height:7px;background:#158A91;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Factura de ingreso</div></div>
+      <div style="flex:1;padding:0 8px;border-right:1px solid #DCE4E8"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">06</div><div style="width:7px;height:7px;background:#158A91;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Pago / complemento</div></div>
+      <div style="flex:1;padding-left:8px"><div style="font-size:10.5px;font-weight:800;color:#69777F;letter-spacing:.1em">07</div><div style="width:7px;height:7px;background:#2E8B72;margin:8px 0 9px"></div><div style="font-size:12.4px;font-weight:700;color:#123B5D;line-height:1.3">Cierre</div></div>
+    </div>
+    <div style="display:flex;gap:26px;margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F">
+      <span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#236A9A;display:inline-block"></span>Eje A · flujo operativo</span>
+      <span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#158A91;display:inline-block"></span>Eje B · control técnico</span>
+      <span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#2E8B72;display:inline-block"></span>Resultado / aceptación</span>
+    </div>
+
+    <p style="margin:26px 0 0;font-size:14px;line-height:1.6;text-wrap:pretty">La remisión debe poder generarse desde una cotización o desde el propio módulo de remisiones. En ambos casos conservará la relación con la cotización original, permitirá seleccionar únicamente las partidas que se entregarán y mantendrá visibles las cantidades remitidas y pendientes.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#DCE4E8;margin-top:26px">
+      <div style="background:#EEF2F4;padding:13px 16px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#158A91;margin-bottom:5px">No recaptura</div><div style="font-size:12.4px;line-height:1.45">Los datos aprobados se heredan; no se vuelven a capturar en el siguiente documento.</div></div>
+      <div style="background:#EEF2F4;padding:13px 16px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#158A91;margin-bottom:5px">Documentos aprobados</div><div style="font-size:12.4px;line-height:1.45">La cotización de origen no se altera al operar la remisión.</div></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>4</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="05 Matriz de cobertura" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Matriz de cobertura</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">05</div>
+    <h2 style="margin:8px 0 8px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Matriz de entendimiento y cobertura preliminar</h2>
+    <p style="margin:0 0 22px;font-size:13.4px;line-height:1.55;color:#69777F;max-width:560px">Diez solicitudes entendidas, con la lectura actual de cobertura. El estado no sustituye la validación: lo reportado como construido se confirma con evidencia funcional.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:12.8px">
+      <thead><tr style="background:#123B5D;color:#fff"><th style="text-align:left;padding:9px 11px;font-size:10.6px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;width:64px">ID</th><th style="text-align:left;padding:9px 11px;font-size:10.6px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;width:43%">Solicitud entendida</th><th style="text-align:left;padding:9px 11px;font-size:10.6px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Lectura actual · brecha y validación</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:11px 11px;font-weight:700;color:#236A9A;font-variant-numeric:tabular-nums">REQ-01</td><td style="padding:11px 11px;line-height:1.45">Seleccionar partidas de una cotización y habilitar “Generar remisión”.</td><td style="padding:11px 11px;line-height:1.45">Reportado en remisiones v2; validar UX y reglas.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-02</td><td style="padding:11px 11px;line-height:1.45">Copiar cliente, moneda, atención, producto, cantidad, catálogo, partida y unidad.</td><td style="padding:11px 11px;line-height:1.45">Parcial / prueba campo por campo.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-03</td><td style="padding:11px 11px;line-height:1.45">Generar un folio independiente con estructura de remisión.</td><td style="padding:11px 11px;line-height:1.45">Validar consecutivo, concurrencia y formato.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-04</td><td style="padding:11px 11px;line-height:1.45">Editar datos de la remisión sin borrar ni modificar la cotización.</td><td style="padding:11px 11px;line-height:1.45">Reportado; delimitar campos editables.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-05</td><td style="padding:11px 11px;line-height:1.45">Crear remisión desde su módulo buscando una cotización.</td><td style="padding:11px 11px;line-height:1.45">Reportado como conversión; validar buscador y selección.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-06</td><td style="padding:11px 11px;line-height:1.45">Manejar entregas parciales y productos pendientes.</td><td style="padding:11px 11px;line-height:1.45">Reportado; requiere UAT y prueba de concurrencia.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:11px 11px;font-weight:700;color:#236A9A">REQ-07</td><td style="padding:11px 11px;line-height:1.45">Vista/PDF con título REMISIÓN, unidad y sin subtotal cuando aplique.</td><td style="padding:11px 11px;line-height:1.45">Revisión visual y ajuste de plantilla.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:11px 11px;font-weight:700;color:#D78B28">REQ-08</td><td style="padding:11px 11px;line-height:1.45">Agregar autorizado, firma y documentos relacionados.</td><td style="padding:11px 11px;line-height:1.45"><b style="color:#D78B28">No confirmado;</b> validar/desarrollar.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:11px 11px;font-weight:700;color:#D78B28">REQ-09</td><td style="padding:11px 11px;line-height:1.45">Indicar si está facturado y capturar factura de ingreso.</td><td style="padding:11px 11px;line-height:1.45"><b style="color:#D78B28">Pendiente;</b> referencia y estado, sin timbrado.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:11px 11px;font-weight:700;color:#D78B28">REQ-10</td><td style="padding:11px 11px;line-height:1.45">Indicar si está pagado y capturar complemento de pago.</td><td style="padding:11px 11px;line-height:1.45"><b style="color:#D78B28">Pendiente;</b> sincronizar con CxC.</td></tr>
+      </tbody>
+    </table>
+    <div style="display:flex;gap:24px;margin-top:16px;font-size:10.6px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#69777F">
+      <span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#236A9A;display:inline-block"></span>Reportado · requiere validación</span>
+      <span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#D78B28;display:inline-block"></span>Pendiente o no confirmado</span>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>5</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="06 Supuestos" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#158A91">Principios de ejecución</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#158A91">06</div>
+    <h2 style="margin:8px 0 8px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Supuestos y principios técnicos de ejecución</h2>
+    <p style="margin:0 0 26px;font-size:13.4px;line-height:1.55;color:#69777F;max-width:560px">Restricciones no negociables del marco de ejecución. Aplican a toda historia, épica y liberación descritas en este documento.</p>
+
+    <div style="border-top:2px solid #158A91">
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-01</div><div style="flex:1;font-size:13.6px;line-height:1.55">Las funcionalidades reportadas como construidas <b>no se consideran terminadas</b> hasta pasar validación funcional, pruebas automatizadas y UAT.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-02</div><div style="flex:1;font-size:13.6px;line-height:1.55">Toda modificación preservará <b>multi-tenancy, permisos, auditoría</b>, compatibilidad con datos existentes y capacidad de <b>rollback</b>.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-03</div><div style="flex:1;font-size:13.6px;line-height:1.55">La emisión de CFDI y complementos de pago queda <b>fuera del alcance actual</b>; se modelarán estados, referencias y vínculos internos.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-04</div><div style="flex:1;font-size:13.6px;line-height:1.55">No se reescribirá el cotizador ni el módulo de remisiones si una extensión localizada resuelve el requerimiento con menor riesgo.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#D78B28;font-variant-numeric:tabular-nums;padding-top:2px">P-05</div><div style="flex:1;font-size:13.6px;line-height:1.55">Las reglas no especificadas se documentarán como <b style="color:#D78B28">decisión pendiente</b>; no se codificarán supuestos implícitos.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-06</div><div style="flex:1;font-size:13.6px;line-height:1.55">Las invariantes de cantidades, folios y estados se implementarán en el <b>dominio/backend</b>, no únicamente en la interfaz.</div></div>
+      <div style="display:flex;gap:20px;padding:15px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#158A91;font-variant-numeric:tabular-nums;padding-top:2px">P-07</div><div style="flex:1;font-size:13.6px;line-height:1.55">La ejecución se realizará mediante <b>microciclos agénticos</b> de alcance reducido, con evidencia funcional, pruebas y criterios de aceptación explícitos.</div></div>
+    </div>
+
+    <div style="background:#EEF2F4;border-left:3px solid #158A91;padding:16px 20px;margin-top:30px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#158A91;margin-bottom:7px">Eje B · control técnico</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Arquitectura</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Multi-tenancy</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Permisos</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Auditoría</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Concurrencia</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Idempotencia</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Pruebas</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Rollback</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Observabilidad</span>
+        <span style="font-size:11.4px;font-weight:700;letter-spacing:.04em;color:#123B5D;background:#fff;padding:5px 10px">Calidad</span>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>6</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="07 Reglas de negocio" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Reglas de negocio</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">07</div>
+    <h2 style="margin:8px 0 8px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Reglas de negocio propuestas para validación</h2>
+    <p style="margin:0 0 24px;font-size:13.4px;line-height:1.55;color:#69777F;max-width:560px">Reglas propuestas por Atlas, sujetas a confirmación de Product Owner antes de implementarse en el dominio.</p>
+
+    <div style="border-top:2px solid #236A9A">
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-01</div><div style="flex:1;font-size:13.4px;line-height:1.5">La cotización de origen no se modifica al eliminar una partida de la remisión.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-02</div><div style="flex:1;font-size:13.4px;line-height:1.5">La cantidad a remitir <b>no puede superar la cantidad pendiente</b>, salvo permiso especial y evento auditado.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-03</div><div style="flex:1;font-size:13.4px;line-height:1.5">Cada remisión conserva relación con su cotización y con las remisiones previas de la misma operación.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-04</div><div style="flex:1;font-size:13.4px;line-height:1.5">El folio de remisión es independiente, <b>único por tenant</b> y generado del lado del servidor.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-05</div><div style="flex:1;font-size:13.4px;line-height:1.5">Los estados de entrega, facturación y pago son distintos y no deben mezclarse en una sola etiqueta.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-06</div><div style="flex:1;font-size:13.4px;line-height:1.5">Una <b>factura de ingreso</b> y un <b>complemento de pago</b> son referencias documentales diferentes.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-07</div><div style="flex:1;font-size:13.4px;line-height:1.5">Los cambios comerciales sensibles —precio, descuento, costo, margen, impuestos o moneda— requieren <b>autorización, bitácora y reglas por estado</b>.</div></div>
+      <div style="display:flex;gap:20px;padding:13px 0;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 42px;font-size:12px;font-weight:800;color:#236A9A;padding-top:2px">R-08</div><div style="flex:1;font-size:13.4px;line-height:1.5">Las cantidades pendientes se recalculan de forma <b>transaccional</b> al emitir, cancelar o revertir una remisión.</div></div>
+    </div>
+
+    <div style="border-top:2px solid #D78B28;background:#EEF2F4;padding:18px 20px;margin-top:30px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:9px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#D78B28">Decisión de dominio relevante</div>
+        <div style="font-size:10.6px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#D78B28">Decisión requerida</div>
+      </div>
+      <p style="margin:0;font-size:13.4px;line-height:1.55;text-wrap:pretty">DASIC solicita editar utilidad, precio y tiempos dentro de la remisión. Atlas propone diferenciar <b>campos logísticos editables</b> de <b>campos comerciales controlados</b>, porque alterar la condición comercial después de aprobar la cotización puede romper margen, cobranza, auditoría e integración futura con facturación.</p>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>7</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="08 DoR DoD" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#158A91">DoR / DoD</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#158A91">08</div>
+    <h2 style="margin:8px 0 8px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Definition of Ready y Definition of Done</h2>
+    <p style="margin:0 0 30px;font-size:13.4px;line-height:1.55;color:#69777F;max-width:560px">Condiciones de entrada y de salida de cada historia. Ninguna historia se toma sin DoR completo; ninguna se considera liberable sin DoD completo.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px">
+      <div>
+        <div style="height:3px;background:#236A9A"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;margin:14px 0 4px">Definition of Ready</div>
+        <div style="font-size:12.4px;color:#69777F;margin-bottom:16px">Condiciones para tomar una historia</div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Historia vinculada con una solicitud o hallazgo productivo.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5"><b>Regla de negocio confirmada</b> por Product Owner.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Diseño de datos, permisos e invariantes definido.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Casos feliz, parcial, error y <b>concurrencia</b> definidos.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Dependencias y fuera de alcance explícitos.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #236A9A;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Datos de prueba y responsables UAT asignados.</div></div>
+      </div>
+      <div>
+        <div style="height:3px;background:#2E8B72"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#2E8B72;margin:14px 0 4px">Definition of Done</div>
+        <div style="font-size:12.4px;color:#69777F;margin-bottom:16px">Condiciones para considerarla liberable</div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Criterios de aceptación demostrados en staging.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Pruebas unitarias, integración y <b>regresión</b> aprobadas.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5"><b>Migración reversible</b> y datos existentes preservados.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Bitácora, observabilidad y manejo de errores incluidos.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5">Documentación técnica y guía de usuario actualizadas.</div></div>
+        <div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid #DCE4E8;border-bottom:1px solid #DCE4E8"><div style="flex:0 0 10px;height:10px;border:1.5px solid #2E8B72;background:#2E8B72;margin-top:4px"></div><div style="flex:1;font-size:13px;line-height:1.5"><b>Aprobación UAT</b> y plan de despliegue/reversa preparados.</div></div>
+      </div>
+    </div>
+
+    <div style="background:#EEF2F4;border-left:3px solid #123B5D;padding:15px 18px;margin-top:32px">
+      <p style="margin:0;font-size:12.8px;line-height:1.55;text-wrap:pretty">Los Story Points expresan <b>complejidad relativa</b>, no duración calendario. La prioridad P0 corresponde a invariantes, trazabilidad o riesgos operativos; P1 corresponde a capacidades importantes que pueden ejecutarse después de asegurar el golden path.</p>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>8</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="09 Backlog E0-E2" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Backlog · E0 – E2</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">09</div>
+    <h2 style="margin:8px 0 8px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Backlog técnico priorizado</h2>
+    <p style="margin:0 0 18px;font-size:13.4px;line-height:1.55;max-width:600px;text-wrap:pretty">La prioridad P0 corresponde a invariantes, trazabilidad o riesgos operativos. P1 corresponde a capacidades importantes que pueden ejecutarse después de asegurar el golden path. Los Story Points (SP) expresan complejidad relativa, no duración calendario.</p>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#123B5D;border-top:2px solid #123B5D;padding-top:9px;margin-bottom:6px">E0 · Descubrimiento, reglas y arquitectura</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#123B5D">E0 / US-00</td><td style="padding:9px 10px;line-height:1.4">Auditar implementación actual contra las 10 solicitudes</td><td style="padding:9px 10px;line-height:1.4">Confirmar qué ya existe para evitar reconstrucción y regresiones.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#123B5D">E0 / US-01</td><td style="padding:9px 10px;line-height:1.4">Definir estados y modelo documental</td><td style="padding:9px 10px;line-height:1.4">Separar entrega, facturación y pago para conocer el estado real.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;border-top:2px solid #236A9A;padding-top:9px;margin:16px 0 6px">E1 · Cotización → remisión</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E1 / US-10</td><td style="padding:9px 10px;line-height:1.4">Seleccionar partidas desde cotización</td><td style="padding:9px 10px;line-height:1.4">Seleccionar líneas para generar una remisión parcial o total.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E1 / US-11</td><td style="padding:9px 10px;line-height:1.4">Crear remisión sin modificar cotización</td><td style="padding:9px 10px;line-height:1.4">Quitar líneas de la remisión sin borrar el documento original.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E1 / US-12</td><td style="padding:9px 10px;line-height:1.4">Buscar cotización desde remisiones</td><td style="padding:9px 10px;line-height:1.4">Importar una cotización y elegir qué surtir.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E1 / US-13</td><td style="padding:9px 10px;line-height:1.4">Controlar cantidades remitidas y pendientes</td><td style="padding:9px 10px;line-height:1.4">Impedir sobreentregas y consultar saldo por partida.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E1 / US-14</td><td style="padding:9px 10px;line-height:1.4">Generar folio único de remisión</td><td style="padding:9px 10px;line-height:1.4">Folios independientes, correlativos y auditables.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;border-top:2px solid #236A9A;padding-top:9px;margin:16px 0 6px">E2 · Editor y documento</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E2 / US-20</td><td style="padding:9px 10px;line-height:1.4">Editor con campos permitidos</td><td style="padding:9px 10px;line-height:1.4">Corregir información logística sin romper la condición comercial.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E2 / US-21</td><td style="padding:9px 10px;line-height:1.4">Plantilla/PDF oficial</td><td style="padding:9px 10px;line-height:1.4">Documento claramente identificado como REMISIÓN.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>9</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="10 Backlog E3-E6" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Backlog · E3 – E6</span>
+  </div>
+  <div style="flex:1;padding-top:22px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">09 · continuación</div>
+    <h2 style="margin:8px 0 18px;font-size:25px;font-weight:700;line-height:1.15;color:#123B5D">Backlog técnico priorizado · épicas E3 a E6</h2>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;border-top:2px solid #236A9A;padding-top:9px;margin-bottom:6px">E3 · Firma y documentos relacionados</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E3 / US-30</td><td style="padding:9px 10px;line-height:1.4">Autorizado y firma</td><td style="padding:9px 10px;line-height:1.4">Seleccionar o capturar al responsable que autoriza.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">3</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E3 / US-31</td><td style="padding:9px 10px;line-height:1.4">Documentos relacionados</td><td style="padding:9px 10px;line-height:1.4">Registrar cotización, reporte o factura y ocultar la sección vacía.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#236A9A;border-top:2px solid #236A9A;padding-top:9px;margin:16px 0 6px">E4 · Facturación, pago y CxC</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E4 / US-40</td><td style="padding:9px 10px;line-height:1.4">Estatus facturado y factura de ingreso</td><td style="padding:9px 10px;line-height:1.4">Marcar y referenciar la factura asociada.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E4 / US-41</td><td style="padding:9px 10px;line-height:1.4">Estatus pagado y complemento</td><td style="padding:9px 10px;line-height:1.4">Distinguir pago y complemento de la factura de ingreso.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#236A9A">E4 / US-42</td><td style="padding:9px 10px;line-height:1.4">Sincronización con CxC</td><td style="padding:9px 10px;line-height:1.4">Evitar contradicciones entre estados y transacciones.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#158A91;border-top:2px solid #158A91;padding-top:9px;margin:16px 0 6px">E5 · Seguridad y seguimiento</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#158A91">E5 / US-50</td><td style="padding:9px 10px;line-height:1.4">Permisos y auditoría</td><td style="padding:9px 10px;line-height:1.4">Registrar quién modificó cantidades, documentos y estados.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#158A91">E5 / US-51</td><td style="padding:9px 10px;line-height:1.4">Filtros y seguimiento consolidado</td><td style="padding:9px 10px;line-height:1.4">Filtrar por cliente, vendedor, entrega, factura y pago.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#158A91;border-top:2px solid #158A91;padding-top:9px;margin:16px 0 6px">E6 · Calidad y operación</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#EEF2F4"><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:88px">ID</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:33%">Historia</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F">Resultado de negocio/técnico</th><th style="text-align:left;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:44px">Pri.</th><th style="text-align:right;padding:7px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#69777F;width:34px">SP</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:700;color:#158A91">E6 / US-60</td><td style="padding:9px 10px;line-height:1.4">Pruebas end-to-end y regresión</td><td style="padding:9px 10px;line-height:1.4">Liberar sin afectar cotizaciones, reservas, remisiones o CxC.</td><td style="padding:9px 10px;font-weight:800;color:#123B5D">P0</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">8</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:700;color:#158A91">E6 / US-61</td><td style="padding:9px 10px;line-height:1.4">Eliminar legacy y optimizar KPI</td><td style="padding:9px 10px;line-height:1.4">Reducir deuda y evitar cargas completas de catálogo.</td><td style="padding:9px 10px;font-weight:700;color:#69777F">P1</td><td style="padding:9px 10px;text-align:right;font-variant-numeric:tabular-nums">5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>10</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="11 Criterios E0-E1" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Criterios · E0 – E1</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">10</div>
+    <h2 style="margin:8px 0 26px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Criterios de aceptación por épica</h2>
+
+    <div style="display:flex;gap:26px;border-top:2px solid #158A91;padding-top:16px">
+      <div style="flex:0 0 116px">
+        <div style="font-size:20px;font-weight:700;color:#158A91;letter-spacing:-.01em">E0</div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5;margin-top:6px">Descubrimiento, reglas y arquitectura</div>
+        <div style="font-size:11.4px;font-weight:700;color:#158A91;background:#EEF2F4;padding:4px 8px;margin-top:12px;display:inline-block">Control técnico</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Existe una matriz por requisito con evidencia: ruta UI, endpoint, modelo, prueba y brecha.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Los estados de cotización, remisión, entrega, facturación y pago están definidos y no se duplican.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Cada cambio de modelo incluye estrategia de <b>migración, rollback</b> e impacto <b>multi-tenant</b>.</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:26px;border-top:2px solid #236A9A;padding-top:16px;margin-top:34px">
+      <div style="flex:0 0 116px">
+        <div style="font-size:20px;font-weight:700;color:#236A9A;letter-spacing:-.01em">E1</div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5;margin-top:6px">Cotización → remisión</div>
+        <div style="font-size:11.4px;font-weight:700;color:#236A9A;background:#EEF2F4;padding:4px 8px;margin-top:12px;display:inline-block">Flujo operativo</div>
+        <div style="font-size:12px;line-height:1.5;color:#69777F;margin-top:16px"><b style="color:#D78B28">Riesgo principal:</b> sobreentrega por concurrencia.</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">“Generar remisión” permanece deshabilitado hasta seleccionar al menos una partida válida.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">La remisión conserva identificadores de origen por documento y por línea.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Eliminar una línea de la remisión no altera la línea de cotización.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">La suma remitida no supera la cantidad cotizada, excepto con permiso y evento auditado.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Los pendientes se recalculan <b>transaccionalmente</b> ante emisión, cancelación o ajuste.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Dos usuarios no pueden consumir simultáneamente la misma cantidad sin <b>control de concurrencia</b>.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">El folio se genera en backend y es <b>único por tenant</b>.</span></div>
+      </div>
+    </div>
+
+    <div style="background:#EEF2F4;border-left:3px solid #2E8B72;padding:15px 18px;margin-top:34px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#2E8B72;margin-bottom:6px">Evidencia de salida</div>
+      <p style="margin:0;font-size:12.8px;line-height:1.55">Matriz de cobertura por requisito con ruta UI, endpoint, modelo y prueba asociada; pruebas de concurrencia ejecutadas sobre el mismo saldo.</p>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>11</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="12 Criterios E2-E4" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Criterios · E2 – E4</span>
+  </div>
+  <div style="flex:1;padding-top:30px">
+    <div style="display:flex;gap:26px;border-top:2px solid #236A9A;padding-top:16px">
+      <div style="flex:0 0 116px">
+        <div style="font-size:20px;font-weight:700;color:#236A9A;letter-spacing:-.01em">E2 – E3</div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5;margin-top:6px">Editor, PDF, firma y documentos relacionados</div>
+        <div style="font-size:11.4px;font-weight:700;color:#236A9A;background:#EEF2F4;padding:4px 8px;margin-top:12px;display:inline-block">Flujo operativo</div>
+        <div style="font-size:12px;line-height:1.5;color:#69777F;margin-top:16px"><b style="color:#D78B28">Riesgo principal:</b> PDF distinto a la vista previa.</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">El encabezado, breadcrumbs, acciones y PDF dicen <b>“Remisión”</b>, no “Cotización”.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">La unidad de medida se presenta en la columna aprobada por DASIC.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Precios, subtotales e impuestos se muestran u ocultan mediante configuración.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Los <b>campos logísticos editables</b> y los <b>comerciales controlados</b> están diferenciados.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">El autorizado queda persistido y se muestra bajo la línea de firma.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Documentos relacionados admite texto multilínea y la sección se oculta si está vacía.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">La vista previa coincide con el PDF final y soporta múltiples páginas y entregas parciales.</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:26px;border-top:2px solid #236A9A;padding-top:16px;margin-top:36px">
+      <div style="flex:0 0 116px">
+        <div style="font-size:20px;font-weight:700;color:#236A9A;letter-spacing:-.01em">E4</div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5;margin-top:6px">Facturación, pago y CxC</div>
+        <div style="font-size:11.4px;font-weight:700;color:#236A9A;background:#EEF2F4;padding:4px 8px;margin-top:12px;display:inline-block">Flujo operativo</div>
+        <div style="font-size:12px;line-height:1.5;color:#69777F;margin-top:16px"><b style="color:#D78B28">Riesgo principal:</b> desalineación entre remisión y CxC.</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5"><b>Facturado</b> y <b>pagado</b> son estados independientes.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Al marcar facturado se exige referencia de <b>factura de ingreso</b> con validación básica.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Al registrar pago se conserva fecha, monto o transacción CxC y, cuando aplique, referencia del <b>complemento</b>.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Los pagos parciales no marcan automáticamente la operación como pagada en su totalidad.</span></div>
+        <div style="display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">No se permite un estado pagado que contradiga el saldo de <b>CxC</b>, salvo excepción documentada.</span></div>
+      </div>
+    </div>
+
+    <div style="background:#EEF2F4;border-left:3px solid #2E8B72;padding:15px 18px;margin-top:36px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#2E8B72;margin-bottom:6px">Evidencia de salida</div>
+      <p style="margin:0;font-size:12.8px;line-height:1.55">Snapshot de render comparando vista previa y PDF final; registro de estados facturado y pagado contrastado contra transacciones CxC.</p>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>12</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="13 Criterios E5-E6 y UAT" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#158A91">Criterios E5 – E6 · UAT</span>
+  </div>
+  <div style="flex:1;padding-top:28px">
+    <div style="display:flex;gap:26px;border-top:2px solid #158A91;padding-top:16px">
+      <div style="flex:0 0 116px">
+        <div style="font-size:20px;font-weight:700;color:#158A91;letter-spacing:-.01em">E5 – E6</div>
+        <div style="font-size:10.6px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#69777F;line-height:1.5;margin-top:6px">Seguridad, calidad y operación</div>
+        <div style="font-size:11.4px;font-weight:700;color:#158A91;background:#EEF2F4;padding:4px 8px;margin-top:12px;display:inline-block">Control técnico</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;gap:11px;padding:8px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Toda mutación sensible genera evento con usuario, fecha, valor anterior y valor nuevo.</span></div>
+        <div style="display:flex;gap:11px;padding:8px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Los permisos separan edición comercial, almacén, facturación y cobranza.</span></div>
+        <div style="display:flex;gap:11px;padding:8px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">Se cubren entrega parcial, cancelación, reemisión, <b>concurrencia</b> y <b>rollback</b>.</span></div>
+        <div style="display:flex;gap:11px;padding:8px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">El endpoint legacy de KPIs deja de cargar el catálogo completo.</span></div>
+        <div style="display:flex;gap:11px;padding:8px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#158A91;margin-top:7px"></span><span style="flex:1;font-size:13.2px;line-height:1.5">El editor anterior se elimina únicamente después de verificar ausencia de rutas activas.</span></div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A;margin-top:34px">11</div>
+    <h2 style="margin:7px 0 14px;font-size:25px;font-weight:700;line-height:1.15;color:#123B5D">Casos UAT mínimos</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:12.4px">
+      <thead><tr style="background:#123B5D;color:#fff"><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:64px">Caso</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:41%">Escenario</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase">Resultado esperado</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-01</td><td style="padding:8px 10px;line-height:1.4">Cotización con 5 líneas; seleccionar 3 y generar remisión.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">Se crea remisión con 3 líneas y la cotización conserva 5.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-02</td><td style="padding:8px 10px;line-height:1.4">Remitir parcialmente 4 de 10 unidades.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">Quedan 6 pendientes y se visualiza el historial.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-03</td><td style="padding:8px 10px;line-height:1.4">Crear segunda remisión por el saldo.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">No permite exceder 6; al completar queda pendiente 0.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-04</td><td style="padding:8px 10px;line-height:1.4">Cancelar una remisión emitida.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">Se restauran cantidades conforme a la regla y queda evento.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-05</td><td style="padding:8px 10px;line-height:1.4">Dos usuarios intentan remitir el mismo saldo.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">Solo una operación confirma; la otra recibe conflicto recuperable.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-06</td><td style="padding:8px 10px;line-height:1.4">Editar descripción logística y autorizado.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">La cotización no cambia; el PDF refleja la remisión.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-07</td><td style="padding:8px 10px;line-height:1.4">Agregar y retirar documentos relacionados.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">La sección aparece o se oculta correctamente.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-08</td><td style="padding:8px 10px;line-height:1.4">Marcar facturado con referencia.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">La factura de ingreso aparece en seguimiento.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-09</td><td style="padding:8px 10px;line-height:1.4">Registrar pago parcial y total.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">CxC y estado pagado permanecen consistentes.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:8px 10px;font-weight:700;color:#123B5D">UAT-10</td><td style="padding:8px 10px;line-height:1.4">Intentar editar precio sin permiso.</td><td style="padding:8px 10px;line-height:1.4;color:#2E8B72;font-weight:600">La acción se bloquea o exige autorización y queda auditada.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>13</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="14 Riesgos y forma de trabajo" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#158A91">Riesgos y forma de trabajo</span>
+  </div>
+  <div style="flex:1;padding-top:28px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#158A91">12</div>
+    <h2 style="margin:7px 0 16px;font-size:27px;font-weight:700;line-height:1.15;color:#123B5D">Riesgos técnicos y controles</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#123B5D;color:#fff"><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:33%">Riesgo</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:74px">Impacto</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase">Control</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Sobreentrega por concurrencia</td><td style="padding:9px 10px;font-weight:800;color:#B74A4A">Alta</td><td style="padding:9px 10px;line-height:1.4">Transacciones, locks/versionado y pruebas simultáneas.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Desalineación entre remisión y CxC</td><td style="padding:9px 10px;font-weight:800;color:#B74A4A">Alta</td><td style="padding:9px 10px;line-height:1.4">Servicio de dominio único e idempotencia.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Edición de precio/margen tras aprobación</td><td style="padding:9px 10px;font-weight:800;color:#B74A4A">Alta</td><td style="padding:9px 10px;line-height:1.4">Permisos, bloqueo por estado y auditoría.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Duplicación de función ya construida</td><td style="padding:9px 10px;font-weight:800;color:#D78B28">Media</td><td style="padding:9px 10px;line-height:1.4">Auditoría previa con evidencia de cobertura.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">PDF distinto a vista</td><td style="padding:9px 10px;font-weight:800;color:#D78B28">Media</td><td style="padding:9px 10px;line-height:1.4">Fuente de datos única y pruebas de render/snapshot.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Cambio de folio en producción</td><td style="padding:9px 10px;font-weight:800;color:#D78B28">Media</td><td style="padding:9px 10px;line-height:1.4">Migración no destructiva y coexistencia controlada.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:9px 10px;font-weight:600;color:#123B5D;line-height:1.4">Adopción baja</td><td style="padding:9px 10px;font-weight:800;color:#D78B28">Media</td><td style="padding:9px 10px;line-height:1.4">UAT con usuarios intensivos, microcapacitación y métricas.</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A;margin-top:22px">13</div>
+    <h2 style="margin:7px 0 14px;font-size:25px;font-weight:700;line-height:1.15;color:#123B5D">Forma de trabajo y aceptación</h2>
+    <div style="border-top:2px solid #236A9A">
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Atlas convierte cada bloque funcional aprobado en especificaciones y Task Packs ejecutables por agentes de desarrollo.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">La implementación se organiza en <b>microciclos</b> medidos en horas o días, con alcance reducido, evidencia funcional y criterios de aceptación explícitos.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">No se fijan calendarios de varias semanas por defecto; cualquier estimación se define únicamente cuando el alcance, dependencias e invariantes están cerrados.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5"><b>Vania y Axel</b> priorizan y validan el comportamiento funcional; los stakeholders participan en las pruebas de los flujos que les corresponden.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Los cambios se validan primero en un ambiente seguro con datos controlados y después mediante pruebas UAT.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Atlas corrige defectos del alcance acordado y prepara la liberación con respaldo, observabilidad y <b>plan de reversa</b>.</span></div>
+      <div style="display:flex;gap:11px;padding:7px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#236A9A;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Las nuevas solicitudes o cambios de alcance se documentan como backlog y se ejecutan en un microciclo posterior.</span></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>14</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="15 Responsabilidades" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Responsabilidades y éxito</span>
+  </div>
+  <div style="flex:1;padding-top:28px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#236A9A">14</div>
+    <h2 style="margin:7px 0 16px;font-size:27px;font-weight:700;line-height:1.15;color:#123B5D">Responsabilidades</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:12.6px">
+      <thead><tr style="background:#123B5D;color:#fff"><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:27%">Rol</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;width:23%">Responsable</th><th style="text-align:left;padding:8px 10px;font-size:10.4px;font-weight:800;letter-spacing:.09em;text-transform:uppercase">Compromisos principales</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 10px;font-weight:600;color:#123B5D;line-height:1.4">DASIC – Product Owners funcionales</td><td style="padding:10px 10px;font-weight:700;line-height:1.4">Vania y Axel</td><td style="padding:10px 10px;line-height:1.4">Priorizar, aclarar reglas, proporcionar ejemplos reales y aceptar o rechazar cada historia.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:10px 10px;font-weight:600;color:#123B5D;line-height:1.4">Usuarios clave</td><td style="padding:10px 10px;font-weight:700;line-height:1.4">Todos los stakeholders de DASIC</td><td style="padding:10px 10px;line-height:1.4">Probar los flujos correspondientes a su operación y registrar observaciones UAT.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 10px;font-weight:600;color:#123B5D;line-height:1.4">Atlas – Producto</td><td style="padding:10px 10px;font-weight:700;line-height:1.4">Emmanuel Campos</td><td style="padding:10px 10px;line-height:1.4">Traducir solicitudes a especificaciones, proteger alcance y mantener trazabilidad de decisiones.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8;background:#F7F9FA"><td style="padding:10px 10px;font-weight:600;color:#123B5D;line-height:1.4">Atlas – Desarrollo</td><td style="padding:10px 10px;font-weight:700;line-height:1.4">Israel Romero y Leonardo González</td><td style="padding:10px 10px;line-height:1.4">Analizar arquitectura, implementar, migrar, probar, documentar y desplegar.</td></tr>
+        <tr style="border-bottom:1px solid #DCE4E8"><td style="padding:10px 10px;font-weight:600;color:#123B5D;line-height:1.4">Atlas – QA</td><td style="padding:10px 10px;font-weight:700;line-height:1.4">Equipo staff junior de Atlas</td><td style="padding:10px 10px;line-height:1.4">Ejecutar regresión, casos UAT asistidos, validaciones de permisos y evidencia de calidad.</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#2E8B72;margin-top:34px">15</div>
+    <h2 style="margin:7px 0 14px;font-size:25px;font-weight:700;line-height:1.15;color:#123B5D">Criterios de éxito</h2>
+    <div style="border-top:2px solid #2E8B72">
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Una remisión parcial puede generarse en <b>menos de dos minutos</b> desde una cotización existente.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Ninguna remisión modifica accidentalmente la cotización de origen.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Las cantidades remitidas y pendientes son consistentes en todas las vistas y bajo <b>concurrencia</b>.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">El documento de remisión contiene únicamente la información aprobada por DASIC.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Facturación, pago y complemento de pago se distinguen y consultan sin ambigüedad.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">Los stakeholders completan los casos UAT sin defectos críticos.</span></div>
+      <div style="display:flex;gap:11px;padding:8.5px 0;border-bottom:1px solid #EEF2F4"><span style="flex:0 0 5px;height:5px;background:#2E8B72;margin-top:7px"></span><span style="flex:1;font-size:12.8px;line-height:1.5">El flujo cotización → remisión → CxC conserva bitácora, permisos y capacidad de reversa.</span></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>15</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="16 Cierre y anexo" style="box-sizing:border-box;display:flex;flex-direction:column;padding:74px 68px 54px;background:#fff;color:#28323B;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#69777F;border-bottom:1px solid #123B5D;padding-bottom:8px">
+    <span>Atlas ONE · DASIC Industrial</span><span style="color:#123B5D">Cierre y anexo</span>
+  </div>
+  <div style="flex:1;padding-top:32px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#2E8B72">Cierre técnico</div>
+    <h2 style="margin:8px 0 22px;font-size:29px;font-weight:700;line-height:1.15;color:#123B5D">Siguiente paso propuesto</h2>
+    <div style="border-top:2px solid #2E8B72;border-bottom:1px solid #DCE4E8;padding:20px 0 22px">
+      <p style="margin:0;font-size:17px;font-weight:500;line-height:1.45;color:#123B5D;max-width:600px;text-wrap:pretty">Realizar una validación funcional breve con Vania, Axel y stakeholders de almacén/cobranza. Se recorrerán dos cotizaciones reales, una remisión parcial y un escenario de pago para confirmar las invariantes antes de ejecutar los microciclos técnicos.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#DCE4E8;margin-top:30px">
+      <div style="background:#EEF2F4;padding:15px 17px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#236A9A;margin-bottom:6px">Qué se ejecutará</div><div style="font-size:12.6px;line-height:1.5">El backlog priorizado por épicas E0 a E6, en microciclos de alcance reducido.</div></div>
+      <div style="background:#EEF2F4;padding:15px 17px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#158A91;margin-bottom:6px">Cómo se validará</div><div style="font-size:12.6px;line-height:1.5">Criterios de aceptación por épica, casos UAT y pruebas de regresión aprobadas.</div></div>
+      <div style="background:#EEF2F4;padding:15px 17px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#158A91;margin-bottom:6px">Qué preserva la arquitectura</div><div style="font-size:12.6px;line-height:1.5">Multi-tenancy, permisos, auditoría, migraciones reversibles y capacidad de rollback.</div></div>
+      <div style="background:#EEF2F4;padding:15px 17px"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#D78B28;margin-bottom:6px">Nuevas solicitudes</div><div style="font-size:12.6px;line-height:1.5">Se documentan como backlog y se ejecutan en un microciclo posterior.</div></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#69777F;margin-top:44px;border-top:1px solid #DCE4E8;padding-top:18px">Anexo · Fuente y alcance de esta interpretación</div>
+    <p style="margin:12px 0 0;font-size:12.8px;line-height:1.6;max-width:600px;text-wrap:pretty">Fuente primaria: documento “Solicitudes de ERP” compartido por miembros de DASIC, con requerimientos sobre generación y vista de remisiones, búsqueda de cotizaciones, documentos relacionados y seguimiento de facturación y pago. Fuente contextual: estatus productivo y técnico de Atlas ONE · DASIC Industrial compartido el 5 de agosto de 2026, así como el backlog técnico Scrum preparado para su ejecución. Este documento funciona como base de alineación y aceptación; las brechas se confirmarán con evidencia del repositorio y pruebas funcionales.</p>
+
+    <div style="display:flex;align-items:center;gap:12px;margin-top:46px">
+      <svg viewBox="0 0 375.71 340" style="width:24px;height:auto;color:#123B5D" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><polygon points="252.36 236.3 195.47 110.84 140.66 236.21 98.8 235.8 174.88 71.93 216.92 71.85 295.23 235.73 252.36 236.3"/><polygon points="235.1 264.18 156.85 264.18 169.04 236.37 222.59 236.45 235.1 264.18"/><path d="M322.77,271.46c-5.63,7.02-12.31,13.43-18.68,19.74-31,30.74-75.65,46.25-119.14,44.73-92.04-3.23-164.14-80-162.22-171.68C24.29,89.2,76.26,23.61,149.63,4.95,164.96,1.05,180.47-.39,196.78.09c49.74,1.45,95.91,25.54,126.33,64.35,47.43,60.52,48.14,146.58-.34,207.02ZM285.77,268.38c61.55-58.4,56.66-157.12-9.84-209.36-54.27-42.64-132.41-38.36-181.82,10.11-54.43,53.4-55.5,140.38-2.56,195.07,52.52,54.26,139.28,56.32,194.22,4.19Z"/></g></svg>
+      <div style="font-size:10.8px;font-weight:800;letter-spacing:.12em;color:#123B5D">ATLAS<span style="font-weight:500">_TECH</span></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10.6px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#69777F;border-top:1px solid #EEF2F4;padding-top:9px">
+    <span>Atlas Tech · Documento de trabajo · Versión 3</span><span>16</span>
+  </div>
+</section>
+
+</doc-page>
+</x-dc>
+</body>
+</html>

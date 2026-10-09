@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e7e3db; font-weight: 500; letter-spacing: 0.008em; }
+    a { color: #09606D; text-decoration: none; }
+    a:hover { color: #075057; }
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <section data-label="Portada" data-screen-label="01 Portada" data-speaker-notes="Apertura. Una transformación empresarial exitosa no comienza con el software: comienza con una visión compartida, procesos claros, la arquitectura correcta y una organización preparada para ejecutar." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-orbit-network.png" alt="Red de datos en órbita" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.55;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.96) 0%, rgba(13,21,34,0.82) 48%, rgba(13,21,34,0.5) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <svg width="30" height="34" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+          <span style="font-size:26px;font-weight:700;letter-spacing:0.02em;">Atlas Tech</span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7f8a99;">MODELO ATLAS DE TRANSFORMACIÓN</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#7fc4cb;margin-bottom:44px;">ERP · BOS · Automatización · IA aplicada</div>
+        <h1 style="font-size:96px;line-height:0.98;letter-spacing:-0.045em;font-weight:700;margin:0;max-width:19ch;">Transformación empresarial, diseñada para <span style="color:#7fc4cb;">ejecutarse</span>.</h1>
+        <p style="font-size:28px;line-height:1.5;color:#b8c2ce;margin:46px 0 0;max-width:46ch;font-weight:400;">Diagnosticamos, diseñamos, implementamos y escalamos sistemas empresariales — con adopción real, gobierno ejecutivo y operación medible.</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+        <div style="display:flex;align-items:baseline;gap:52px;flex:1;">
+          <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-size:40px;font-weight:700;color:#7fc4cb;line-height:1;">8</span><span style="font-size:25px;color:#8d97a5;max-width:14ch;line-height:1.3;">fases de metodología</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-size:40px;font-weight:700;color:#7fc4cb;line-height:1;">6</span><span style="font-size:25px;color:#8d97a5;max-width:14ch;line-height:1.3;">dominios de transformación</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-size:40px;font-weight:700;color:#7fc4cb;line-height:1;white-space:nowrap;">2–4</span><span style="font-size: 25px; color: #8d97a5; line-height: 1.3; width: 407px; height: 76px">semanas al primer diagnóstico</span></div>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;white-space:nowrap;margin-left:60px;">Atlas Tech · 2026</span>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Mapa" data-screen-label="02 Mapa de la conversación" data-speaker-notes="No es una agenda: es el arco de la conversación en seis movimientos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Mapa de la conversación</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">02 / 32</span>
+    </div>
+    <h2 style="font-size:50px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:46px 0 0;max-width:22ch;">Seis movimientos, de la tensión a la ejecución.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;column-gap:110px;align-content:end;padding-bottom:8px;">
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:rgba(18,41,44,0.16);line-height:0.9;letter-spacing:-0.04em;">01</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">El reto</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Por qué implementar no es lo mismo que transformar.</div></div></div>
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:rgba(18,41,44,0.16);line-height:0.9;letter-spacing:-0.04em;">02</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">La visión</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Seis dominios que avanzan juntos y un gobierno que decide.</div></div></div>
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:#09606D;line-height:0.9;letter-spacing:-0.04em;">03</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">El método</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Ocho fases, actividades, entregables y disciplina.</div></div></div>
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:rgba(18,41,44,0.16);line-height:0.9;letter-spacing:-0.04em;">04</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">La adopción</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Cómo se habilitan personas, líderes y formas de trabajo.</div></div></div>
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:rgba(18,41,44,0.16);line-height:0.9;letter-spacing:-0.04em;">05</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">El impacto</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Entregables, cronograma maestro e indicadores.</div></div></div>
+      <div style="display:flex;align-items:baseline;gap:34px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-size:57px;font-weight:700;color:rgba(18,41,44,0.16);line-height:0.9;letter-spacing:-0.04em;">06</span><div><div style="font-size:33px;font-weight:700;letter-spacing:-0.02em;">La invitación</div><div style="font-size:25px;color:#5c666b;line-height:1.45;margin-top:6px;">Un diagnóstico de 2 a 4 semanas como primer paso.</div></div></div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto 1" data-screen-label="03 Separador · Acto 1" data-speaker-notes="Separador. La tecnología rara vez es el cuello de botella." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-datacenter-tower.png" alt="Infraestructura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.38;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.8) 58%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO 01</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">03 / 32</span></div>
+      <div style="display:flex;align-items:flex-end;gap:64px;">
+        <div style="font-size:258px;font-weight:700;line-height:0.78;color:rgba(127,196,203,0.2);letter-spacing:-0.06em;">01</div>
+        <div style="padding-bottom:18px;max-width:34ch;">
+          <h2 style="font-size:81px;line-height:1;letter-spacing:-0.04em;font-weight:700;margin:0 0 30px;">El reto</h2>
+          <p style="font-size: 32px; line-height: 1.45; color: #b8c2ce; margin: 0; font-weight: 400; width: 1177px; height: 99px">La tecnología casi nunca es el cuello de botella. Lo es la ausencia de un sistema que conecte estrategia, operación, datos y comportamiento.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7f8a99;">PUNTO DE PARTIDA &nbsp;·&nbsp; CAUSAS DE FALLA &nbsp;·&nbsp; SEÑALES DE MADUREZ &nbsp;·&nbsp; PREGUNTAS CLAVE</div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Punto de partida" data-screen-label="04 El software no es el punto de partida" data-speaker-notes="El ERP no es el proyecto. El proyecto real es rediseñar cómo fluye la información, cómo decide el negocio y cómo opera. El software es la última capa de una pila que empieza mucho antes." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">El punto de partida</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">04 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.72fr 1.28fr;gap:100px;padding-top:46px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0 0 34px;">El software no es el punto de partida. Es la última capa.</h2>
+        <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:0;">La secuencia habitual — comprar, configurar, capacitar — termina descubriendo que la operación no cambió. La transformación se construye desde abajo.</p>
+        <div style="margin-top: auto; border-top: 1px solid rgba(18,41,44,0.2); padding-top: 26px; width: 580px; height: 255px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:14px;">TESIS</div>
+          <div style="font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;">El objetivo no es usar un sistema. Es instalar una operación visible, medible y lista para automatizarse.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0 30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:52px;">05</span><div style="width:230px;font-size:35px;font-weight:700;letter-spacing:-0.022em;">Tecnología</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">ERP/BOS, integraciones, permisos, seguridad y escalabilidad.</div><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#949a9d;">VISIBLE</span></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:52px;">04</span><div style="width:230px;font-size:35px;font-weight:700;letter-spacing:-0.022em;">Datos</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Maestros, trazabilidad, calidad y ownership de la información.</div><span style="width:82px;"></span></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:52px;">03</span><div style="width:230px;font-size:35px;font-weight:700;letter-spacing:-0.022em;">Procesos</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Value streams, dueños, reglas, controles y experiencia.</div><span style="width:82px;"></span></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:52px;">02</span><div style="width:230px;font-size:35px;font-weight:700;letter-spacing:-0.022em;">Personas</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Sponsors, champions, capacidades, soporte y resistencia.</div><span style="width:82px;"></span></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">01</span><div style="width:230px;font-size:35px;font-weight:700;letter-spacing:-0.022em;color:#09606D;">Estrategia</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Endgame, caso de negocio, prioridades y criterios de éxito.</div><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;">ORIGEN</span></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Por qué fallan" data-screen-label="05 Por qué fallan las transformaciones" data-speaker-notes="Seis causas frecuentes. No son fallas de software: son fallas de sistema de cambio. Cada una tiene un síntoma que el cliente probablemente ya reconoce." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Causas de falla</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">05 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:30ch;">Seis razones por las que las transformaciones se detienen.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:80px;align-content:space-evenly;padding-bottom:6px;">
+      <div style="padding:36px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">01</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;">Visión difusa</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Nadie responde qué gana la empresa ni qué gana cada área.</div></div>
+      <div style="padding:36px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">02</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;">Procesos fragmentados</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Cada área opera su versión del proceso, sin dueño único.</div></div>
+      <div style="padding:36px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">03</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;">Gobernanza débil</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Decisiones sin owner ni criterio: el proyecto avanza por heroísmo.</div></div>
+      <div style="padding:36px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">04</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;">Datos desconectados</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">El sistema hereda el desorden en vez de resolverlo.</div></div>
+      <div style="padding:36px 0;border-top:2px solid #09606D;border-bottom:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">05</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;color:#09606D;">Baja adopción</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">La que más proyectos detiene: nadie diseñó el cambio de hábito.</div></div>
+      <div style="padding:36px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="display:flex;align-items:baseline;gap:20px;margin-bottom:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">06</span><span style="font-size:31px;font-weight:700;letter-spacing:-0.02em;">ROI incierto</span></div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Sin línea base, el valor capturado se vuelve una percepción.</div></div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="El patrón" data-screen-label="06 Síntoma, causa raíz, respuesta" data-speaker-notes="El patrón que vemos en clientes: la mayoría de iniciativas fallan no por falta de software, sino por falta de sistema de adopción." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">El patrón</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">06 / 32</span>
+    </div>
+    <h2 style="font-size:42px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:28px 0 30px;max-width:26ch;">Del síntoma visible a la respuesta correcta.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+      <div style="padding-right:70px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#949a9d;margin-bottom:18px;">SÍNTOMA VISIBLE</div>
+        <div style="font-size:35px;font-weight:700;line-height:1.16;letter-spacing:-0.025em;height:150px;margin-bottom:20px;">Lo que la dirección ve todos los días.</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Retrasos y retrabajo<br>Resistencia en la operación<br>Decisiones sin información confiable</div>
+      </div>
+      <div style="padding:0 70px;border-left:1px solid rgba(18,41,44,0.18);display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#949a9d;margin-bottom:18px;">CAUSA RAÍZ</div>
+        <div style="font-size:35px;font-weight:700;line-height:1.16;letter-spacing:-0.025em;height:150px;margin-bottom:20px;">No existe un puente explícito entre negocio y sistema.</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Estrategia sin traducción operativa<br>Tecnología sin dueño de proceso<br>Comportamiento sin medición</div>
+      </div>
+      <div style="padding-left:70px;border-left:1px solid rgba(18,41,44,0.18);display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:18px;">RESPUESTA ATLAS</div>
+        <div style="font-size:35px;font-weight:700;line-height:1.16;letter-spacing:-0.025em;height:150px;margin-bottom:20px;color:#09606D;">Diseñar el sistema de cambio antes, durante y después del go-live.</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Diagnóstico 360° antes de construir<br>Adopción por rol y por momento<br>Medición del valor capturado</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:24px;padding-top:20px;font-size:26px;color:#5c666b;line-height:1.4;max-width:88ch;">La implementación debe convertirse en una arquitectura de cambio: <span style="color:#12292c;font-weight:700;">negocio + procesos + datos + tecnología + cultura + IA</span>.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Señales de madurez" data-screen-label="07 Señales de una organización lista" data-speaker-notes="El contrapeso: las fortalezas que encontramos con frecuencia y que hacen viable el proyecto." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Diagnóstico en positivo</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">07 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:28ch;">Señales de una organización lista para evolucionar.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0;width:100%;border-top:1px solid rgba(18,41,44,0.2);border-bottom:1px solid rgba(18,41,44,0.2);">
+        <div style="padding:52px 34px 52px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">01</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;">Liderazgo comprometido</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Hay un sponsor que pone tiempo, no solo presupuesto.</div></div>
+        <div style="padding:52px 34px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">02</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;">Conocimiento operativo</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">La gente sabe cómo funciona el negocio de verdad.</div></div>
+        <div style="padding:52px 34px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">03</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;color:#09606D;">Urgencia de cambio</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">El costo de no cambiar ya se siente en la operación.</div></div>
+        <div style="padding:52px 34px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">04</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;">Datos disponibles</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Hay información, aunque esté dispersa o sin gobierno.</div></div>
+        <div style="padding:52px 34px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">05</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;">Talento interno</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Perfiles capaces de volverse champions del cambio.</div></div>
+        <div style="padding:52px 0 52px 34px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:22px;">06</div><div style="font-size:29px;font-weight:700;line-height:1.14;letter-spacing:-0.02em;margin-bottom:16px;">Capacidad de decisión</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Se decide rápido sin recorrer toda la jerarquía.</div></div>
+      </div>
+    </div>
+    
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Preguntas clave" data-screen-label="08 Preguntas antes de implementar" data-speaker-notes="Seis preguntas que deben tener respuesta antes de escribir una línea de código. Si no las responde el cliente, las responde el diagnóstico." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Preguntas estratégicas</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">08 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:30ch;">Seis preguntas que deben resolverse antes de implementar.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6px;">
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">01</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Qué resultado empresarial debe habilitar el sistema?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">DIAGNÓSTICO</span></div>
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">02</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Qué procesos deben rediseñarse y cuáles solo digitalizarse?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">BLUEPRINT</span></div>
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">03</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Qué decisiones del negocio deben mejorar y con qué información?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">BLUEPRINT</span></div>
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">04</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Quién será responsable de cada proceso y de cada decisión?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">GOBIERNO</span></div>
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">05</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Cómo se gestionará la adopción, no solo la capacitación?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">ADOPCIÓN</span></div>
+      <div style="display:flex;align-items:baseline;gap:44px;padding:26px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">06</span><span style="flex:1;font-size:35px;font-weight:600;letter-spacing:-0.022em;line-height:1.22;">¿Cómo mediremos el éxito y en qué momento lo declaramos?</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:230px;text-align:right;">MEDICIÓN</span></div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto 2" data-screen-label="09 Separador · Acto 2" data-speaker-notes="Separador. Del reto al modelo: qué proponemos y cómo se gobierna." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-knowledge-building.png" alt="Arquitectura institucional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.34;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.8) 58%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO 02</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">09 / 32</span></div>
+      <div style="display:flex;align-items:flex-end;gap:64px;">
+        <div style="font-size:258px;font-weight:700;line-height:0.78;color:rgba(127,196,203,0.2);letter-spacing:-0.06em;">02</div>
+        <div style="padding-bottom:18px;max-width:34ch;">
+          <h2 style="font-size: 88px; line-height: 1; letter-spacing: -0.04em; font-weight: 700; margin: 0 0 30px; width: 569px; height: 79px">La visión</h2>
+          <p style="font-size: 32px; line-height: 1.45; color: #b8c2ce; margin: 0; font-weight: 400; width: 1237px; height: 104px">Seis dominios que avanzan juntos, sostenidos por principios claros y una estructura de gobierno mínima.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7f8a99;">MODELO ATLAS &nbsp;·&nbsp; PRINCIPIOS &nbsp;·&nbsp; GOBERNANZA &nbsp;·&nbsp; CAMBIO INTEGRAL &nbsp;·&nbsp; ROLES</div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Modelo Atlas" data-screen-label="10 Modelo Atlas de Transformación" data-speaker-notes="Seis dominios que deben avanzar en paralelo. Cuando uno se rezaga, el sistema no falla en ese dominio: falla en el resultado del negocio." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Modelo Atlas de Transformación</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">10 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.62fr 1.38fr;gap:88px;padding-top:40px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:46px;line-height:1.05;letter-spacing:-0.032em;font-weight:700;margin:0 0 20px;">Seis dominios, un solo resultado.</h2>
+        <p style="font-size:26px;line-height:1.5;color:#5c666b;margin:0 0 18px;">Cuando un dominio se rezaga, el sistema no falla ahí: falla en el resultado del negocio.</p>
+        <div style="background:#12292c;color:#fff;padding:18px 22px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:#7fc4cb;margin-bottom:6px;">NÚCLEO</div>
+          <div style="font-size:30px;font-weight:700;line-height:1.15;letter-spacing:-0.025em;">Resultado de negocio</div>
+        </div>
+        <div style="border-top:1px solid rgba(18,41,44,0.18);margin-top:18px;padding-top:18px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:#09606D;margin-bottom:12px;">CÓMO SE USA</div>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:24px;color:#5c666b;line-height:1.35;">
+            <span>Se evalúa cada dominio en el diagnóstico</span>
+            <span>Se traduce en un mapa de madurez y riesgo</span>
+            <span>Define el orden de las olas de implementación</span>
+            <span>Se vuelve a medir en cada fase</span>
+          </div>
+        </div>
+        <div style="margin-top:auto;border-top:1px solid rgba(18,41,44,0.18);padding-top:18px;font-size:26px;font-weight:700;line-height:1.25;letter-spacing:-0.02em;">Transformación sostenible, no dependencia heroica.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:0;">
+        <div style="border-top:2px solid #09606D;border-right:1px solid rgba(18,41,44,0.14);padding:26px 40px 26px 0;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">01</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Estrategia</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">Endgame, criterios de éxito y decisiones de alcance</div>
+        </div>
+        <div style="border-top:2px solid #09606D;padding:26px 0 26px 40px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">02</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Procesos</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">Value streams, dueños, reglas y controles</div>
+        </div>
+        <div style="border-top:1px solid rgba(18,41,44,0.14);border-right:1px solid rgba(18,41,44,0.14);padding:26px 40px 26px 0;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">03</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Datos</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">Maestros, trazabilidad, calidad y tableros</div>
+        </div>
+        <div style="border-top:1px solid rgba(18,41,44,0.14);padding:26px 0 26px 40px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">04</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Tecnología</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">ERP/BOS, integraciones y capacidad de escala</div>
+        </div>
+        <div style="border-top:1px solid rgba(18,41,44,0.14);border-right:1px solid rgba(18,41,44,0.14);padding:26px 40px 26px 0;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">05</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Personas</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">Sponsors, champions y capacidades internas</div>
+        </div>
+        <div style="border-top:1px solid rgba(18,41,44,0.14);padding:26px 0 26px 40px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:10px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#09606D;">06</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.025em;">Gobierno</span></div>
+          <div style="font-size:24px;color:#5c666b;line-height:1.45;">PMO, comité, riesgos y cadencia ejecutiva</div>
+        </div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Principios" data-screen-label="11 Cuatro principios" data-speaker-notes="Cuatro principios destilados de implementaciones reales, convertidos en método replicable." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Principios de operación</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">11 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:24ch;">Cuatro convicciones que ordenan cada proyecto.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-items:end;">
+      <div style="padding:0 60px 8px 0;"><div style="font-size:110px;font-weight:700;color:rgba(18,41,44,0.14);line-height:0.85;letter-spacing:-0.05em;margin-bottom:26px;">01</div><div style="font-size:33px;font-weight:700;line-height:1.14;letter-spacing:-0.022em;margin-bottom:18px;">La adopción no es capacitación</div><div style="font-size:25px;color:#5c666b;line-height:1.5;margin-bottom:24px;">Es arquitectura de contexto, narrativa, comunicación, rituales y medición de comportamientos.</div><div style="border-top:1px solid rgba(18,41,44,0.18);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">FASE 06</div></div>
+      <div style="padding:0 60px 8px;border-left:1px solid rgba(18,41,44,0.16);"><div style="font-size:110px;font-weight:700;color:#09606D;line-height:0.85;letter-spacing:-0.05em;margin-bottom:26px;">02</div><div style="font-size:33px;font-weight:700;line-height:1.14;letter-spacing:-0.022em;margin-bottom:18px;">El ERP no es el proyecto</div><div style="font-size:25px;color:#5c666b;line-height:1.5;margin-bottom:24px;">El proyecto real es rediseñar cómo fluye la información, cómo decide el negocio y cómo opera.</div><div style="border-top:1px solid rgba(18,41,44,0.18);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">FASE 03</div></div>
+      <div style="padding:0 60px 8px;border-left:1px solid rgba(18,41,44,0.16);"><div style="font-size:110px;font-weight:700;color:rgba(18,41,44,0.14);line-height:0.85;letter-spacing:-0.05em;margin-bottom:26px;">03</div><div style="font-size:33px;font-weight:700;line-height:1.14;letter-spacing:-0.022em;margin-bottom:18px;">El riesgo vive en las personas</div><div style="font-size:25px;color:#5c666b;line-height:1.5;margin-bottom:24px;">Resistencia, incertidumbre, pérdida de estatus, capacidad percibida y falta de sponsorship.</div><div style="border-top:1px solid rgba(18,41,44,0.18);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">FASE 02</div></div>
+      <div style="padding:0 0 8px 60px;border-left:1px solid rgba(18,41,44,0.16);"><div style="font-size:110px;font-weight:700;color:rgba(18,41,44,0.14);line-height:0.85;letter-spacing:-0.05em;margin-bottom:26px;">04</div><div style="font-size:33px;font-weight:700;line-height:1.14;letter-spacing:-0.022em;margin-bottom:18px;">El éxito se gobierna</div><div style="font-size:25px;color:#5c666b;line-height:1.5;margin-bottom:24px;">Comité, cadence, indicadores, ownership y toma de riesgos desde el día cero.</div><div style="border-top:1px solid rgba(18,41,44,0.18);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">TRANSVERSAL</div></div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:26px;font-size:27px;color:#5c666b;line-height:1.4;max-width:92ch;">El objetivo no es “usar un ERP”; es instalar una operación <span style="color:#12292c;font-weight:700;">más visible, más medible y preparada para automatización</span>.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Gobernanza" data-screen-label="12 Modelo de gobernanza" data-speaker-notes="Estructura mínima para que el proyecto no dependa de improvisación ni de héroes internos. Regla de oro: cada decisión tiene owner, fecha, criterio y evidencia." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Gobierno de implementación</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">12 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.42fr 0.58fr;gap:90px;padding-top:44px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:43px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0 0 30px;">Quién decide, quién ejecuta y quién responde.</h2>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:20px 0;border-top:2px solid #09606D;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:120px;">NIVEL 01</span><div style="width:340px;font-size:35px;font-weight:700;letter-spacing:-0.022em;color:#09606D;">Comité ejecutivo</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Decide prioridades, desbloquea riesgos y valida el valor de negocio.</div><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;width:130px;text-align:right;">MENSUAL</span></div>
+        <div style="height:22px;display:flex;justify-content:flex-start;padding-left:180px;"><div style="width:1px;height:100%;background:rgba(18,41,44,0.25);"></div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:20px 0;border-top:1px solid rgba(18,41,44,0.2);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;width:120px;">NIVEL 02</span><div style="width:340px;font-size:35px;font-weight:700;letter-spacing:-0.022em;">PMO / Program Owner</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.45;">Cadence, timeline, riesgos, dependencias y avance ejecutivo.</div><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;width:130px;text-align:right;">SEMANAL</span></div>
+        <div style="height:22px;display:flex;justify-content:flex-start;padding-left:180px;"><div style="width:1px;height:100%;background:rgba(18,41,44,0.25);"></div></div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(18,41,44,0.2);">
+          <div style="padding:22px 40px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;height:68px;margin-bottom:14px;">NIVEL 03 · CLIENTE</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Líderes de proceso</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Dueños funcionales, adopción de flujo y criterios de aceptación.</div></div>
+          <div style="padding:22px 40px 0;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;height:68px;margin-bottom:14px;">NIVEL 03 · ATLAS</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Equipo Atlas</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Consultoría, diseño de solución, producto y gestión del cambio.</div></div>
+          <div style="padding:22px 0 0 40px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;height:68px;margin-bottom:14px;">NIVEL 03 · MIXTO</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Equipo tecnología</div><div style="font-size:25px;color:#5c666b;line-height:1.5;">Configuración, integraciones, datos, seguridad y despliegue.</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(18,41,44,0.18);padding-left:70px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:22px;">REGLA DE ORO</div>
+        <div style="font-size:39px;font-weight:700;line-height:1.2;letter-spacing:-0.025em;margin:0;">Cada decisión tiene owner, fecha, criterio y evidencia.</div>
+        
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Cambio integral" data-screen-label="13 Estrategia de cambio integral" data-speaker-notes="El cambio tecnológico es el detonante, no el resultado. Solo cuando las tres transformaciones avanzan juntas se obtiene evolución sostenida." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Estrategia de cambio integral</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">13 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.66fr 1.34fr;gap:80px;padding-top:44px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0 0 26px;">El cambio tecnológico detona tres transformaciones.</h2>
+        <p style="font-size:26px;line-height:1.5;color:#5c666b;margin:0 0 14px;">La nueva plataforma abre la ventana — pero no la atraviesa por sí sola. Donde las tres convergen <span style="color:#09606D;font-weight:700;">—●—</span> está la evolución sostenida.</p>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:2px;">HABILITADORES</div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;width:100%;">Definición estratégica<span style="display:block;font-size:25px;font-weight:500;color:#5c666b;line-height:1.4;margin-top:6px;">Endgame, prioridades y criterios de decisión.</span></span></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;width:100%;">Habilitación cultural<span style="display:block;font-size:25px;font-weight:500;color:#5c666b;line-height:1.4;margin-top:6px;">Narrativa, comunicación y rituales.</span></span></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;width:100%;">Desarrollo organizacional<span style="display:block;font-size:25px;font-weight:500;color:#5c666b;line-height:1.4;margin-top:6px;">Roles, capacidades y cadence de gestión.</span></span></div>
+      </div>
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:calc(50% - 230px);left:calc(50% - 140px);width:280px;height:280px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 75px);left:calc(50% - 235px);width:280px;height:280px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 75px);left:calc(50% - 45px);width:280px;height:280px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% + 6px);left:calc(50% - 7px);width:14px;height:14px;border-radius:50%;background:#09606D;"></div>
+        <div style="position:absolute;top:calc(50% - 380px);left:calc(50% - 230px);width:460px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">01</div><div style="font-size:31px;font-weight:700;line-height:1.12;letter-spacing:-0.02em;">Transformación operativa</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Procesos, datos y control</div></div>
+        <div style="position:absolute;top:calc(50% + 230px);left:calc(50% - 430px);width:390px;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">02</div><div style="font-size:31px;font-weight:700;line-height:1.12;letter-spacing:-0.02em;">Transformación organizacional</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Roles y gobierno</div></div>
+        <div style="position:absolute;top:calc(50% + 230px);left:calc(50% + 40px);width:390px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">03</div><div style="font-size:31px;font-weight:700;line-height:1.12;letter-spacing:-0.02em;">Transformación de mentalidad</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Hábitos y adopción</div></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Roles y sinergias" data-screen-label="14 Roles y sinergias" data-speaker-notes="El comité de transformación es el punto donde se cruzan cuatro equipos con enfoques distintos: negocio y talento frente a tecnología y procesos; capacidad externa frente a operación interna." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Roles y sinergias</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">14 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:40px 0 0;max-width:24ch;">Cuatro equipos, un solo comité de decisión.</h2>
+    <div style="flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;top:calc(50% - 250px);left:calc(50% - 0.5px);width:1px;height:500px;background:rgba(18,41,44,0.2);"></div>
+      <div style="position:absolute;top:calc(50% - 0.5px);left:calc(50% - 640px);width:1280px;height:1px;background:rgba(18,41,44,0.2);"></div>
+      <div style="position:absolute;top:calc(50% - 292px);left:calc(50% - 250px);width:500px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#949a9d;">NEGOCIO Y TALENTO</div>
+      <div style="position:absolute;top:calc(50% + 268px);left:calc(50% - 250px);width:500px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#949a9d;">TECNOLOGÍA Y PROCESOS</div>
+      <div style="position:absolute;top:calc(50% - 14px);left:calc(50% - 790px);font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#949a9d;">EXTERNO</div>
+      <div style="position:absolute;top:calc(50% - 14px);left:calc(50% + 660px);font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#949a9d;">INTERNO</div>
+      <div style="position:absolute;top:calc(50% - 240px);left:calc(50% - 620px);width:420px;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;margin-bottom:12px;">CONSULTORÍA</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Equipo Atlas · cambio</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Estrategia, metodología de adopción y narrativa ejecutiva.</div></div>
+      <div style="position:absolute;top:calc(50% - 240px);left:calc(50% + 200px);width:420px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;margin-bottom:12px;">CLIENTE</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Personas y liderazgo</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Asesoría interna, comunicación y habilitación de champions.</div></div>
+      <div style="position:absolute;top:calc(50% + 70px);left:calc(50% - 620px);width:420px;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;margin-bottom:12px;">CONSTRUCCIÓN</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Equipo Atlas · ingeniería</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Plataforma, integraciones y capacitación técnica.</div></div>
+      <div style="position:absolute;top:calc(50% + 70px);left:calc(50% + 200px);width:420px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;margin-bottom:12px;">CLIENTE</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Program owner y TI</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Gestión del proyecto, dueños de proceso y sistemas actuales.</div></div>
+      <div style="position:absolute;z-index:3;top:calc(50% - 90px);left:calc(50% - 150px);width:300px;height:180px;background:#DFDFDE;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#949a9d;margin-bottom:10px;">SINERGIA</div><div style="font-size:31px;font-weight:700;line-height:1.14;letter-spacing:-0.025em;color:#09606D;">Comité de<br>transformación</div></div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto 3" data-screen-label="15 Separador · Acto 3" data-speaker-notes="Separador. Ocho fases con actividades y entregables concretos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-cortex-laptop.png" alt="Sistema en operación" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.34;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.8) 58%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO 03</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">15 / 32</span></div>
+      <div style="display:flex;align-items:flex-end;gap:64px;">
+        <div style="font-size:258px;font-weight:700;line-height:0.78;color:rgba(127,196,203,0.2);letter-spacing:-0.06em;">03</div>
+        <div style="padding-bottom:18px;max-width:34ch;">
+          <h2 style="font-size: 88px; line-height: 1; letter-spacing: -0.04em; font-weight: 700; margin: 0 0 30px; width: 615px; height: 92px">El método</h2>
+          <p style="font-size: 32px; line-height: 1.45; color: #b8c2ce; margin: 0; font-weight: 400; width: 1065px; height: 86px">Ocho fases modulares. Cada una con actividades definidas, entregables verificables y un criterio explícito de salida.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7f8a99;">TRES ETAPAS &nbsp;·&nbsp; OCHO FASES &nbsp;·&nbsp; DIAGNÓSTICO &nbsp;·&nbsp; BLUEPRINT &nbsp;·&nbsp; ARQUITECTURA &nbsp;·&nbsp; BUILD</div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Tres etapas" data-screen-label="16 Las tres grandes etapas" data-speaker-notes="Las tres grandes etapas del proyecto y sus tiempos. Son tiempos express, el mínimo para asegurar calidad, y corren en paralelo." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Del entendimiento a la acción</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">16 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:26ch;">Tres etapas que estructuran todo el proyecto.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:end;">
+      <div style="padding:0 70px 10px 0;"><div style="font-size:138px;font-weight:700;color:rgba(18,41,44,0.14);line-height:0.82;letter-spacing:-0.05em;">E1</div><div style="font-size:42px;font-weight:700;line-height:1.08;letter-spacing:-0.028em;margin:30px 0 20px;">Entendimiento y diseño</div><div style="font-size:26px;color:#5c666b;line-height:1.5;height:160px;margin-bottom:34px;">Diagnóstico 360°, modelo operativo objetivo, arquitectura de solución y roadmap aprobado.</div><div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">FASES 01–03</span><span style="font-size:37px;font-weight:700;letter-spacing:-0.025em;">5–10 <span style="font-size:25px;font-weight:500;color:#5c666b;">sem</span></span></div></div>
+      <div style="padding:0 70px 10px;border-left:1px solid rgba(18,41,44,0.16);"><div style="font-size:138px;font-weight:700;color:rgba(18,41,44,0.14);line-height:0.82;letter-spacing:-0.05em;">E2</div><div style="font-size:42px;font-weight:700;line-height:1.08;letter-spacing:-0.028em;margin:30px 0 20px;">Construcción e implementación</div><div style="font-size:26px;color:#5c666b;line-height:1.5;height:160px;margin-bottom:34px;">Configuración, desarrollo, integraciones, migración de datos, pruebas y go-live controlado.</div><div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#949a9d;">FASES 04–05</span><span style="font-size:37px;font-weight:700;letter-spacing:-0.025em;">12–24 <span style="font-size:25px;font-weight:500;color:#5c666b;">sem</span></span></div></div>
+      <div style="padding:0 0 10px 70px;border-left:1px solid rgba(18,41,44,0.16);"><div style="font-size:138px;font-weight:700;color:#09606D;line-height:0.82;letter-spacing:-0.05em;">E3</div><div style="font-size:42px;font-weight:700;line-height:1.08;letter-spacing:-0.028em;margin:30px 0 20px;">Adopción y escalamiento</div><div style="font-size:26px;color:#5c666b;line-height:1.5;height:160px;margin-bottom:34px;">Habilitación por rol, estabilización, medición del valor capturado y nuevas olas de alcance.</div><div style="border-top:2px solid #09606D;padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;">FASES 06–08</span><span style="font-size:37px;font-weight:700;letter-spacing:-0.025em;color:#09606D;">6–12 <span style="font-size:25px;font-weight:500;color:#5c666b;">meses</span></span></div></div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:26px;font-size:26px;color:#5c666b;line-height:1.45;max-width:100ch;">Los tiempos planteados son <strong style="color:#12292c;">express</strong>: el mínimo para asegurar calidad y resultado. Las actividades corren en paralelo, por lo que las etapas no se suman linealmente.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Metodología" data-screen-label="17 Metodología Atlas · 8 fases" data-speaker-notes="Ocho fases, modulares y replicables. Los tiempos son rangos indicativos; las actividades corren en paralelo." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Metodología Atlas</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">17 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:24ch;">Del entendimiento a la acción, en ocho fases.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:22px;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">ENTENDER</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">DISEÑAR</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">CONSTRUIR</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">SOSTENER</span></div>
+      <div style="position:relative;height:2px;background:rgba(18,41,44,0.2);margin-bottom:0;">
+        <div style="position:absolute;left:0;top:0;height:2px;width:75%;background:#09606D;"></div>
+        <div style="position:absolute;left:6.25%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:18.75%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:31.25%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:43.75%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:56.25%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:68.75%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:81.25%;top:-7px;width:16px;height:16px;border-radius:50%;border:2px solid #09606D;background:#DFDFDE;margin-left:-8px;"></div>
+        <div style="position:absolute;left:93.75%;top:-7px;width:16px;height:16px;border-radius:50%;border:2px solid #09606D;background:#DFDFDE;margin-left:-8px;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,1fr);padding-top:34px;">
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F01</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Descubrir</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Contexto y prioridades.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">1–2 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F02</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Diagnosticar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Scan 360° del negocio.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">2–4 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F03</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Diseñar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Blueprint y modelo objetivo.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">3–6 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F04</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Construir</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Módulos e integraciones.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">8–16 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F05</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Implementar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Migración, cutover y go-live.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">4–8 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F06</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Adoptar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Capacitación y champions.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">4–12 sem</div></div>
+        <div style="padding-right:30px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F07</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Estabilizar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Ajustes y control de adopción.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">4–8 sem</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:14px;">F08</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Escalar</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;margin-bottom:20px;">Nuevas olas y automatización.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">continuo</div></div>
+      </div>
+    </div>
+    
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Fase 1" data-screen-label="18 Fase 1 · Descubrimiento y diagnóstico" data-speaker-notes="Diagnóstico 360°: lo que el negocio dice que ocurre frente a lo que el sistema muestra que ocurre." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Fases 01–02 · Descubrir y diagnosticar</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">18 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.25fr 0.75fr;gap:90px;padding-top:44px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0 0 12px;">Diagnóstico 360° antes de construir.</h2>
+        <p style="font-size:27px;line-height:1.5;color:#5c666b;margin:0 0 24px;max-width:52ch;">Lo que el negocio dice que ocurre, contrastado con lo que el sistema muestra que ocurre.</p>
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;">
+          <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:34px;">1</span><div style="width:280px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Visión ejecutiva</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Entrevistas C-level: caso de negocio y prioridades.</div></div>
+          <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:34px;">2</span><div style="width:280px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Proceso real</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Shadowing, SOPs y dependencias entre áreas.</div></div>
+          <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:34px;">3</span><div style="width:280px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Data readiness</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Maestros, calidad, ownership y brechas.</div></div>
+          <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:34px;">4</span><div style="width:280px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Tecnología actual</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Sistemas, APIs, permisos y deuda técnica.</div></div>
+          <div style="display:flex;align-items:baseline;gap:36px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:34px;">5</span><div style="width:280px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Personas y cambio</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Sponsors, champions y focos de resistencia.</div></div>
+        </div>
+      </div>
+      <div style="border-left:1px solid rgba(18,41,44,0.18);padding-left:70px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:26px;">ENTREGABLES</div>
+        <div style="font-size:27px;color:#12292c;line-height:1.6;font-weight:600;letter-spacing:-0.015em;">Mapa de calor de madurez y riesgo<br>Áreas foco y pain points priorizados<br>Mapa de procesos actuales<br>Baseline de indicadores<br>Mapa de influenciadores y riesgos<br>Backlog priorizado y recomendaciones</div>
+        <div style="margin-top:auto;border-top:1px solid rgba(18,41,44,0.18);padding-top:24px;display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">DURACIÓN</span><span style="font-size:48px;font-weight:700;letter-spacing:-0.03em;color:#09606D;">2–4 <span style="font-size:26px;font-weight:500;color:#5c666b;">semanas</span></span></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Fase 2" data-screen-label="19 Fase 2 · Blueprint" data-speaker-notes="El blueprint conecta propósito, creencias, indicadores y sistemas. Traduce estrategia en decisiones de construcción." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Fase 03 · Diseñar</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">19 / 32</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin:36px 0 0;">
+      <h2 style="font-size:46px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0;max-width:26ch;">Blueprint: donde el negocio se vuelve especificación.</h2>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#949a9d;white-space:nowrap;">CADENA DE TRADUCCIÓN</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:38px;">
+      <div style="padding:0 52px 0 0;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:13px;height:13px;border-radius:50%;background:#09606D;flex:none;"></span><span style="flex:1;height:1px;background:rgba(18,41,44,0.22);"></span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#949a9d;margin-bottom:14px;">01 · PARA QUÉ</div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin-bottom:16px;">Propósito</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Caso económico, valor esperado y narrativa ejecutiva del proyecto.</div>
+      </div>
+      <div style="padding:0 52px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:13px;height:13px;border-radius:50%;background:#09606D;flex:none;"></span><span style="flex:1;height:1px;background:rgba(18,41,44,0.22);"></span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#949a9d;margin-bottom:14px;">02 · POR QUÉ</div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin-bottom:16px;">Creencias</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Principios de operación, criterios de decisión y comportamientos esperados.</div>
+      </div>
+      <div style="padding:0 52px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:13px;height:13px;border-radius:50%;background:#09606D;flex:none;"></span><span style="flex:1;height:1px;background:rgba(18,41,44,0.22);"></span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#949a9d;margin-bottom:14px;">03 · QUÉ</div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin-bottom:16px;">Indicadores</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">KPIs de proceso, adopción, calidad de datos, servicio y rentabilidad.</div>
+      </div>
+      <div style="padding:0 0 0 52px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:13px;height:13px;border-radius:50%;background:#09606D;flex:none;"></span><span style="flex:1;height:2px;background:#09606D;"></span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#09606D;margin-bottom:14px;">04 · CÓMO</div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin-bottom:16px;color:#09606D;">Sistemas</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.5;">Flujos, módulos, integraciones, automatizaciones y gobierno de datos.</div>
+      </div>
+    </div>
+    <div style="margin:0 -145px -118px;padding:34px 145px 118px;background:#12292c;color:#fff;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:#7fc4cb;margin-bottom:22px;">ENTREGABLES DE LA FASE</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);">
+        <div style="padding-right:56px;"><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:10px;">A</div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;">Narrativa ejecutiva</div><div style="font-size:24px;color:rgba(255,255,255,0.66);line-height:1.45;">Razón de ser, promesa del proyecto y beneficios por audiencia.</div></div>
+        <div style="padding:0 56px;border-left:1px solid rgba(255,255,255,0.18);"><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:10px;">B</div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;">Modelo operativo futuro</div><div style="font-size:24px;color:rgba(255,255,255,0.66);line-height:1.45;">Procesos target, owners, reglas, decisiones y rituales de seguimiento.</div></div>
+        <div style="padding-left:56px;border-left:1px solid rgba(255,255,255,0.18);"><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:10px;">C</div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;">Roadmap y plan de riesgos</div><div style="font-size:24px;color:rgba(255,255,255,0.66);line-height:1.45;">Olas, dependencias, momentos críticos, mitigación y escalamiento.</div></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.5);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Arquitectura" data-screen-label="20 Arquitectura de solución" data-speaker-notes="Del proceso actual al BOS/ERP inteligente: cuatro capas, con entrada y salida explícitas y cinco movimientos de valor." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Arquitectura de solución</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">20 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.5fr 2fr 0.5fr;gap:60px;padding-top:44px;">
+      <div style="display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:16px;">INPUT</div><div style="font-size:26px;color:#5c666b;line-height:1.5;">Procesos reales, documentos, hojas de cálculo, sistemas actuales y decisiones informales.</div></div>
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.03em;font-weight:700;margin:0 0 34px;">Cuatro capas entre la operación real y la decisión.</h2>
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:baseline;gap:34px;padding:28px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">L4</span><div style="width:340px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Experiencia de usuario</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Portal · Móvil · Tableros · Flujos aprobatorios</div></div>
+          <div style="display:flex;align-items:baseline;gap:34px;padding:28px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">L3</span><div style="width:340px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Módulos operativos</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">CRM · CPQ · Compras · Inventario · Finanzas · RH · Servicio</div></div>
+          <div style="display:flex;align-items:baseline;gap:34px;padding:28px 0;border-top:2px solid #09606D;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">L2</span><div style="width:340px;font-size:33px;font-weight:700;letter-spacing:-0.022em;color:#09606D;">Core transaccional</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">ERP/BOS · Reglas de negocio · Roles · Auditoría · Seguridad</div></div>
+          <div style="display:flex;align-items:baseline;gap:34px;padding:28px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">L1</span><div style="width:340px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Data &amp; Intelligence</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">ETL · Data mart · KPIs · RAG · Agentes · Predicción</div></div>
+        </div>
+        <div style="padding-top:30px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#09606D;"><span>ESTANDARIZAR</span><span>INTEGRAR</span><span>GOBERNAR</span><span>AUTOMATIZAR</span><span>AUMENTAR</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">OUTPUT</div><div style="font-size:26px;color:#5c666b;line-height:1.5;">Operación medible, automatización, trazabilidad y decisiones con datos.</div></div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Fase 3" data-screen-label="21 Construcción e implementación" data-speaker-notes="Pipeline de construcción con puertas de calidad. Nada avanza sin criterio de salida cumplido." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Fases 04–05 · Construir e implementar</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">21 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:30ch;">Un pipeline con puertas de calidad, no una carrera al go-live.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:34px;">
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">01</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Configuración</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Parametrización de módulos, roles, permisos y reglas de negocio.</div></div>
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">02</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Desarrollo</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Extensiones a medida, flujos propios y automatizaciones.</div></div>
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">03</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Integraciones</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">APIs, sistemas satélite y sincronización de maestros.</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">04</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Migración de datos</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Limpieza, mapeo, carga y validación con el negocio.</div></div>
+      </div>
+      <div style="position:relative;height:2px;background:#09606D;">
+        <div style="position:absolute;left:16.6%;top:-16px;width:2px;height:34px;background:#09606D;"></div>
+        <div style="position:absolute;left:50%;top:-16px;width:2px;height:34px;background:#09606D;"></div>
+        <div style="position:absolute;left:83.3%;top:-16px;width:2px;height:34px;background:#09606D;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:20px 0 34px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;"><span style="text-align:center;">GATE 1 · DISEÑO APROBADO</span><span style="text-align:center;">GATE 2 · UAT FIRMADO</span><span style="text-align:center;">GATE 3 · CUTOVER LISTO</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(18,41,44,0.16);padding-top:34px;">
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">05</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Pruebas y UAT</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Casos reales por rol, criterios de aceptación y firma funcional.</div></div>
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">06</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Capacitación</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Entrenamiento por rol y por momento, con material propio.</div></div>
+        <div style="padding-right:50px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">07</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;color:#09606D;">Go-live</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Cutover controlado, war room y soporte reforzado.</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:12px;">08</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">Estabilización</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Incidentes, ajustes, control de adopción y cierre de brechas.</div></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto 4" data-screen-label="22 Separador · Acto 4" data-speaker-notes="Separador. La adopción es donde se gana o se pierde el proyecto." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-academy-lab.png" alt="Habilitación y aprendizaje" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.34;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.8) 58%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO 04</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">22 / 32</span></div>
+      <div style="display:flex;align-items:flex-end;gap:64px;">
+        <div style="font-size:258px;font-weight:700;line-height:0.78;color:rgba(127,196,203,0.2);letter-spacing:-0.06em;">04</div>
+        <div style="padding-bottom:18px;max-width:34ch;">
+          <h2 style="font-size: 88px; line-height: 1; letter-spacing: -0.04em; font-weight: 700; margin: 0 0 30px; width: 800px; height: 92px">La adopción</h2>
+          <p style="font-size: 32px; line-height: 1.45; color: #b8c2ce; margin: 0; font-weight: 400; width: 1046px; height: 84px">Anticipar la emoción operativa evita que la resistencia se convierta en sabotaje silencioso.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7f8a99;">MOMENTOS DE VERDAD &nbsp;·&nbsp; HABILITACIÓN POR ROL &nbsp;·&nbsp; SOPORTE CONTINUO</div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Riesgos y MOTs" data-screen-label="23 Mapa de riesgos y momentos de verdad" data-speaker-notes="Un momento de verdad es el punto donde el usuario decide si adopta, resiste o bloquea el cambio. Cada riesgo tiene una señal observable y una mitigación diseñada." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Mapa de cambio</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">23 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:26ch;">Riesgos humanos y momentos de verdad.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);width:100%;border-top:1px solid rgba(18,41,44,0.2);border-bottom:1px solid rgba(18,41,44,0.2);">
+        <div style="padding:48px 40px 48px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:20px;">01</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Incertidumbre</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.12em;color:#949a9d;margin-bottom:8px;">MITIGACIÓN</div><div style="font-size:25px;color:#12292c;line-height:1.4;">Comunicación segmentada por audiencia.</div></div>
+        <div style="padding:48px 40px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:20px;">02</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Sobrecarga</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.12em;color:#949a9d;margin-bottom:8px;">MITIGACIÓN</div><div style="font-size:25px;color:#12292c;line-height:1.4;">Cadence realista y soporte dedicado.</div></div>
+        <div style="padding:48px 40px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:20px;">03</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Datos débiles</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.12em;color:#949a9d;margin-bottom:8px;">MITIGACIÓN</div><div style="font-size:25px;color:#12292c;line-height:1.4;">Gobierno de datos y limpieza temprana.</div></div>
+        <div style="padding:48px 40px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:20px;">04</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;color:#09606D;">Operación paralela</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.12em;color:#09606D;margin-bottom:8px;">MITIGACIÓN</div><div style="font-size:25px;color:#12292c;line-height:1.4;">Criterios de salida y controles duros.</div></div>
+        <div style="padding:48px 0 48px 40px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:20px;">05</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Baja confianza</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.12em;color:#949a9d;margin-bottom:8px;">MITIGACIÓN</div><div style="font-size:25px;color:#12292c;line-height:1.4;">Quick wins y evidencia visible temprana.</div></div>
+      </div>
+    </div>
+    <div style="font-size:27px;color:#5c666b;line-height:1.45;max-width:104ch;"><strong style="color:#12292c;">Momento de verdad</strong> — el punto exacto donde el usuario decide si adopta, resiste o bloquea. El plan de adopción se construye alrededor de esos momentos, no del calendario técnico.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Habilitación" data-screen-label="24 Adopción y habilitación" data-speaker-notes="El entrenamiento se diseña por rol, por momento y por nivel de criticidad operativa. Cinco módulos más una capa de soporte continuo." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Fase 06 · Adoptar</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">24 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:44px 0 0;max-width:28ch;">Habilitación por rol, por momento y por criticidad.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;height:2px;background:rgba(18,41,44,0.2);margin-bottom:0;">
+        <div style="position:absolute;left:0;top:0;height:2px;width:100%;background:linear-gradient(90deg, rgba(9,96,109,0.25), #09606D);"></div>
+        <div style="position:absolute;left:10%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:30%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:50%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:70%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+        <div style="position:absolute;left:90%;top:-7px;width:16px;height:16px;border-radius:50%;background:#09606D;margin-left:-8px;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);padding-top:36px;">
+        <div style="padding-right:44px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;margin-bottom:16px;">M1</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Sensibilización</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:150px;margin-bottom:22px;">Propósito, beneficios, urgencia y primeros cambios visibles.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">toda la organización</div></div>
+        <div style="padding-right:44px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;margin-bottom:16px;">M2</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Capacitación funcional</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:150px;margin-bottom:22px;">Uso del sistema por rol, procesos target y casos reales.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">usuarios operativos</div></div>
+        <div style="padding-right:44px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;margin-bottom:16px;">M3</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;color:#09606D;">Liderazgo del cambio</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:150px;margin-bottom:22px;">Sponsors, champions, coaching y conversaciones difíciles.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">líderes y personal clave</div></div>
+        <div style="padding-right:44px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;margin-bottom:16px;">M4</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Mejora continua</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:150px;margin-bottom:22px;">KPIs, tableros, incidentes, retroalimentación y optimización.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">dueños de proceso</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#09606D;margin-bottom:16px;">M5</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;height:88px;margin-bottom:14px;">Consolidación</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:150px;margin-bottom:22px;">Refuerzo, reconocimiento, control de adopción y siguiente ola.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">toda la organización</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:28px;display:flex;align-items:baseline;gap:56px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;white-space:nowrap;">SOPORTE CONTINUO</span>
+      <span style="font-size:27px;color:#5c666b;line-height:1.4;">War room post go-live &nbsp;·&nbsp; Mesa de ayuda por proceso &nbsp;·&nbsp; Microlearning en el flujo &nbsp;·&nbsp; Encuestas de pulso &nbsp;·&nbsp; Coaching a líderes</span>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto 5" data-screen-label="25 Separador · Acto 5" data-speaker-notes="Separador. El impacto: entregables, cronograma e indicadores." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-atlasone-dashboard.png" alt="Tablero de operación" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.3;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.8) 58%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO 05</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">25 / 32</span></div>
+      <div style="display:flex;align-items:flex-end;gap:64px;">
+        <div style="font-size:258px;font-weight:700;line-height:0.78;color:rgba(127,196,203,0.2);letter-spacing:-0.06em;">05</div>
+        <div style="padding-bottom:18px;max-width:34ch;">
+          <h2 style="font-size: 88px; line-height: 1; letter-spacing: -0.04em; font-weight: 700; margin: 0 0 30px; width: 553px; height: 89px">El impacto</h2>
+          <p style="font-size: 32px; line-height: 1.45; color: #b8c2ce; margin: 0; font-weight: 400; width: 1060px; height: 104px">Todo entregable debe dejar evidencia accionable: qué se decide, qué se construye, quién lo usa y cómo se mide.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7f8a99;">ENTREGABLES &nbsp;·&nbsp; CRONOGRAMA MAESTRO &nbsp;·&nbsp; MEDICIÓN &nbsp;·&nbsp; MODELO ATLAS</div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Entregables" data-screen-label="26 Entregables ejecutivos" data-speaker-notes="Seis entregables organizados por categoría. Materiales que se usan en dirección, operación, tecnología y con usuarios finales." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Entregables</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">26 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:40px 0 0;max-width:24ch;">Qué recibe la organización, en concreto.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;padding-top:14px;">
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">01</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">ESTRATEGIA</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Diagnóstico ejecutivo</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Hallazgos, riesgos, fricciones, mapas de proceso y oportunidades priorizadas.</span></div>
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">02</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">PROCESOS</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Blueprint operativo</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Procesos target, reglas de negocio, owners, controles y KPIs por flujo.</span></div>
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">03</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">ESTRATEGIA</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Roadmap de transformación</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Fases, olas, dependencias, decisiones críticas y marco presupuestal.</span></div>
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">04</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">TECNOLOGÍA</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Arquitectura funcional</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Módulos, integraciones, modelo de datos, roles, permisos y seguridad.</span></div>
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;width:44px;">05</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">ADOPCIÓN</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;">Change toolkit</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Narrativas, prácticas, mensajes por audiencia, rituales y red de champions.</span></div>
+      <div style="display:flex;align-items:baseline;gap:40px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:44px;">06</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#09606D;width:190px;">MEDICIÓN</span><span style="width:400px;font-size:31px;font-weight:700;letter-spacing:-0.022em;color:#09606D;">Tablero de gobierno</span><span style="flex:1;font-size:25px;color:#5c666b;line-height:1.45;">Avance, adopción, riesgos abiertos, decisiones pendientes y valor capturado.</span></div>
+    </div>
+    
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Roadmap maestro" data-screen-label="27 Roadmap maestro" data-speaker-notes="Cronograma integrado de 12 meses, leído en quincenas. Dieciséis frentes en cuatro corrientes: consultoría, ingeniería y datos, adopción y operación. Las actividades corren en paralelo para reducir riesgo antes de construir y sostener la adopción después del go-live, por lo que los tiempos no se suman linealmente. Los siete hitos son puntos de decisión con entregable formal." style="position:relative;box-sizing:border-box;padding:60px 100px 96px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Cronograma maestro</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">27 / 32</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:60px;margin:22px 0 18px;">
+      <h2 style="font-size:37px;line-height:1;letter-spacing:-0.03em;font-weight:700;margin:0;">16 frentes, 8 fases, 12 meses en una sola vista.</h2>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;color:#5c666b;white-space:nowrap;">4 corrientes · 7 hitos · 24 quincenas</span>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;">
+      <div style="display:grid;grid-template-columns:620px repeat(12,1fr);align-items:baseline;padding-bottom:10px;border-bottom:1px solid rgba(18,41,44,0.28);">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.2em;color:#949a9d;">FRENTE DE TRABAJO</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M1</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M2</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M3</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M4</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M5</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M6</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M7</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M8</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M9</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M10</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M11</span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;padding-left:8px;">M12</span>
+      </div>
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:620px repeat(24,1fr);grid-template-rows:repeat(16,minmax(0,1fr));">
+        <div style="grid-row:1;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#09606D;min-width:46px;">F01</span><span>Descubrimiento y diagnóstico 360°</span></div>
+        <div style="grid-row:1;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:1;grid-column:2 / span 4;align-self:center;height:13px;background:#09606D;"></div>
+
+        <div style="grid-row:2;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#09606D;min-width:46px;">F02</span><span>Mapeo de procesos AS-IS y hallazgos</span></div>
+        <div style="grid-row:2;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:2;grid-column:3 / span 4;align-self:center;height:13px;background:#09606D;"></div>
+
+        <div style="grid-row:3;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#09606D;min-width:46px;">F03</span><span>Blueprint y modelo operativo TO-BE</span></div>
+        <div style="grid-row:3;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:3;grid-column:5 / span 6;align-self:center;height:13px;background:#09606D;"></div>
+
+        <div style="grid-row:4;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#09606D;min-width:46px;">F03</span><span>Caso de negocio y priorización de alcance</span></div>
+        <div style="grid-row:4;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:4;grid-column:7 / span 3;align-self:center;height:13px;background:rgba(9,96,109,0.45);"></div>
+
+        <div style="grid-row:5;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F04</span><span>Arquitectura de solución y stack</span></div>
+        <div style="grid-row:5;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:5;grid-column:8 / span 5;align-self:center;height:13px;background:#075057;"></div>
+
+        <div style="grid-row:6;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F04</span><span>Configuración de módulos core</span></div>
+        <div style="grid-row:6;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:6;grid-column:10 / span 9;align-self:center;height:13px;background:#075057;"></div>
+
+        <div style="grid-row:7;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F04</span><span>Integraciones, APIs y middleware</span></div>
+        <div style="grid-row:7;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:7;grid-column:12 / span 8;align-self:center;height:13px;background:#075057;"></div>
+
+        <div style="grid-row:8;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F04</span><span>Automatización e IA aplicada</span></div>
+        <div style="grid-row:8;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:8;grid-column:15 / span 8;align-self:center;height:13px;background:rgba(7,80,87,0.45);"></div>
+
+        <div style="grid-row:9;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F04</span><span>Gobierno y limpieza de datos maestros</span></div>
+        <div style="grid-row:9;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:9;grid-column:10 / span 8;align-self:center;height:13px;background:rgba(7,80,87,0.45);"></div>
+
+        <div style="grid-row:10;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F05</span><span>Migración y cargas de validación</span></div>
+        <div style="grid-row:10;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:10;grid-column:14 / span 7;align-self:center;height:13px;background:rgba(7,80,87,0.45);"></div>
+
+        <div style="grid-row:11;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F05</span><span>Pruebas unitarias, integrales y de carga</span></div>
+        <div style="grid-row:11;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:11;grid-column:16 / span 6;align-self:center;height:13px;background:rgba(7,80,87,0.3);"></div>
+
+        <div style="grid-row:12;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#075057;min-width:46px;">F05</span><span>UAT por rol y criterios de salida</span></div>
+        <div style="grid-row:12;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:12;grid-column:19 / span 4;align-self:center;height:13px;background:rgba(7,80,87,0.3);"></div>
+
+        <div style="grid-row:13;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#2f6f6a;min-width:46px;">F06</span><span>Plan de cambio, comunicación y sponsors</span></div>
+        <div style="grid-row:13;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:13;grid-column:6 / span 18;align-self:center;height:13px;background:#2f6f6a;"></div>
+
+        <div style="grid-row:14;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#2f6f6a;min-width:46px;">F06</span><span>Capacitación por rol, sombras y soporte</span></div>
+        <div style="grid-row:14;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:14;grid-column:17 / span 7;align-self:center;height:13px;background:#2f6f6a;"></div>
+
+        <div style="grid-row:15;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#12292c;min-width:46px;">F07</span><span>Go-live por olas y estabilización</span></div>
+        <div style="grid-row:15;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:15;grid-column:22 / span 3;align-self:center;height:13px;background:#12292c;"></div>
+
+        <div style="grid-row:16;grid-column:1;font-size:24px;font-weight:600;letter-spacing:-0.012em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(18,41,44,0.1);padding-right:18px;"><span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:#12292c;min-width:46px;">F08</span><span>Mejora continua y tablero de operación</span></div>
+        <div style="grid-row:16;grid-column:2 / span 24;border-top:1px solid rgba(18,41,44,0.1);background-image:linear-gradient(90deg,rgba(18,41,44,0.11) 1px,transparent 1px);background-size:8.3333% 100%;"></div>
+        <div style="grid-row:16;grid-column:24 / span 2;align-self:center;height:13px;background:repeating-linear-gradient(90deg,#12292c 0 9px,transparent 9px 18px);"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:620px repeat(24,1fr);border-top:1px solid rgba(18,41,44,0.28);padding-top:14px;align-items:center;height:44px;box-sizing:content-box;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.2em;color:#949a9d;">HITOS</span>
+        <div style="grid-column:3;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:11;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:14;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:18;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:21;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:23;display:flex;align-items:center;justify-content:center;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+        <div style="grid-column:25;display:flex;align-items:center;justify-content:flex-end;"><div style="width:14px;height:14px;background:#12292c;transform:rotate(45deg);"></div></div>
+      </div>
+      <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:16px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:34px;font-size:24px;color:#5c666b;align-items:center;flex-wrap:wrap;">
+          <span style="display:flex;align-items:center;gap:10px;"><span style="width:26px;height:10px;background:#09606D;"></span>Consultoría y estrategia</span>
+          <span style="display:flex;align-items:center;gap:10px;"><span style="width:26px;height:10px;background:#075057;"></span>Ingeniería, datos y calidad</span>
+          <span style="display:flex;align-items:center;gap:10px;"><span style="width:26px;height:10px;background:#2f6f6a;"></span>Adopción</span>
+          <span style="display:flex;align-items:center;gap:10px;"><span style="width:26px;height:10px;background:#12292c;"></span>Operación</span>
+          <span style="display:flex;align-items:center;gap:10px;"><span style="width:13px;height:13px;background:#12292c;transform:rotate(45deg);"></span>Hito de decisión</span>
+        </div>
+        <div style="display:flex;gap:26px;font-family:'JetBrains Mono',monospace;font-size:24px;color:#949a9d;letter-spacing:0.02em;flex-wrap:wrap;">
+          <span>1 Kickoff</span><span>2 Blueprint</span><span>3 Arquitectura</span><span>4 Datos validados</span><span>5 UAT aceptado</span><span>6 Go-live</span><span>7 Cierre de estabilización</span>
+        </div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:100px;right:100px;bottom:38px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Medición" data-screen-label="28 Cómo medimos el éxito" data-speaker-notes="Cuatro familias de indicadores. Los valores son referencias ilustrativas: las metas se fijan contra la línea base del diagnóstico." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Medición</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">28 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:30px 0 0;max-width:26ch;">Cómo declaramos que el proyecto funcionó.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);align-items:start;align-content:center;padding-top:26px;">
+      <div style="padding:0 50px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">ADOPCIÓN</div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Uso activo por rol</div><div style="font-size:25px;color:#949a9d;">ref · 80–95% de usuarios objetivo</div></div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Operación paralela residual</div><div style="font-size:25px;color:#949a9d;">ref · a la baja mes a mes</div></div></div>
+      <div style="padding:0 50px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">EFICIENCIA</div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Tiempo de ciclo por proceso</div><div style="font-size:25px;color:#949a9d;">ref · vs. línea base</div></div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Tareas automatizadas</div><div style="font-size:25px;color:#949a9d;">ref · % de flujo sin intervenir</div></div></div>
+      <div style="padding:0 50px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">CALIDAD</div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Completitud de maestros</div><div style="font-size:25px;color:#949a9d;">ref · campos críticos poblados</div></div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Reconciliación entre áreas</div><div style="font-size:25px;color:#949a9d;">ref · una sola cifra por indicador</div></div></div>
+      <div style="padding:0 0 0 50px;border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">VALOR DE NEGOCIO</div><div style="height:162px;padding:8px 0;border-top:2px solid #09606D;"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Productividad por área</div><div style="font-size:25px;color:#949a9d;">ref · mismo equipo, más volumen</div></div><div style="height:162px;padding:8px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="font-size:27px;font-weight:600;letter-spacing:-0.015em;margin-bottom:6px;">Retorno operativo</div><div style="font-size:25px;color:#949a9d;">ref · según caso de negocio</div></div></div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:25px;color:#949a9d;line-height:1.45;max-width:118ch;">Los valores mostrados son referencias ilustrativas para orientar la conversación. Las metas reales se fijan contra la línea base levantada en el diagnóstico y se acuerdan con el comité ejecutivo.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Modelo Atlas" data-screen-label="29 El modelo Atlas" data-speaker-notes="Cuatro dominios de práctica que se cruzan. En las intersecciones está lo que casi nadie integra, y ahí es donde vive el valor." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">El modelo Atlas</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">29 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.35fr 0.65fr;gap:80px;padding-top:32px;">
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:calc(50% - 195px);left:calc(50% - 195px);width:260px;height:260px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 195px);left:calc(50% - 65px);width:260px;height:260px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 65px);left:calc(50% - 195px);width:260px;height:260px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 65px);left:calc(50% - 65px);width:260px;height:260px;border-radius:50%;border:1px solid rgba(9,96,109,0.45);"></div>
+        <div style="position:absolute;top:calc(50% - 7px);left:calc(50% - 7px);width:14px;height:14px;border-radius:50%;background:#09606D;"></div>
+        <div style="position:absolute;top:calc(50% - 300px);left:calc(50% - 511px);width:300px;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:6px;">01</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;">Negocio</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Estrategia y caso económico</div></div>
+        <div style="position:absolute;top:calc(50% - 300px);left:calc(50% + 211px);width:300px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:6px;">02</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;">Procesos</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Operación y control</div></div>
+        <div style="position:absolute;top:calc(50% + 200px);left:calc(50% - 511px);width:300px;text-align:right;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:6px;">03</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;">Personas</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Cultura y adopción</div></div>
+        <div style="position:absolute;top:calc(50% + 200px);left:calc(50% + 211px);width:300px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:6px;">04</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;">Tecnología</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Plataforma y datos</div></div>
+      </div>
+      <div style="border-left:1px solid rgba(18,41,44,0.18);padding-left:70px;display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="font-size:40px;line-height:1.06;letter-spacing:-0.03em;font-weight:700;margin:0 0 34px;">El valor vive en las intersecciones.</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#949a9d;margin-bottom:20px;">LAS INTERSECCIONES</div>
+        <div style="padding:22px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;">Diseño</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Donde el negocio se convierte en especificación de proceso.</div></div>
+        <div style="padding:22px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;">Adopción</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Donde la estrategia se vuelve hábito operativo real.</div></div>
+        <div style="padding:22px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;">Datos</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Donde la operación se vuelve información confiable.</div></div>
+        <div style="padding:22px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:#09606D;">Automatización</div><div style="font-size:25px;color:#5c666b;line-height:1.45;">Donde el sistema empieza a trabajar por la organización.</div></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Organización responsiva" data-screen-label="30 Organización responsiva" data-speaker-notes="La ambición final: una organización capaz de leer su entorno y reconfigurarse. Cuatro capas sobre una base de tecnología orientada a personas y datos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#7fc4cb;">La ambición</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">30 / 32</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.62fr 1.38fr;gap:90px;padding-top:36px;align-items:start;">
+      <div>
+        <h2 style="font-size:48px;line-height:1.03;letter-spacing:-0.035em;font-weight:700;margin:0 0 26px;">Diseñamos organizaciones responsivas.</h2>
+        <p style="font-size:27px;line-height:1.45;color:#b8c2ce;margin:0 0 34px;font-weight:400;">No es la que tiene más sistemas. Es la que puede leer lo que pasa, decidir con evidencia y reconfigurarse sin detenerse.</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.2);padding-top:22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7fc4cb;margin-bottom:10px;">CIMIENTO</div><div style="font-size:28px;font-weight:700;line-height:1.25;letter-spacing:-0.02em;">Tecnología orientada a personas y datos.</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 30px;margin-top:22px;">
+          <div style="border-top:1px solid rgba(255,255,255,0.14);padding-top:12px;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.03em;color:#7fc4cb;line-height:1;">4</div><div style="font-size:24px;color:#9aa5b3;line-height:1.35;margin-top:6px;">capas que se diseñan juntas</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.14);padding-top:12px;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.03em;color:#7fc4cb;line-height:1;">1</div><div style="font-size:24px;color:#9aa5b3;line-height:1.35;margin-top:6px;">sistema operativo que las une</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:baseline;gap:36px;height:174px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.18);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;width:56px;">L4</span><div style="width:290px;font-size:37px;font-weight:700;letter-spacing:-0.028em;height:96px;">Oferta</div><div style="flex:1;"><div style="font-size:25px;color:#9aa5b3;line-height:1.45;height:76px;">Lo que la organización promete al mercado y puede sostener.</div><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.06em;color:#6f7b8a;white-space:nowrap;">señal · la promesa se sostiene</div></div></div>
+        <div style="display:flex;align-items:baseline;gap:36px;height:174px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.18);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;width:56px;">L3</span><div style="width:290px;font-size:37px;font-weight:700;letter-spacing:-0.028em;height:96px;">Operación</div><div style="flex:1;"><div style="font-size:25px;color:#9aa5b3;line-height:1.45;height:76px;">Procesos, controles y decisiones que hacen posible esa promesa.</div><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.06em;color:#6f7b8a;white-space:nowrap;">señal · toda excepción tiene dueño</div></div></div>
+        <div style="display:flex;align-items:baseline;gap:36px;height:174px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.18);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;width:56px;">L2</span><div style="width:290px;font-size:37px;font-weight:700;letter-spacing:-0.028em;height:96px;">Cultura</div><div style="flex:1;"><div style="font-size:25px;color:#9aa5b3;line-height:1.45;height:76px;">Criterios compartidos, hábitos y comportamientos que la sostienen.</div><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.06em;color:#6f7b8a;white-space:nowrap;">señal · el hábito sobrevive al go-live</div></div></div>
+        <div style="display:flex;align-items:baseline;gap:36px;height:174px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.18);border-bottom:2px solid #7fc4cb;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;width:56px;">L1</span><div style="width:290px;font-size:37px;font-weight:700;letter-spacing:-0.028em;height:96px;color:#7fc4cb;">Sistema operativo</div><div style="flex:1;"><div style="font-size:25px;color:#9aa5b3;line-height:1.45;height:76px;">La plataforma que conecta las tres capas anteriores y las hace medibles.</div><div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.06em;color:#7fc4cb;white-space:nowrap;">señal · una sola versión de la verdad</div></div></div>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Por qué Atlas" data-screen-label="31 Por qué Atlas" data-speaker-notes="Consultoría senior más fábrica de software más automatización e IA aplicada. Atlas no vende solo software: diseña el sistema operativo de transformación." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Capacidades Atlas</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">31 / 32</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:40px 0 0;max-width:24ch;">Seis capacidades bajo un mismo techo.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;padding-top:26px;">
+      <div style="padding:10px 60px 10px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">01</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;">Estrategia y producto</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">Diseño de solución, roadmaps, priorización y modelo de valor.</div></div>
+      <div style="padding:10px 60px;border-top:1px solid rgba(18,41,44,0.16);border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">02</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;">Procesos y operación</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">SOPs, indicadores, rediseño operativo y mejora continua.</div></div>
+      <div style="padding:10px 0 10px 60px;border-top:1px solid rgba(18,41,44,0.16);border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">03</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;">Ingeniería de software</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">ERP, BOS, POS, APIs, integraciones, multi-tenant y seguridad.</div></div>
+      <div style="padding:10px 60px 10px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">04</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;color:#09606D;">Data &amp; AI</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">Tableros, RAG, agentes, automatización y gobierno de datos.</div></div>
+      <div style="padding:10px 60px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">05</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;">Adopción y enablement</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">Capacitación, champions, soporte y gestión del cambio.</div></div>
+      <div style="padding:10px 0 10px 60px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);border-left:1px solid rgba(18,41,44,0.14);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;margin-bottom:8px;">06</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.025em;height:84px;margin-bottom:14px;">PMO ejecutivo</div><div style="font-size:25px;color:#5c666b;line-height:1.45;height:112px;">Cadence, riesgos, decisiones, avance y valor capturado.</div></div>
+    </div>
+    <div style="padding-top:26px;font-size:27px;color:#5c666b;line-height:1.4;max-width:96ch;">Atlas no vende solo software: <span style="color:#12292c;font-weight:700;">diseña el sistema operativo de transformación</span> para que el software genere valor.</div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Cierre" data-screen-label="32 Cierre" data-speaker-notes="Cierre y llamada a la acción. El siguiente paso es un diagnóstico de 2 a 4 semanas, con entregable ejecutivo y recomendaciones priorizadas." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/img-orbit-network.png" alt="Red de datos en órbita" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.5;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.96) 0%, rgba(13,21,34,0.86) 52%, rgba(13,21,34,0.6) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <svg width="30" height="34" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+          <span style="font-size:26px;font-weight:700;letter-spacing:0.02em;">Atlas Tech</span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">32 / 32</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#7fc4cb;margin-bottom:42px;">Acto 06 · La invitación</div>
+        <h2 style="font-size:66px;line-height:1.06;letter-spacing:-0.038em;font-weight:700;margin:0;max-width:26ch;">No implementamos sistemas aislados. Diseñamos capacidades para que la organización <span style="color:#7fc4cb;">opere, decida y evolucione mejor</span>.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.2);padding-top:34px;margin-bottom:40px;">
+        <div style="padding-right:60px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;margin-bottom:14px;">PASO 01</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Sesión de descubrimiento</div><div style="font-size:25px;color:#9aa5b3;line-height:1.45;">90 minutos con dirección para acotar el reto y el resultado esperado.</div></div>
+        <div style="padding:0 60px;border-left:1px solid rgba(255,255,255,0.18);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;margin-bottom:14px;">PASO 02</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Readiness Scan</div><div style="font-size:25px;color:#9aa5b3;line-height:1.45;">2 a 4 semanas de diagnóstico 360° con entregable ejecutivo.</div></div>
+        <div style="padding-left:60px;border-left:1px solid rgba(255,255,255,0.18);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;margin-bottom:14px;">PASO 03</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.022em;margin-bottom:10px;">Blueprint y decisión</div><div style="font-size:25px;color:#9aa5b3;line-height:1.45;">Roadmap, alcance y caso de negocio para aprobar la inversión.</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,0.2);padding-top:26px;">
+        <div style="font-size:31px;font-weight:700;letter-spacing:-0.022em;">Comencemos con una sesión de descubrimiento.</div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;">hola@atlastech.mx</span>
+      </div>
+    </div>
+  
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

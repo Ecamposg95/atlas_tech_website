@@ -1,0 +1,707 @@
+=== ppt/slides/slide1.xml ===
+--
+ATLAS TECH
+--
+--
+SOFTWARE · AI · COMPLIANCE
+--
+Cómo trabaja Atlas
+--
+Modelo operativo, gobierno de software y preparación legal para clientes industriales.
+--
+--
+Preparado para revisión ejecutiva con DASIC
+--
+Este material comunica el marco de trabajo de Atlas y la lógica de protección de activos, datos, confidencialidad y continuidad operativa.
+--
+2026
+--
+[PICS: 1]
+=== ppt/slides/slide2.xml ===
+ATLAS OPERATING MODEL
+--
+De proveedor de desarrollo a socio tecnológico
+--
+ATLAS TECH
+--
+--
+Atlas trabaja como una compañía de software: entiende el negocio, convierte operación en arquitectura, entrega producto usable y gobierna riesgos técnicos, legales y de datos.
+--
+--
+La madurez no se demuestra solo con pantallas: se demuestra con trazabilidad, documentación, seguridad, contratos, datos gobernados y continuidad operativa.
+--
+01
+--
+Producto ejecutable
+--
+02
+--
+Gobierno contractual
+--
+03
+--
+Protección de datos
+--
+2
+--
+[PICS: 1]
+=== ppt/slides/slide3.xml ===
+ATLAS OPERATING MODEL
+--
+El modelo Atlas: diagnóstico → plataforma → gobierno
+--
+ATLAS TECH
+--
+--
+01
+--
+Discover
+--
+Negocio, dolores, procesos reales y prioridades.
+--
+02
+--
+Spec
+--
+Historias de usuario, criterios de aceptación y alcance.
+--
+03
+--
+Build
+--
+Sprints, arquitectura, componentes y QA.
+--
+04
+--
+Deploy
+--
+Ambiente productivo, acceso, capacitación y soporte.
+--
+05
+--
+Govern
+--
+Legal, datos, seguridad, cambios y continuidad.
+--
+--
+Principio rector: cada entrega debe ser entendible para negocio, ejecutable por usuarios, mantenible por ingeniería y defendible legalmente.
+--
+3
+--
+[PICS: 1]
+=== ppt/slides/slide4.xml ===
+ATLAS OPERATING MODEL
+--
+Cuando el cliente no tiene procesos definidos
+--
+ATLAS TECH
+--
+--
+Atlas no espera a que exista una operación perfecta. Construye claridad operativa mediante sesiones guiadas y convierte conocimiento disperso en especificaciones ejecutables.
+--
+--
+--
+--
+--
+--
+--
+1
+--
+Conocimiento tácito
+--
+WhatsApp, Excel, criterios verbales, urgencias operativas.
+--
+--
+--
+2
+--
+Sesiones de descubrimiento
+--
+Mapeo de roles, flujos, excepciones y reglas reales.
+--
+--
+--
+3
+--
+Historias de usuario
+--
+“Como usuario necesito…” + criterio de aceptación.
+--
+--
+--
+4
+--
+Backlog priorizado
+--
+MVP, fase 2, deuda técnica, fuera de alcance.
+--
+--
+--
+5
+--
+Release gobernado
+--
+Entrega medible, trazabilidad, soporte y cambio controlado.
+--
+--
+Esto es especialmente relevante para DASIC: gran parte del valor inicial fue convertir operación no documentada en producto, módulos, reglas y flujos verificables.
+--
+4
+--
+=== ppt/slides/slide5.xml ===
+ATLAS OPERATING MODEL
+--
+Gobierno de entrega: visibilidad, control y cadencia
+--
+ATLAS TECH
+--
+--
+Cada proyecto debe tener una estructura mínima de gobierno para evitar ambigüedad, retrabajo y expectativas no documentadas.
+--
+Comité ejecutivo
+--
+Decisiones de alcance, pagos, riesgos y prioridades.
+--
+--
+Product owner cliente
+--
+Valida procesos, datos, usuarios y reglas de negocio.
+--
+--
+Squad Atlas
+--
+Producto, desarrollo, QA, datos, integración y soporte.
+--
+--
+Artifacts
+--
+SOW, backlog, user stories, changelog, release notes, actas.
+--
+--
+Cadencia
+--
+Demo, retro, priorización y control de cambios por sprint.
+--
+--
+--
+El control real vive en la evidencia
+--
+• Repositorio y ramas trazables
+• Commits vinculados a requerimientos
+• Ambientes diferenciados
+• Pruebas y checklist de release
+• Bitácora de acuerdos y cambios
+--
+--
+Lo que no está documentado tiende a convertirse en disputa de alcance.
+--
+5
+--
+=== ppt/slides/slide6.xml ===
+ATLAS OPERATING MODEL
+--
+Análisis legal especializado integrado al modelo
+--
+ATLAS TECH
+--
+--
+El trabajo de Atlas se estructura con una revisión legal especializada en software empresarial, propiedad intelectual, confidencialidad, privacidad, seguridad y operación SaaS en México.
+--
+--
+No se trata solo de “hacer código”: se trata de proteger datos, separar activos, regular licencias, definir continuidad y evitar ambigüedad contractual.
+--
+--
+IP
+--
+Background technology, custom developments, licencias y cesiones.
+--
+--
+Privacy
+--
+Datos personales, roles responsable/encargado y medidas de seguridad.
+--
+--
+Confidentiality
+--
+Secretos industriales, información estratégica y acceso restringido.
+--
+Nota: material estratégico de Atlas; no sustituye dictamen jurídico externo sobre contratos ya firmados.
+--
+6
+--
+[PICS: 1]
+=== ppt/slides/slide7.xml ===
+ATLAS OPERATING MODEL
+--
+Propiedad intelectual: separar activos evita conflictos
+--
+ATLAS TECH
+--
+--
+La pregunta correcta no es “¿de quién es todo?”. La pregunta correcta es: ¿qué capa estamos analizando, qué existía antes, qué se creó para el cliente y qué se licencia?
+--
+--
+Datos del cliente
+--
+Propiedad/control del cliente; Atlas procesa bajo instrucciones.
+--
+--
+Materiales del cliente
+--
+Logos, catálogos, procesos, documentación y contenido propio.
+--
+--
+Tecnología previa Atlas
+--
+Arquitectura, componentes, frameworks propios y know-how reusable.
+--
+--
+Configuración específica
+--
+Parámetros, flujos y reglas del tenant del cliente.
+--
+--
+Desarrollos custom
+--
+Se clasifican por SOW: licencia, cesión o uso limitado.
+--
+--
+Software de terceros
+--
+Sujeto a licencias open source/comerciales; no se cede lo que no se posee.
+--
+--
+--
+IP Schedule
+--
+El documento que clasifica activos, licencias, derechos de uso, restricciones, excepciones, entregables y escenarios de continuidad.
+--
+• Reduce ambigüedad
+• Protege plataforma Atlas
+• Da certeza operativa al cliente
+• Distingue implementación de cesión de IP
+--
+Referencia normativa: LFDA vigente — protección de programas de cómputo como obras literarias, código fuente/objeto y reglas de obra por encargo.
+--
+7
+--
+=== ppt/slides/slide8.xml ===
+ATLAS OPERATING MODEL
+--
+Confidencialidad: jurídico + técnico + organizacional
+--
+ATLAS TECH
+--
+--
+Para que la confidencialidad sea defendible, debe existir una combinación de acuerdos escritos, clasificación de información y controles reales de acceso.
+--
+--
+01
+--
+NDA bilateral
+--
+Define información confidencial, excepciones, vigencia y uso permitido.
+--
+--
+02
+--
+Clasificación
+--
+Datos, código, arquitectura, procesos, precios, credenciales y secretos.
+--
+--
+03
+--
+Controles
+--
+Acceso need-to-know, MFA, repos privados, logs, ambientes y backups.
+--
+--
+--
+--
+En software industrial, la información sensible puede incluir procesos, precios, clientes, proveedores, arquitectura, credenciales, vulnerabilidades y roadmap.
+--
+Referencia normativa: LFPPI vigente — secreto industrial requiere ventaja competitiva y medios suficientes de confidencialidad/acceso restringido.
+--
+8
+--
+=== ppt/slides/slide9.xml ===
+ATLAS OPERATING MODEL
+--
+Privacidad y seguridad: datos gobernados, no solo almacenados
+--
+ATLAS TECH
+--
+--
+Modelo mínimo para proyectos B2B con datos personales y datos de negocio
+--
+--
+Mapa de datos
+--
+Qué datos existen, quién los provee, dónde viven y para qué se usan.
+--
+--
+Roles
+--
+Cliente como responsable; Atlas como encargado cuando procesa por instrucciones.
+--
+--
+Medidas
+--
+Administrativas, técnicas y físicas: acceso, cifrado, logs, backups y continuidad.
+--
+--
+Incidentes
+--
+Procedimiento de respuesta, notificación, mitigación y evidencia.
+--
+--
+La seguridad debe poder explicarse en lenguaje ejecutivo: quién accede, a qué, para qué, desde dónde, con qué trazabilidad y bajo qué responsabilidad.
+--
+Referencia normativa: LFPDPPP vigente — tratamiento legítimo, responsable/encargado, confidencialidad y medidas de seguridad.
+--
+9
+--
+[PICS: 1]
+=== ppt/slides/slide10.xml ===
+ATLAS OPERATING MODEL
+--
+IA, open source y supply chain: control sobre lo que usamos
+--
+ATLAS TECH
+--
+--
+Un software moderno no es solo código propio. Incluye librerías, frameworks, servicios cloud, modelos de IA, paquetes, APIs y proveedores.
+--
+--
+Modelo / API IA
+--
+política de datos, logs, retención, entrenamiento, región
+--
+--
+Dependencias OSS
+--
+licencia, versión, vulnerabilidades, mantenimiento
+--
+--
+Servicios cloud
+--
+región, backups, credenciales, continuidad, subprocesadores
+--
+--
+Código Atlas
+--
+repositorio, ramas, owner, pruebas, changelog
+--
+--
+Datos cliente
+--
+finalidad, acceso, exportación, eliminación, portabilidad
+--
+--
+Atlas rule
+--
+No se debe prometer cesión de propiedad sobre software de terceros ni usar datos confidenciales del cliente para entrenamiento de modelos sin autorización expresa.
+--
+--
+Esto protege a DASIC y también protege el core reutilizable de Atlas.
+--
+10
+--
+=== ppt/slides/slide11.xml ===
+ATLAS OPERATING MODEL
+--
+Costos, pagos y alcance: separar conceptos
+--
+ATLAS TECH
+--
+--
+Un pago puede cubrir implementación, desarrollo, soporte o licencia. No debe confundirse automáticamente con una compra total de la tecnología subyacente.
+--
+--
+Implementación
+--
+configuración, migración, puesta en marcha
+--
+--
+Desarrollo
+--
+capacidad de ingeniería y construcción custom
+--
+--
+SaaS / licencia
+--
+derecho de acceso y uso
+--
+--
+Soporte / SLA
+--
+mantenimiento, continuidad y respuesta
+--
+--
+Regla comercial: desarrollo ≠ cesión de IP ≠ exclusividad ≠ acceso a código fuente. Cada concepto debe valorarse y documentarse por separado.
+--
+Herramientas: SOW + Change Order + IP Schedule + SLA + anexo de costos y saldos.
+--
+11
+--
+=== ppt/slides/slide12.xml ===
+ATLAS OPERATING MODEL
+--
+Matriz ejecutiva para conversaciones sensibles
+--
+ATLAS TECH
+--
+--
+Antes de contestar de forma definitiva sobre propiedad, confidencialidad o continuidad, Atlas debe ubicar cada tema en una matriz simple de decisión.
+--
+--
+Tema
+--
+--
+Riesgo si queda ambiguo
+--
+--
+Respuesta Atlas
+--
+--
+Datos
+--
+--
+Acceso, exportación, privacidad
+--
+--
+Cliente controla sus datos; Atlas documenta tratamiento y seguridad.
+--
+--
+Código
+--
+--
+Disputa de propiedad / reutilización
+--
+--
+Clasificar por capas: previo, custom, configuración y terceros.
+--
+--
+Alcance
+--
+--
+Retrabajo y creep
+--
+--
+User stories, SOW y change orders.
+--
+--
+Continuidad
+--
+--
+Dependencia operativa
+--
+--
+Backups, export, SLA y eventual escrow.
+--
+--
+IA / OSS
+--
+--
+Uso indebido o promesas imposibles
+--
+--
+Política de proveedores, licencias y datos.
+--
+--
+Objetivo de la reunión: no improvisar concesiones; ordenar hechos, acuerdos, pagos, documentación y decisiones pendientes.
+--
+12
+--
+=== ppt/slides/slide13.xml ===
+ATLAS OPERATING MODEL
+--
+Documentos preparados para elevar la relación
+--
+ATLAS TECH
+--
+--
+La presentación debe venir acompañada de documentos listos para activar si el cliente pide formalizar confidencialidad, IP, datos o soporte.
+--
+--
+MSA
+--
+Contrato maestro de servicios y relación comercial.
+--
+--
+SOW
+--
+Alcance, entregables, roles, calendario y criterios de aceptación.
+--
+--
+NDA
+--
+Confidencialidad bilateral y protección de secretos.
+--
+--
+IP Schedule
+--
+Clasificación de datos, software, configuraciones y licencias.
+--
+--
+DPA
+--
+Tratamiento de datos personales, roles y medidas.
+--
+--
+Security Addendum
+--
+Controles, accesos, incidentes, backups y continuidad.
+--
+--
+SLA / Support
+--
+Niveles de servicio, canales, severidades y tiempos.
+--
+--
+Change Order
+--
+Alta de nuevos requerimientos sin contaminar el alcance.
+--
+--
+Estos documentos no deben verse como burocracia; son el sistema operativo contractual de una relación de software seria.
+--
+13
+--
+=== ppt/slides/slide14.xml ===
+ATLAS OPERATING MODEL
+--
+Mensaje ejecutivo para DASIC
+--
+ATLAS TECH
+--
+--
+“Queremos darles certeza sobre su operación y sus datos, y al mismo tiempo proteger la tecnología que Atlas ha construido como plataforma. Para lograrlo, vamos a separar claramente: datos, configuración, desarrollos específicos, software de terceros, tecnología previa de Atlas, soporte y continuidad.”
+--
+--
+--
+Primero
+--
+Mostrar valor y avances reales.
+--
+--
+Después
+--
+Conciliar costos, pagos y alcance.
+--
+--
+Luego
+--
+Ordenar confidencialidad, IP, datos y seguridad.
+--
+--
+Finalmente
+--
+Formalizar documentos y decisiones.
+--
+--
+No entrar a negociar “de quién es todo” sin antes clasificar activos, revisar contrato, pagos, SOW y evidencia técnica.
+--
+14
+--
+=== ppt/slides/slide15.xml ===
+ATLAS OPERATING MODEL
+--
+Siguiente deck: avances específicos de DASIC
+--
+ATLAS TECH
+--
+--
+Mientras se reúne la documentación, Atlas preparará una segunda presentación enfocada exclusivamente en el trabajo realizado para DASIC.
+--
+01
+--
+Rebranding
+--
+Identidad, narrativa, posicionamiento y materiales visuales.
+--
+--
+02
+--
+Página web
+--
+Presencia digital, estructura de contenido y activos web.
+--
+--
+03
+--
+Tienda en línea
+--
+WooCommerce/e-commerce creado, aunque no operado por DASIC.
+--
+--
+04
+--
+Sesiones de producto
+--
+Descubrimiento, historias de usuario y reglas operativas.
+--
+--
+05
+--
+Sistema interno
+--
+Módulos, flujos, datos, usuarios, cotizaciones, inventario, CxC y remisiones.
+--
+--
+06
+--
+Madurez pendiente
+--
+Procesos no definidos, adopción, operación, métricas y gobierno.
+--
+--
+--
+La narrativa debe mostrar que Atlas no solo desarrolló software: ordenó una operación, creó activos digitales y habilitó infraestructura para operar.
+--
+15
+--
+=== ppt/slides/slide16.xml ===
+LEGAL SOURCE APPENDIX
+--
+Fuentes normativas consultadas
+--
+ATLAS TECH
+--
+--
+Fuentes oficiales utilizadas para fundamentar la sección de gobierno legal y compliance. La posición final deberá aterrizarse contra los contratos y documentación específica de DASIC.
+--
+--
+Ley Federal del Derecho de Autor — Cámara de Diputados
+--
+https://www.diputados.gob.mx/LeyesBiblio/pdf/LFDA.pdf
+--
+Software, código fuente/objeto, obra por encargo, transmisión/licencia de derechos.
+--
+--
+Reforma LFDA DOF 14/05/2026
+--
+https://www.diputados.gob.mx/LeyesBiblio/ref/lfda/LFDA_ref16_14may26.pdf
+--
+Programas de computación, incluidos programas de inteligencia artificial.
+--
+--
+Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+--
+https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+--
+Tratamiento, responsable/encargado, confidencialidad, seguridad y vulneraciones.
+--
+--
+Ley Federal de Protección a la Propiedad Industrial
+--
+https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPPI.pdf
+--
+Secretos industriales, confidencialidad, acceso restringido y medidas de protección.
+--
+--
+Recomendación: convertir este apéndice en un Legal Brief interno y anexar la matriz de IP una vez recibida la documentación de DASIC.
+--
+16
+--

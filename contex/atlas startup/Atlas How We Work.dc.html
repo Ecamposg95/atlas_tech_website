@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e7e3db; font-weight: 500; letter-spacing: 0.008em; }
+    a { color: #09606D; text-decoration: none; }
+    a:hover { color: #075057; }
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="How Atlas Works" data-screen-label="01 How Atlas Works" data-speaker-notes="Apertura. Atlas construye software empresarial con gobierno técnico, operativo y jurídico desde el diseño." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-1-1.png" alt="Plataforma industrial conectada" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.5;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.84) 46%, rgba(13,21,34,0.46) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <svg width="30" height="34" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+          <span style="font-size:26px;font-weight:700;letter-spacing:0.02em;">Atlas Tech</span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7f8a99;">SOFTWARE · AI · GOVERNANCE</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#7fc4cb;margin-bottom:40px;">Marco de trabajo Atlas</div>
+        <h1 style="font-size:104px;line-height:0.98;letter-spacing:-0.045em;font-weight:700;margin:0;max-width:15ch;">Cómo trabaja <span style="color:#7fc4cb;">Atlas</span></h1>
+        <p style="font-size:32px;line-height:1.4;color:#e3e8ef;margin:40px 0 0;max-width:40ch;font-weight:400;">Atlas construye software empresarial con gobierno técnico, operativo y jurídico desde el diseño.</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#8d97a5;">BUSINESS UNDERSTANDING → SPECIFICATION → ENGINEERING → DEPLOYMENT → GOVERNANCE → LEGAL CERTAINTY</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;white-space:nowrap;">ATLAS TECH</span>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Socio tecnológico" data-screen-label="02 De proveedor a socio tecnológico" data-speaker-notes="Atlas trabaja como una compañía de software. La madurez se demuestra con trazabilidad, documentación, seguridad, contratos, datos gobernados y continuidad operativa." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Movimiento I · How Atlas Works</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">02 / 16</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 0.95fr;gap:100px;padding-top:44px;">
+      <div style="display:flex;flex-direction:column;">
+        <h2 style="font-size:50px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:0 0 34px;">De proveedor de desarrollo a socio tecnológico</h2>
+        <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:0;">Atlas trabaja como una compañía de software: entiende el negocio, convierte operación en arquitectura, entrega producto usable y gobierna riesgos técnicos, legales y de datos.</p>
+        <div style="margin-top:auto;border-top:1px solid rgba(18,41,44,0.2);padding-top:26px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:14px;">TESIS</div>
+          <div style="font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;">La madurez no se demuestra solo con pantallas: se demuestra con trazabilidad, documentación, seguridad, contratos, datos gobernados y continuidad operativa.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">01</span><div style="flex:1;"><div style="font-size:35px;font-weight:700;letter-spacing:-0.022em;">Producto ejecutable</div></div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">02</span><div style="flex:1;"><div style="font-size:35px;font-weight:700;letter-spacing:-0.022em;">Gobierno contractual</div></div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:30px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;width:52px;">03</span><div style="flex:1;"><div style="font-size:35px;font-weight:700;letter-spacing:-0.022em;">Protección de datos</div></div></div>
+        <div style="margin-top:40px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:20px;">CADENA DE VALOR ATLAS</div>
+          <div style="display:flex;align-items:stretch;gap:4px;">
+            <div style="flex:1;"><div style="height:12px;background:rgba(9,96,109,0.28);"></div><div style="font-size:25px;font-weight:700;letter-spacing:-0.018em;line-height:1.28;margin-top:16px;">Entiende el negocio</div></div>
+            <div style="flex:1;"><div style="height:12px;background:rgba(9,96,109,0.48);"></div><div style="font-size:25px;font-weight:700;letter-spacing:-0.018em;line-height:1.28;margin-top:16px;">Convierte operación en arquitectura</div></div>
+            <div style="flex:1;"><div style="height:12px;background:rgba(9,96,109,0.72);"></div><div style="font-size:25px;font-weight:700;letter-spacing:-0.018em;line-height:1.28;margin-top:16px;">Entrega producto usable</div></div>
+            <div style="flex:1;"><div style="height:12px;background:#09606D;"></div><div style="font-size:25px;font-weight:700;letter-spacing:-0.018em;line-height:1.28;margin-top:16px;color:#09606D;">Gobierna riesgos técnicos, legales y de datos</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Operating model" data-screen-label="03 Atlas Operating Model" data-speaker-notes="Cinco etapas con una capa de assurance que nunca desaparece. La ejecución avanza; el assurance permanece." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Atlas Operating Model</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">03 / 16</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:32ch;">Diagnóstico → plataforma → gobierno</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);column-gap:40px;">
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">01</div><div style="font-size:36px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 12px;">Discover</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Negocio, dolores, procesos reales y prioridades.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">02</div><div style="font-size:36px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 12px;">Spec</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Historias de usuario, criterios de aceptación y alcance.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">03</div><div style="font-size:36px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 12px;">Build</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Sprints, arquitectura, componentes y QA.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">04</div><div style="font-size:36px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 12px;">Deploy</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Ambiente productivo, acceso, capacitación y soporte.</div></div>
+        <div style="border-top:2px solid #09606D;padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">05</div><div style="font-size:36px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 12px;color:#09606D;">Govern</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Legal, datos, seguridad, cambios y continuidad.</div></div>
+      </div>
+      <div style="margin-top:46px;background:rgba(9,96,109,0.09);border-left:3px solid #09606D;padding:22px 30px;display:flex;align-items:center;gap:44px;">
+        <div style="flex:0 0 auto;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">ASSURANCE LAYER</div><div style="font-size:25px;color:#5c666b;margin-top:8px;">transversal a las cinco etapas</div></div>
+        <div style="flex:1;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.1em;color:#48555a;line-height:1.5;">Scope · Data · IP · Security · Risk · Acceptance · Change · Evidence · Continuity</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;display:flex;gap:44px;align-items:baseline;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;white-space:nowrap;">PRINCIPIO RECTOR</span>
+      <span style="font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">La ejecución avanza; el assurance nunca desaparece. Cada entrega debe ser entendible para negocio, ejecutable por usuarios, mantenible por ingeniería y defendible legalmente.</span>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Tacit to spec" data-screen-label="04 De conocimiento tácito a especificación" data-speaker-notes="Atlas construye claridad operativa mediante sesiones guiadas y convierte conocimiento disperso en especificaciones ejecutables." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Specification</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">04 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:40px;">
+      <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 46%;">De conocimiento tácito a especificación ejecutable</h2>
+      <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:6px 0 0;flex:1;">Atlas no espera a que exista una operación perfecta. Construye claridad operativa mediante sesiones guiadas y convierte conocimiento disperso en especificaciones ejecutables.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);column-gap:38px;width:100%;">
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">1</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.022em;margin:14px 0 12px;">Conocimiento tácito</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Mensajería, hojas de cálculo, criterios verbales y urgencias operativas.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">2</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.022em;margin:14px 0 12px;">Sesiones de descubrimiento</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Mapeo de roles, flujos, excepciones y reglas reales.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">3</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.022em;margin:14px 0 12px;">Historias de usuario</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">“Como usuario necesito…” más criterio de aceptación.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">4</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.022em;margin:14px 0 12px;">Backlog priorizado</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">MVP, fase 2, deuda técnica y fuera de alcance.</div></div>
+        <div style="border-top:2px solid #09606D;padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">5</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.022em;margin:14px 0 12px;color:#09606D;">Release gobernado</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Entrega medible, trazabilidad, soporte y cambio controlado.</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;display:flex;gap:44px;align-items:baseline;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;white-space:nowrap;">PATRÓN RECURRENTE</span>
+      <span style="font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">En empresas en crecimiento, gran parte del valor inicial es convertir operación no documentada en producto, módulos, reglas y flujos verificables.</span>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Governed delivery" data-screen-label="05 Governed delivery" data-speaker-notes="Estructura mínima de gobierno de entrega. Lo que no está documentado tiende a convertirse en disputa de alcance." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Governed delivery</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">05 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:40px;">
+      <h2 style="font-size:46px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 52%;">Gobierno de entrega: visibilidad, control y cadencia</h2>
+      <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:6px 0 0;flex:1;">Cada proyecto tiene una estructura mínima de gobierno que evita ambigüedad, retrabajo y expectativas no documentadas.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.35fr 0.65fr;gap:90px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:17px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:32px;font-weight:700;letter-spacing:-0.022em;">Comité ejecutivo</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.42;">Decisiones de alcance, pagos, riesgos y prioridades.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:17px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:32px;font-weight:700;letter-spacing:-0.022em;">Product owner cliente</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.42;">Valida procesos, datos, usuarios y reglas de negocio.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:17px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:32px;font-weight:700;letter-spacing:-0.022em;">Squad Atlas</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.42;">Producto, desarrollo, QA, datos, integración y soporte.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:17px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:32px;font-weight:700;letter-spacing:-0.022em;">Artifacts</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.42;">SOW, backlog, user stories, changelog, release notes, actas.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:17px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:32px;font-weight:700;letter-spacing:-0.022em;">Cadencia</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.42;">Demo, retro, priorización y control de cambios por sprint.</div></div>
+      </div>
+      <div style="border-left:2px solid #09606D;padding-left:38px;">
+        <div style="font-size:32px;font-weight:700;letter-spacing:-0.022em;line-height:1.2;margin-bottom:24px;">El control real vive en la evidencia</div>
+        <div style="font-size:25px;color:#5c666b;line-height:1.9;">Repositorio y ramas trazables<br />Commits vinculados a requerimientos<br />Ambientes diferenciados<br />Pruebas y checklist de release<br />Bitácora de acuerdos y cambios</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:26px;padding-top:26px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">Lo que no está documentado tiende a convertirse en disputa de alcance.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Governance by design" data-screen-label="06 Governance by design" data-speaker-notes="Separador del movimiento II. Las decisiones tecnológicas generan consecuencias jurídicas: derechos, obligaciones, dependencias y riesgos." style="position:relative;box-sizing:border-box;padding:64px 145px 132px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-6-1.png" alt="Gobierno técnico y jurídico del software" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.55;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.86) 50%, rgba(13,21,34,0.42) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;justify-content:space-between;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">MOVIMIENTO II · GOVERNANCE BY DESIGN</span><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">06 / 16</span></div>
+      <div>
+        <h2 style="font-size:62px;line-height:1.03;letter-spacing:-0.04em;font-weight:700;margin:0 0 30px;max-width:22ch;">Las decisiones tecnológicas generan consecuencias jurídicas.</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:70px;max-width:1180px;">
+          <p style="font-size:26px;line-height:1.48;color:#b8c2ce;margin:0;font-weight:400;">Por eso arquitectura, datos, seguridad, propiedad intelectual y contratos se gobiernan desde el diseño, no en una revisión posterior al desarrollo.</p>
+          <p style="font-size:26px;line-height:1.48;color:#b8c2ce;margin:0;font-weight:400;">Elegir una API implica proveedor, tratamiento de datos, retención, región, licencia, dependencia y continuidad. Construir un módulo custom implica origen, derechos de uso y mantenimiento.</p>
+        </div>
+      </div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);column-gap:60px;border-top:1px solid rgba(255,255,255,0.18);padding-top:22px;">
+          <div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;color:#7fc4cb;margin-bottom:10px;">Ownership</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Qué activo es de quién y bajo qué origen.</div></div>
+          <div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;color:#7fc4cb;margin-bottom:10px;">Responsibility</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Quién decide, quién responde y con qué autoridad.</div></div>
+          <div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;color:#7fc4cb;margin-bottom:10px;">Evidence</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Decisiones, aprobaciones, pruebas y releases documentados.</div></div>
+          <div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;color:#7fc4cb;margin-bottom:10px;">Continuity</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Qué ocurre cuando algo falla, cambia o termina.</div></div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;margin-top:20px;">Marco preparado bajo un enfoque especializado de revisión en tecnología, propiedad intelectual, privacidad y software compliance para el marco jurídico mexicano.</div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="IP architecture" data-screen-label="07 Intellectual property architecture" data-speaker-notes="La propiedad intelectual es una arquitectura, no una pregunta binaria. Seis capas de activos y seis condiciones aplicables." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Movimiento III · Intellectual property</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">07 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:36px;">
+      <h2 style="font-size:42px;line-height:1.08;letter-spacing:-0.03em;font-weight:700;margin:0;flex:0 0 56%;">La propiedad intelectual es una arquitectura, no una pregunta binaria</h2>
+      <p style="font-size:26px;line-height:1.5;color:#5c666b;margin:6px 0 0;flex:1;">La propiedad intelectual de una plataforma empresarial se analiza por capas de activos, origen, derechos y condiciones de uso.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.4fr 0.6fr;gap:80px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Client Data</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Operación, registros y contenido generado por el cliente.</div></div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Client Materials</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Marca, catálogos, procesos y documentación propia.</div></div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Background Technology</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Arquitectura, componentes y know-how previos de Atlas.</div></div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Configuration</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Parámetros, flujos y reglas del tenant del cliente.</div></div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Custom Development</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Construcción específica; se clasifica y valora por SOW.</div></div>
+        <div style="display:flex;align-items:baseline;gap:26px;padding:11px 0 14px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Third-Party Components</div><div style="font-size:25px;color:#5c666b;width:420px;line-height:1.35;">Sujeto a sus licencias; no se cede lo que no se posee.</div></div>
+      </div>
+      <div style="border-left:2px solid #09606D;padding-left:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:20px;">CONDICIONES POR CAPA</div>
+        <div style="font-size:29px;font-weight:700;letter-spacing:-0.022em;line-height:1.7;">Ownership<br />License<br />Use rights<br />Restrictions<br />Modification<br />Continuity</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:22px;padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">El IP Schedule es el documento que clasifica activos, licencias, derechos de uso, restricciones, entregables y escenarios de continuidad.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Confidentiality" data-screen-label="08 Confidentiality architecture" data-speaker-notes="No basta con declarar información confidencial: hay que demostrar medidas razonables de protección." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Confidentiality architecture</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">08 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:40px;">
+      <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 46%;">La confidencialidad exige controles exigibles</h2>
+      <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:6px 0 0;flex:1;">Para que la confidencialidad sea defendible debe existir una combinación de acuerdos escritos, clasificación de información y controles reales de acceso.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:80px;align-content:center;">
+      <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:26px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">CONTRATO</div><div style="font-size:40px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 14px;">NDA &amp; obligations</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">Define información confidencial, excepciones, vigencia, uso permitido y responsabilidad.</div></div>
+      <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:26px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">ORGANIZACIÓN</div><div style="font-size:40px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 14px;">Classification</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">Clasificación de datos, código, arquitectura, precios y secretos bajo need-to-know.</div></div>
+      <div style="border-top:2px solid #09606D;padding-top:26px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">TECNOLOGÍA</div><div style="font-size:40px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 14px;color:#09606D;">Controls</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">MFA, repositorios privados, gestión de accesos, logs, ambientes y respaldos.</div></div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;">
+      <div style="font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;margin-bottom:14px;">No basta con declarar información confidencial: hay que demostrar medidas razonables de protección y acceso restringido.</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">En software industrial la información sensible incluye procesos, precios, clientes, proveedores, arquitectura, credenciales, vulnerabilidades y roadmap.</div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Data privacy" data-screen-label="09 Data privacy and security" data-speaker-notes="La cadena de tratamiento: titular, responsable, encargado y subencargados, con controles alrededor." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Data privacy &amp; security</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">09 / 16</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:32ch;">Datos gobernados, no solo almacenados</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.95fr 1.05fr;gap:90px;align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:22px;">CADENA DE TRATAMIENTO</div>
+        <div style="padding:14px 0;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;">Data subject</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Titular de los datos personales.</div></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">↓</div>
+        <div style="padding:14px 0;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;">Controller</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Cliente como responsable del tratamiento.</div></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">↓</div>
+        <div style="padding:14px 0;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;">Processor</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">Atlas como encargado, bajo instrucciones documentadas.</div></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">↓</div>
+        <div style="padding:14px 0;border-bottom:2px solid #09606D;"><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;color:#09606D;">Subprocessors</div><div style="font-size:25px;color:#5c666b;margin:6px 0 14px;">Cloud, APIs y proveedores declarados.</div></div>
+      </div>
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:60px;">
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Purpose</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Finalidad legítima y declarada del tratamiento.</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Access</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Roles, autorizaciones y trazabilidad de consulta.</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Retention</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Plazos de conservación y bloqueo de información.</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Security</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Medidas administrativas, técnicas y físicas.</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Incident response</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Respuesta, notificación, mitigación y evidencia.</div></div>
+          <div style="border-top:2px solid #09606D;padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;color:#09606D;">Deletion &amp; portability</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Exportación, transferencia y eliminación verificable.</div></div>
+        </div>
+        <div style="font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;margin-top:28px;">La seguridad debe poder explicarse en lenguaje ejecutivo: quién accede, a qué, para qué, desde dónde y con qué trazabilidad.</div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Supply chain" data-screen-label="10 AI, open source y supply chain" data-speaker-notes="Every dependency is also a legal dependency. Una plataforma actual no está formada exclusivamente por código propio." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">AI · OPEN SOURCE · TECHNOLOGY SUPPLY CHAIN</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">10 / 16</span>
+    </div>
+    <h2 style="font-size:46px;line-height:1.06;letter-spacing:-0.034em;font-weight:700;margin:32px 0 0;max-width:34ch;">Toda dependencia es también una dependencia jurídica</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.6fr 1.4fr;gap:70px;align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:20px;">COMPONENTES DE LA PLATAFORMA</div>
+        <div style="font-size:29px;font-weight:700;letter-spacing:-0.022em;line-height:1.75;">Open source<br />APIs<br />Modelos de IA<br />Cloud &amp; SaaS<br />Librerías<br />Providers</div>
+        <div style="font-size:25px;color:#8d97a5;line-height:1.45;margin-top:24px;">Una plataforma actual no está formada exclusivamente por código escrito por Atlas.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:20px;">LO QUE IMPLICA CADA DEPENDENCIA</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);column-gap:50px;">
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">License</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Condiciones de uso, redistribución y modificación.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Data policy</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Qué hace el proveedor con la información enviada.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Retention</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Logs, historiales y plazos de conservación.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Security</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Vulnerabilidades, parches y mantenimiento activo.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Availability</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Disponibilidad comprometida y dependencia operativa.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Jurisdiction</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Región de procesamiento y marco aplicable.</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;">Subprocessors</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Terceros encadenados detrás del proveedor directo.</div></div>
+          <div style="border-top:2px solid #7fc4cb;padding:16px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:7px;color:#7fc4cb;">Continuity</div><div style="font-size:25px;color:#8d97a5;line-height:1.4;">Alternativas, portabilidad y plan ante descontinuación.</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.18);margin-top:22px;padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;">No se promete cesión de propiedad sobre software de terceros ni se usan datos confidenciales del cliente para entrenamiento de modelos sin autorización expresa.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Rights architecture" data-screen-label="11 Commercial and rights architecture" data-speaker-notes="Commercial models define different rights. Cada modelo comercial otorga un conjunto distinto de derechos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Commercial &amp; rights architecture</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">11 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:40px;">
+      <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 46%;">Cada modelo comercial otorga derechos distintos</h2>
+      <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:6px 0 0;flex:1;">Cada modelo comercial otorga un conjunto distinto de derechos. Separarlos permite valorar, documentar y ampliar el alcance con claridad.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="width:100%;">
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">Implementation</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Configuración, migración y enablement sobre una plataforma existente.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">Engineering</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Capacidad de desarrollo y construcción de trabajo custom.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">License / SaaS</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Derecho de acceso y uso sobre la plataforma.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">Support</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Mantenimiento, niveles de servicio y continuidad operativa.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">IP transfer</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Cuando existe, se estructura y valora explícitamente por activo.</div></div>
+        <div style="display:flex;align-items:baseline;gap:40px;padding:18px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="width:340px;font-size:31px;font-weight:700;letter-spacing:-0.024em;">Exclusivity</div><div style="flex:1;font-size:26px;color:#5c666b;line-height:1.4;">Cuando existe, requiere condiciones, alcance y vigencia específicos.</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;">
+      <div style="font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;margin-bottom:14px;">Un pago cubre uno o varios de estos modelos. Definir cuál se está adquiriendo evita ambigüedad para ambas partes.</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">Instrumentos: SOW · Change Order · IP Schedule · SLA · anexo de costos.</div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Decision governance" data-screen-label="12 Critical decision governance" data-speaker-notes="Las decisiones que una relación tecnológica seria debe resolver de forma explícita." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Critical decision governance</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">12 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:40px;">
+      <h2 style="font-size:46px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 44%;">Las decisiones críticas exigen gobierno explícito</h2>
+      <p style="font-size:27px;line-height:1.55;color:#5c666b;margin:6px 0 0;flex:1;">Cinco dominios donde una relación tecnológica seria resuelve las decisiones de forma explícita, con owner, criterio y evidencia.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:36px;">
+      <div style="display:flex;gap:50px;padding-bottom:14px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;text-transform:uppercase;"><div style="width:250px;">Dominio</div><div style="flex:1;">Decisiones que deben quedar resueltas</div></div>
+      <div style="display:flex;gap:50px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:250px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Data</div><div style="flex:1;font-size:26px;line-height:1.4;">Ownership, access, portability, retención y eliminación.</div></div>
+      <div style="display:flex;gap:50px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:250px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">IP</div><div style="flex:1;font-size:26px;line-height:1.4;">Background technology, custom development y componentes de terceros.</div></div>
+      <div style="display:flex;gap:50px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:250px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Scope</div><div style="flex:1;font-size:26px;line-height:1.4;">Baseline, criterios de aceptación y control de cambios.</div></div>
+      <div style="display:flex;gap:50px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:250px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">Continuity</div><div style="flex:1;font-size:26px;line-height:1.4;">Soporte, respaldos, documentación y escenarios de salida.</div></div>
+      <div style="display:flex;gap:50px;align-items:baseline;padding:16px 0 20px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="width:250px;font-size:33px;font-weight:700;letter-spacing:-0.022em;">AI &amp; OSS</div><div style="flex:1;font-size:26px;line-height:1.4;">Licenciamiento, tratamiento de datos y dependencia de proveedores.</div></div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:30px;padding-top:26px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">Cada decisión crítica tiene owner, autoridad, criterio, evidencia y trazabilidad.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Contract architecture" data-screen-label="13 Contract architecture" data-speaker-notes="Contracts are part of the operating system. Seis niveles que convierten acuerdos empresariales en reglas operativas." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Contract architecture</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">13 / 16</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:32ch;">Los contratos son parte del sistema operativo</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:16px;">
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 250px;">RELATIONSHIP</span>
+        <div style="flex:1;background:rgba(9,96,109,0.3);border-top:2px solid #09606D;padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:33px;font-weight:700;letter-spacing:-0.026em;">MSA</span><span style="font-size:25px;color:#48555a;">marco de la relación comercial</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 250px;">SCOPE</span>
+        <div style="flex:1;background:rgba(9,96,109,0.22);border-top:1px solid rgba(18,41,44,0.2);padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:33px;font-weight:700;letter-spacing:-0.026em;">SOW</span><span style="font-size:25px;color:#5c666b;">alcance, entregables y criterios de aceptación</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 250px;">INFORMATION</span>
+        <div style="flex:1;display:flex;gap:18px;">
+          <div style="flex:1;background:rgba(9,96,109,0.16);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">NDA</span><span style="font-size:25px;color:#5c666b;margin-left:18px;">confidencialidad</span></div>
+          <div style="flex:1;background:rgba(9,96,109,0.16);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">DPA</span><span style="font-size:25px;color:#5c666b;margin-left:18px;">datos personales</span></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 250px;">TECHNOLOGY</span>
+        <div style="flex:1;display:flex;gap:18px;">
+          <div style="flex:1;background:rgba(9,96,109,0.11);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">IP Schedule</span><span style="font-size:25px;color:#5c666b;margin-left:18px;">activos y licencias</span></div>
+          <div style="flex:1;background:rgba(9,96,109,0.11);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">Security Addendum</span><span style="font-size:25px;color:#5c666b;margin-left:18px;">controles</span></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 250px;">OPERATION</span>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">SLA / Support</span><span style="font-size:25px;color:#5c666b;">niveles de servicio, severidades y tiempos</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#09606D;flex:0 0 250px;">EVOLUTION</span>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:31px;font-weight:700;letter-spacing:-0.024em;color:#09606D;">Change Orders</span><span style="font-size:25px;color:#5c666b;">nuevos requerimientos sin contaminar el alcance</span></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:22px;font-size:27px;font-weight:700;letter-spacing:-0.018em;">Los contratos son la arquitectura que convierte acuerdos empresariales en reglas operativas.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Continuity" data-screen-label="14 Business continuity and exit readiness" data-speaker-notes="Una arquitectura profesional contempla qué ocurre cuando algo falla, cambia o termina." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Continuity &amp; exit readiness</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">14 / 16</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:38ch;">Una arquitectura profesional contempla qué ocurre cuando algo falla, cambia o termina</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:18px;">OPERATE</div>
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.026em;margin-bottom:18px;">Operación estable</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.75;">Backups<br />Soporte<br />Documentación<br />Observabilidad</div>
+        </div>
+        <div style="flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:18px;">INCIDENT</div>
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.026em;margin-bottom:18px;">Respuesta ante fallas</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.75;">Response<br />Evidence<br />Recovery<br />Comunicación</div>
+        </div>
+        <div style="flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:1;border-top:2px solid #09606D;padding:26px 0 0 40px;background:rgba(9,96,109,0.08);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:18px;">TRANSITION</div>
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.026em;margin-bottom:18px;color:#09606D;">Salida ordenada</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.75;">Data export<br />Knowledge transfer<br />Portability<br />Exit plan</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">Un cliente no debería quedar atrapado por dependencia técnica. La continuidad se diseña, se documenta y se prueba.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Principios" data-screen-label="15 Cómo Atlas protege a ambas partes" data-speaker-notes="Cuatro principios ejecutivos. El gobierno reduce ambigüedad sin frenar la ejecución." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-3-1.png" alt="Trayectoria de trabajo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.2;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(13,21,34,0.94) 0%, rgba(13,21,34,0.88) 60%, rgba(13,21,34,0.96) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">EXECUTIVE PRINCIPLES</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">15 / 16</span>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="font-size:54px;line-height:1.04;letter-spacing:-0.036em;font-weight:700;margin:0 0 40px;max-width:26ch;">Cómo Atlas protege a ambas partes</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);column-gap:60px;border-top:1px solid rgba(255,255,255,0.18);padding-top:28px;">
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">01</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;margin-bottom:12px;">Claridad de activos</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Cada capa de datos, materiales, tecnología y componentes tiene origen y condiciones declaradas.</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">02</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;margin-bottom:12px;">Responsabilidad explícita</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Quién decide, quién aprueba y quién responde queda documentado antes de construir.</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">03</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;margin-bottom:12px;">Evidencia conservada</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Decisiones, pruebas, aceptaciones y releases quedan trazables para ambas partes.</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">04</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;margin-bottom:12px;">Continuidad garantizada</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;">Respaldo, portabilidad y transferencia de conocimiento previstas desde el diseño.</div></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;font-size:31px;font-weight:700;line-height:1.3;letter-spacing:-0.022em;">El gobierno reduce la ambigüedad sin frenar la ejecución.</div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Legal baseline" data-screen-label="16 Mexico legal baseline" data-speaker-notes="Referencias normativas del marco mexicano. El modelo se adapta a jurisdicción, industria, tratamiento de datos y arquitectura de cada proyecto." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">MEXICO LEGAL BASELINE</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">16 / 16</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:38px;">
+      <h2 style="font-size:46px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 42%;">Marco normativo de referencia</h2>
+      <p style="font-size:26px;line-height:1.5;color:#b8c2ce;margin:6px 0 0;flex:1;font-weight:400;">Fuentes oficiales que sustentan el modelo contractual y de compliance. Se adapta a la jurisdicción, industria, tratamiento de datos y arquitectura específica de cada proyecto.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:90px;row-gap:0;">
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding:24px 0 26px;"><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.28;margin-bottom:12px;">Ley Federal del Derecho de Autor</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;margin-bottom:10px;">Software, código fuente/objeto, obra por encargo, transmisión y licencia de derechos.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.02em;color:#7fc4cb;word-break:break-all;">diputados.gob.mx/LeyesBiblio/pdf/LFDA.pdf</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding:24px 0 26px;"><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.28;margin-bottom:12px;">Reforma LFDA · DOF 14/05/2026</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;margin-bottom:10px;">Programas de computación, incluidos programas de inteligencia artificial.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.02em;color:#7fc4cb;word-break:break-all;">diputados.gob.mx/LeyesBiblio/ref/lfda/LFDA_ref16_14may26.pdf</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding:24px 0 26px;"><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.28;margin-bottom:12px;">Ley Federal de Protección de Datos Personales en Posesión de los Particulares</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;margin-bottom:10px;">Tratamiento, responsable y encargado, confidencialidad, seguridad y vulneraciones.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.02em;color:#7fc4cb;word-break:break-all;">diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding:24px 0 26px;"><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.28;margin-bottom:12px;">Ley Federal de Protección a la Propiedad Industrial</div><div style="font-size:25px;color:#b8c2ce;line-height:1.42;margin-bottom:10px;">Secretos industriales, confidencialidad, acceso restringido y medidas de protección.</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.02em;color:#7fc4cb;word-break:break-all;">diputados.gob.mx/LeyesBiblio/pdf/LFPPI.pdf</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;">Material estratégico de Atlas Tech. No sustituye dictamen jurídico externo sobre contratos específicos ya firmados.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

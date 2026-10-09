@@ -1,0 +1,210 @@
+
+
+
+
+ATLAS ONE
+Entendimiento y marco técnico de ejecución
+Mejoras para remisiones, trazabilidad documental, facturación y pago
+[TABLE]
+| Dirigido a | Equipo DASIC |
+| Fecha | 5 de agosto de 2026 |
+| Clasificación | Propuesta técnica para validación funcional |
+[/TABLE]
+
+[TABLE]
+| Base documentalEl contenido se construyó a partir del estatus productivo compartido por Atlas, del documento “Solicitudes de ERP” proporcionado por miembros de DASIC y del backlog técnico preparado para su ejecución. Las capacidades reportadas como construidas permanecen sujetas a validación funcional y pruebas de aceptación. |
+[/TABLE]
+
+
+1. Propósito del documento
+Este documento resume lo que Atlas entiende de las solicitudes compartidas por el equipo DASIC, distingue lo que ya fue reportado como construido de lo que todavía debe validarse o desarrollarse, y establece el marco funcional y técnico con el que se ejecutarán los cambios. Su objetivo es alinear alcance, invariantes de dominio, prioridades y criterios de aceptación antes de liberar modificaciones en producción.
+[TABLE]
+| Resultado esperadoConsolidar un flujo confiable de cotización a entrega y cobranza, evitando recaptura, manteniendo la trazabilidad de documentos y permitiendo remisiones parciales sin alterar la cotización de origen. |
+[/TABLE]
+
+2. Contexto operativo
+Atlas ONE · DASIC Industrial ya opera con datos reales. El cotizador es el núcleo de uso diario y el módulo de remisiones comenzó a utilizarse durante la semana actual. El estatus técnico más reciente reporta remisiones v2 con entregas parciales, cantidades pendientes, unidades comerciales, conversión desde cotización y un editor híbrido semejante al cotizador. Por ello, varias solicitudes pueden encontrarse implementadas total o parcialmente y deben validarse antes de generar código adicional.
+[TABLE]
+| Señal productiva | Lectura |
+| 192 cotizaciones y 618 líneas | El proceso comercial ya es crítico y debe preservarse durante los cambios. |
+| 11 remisiones emitidas | El flujo está entrando en operación y debe estabilizarse con usuarios reales. |
+| 1,026 movimientos de stock | Las remisiones deben respetar reservas, liberaciones y cantidades pendientes. |
+| 61 canceladas y 75 pendientes | Se requiere mayor trazabilidad de estados y causas antes de interpretar conversión. |
+| 32 endpoints sin interfaz | Existen capacidades de backend que pueden activarse sin reconstruir el dominio. |
+[/TABLE]
+
+3. North Star y objetivo de producto
+[TABLE]
+| Product GoalCerrar el flujo cotización → remisión parcial/total → entrega → factura → CxC → pago dentro de Atlas ONE, con trazabilidad, permisos y datos consistentes, sin recaptura y sin alterar documentos aprobados. |
+[/TABLE]
+
+La prioridad no es agregar módulos aislados, sino completar el golden path operativo que ya tiene uso real. Cada cambio deberá demostrar que mejora la continuidad del flujo, la calidad del dato o el control operativo.
+4. Flujo que entendemos que se desea consolidar
+[TABLE]
+| Cotización | Selección de partidas | Remisión parcial o total | Entrega | Factura de ingreso | Pago / complemento | Cierre |
+[/TABLE]
+
+La remisión debe poder generarse desde una cotización o desde el propio módulo de remisiones. En ambos casos conservará la relación con la cotización original, permitirá seleccionar únicamente las partidas que se entregarán y mantendrá visibles las cantidades remitidas y pendientes.
+5. Matriz de entendimiento y cobertura preliminar
+[TABLE]
+| ID | Solicitud entendida | Lectura actual |
+| REQ-01 | Seleccionar partidas de una cotización y habilitar “Generar remisión”. | Reportado en remisiones v2; validar UX y reglas. |
+| REQ-02 | Copiar cliente, moneda, atención, producto, cantidad, catálogo, partida y unidad. | Parcial / prueba campo por campo. |
+| REQ-03 | Generar un folio independiente con estructura de remisión. | Validar consecutivo, concurrencia y formato. |
+| REQ-04 | Editar datos de la remisión sin borrar ni modificar la cotización. | Reportado; delimitar campos editables. |
+| REQ-05 | Crear remisión desde su módulo buscando una cotización. | Reportado como conversión; validar buscador y selección. |
+| REQ-06 | Manejar entregas parciales y productos pendientes. | Reportado; requiere UAT y prueba de concurrencia. |
+| REQ-07 | Vista/PDF con título REMISIÓN, unidad y sin subtotal cuando aplique. | Revisión visual y ajuste de plantilla. |
+| REQ-08 | Agregar autorizado, firma y documentos relacionados. | No confirmado; validar/desarrollar. |
+| REQ-09 | Indicar si está facturado y capturar factura de ingreso. | Pendiente; referencia y estado, sin timbrado. |
+| REQ-10 | Indicar si está pagado y capturar complemento de pago. | Pendiente; sincronizar con CxC. |
+[/TABLE]
+
+6. Supuestos y principios técnicos de ejecución
+Las funcionalidades reportadas como construidas no se consideran terminadas hasta pasar validación funcional, pruebas automatizadas y UAT.
+Toda modificación preservará multi-tenancy, permisos, auditoría, compatibilidad con datos existentes y capacidad de rollback.
+La emisión de CFDI y complementos de pago queda fuera del alcance actual; se modelarán estados, referencias y vínculos internos.
+No se reescribirá el cotizador ni el módulo de remisiones si una extensión localizada resuelve el requerimiento con menor riesgo.
+Las reglas no especificadas se documentarán como decisión pendiente; no se codificarán supuestos implícitos.
+Las invariantes de cantidades, folios y estados se implementarán en el dominio/backend, no únicamente en la interfaz.
+La ejecución se realizará mediante microciclos agénticos de alcance reducido, con evidencia funcional, pruebas y criterios de aceptación explícitos.
+7. Reglas de negocio propuestas para validación
+La cotización de origen no se modifica al eliminar una partida de la remisión.
+La cantidad a remitir no puede superar la cantidad pendiente, salvo permiso especial y evento auditado.
+Cada remisión conserva relación con su cotización y con las remisiones previas de la misma operación.
+El folio de remisión es independiente, único por tenant y generado del lado del servidor.
+Los estados de entrega, facturación y pago son distintos y no deben mezclarse en una sola etiqueta.
+Una factura de ingreso y un complemento de pago son referencias documentales diferentes.
+Los cambios comerciales sensibles —precio, descuento, costo, margen, impuestos o moneda— requieren autorización, bitácora y reglas por estado.
+Las cantidades pendientes se recalculan de forma transaccional al emitir, cancelar o revertir una remisión.
+[TABLE]
+| Decisión de dominio relevanteDASIC solicita editar utilidad, precio y tiempos dentro de la remisión. Atlas propone diferenciar campos logísticos editables de campos comerciales controlados, porque alterar la condición comercial después de aprobar la cotización puede romper margen, cobranza, auditoría e integración futura con facturación. |
+[/TABLE]
+
+8. Definition of Ready y Definition of Done
+[TABLE]
+| Definition of Ready | Definition of Done |
+| Historia vinculada con una solicitud o hallazgo productivo. | Criterios de aceptación demostrados en staging. |
+| Regla de negocio confirmada por Product Owner. | Pruebas unitarias, integración y regresión aprobadas. |
+| Diseño de datos, permisos e invariantes definido. | Migración reversible y datos existentes preservados. |
+| Casos feliz, parcial, error y concurrencia definidos. | Bitácora, observabilidad y manejo de errores incluidos. |
+| Dependencias y fuera de alcance explícitos. | Documentación técnica y guía de usuario actualizadas. |
+| Datos de prueba y responsables UAT asignados. | Aprobación UAT y plan de despliegue/reversa preparados. |
+[/TABLE]
+
+9. Backlog técnico priorizado
+La prioridad P0 corresponde a invariantes, trazabilidad o riesgos operativos. P1 corresponde a capacidades importantes que pueden ejecutarse después de asegurar el golden path. Los Story Points (SP) expresan complejidad relativa, no duración calendario.
+[TABLE]
+| ID | Historia | Resultado de negocio/técnico | Pri. | SP |
+| E0 / US-00 | Auditar implementación actual contra las 10 solicitudes | Confirmar qué ya existe para evitar reconstrucción y regresiones. | P0 | 5 |
+| E0 / US-01 | Definir estados y modelo documental | Separar entrega, facturación y pago para conocer el estado real. | P0 | 5 |
+| E1 / US-10 | Seleccionar partidas desde cotización | Seleccionar líneas para generar una remisión parcial o total. | P0 | 8 |
+| E1 / US-11 | Crear remisión sin modificar cotización | Quitar líneas de la remisión sin borrar el documento original. | P0 | 5 |
+| E1 / US-12 | Buscar cotización desde remisiones | Importar una cotización y elegir qué surtir. | P0 | 5 |
+| E1 / US-13 | Controlar cantidades remitidas y pendientes | Impedir sobreentregas y consultar saldo por partida. | P0 | 8 |
+| E1 / US-14 | Generar folio único de remisión | Folios independientes, correlativos y auditables. | P0 | 5 |
+| E2 / US-20 | Editor con campos permitidos | Corregir información logística sin romper la condición comercial. | P0 | 8 |
+| E2 / US-21 | Plantilla/PDF oficial | Documento claramente identificado como REMISIÓN. | P0 | 8 |
+| E3 / US-30 | Autorizado y firma | Seleccionar o capturar al responsable que autoriza. | P1 | 3 |
+| E3 / US-31 | Documentos relacionados | Registrar cotización, reporte o factura y ocultar la sección vacía. | P1 | 5 |
+| E4 / US-40 | Estatus facturado y factura de ingreso | Marcar y referenciar la factura asociada. | P1 | 5 |
+| E4 / US-41 | Estatus pagado y complemento | Distinguir pago y complemento de la factura de ingreso. | P1 | 5 |
+| E4 / US-42 | Sincronización con CxC | Evitar contradicciones entre estados y transacciones. | P0 | 8 |
+| E5 / US-50 | Permisos y auditoría | Registrar quién modificó cantidades, documentos y estados. | P0 | 5 |
+| E5 / US-51 | Filtros y seguimiento consolidado | Filtrar por cliente, vendedor, entrega, factura y pago. | P1 | 5 |
+| E6 / US-60 | Pruebas end-to-end y regresión | Liberar sin afectar cotizaciones, reservas, remisiones o CxC. | P0 | 8 |
+| E6 / US-61 | Eliminar legacy y optimizar KPI | Reducir deuda y evitar cargas completas de catálogo. | P1 | 5 |
+[/TABLE]
+
+10. Criterios de aceptación por épica
+E0. Descubrimiento, reglas y arquitectura
+Existe una matriz por requisito con evidencia: ruta UI, endpoint, modelo, prueba y brecha.
+Los estados de cotización, remisión, entrega, facturación y pago están definidos y no se duplican.
+Cada cambio de modelo incluye estrategia de migración, rollback e impacto multi-tenant.
+E1. Cotización → remisión
+“Generar remisión” permanece deshabilitado hasta seleccionar al menos una partida válida.
+La remisión conserva identificadores de origen por documento y por línea.
+Eliminar una línea de la remisión no altera la línea de cotización.
+La suma remitida no supera la cantidad cotizada, excepto con permiso y evento auditado.
+Los pendientes se recalculan transaccionalmente ante emisión, cancelación o ajuste.
+Dos usuarios no pueden consumir simultáneamente la misma cantidad sin control de concurrencia.
+El folio se genera en backend y es único por tenant.
+E2–E3. Editor, PDF, firma y documentos relacionados
+El encabezado, breadcrumbs, acciones y PDF dicen “Remisión”, no “Cotización”.
+La unidad de medida se presenta en la columna aprobada por DASIC.
+Precios, subtotales e impuestos se muestran u ocultan mediante configuración.
+Los campos logísticos editables y los comerciales controlados están diferenciados.
+El autorizado queda persistido y se muestra bajo la línea de firma.
+Documentos relacionados admite texto multilínea y la sección se oculta si está vacía.
+La vista previa coincide con el PDF final y soporta múltiples páginas y entregas parciales.
+E4. Facturación, pago y CxC
+Facturado y pagado son estados independientes.
+Al marcar facturado se exige referencia de factura de ingreso con validación básica.
+Al registrar pago se conserva fecha, monto o transacción CxC y, cuando aplique, referencia del complemento.
+Los pagos parciales no marcan automáticamente la operación como pagada en su totalidad.
+No se permite un estado pagado que contradiga el saldo de CxC, salvo excepción documentada.
+E5–E6. Seguridad, calidad y operación
+Toda mutación sensible genera evento con usuario, fecha, valor anterior y valor nuevo.
+Los permisos separan edición comercial, almacén, facturación y cobranza.
+Se cubren entrega parcial, cancelación, reemisión, concurrencia y rollback.
+El endpoint legacy de KPIs deja de cargar el catálogo completo.
+El editor anterior se elimina únicamente después de verificar ausencia de rutas activas.
+11. Casos UAT mínimos
+[TABLE]
+| Caso | Escenario | Resultado esperado |
+| UAT-01 | Cotización con 5 líneas; seleccionar 3 y generar remisión. | Se crea remisión con 3 líneas y la cotización conserva 5. |
+| UAT-02 | Remitir parcialmente 4 de 10 unidades. | Quedan 6 pendientes y se visualiza el historial. |
+| UAT-03 | Crear segunda remisión por el saldo. | No permite exceder 6; al completar queda pendiente 0. |
+| UAT-04 | Cancelar una remisión emitida. | Se restauran cantidades conforme a la regla y queda evento. |
+| UAT-05 | Dos usuarios intentan remitir el mismo saldo. | Solo una operación confirma; la otra recibe conflicto recuperable. |
+| UAT-06 | Editar descripción logística y autorizado. | La cotización no cambia; el PDF refleja la remisión. |
+| UAT-07 | Agregar y retirar documentos relacionados. | La sección aparece o se oculta correctamente. |
+| UAT-08 | Marcar facturado con referencia. | La factura de ingreso aparece en seguimiento. |
+| UAT-09 | Registrar pago parcial y total. | CxC y estado pagado permanecen consistentes. |
+| UAT-10 | Intentar editar precio sin permiso. | La acción se bloquea o exige autorización y queda auditada. |
+[/TABLE]
+
+12. Riesgos técnicos y controles
+[TABLE]
+| Riesgo | Impacto | Control |
+| Sobreentrega por concurrencia | Alta | Transacciones, locks/versionado y pruebas simultáneas. |
+| Desalineación entre remisión y CxC | Alta | Servicio de dominio único e idempotencia. |
+| Edición de precio/margen tras aprobación | Alta | Permisos, bloqueo por estado y auditoría. |
+| Duplicación de función ya construida | Media | Auditoría previa con evidencia de cobertura. |
+| PDF distinto a vista | Media | Fuente de datos única y pruebas de render/snapshot. |
+| Cambio de folio en producción | Media | Migración no destructiva y coexistencia controlada. |
+| Adopción baja | Media | UAT con usuarios intensivos, microcapacitación y métricas. |
+[/TABLE]
+
+13. Forma de trabajo y aceptación
+Atlas convierte cada bloque funcional aprobado en especificaciones y Task Packs ejecutables por agentes de desarrollo.
+La implementación se organiza en microciclos medidos en horas o días, con alcance reducido, evidencia funcional y criterios de aceptación explícitos.
+No se fijan calendarios de varias semanas por defecto; cualquier estimación se define únicamente cuando el alcance, dependencias e invariantes están cerrados.
+Vania y Axel priorizan y validan el comportamiento funcional; los stakeholders participan en las pruebas de los flujos que les corresponden.
+Los cambios se validan primero en un ambiente seguro con datos controlados y después mediante pruebas UAT.
+Atlas corrige defectos del alcance acordado y prepara la liberación con respaldo, observabilidad y plan de reversa.
+Las nuevas solicitudes o cambios de alcance se documentan como backlog y se ejecutan en un microciclo posterior.
+14. Responsabilidades
+[TABLE]
+| Rol | Responsable | Compromisos principales |
+| DASIC – Product Owners funcionales | Vania y Axel | Priorizar, aclarar reglas, proporcionar ejemplos reales y aceptar o rechazar cada historia. |
+| Usuarios clave | Todos los stakeholders de DASIC | Probar los flujos correspondientes a su operación y registrar observaciones UAT. |
+| Atlas – Producto | Emmanuel Campos | Traducir solicitudes a especificaciones, proteger alcance y mantener trazabilidad de decisiones. |
+| Atlas – Desarrollo | Israel Romero y Leonardo González | Analizar arquitectura, implementar, migrar, probar, documentar y desplegar. |
+| Atlas – QA | Equipo staff junior de Atlas | Ejecutar regresión, casos UAT asistidos, validaciones de permisos y evidencia de calidad. |
+[/TABLE]
+
+15. Criterios de éxito
+Una remisión parcial puede generarse en menos de dos minutos desde una cotización existente.
+Ninguna remisión modifica accidentalmente la cotización de origen.
+Las cantidades remitidas y pendientes son consistentes en todas las vistas y bajo concurrencia.
+El documento de remisión contiene únicamente la información aprobada por DASIC.
+Facturación, pago y complemento de pago se distinguen y consultan sin ambigüedad.
+Los stakeholders completan los casos UAT sin defectos críticos.
+El flujo cotización → remisión → CxC conserva bitácora, permisos y capacidad de reversa.
+[TABLE]
+| Siguiente paso propuestoRealizar una validación funcional breve con Vania, Axel y stakeholders de almacén/cobranza. Se recorrerán dos cotizaciones reales, una remisión parcial y un escenario de pago para confirmar las invariantes antes de ejecutar los microciclos técnicos. |
+[/TABLE]
+
+Anexo. Fuente y alcance de esta interpretación
+Fuente primaria: documento “Solicitudes de ERP” compartido por miembros de DASIC, con requerimientos sobre generación y vista de remisiones, búsqueda de cotizaciones, documentos relacionados y seguimiento de facturación y pago. Fuente contextual: estatus productivo y técnico de Atlas ONE · DASIC Industrial compartido el 5 de agosto de 2026, así como el backlog técnico Scrum preparado para su ejecución. Este documento funciona como base de alineación y aceptación; las brechas se confirmarán con evidencia del repositorio y pruebas funcionales.

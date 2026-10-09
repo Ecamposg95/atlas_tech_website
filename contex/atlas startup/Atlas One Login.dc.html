@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+<style>
+  html, body { margin: 0; padding: 0; background: #050a16; }
+  * { box-sizing: border-box; }
+  a { color: #7dd3fc; text-decoration: none; }
+  a:hover { color: #bae6fd; }
+  input { font-family: 'Montserrat', sans-serif; }
+  input::placeholder { color: rgba(232,232,234,0.32); }
+  input:focus { outline: none; }
+  button:focus-visible { outline: 2px solid #38bdf8; outline-offset: 3px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;width:100%;overflow:hidden;background:#050a16;font-family:'Montserrat',sans-serif;color:#E8E8EA;-webkit-font-smoothing:antialiased">
+
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,#04091a 0%,#091634 48%,#04070f 100%),radial-gradient(60% 50% at 30% 34%, rgba(30,150,255,0.34), transparent 70%);pointer-events:none"></div>
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 70% 40%, rgba(0,0,0,0) 30%, rgba(3,6,14,0.62) 100%);pointer-events:none"></div>
+
+  <div style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;padding:44px 72px 36px">
+
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 375.71 300" style="width:30px;height:30px;color:#fff;flex:none" fill="currentColor">
+          <polygon points="252.36 236.3 195.47 110.84 140.66 236.21 98.8 235.8 174.88 71.93 216.92 71.85 295.23 235.73 252.36 236.3"/>
+          <polygon points="235.1 264.18 156.85 264.18 169.04 236.37 222.59 236.45 235.1 264.18"/>
+          <path d="M322.77,271.46c-5.63,7.02-12.31,13.43-18.68,19.74-31,30.74-75.65,46.25-119.14,44.73-92.04-3.23-164.14-80-162.22-171.68C24.29,89.2,76.26,23.61,149.63,4.95,164.96,1.05,180.47-.39,196.78.09c49.74,1.45,95.91,25.54,126.33,64.35,47.43,60.52,48.14,146.58-.34,207.02ZM285.77,268.38c61.55-58.4,56.66-157.12-9.84-209.36-54.27-42.64-132.41-38.36-181.82,10.11-54.43,53.4-55.5,140.38-2.56,195.07,52.52,54.26,139.28,56.32,194.22,4.19Z"/>
+        </svg>
+        <div style="display:flex;align-items:baseline;gap:1px;font-size:14px;letter-spacing:0.16em;text-transform:uppercase">
+          <span style="font-weight:800">ATLAS</span><span style="font-weight:400;color:rgba(232,232,234,0.66)">_ONE</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(255,255,255,0.12);border-radius:999px;background:rgba(4,10,22,0.42);backdrop-filter:blur(14px)">
+        <button onClick="{{ setEs }}" style="{{ esBtn }}">ES</button>
+        <button onClick="{{ setEn }}" style="{{ enBtn }}">EN</button>
+      </div>
+    </header>
+
+    <main style="flex:1;display:grid;grid-template-columns:1.06fr 0.94fr;gap:72px;align-items:center;padding:56px 0 40px">
+
+      <section style="display:flex;flex-direction:column;align-items:flex-start;gap:0;max-width:640px">
+        <div style="font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#7dd3fc;margin-bottom:26px">{{ t.kicker }}</div>
+        <h1 style="margin:0;font-size:80px;line-height:0.98;font-weight:800;letter-spacing:-0.03em;color:#fff;text-wrap:balance">{{ t.h1 }}</h1>
+        <p style="margin:26px 0 0;font-size:18px;line-height:1.6;font-weight:300;color:rgba(232,232,234,0.62);max-width:31ch;text-wrap:pretty">{{ t.sub }}</p>
+        <div style="display:flex;align-items:center;gap:18px;margin-top:44px">
+          <button onClick="{{ noop }}" style="display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:linear-gradient(120deg,#122a5c 0%,#0d1b3c 52%,#3d1220 100%);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.04em;cursor:pointer;box-shadow:0 0 0 1px rgba(56,189,248,0.10),0 18px 44px -18px rgba(56,189,248,0.45),0 10px 40px -20px rgba(220,38,38,0.40);transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 0 0 1px rgba(56,189,248,0.22),0 22px 54px -18px rgba(56,189,248,0.60),0 12px 46px -18px rgba(220,38,38,0.50)" style-active="transform:translateY(0)">
+            {{ t.learn }}
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </button>
+        </div>
+      </section>
+
+      <section style="display:flex;justify-content:flex-end">
+        <div style="position:relative;width:100%;max-width:432px;border:1px solid rgba(255,255,255,0.14);border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.035) 46%,rgba(255,255,255,0.06) 100%);backdrop-filter:blur(34px) saturate(150%);-webkit-backdrop-filter:blur(34px) saturate(150%);box-shadow:0 40px 90px -30px rgba(0,0,0,0.75),inset 0 1px 0 rgba(255,255,255,0.20);padding:40px 36px 34px;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)"></div>
+          <div style="position:absolute;inset:0;opacity:{{ sheen }};background:radial-gradient(80% 55% at 20% 0%, rgba(125,211,252,0.16), transparent 70%);pointer-events:none"></div>
+
+          <div style="position:relative">
+            <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+              <div>
+                <h2 style="margin:0;text-align:center;font-size:22px;font-weight:600;letter-spacing:-0.01em;color:#fff">{{ t.signin }}</h2>
+                <p style="margin:10px 0 0;text-align:center;font-size:13px;font-weight:300;color:rgba(232,232,234,0.50)">{{ t.signinSub }}</p>
+
+                <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;align-items:flex-start;gap:10px;margin-top:24px;padding:12px 14px;border:1px solid rgba(248,113,113,0.34);border-radius:14px;background:rgba(127,29,29,0.24);animation:riseIn .24s ease both">
+                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;flex:none;color:#fca5a5;margin-top:1px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                    <span style="font-size:12.5px;line-height:1.45;font-weight:400;color:#fecaca">{{ error }}</span>
+                  </div>
+                </sc-if>
+
+                <div style="display:flex;flex-direction:column;gap:16px;margin-top:26px">
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <label style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(232,232,234,0.52)">{{ t.user }}</label>
+                    <input type="text" value="{{ user }}" onChange="{{ onUser }}" placeholder="{{ t.userPh }}" autoComplete="username" style="{{ userInput }}" style-focus="border-color:rgba(125,211,252,0.85);background:rgba(3,7,17,0.70);box-shadow:0 0 0 4px rgba(56,189,248,0.16), inset 0 1px 0 rgba(255,255,255,0.08)"></input>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <label style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(232,232,234,0.52)">{{ t.pass }}</label>
+                    <div style="position:relative;display:flex">
+                      <input type="{{ passType }}" value="{{ pass }}" onChange="{{ onPass }}" onKeyDown="{{ onKey }}" placeholder="{{ t.passPh }}" autoComplete="current-password" style="{{ passInput }}" style-focus="border-color:rgba(125,211,252,0.85);background:rgba(3,7,17,0.70);box-shadow:0 0 0 4px rgba(56,189,248,0.16), inset 0 1px 0 rgba(255,255,255,0.08)"></input>
+                      <button onClick="{{ toggleShow }}" aria-label="{{ t.showPass }}" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:0;border-radius:999px;background:transparent;color:rgba(232,232,234,0.48);cursor:pointer;transition:color .15s ease,background .15s ease" style-hover="color:#fff;background:rgba(255,255,255,0.08)">
+                        <sc-if value="{{ show }}" hint-placeholder-val="{{ false }}">
+                          <svg viewBox="0 0 24 24" style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.7 5.1A9.8 9.8 0 0 1 12 5c7 0 10 7 10 7a13.2 13.2 0 0 1-1.7 2.7"></path><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 7 10 7a9.7 9.7 0 0 0 5.4-1.6"></path><path d="M14.1 14.1a3 3 0 1 1-4.2-4.2"></path><path d="M2 2l20 20"></path></svg>
+                        </sc-if>
+                        <sc-if value="{{ hidden }}" hint-placeholder-val="{{ true }}">
+                          <svg viewBox="0 0 24 24" style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </sc-if>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px">
+                  <button onClick="{{ toggleRemember }}" style="display:inline-flex;align-items:center;gap:10px;padding:0;border:0;background:transparent;color:rgba(232,232,234,0.62);font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:400;cursor:pointer" style-hover="color:#fff">
+                    <span style="{{ boxStyle }}">
+                      <sc-if value="{{ remember }}" hint-placeholder-val="{{ true }}">
+                        <svg viewBox="0 0 24 24" style="width:12px;height:12px" fill="none" stroke="#050a16" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg>
+                      </sc-if>
+                    </span>
+                    {{ t.remember }}
+                  </button>
+                  <button onClick="{{ goForgot }}" style="padding:0;border:0;background:transparent;color:#7dd3fc;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer" style-hover="color:#bae6fd">{{ t.forgot }}</button>
+                </div>
+
+                <button onClick="{{ submit }}" disabled="{{ loading }}" style="{{ submitBtn }}" style-hover="background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.30)" style-active="background:rgba(255,255,255,0.10)">
+                  <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+                    <span style="width:15px;height:15px;border:2px solid rgba(255,255,255,0.28);border-top-color:#fff;border-radius:999px;animation:spin .7s linear infinite"></span>
+                  </sc-if>
+                  {{ submitLabel }}
+                </button>
+
+                <sc-if value="{{ hint }}" hint-placeholder-val="{{ true }}">
+                  <p style="margin:16px 0 0;text-align:center;font-size:11px;font-weight:300;letter-spacing:0.02em;color:rgba(232,232,234,0.34)">{{ t.hint }}</p>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isForgot }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:riseIn .26s ease both">
+                <h2 style="margin:0;text-align:center;font-size:22px;font-weight:600;letter-spacing:-0.01em;color:#fff">{{ t.recover }}</h2>
+                <p style="margin:10px 0 0;text-align:center;font-size:13px;font-weight:300;line-height:1.55;color:rgba(232,232,234,0.50)">{{ t.recoverSub }}</p>
+                <div style="display:flex;flex-direction:column;gap:8px;margin-top:26px">
+                  <label style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(232,232,234,0.52)">{{ t.user }}</label>
+                  <input type="text" value="{{ user }}" onChange="{{ onUser }}" placeholder="{{ t.userPh }}" style="{{ userInput }}"></input>
+                </div>
+                <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:12px 0 0;font-size:12px;font-weight:400;color:#fca5a5">{{ error }}</p>
+                </sc-if>
+                <button onClick="{{ sendReset }}" disabled="{{ loading }}" style="{{ submitBtn }}" style-hover="background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.30)">
+                  <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+                    <span style="width:15px;height:15px;border:2px solid rgba(255,255,255,0.28);border-top-color:#fff;border-radius:999px;animation:spin .7s linear infinite"></span>
+                  </sc-if>
+                  {{ sendLabel }}
+                </button>
+                <button onClick="{{ goLogin }}" style="display:block;width:100%;margin-top:14px;padding:0;border:0;background:transparent;color:rgba(232,232,234,0.56);font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:400;cursor:pointer" style-hover="color:#fff">{{ t.back }}</button>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isSent }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 6px;animation:riseIn .26s ease both">
+                <span style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid rgba(125,211,252,0.42);border-radius:999px;background:rgba(56,189,248,0.12);color:#7dd3fc;margin-bottom:20px">
+                  <svg viewBox="0 0 24 24" style="width:22px;height:22px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2.5 6 9.5 7 9.5-7"></path></svg>
+                </span>
+                <h2 style="margin:0;font-size:20px;font-weight:600;color:#fff">{{ t.sentTitle }}</h2>
+                <p style="margin:12px 0 0;font-size:13px;font-weight:300;line-height:1.6;color:rgba(232,232,234,0.54);max-width:30ch">{{ t.sentSub }}</p>
+                <button onClick="{{ goLogin }}" style="margin-top:26px;padding:14px 26px;border:1px solid rgba(255,255,255,0.22);border-radius:999px;background:rgba(255,255,255,0.10);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.03em;cursor:pointer" style-hover="background:rgba(255,255,255,0.18)">{{ t.backToSignin }}</button>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.08)">
+      <div style="display:flex;align-items:center;gap:16px">
+        <a href="#" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,0.12);border-radius:999px;color:rgba(232,232,234,0.60);transition:color .15s ease,border-color .15s ease" style-hover="color:#fff;border-color:rgba(255,255,255,0.34)">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+        </a>
+        <a href="#" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,0.12);border-radius:999px;color:rgba(232,232,234,0.60);transition:color .15s ease,border-color .15s ease" style-hover="color:#fff;border-color:rgba(255,255,255,0.34)">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v4H8v7h4v-7h3l1-4h-4V7.5A.5.5 0 0 1 12.5 7H15z"></path></svg>
+        </a>
+        <a href="#" aria-label="Twitter" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,0.12);border-radius:999px;color:rgba(232,232,234,0.60);transition:color .15s ease,border-color .15s ease" style-hover="color:#fff;border-color:rgba(255,255,255,0.34)">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 5.9c-.7.3-1.5.5-2.3.6a3.6 3.6 0 0 0-6.2 2.5v.8A10 10 0 0 1 4 5.5s-3.4 7.6 4.2 11a10.4 10.4 0 0 1-6 1.7c7.6 4.2 16.8 0 16.8-9.7 0-.24-.02-.47-.06-.7A6.8 6.8 0 0 0 22 5.9Z"></path></svg>
+        </a>
+      </div>
+      <div style="font-size:11px;font-weight:300;letter-spacing:0.06em;color:rgba(232,232,234,0.30)">{{ t.legal }}</div>
+    </footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;waveSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.2,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Fondo&quot;},&quot;sheen&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.9,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cristal&quot;},&quot;demoHint&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+const COPY = {
+  es: {
+    kicker: "Tu operación, en un solo lugar",
+    h1: "Bienvenido",
+    sub: "Entra y organiza tu operación de forma rápida y sencilla.",
+    learn: "Conocer más",
+    signin: "Iniciar sesión",
+    signinSub: "Accede con tu cuenta de Atlas One",
+    user: "Usuario",
+    userPh: "tu.usuario",
+    pass: "Contraseña",
+    passPh: "••••••••",
+    showPass: "Mostrar contraseña",
+    remember: "Recordarme",
+    forgot: "¿Olvidaste tu contraseña?",
+    submit: "Entrar",
+    submitting: "Verificando…",
+    hint: "Demo: dage / atlas123",
+    errUser: "Escribe tu usuario.",
+    errPass: "Escribe tu contraseña.",
+    errBad: "Usuario o contraseña incorrectos. Verifica e intenta de nuevo.",
+    recover: "Recuperar acceso",
+    recoverSub: "Te enviamos un enlace para restablecer tu contraseña.",
+    send: "Enviar instrucciones",
+    sending: "Enviando…",
+    back: "Volver a iniciar sesión",
+    sentTitle: "Revisa tu correo",
+    sentSub: "Si el usuario existe, en unos minutos recibirás el enlace para restablecer tu contraseña.",
+    backToSignin: "Volver a iniciar sesión",
+    legal: "© 2026 ATLAS_TECH"
+  },
+  en: {
+    kicker: "Your operation, in one place",
+    h1: "Welcome",
+    sub: "Join us and organize your work quickly and conveniently.",
+    learn: "Learn more",
+    signin: "Sign in",
+    signinSub: "Access your Atlas One account",
+    user: "User name",
+    userPh: "your.username",
+    pass: "Password",
+    passPh: "••••••••",
+    showPass: "Show password",
+    remember: "Remember me",
+    forgot: "Forgot password?",
+    submit: "Submit",
+    submitting: "Checking…",
+    hint: "Demo: dage / atlas123",
+    errUser: "Enter your user name.",
+    errPass: "Enter your password.",
+    errBad: "Wrong user name or password. Check and try again.",
+    recover: "Recover access",
+    recoverSub: "We'll send you a link to reset your password.",
+    send: "Send instructions",
+    sending: "Sending…",
+    back: "Back to sign in",
+    sentTitle: "Check your inbox",
+    sentSub: "If the account exists, you'll receive a reset link in a few minutes.",
+    backToSignin: "Back to sign in",
+    legal: "© 2026 ATLAS_TECH"
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: "es", view: "login", user: "", pass: "", show: false, remember: true, loading: false, error: "", bad: "" };
+
+  constructor(props) {
+    super(props);
+    this.canvasRef = React.createRef();
+    this.mx = 0; this.my = 0;
+  }
+
+  componentDidMount() { this.startWaves(); }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("pointermove", this.onMove);
+  }
+
+  startWaves() {
+    const c = this.canvasRef.current;
+    if (!c) return;
+    const ctx = c.getContext("2d");
+    const off = document.createElement("canvas");
+    const octx = off.getContext("2d");
+    const blobs = [
+      { r: 0.62, c: "rgba(30,150,255,0.95)", ax: 0.30, ay: 0.24, sx: 0.000125, sy: 0.000170, ph: 0 },
+      { r: 0.54, c: "rgba(120,175,255,0.72)", ax: 0.32, ay: 0.28, sx: 0.000092, sy: 0.000208, ph: 2.1 },
+      { r: 0.42, c: "rgba(214,44,44,0.52)", ax: 0.28, ay: 0.21, sx: 0.000168, sy: 0.000112, ph: 4.2 },
+      { r: 0.34, c: "rgba(226,240,255,0.60)", ax: 0.24, ay: 0.19, sx: 0.000214, sy: 0.000148, ph: 1.2 }
+    ];
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.w = c.clientWidth || window.innerWidth;
+      this.h = c.clientHeight || window.innerHeight;
+      c.width = Math.max(1, Math.round(this.w * dpr));
+      c.height = Math.max(1, Math.round(this.h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      off.width = Math.max(1, Math.round(this.w / 7));
+      off.height = Math.max(1, Math.round(this.h / 7));
+    };
+    this.onResize = resize;
+    resize();
+    window.addEventListener("resize", resize);
+    this.onMove = (e) => {
+      this.mx = e.clientX / window.innerWidth - 0.5;
+      this.my = e.clientY / window.innerHeight - 0.5;
+    };
+    window.addEventListener("pointermove", this.onMove);
+
+    const frame = (ts) => {
+      const w = this.w, h = this.h;
+      const speed = this.props.waveSpeed ?? 1;
+      const t = ts * speed;
+      const g = ctx.createLinearGradient(0, 0, w, h);
+      g.addColorStop(0, "#04091a");
+      g.addColorStop(0.48, "#091634");
+      g.addColorStop(1, "#04070f");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+
+      const ow = off.width, oh = off.height;
+      octx.clearRect(0, 0, ow, oh);
+      octx.globalCompositeOperation = "lighter";
+      const scale = Math.min(ow, oh);
+      blobs.forEach((b) => {
+        const x = ow * 0.5 + Math.sin(t * b.sx + b.ph) * ow * b.ax + this.mx * ow * 0.10;
+        const y = oh * 0.5 + Math.cos(t * b.sy + b.ph * 1.3) * oh * b.ay + this.my * oh * 0.10;
+        const r = scale * b.r;
+        const rg = octx.createRadialGradient(x, y, 0, x, y, r);
+        rg.addColorStop(0, b.c);
+        rg.addColorStop(0.55, b.c.replace(/[\d.]+\)$/, "0.16)"));
+        rg.addColorStop(1, "rgba(0,0,0,0)");
+        octx.fillStyle = rg;
+        octx.beginPath();
+        octx.arc(x, y, r, 0, 6.2832);
+        octx.fill();
+      });
+      octx.globalCompositeOperation = "source-over";
+
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      ctx.globalAlpha = 0.72;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(off, 0, 0, w, h);
+      ctx.restore();
+
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      for (let i = 0; i < 5; i++) {
+        const amp = h * 0.055 + i * 9;
+        const base = h * (0.30 + i * 0.115);
+        ctx.beginPath();
+        ctx.moveTo(0, h + 2);
+        for (let x = 0; x <= w; x += 10) {
+          const y = base
+            + Math.sin(x * 0.0030 + t * 0.00034 * (1 + i * 0.35) + i * 1.7) * amp
+            + Math.sin(x * 0.0011 - t * 0.00021 + i) * amp * 0.55;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h + 2);
+        ctx.closePath();
+        const lg = ctx.createLinearGradient(0, base - amp * 1.4, 0, h);
+        lg.addColorStop(0, "rgba(150,200,255," + (0.055 - i * 0.008).toFixed(3) + ")");
+        lg.addColorStop(1, "rgba(4,8,20,0)");
+        ctx.fillStyle = lg;
+        ctx.fill();
+        ctx.strokeStyle = "rgba(186,222,255," + (0.11 - i * 0.019).toFixed(3) + ")";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      ctx.restore();
+
+    };
+    const draw = (ts) => {
+      try { frame(ts); } catch (err) {
+        console.error("Atlas login background stopped:", err);
+        return;
+      }
+      this.raf = requestAnimationFrame(draw);
+    };
+    draw(performance.now());
+  }
+
+  t() { return COPY[this.state.lang] || COPY.es; }
+
+  inputStyle(bad) {
+    return {
+      width: "100%",
+      padding: "15px 46px 15px 20px",
+      border: "1px solid " + (bad ? "rgba(248,113,113,0.62)" : "rgba(255,255,255,0.16)"),
+      borderRadius: 999,
+      background: "rgba(3,7,17,0.52)",
+      color: "#fff",
+      fontSize: 14,
+      fontWeight: 400,
+      letterSpacing: "0.01em",
+      boxShadow: bad ? "0 0 0 3px rgba(220,38,38,0.14)" : "inset 0 1px 0 rgba(255,255,255,0.06)",
+      transition: "border-color .16s ease, box-shadow .16s ease, background .16s ease"
+    };
+  }
+
+  langBtn(active) {
+    return {
+      padding: "7px 14px",
+      border: 0,
+      borderRadius: 999,
+      background: active ? "rgba(255,255,255,0.92)" : "transparent",
+      color: active ? "#050a16" : "rgba(232,232,234,0.62)",
+      fontFamily: "'Montserrat', sans-serif",
+      fontSize: 11,
+      fontWeight: 700,
+      letterSpacing: "0.10em",
+      cursor: "pointer",
+      transition: "background .16s ease, color .16s ease"
+    };
+  }
+
+  attempt() {
+    const t = this.t();
+    const { user, pass } = this.state;
+    if (!user.trim()) return this.setState({ error: t.errUser, bad: "user" });
+    if (!pass) return this.setState({ error: t.errPass, bad: "pass" });
+    this.setState({ loading: true, error: "", bad: "" });
+    clearTimeout(this.tm);
+    this.tm = setTimeout(() => {
+      const ok = user.trim().toLowerCase() === "dage" && pass === "atlas123";
+      this.setState({ loading: false, error: ok ? "" : t.errBad, bad: ok ? "" : "both" });
+    }, 1100);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const t = this.t();
+    const bad = s.bad;
+    return {
+      t,
+      canvasRef: this.canvasRef,
+      sheen: String(this.props.sheen ?? 0.9),
+      hint: this.props.demoHint !== false,
+      user: s.user,
+      pass: s.pass,
+      show: s.show,
+      hidden: !s.show,
+      passType: s.show ? "text" : "password",
+      remember: s.remember,
+      loading: s.loading,
+      error: s.error,
+      isForm: s.view === "login",
+      isForgot: s.view === "forgot",
+      isSent: s.view === "sent",
+      submitLabel: s.loading ? t.submitting : t.submit,
+      sendLabel: s.loading ? t.sending : t.send,
+      userInput: this.inputStyle(bad === "user" || bad === "both"),
+      passInput: this.inputStyle(bad === "pass" || bad === "both"),
+      esBtn: this.langBtn(s.lang === "es"),
+      enBtn: this.langBtn(s.lang === "en"),
+      boxStyle: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 18,
+        height: 18,
+        flex: "none",
+        border: "1px solid " + (s.remember ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.26)"),
+        borderRadius: 5,
+        background: s.remember ? "rgba(255,255,255,0.92)" : "transparent",
+        transition: "background .16s ease, border-color .16s ease"
+      },
+      submitBtn: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 10,
+        width: "100%",
+        marginTop: 26,
+        padding: "16px 24px",
+        border: "1px solid rgba(255,255,255,0.20)",
+        borderRadius: 999,
+        background: s.loading ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.12)",
+        color: "#fff",
+        fontFamily: "'Montserrat', sans-serif",
+        fontSize: 14,
+        fontWeight: 600,
+        letterSpacing: "0.04em",
+        cursor: s.loading ? "wait" : "pointer",
+        opacity: s.loading ? 0.75 : 1,
+        backdropFilter: "blur(8px)",
+        transition: "background .16s ease, border-color .16s ease"
+      },
+      noop: () => {},
+      setEs: () => this.setState({ lang: "es", error: "" , bad: "" }),
+      setEn: () => this.setState({ lang: "en", error: "", bad: "" }),
+      onUser: (e) => this.setState({ user: e.target.value, error: "", bad: "" }),
+      onPass: (e) => this.setState({ pass: e.target.value, error: "", bad: "" }),
+      onKey: (e) => { if (e.key === "Enter") this.attempt(); },
+      toggleShow: () => this.setState({ show: !s.show }),
+      toggleRemember: () => this.setState({ remember: !s.remember }),
+      submit: () => this.attempt(),
+      goForgot: () => this.setState({ view: "forgot", error: "", bad: "", pass: "" }),
+      goLogin: () => this.setState({ view: "login", error: "", bad: "" }),
+      sendReset: () => {
+        if (!s.user.trim()) return this.setState({ error: t.errUser, bad: "user" });
+        this.setState({ loading: true, error: "" });
+        clearTimeout(this.tm);
+        this.tm = setTimeout(() => this.setState({ loading: false, view: "sent" }), 1000);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

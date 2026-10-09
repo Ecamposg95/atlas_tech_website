@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Barlow:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    :root { --accent: #C6FF3D; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #000; }
+    a { color: #fff; text-decoration: none; }
+    a:hover { color: #b9b9b9; }
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Manifiesto" data-screen-label="01 Manifiesto" data-speaker-notes="Abrir con visión. Silencio. No explicar todavía, no dar métricas. Atlas construye la infraestructura para la organización agéntica." style="position:relative;box-sizing:border-box;padding:80px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#000;">
+    <img src="assets/img-av-vision.png" alt="Tierra desde órbita" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0;filter:saturate(1.1) brightness(0.8);">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.1) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <svg width="36" height="40" viewBox="0 0 1404.76 1552.38" style="color:#fff;flex:none;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.32em;font-weight:600;">ATLAS TECH</span>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);">MMXXVI</span>
+    </div>
+    <div style="position:relative;z-index:2;">
+      <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:196px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 40px;text-transform:uppercase;max-width:16ch;">La próxima organización será agéntica.</h1>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:60px;border-top:1px solid rgba(255,255,255,0.25);padding-top:30px;">
+        <p style="font-size:30px;line-height:1.45;color:#c4c4c4;margin:0;max-width:52ch;">Construimos la infraestructura para que empresas, industrias y gobiernos entiendan su contexto, ejecuten con criterio y aprendan de cada decisión.</p>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.18em;color:#8a8a8a;white-space:nowrap;">CIUDAD DE MÉXICO · DESDE 2016</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Cambio de paradigma" data-screen-label="02 Cambio de paradigma" data-speaker-notes="El why now. El software empresarial pasa de registrar a interpretar y de interpretar a ejecutar. Atlas está construyendo esa tercera capa: sistemas de acción." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:34px;"><span>01 · CAMBIO DE PARADIGMA</span><span>02 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 40px;text-transform:uppercase;">El software está cambiando de función.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:stretch;">
+      <div style="border-top:2px solid rgba(255,255,255,0.3);padding:26px 30px 0 0;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.2em;color:#8a8a8a;margin-bottom:20px;">AYER</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;color:#8a8a8a;margin-bottom:16px;">Systems of Record</div>
+        <div style="font-size:24px;color:#c4c4c4;line-height:1.4;margin-bottom:26px;">Registran lo que pasó.</div>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;"><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.22);font-size:24px;color:#8a8a8a;">ERP</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.22);font-size:24px;color:#8a8a8a;">CRM</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.22);font-size:24px;color:#8a8a8a;">POS</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.22);font-size:24px;color:#8a8a8a;">WMS</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.22);font-size:24px;color:#8a8a8a;">BI</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:56px;color:#5c5c5c;line-height:1;">›</div>
+      <div style="border-top:2px solid rgba(255,255,255,0.55);padding:26px 30px 0 0;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.2em;color:#c4c4c4;margin-bottom:20px;">HOY</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;color:#e8e8e8;margin-bottom:16px;">Systems of Intelligence</div>
+        <div style="font-size:24px;color:#c4c4c4;line-height:1.4;margin-bottom:26px;">Interpretan lo que está pasando.</div>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;"><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.35);font-size:24px;color:#c4c4c4;">LLMs</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.35);font-size:24px;color:#c4c4c4;">RAG</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.35);font-size:24px;color:#c4c4c4;">Analytics</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.35);font-size:24px;color:#c4c4c4;">Copilots</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:56px;color:var(--accent);line-height:1;">›</div>
+      <div style="border-top:2px solid var(--accent);padding:26px 0 0 0;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.2em;color:var(--accent);margin-bottom:20px;">MAÑANA</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Systems of Action</div>
+        <div style="font-size:24px;color:#fff;line-height:1.4;margin-bottom:26px;">Deciden y ejecutan.</div>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;"><span style="padding:6px 13px;border:1px solid var(--accent);font-size:24px;color:var(--accent);">Agents</span><span style="padding:6px 13px;border:1px solid var(--accent);font-size:24px;color:var(--accent);">Tools</span><span style="padding:6px 13px;border:1px solid var(--accent);font-size:24px;color:var(--accent);">Policies</span><span style="padding:6px 13px;border:1px solid var(--accent);font-size:24px;color:var(--accent);">Memory</span><span style="padding:6px 13px;border:1px solid var(--accent);font-size:24px;color:var(--accent);">Approvals</span></div>
+      </div>
+    </div>
+    <div style="margin-top:32px;background:var(--accent);color:#000;padding:24px 34px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;text-transform:uppercase;">Atlas está construyendo esa tercera capa.</div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.18em;">WHY NOW</span>
+    </div>
+  </section>
+
+  <section data-label="El problema" data-screen-label="03 El problema" data-speaker-notes="Las organizaciones tienen datos, no contexto. Sistemas fragmentados, conocimiento no estructurado, IA sin acceso a la operación real. Sin contexto un agente solo responde; con contexto y herramientas puede operar." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:34px;"><span>02 · EL PROBLEMA</span><span>03 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 40px;text-transform:uppercase;">Las organizaciones tienen datos. <span style="color:var(--accent);">No tienen contexto.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;">
+      <div style="display:flex;flex-direction:column;min-height:0;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.18em;color:#8a8a8a;margin-bottom:18px;">SISTEMAS FRAGMENTADOS</div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:1fr;gap:6px;">
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">ERP</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">CRM</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">Excel</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">WhatsApp</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#a0a0a0;">Documentos</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">POS</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">WMS</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">Finanzas</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#a0a0a0;">BI</div>
+          <div style="border:1px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#a0a0a0;">Legacy</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.18em;color:#8a8a8a;margin-bottom:18px;">CONSECUENCIAS</div>
+        <div style="display:flex;flex-direction:column;border-top:2px solid rgba(255,255,255,0.3);">
+          <div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Información fragmentada</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Procesos manuales</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Conocimiento no estructurado</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Decisiones lentas</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Sistemas desconectados</div>
+          <div style="padding:13px 0;font-size:24px;color:var(--accent);">IA sin acceso a la operación real</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+      <div style="border:1px solid rgba(255,255,255,0.3);padding:24px 30px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:1;text-transform:uppercase;color:#8a8a8a;">Sin contexto,<br>un agente solo responde.</div></div>
+      <div style="background:var(--accent);color:#000;padding:24px 30px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:1;text-transform:uppercase;">Con contexto + herramientas,<br>puede operar.</div></div>
+    </div>
+  </section>
+
+  <section data-label="Qué es Atlas" data-screen-label="04 Qué es Atlas" data-speaker-notes="El aha moment: una sola arquitectura de cuatro capas. Operación real, Atlas Core, Atlas Cortex y las verticales encima. Todo lo que Atlas construye vive en esta pila." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:28px;"><span>03 · QUÉ ES ATLAS</span><span>04 / 16</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:50px;margin-bottom:26px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;max-width:22ch;">Infraestructura para la organización agéntica.</h2>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.16em;color:var(--accent);text-align:right;line-height:1.6;white-space:nowrap;">UNA SOLA ARQUITECTURA.<br>MÚLTIPLES INDUSTRIAS.</div>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;">
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:center;border:1px solid rgba(255,255,255,0.28);padding:20px 26px;">
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:#8a8a8a;margin-bottom:6px;">CAPA 4</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;line-height:0.95;text-transform:uppercase;">Experiencia<br>&amp; verticales</div></div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;"><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;">Atlas ONE</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;">GovTech</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;">ARCA</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;">Industrial</div><div style="border:1px dashed rgba(255,255,255,0.25);padding:14px 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:#8a8a8a;">Otros</div></div>
+      </div>
+      <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:18px;color:#5c5c5c;line-height:1;">▲</div>
+      <div style="flex:1.05;min-height:0;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:center;border:2px solid var(--accent);padding:20px 26px;background:linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);">
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:6px;">CAPA 3</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;line-height:0.95;text-transform:uppercase;color:var(--accent);">Atlas<br>Cortex</div></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;"><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Agents</div><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Reasoning</div><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Policies</div><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Approvals</div><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Memory</div><div style="border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:14px 12px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;">Orchestration</div></div>
+      </div>
+      <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:18px;color:#5c5c5c;line-height:1;">▲</div>
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:center;border:1px solid rgba(255,255,255,0.28);padding:20px 26px;">
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:#8a8a8a;margin-bottom:6px;">CAPA 2</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;line-height:0.95;text-transform:uppercase;">Atlas<br>Core</div></div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;"><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">APIs</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Data</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Identity</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Security</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Events</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Integraciones</div><div style="border:1px solid rgba(255,255,255,0.3);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;">Contexto org.</div></div>
+      </div>
+      <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:18px;color:#5c5c5c;line-height:1;">▲</div>
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:center;border:1px solid rgba(255,255,255,0.28);padding:20px 26px;background:rgba(255,255,255,0.03);">
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:#8a8a8a;margin-bottom:6px;">CAPA 1</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;line-height:0.95;text-transform:uppercase;">Operación<br>real</div></div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;"><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Ventas</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Inventario</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Finanzas</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">CRM</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Logística</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Compras</div><div style="border:1px solid rgba(255,255,255,0.2);padding:14px 10px;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#c4c4c4;">Workflows</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Flywheel" data-screen-label="05 Flywheel" data-speaker-notes="Cada operación hace más inteligente al sistema. Digitalizamos, ONE captura eventos, Core construye contexto, Cortex razona, los agentes recomiendan o ejecutan, los humanos validan y la organización aprende. El ciclo se repite." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:24px;"><span>04 · THE ATLAS FLYWHEEL</span><span>05 / 16</span></div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;align-items:center;">
+      <div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 28px;text-transform:uppercase;">Cada operación hace más inteligente al sistema.</h2>
+        <div style="display:flex;gap:14px;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;text-transform:uppercase;"><span>Entender</span><span style="color:var(--accent);">→</span><span>Ejecutar</span><span style="color:var(--accent);">→</span><span>Aprender</span></div>
+      </div>
+      <div style="position:relative;height:100%;min-height:0;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="-150 -40 920 700" style="width:100%;max-height:100%;" aria-hidden="true">
+          <circle cx="310" cy="310" r="232" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"></circle>
+          <circle cx="310" cy="310" r="232" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="230 1230" transform="rotate(-96 310 310)"></circle>
+          <path d="M310 62 l-15 -15 l0 30 z" fill="var(--accent)"></path>
+          <text x="310" y="292" text-anchor="middle" fill="#ffffff" style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;">ATLAS</text>
+          <text x="310" y="332" text-anchor="middle" fill="var(--accent)" style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;">ORGANIZATIONAL</text>
+          <text x="310" y="366" text-anchor="middle" fill="var(--accent)" style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;">INTELLIGENCE</text>
+          <g fill="var(--accent)" style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;">
+            <text x="310" y="-8" text-anchor="middle">01</text>
+            <text x="520" y="122" text-anchor="start">02</text>
+            <text x="560" y="326" text-anchor="start">03</text>
+            <text x="440" y="500" text-anchor="start">04</text>
+            <text x="180" y="500" text-anchor="end">05</text>
+            <text x="60" y="326" text-anchor="end">06</text>
+            <text x="90" y="122" text-anchor="end">07</text>
+          </g>
+          <g fill="#ffffff" style="font-family:'Barlow',sans-serif;font-size:26px;font-weight:600;">
+            <text x="310" y="26" text-anchor="middle">Digitalizamos una operación</text>
+            <text x="520" y="156" text-anchor="start">ONE captura<tspan x="520" dy="30">eventos reales</tspan></text>
+            <text x="560" y="360" text-anchor="start">Core construye<tspan x="560" dy="30">contexto</tspan></text>
+            <text x="440" y="534" text-anchor="start">Cortex razona</text>
+            <text x="180" y="534" text-anchor="end">Agentes ejecutan</text>
+            <text x="60" y="360" text-anchor="end">Humanos validan</text>
+            <text x="90" y="156" text-anchor="end">La organización<tspan x="90" dy="30">aprende</tspan></text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Producción real" data-screen-label="06 Producción real" data-speaker-notes="No es un prototipo. Panel real de Atlas ONE, un cliente, últimos 90 días con corte al 9 de septiembre de 2026: 80.1 millones en ventas registradas, 134,844 tickets, ticket promedio de 593.93 pesos y 13 sucursales activas." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>05 · PRODUCCIÓN REAL</span><span>06 / 16</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:50px;margin-bottom:24px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">No es un prototipo. <span style="color:var(--accent);">Es operación real.</span></h2>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;line-height:1.7;white-space:nowrap;">FUENTE: ATLAS ONE · PANEL DE CLIENTE<br>PERIODO: ÚLTIMOS 90 DÍAS · CORTE 09.09.2026<br>MONEDA: MXN</div>
+    </div>
+    <div style="flex:1;min-height:0;position:relative;border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);box-shadow:0 0 90px -25px color-mix(in srgb, var(--accent) 55%, transparent);overflow:hidden;">
+      <img src="assets/atlasone-metrics.png" alt="Atlas ONE · panel de métricas en producción" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--accent);margin-top:26px;">
+      <div style="padding:22px 24px 0 0;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:88px;font-weight:800;line-height:0.88;letter-spacing:-0.02em;">$80.1M</div><div style="font-size:24px;font-weight:600;margin-top:10px;">Ventas registradas</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);margin-top:5px;">+90.4% VS. 90D ANTERIORES</div></div>
+      <div style="padding:22px 24px 0 24px;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:88px;font-weight:800;line-height:0.88;letter-spacing:-0.02em;">134,844</div><div style="font-size:24px;font-weight:600;margin-top:10px;">Tickets procesados</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);margin-top:5px;">+78.0% VS. 90D</div></div>
+      <div style="padding:22px 24px 0 24px;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:88px;font-weight:800;line-height:0.88;letter-spacing:-0.02em;">$593.93</div><div style="font-size:24px;font-weight:600;margin-top:10px;">Ticket promedio</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);margin-top:5px;">+8.5% VS. 90D</div></div>
+      <div style="padding:22px 0 0 24px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:88px;font-weight:800;line-height:0.88;letter-spacing:-0.02em;">13</div><div style="font-size:24px;font-weight:600;margin-top:10px;">Sucursales activas</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);margin-top:5px;">+8.3% VS. 90D</div></div>
+    </div>
+  </section>
+
+  <section data-label="Escala" data-screen-label="07 Escala" data-speaker-notes="Un deployment, escala real. 350 millones procesados durante 2026, operación continua, 1.5K tickets diarios, picos duplicados absorbidos. La serie mensual está pendiente de extraer del sistema. Cierre: la infraestructura ya opera el negocio, ahora le ponemos inteligencia encima." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>06 · ESCALA</span><span>07 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 28px;text-transform:uppercase;">Un deployment. <span style="color:var(--accent);">Escala real.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.05fr;gap:50px;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;min-height:0;">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:220px;line-height:0.8;font-weight:800;letter-spacing:-0.04em;color:var(--accent);margin-left:-8px;">$350M</div>
+          <div style="font-size:28px;font-weight:600;margin-top:16px;">procesados durante 2026 a través de la plataforma.</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:#8a8a8a;margin-top:10px;">MXN · ENERO–SEPTIEMBRE 2026 · CORTE 09.09.2026</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--accent);padding-top:20px;">
+          <div style="padding-right:16px;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:800;line-height:0.9;">24/7</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;line-height:1.3;">Operación continua</div></div>
+          <div style="padding:0 16px;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:800;line-height:0.9;">1.5K+</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;line-height:1.3;">Tickets diarios</div></div>
+          <div style="padding:0 16px;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:800;line-height:0.9;">13</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;line-height:1.3;">Sucursales</div></div>
+          <div style="padding-left:16px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:800;line-height:0.9;">×2</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;line-height:1.3;">Picos absorbidos</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;min-height:0;gap:20px;">
+        <div style="flex:1;min-height:0;border:1px dashed rgba(255,255,255,0.3);padding:26px 30px;display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.16em;color:#8a8a8a;">GMV MENSUAL PROCESADO · 2026</div><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:4px 10px;">[DATA NEEDED]</span></div>
+          <div style="flex:1;min-height:0;display:flex;align-items:flex-end;gap:8px;opacity:0.35;">
+            <div style="flex:1;height:26%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:34%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:31%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:44%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:52%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:49%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:63%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:78%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div><div style="flex:1;height:92%;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.28) 0 4px,transparent 4px 8px);"></div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.1em;color:#5c5c5c;margin-top:12px;">SERIE HISTÓRICA MENSUAL PENDIENTE DE EXTRAER · LA FORMA ES ILUSTRATIVA</div>
+        </div>
+        <div style="display:flex;gap:6px;">
+          <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:18px 22px;text-align:center;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:1;">Multi-tenant</div></div>
+          <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:18px 22px;text-align:center;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:1;">API-first</div></div>
+          <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:18px 22px;text-align:center;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:1;">Producción</div></div>
+        </div>
+        <div style="background:var(--accent);color:#000;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;">La infraestructura ya opera el negocio. Ahora le ponemos inteligencia encima.</div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:0.16em;white-space:nowrap;">→ CORTEX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Cortex" data-screen-label="08 Cortex" data-speaker-notes="De sistema de registro a sistema de acción. No basta con decir seis agentes: hay que mostrar qué hace un agente. Tres cadenas reales: CFO detecta desviación de cartera y llega a tarea aprobada; COO va de stock crítico a requisición; CEO lee la operación semanal y prioriza decisiones. Las 110 horas ahorradas son estimadas." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:24px;"><span>07 · ATLAS CORTEX</span><span>08 / 16</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:24px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:84px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;max-width:26ch;">De sistema de registro a <span style="color:var(--accent);">sistema de acción.</span></h2>
+      <div style="display:flex;gap:26px;flex:none;">
+        <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:800;line-height:0.9;color:var(--accent);">6</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;color:#a0a0a0;margin-top:4px;">AGENTES</div></div>
+        <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:800;line-height:0.9;color:var(--accent);">176</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;color:#a0a0a0;margin-top:4px;">ACCIONES HOY</div></div>
+        <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:800;line-height:0.9;color:var(--accent);">46</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;color:#a0a0a0;margin-top:4px;">TAREAS CREADAS</div></div>
+        <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:800;line-height:0.9;color:var(--accent);">110h*</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;color:#a0a0a0;margin-top:4px;">HORAS AHORRADAS</div></div>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 1fr;gap:34px;">
+      <div style="display:flex;flex-direction:column;gap:6px;min-height:0;">
+        <div style="flex:1;min-height:0;border:1px solid rgba(255,255,255,0.25);padding:18px 22px;display:flex;flex-direction:column;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px;">AGENTE CFO</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:24px;color:#e8e8e8;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Detecta desviación de cartera</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Consulta ventas + pagos</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Proyecta flujo</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Genera escenarios</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Recomienda acción</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Crea tarea</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid var(--accent);background:var(--accent);color:#000;font-weight:600;">Humano aprueba</span></div>
+        </div>
+        <div style="flex:1;min-height:0;border:1px solid rgba(255,255,255,0.25);padding:18px 22px;display:flex;flex-direction:column;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px;">AGENTE COO</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:24px;color:#e8e8e8;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Stock crítico</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Analiza consumo</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Valida disponibilidad</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Propone compra</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Genera requisición</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid var(--accent);background:var(--accent);color:#000;font-weight:600;">Approval</span></div>
+        </div>
+        <div style="flex:1;min-height:0;border:1px solid rgba(255,255,255,0.25);padding:18px 22px;display:flex;flex-direction:column;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px;">AGENTE CEO</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:24px;color:#e8e8e8;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Lee operación semanal</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Detecta anomalías</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Construye escenarios</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.28);">Prioriza decisiones</span></div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.1em;color:#8a8a8a;padding-top:6px;">* 110H = ESTIMADO. TIEMPO MANUAL EQUIVALENTE POR TAREA × TAREAS COMPLETADAS. METODOLOGÍA POR VALIDAR.</div>
+      </div>
+      <div style="display:grid;grid-template-rows:1.5fr 1fr;gap:6px;min-height:0;">
+        <div style="position:relative;overflow:hidden;border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);box-shadow:0 0 80px -22px color-mix(in srgb, var(--accent) 55%, transparent);min-height:0;">
+          <img src="assets/cortex-agent-ops.png" alt="Atlas Cortex · Agent Ops" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right 22%;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 18px;background:linear-gradient(0deg, rgba(0,0,0,0.92), transparent);"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:var(--accent);margin-bottom:4px;">AGENT OPS V1.0.0 · OPERATIVO</div><div style="font-size:24px;font-weight:600;">Orchestrator · Analyst · Forecaster · Compliance · Researcher · Copilot</div></div>
+        </div>
+        <div style="position:relative;overflow:hidden;border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);min-height:0;">
+          <img src="assets/cortex-knowledge-graph.png" alt="Grafo de conocimiento" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 18px;background:linear-gradient(0deg, rgba(0,0,0,0.92), transparent);"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:var(--accent);margin-bottom:4px;">CONTEXTO</div><div style="font-size:24px;font-weight:600;">Grafo de conocimiento de la organización</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Autonomía con control" data-screen-label="09 Autonomía con control" data-speaker-notes="Atlas no construye chatbots: construye sistemas operativos con agentes gobernados. Seis niveles de autonomía, de observar libremente hasta acciones de alto riesgo con aprobación multi-parte. Todo registrado, auditable, atribuible y reversible." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:28px;"><span>08 · GOBIERNO DE AGENTES</span><span>09 / 16</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:50px;margin-bottom:34px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">Autonomía <span style="color:var(--accent);">con control.</span></h2>
+      <p style="font-size:24px;line-height:1.45;color:#c4c4c4;margin:0 0 8px;max-width:44ch;">La autonomía sube por niveles y el control sube con ella. Ninguna acción irreversible ocurre sin una persona.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;align-items:stretch;">
+      <div style="border:1px solid rgba(255,255,255,0.22);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, rgba(255,255,255,0.02));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:12px;">NIVEL 01</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Observar</div></div><div style="font-size:24px;color:#a0a0a0;">Libre</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.22);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, rgba(255,255,255,0.03));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:12px;">NIVEL 02</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Analizar</div></div><div style="font-size:24px;color:#a0a0a0;">Libre</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.22);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, rgba(255,255,255,0.05));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:12px;">NIVEL 03</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Recomendar</div></div><div style="font-size:24px;color:#a0a0a0;">Libre</div></div>
+      <div style="border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 8%, transparent));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:12px;">NIVEL 04</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Preparar</div></div><div style="font-size:24px;color:var(--accent);">Controlado por política</div></div>
+      <div style="border:1px solid color-mix(in srgb, var(--accent) 60%, transparent);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 14%, transparent));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:12px;">NIVEL 05</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Ejecutar</div></div><div style="font-size:24px;color:var(--accent);">Requiere aprobación</div></div>
+      <div style="border:2px solid var(--accent);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 22%, transparent));"><div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:12px;">NIVEL 06</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;line-height:0.95;text-transform:uppercase;">Alto riesgo</div></div><div style="font-size:24px;color:var(--accent);">Aprobación multi-parte</div></div>
+    </div>
+    <div style="margin-top:26px;border-top:2px solid var(--accent);padding-top:22px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;line-height:1;text-transform:uppercase;">Registrado</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;line-height:1;text-transform:uppercase;">Auditable</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;line-height:1;text-transform:uppercase;">Atribuible</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;line-height:1;text-transform:uppercase;">Reversible</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;line-height:1;text-transform:uppercase;color:var(--accent);">Human-in-the-loop</div>
+    </div>
+  </section>
+
+  <section data-label="Project → Platform" data-screen-label="10 Project a Platform" data-speaker-notes="La objeción clave: ¿es una consultora o una compañía de software? Antes cada proyecto era desarrollo a la medida. Hoy partimos de presets verticales y configuración. Mañana la configuración es asistida por IA con componentes reutilizables. Cada deployment mejora Atlas." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>09 · DE PROYECTO A PLATAFORMA</span><span>10 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">De proyecto <span style="color:var(--accent);">a plataforma.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.35fr 1fr;gap:44px;">
+      <div style="display:grid;grid-template-rows:repeat(3,1fr);gap:6px;min-height:0;">
+        <div style="border:1px solid rgba(255,255,255,0.2);padding:18px 24px;display:flex;align-items:center;gap:26px;"><div style="width:150px;flex:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:6px;">ANTES</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:0.95;color:#8a8a8a;text-transform:uppercase;">Proyecto a la medida</div></div><div style="flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:24px;color:#a0a0a0;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.2);">Discovery</span><span>→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.2);">Desarrollo custom</span><span>→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.2);">Deployment</span><span>→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.2);">Mantenimiento</span></div></div>
+        <div style="border:2px solid var(--accent);padding:18px 24px;display:flex;align-items:center;gap:26px;background:linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);"><div style="width:150px;flex:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:6px;">ATLAS HOY</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:0.95;text-transform:uppercase;">Preset vertical</div></div><div style="flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:24px;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.35);">Discovery</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid var(--accent);color:var(--accent);">Preset vertical</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.35);">Configuración</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.35);">Integraciones</span><span style="color:var(--accent);">→</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.35);">Deployment</span></div></div>
+        <div style="border:1px dashed rgba(255,255,255,0.3);padding:18px 24px;display:flex;align-items:center;gap:26px;"><div style="width:150px;flex:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:6px;">ATLAS MAÑANA</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;line-height:0.95;text-transform:uppercase;">Asistido por agentes</div></div><div style="flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:24px;color:#c4c4c4;"><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);">Configuración asistida por IA</span><span>→</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);">Componentes reutilizables</span><span>→</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);">Implementación con agentes</span><span>→</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);">Deployment</span></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;min-height:0;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:14px;">EL CICLO QUE SE REFUERZA</div>
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">01</span><span style="font-size:24px;">Más deployments</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">02</span><span style="font-size:24px;">Más integraciones</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">03</span><span style="font-size:24px;">Más procesos modelados</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">04</span><span style="font-size:24px;">Más ontologías</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">05</span><span style="font-size:24px;">Más componentes reutilizables</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">06</span><span style="font-size:24px;">Deployments más rápidos</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">07</span><span style="font-size:24px;">Mejores márgenes</span></div>
+          <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.2);padding-top:12px;"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);width:22px;">↺</span><span style="font-size:24px;color:var(--accent);">Más deployments</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:26px;background:var(--accent);color:#000;padding:22px 32px;font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;text-transform:uppercase;">Cada deployment hace mejor a Atlas.</div>
+  </section>
+
+  <section data-label="Modelo de negocio" data-screen-label="11 Modelo de negocio" data-speaker-notes="Cuatro etapas: entramos con implementación, corremos con suscripción, sumamos inteligencia con Cortex y expandimos. Los servicios son la cuña; el software es la escala. Las cifras de pricing y márgenes están pendientes." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>10 · MODELO DE NEGOCIO</span><span>11 / 16</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:50px;margin-bottom:30px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">Entrar. Operar. <span style="color:var(--accent);">Automatizar. Expandir.</span></h2>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:6px 12px;white-space:nowrap;">PRICING · [DATA NEEDED]</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:30px 26px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:16px;">01</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;margin-bottom:18px;">Entrar</div><div style="display:flex;flex-direction:column;gap:8px;font-size:24px;color:#c4c4c4;"><span>Discovery</span><span>Implementación</span><span>Transformación</span></div><div style="margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);">INGRESO INICIAL</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:30px 26px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:16px;">02</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;margin-bottom:18px;">Operar</div><div style="display:flex;flex-direction:column;gap:8px;font-size:24px;color:#c4c4c4;"><span>Suscripción a la plataforma</span><span>Atlas ONE en producción</span><span>Soporte y evolución</span></div><div style="margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);">RECURRENTE</div></div>
+      <div style="border:2px solid var(--accent);padding:30px 26px;display:flex;flex-direction:column;background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">03</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;margin-bottom:18px;color:var(--accent);">Automatizar</div><div style="display:flex;flex-direction:column;gap:8px;font-size:24px;color:#e8e8e8;"><span>Atlas Cortex</span><span>Agentes en operación</span><span>Consumo por uso</span></div><div style="margin-top:auto;padding-top:20px;border-top:1px solid color-mix(in srgb, var(--accent) 45%, transparent);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);">RECURRENTE + USO</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:30px 26px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:16px;">04</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:0.92;text-transform:uppercase;margin-bottom:18px;">Expandir</div><div style="display:flex;flex-direction:column;gap:8px;font-size:24px;color:#c4c4c4;"><span>Más módulos y workflows</span><span>Más sucursales y áreas</span><span>Más agentes</span><span>Más organizaciones</span></div><div style="margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.1em;color:var(--accent);">EXPANSIÓN</div></div>
+    </div>
+    <div style="margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+      <div style="border:1px solid rgba(255,255,255,0.3);padding:22px 30px;font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;line-height:1;text-transform:uppercase;color:#8a8a8a;">Los servicios son la cuña.</div>
+      <div style="background:var(--accent);color:#000;padding:22px 30px;font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;line-height:1;text-transform:uppercase;">El software es la escala.</div>
+    </div>
+  </section>
+
+  <section data-label="Go-to-market" data-screen-label="12 Go-to-market" data-speaker-notes="Entramos por un problema crítico y nos expandimos hacia la organización. Los deployments enterprise son el motor de distribución. Siete clientes enterprise, MVP en dos semanas, 25 integraciones activas y más de cien usuarios directos." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>11 · GO-TO-MARKET</span><span>12 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:80px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;max-width:34ch;">Entramos por un problema crítico. <span style="color:var(--accent);">Nos expandimos hacia la organización.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.25fr 1fr;gap:44px;">
+      <div style="display:flex;flex-direction:column;min-height:0;">
+        <div style="flex:1;min-height:0;display:grid;grid-template-rows:repeat(8,1fr);gap:5px;">
+          <div style="border-left:3px solid rgba(255,255,255,0.3);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;">Problema crítico</div>
+          <div style="border-left:3px solid rgba(255,255,255,0.35);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;">Implementación</div>
+          <div style="border-left:3px solid rgba(255,255,255,0.4);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;">Atlas ONE</div>
+          <div style="border-left:3px solid rgba(255,255,255,0.5);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;">Más módulos</div>
+          <div style="border-left:3px solid rgba(255,255,255,0.6);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;">Más áreas y sucursales</div>
+          <div style="border-left:3px solid color-mix(in srgb, var(--accent) 55%, transparent);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;color:var(--accent);">Atlas Cortex</div>
+          <div style="border-left:3px solid color-mix(in srgb, var(--accent) 75%, transparent);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:700;text-transform:uppercase;color:var(--accent);">Agentes</div>
+          <div style="border-left:3px solid var(--accent);background:linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent);padding:0 0 0 20px;display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;text-transform:uppercase;color:var(--accent);">Organización agéntica</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:space-between;min-height:0;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:16px;">DISTRIBUCIÓN</div>
+          <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+            <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Venta enterprise founder-led</div>
+            <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Alianzas estratégicas</div>
+            <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Deployments verticales</div>
+            <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Expansión dentro del cliente</div>
+            <div style="padding:14px 0;font-size:24px;">Referidos</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:#8a8a8a;margin-bottom:14px;">TRACCIÓN ACTUAL</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+            <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 18px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.9;">7</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;">Clientes enterprise</div></div>
+            <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 18px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.9;">2 sem</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;">MVP en producción</div></div>
+            <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 18px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.9;">25</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;">Integraciones activas</div></div>
+            <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 18px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.9;">100+</div><div style="font-size:24px;color:#a0a0a0;margin-top:6px;">Usuarios directos</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;background:var(--accent);color:#000;padding:20px 30px;font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;line-height:1;text-transform:uppercase;">Los deployments enterprise son el motor de distribución.</div>
+  </section>
+
+  <section data-label="Tres horizontes" data-screen-label="13 Tres horizontes" data-speaker-notes="Una compañía, tres horizontes. Horizonte 1 es escalar Atlas ONE. Horizonte 2 es inteligencia con Cortex, donde está el moat. Horizonte 3 es Atlas Labs: research, Web3, movilidad y deep tech como opcionalidad de largo plazo. No son doce compañías." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>12 · FOCO ESTRATÉGICO</span><span>13 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 34px;text-transform:uppercase;">Una compañía. <span style="color:var(--accent);">Tres horizontes.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+      <div style="position:relative;overflow:hidden;border:2px solid var(--accent);display:flex;flex-direction:column;justify-content:flex-end;padding:34px 32px;min-height:0;">
+        <img src="assets/img-atlasone-dashboard.png" alt="Atlas ONE" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.4);">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.2) 100%);"></div>
+        <div style="position:absolute;top:28px;left:32px;font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:var(--accent);">HORIZONTE 1 · ESCALAR</div>
+        <div style="position:relative;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:78px;font-weight:800;line-height:0.88;text-transform:uppercase;margin-bottom:16px;">Atlas ONE</div>
+          <div style="font-size:24px;color:#c4c4c4;line-height:1.4;margin-bottom:16px;">El producto que ya está en producción y genera recurrencia.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Ingresos</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Clientes</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Deployments</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Recurrencia</span></div>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;border:2px solid var(--accent);display:flex;flex-direction:column;justify-content:flex-end;padding:34px 32px;min-height:0;">
+        <img src="assets/cortex-agent-ops.png" alt="Atlas Cortex" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.4);">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.2) 100%);"></div>
+        <div style="position:absolute;top:28px;left:32px;font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:var(--accent);">HORIZONTE 2 · INTELIGENCIA</div>
+        <div style="position:relative;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:78px;font-weight:800;line-height:0.88;text-transform:uppercase;margin-bottom:16px;">Atlas Cortex</div>
+          <div style="font-size:24px;color:#c4c4c4;line-height:1.4;margin-bottom:16px;">Donde se acumula el moat: contexto, agentes y automatización.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Agentes</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Automatización</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Contexto</span><span style="padding:5px 11px;border:1px solid rgba(255,255,255,0.3);font-size:24px;">Moat</span></div>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;border:1px dashed rgba(255,255,255,0.35);display:flex;flex-direction:column;justify-content:flex-end;padding:34px 32px;min-height:0;">
+        <img src="assets/harvestt-dome-interior.png" alt="Atlas Labs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.4);">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.2) 100%);"></div>
+        <div style="position:absolute;top:28px;left:32px;font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:#a0a0a0;">HORIZONTE 3 · FRONTERA</div>
+        <div style="position:relative;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:78px;font-weight:800;line-height:0.88;text-transform:uppercase;margin-bottom:16px;">Atlas Labs</div>
+          <div style="font-size:24px;color:#c4c4c4;line-height:1.4;margin-bottom:16px;">Opcionalidad de largo plazo, sin distraer el foco comercial.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);font-size:24px;color:#a0a0a0;">Research</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);font-size:24px;color:#a0a0a0;">Web3</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);font-size:24px;color:#a0a0a0;">Movilidad</span><span style="padding:5px 11px;border:1px dashed rgba(255,255,255,0.3);font-size:24px;color:#a0a0a0;">Deep tech</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.14em;color:#8a8a8a;">HARVESTT · AXOLCARE · OPEN CASHBACK · OPEN CAR · NEURODRIVE · OPENDRIVE · CIVIA · ATLAS ACADEMY → APPENDIX</div>
+  </section>
+
+  <section data-label="Moat" data-screen-label="14 Moat" data-speaker-notes="El moat se acumula. Cinco activos que crecen con cada deployment: integraciones operativas, datos de la organización, modelos de proceso, ontologías y grafo de conocimiento, y workflows con políticas de agentes. Atlas no solo acumula funcionalidades: acumula contexto operativo." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>13 · MOAT</span><span>14 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 32px;text-transform:uppercase;">El moat <span style="color:var(--accent);">se acumula.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:28px;">
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:24px 22px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">01</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:0.95;text-transform:uppercase;">Integraciones operativas</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:24px 22px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">02</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:0.95;text-transform:uppercase;">Datos de la organización</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:24px 22px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">03</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:0.95;text-transform:uppercase;">Modelos de proceso</div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:24px 22px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">04</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:0.95;text-transform:uppercase;">Ontologías y grafo</div></div>
+      <div style="border:2px solid var(--accent);padding:24px 22px;display:flex;flex-direction:column;background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">05</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:0.95;text-transform:uppercase;color:var(--accent);">Workflows y políticas</div></div>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="width:100%;display:grid;grid-template-columns:repeat(11,auto);align-items:center;gap:6px;justify-content:space-between;">
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;">Más<br>deployments</div>
+        <div style="color:var(--accent);font-size:26px;text-align:center;">→</div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;">Más<br>contexto</div>
+        <div style="color:var(--accent);font-size:26px;text-align:center;">→</div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;">Más<br>componentes</div>
+        <div style="color:var(--accent);font-size:26px;text-align:center;">→</div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;">Mejores<br>agentes</div>
+        <div style="color:var(--accent);font-size:26px;text-align:center;">→</div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;">Deployments<br>más rápidos</div>
+        <div style="color:var(--accent);font-size:26px;text-align:center;">→</div>
+        <div style="border:2px solid var(--accent);padding:16px 14px;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.05;text-transform:uppercase;text-align:center;color:var(--accent);">Mejores<br>márgenes ↺</div>
+      </div>
+    </div>
+    <div style="margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+      <div style="border:1px solid rgba(255,255,255,0.3);padding:22px 30px;font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;line-height:1;text-transform:uppercase;color:#8a8a8a;">Atlas no solo acumula funcionalidades.</div>
+      <div style="background:var(--accent);color:#000;padding:22px 30px;font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;line-height:1;text-transform:uppercase;">Acumula contexto operativo.</div>
+    </div>
+  </section>
+
+  <section data-label="Founders" data-screen-label="15 Founders" data-speaker-notes="Founder-market fit, no organigrama. Producto, ingeniería, IA y distribución dentro del equipo fundador. Desde 2016 construyendo tecnología aplicada, con trece reconocimientos internacionales y experiencia en agro, gobierno y empresa." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>14 · EQUIPO FUNDADOR</span><span>15 / 16</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 34px;text-transform:uppercase;">Founder-led.</h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--accent);">
+      <div style="padding:32px 32px 0 0;border-right:1px solid rgba(255,255,255,0.15);display:flex;flex-direction:column;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:66px;font-weight:800;line-height:0.9;text-transform:uppercase;margin-bottom:14px;">Emmanuel</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.16em;color:var(--accent);margin-bottom:24px;">PRODUCTO · ARQUITECTURA · VENTURES</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:24px;color:#c4c4c4;"><span>Visión y producto</span><span>Arquitectura de negocio</span><span>Sistemas AI-native</span><span>Venture building</span></div>
+      </div>
+      <div style="padding:32px 32px 0 32px;border-right:1px solid rgba(255,255,255,0.15);display:flex;flex-direction:column;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:66px;font-weight:800;line-height:0.9;text-transform:uppercase;margin-bottom:14px;">Leonardo</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.16em;color:var(--accent);margin-bottom:24px;">IA · RESEARCH · TECNOLOGÍA</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:24px;color:#c4c4c4;"><span>IA aplicada</span><span>Arquitectura computacional</span><span>Deep tech</span><span>Investigación con el IPN</span></div>
+      </div>
+      <div style="padding:32px 0 0 32px;display:flex;flex-direction:column;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:66px;font-weight:800;line-height:0.9;text-transform:uppercase;margin-bottom:14px;">Israel</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.16em;color:var(--accent);margin-bottom:24px;">CRECIMIENTO · COMERCIAL · DISTRIBUCIÓN</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:24px;color:#c4c4c4;"><span>Venta enterprise</span><span>Cuentas clave</span><span>Alianzas</span><span>Customer success</span></div>
+      </div>
+    </div>
+    <div style="margin-top:28px;background:var(--accent);color:#000;padding:24px 32px;font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:800;line-height:1;text-transform:uppercase;">Producto + ingeniería + IA + distribución dentro del equipo fundador.</div>
+    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(255,255,255,0.2);padding-top:20px;">
+      <div style="font-size:24px;color:#a0a0a0;">Construyendo tecnología aplicada desde 2016.</div>
+      <div style="font-size:24px;color:#a0a0a0;">13 reconocimientos internacionales.</div>
+      <div style="font-size:24px;color:#a0a0a0;">Agro · Gobierno · Enterprise.</div>
+    </div>
+  </section>
+
+  <section data-label="Cierre" data-screen-label="16 Cierre" data-speaker-notes="Cierre. Cuatro prioridades: escalar ONE, desplegar Cortex, expandir distribución y componer la plataforma. Llamada distinta según la audiencia." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#000;">
+    <img src="assets/harvestt-domes-colony.png" alt="Horizonte" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(1.1) brightness(0.55);">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.25) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);"><span>ATLAS TECH</span><span>16 / 16</span></div>
+    <div style="position:relative;z-index:2;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:150px;line-height:0.88;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;max-width:19ch;">Construyamos el sistema operativo de la empresa agéntica.</h2>
+      <div style="display:flex;gap:6px;margin-bottom:30px;">
+        <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:16px 20px;font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;">Escalar ONE</div>
+        <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:16px 20px;font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;">Desplegar Cortex</div>
+        <div style="flex:1;border:1px solid rgba(255,255,255,0.3);padding:16px 20px;font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;">Expandir distribución</div>
+        <div style="flex:1;background:var(--accent);color:#000;padding:16px 20px;font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;">Componer la plataforma</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:28px;">
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:18px 22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:8px;">INVERSIONISTAS</div><div style="font-size:24px;font-weight:600;">Capital, socios estratégicos y talento.</div></div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:18px 22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:8px;">EMPRESAS Y GOBIERNO</div><div style="font-size:24px;font-weight:600;">Empecemos por un proceso crítico.</div></div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:18px 22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:8px;">PARTNERS</div><div style="font-size:24px;font-weight:600;">Construyan sobre Atlas Core.</div></div>
+        <div style="border:1px solid rgba(255,255,255,0.25);padding:18px 22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:8px;">TALENTO</div><div style="font-size:24px;font-weight:600;">Construyan sistemas que operan organizaciones reales.</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,0.3);padding-top:24px;">
+        <div style="display:flex;gap:60px;">
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:#8a8a8a;margin-bottom:6px;">WEB</div><div style="font-size:26px;font-weight:600;">atlastech.mx</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:#8a8a8a;margin-bottom:6px;">BASE</div><div style="font-size:26px;font-weight:600;">Ciudad de México · Desde 2016</div></div>
+        </div>
+        <svg width="44" height="49" viewBox="0 0 1404.76 1552.38" style="color:#fff;flex:none;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Appendix" data-screen-label="17 Appendix" data-speaker-notes="Divisor. A partir de aquí, material de soporte." style="position:relative;box-sizing:border-box;padding:80px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#000;">
+    <img src="assets/img-orbit-network.png" alt="Infraestructura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(1.1) brightness(0.55);">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.15) 100%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.24em;color:var(--accent);margin-bottom:24px;">MATERIAL DE SOPORTE · A01–A13</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:190px;line-height:0.88;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">Appendix</h2>
+    </div>
+  </section>
+
+  <section data-label="A01 Historia" data-screen-label="18 A01 Historia" data-speaker-notes="Historia completa: de competencias internacionales de invención a sistemas agénticos en instituciones." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A01 · HISTORIA 2016–2026</span><span>18</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Diez años de la misma disciplina.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2016</div><div style="font-size:24px;color:#e8e8e8;">Eureka Award — primer reconocimiento internacional.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">BRUSELAS, BÉLGICA</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2017</div><div style="font-size:24px;color:#e8e8e8;">INTARG — medalla de plata.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">KATOWICE, POLONIA</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2018</div><div style="font-size:24px;color:#e8e8e8;">HarvestT: oro AgroTech, Special Inventor Award, Best Innovation of North America.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2019</div><div style="font-size:24px;color:#e8e8e8;">Medalla de honor, oro y mejor diseño industrial (UPB Rumania).</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2020</div><div style="font-size:24px;color:#e8e8e8;">Best Innovation of North America.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2021</div><div style="font-size:24px;color:#e8e8e8;">Oro AxolCare, oro HarvestT, Jury&#39;s Choice, mejor diseño de ingeniería (UPB Rumania).</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2022–24</div><div style="font-size:24px;color:#e8e8e8;">Gobierno digital: datos, blockchain y transparencia en el sector público.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">MÉXICO</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2024–25</div><div style="font-size:24px;color:#e8e8e8;">Modelos agénticos y analítica en la Cámara de Diputados.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">MÉXICO</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2026</div><div style="font-size:24px;color:#e8e8e8;">Atlas ONE en producción, Cortex en operación, investigación en ontologías con el IPN.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">HOY</div></div>
+    </div>
+  </section>
+
+  <section data-label="A02 Premios" data-screen-label="19 A02 Premios" data-speaker-notes="Trece reconocimientos internacionales en cuatro países entre 2016 y 2021." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A02 · RECONOCIMIENTOS</span><span>19</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:28px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">Trece premios. <span style="color:var(--accent);">Cuatro países.</span></h2>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;line-height:1.7;white-space:nowrap;">HARVESTT · DOMO GEODÉSICO CON IA<br>AXOLCARE · IA PARA CONSERVACIÓN DEL AJOLOTE</div>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2016</div><div style="font-size:24px;color:#e8e8e8;">Eureka Award</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">BÉLGICA</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2017</div><div style="font-size:24px;color:#e8e8e8;">Silver Medal · INTARG</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">POLONIA</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2018</div><div style="font-size:24px;color:#e8e8e8;">Gold AgroTech · Special Inventor · Best Innovation NA</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2019</div><div style="font-size:24px;color:#e8e8e8;">Medal of Honor · Gold · Best Industrial Design (UPB)</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2020</div><div style="font-size:24px;color:#e8e8e8;">Best Innovation of North America</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2021</div><div style="font-size:24px;color:#e8e8e8;">Gold AxolCare · Gold HarvestT · Jury&#39;s Choice · Best Engineering Design (UPB)</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CANADÁ</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.3fr 1fr;gap:6px;min-height:0;">
+        <div style="position:relative;overflow:hidden;grid-column:1 / -1;"><img src="assets/photo-intarg-2017.jpg" alt="INTARG 2017" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;"><div style="position:absolute;left:20px;bottom:16px;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;text-shadow:0 1px 6px rgba(0,0,0,0.9);">INTARG · KATOWICE · 2017</div></div>
+        <div style="position:relative;overflow:hidden;"><img src="assets/photo-eureka-2016.jpg" alt="Eureka 2016" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;"><div style="position:absolute;left:16px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;text-shadow:0 1px 6px rgba(0,0,0,0.9);">EUREKA · 2016</div></div>
+        <div style="position:relative;overflow:hidden;"><img src="assets/photo-hult-prize.jpg" alt="Hult Prize" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;"><div style="position:absolute;left:16px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;text-shadow:0 1px 6px rgba(0,0,0,0.9);">HULT PRIZE</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="A03 GovTech" data-screen-label="20 A03 GovTech" data-speaker-notes="Experiencia en sector público: gobierno digital 2022-2024 y modelos agénticos en la Cámara de Diputados 2024-2025." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A03 · GOVTECH</span><span>20</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Decisiones públicas <span style="color:var(--accent);">con evidencia.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:16px;">EXPERIENCIA</div>
+        <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2022–24</div><div style="font-size:24px;color:#e8e8e8;">Gobierno digital: datos, blockchain y transparencia.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">MÉXICO</div></div>
+<div style="display:grid;grid-template-columns:150px 1fr 210px;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;">2024–25</div><div style="font-size:24px;color:#e8e8e8;">Analítica y modelos agénticos en operación institucional.</div><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:#8a8a8a;text-align:right;">CÁMARA DE DIPUTADOS</div></div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin:30px 0 16px;">POR QUÉ FUNCIONA EN GOBIERNO</div>
+        <div style="display:flex;flex-direction:column;border-top:2px solid rgba(255,255,255,0.3);">
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Trazabilidad de cada acción y aprobación</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Aislamiento de datos por dependencia</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Blockchain para transparencia verificable</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Human-in-the-loop obligatorio en ejecución</div>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.2);"><img src="assets/img-pos-wallet.png" alt="Edificio institucional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.65);"></div>
+    </div>
+  </section>
+
+  <section data-label="A04 Suite GovTech" data-screen-label="21 A04 Suite GovTech" data-speaker-notes="Las cuatro plataformas de gobierno construidas sobre Atlas Core: CIVIA, SIGMA, ATENEA y ORION." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A04 · CIVIA · SIGMA · ATENEA · ORION</span><span>21</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Cuatro plataformas, <span style="color:var(--accent);">un mismo núcleo.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">CIVIA</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Gestión municipal: trámites, atención ciudadana y servicios en una sola plataforma.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">EN DESARROLLO</div></div>
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">SIGMA</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Procesos internos: flujos, aprobaciones y control administrativo trazable.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">EN DESARROLLO</div></div>
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">ATENEA</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Inteligencia territorial: indicadores por región y analítica para priorizar intervención.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">EN DESARROLLO</div></div>
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">ORION</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Capa de ecosistema que integra las plataformas anteriores en una vista de gobierno.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">CONCEPTO</div></div>
+    </div>
+  </section>
+
+  <section data-label="A05 Atlas Labs" data-screen-label="22 A05 Atlas Labs" data-speaker-notes="Horizonte 3: dos frentes de frontera. Web3 y fintech por un lado; robótica, aeronáutica y espacial por el otro." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A05 · ATLAS LABS · FRONTERA</span><span>22</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Emprender desde <span style="color:var(--accent);">la investigación.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:var(--accent);padding:18px 0 6px;">FRENTE A · WEB3 · FINTECH</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;margin-bottom:14px;">Valor programable</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>Open Cashback</strong> — lealtad y saldo on-chain conectados al POS de Atlas ONE.</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>Identidad y trazabilidad</strong> — blockchain aplicado a transparencia pública.</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>Cripto y pagos</strong> — rieles financieros programables para el ecosistema.</div>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:#8a8a8a;">ESTADO: CONCEPTO</div>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.18em;color:var(--accent);padding:18px 0 6px;">FRENTE B · ROBÓTICA · AERONÁUTICA · ESPACIAL</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;margin-bottom:14px;">IA en entornos extremos</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>HarvestT</strong> — domo geodésico aislado: base para sistemas autónomos.</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>AxolCare</strong> — visión y ML para conservación.</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;"><strong>Ontologías con el IPN</strong> — CIC-IPN y SEPI-ESIME, puente hacia los agentes.</div>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:#8a8a8a;">ESTADO: INVESTIGACIÓN · VALIDADO EN AGRO</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="A06 HarvestT" data-screen-label="23 A06 HarvestT" data-speaker-notes="HarvestT: domo geodésico aislado con IA que monitorea cultivos y entrena modelos. Tres medallas de oro." style="position:relative;box-sizing:border-box;padding:0;color:#fff;font-family:'Barlow',sans-serif;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:#000;">
+    <div style="padding:70px 50px 70px 96px;display:flex;flex-direction:column;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A06 · HARVESTT · AGROTECH</span><span>23</span></div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:96px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 26px;text-transform:uppercase;">Agricultura <span style="color:var(--accent);">que aprende.</span></h2>
+      <p style="font-size:24px;line-height:1.45;color:#c4c4c4;margin:0 0 26px;">Domo geodésico aislado que controla el ambiente de cultivo, monitorea las plantas con visión computacional y entrena modelos propios sobre esos datos.</p>
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Machine learning aplicado a rendimiento de cultivo</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Visión computacional para estado de las plantas</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Sistemas expertos y automatización de ambiente</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">IoT industrial y telemetría en el borde</div>
+      </div>
+      <div style="margin-top:auto;padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);">3 MEDALLAS DE ORO · CANADÁ 2018–2021 · VALIDADO</div>
+    </div>
+    <div style="position:relative;overflow:hidden;"><img src="assets/harvestt-dome-interior.png" alt="Interior del domo HarvestT" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.15) contrast(1.05);"><div style="position:absolute;inset:0;background:linear-gradient(90deg, #000 0%, transparent 22%);"></div></div>
+  </section>
+
+  <section data-label="A07 AxolCare" data-screen-label="24 A07 AxolCare" data-speaker-notes="AxolCare: IA aplicada al monitoreo y conservación del ajolote. Medalla de oro en Canadá 2021." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A07 · AXOLCARE · CONSERVACIÓN</span><span>24</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">IA para <span style="color:var(--accent);">conservación.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;">
+        <p style="font-size:24px;line-height:1.45;color:#c4c4c4;margin:0 0 26px;">Sistema de monitoreo asistido por IA para la conservación del ajolote: visión computacional sobre el hábitat, detección de estado y alertas tempranas.</p>
+        <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Visión computacional aplicada a especies en riesgo</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Machine learning para detección de anomalías</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Telemetría ambiental continua</div>
+        </div>
+        <div style="margin-top:auto;padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);">MEDALLA DE ORO · CANADÁ 2021 · VALIDADO</div>
+      </div>
+      <div style="position:relative;border:1px dashed rgba(255,255,255,0.3);min-height:0;"><image-slot id="apx-axolcare" shape="rect" placeholder="Foto del proyecto AxolCare"></image-slot></div>
+    </div>
+  </section>
+
+  <section data-label="A08 Open Cashback" data-screen-label="25 A08 Open Cashback" data-speaker-notes="Open Cashback: infraestructura de lealtad y valor programable on-chain conectada al POS de Atlas ONE." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A08 · OPEN CASHBACK · WEB3</span><span>25</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Lealtad y <span style="color:var(--accent);">valor programable.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;">
+        <p style="font-size:24px;line-height:1.45;color:#c4c4c4;margin:0 0 26px;">Saldo on-chain del cliente, reglas de recompensa programables y trazabilidad de cada movimiento, conectado directamente al punto de venta de Atlas ONE.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+          <div style="border:1px solid rgba(255,255,255,0.25);padding:20px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;margin-bottom:8px;">Wallet</div><div style="font-size:24px;color:#a0a0a0;">Saldo on-chain</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.25);padding:20px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;margin-bottom:8px;">Reglas</div><div style="font-size:24px;color:#a0a0a0;">Recompensas programables</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.25);padding:20px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;line-height:1;margin-bottom:8px;">Traza</div><div style="font-size:24px;color:#a0a0a0;">Movimientos auditables</div></div>
+        </div>
+        <div style="margin-top:auto;padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);">ESTADO: CONCEPTO</div>
+      </div>
+      <div style="position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.2);"><img src="assets/img-knowledge-building.png" alt="POS y wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.75);"></div>
+    </div>
+  </section>
+
+  <section data-label="A09 Movilidad" data-screen-label="26 A09 Movilidad" data-speaker-notes="Movilidad: Open Car en MVP, NeuroDrive detectando eventos con la cámara del teléfono, OpenDrive en investigación." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A09 · MOVILIDAD</span><span>26</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Visión computacional <span style="color:var(--accent);">desde el móvil.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">Open Car</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Plataforma de flota conectada: telemetría, eventos y gestión de unidades.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">MVP</div></div>
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">NeuroDrive</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Detección de eventos de conducción con la cámara del teléfono, sin hardware adicional.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">MVP</div></div>
+<div style="border:1px solid rgba(255,255,255,0.25);padding:24px 26px;display:flex;flex-direction:column;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:12px;">OpenDrive</div><div style="font-size:24px;color:#c4c4c4;line-height:1.4;flex:1;">Investigación en percepción y modelos de visión para conducción.</div><div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--accent);">INVESTIGACIÓN</div></div>
+    </div>
+    <div style="flex:1;min-height:0;margin-top:26px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.2);"><img src="assets/img-datacenter-tower.png" alt="Detección por visión computacional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(1.05) brightness(0.8);"></div>
+  </section>
+
+  <section data-label="A10 Arquitectura técnica" data-screen-label="27 A10 Arquitectura" data-speaker-notes="Detalle del stack por capa: qué compone Atlas Core, qué hay dentro de Cortex y cómo se entregan las verticales." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A10 · ARQUITECTURA TÉCNICA</span><span>27</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">El stack, <span style="color:var(--accent);">por capa.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">CAPA 1 · OPERACIÓN</div><div style="display:flex;flex-direction:column;gap:7px;font-size:24px;color:#c4c4c4;"><span>Ventas y POS</span><span>Compras e inventario</span><span>Finanzas</span><span>CRM</span><span>Logística</span><span>Workflows</span></div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">CAPA 2 · ATLAS CORE</div><div style="display:flex;flex-direction:column;gap:7px;font-size:24px;color:#c4c4c4;"><span>APIs y eventos</span><span>Data engineering</span><span>Identidad y permisos</span><span>Seguridad</span><span>Integraciones</span><span>Contexto organizacional</span><span>Cloud e infraestructura</span></div></div>
+      <div style="border:2px solid var(--accent);padding:26px 24px;display:flex;flex-direction:column;background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">CAPA 3 · CORTEX</div><div style="display:flex;flex-direction:column;gap:7px;font-size:24px;color:#e8e8e8;"><span>LLMs y RAG</span><span>Ontologías y knowledge graph</span><span>Memoria organizacional</span><span>Orquestación de agentes</span><span>Políticas y aprobaciones</span><span>Machine learning aplicado</span></div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">CAPA 4 · VERTICALES</div><div style="display:flex;flex-direction:column;gap:7px;font-size:24px;color:#c4c4c4;"><span>Atlas ONE (multi-tenant)</span><span>GovTech</span><span>ARCA · Financial OS</span><span>Industrial e IoT</span><span>Computer vision</span><span>Blockchain / Web3</span></div></div>
+    </div>
+    <div style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;">MULTI-TENANT · API-FIRST · MODULAR · DESPLIEGUE POR ETAPAS</div>
+  </section>
+
+  <section data-label="A11 Seguridad" data-screen-label="28 A11 Seguridad" data-speaker-notes="Cómo se gobierna la ejecución de agentes. Certificaciones formales pendientes." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A11 · SEGURIDAD Y GOVERNANCE</span><span>28</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Cómo se <span style="color:var(--accent);">gobierna la ejecución.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:var(--accent);margin-bottom:16px;">CONTROLES EN PRODUCCIÓN</div>
+        <div style="display:flex;flex-direction:column;border-top:2px solid var(--accent);">
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Aislamiento de datos por tenant</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Permisos por rol, área y nivel de autonomía</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Registro de cada acción de agente con atribución</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Aprobación humana obligatoria antes de ejecutar</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Reversibilidad de acciones y auditoría completa</div>
+<div style="padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:24px;">Políticas por tipo de acción y nivel de riesgo</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.16em;color:#8a8a8a;margin-bottom:16px;">CERTIFICACIONES Y CUMPLIMIENTO</div>
+        <div style="border:1px dashed rgba(255,255,255,0.3);padding:34px;display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;"><span style="font-size:24px;color:#c4c4c4;">Certificaciones formales (ISO, SOC 2)</span><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;"><span style="font-size:24px;color:#c4c4c4;">SLA y uptime medido</span><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;"><span style="font-size:24px;color:#c4c4c4;">Retención y residencia de datos</span><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;"><span style="font-size:24px;color:#c4c4c4;">Pruebas de penetración</span><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="A12 Casos" data-screen-label="29 A12 Casos" data-speaker-notes="Casos de producción. El primero documentado con datos reales; los demás requieren autorización del cliente." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A12 · CASOS DE PRODUCCIÓN</span><span>29</span></div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0 0 30px;text-transform:uppercase;">Lo que ya <span style="color:var(--accent);">está operando.</span></h2>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:6px;">
+      <div style="border:2px solid var(--accent);padding:30px 28px;display:flex;flex-direction:column;background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">CASO 01 · RETAIL MULTI-SUCURSAL</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:800;line-height:0.92;text-transform:uppercase;margin-bottom:18px;">Atlas ONE en operación</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:24px;color:#e8e8e8;"><span>13 sucursales sobre una instancia</span><span>134,844 tickets en 90 días</span><span>$80.1M MXN registrados</span><span>Ticket promedio $593.93</span></div>
+        <div style="margin-top:auto;padding-top:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;color:#8a8a8a;">FUENTE: PANEL ATLAS ONE · CORTE 09.09.2026</div>
+      </div>
+      <div style="border:1px dashed rgba(255,255,255,0.3);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;">CASO 02 · SECTOR PÚBLICO</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;color:#8a8a8a;">Cámara de Diputados</div><div style="font-size:24px;color:#a0a0a0;line-height:1.4;">Métricas de impacto y autorización de publicación pendientes.</div><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+      <div style="border:1px dashed rgba(255,255,255,0.3);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;">CASOS 03–07</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:0.95;text-transform:uppercase;color:#8a8a8a;">Portafolio enterprise</div><div style="font-size:24px;color:#a0a0a0;line-height:1.4;">7 clientes enterprise en total. Métricas por cliente y permisos de nombre pendientes.</div><span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:5px 11px;white-space:nowrap;">[DATA NEEDED]</span></div>
+    </div>
+  </section>
+
+  <section data-label="A13 Roadmap" data-screen-label="30 A13 Roadmap" data-speaker-notes="Roadmap por horizonte. Fechas y detalle 12-18 meses pendientes de definir." style="position:relative;box-sizing:border-box;padding:70px 96px;color:#fff;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#000;">
+    <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.2em;color:var(--accent);margin-bottom:26px;"><span>APPENDIX A13 · ROADMAP</span><span>30</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:30px;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:88px;line-height:0.9;letter-spacing:-0.02em;font-weight:800;margin:0;text-transform:uppercase;">Hacia dónde <span style="color:var(--accent);">vamos.</span></h2>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.12em;color:var(--accent);border:1px solid var(--accent);padding:6px 12px;white-space:nowrap;">FECHAS 12–18 MESES · [DATA NEEDED]</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+      <div style="border:2px solid var(--accent);padding:30px 28px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">HORIZONTE 1 · ESCALAR</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:20px;">Atlas ONE</div><div style="display:flex;flex-direction:column;gap:11px;font-size:24px;color:#e8e8e8;"><span>Más deployments enterprise</span><span>Presets verticales por industria</span><span>Reducir tiempo de implementación</span><span>Consolidar suscripción recurrente</span></div></div>
+      <div style="border:1px solid rgba(255,255,255,0.25);padding:30px 28px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:var(--accent);margin-bottom:16px;">HORIZONTE 2 · INTELIGENCIA</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:20px;">Atlas Cortex</div><div style="display:flex;flex-direction:column;gap:11px;font-size:24px;color:#c4c4c4;"><span>Cortex sobre los deployments de ONE</span><span>Ampliar la flota de agentes</span><span>Ontologías por vertical</span><span>Medición formal de horas ahorradas</span></div></div>
+      <div style="border:1px dashed rgba(255,255,255,0.3);padding:30px 28px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.14em;color:#8a8a8a;margin-bottom:16px;">HORIZONTE 3 · FRONTERA</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:0.95;text-transform:uppercase;margin-bottom:20px;color:#8a8a8a;">Atlas Labs</div><div style="display:flex;flex-direction:column;gap:11px;font-size:24px;color:#a0a0a0;"><span>Web3 y rieles financieros</span><span>Robótica, aeronáutica y espacial</span><span>Investigación con el IPN</span><span>Sin desviar foco comercial</span></div></div>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C6FF3D&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#C6FF3D&quot;,&quot;#3D8BFF&quot;,&quot;#09606D&quot;,&quot;#22E5FF&quot;],&quot;section&quot;:&quot;Color&quot;}}">
+class Component extends DCLogic {
+  apply() { document.documentElement.style.setProperty('--accent', this.props.accent || '#C6FF3D'); }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

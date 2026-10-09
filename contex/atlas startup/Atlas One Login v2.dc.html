@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+<style>
+  html, body { margin: 0; padding: 0; background: #04070f; }
+  * { box-sizing: border-box; }
+  a { color: #2f6df6; text-decoration: none; }
+  a:hover { color: #1d4fd0; }
+  input { font-family: 'Montserrat', sans-serif; }
+  input::placeholder { color: #9aa3b2; }
+  input:focus { outline: none; }
+  button:focus-visible { outline: 2px solid #2f6df6; outline-offset: 2px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;width:100%;overflow:hidden;background:linear-gradient(135deg,#040814 0%,#08132c 50%,#03060e 100%);font-family:'Montserrat',sans-serif;color:#0f1622;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;padding:48px 40px">
+
+  <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 28% 32%, rgba(26,110,220,0.42), transparent 70%),radial-gradient(50% 44% at 74% 62%, rgba(96,150,255,0.26), transparent 72%),radial-gradient(38% 34% at 62% 24%, rgba(180,60,52,0.16), transparent 74%);pointer-events:none"></div>
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 45%, rgba(0,0,0,0) 34%, rgba(2,4,10,0.78) 100%);pointer-events:none"></div>
+
+  <div style="position:relative;z-index:2;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:20px">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 4px">
+      <div style="display:flex;align-items:center;gap:12px;color:#fff">
+        <svg viewBox="0 0 375.71 300" style="width:26px;height:26px;flex:none" fill="currentColor">
+          <polygon points="252.36 236.3 195.47 110.84 140.66 236.21 98.8 235.8 174.88 71.93 216.92 71.85 295.23 235.73 252.36 236.3"/>
+          <polygon points="235.1 264.18 156.85 264.18 169.04 236.37 222.59 236.45 235.1 264.18"/>
+          <path d="M322.77,271.46c-5.63,7.02-12.31,13.43-18.68,19.74-31,30.74-75.65,46.25-119.14,44.73-92.04-3.23-164.14-80-162.22-171.68C24.29,89.2,76.26,23.61,149.63,4.95,164.96,1.05,180.47-.39,196.78.09c49.74,1.45,95.91,25.54,126.33,64.35,47.43,60.52,48.14,146.58-.34,207.02ZM285.77,268.38c61.55-58.4,56.66-157.12-9.84-209.36-54.27-42.64-132.41-38.36-181.82,10.11-54.43,53.4-55.5,140.38-2.56,195.07,52.52,54.26,139.28,56.32,194.22,4.19Z"/>
+        </svg>
+        <div style="display:flex;align-items:baseline;gap:1px;font-size:12.5px;letter-spacing:0.20em;text-transform:uppercase">
+          <span style="font-weight:800">ATLAS</span><span style="font-weight:400;color:rgba(255,255,255,0.60)">_ONE</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:3px;padding:3px;border:1px solid rgba(255,255,255,0.14);border-radius:8px;background:rgba(6,12,26,0.50);backdrop-filter:blur(14px)">
+        <button onClick="{{ setEs }}" style="{{ esBtn }}">ES</button>
+        <button onClick="{{ setEn }}" style="{{ enBtn }}">EN</button>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.04fr 0.96fr;border:1px solid rgba(255,255,255,0.13);border-radius:18px;overflow:hidden;box-shadow:0 60px 120px -40px rgba(0,0,0,0.85),0 0 0 1px rgba(255,255,255,0.04) inset">
+
+      <section style="position:relative;padding:46px 46px 40px;background:linear-gradient(155deg,rgba(11,24,54,0.86) 0%,rgba(7,15,36,0.80) 48%,rgba(10,20,44,0.86) 100%);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);display:flex;flex-direction:column;justify-content:space-between;min-height:588px;color:#fff;overflow:hidden">
+        <div style="position:absolute;inset:0;opacity:{{ sheen }};background:radial-gradient(90% 60% at 12% 0%, rgba(120,180,255,0.18), transparent 68%);pointer-events:none"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.40),transparent)"></div>
+
+        <div style="position:relative;display:flex;align-items:center;gap:9px;font-size:10.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.56)">
+          <span style="width:5px;height:5px;border-radius:999px;background:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,0.18);animation:pulseDot 2.6s ease-in-out infinite"></span>
+          {{ t.status }}
+        </div>
+
+        <div style="position:relative">
+          <div style="font-size:11px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#8fc4ff;margin-bottom:20px">{{ t.kicker }}</div>
+          <h1 style="margin:0;font-size:41px;line-height:1.10;font-weight:700;letter-spacing:-0.025em;color:#fff;max-width:15ch;text-wrap:balance">{{ t.h1 }}</h1>
+          <div style="height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.34),rgba(255,255,255,0));margin:32px 0 26px"></div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px">
+            <li style="display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:400;color:rgba(255,255,255,0.72)">
+              <svg viewBox="0 0 24 24" style="width:15px;height:15px;flex:none;color:#8fc4ff" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              {{ t.f1 }}
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:400;color:rgba(255,255,255,0.72)">
+              <svg viewBox="0 0 24 24" style="width:15px;height:15px;flex:none;color:#8fc4ff" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              {{ t.f2 }}
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:400;color:rgba(255,255,255,0.72)">
+              <svg viewBox="0 0 24 24" style="width:15px;height:15px;flex:none;color:#8fc4ff" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              {{ t.f3 }}
+            </li>
+          </ul>
+        </div>
+
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.10);font-size:10.5px;font-weight:400;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.40)">
+          <span>{{ t.secure }}</span>
+          <span>{{ t.version }}</span>
+        </div>
+      </section>
+
+      <section style="position:relative;padding:46px 48px 38px;background:linear-gradient(180deg,#f7f8fb 0%,#eceff5 100%);display:flex;flex-direction:column;justify-content:center;min-height:588px">
+
+        <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h2 style="margin:0;font-size:27px;font-weight:700;letter-spacing:-0.02em;color:#0f1622">{{ t.signin }}</h2>
+            <p style="margin:10px 0 0;font-size:13.5px;font-weight:400;line-height:1.55;color:#5b6474;max-width:34ch">{{ t.signinSub }}</p>
+
+            <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:flex-start;gap:10px;margin-top:22px;padding:12px 14px;border:1px solid #f2c2bd;border-left:3px solid #d0342c;border-radius:8px;background:#fdf2f1;animation:riseIn .22s ease both">
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;flex:none;color:#d0342c;margin-top:1px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                <span style="font-size:12.5px;line-height:1.45;font-weight:400;color:#8c211b">{{ error }}</span>
+              </div>
+            </sc-if>
+
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:26px">
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <label style="font-size:12px;font-weight:600;letter-spacing:0.01em;color:#39424f">{{ t.user }}</label>
+                <input type="text" value="{{ user }}" onChange="{{ onUser }}" onKeyDown="{{ onKey }}" placeholder="{{ t.userPh }}" autoComplete="username" style="{{ userInput }}" style-focus="border-color:#2f6df6;background:#fff;box-shadow:0 0 0 3px rgba(47,109,246,0.15)"></input>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <label style="font-size:12px;font-weight:600;letter-spacing:0.01em;color:#39424f">{{ t.pass }}</label>
+                <div style="position:relative;display:flex">
+                  <input type="{{ passType }}" value="{{ pass }}" onChange="{{ onPass }}" onKeyDown="{{ onKey }}" placeholder="{{ t.passPh }}" autoComplete="current-password" style="{{ passInput }}" style-focus="border-color:#2f6df6;background:#fff;box-shadow:0 0 0 3px rgba(47,109,246,0.15)"></input>
+                  <button onClick="{{ toggleShow }}" aria-label="{{ t.showPass }}" style="position:absolute;right:5px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:7px;background:transparent;color:#7b8494;cursor:pointer;transition:color .15s ease,background .15s ease" style-hover="color:#0f1622;background:rgba(15,22,34,0.06)">
+                    <sc-if value="{{ show }}" hint-placeholder-val="{{ false }}">
+                      <svg viewBox="0 0 24 24" style="width:17px;height:17px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.7 5.1A9.8 9.8 0 0 1 12 5c7 0 10 7 10 7a13.2 13.2 0 0 1-1.7 2.7"></path><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 7 10 7a9.7 9.7 0 0 0 5.4-1.6"></path><path d="M14.1 14.1a3 3 0 1 1-4.2-4.2"></path><path d="M2 2l20 20"></path></svg>
+                    </sc-if>
+                    <sc-if value="{{ hidden }}" hint-placeholder-val="{{ true }}">
+                      <svg viewBox="0 0 24 24" style="width:17px;height:17px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </sc-if>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:16px;row-gap:10px;margin-top:18px">
+              <button onClick="{{ toggleRemember }}" style="display:inline-flex;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:#4a5361;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:400;white-space:nowrap;cursor:pointer" style-hover="color:#0f1622">
+                <span style="{{ boxStyle }}">
+                  <sc-if value="{{ remember }}" hint-placeholder-val="{{ true }}">
+                    <svg viewBox="0 0 24 24" style="width:11px;height:11px" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg>
+                  </sc-if>
+                </span>
+                {{ t.remember }}
+              </button>
+              <button onClick="{{ goForgot }}" style="padding:0;border:0;background:transparent;color:#2f6df6;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:600;white-space:nowrap;cursor:pointer" style-hover="color:#1d4fd0">{{ t.forgot }}</button>
+            </div>
+
+            <button onClick="{{ submit }}" disabled="{{ loading }}" style="{{ submitBtn }}" style-hover="background:#1d4fd0" style-active="background:#173fa8">
+              <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+                <span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.35);border-top-color:#fff;border-radius:999px;animation:spin .7s linear infinite"></span>
+              </sc-if>
+              {{ submitLabel }}
+            </button>
+
+            <div style="display:flex;align-items:center;gap:14px;margin:24px 0 18px">
+              <span style="flex:1;height:1px;background:#d6dbe4"></span>
+              <span style="font-size:11px;font-weight:400;color:#7b8494">{{ t.or }}</span>
+              <span style="flex:1;height:1px;background:#d6dbe4"></span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+              <button onClick="{{ noop }}" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:1px solid #d3d9e3;border-radius:9px;background:#fff;color:#39424f;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease" style-hover="border-color:#b6bfcd;box-shadow:0 2px 10px -4px rgba(15,22,34,0.22)">
+                <svg viewBox="0 0 24 24" style="width:15px;height:15px;flex:none"><path fill="#4285F4" d="M22.56 11.42c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.57c2.08-1.92 3.27-4.74 3.27-8.09z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.76c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"></path><path fill="#FBBC05" d="M5.84 14.11a6.6 6.6 0 0 1 0-4.22V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.84z"></path><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"></path></svg>
+                Google
+              </button>
+              <button onClick="{{ noop }}" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:1px solid #d3d9e3;border-radius:9px;background:#fff;color:#39424f;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease" style-hover="border-color:#b6bfcd;box-shadow:0 2px 10px -4px rgba(15,22,34,0.22)">
+                <svg viewBox="0 0 24 24" style="width:14px;height:14px;flex:none"><rect x="2" y="2" width="9" height="9" fill="#F25022"></rect><rect x="13" y="2" width="9" height="9" fill="#7FBA00"></rect><rect x="2" y="13" width="9" height="9" fill="#00A4EF"></rect><rect x="13" y="13" width="9" height="9" fill="#FFB900"></rect></svg>
+                Microsoft
+              </button>
+              <button onClick="{{ noop }}" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:1px solid #d3d9e3;border-radius:9px;background:#fff;color:#39424f;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease" style-hover="border-color:#b6bfcd;box-shadow:0 2px 10px -4px rgba(15,22,34,0.22)">
+                <svg viewBox="0 0 24 24" style="width:15px;height:15px;flex:none" fill="#0f1622"><path d="M16.36 12.72c.02 2.6 2.28 3.46 2.3 3.47-.02.06-.36 1.24-1.2 2.45-.72 1.05-1.47 2.1-2.66 2.12-1.16.02-1.54-.69-2.87-.69-1.33 0-1.75.67-2.85.71-1.14.04-2.01-1.11-2.74-2.16-1.5-2.18-2.64-6.15-1.1-8.84.76-1.33 2.12-2.17 3.6-2.19 1.12-.02 2.18.75 2.87.75.68 0 1.97-.93 3.32-.79.57.02 2.16.21 3.18 1.6-.08.05-1.9 1.11-1.88 3.31M14.3 4.7c.61-.74 1.02-1.77.91-2.8-.88.04-1.95.59-2.58 1.33-.57.65-1.06 1.7-.93 2.7.98.08 1.99-.5 2.6-1.23"></path></svg>
+                Apple
+              </button>
+            </div>
+
+            <p style="margin:26px 0 0;font-size:12.5px;font-weight:400;color:#5b6474">{{ t.trouble }} <a href="#" style="font-weight:600">{{ t.support }}</a></p>
+            <sc-if value="{{ hint }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:8px 0 0;font-size:11px;font-weight:400;color:#98a1af">{{ t.hint }}</p>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isForgot }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:riseIn .24s ease both">
+            <button onClick="{{ goLogin }}" style="display:inline-flex;align-items:center;gap:7px;margin-bottom:22px;padding:0;border:0;background:transparent;color:#5b6474;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer" style-hover="color:#0f1622">
+              <svg viewBox="0 0 24 24" style="width:14px;height:14px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>
+              {{ t.back }}
+            </button>
+            <h2 style="margin:0;font-size:25px;font-weight:700;letter-spacing:-0.02em;color:#0f1622">{{ t.recover }}</h2>
+            <p style="margin:10px 0 0;font-size:13.5px;font-weight:400;line-height:1.55;color:#5b6474;max-width:36ch">{{ t.recoverSub }}</p>
+            <div style="display:flex;flex-direction:column;gap:7px;margin-top:26px">
+              <label style="font-size:12px;font-weight:600;color:#39424f">{{ t.user }}</label>
+              <input type="text" value="{{ user }}" onChange="{{ onUser }}" placeholder="{{ t.userPh }}" style="{{ userInput }}" style-focus="border-color:#2f6df6;background:#fff;box-shadow:0 0 0 3px rgba(47,109,246,0.15)"></input>
+            </div>
+            <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:11px 0 0;font-size:12.5px;font-weight:400;color:#8c211b">{{ error }}</p>
+            </sc-if>
+            <button onClick="{{ sendReset }}" disabled="{{ loading }}" style="{{ submitBtn }}" style-hover="background:#1d4fd0">
+              <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+                <span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.35);border-top-color:#fff;border-radius:999px;animation:spin .7s linear infinite"></span>
+              </sc-if>
+              {{ sendLabel }}
+            </button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSent }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:riseIn .24s ease both">
+            <span style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #cddcfb;border-radius:12px;background:#eaf1ff;color:#2f6df6;margin-bottom:22px">
+              <svg viewBox="0 0 24 24" style="width:21px;height:21px" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2.5 6 9.5 7 9.5-7"></path></svg>
+            </span>
+            <h2 style="margin:0;font-size:25px;font-weight:700;letter-spacing:-0.02em;color:#0f1622">{{ t.sentTitle }}</h2>
+            <p style="margin:12px 0 0;font-size:13.5px;font-weight:400;line-height:1.6;color:#5b6474;max-width:36ch">{{ t.sentSub }}</p>
+            <button onClick="{{ goLogin }}" style="{{ submitBtn }}" style-hover="background:#1d4fd0">{{ t.backToSignin }}</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isGranted }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:riseIn .24s ease both">
+            <span style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #b8e3cd;border-radius:12px;background:#e9f8f0;color:#12855a;margin-bottom:22px">
+              <svg viewBox="0 0 24 24" style="width:21px;height:21px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+            </span>
+            <h2 style="margin:0;font-size:25px;font-weight:700;letter-spacing:-0.02em;color:#0f1622">{{ t.grantedTitle }}</h2>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:14px">
+              <span style="width:14px;height:14px;border:2px solid rgba(47,109,246,0.25);border-top-color:#2f6df6;border-radius:999px;animation:spin .7s linear infinite"></span>
+              <span style="font-size:13.5px;font-weight:500;color:#39424f">{{ t.grantedSub }}</span>
+            </div>
+            <div style="height:3px;border-radius:999px;background:#dde3ec;overflow:hidden;margin-top:22px;max-width:280px">
+              <div style="height:100%;width:{{ progress }};background:#2f6df6;transition:width .4s linear"></div>
+            </div>
+            <p style="margin:18px 0 0;font-size:12.5px;font-weight:400;line-height:1.55;color:#7b8494;max-width:36ch">{{ t.grantedNote }}</p>
+            <button onClick="{{ goLogin }}" style="margin-top:26px;padding:0;border:0;background:transparent;color:#5b6474;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer" style-hover="color:#0f1622">{{ t.backToSignin }}</button>
+          </div>
+        </sc-if>
+
+      </section>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 4px;font-size:11px;font-weight:300;letter-spacing:0.05em;color:rgba(255,255,255,0.34)">
+      <span>{{ t.legal }}</span>
+      <span style="display:flex;align-items:center;gap:18px">
+        <a href="#" style="color:rgba(255,255,255,0.46)" style-hover="color:#fff">{{ t.privacy }}</a>
+        <a href="#" style="color:rgba(255,255,255,0.46)" style-hover="color:#fff">{{ t.terms }}</a>
+      </span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;waveSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.2,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Fondo&quot;},&quot;sheen&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cristal&quot;},&quot;demoHint&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+const COPY = {
+  es: {
+    status: "Todos los servicios operativos",
+    kicker: "Plataforma de operación",
+    h1: "Tu operación completa, en un solo sistema.",
+    f1: "Ventas y punto de venta",
+    f2: "Inventario en tiempo real",
+    f3: "Reportes y control operativo",
+    secure: "Conexión cifrada",
+    version: "Atlas One 2.4",
+    signin: "Bienvenido de nuevo",
+    signinSub: "Accede a tu suite Atlas One: ventas, inventario y operación conectados.",
+    user: "Tu correo o usuario",
+    userPh: "nombre@empresa.com",
+    pass: "Contraseña",
+    passPh: "••••••••",
+    showPass: "Mostrar contraseña",
+    remember: "Mantener sesión abierta",
+    forgot: "¿Olvidaste tu contraseña?",
+    submit: "Acceder",
+    submitting: "Verificando…",
+    or: "o continúa con",
+    trouble: "¿Problemas para entrar?",
+    support: "Contacta a soporte",
+    hint: "Demo: superadmin / atlas123",
+    errUser: "Escribe tu correo o usuario.",
+    errPass: "Escribe tu contraseña.",
+    errBad: "Usuario o contraseña incorrectos. Verifica tus datos e intenta de nuevo.",
+    recover: "Recuperar acceso",
+    recoverSub: "Escribe tu correo o usuario y te enviamos un enlace para restablecer tu contraseña.",
+    send: "Enviar instrucciones",
+    sending: "Enviando…",
+    back: "Volver a iniciar sesión",
+    sentTitle: "Revisa tu correo",
+    sentSub: "Si la cuenta existe, en unos minutos recibirás el enlace para restablecer tu contraseña.",
+    grantedTitle: "Acceso concedido",
+    grantedSub: "Preparando tu panel de operación…",
+    grantedNote: "Serás redirigido a app.atlasone.com.mx en unos segundos.",
+    backToSignin: "Volver a iniciar sesión",
+    legal: "© 2026 Atlas_Tech",
+    privacy: "Aviso de privacidad",
+    terms: "Términos de servicio"
+  },
+  en: {
+    status: "All services operational",
+    kicker: "Operations platform",
+    h1: "Your entire operation, in one system.",
+    f1: "Sales and point of sale",
+    f2: "Real-time inventory",
+    f3: "Reporting and operational control",
+    secure: "Encrypted connection",
+    version: "Atlas One 2.4",
+    signin: "Welcome back",
+    signinSub: "Access your Atlas One suite: sales, inventory and operations connected.",
+    user: "Email or username",
+    userPh: "name@company.com",
+    pass: "Password",
+    passPh: "••••••••",
+    showPass: "Show password",
+    remember: "Keep me signed in",
+    forgot: "Forgot your password?",
+    submit: "Sign in",
+    submitting: "Checking…",
+    or: "or continue with",
+    trouble: "Trouble signing in?",
+    support: "Contact support",
+    hint: "Demo: superadmin / atlas123",
+    errUser: "Enter your email or username.",
+    errPass: "Enter your password.",
+    errBad: "Wrong username or password. Check your details and try again.",
+    recover: "Recover access",
+    recoverSub: "Enter your email or username and we'll send you a link to reset your password.",
+    send: "Send instructions",
+    sending: "Sending…",
+    back: "Back to sign in",
+    sentTitle: "Check your inbox",
+    sentSub: "If the account exists, you'll receive a reset link in a few minutes.",
+    grantedTitle: "Access granted",
+    grantedSub: "Preparing your operations dashboard…",
+    grantedNote: "You'll be redirected to app.atlasone.com.mx in a few seconds.",
+    backToSignin: "Back to sign in",
+    legal: "© 2026 Atlas_Tech",
+    privacy: "Privacy notice",
+    terms: "Terms of service"
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: "es", view: "login", user: "", pass: "", show: false, remember: true, loading: false, error: "", bad: "" };
+
+  constructor(props) {
+    super(props);
+    this.canvasRef = React.createRef();
+    this.mx = 0; this.my = 0;
+  }
+
+  componentDidMount() { this.startField(); }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearTimeout(this.tm);
+    clearInterval(this.pg);
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("pointermove", this.onMove);
+  }
+
+  startField() {
+    const c = this.canvasRef.current;
+    if (!c) return;
+    const ctx = c.getContext("2d");
+    const off = document.createElement("canvas");
+    const octx = off.getContext("2d");
+    const blobs = [
+      { r: 0.66, c: "rgba(26,110,220,0.92)", ax: 0.26, ay: 0.20, sx: 0.000078, sy: 0.000104, ph: 0 },
+      { r: 0.52, c: "rgba(96,150,255,0.62)", ax: 0.30, ay: 0.24, sx: 0.000056, sy: 0.000131, ph: 2.4 },
+      { r: 0.40, c: "rgba(180,60,52,0.34)", ax: 0.27, ay: 0.18, sx: 0.000104, sy: 0.000070, ph: 4.4 },
+      { r: 0.30, c: "rgba(224,238,255,0.44)", ax: 0.22, ay: 0.16, sx: 0.000138, sy: 0.000094, ph: 1.1 }
+    ];
+    const stars = Array.from({ length: 90 }, () => ({
+      x: Math.random(), y: Math.random(), r: 0.5 + Math.random() * 1.1, a: 0.12 + Math.random() * 0.42, s: 0.4 + Math.random() * 1.4
+    }));
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.w = c.clientWidth || window.innerWidth;
+      this.h = c.clientHeight || window.innerHeight;
+      c.width = Math.max(1, Math.round(this.w * dpr));
+      c.height = Math.max(1, Math.round(this.h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      off.width = Math.max(1, Math.round(this.w / 7));
+      off.height = Math.max(1, Math.round(this.h / 7));
+    };
+    this.onResize = resize;
+    resize();
+    window.addEventListener("resize", resize);
+    this.onMove = (e) => {
+      this.mx = e.clientX / window.innerWidth - 0.5;
+      this.my = e.clientY / window.innerHeight - 0.5;
+    };
+    window.addEventListener("pointermove", this.onMove);
+
+    const frame = (ts) => {
+      const w = this.w, h = this.h;
+      const t = ts * (this.props.waveSpeed ?? 1);
+      const g = ctx.createLinearGradient(0, 0, w, h);
+      g.addColorStop(0, "#040814");
+      g.addColorStop(0.5, "#08132c");
+      g.addColorStop(1, "#03060e");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+
+      const ow = off.width, oh = off.height, scale = Math.min(ow, oh);
+      octx.clearRect(0, 0, ow, oh);
+      octx.globalCompositeOperation = "lighter";
+      blobs.forEach((b) => {
+        const x = ow * 0.5 + Math.sin(t * b.sx + b.ph) * ow * b.ax + this.mx * ow * 0.07;
+        const y = oh * 0.5 + Math.cos(t * b.sy + b.ph * 1.3) * oh * b.ay + this.my * oh * 0.07;
+        const r = scale * b.r;
+        const rg = octx.createRadialGradient(x, y, 0, x, y, r);
+        rg.addColorStop(0, b.c);
+        rg.addColorStop(0.5, b.c.replace(/[\d.]+\)$/, "0.13)"));
+        rg.addColorStop(1, "rgba(0,0,0,0)");
+        octx.fillStyle = rg;
+        octx.beginPath();
+        octx.arc(x, y, r, 0, 6.2832);
+        octx.fill();
+      });
+      octx.globalCompositeOperation = "source-over";
+
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      ctx.globalAlpha = 0.66;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(off, 0, 0, w, h);
+      ctx.restore();
+
+      // slow liquid bands
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      for (let i = 0; i < 4; i++) {
+        const amp = h * 0.05 + i * 8;
+        const base = h * (0.34 + i * 0.13);
+        ctx.beginPath();
+        ctx.moveTo(0, h + 2);
+        for (let x = 0; x <= w; x += 12) {
+          const y = base
+            + Math.sin(x * 0.0026 + t * 0.00019 * (1 + i * 0.3) + i * 1.6) * amp
+            + Math.sin(x * 0.0010 - t * 0.00012 + i) * amp * 0.5;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h + 2);
+        ctx.closePath();
+        const lg = ctx.createLinearGradient(0, base - amp * 1.4, 0, h);
+        lg.addColorStop(0, "rgba(140,190,255," + (0.040 - i * 0.007).toFixed(3) + ")");
+        lg.addColorStop(1, "rgba(3,6,14,0)");
+        ctx.fillStyle = lg;
+        ctx.fill();
+        ctx.strokeStyle = "rgba(174,214,255," + (0.075 - i * 0.014).toFixed(3) + ")";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // instrument dial
+      const cx = w * 0.5 + this.mx * 26, cy = h * 0.48 + this.my * 22;
+      const rad = Math.min(w, h) * 0.34;
+      const rot = t * 0.000022;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(rot);
+      ctx.strokeStyle = "rgba(160,200,255,0.10)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(0, 0, rad, 0, 6.2832);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(0, 0, rad * 1.12, 0, 6.2832);
+      ctx.strokeStyle = "rgba(160,200,255,0.05)";
+      ctx.stroke();
+      for (let a = 0; a < 120; a++) {
+        const ang = (a / 120) * 6.2832;
+        const len = a % 10 === 0 ? 14 : 7;
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(ang) * rad * 1.04, Math.sin(ang) * rad * 1.04);
+        ctx.lineTo(Math.cos(ang) * (rad * 1.04 + len), Math.sin(ang) * (rad * 1.04 + len));
+        ctx.strokeStyle = "rgba(180,215,255," + (a % 10 === 0 ? 0.16 : 0.07) + ")";
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      stars.forEach((s) => {
+        const tw = 0.55 + 0.45 * Math.sin(t * 0.0006 * s.s + s.x * 30);
+        ctx.beginPath();
+        ctx.arc(s.x * w + this.mx * 12, s.y * h + this.my * 12, s.r, 0, 6.2832);
+        ctx.fillStyle = "rgba(226,240,255," + (s.a * tw).toFixed(3) + ")";
+        ctx.fill();
+      });
+      ctx.restore();
+
+    };
+    const draw = (ts) => {
+      try { frame(ts); } catch (err) {
+        console.error("Atlas login background stopped:", err);
+        return;
+      }
+      this.raf = requestAnimationFrame(draw);
+    };
+    draw(performance.now());
+  }
+
+  t() { return COPY[this.state.lang] || COPY.es; }
+
+  inputStyle(bad, pad) {
+    return {
+      width: "100%",
+      padding: pad,
+      border: "1px solid " + (bad ? "#dd8880" : "#d3d9e3"),
+      borderRadius: 9,
+      background: bad ? "#fdf6f5" : "#fff",
+      color: "#0f1622",
+      fontSize: 14,
+      fontWeight: 400,
+      boxShadow: bad ? "0 0 0 3px rgba(208,52,44,0.10)" : "inset 0 1px 2px rgba(15,22,34,0.05)",
+      transition: "border-color .16s ease, box-shadow .16s ease, background .16s ease"
+    };
+  }
+
+  langBtn(active) {
+    return {
+      padding: "6px 12px",
+      border: 0,
+      borderRadius: 6,
+      background: active ? "rgba(255,255,255,0.94)" : "transparent",
+      color: active ? "#0a1226" : "rgba(255,255,255,0.62)",
+      fontFamily: "'Montserrat', sans-serif",
+      fontSize: 10.5,
+      fontWeight: 700,
+      letterSpacing: "0.10em",
+      cursor: "pointer",
+      transition: "background .16s ease, color .16s ease"
+    };
+  }
+
+  attempt() {
+    const t = this.t();
+    const { user, pass } = this.state;
+    if (!user.trim()) return this.setState({ error: t.errUser, bad: "user" });
+    if (!pass) return this.setState({ error: t.errPass, bad: "pass" });
+    this.setState({ loading: true, error: "", bad: "" });
+    clearTimeout(this.tm);
+    this.tm = setTimeout(() => {
+      const ok = user.trim().toLowerCase() === "superadmin" && pass === "atlas123";
+      if (ok) {
+        this.setState({ loading: false, error: "", bad: "", view: "granted", progress: 12 });
+        clearInterval(this.pg);
+        this.pg = setInterval(() => {
+          this.setState((st) => {
+            const next = Math.min(100, (st.progress || 0) + 14);
+            if (next >= 100) clearInterval(this.pg);
+            return { progress: next };
+          });
+        }, 380);
+        return;
+      }
+      this.setState({ loading: false, error: t.errBad, bad: "both" });
+    }, 1100);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const t = this.t();
+    const bad = s.bad;
+    return {
+      t,
+      canvasRef: this.canvasRef,
+      sheen: String(this.props.sheen ?? 1),
+      hint: this.props.demoHint !== false,
+      user: s.user,
+      pass: s.pass,
+      show: s.show,
+      hidden: !s.show,
+      passType: s.show ? "text" : "password",
+      remember: s.remember,
+      loading: s.loading,
+      error: s.error,
+      isForm: s.view === "login",
+      isForgot: s.view === "forgot",
+      isSent: s.view === "sent",
+      isGranted: s.view === "granted",
+      progress: (s.progress || 0) + "%",
+      submitLabel: s.loading ? t.submitting : t.submit,
+      sendLabel: s.loading ? t.sending : t.send,
+      userInput: this.inputStyle(bad === "user" || bad === "both", "13px 15px"),
+      passInput: this.inputStyle(bad === "pass" || bad === "both", "13px 44px 13px 15px"),
+      esBtn: this.langBtn(s.lang === "es"),
+      enBtn: this.langBtn(s.lang === "en"),
+      boxStyle: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 17,
+        height: 17,
+        flex: "none",
+        border: "1px solid " + (s.remember ? "#2f6df6" : "#b9c1cd"),
+        borderRadius: 4,
+        background: s.remember ? "#2f6df6" : "#fff",
+        transition: "background .16s ease, border-color .16s ease"
+      },
+      submitBtn: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 9,
+        width: "100%",
+        marginTop: 24,
+        padding: "14px 22px",
+        border: 0,
+        borderRadius: 9,
+        background: s.loading ? "#4b81f8" : "#2f6df6",
+        color: "#fff",
+        fontFamily: "'Montserrat', sans-serif",
+        fontSize: 14,
+        fontWeight: 600,
+        letterSpacing: "0.01em",
+        cursor: s.loading ? "wait" : "pointer",
+        boxShadow: "0 10px 26px -12px rgba(47,109,246,0.70)",
+        transition: "background .16s ease"
+      },
+      noop: () => {},
+      setEs: () => this.setState({ lang: "es", error: "", bad: "" }),
+      setEn: () => this.setState({ lang: "en", error: "", bad: "" }),
+      onUser: (e) => this.setState({ user: e.target.value, error: "", bad: "" }),
+      onPass: (e) => this.setState({ pass: e.target.value, error: "", bad: "" }),
+      onKey: (e) => { if (e.key === "Enter") this.attempt(); },
+      toggleShow: () => this.setState({ show: !s.show }),
+      toggleRemember: () => this.setState({ remember: !s.remember }),
+      submit: () => this.attempt(),
+      goForgot: () => this.setState({ view: "forgot", error: "", bad: "", pass: "" }),
+      goLogin: () => { clearInterval(this.pg); this.setState({ view: "login", error: "", bad: "", progress: 0 }); },
+      sendReset: () => {
+        if (!this.state.user.trim()) return this.setState({ error: t.errUser, bad: "user" });
+        this.setState({ loading: true, error: "" });
+        clearTimeout(this.tm);
+        this.tm = setTimeout(() => this.setState({ loading: false, view: "sent" }), 1000);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

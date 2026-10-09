@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e7e3db; font-weight: 500; letter-spacing: 0.008em; }
+    a { color: #09606D; text-decoration: none; }
+    a:hover { color: #075057; }
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Portada" data-screen-label="01 Portada" data-speaker-notes="Atlas Tech: ingeniería tecnológica y venture building. Construimos la infraestructura que permite a empresas, industrias y gobiernos operar como organizaciones agénticas. Nueve años de ejecución desde 2016." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#04353b;">
+    <img src="assets/img-av-vision.png" alt="Tierra desde órbita con red de datos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(4,53,59,0.94) 0%, rgba(4,53,59,0.78) 46%, rgba(4,53,59,0.45) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;align-items:center;gap:16px;">
+      <svg width="40" height="45" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;flex:none;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.3em;font-weight:600;">ATLAS TECH</span>
+    </div>
+    <div style="position:relative;z-index:2;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:600;margin-bottom:28px;">Perfil corporativo · 2026</div>
+      <h1 style="font-size:96px;line-height:1.02;letter-spacing:-0.03em;font-weight:800;margin:0 0 30px;max-width:20ch;">La infraestructura para organizaciones agénticas.</h1>
+      <p style="font-size:30px;line-height:1.55;color:#c9d3d6;margin:0;max-width:56ch;">Ingeniería tecnológica y venture building. Diseñamos, construimos y operamos los sistemas con los que empresas, industrias y gobiernos toman mejores decisiones.</p>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.18em;text-transform:uppercase;color:#7fc4cb;margin-bottom:10px;">Founding leadership</div>
+        <div style="font-size:24px;font-weight:600;color:#eef1f6;">Emmanuel Campos Genaro · Israel Romero Flores · Leonardo Tonatiuh González</div>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.14em;color:#9fb3b6;">atlastech.mx</span>
+    </div>
+  </section>
+
+  <section data-label="Qué es Atlas" data-screen-label="02 Qué es Atlas" data-speaker-notes="Atlas Tech combina seis capacidades en una sola compañía: visión de producto, ingeniería, investigación, implementación, transformación y venture building. Todo se construye sobre un núcleo tecnológico común." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;">Qué es Atlas Tech</div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">02 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <h2 style="font-size:54px;line-height:1.08;letter-spacing:-0.025em;font-weight:800;margin:0 0 28px;">Ingeniería tecnológica y <span style="color:#0a7280;">venture building</span> en una sola compañía.</h2>
+        <p style="font-size:28px;line-height:1.6;color:#55606f;margin:0 0 40px;max-width:48ch;">Diseñamos, desarrollamos e integramos sistemas empresariales, inteligencia artificial, automatización, blockchain y plataformas verticales — y construimos nuestras propias ventures sobre una arquitectura común.</p>
+        <div style="display:flex;border-top:2px solid rgba(7,80,87,0.16);">
+          <div style="flex:1;padding:24px 24px 0 0;border-right:1px solid rgba(7,80,87,0.14);">
+            <div style="font-size:72px;font-weight:800;line-height:1;color:#075057;">9+</div>
+            <div style="font-size:23px;color:#6b7280;margin-top:10px;line-height:1.35;">años de ejecución<br>desde 2016</div>
+          </div>
+          <div style="flex:1;padding:24px 24px 0 24px;border-right:1px solid rgba(7,80,87,0.14);">
+            <div style="font-size:72px;font-weight:800;line-height:1;color:#075057;">5</div>
+            <div style="font-size:23px;color:#6b7280;margin-top:10px;line-height:1.35;">verticales de<br>producto</div>
+          </div>
+          <div style="flex:1;padding:24px 0 0 24px;">
+            <div style="font-size:72px;font-weight:800;line-height:1;color:#075057;">1</div>
+            <div style="font-size:23px;color:#6b7280;margin-top:10px;line-height:1.35;">núcleo tecnológico<br>común</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:30px 26px;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.45);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#075057;margin-bottom:20px;">◆</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Visión de producto</div>
+          <div style="font-size:22px;color:#6b7280;line-height:1.45;">Qué construir y por qué importa.</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:30px 26px;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.45);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#075057;margin-bottom:20px;">&lt;/&gt;</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Ingeniería</div>
+          <div style="font-size:22px;color:#6b7280;line-height:1.45;">Desarrollo full-stack y arquitectura.</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:30px 26px;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.45);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:#eef2ea;border:1px solid rgba(47,111,106,0.25);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#2f6f6a;margin-bottom:20px;">✦</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Investigación</div>
+          <div style="font-size:22px;color:#6b7280;line-height:1.45;">IA aplicada y deep tech.</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:30px 26px;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.45);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#075057;margin-bottom:20px;">⟳</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Implementación</div>
+          <div style="font-size:22px;color:#6b7280;line-height:1.45;">Adopción y transformación real.</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:30px 26px;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.45);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#075057;margin-bottom:20px;">↗</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Transformación</div>
+          <div style="font-size:22px;color:#6b7280;line-height:1.45;">De operación manual a inteligente.</div>
+        </div>
+        <div style="background:#075057;color:#eef1f6;border-radius:14px;padding:30px 26px;box-shadow:0 22px 46px -30px rgba(7,80,87,0.7);display:flex;flex-direction:column;">
+          <div style="width:58px;height:58px;border-radius:12px;background:rgba(120,190,196,0.18);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#7fc4cb;margin-bottom:20px;">◇</div>
+          <div style="font-size:26px;font-weight:800;margin-bottom:8px;">Venture building</div>
+          <div style="font-size:22px;color:#aab3c4;line-height:1.45;">Nuevas empresas y plataformas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Trayectoria" data-screen-label="03 Trayectoria" data-speaker-notes="Nueve años de trayectoria continua: premios internacionales de innovación 2016-2018, HarvestT como proyecto AgroTech de IA en 2018, gobierno digital 2022-2024, modelos agénticos en la Cámara de Diputados 2024-2025, y hoy investigación en ontologías con CIC-IPN y SEPI-ESIME." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Trayectoria</div>
+        <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">De la innovación aplicada a la IA empresarial.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">03 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:stretch;position:relative;">
+      <div style="position:absolute;top:34px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,#075057,#0a7280,#075057);z-index:0;"></div>
+      <div style="position:relative;z-index:1;background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 18px 38px -28px rgba(7,80,87,0.45);">
+        <div style="width:60px;height:60px;flex:none;border-radius:14px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-bottom:26px;">01</div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#075057;margin-bottom:12px;">2016–18</div>
+        <div style="font-size:28px;font-weight:800;margin-bottom:12px;line-height:1.2;">Premios internacionales</div>
+        <p style="font-size:22px;line-height:1.5;color:#6b7280;margin:0 0 18px;">Innovación reconocida en Bélgica, Polonia y Canadá.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">HarvestT</span><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">AgroTech</span></div>
+      </div>
+      <div style="position:relative;z-index:1;background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 18px 38px -28px rgba(7,80,87,0.45);">
+        <div style="width:60px;height:60px;flex:none;border-radius:14px;background:#2f6f6a;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-bottom:26px;">02</div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#2f6f6a;margin-bottom:12px;">2018</div>
+        <div style="font-size:28px;font-weight:800;margin-bottom:12px;line-height:1.2;">HarvestT · AgroTech AI</div>
+        <p style="font-size:22px;line-height:1.5;color:#6b7280;margin:0 0 18px;">Machine learning, computer vision y sistemas expertos aplicados al campo.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#2f6f6a;background:#faf9f6;">IPN</span><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#2f6f6a;background:#faf9f6;">ML</span></div>
+      </div>
+      <div style="position:relative;z-index:1;background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 18px 38px -28px rgba(7,80,87,0.45);">
+        <div style="width:60px;height:60px;flex:none;border-radius:14px;background:#0a7280;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-bottom:26px;">03</div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#0a7280;margin-bottom:12px;">2022–24</div>
+        <div style="font-size:28px;font-weight:800;margin-bottom:12px;line-height:1.2;">Gobierno digital</div>
+        <p style="font-size:22px;line-height:1.5;color:#6b7280;margin:0 0 18px;">Datos, blockchain y transparencia en el sector público.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Blockchain</span><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Data</span></div>
+      </div>
+      <div style="position:relative;z-index:1;background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 18px 38px -28px rgba(7,80,87,0.45);">
+        <div style="width:60px;height:60px;flex:none;border-radius:14px;background:#0a7280;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-bottom:26px;">04</div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#0a7280;margin-bottom:12px;">2024–25</div>
+        <div style="font-size:28px;font-weight:800;margin-bottom:12px;line-height:1.2;">Cámara de Diputados</div>
+        <p style="font-size:22px;line-height:1.5;color:#6b7280;margin:0 0 18px;">Analítica y modelos agénticos en operación institucional.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Agentes</span><span style="padding:6px 13px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Analítica</span></div>
+      </div>
+      <div style="position:relative;z-index:1;background:#075057;color:#eef1f6;border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 26px 52px -32px rgba(7,80,87,0.7);">
+        <div style="width:60px;height:60px;flex:none;border-radius:14px;background:#eef1f6;color:#075057;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;margin-bottom:26px;">NOW</div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Hoy</div>
+        <div style="font-size:28px;font-weight:800;margin-bottom:12px;line-height:1.2;">Ecosistema Atlas Tech</div>
+        <p style="font-size:22px;line-height:1.5;color:#aab3c4;margin:0 0 18px;">Investigación CIC-IPN y SEPI-ESIME en ontologías para agentes.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Ontologías</span><span style="padding:6px 13px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Agentic AI</span></div>
+      </div>
+    </div>
+    <div style="margin-top:30px;background:#faf9f6;border:1px solid rgba(7,80,87,0.12);border-radius:14px;padding:22px 30px;display:flex;align-items:center;gap:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#09606D;font-weight:700;white-space:nowrap;">HILO CONDUCTOR</span>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;font-size:24px;font-weight:700;color:#075057;flex-wrap:wrap;"><span>Investigación</span><span style="color:#9aa0aa;">→</span><span>Gobierno digital</span><span style="color:#9aa0aa;">→</span><span>Consultoría</span><span style="color:#9aa0aa;">→</span><span style="color:#0a7280;">Sistemas agénticos empresariales</span></div>
+    </div>
+  </section>
+
+  <section data-label="Premios" data-screen-label="04 Premios" data-speaker-notes="Validación internacional 2016–2021: Eureka Award en Bélgica, medalla de plata en Polonia, y cuatro ediciones consecutivas en Canadá con oro AgroTech, Special Inventor Award, Best Innovation of North America, medalla de honor, mejor diseño industrial y mejor diseño de ingeniería otorgados por la Universidad Politécnica de Rumania. En 2021 dos oros: AxolCare (IA para ajolotes) y HarvestT (domo geodésico con IA para invernaderos). Las fotos son de Emmanuel recibiendo los galardones." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(80% 90% at 70% 0%, rgba(9,96,109,0.3), transparent 58%), #04353b;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:18px;">Validación internacional</div>
+        <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Trece reconocimientos en cinco años.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">04 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.35fr 1fr;gap:36px;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;border-top:2px solid rgba(201,169,74,0.6);">
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#7fc4cb;">2016</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">BÉLGICA</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Eureka Award</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#7fc4cb;">2017</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">POLONIA</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Silver Medal</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#d6c07e;">2018</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">CANADÁ</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Gold Medal · AgroTech</span><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Special Inventor Award</span><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Best Innovation of North America</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#7fc4cb;">2019</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">CANADÁ</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Medal of Honor</span><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Gold Medal</span><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Best Industrial Design · UPB Rumania</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#7fc4cb;">2020</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">CANADÁ</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:18px;color:#e4e9ec;background:rgba(255,255,255,0.04);">Best Innovation of North America</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:96px 110px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div style="font-size:34px;font-weight:800;line-height:1;color:#d6c07e;">2021</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#c9a94a;">CANADÁ</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Gold Medal · AxolCare</span><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Gold Medal · HarvestT</span><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Jury's Choice Award</span><span style="padding:5px 12px;border:1px solid rgba(201,169,74,0.55);border-radius:999px;font-size:18px;color:#e6d5a0;background:rgba(201,169,74,0.14);">Best Engineering Design · UPB Rumania</span></div>
+      </div>
+        <div style="margin-top:auto;padding-top:14px;display:flex;gap:30px;">
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.14em;color:#7fc4cb;margin-bottom:6px;">AXOLCARE</div><div style="font-size:18px;color:#9fb3b6;line-height:1.4;">IA para la conservación del ajolote.</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.14em;color:#7fc4cb;margin-bottom:6px;">HARVESTT</div><div style="font-size:18px;color:#9fb3b6;line-height:1.4;">Domo geodésico aislado con IA que entrena modelos sobre las plantas.</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.4fr 1fr;gap:14px;min-height:0;">
+        <div style="grid-column:1 / -1;position:relative;min-height:0;border:1px solid rgba(255,255,255,0.14);"><image-slot id="premio-foto-1" shape="rect" placeholder="Foto: Emmanuel recibiendo galardón (principal)"></image-slot></div>
+        <div style="position:relative;min-height:0;border:1px solid rgba(255,255,255,0.14);"><image-slot id="premio-foto-2" shape="rect" placeholder="Foto: medallas / ceremonia"></image-slot></div>
+        <div style="position:relative;min-height:0;border:1px solid rgba(255,255,255,0.14);"><image-slot id="premio-foto-3" shape="rect" placeholder="Foto: premiación Canadá"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Equipo" data-screen-label="05 Equipo" data-speaker-notes="Dirección founder-led con tres cofundadores de perfiles complementarios: producto y arquitectura, crecimiento y clientes, IA e investigación. Debajo, el equipo extendido opera por células de capacidad, no por organigrama rígido." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Fundadores y equipo</div>
+        <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Dirección ejecutiva founder-led.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">05 / 15</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:34px;">
+      <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-top:3px solid #075057;border-radius:16px;padding:34px 30px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -28px rgba(7,80,87,0.45);">
+        <div style="width:62px;height:62px;border-radius:13px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#075057;margin-bottom:26px;">EC</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px;">Emmanuel Campos Genaro</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.08em;color:#09606D;margin-bottom:20px;">FOUNDER &amp; CEO</div>
+        <p style="font-size:24px;line-height:1.55;color:#55606f;margin:0 0 22px;">Visión, estrategia de producto, arquitectura de negocio y liderazgo de ventures.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Producto</span><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Arquitectura</span><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Venture</span></div>
+      </div>
+      <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-top:3px solid #09606D;border-radius:16px;padding:34px 30px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -28px rgba(7,80,87,0.45);">
+        <div style="width:62px;height:62px;border-radius:13px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#075057;margin-bottom:26px;">IR</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px;">Israel Romero Flores</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.08em;color:#09606D;margin-bottom:20px;">CO-FOUNDER &amp; CGCO</div>
+        <p style="font-size:24px;line-height:1.55;color:#55606f;margin:0 0 22px;">Crecimiento, cuentas clave, venta consultiva y customer success ejecutivo.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Growth</span><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Key accounts</span><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Customer success</span></div>
+      </div>
+      <div style="background:#ffffff;border:1px solid rgba(7,80,87,0.1);border-top:3px solid #0a7280;border-radius:16px;padding:34px 30px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -28px rgba(7,80,87,0.45);">
+        <div style="width:62px;height:62px;border-radius:13px;background:#f0eee9;border:1px solid rgba(7,80,87,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#075057;margin-bottom:26px;">LG</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px;">Leonardo T. González</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.08em;color:#09606D;margin-bottom:20px;">CO-FOUNDER &amp; CTO</div>
+        <p style="font-size:24px;line-height:1.55;color:#55606f;margin:0 0 22px;">Estrategia tecnológica, IA, investigación aplicada, arquitectura computacional y deep tech.</p>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;"><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">IA &amp; Research</span><span style="padding:7px 14px;border:1px solid rgba(7,80,87,0.14);border-radius:999px;font-size:19px;color:#09606D;background:#faf9f6;">Deep tech</span></div>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;background:#075057;color:#eef1f6;border-radius:16px;padding:32px 36px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 24px 50px -32px rgba(7,80,87,0.7);">
+      <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:24px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#7fc4cb;font-weight:700;">EQUIPO EXTENDIDO</span>
+        <span style="font-size:24px;color:#aab3c4;">Células de capacidad, no organigrama rígido.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+        <div style="border-left:2px solid rgba(127,196,203,0.5);padding-left:18px;"><div style="font-size:24px;font-weight:800;margin-bottom:6px;">Product &amp; Delivery</div><div style="font-size:20px;color:#9fb3b6;line-height:1.4;">Discovery, roadmap y entrega.</div></div>
+        <div style="border-left:2px solid rgba(127,196,203,0.5);padding-left:18px;"><div style="font-size:24px;font-weight:800;margin-bottom:6px;">Engineering</div><div style="font-size:20px;color:#9fb3b6;line-height:1.4;">Backend, frontend e infraestructura.</div></div>
+        <div style="border-left:2px solid rgba(127,196,203,0.5);padding-left:18px;"><div style="font-size:24px;font-weight:800;margin-bottom:6px;">AI &amp; Data</div><div style="font-size:20px;color:#9fb3b6;line-height:1.4;">Modelos, pipelines y agentes.</div></div>
+        <div style="border-left:2px solid rgba(127,196,203,0.5);padding-left:18px;"><div style="font-size:24px;font-weight:800;margin-bottom:6px;">Industrial &amp; IoT</div><div style="font-size:20px;color:#9fb3b6;line-height:1.4;">OT, edge y telemetría.</div></div>
+        <div style="border-left:2px solid rgba(127,196,203,0.5);padding-left:18px;"><div style="font-size:24px;font-weight:800;margin-bottom:6px;">Research</div><div style="font-size:20px;color:#9fb3b6;line-height:1.4;">Ontologías y deep tech con el IPN.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Qué hacemos" data-screen-label="06 Qué hacemos" data-speaker-notes="Siete líneas de servicio alrededor del mismo núcleo tecnológico. Una organización puede contratar desde un diagnóstico de dos semanas hasta una venture de largo plazo." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Qué hacemos</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;max-width:32ch;">Diseñamos, construimos y evolucionamos infraestructura operativa e inteligente.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">06 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:18px;align-items:stretch;">
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">◧</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">01</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Strategy &amp; Architecture</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">Diagnóstico, blueprint y roadmap tecnológico.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">2–8 semanas</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">▦</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">02</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Platform Engineering</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">ERP, BOS, POS, CRM y portales multi-tenant.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">API-first</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">✳</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">03</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">AI &amp; Agentic Systems</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">Memoria, RAG, agentes, políticas y human-in-the-loop.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">Cortex</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">⟳</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">04</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Automation &amp; Data</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">Integraciones, workflows y pipelines confiables.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">Single source of truth</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">⚙</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">05</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Industrial IoT</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">PLC, edge, telemetría, OEE y mantenimiento predictivo.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">OT + Edge</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">◈</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">06</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Implementation</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">Migración, capacitación, adopción y evolución gestionada.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">Managed evolution</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="width:48px;height:48px;flex:none;border-radius:12px;background:#075057;color:#eef1f6;display:flex;align-items:center;justify-content:center;font-size:24px;">◇</span><span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#09606D;">07</span></div>
+        <div style="font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2;">Venture Building</div>
+        <div style="font-size:22px;color:#6b7280;line-height:1.45;">Producto, ingeniería y go-to-market para nuevas empresas.</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(7,80,87,0.1);font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.06em;color:#09606D;">Spin-off</div>
+      </div>
+      <div style="background:#075057;color:#eef1f6;border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 22px 46px -30px rgba(7,80,87,0.7);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:14px;">ATLAS TECHNOLOGY CORE</div>
+        <div style="font-size:26px;font-weight:800;line-height:1.25;margin-bottom:14px;">Un núcleo, siete servicios.</div>
+        <div style="font-size:21px;color:#aab3c4;line-height:1.45;">Los productos aceleran la entrega; los servicios los adaptan a la organización.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Cómo trabajamos" data-screen-label="07 Cómo trabajamos" data-speaker-notes="Diez etapas en tres macrofases: Understand, Build y Evolve. Cada etapa tiene un entregable concreto, lo que hace auditable el avance de un proyecto." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(80% 90% at 50% 0%, rgba(9,96,109,0.26), transparent 58%), linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px) 0 0/84px 84px, #075057;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:18px;">Cómo trabajamos</div>
+        <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Del problema a la operación inteligente.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">07 / 15</span>
+    </div>
+    <div style="display:grid;grid-template-columns:3fr 4fr 3fr;gap:18px;margin-bottom:18px;">
+      <div style="background:rgba(127,196,203,0.12);border:1px solid rgba(127,196,203,0.34);border-radius:12px;padding:16px 24px;"><span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#7fc4cb;font-weight:700;">UNDERSTAND</span></div>
+      <div style="background:rgba(127,196,203,0.12);border:1px solid rgba(127,196,203,0.34);border-radius:12px;padding:16px 24px;"><span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#7fc4cb;font-weight:700;">BUILD</span></div>
+      <div style="background:rgba(201,169,74,0.14);border:1px solid rgba(201,169,74,0.36);border-radius:12px;padding:16px 24px;"><span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#d6c07e;font-weight:700;">EVOLVE</span></div>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:16px;align-items:stretch;">
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">01</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Discover</div><div style="font-size:21px;color:#9fb3b6;line-height:1.45;">Objetivos, stakeholders y contexto.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ contexto</div></div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">02</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Diagnose</div><div style="font-size:21px;color:#9fb3b6;line-height:1.45;">Procesos, datos y riesgos.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ brechas</div></div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">03</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Architect</div><div style="font-size:21px;color:#9fb3b6;line-height:1.45;">Módulos, roles y APIs.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ blueprint</div></div>
+      <div style="background:rgba(52,86,143,0.24);border:1px solid rgba(120,150,210,0.34);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">04</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Build</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">Backend, UX e infraestructura.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ producto</div></div>
+      <div style="background:rgba(52,86,143,0.24);border:1px solid rgba(120,150,210,0.34);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">05</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Integrate</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">ERP, CRM, POS y pagos.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ conectores</div></div>
+      <div style="background:rgba(52,86,143,0.24);border:1px solid rgba(120,150,210,0.34);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">06</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Automate</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">Reglas, aprobaciones y alertas.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ workflows</div></div>
+      <div style="background:rgba(52,86,143,0.24);border:1px solid rgba(120,150,210,0.34);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#7fc4cb;margin-bottom:14px;">07</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Intelligence</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">RAG, copilots y agentes.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#7fc4cb;">→ Cortex</div></div>
+      <div style="background:rgba(201,169,74,0.1);border:1px solid rgba(201,169,74,0.32);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#d6c07e;margin-bottom:14px;">08</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Operate</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">Despliegue, adopción y soporte.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#d6c07e;">→ soporte</div></div>
+      <div style="background:rgba(201,169,74,0.1);border:1px solid rgba(201,169,74,0.32);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#d6c07e;margin-bottom:14px;">09</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Learn</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">KPIs, uso real y feedback.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#d6c07e;">→ mejora</div></div>
+      <div style="background:rgba(201,169,74,0.2);border:1px solid rgba(201,169,74,0.44);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#d6c07e;margin-bottom:14px;">10</div><div style="font-size:28px;font-weight:800;margin-bottom:12px;">Scale</div><div style="font-size:21px;color:#cdd4e0;line-height:1.45;">Sedes, módulos y verticales.</div><div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-family:'JetBrains Mono',monospace;font-size:19px;color:#d6c07e;">→ ventures</div></div>
+    </div>
+  </section>
+
+  <section data-label="Divisor · Ecosistema" data-screen-label="08 Divisor Ecosistema" data-speaker-notes="Divisor de sección. Entramos al ecosistema de productos: un núcleo, múltiples plataformas, múltiples industrias." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0d1522;">
+    <img src="assets/img-orbit-network.png" alt="Infraestructura de cómputo Atlas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(4,53,59,0.94) 0%, rgba(4,53,59,0.45) 58%, rgba(4,53,59,0.55) 100%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:28px;">Sección 02 · Ecosistema de productos</div>
+      <h2 style="font-size:84px;line-height:1.04;letter-spacing:-0.03em;font-weight:800;margin:0 0 26px;max-width:22ch;">Un núcleo. Múltiples plataformas. Múltiples industrias.</h2>
+      <p style="font-size:28px;line-height:1.55;color:#c9d3d6;margin:0;max-width:62ch;">Todo lo que construimos comparte la misma base de cloud, datos, IA, agentes y blockchain — por eso cada nuevo producto sale más rápido que el anterior.</p>
+    </div>
+  </section>
+
+  <section data-label="Arquitectura" data-screen-label="09 Arquitectura" data-speaker-notes="Arquitectura de productos: sobre un núcleo compartido de cloud, APIs, datos, IA, agentes, blockchain y seguridad se levantan cinco verticales. El stack tecnológico completo aparece en la banda inferior." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(80% 90% at 50% 0%, rgba(9,96,109,0.24), transparent 58%), #04353b;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:18px;">Arquitectura de productos</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Cinco verticales sobre un mismo núcleo.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">09 / 15</span>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:26px;margin-bottom:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;color:#7fc4cb;white-space:nowrap;">NÚCLEO COMPARTIDO</span>
+      <div style="flex:1;display:grid;grid-template-columns:repeat(7,1fr);gap:12px;">
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">Cloud</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">APIs</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">Data</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">AI</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">Agents</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">Blockchain</div>
+        <div style="text-align:center;padding:12px 8px;border:1px solid rgba(255,255,255,0.16);border-radius:9px;font-size:21px;font-weight:700;">Security</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(120,190,196,0.45);font-size:21px;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;margin-bottom:14px;">↑ todo se construye sobre la misma base ↑</div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:stretch;">
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;line-height:1.3;margin-bottom:24px;">INTELIGENCIA<br>EMPRESARIAL</div>
+        <div style="border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:16px;margin-bottom:16px;"><div style="font-size:26px;font-weight:800;margin-bottom:4px;">Atlas ONE</div><div style="font-size:20px;color:#9fb3b6;">BOS/ERP componible</div><span style="display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:rgba(127,196,203,0.18);font-size:18px;color:#7fc4cb;">MVP</span></div>
+        <div><div style="font-size:26px;font-weight:800;margin-bottom:4px;">Atlas Cortex</div><div style="font-size:20px;color:#9fb3b6;">Capa cognitiva</div><span style="display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:rgba(127,196,203,0.18);font-size:18px;color:#7fc4cb;">En desarrollo</span></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#d6b87e;line-height:1.3;margin-bottom:24px;">INFRAESTRUCTURA<br>FINANCIERA</div>
+        <div style="border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:16px;margin-bottom:16px;"><div style="font-size:26px;font-weight:800;margin-bottom:4px;">Open Cashback</div><div style="font-size:20px;color:#9fb3b6;">Lealtad y valor programable</div><span style="display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:rgba(168,132,62,0.28);font-size:18px;color:#d6b87e;">Concepto</span></div>
+        <div style="font-size:21px;font-weight:600;color:#cdd4e0;line-height:1.45;">Identidad, valor y trazabilidad sobre blockchain.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;line-height:1.3;margin-bottom:24px;">MOVILIDAD<br>&amp; DEEP TECH</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">Open Car</span><span style="padding:4px 12px;border-radius:999px;background:rgba(127,196,203,0.18);font-size:18px;color:#7fc4cb;">MVP</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">NeuroDrive</span><span style="padding:4px 12px;border-radius:999px;background:rgba(127,196,203,0.18);font-size:18px;color:#7fc4cb;">MVP</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">OpenDrive</span><span style="padding:4px 12px;border-radius:999px;background:rgba(155,170,190,0.2);font-size:18px;color:#aab3c4;">Investig.</span></div>
+        </div>
+        <div style="margin-top:auto;padding-top:18px;font-size:20px;color:#9fb3b6;line-height:1.4;">Computer vision desde el móvil.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;line-height:1.3;margin-bottom:24px;">GOBIERNO<br>&amp; TERRITORIO</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">CIVIA</span><span style="font-size:20px;color:#9fb3b6;">Municipal</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">SIGMA</span><span style="font-size:20px;color:#9fb3b6;">Procesos</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">ATENEA</span><span style="font-size:20px;color:#9fb3b6;">Territorial</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">ORION</span><span style="font-size:20px;color:#9fb3b6;">Ecosistema</span></div>
+        </div>
+      </div>
+      <div style="background:rgba(47,111,106,0.24);border:1px solid rgba(127,176,168,0.44);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fb0a8;line-height:1.3;margin-bottom:24px;">INVESTIGACIÓN<br>&amp; TALENTO</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">Atlas R&amp;D</span><span style="padding:4px 12px;border-radius:999px;background:rgba(127,176,168,0.24);font-size:18px;color:#a8ccc4;">Investig.</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">HarvestT</span><span style="padding:4px 12px;border-radius:999px;background:rgba(127,176,168,0.24);font-size:18px;color:#a8ccc4;">Validado</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="font-size:24px;font-weight:800;">Atlas Academy</span><span style="padding:4px 12px;border-radius:999px;background:rgba(155,170,190,0.2);font-size:18px;color:#aab3c4;">Concepto</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.14);padding-top:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.16em;color:#7fc4cb;font-weight:700;white-space:nowrap;">STACK</span>
+      <div style="flex:1;display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">IA agéntica</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">LLMs y RAG</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Machine learning</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Computer vision</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Blockchain / Web3</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">IoT industrial</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Data engineering</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Automatización e integración</span>
+        <span style="padding:7px 15px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;font-size:19px;color:#cdd4e0;">Cloud e infraestructura</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Atlas ONE" data-screen-label="10 Atlas ONE" data-speaker-notes="Atlas ONE es un Business Operating System componible: digitaliza, integra y automatiza la operación de una empresa en módulos que se activan por etapas." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Producto 01 · Atlas ONE</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">El sistema operativo del negocio.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">10 / 15</span>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;height:420px;margin-bottom:28px;box-shadow:0 26px 54px -34px rgba(7,80,87,0.6);">
+      <img src="assets/img-atlasone-dashboard.png" alt="Atlas ONE · dashboard ejecutivo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(4,53,59,0.9) 0%, rgba(4,53,59,0.4) 52%, transparent 78%);"></div>
+      <div style="position:absolute;left:40px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:48%;">
+        <p style="font-size:28px;line-height:1.55;color:#eef1f6;margin:0;">Un Business Operating System componible que permite digitalizar, integrar y automatizar la operación completa — y activar inteligencia sobre ella.</p>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;">
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#09606D;margin-bottom:18px;">MÓDULOS BASE</div>
+        <div style="font-size:24px;font-weight:800;line-height:1.5;color:#075057;">Ventas · Compras<br>Inventario · Finanzas</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#09606D;margin-bottom:18px;">OPERACIÓN</div>
+        <div style="font-size:24px;font-weight:800;line-height:1.5;color:#075057;">POS · Producción<br>Logística · Servicio</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 16px 34px -28px rgba(7,80,87,0.42);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#09606D;margin-bottom:18px;">CÓMO SE ENTREGA</div>
+        <div style="font-size:24px;font-weight:800;line-height:1.5;color:#075057;">Multi-tenant<br>API-first · Modular</div>
+      </div>
+      <div style="background:#075057;color:#eef1f6;border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 22px 46px -30px rgba(7,80,87,0.7);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;margin-bottom:16px;">POR QUÉ IMPORTA</div>
+        <div style="font-size:23px;line-height:1.5;color:#eef1f6;">Una sola fuente de verdad operativa: la condición para que los agentes puedan actuar con contexto real.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Atlas Cortex" data-screen-label="11 Atlas Cortex" data-speaker-notes="Atlas Cortex es la capa cognitiva: comprende la organización, conecta su conocimiento, conserva memoria y permite construir agentes ejecutivos conectados a la operación real, con políticas y human-in-the-loop." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(80% 90% at 30% 0%, rgba(9,96,109,0.3), transparent 58%), #04353b;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:18px;">Producto 02 · Atlas Cortex</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">La capa cognitiva del negocio.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">11 / 15</span>
+    </div>
+    <p style="font-size:28px;line-height:1.55;color:#c9d3d6;margin:0 0 32px;max-width:82ch;">Cortex comprende la organización, conecta su conocimiento y conserva memoria. Sobre esa base se construyen agentes ejecutivos con acceso a herramientas, políticas y supervisión humana — no chatbots aislados.</p>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.1fr 1fr;gap:26px;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#7fc4cb;flex:none;width:80px;">CAPA 01</div>
+          <div><div style="font-size:26px;font-weight:800;margin-bottom:5px;">Contexto y conocimiento</div><div style="font-size:21px;color:#9fb3b6;line-height:1.4;">Ontologías, knowledge graph y RAG sobre documentos y sistemas.</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#7fc4cb;flex:none;width:80px;">CAPA 02</div>
+          <div><div style="font-size:26px;font-weight:800;margin-bottom:5px;">Memoria organizacional</div><div style="font-size:21px;color:#9fb3b6;line-height:1.4;">Historial de decisiones, criterios y aprendizaje acumulado.</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#7fc4cb;flex:none;width:80px;">CAPA 03</div>
+          <div><div style="font-size:26px;font-weight:800;margin-bottom:5px;">Herramientas y acciones</div><div style="font-size:21px;color:#9fb3b6;line-height:1.4;">Conexión a Atlas ONE, ERP, CRM y sistemas externos.</div></div>
+        </div>
+        <div style="background:rgba(127,196,203,0.14);border:1px solid rgba(127,196,203,0.36);border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#7fc4cb;flex:none;width:80px;">CAPA 04</div>
+          <div><div style="font-size:26px;font-weight:800;margin-bottom:5px;">Políticas y control</div><div style="font-size:21px;color:#cdd4e0;line-height:1.4;">Permisos, trazabilidad y human-in-the-loop en cada decisión.</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:34px 32px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#d6c07e;margin-bottom:10px;">AI C-SUITE</div>
+        <div style="font-size:30px;font-weight:800;margin-bottom:22px;line-height:1.2;">Agentes ejecutivos sobre la operación real.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="border:1px solid rgba(255,255,255,0.16);border-radius:11px;padding:18px 20px;"><div style="font-size:23px;font-weight:800;margin-bottom:5px;">AI CFO</div><div style="font-size:19px;color:#9fb3b6;line-height:1.35;">Flujo, márgenes y riesgo.</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.16);border-radius:11px;padding:18px 20px;"><div style="font-size:23px;font-weight:800;margin-bottom:5px;">AI COO</div><div style="font-size:19px;color:#9fb3b6;line-height:1.35;">Operación y cuellos de botella.</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.16);border-radius:11px;padding:18px 20px;"><div style="font-size:23px;font-weight:800;margin-bottom:5px;">AI CRO</div><div style="font-size:19px;color:#9fb3b6;line-height:1.35;">Pipeline y clientes.</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.16);border-radius:11px;padding:18px 20px;"><div style="font-size:23px;font-weight:800;margin-bottom:5px;">AI CTO</div><div style="font-size:19px;color:#9fb3b6;line-height:1.35;">Sistemas, datos y seguridad.</div></div>
+        </div>
+        <div style="margin-top:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14);font-size:22px;color:#c9d3d6;line-height:1.5;">Cada agente lee de la misma memoria, usa las mismas herramientas y responde bajo las mismas políticas.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Web3 y movilidad" data-screen-label="12 Web3 y movilidad" data-speaker-notes="Dos verticales de infraestructura: Open Cashback lleva lealtad y valor programable a blockchain conectado a Atlas ONE; Open Car, NeuroDrive y OpenDrive aplican computer vision desde un dispositivo móvil." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Productos 03–04 · Web3 y movilidad</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Valor programable y visión computacional.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">12 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;">
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-top:3px solid #c9a94a;border-radius:16px;padding:34px 32px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -30px rgba(7,80,87,0.45);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.14em;color:#a8843e;margin-bottom:14px;">INFRAESTRUCTURA FINANCIERA</div>
+        <div style="font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Open Cashback</div>
+        <p style="font-size:24px;line-height:1.55;color:#55606f;margin:0 0 26px;">Infraestructura de lealtad y valor programable: saldo on-chain, identidad y trazabilidad, conectada directamente al punto de venta de Atlas ONE.</p>
+        <div style="position:relative;border-radius:12px;overflow:hidden;height:200px;margin-bottom:26px;">
+          <img src="assets/img-knowledge-building.png" alt="Terminal de punto de venta y wallet móvil" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">Wallet</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Saldo on-chain del cliente.</div></div>
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">Reglas</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Recompensas programables.</div></div>
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">Trazabilidad</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Cada movimiento auditable.</div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-top:3px solid #0a7280;border-radius:16px;padding:34px 32px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -30px rgba(7,80,87,0.45);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.14em;color:#0a7280;margin-bottom:14px;">MOVILIDAD &amp; DEEP TECH</div>
+        <div style="font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">NeuroDrive · OpenDrive</div>
+        <p style="font-size:24px;line-height:1.55;color:#55606f;margin:0 0 26px;">Computer vision desde un teléfono: usa la cámara frontal del dispositivo para detectar eventos de conducción sin instalar hardware adicional en la flota.</p>
+        <div style="position:relative;border-radius:12px;overflow:hidden;height:200px;margin-bottom:26px;">
+          <img src="assets/img-datacenter-tower.png" alt="Vehículo con detección por visión computacional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">Open Car</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Plataforma de flota conectada.</div></div>
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">NeuroDrive</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Detección en el borde.</div></div>
+          <div style="border-top:2px solid rgba(7,80,87,0.14);padding-top:14px;"><div style="font-size:22px;font-weight:800;margin-bottom:4px;">OpenDrive</div><div style="font-size:19px;color:#6b7280;line-height:1.35;">Investigación aplicada.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Gobierno" data-screen-label="13 Gobierno" data-speaker-notes="Tecnología para gobierno más inteligente: CIVIA para gestión municipal, SIGMA para procesos, ATENEA para inteligencia territorial y ORION como ecosistema. Base de la experiencia: proyectos de gobierno digital 2022-2024 y modelos agénticos en la Cámara de Diputados." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0d1522;">
+    <img src="assets/img-pos-wallet.png" alt="Edificio institucional con red de datos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(4,53,59,0.96) 0%, rgba(4,53,59,0.88) 55%, rgba(4,53,59,0.7) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;margin-bottom:18px;">Producto 05 · Gobierno y territorio</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">Decisiones públicas con evidencia.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">13 / 15</span>
+    </div>
+    <p style="position:relative;z-index:2;font-size:28px;line-height:1.55;color:#c9d3d6;margin:0 0 34px;max-width:78ch;">Una suite GovTech construida sobre el mismo núcleo: trámites, procesos internos, datos territoriales y transparencia, con la trazabilidad que exige la operación pública.</p>
+    <div style="position:relative;z-index:2;flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:34px;font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;">CIVIA</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;margin-bottom:20px;">GESTIÓN MUNICIPAL</div>
+        <p style="font-size:22px;line-height:1.5;color:#9fb3b6;margin:0;">Trámites, atención ciudadana y servicios en una sola plataforma.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:34px;font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;">SIGMA</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;margin-bottom:20px;">PROCESOS INTERNOS</div>
+        <p style="font-size:22px;line-height:1.5;color:#9fb3b6;margin:0;">Flujos, aprobaciones y control administrativo trazable.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:34px;font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;">ATENEA</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;margin-bottom:20px;">INTELIGENCIA TERRITORIAL</div>
+        <p style="font-size:22px;line-height:1.5;color:#9fb3b6;margin:0;">Indicadores por región y analítica para priorizar intervención.</p>
+      </div>
+      <div style="background:rgba(127,196,203,0.14);border:1px solid rgba(127,196,203,0.4);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:34px;font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;">ORION</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.1em;color:#7fc4cb;margin-bottom:20px;">ECOSISTEMA</div>
+        <p style="font-size:22px;line-height:1.5;color:#cdd4e0;margin:0;">Capa que integra las plataformas anteriores en una vista de gobierno.</p>
+      </div>
+    </div>
+    <div style="position:relative;z-index:2;margin-top:26px;border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.16em;color:#7fc4cb;font-weight:700;">EXPERIENCIA</span>
+      <span style="font-size:24px;color:#c9d3d6;">Gobierno digital 2022–2024 · Modelos agénticos y analítica en la Cámara de Diputados 2024–2025</span>
+    </div>
+  </section>
+
+  <section data-label="I+D y talento" data-screen-label="14 I+D y talento" data-speaker-notes="Investigación que se vuelve producto: HarvestT como AgriTech validado internacionalmente, la línea de investigación en ontologías con CIC-IPN y SEPI-ESIME, y Atlas Academy como cantera de talento técnico joven." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#075057;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, linear-gradient(90deg, rgba(7,80,87,0.022) 1px, transparent 1px) 0 0/84px 84px, #DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#09606D;font-weight:700;margin-bottom:18px;">Investigación y talento</div>
+        <h2 style="font-size:50px;line-height:1.06;letter-spacing:-0.025em;font-weight:800;margin:0;">La investigación se vuelve producto.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#9aa0aa;">14 / 15</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;">
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -30px rgba(7,80,87,0.45);">
+        <div style="position:relative;height:250px;flex:none;">
+          <img src="assets/harvestt-dome-single.png" alt="Domo HarvestT" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:30px 30px 32px;display:flex;flex-direction:column;flex:1;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#2f6f6a;margin-bottom:12px;">AGRITECH · VALIDADO</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px;">HarvestT</div>
+          <p style="font-size:23px;line-height:1.5;color:#55606f;margin:0;">Applied AI para agricultura: machine learning, visión computacional, automatización y sistemas expertos en producción controlada. El proyecto que abrió los reconocimientos internacionales.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -30px rgba(7,80,87,0.45);">
+        <div style="position:relative;height:250px;flex:none;">
+          <img src="assets/img-cortex-laptop.png" alt="Grafo de conocimiento en pantalla" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:30px 30px 32px;display:flex;flex-direction:column;flex:1;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#09606D;margin-bottom:12px;">ATLAS R&amp;D · EN CURSO</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px;">Ontologías para agentes</div>
+          <p style="font-size:23px;line-height:1.5;color:#55606f;margin:0;">Investigación con CIC-IPN y SEPI-ESIME sobre cómo representar el conocimiento de una organización para que un sistema agéntico pueda razonar sobre él.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(7,80,87,0.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(7,80,87,0.04),0 20px 42px -30px rgba(7,80,87,0.45);">
+        <div style="position:relative;height:250px;flex:none;">
+          <img src="assets/img-academy-lab.png" alt="Atlas Academy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:30px 30px 32px;display:flex;flex-direction:column;flex:1;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.12em;color:#09606D;margin-bottom:12px;">TALENTO · CONCEPTO</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px;">Atlas Academy</div>
+          <p style="font-size:23px;line-height:1.5;color:#55606f;margin:0;">Identificamos talento joven, lo formamos en las tecnologías que usamos y lo integramos a proyectos reales. La siguiente generación de builders se forma construyendo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Visión" data-screen-label="15 Visión" data-speaker-notes="Cierre. La próxima generación de organizaciones será agéntica: sistemas que entienden el contexto, ejecutan y aprenden. Atlas Tech construye esa infraestructura. Invitación a conversar." style="position:relative;box-sizing:border-box;padding:76px 92px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#04353b;">
+    <img src="assets/harvestt-domes-colony.png" alt="Horizonte tecnológico Atlas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(4,53,59,0.96) 8%, rgba(4,53,59,0.72) 55%, rgba(4,53,59,0.8) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.28em;text-transform:uppercase;color:#7fc4cb;font-weight:700;">Nuestra visión</div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.14em;color:#7e8797;">15 / 15</span>
+    </div>
+    <div style="position:relative;z-index:2;">
+      <h2 style="font-size:80px;line-height:1.04;letter-spacing:-0.03em;font-weight:800;margin:0 0 30px;max-width:24ch;">La próxima generación de organizaciones será agéntica.</h2>
+      <p style="font-size:30px;line-height:1.55;color:#c9d3d6;margin:0;max-width:70ch;">Sistemas que entienden el contexto del negocio, ejecutan con criterio y aprenden de cada decisión. Atlas Tech construye la infraestructura que hace posible esa transición — en la empresa, en la industria y en el gobierno.</p>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,0.2);padding-top:28px;">
+      <div style="display:flex;gap:64px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:10px;">CONTACTO</div>
+          <div style="font-size:26px;font-weight:700;">atlastech.mx</div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:19px;letter-spacing:0.16em;color:#7fc4cb;margin-bottom:10px;">CONVERSEMOS</div>
+          <div style="font-size:26px;font-weight:700;">Diagnóstico inicial · 2 semanas</div>
+        </div>
+      </div>
+      <svg width="44" height="49" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;flex:none;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

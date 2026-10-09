@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e7e3db; font-weight: 500; letter-spacing: 0.008em; }
+    a { color: #09606D; text-decoration: none; }
+    a:hover { color: #075057; }
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Portada" data-screen-label="01 Portada" data-speaker-notes="Apertura. Vamos a revisar una transformación empresarial seria, no a discutir un contrato." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-1-1.png" alt="Industria, automatización e infraestructura digital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.5;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.85) 46%, rgba(13,21,34,0.44) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <svg width="30" height="34" viewBox="0 0 1404.76 1552.38" style="color:#eef1f6;" aria-hidden="true"><g fill="currentColor"><polygon points="934.24 1018.92 741.3 593.42 555.43 1018.6 413.45 1017.21 671.47 461.47 814.03 461.22 1079.6 1016.97 934.24 1018.92"></polygon><polygon points="875.7 1113.46 610.33 1113.47 651.67 1019.16 833.28 1019.41 875.7 1113.46"></polygon><path d="M1173,1138.15c-19.08,23.79-41.74,45.54-63.35,66.96-105.11,104.24-256.55,156.86-404.04,151.69-312.12-10.94-556.63-271.31-550.15-582.23,5.31-254.52,181.54-476.97,430.37-540.24,52-13.22,104.59-18.1,159.92-16.48,168.69,4.92,325.27,86.62,428.41,218.22,160.84,205.23,163.26,497.1-1.17,702.08ZM1047.54,1127.71c208.75-198.07,192.15-532.85-33.36-710.02-184.04-144.59-449.05-130.1-616.6,34.29-184.57,181.09-188.22,476.07-8.68,661.53,178.12,184,472.32,190.99,658.65,14.2Z"></path></g></svg>
+          <span style="font-size:26px;font-weight:700;letter-spacing:0.02em;">Atlas Tech</span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7f8a99;">REVISIÓN EJECUTIVA</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <h1 style="font-size:112px;line-height:0.96;letter-spacing:-0.05em;font-weight:700;margin:0;">ATLAS <span style="color:#7fc4cb;">×</span> DASIC</h1>
+        <p style="font-size:38px;line-height:1.25;color:#e3e8ef;margin:34px 0 0;font-weight:500;letter-spacing:-0.02em;">Revisión de tecnología, transformación y gobierno</p>
+        <div style="display:flex;align-items:center;gap:26px;margin-top:38px;">
+          <span style="width:120px;height:2px;background:#7fc4cb;"></span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#7fc4cb;">NOVIEMBRE 2025 → AGOSTO 2026</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#8d97a5;">AVANCE · PLATAFORMA · INVERSIÓN · GOBIERNO · SIGUIENTE ETAPA</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#7f8a99;white-space:nowrap;">PREPARADO POR ATLAS TECH</span>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Propósito" data-screen-label="02 Propósito de esta revisión" data-speaker-notes="El objetivo no es revisar únicamente entregables. Es alinear dónde estamos y definir correctamente la siguiente etapa." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Acto I · Cómo llegamos aquí</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">02 / 28</span>
+    </div>
+    <h2 style="font-size:46px;line-height:1.12;letter-spacing:-0.032em;font-weight:700;margin:40px 0 0;max-width:36ch;">El objetivo no es revisar únicamente entregables. Es <span style="color:#09606D;">alinear dónde estamos</span> y definir correctamente la siguiente etapa.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 32px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">01</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 12px;">Mirar atrás</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Qué se ha construido desde noviembre.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">02</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 12px;">Entender el hoy</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Qué se utiliza y cuánto ha evolucionado.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">03</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 12px;">Conciliar</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Inversión, pagos y expectativas.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">04</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 12px;">Proteger</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Operación, información y tecnología.</div></div>
+        <div style="flex:1;border-top:2px solid #09606D;padding:26px 0 0 32px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">05</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 12px;color:#09606D;">Avanzar</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Formalización y roadmap conjunto.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="La relación evolucionó" data-screen-label="03 La relación evolucionó" data-speaker-notes="Lo que empezó como soporte digital se convirtió en infraestructura empresarial. La complejidad creció en cada etapa." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">La relación evolucionó</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">03 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:34ch;">Lo que comenzó como soporte digital se convirtió en infraestructura empresarial.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;align-items:flex-end;gap:0;height:104px;">
+        <div style="flex:1;height:20%;background:rgba(9,96,109,0.22);margin-right:4px;"></div>
+        <div style="flex:1;height:38%;background:rgba(9,96,109,0.36);margin-right:4px;"></div>
+        <div style="flex:1;height:62%;background:rgba(9,96,109,0.52);margin-right:4px;"></div>
+        <div style="flex:1;height:82%;background:rgba(9,96,109,0.72);margin-right:4px;"></div>
+        <div style="flex:1;height:100%;background:#09606D;"></div>
+      </div>
+      <div style="display:flex;gap:0;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 32px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">NOV 2025</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Intervención digital</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Marca · web · hosting · seguridad</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">DIC 2025</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Entendimiento del negocio</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Estrategia · procesos · datos · crecimiento</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">ENE 2026</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Desarrollo de software</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">ERP · automatización · digitalización</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 32px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">2026</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Adopción operativa</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Cotizaciones · inventario · CxC · remisiones</div></div>
+        <div style="flex:1;border-top:2px solid #09606D;padding:22px 0 0 32px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">AGO 2026</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;color:#09606D;">Gobierno</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Comercial · legal · seguridad · PI · continuidad</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#6d7679;">COMPLEJIDAD DEL PROYECTO · CRECIENTE EN CADA ETAPA</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Recuperación digital" data-screen-label="04 Noviembre 2025 · Recuperación digital" data-speaker-notes="Atlas entró resolviendo un problema técnico de infraestructura, no vendiendo un ERP." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Noviembre 2025 · Recuperación digital</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">04 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:34ch;">Atlas comenzó resolviendo infraestructura crítica.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:20px;">ENTORNO INICIAL</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.8;">Sitio web primitivo<br />Hosting comprometido<br />Necesidad de atención con proveedor<br />Infraestructura digital limitada</div>
+        </div>
+        <div style="flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:1.15;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:20px;">INTERVENCIÓN ATLAS</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.8;">Análisis y limpieza<br />Saneamiento del entorno<br />Reestructuración de seguridad<br />Coordinación con hosting<br />Nueva presencia digital</div>
+        </div>
+        <div style="flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:1;border-top:2px solid #09606D;padding:26px 0 0 40px;background:rgba(9,96,109,0.08);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:20px;">RESULTADO</div>
+          <div style="font-size:40px;font-weight:700;letter-spacing:-0.028em;line-height:1.15;color:#09606D;">Base digital estable</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">La relación empezó por estabilizar lo que ya existía, no por instalar un producto cerrado.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Base digital" data-screen-label="05 Marca y presencia digital" data-speaker-notes="Cinco componentes que no son entregables sueltos: construyen una sola plataforma base." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Marca y presencia digital</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">05 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:34ch;">La transformación inicial también fue corporativa.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:60px;">
+            <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Rebranding</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Nueva identidad y consistencia visual.</div></div>
+            <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Brand system</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Lineamientos y aplicaciones de marca.</div></div>
+            <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Sitio corporativo</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Nueva presencia digital de la empresa.</div></div>
+            <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Base de e-commerce</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Estructura comercial digital creada.</div></div>
+            <div style="border-top:1px solid rgba(18,41,44,0.16);padding:20px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Infraestructura</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Hosting, SSL, mantenimiento y seguridad.</div></div>
+          </div>
+        </div>
+        <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:0 0 420px;border-left:2px solid #09606D;padding-left:50px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">PLATAFORMA BASE</div>
+          <div style="font-size:48px;font-weight:700;letter-spacing:-0.034em;line-height:1.05;color:#09606D;">DASIC Digital Foundation</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">No son cinco entregables sueltos: son los componentes de una sola base digital.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Cambió la pregunta" data-screen-label="06 Diciembre 2025 · Cambió la pregunta de negocio" data-speaker-notes="Frase hero del workshop de diciembre. El reto ya no es saber hacer, sino crecer sin perder control." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Diciembre 2025 · Workshop</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">06 / 28</span>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.1fr 0.9fr;gap:100px;padding-top:44px;align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.24em;color:#09606D;margin-bottom:26px;">LA PREGUNTA CENTRAL</div>
+        <h2 style="font-size:58px;line-height:1.06;letter-spacing:-0.038em;font-weight:700;margin:0;">El reto de DASIC ya no es <span style="color:#09606D;">saber hacer</span>, sino cómo crecer sin perder control.</h2>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:22px;">HALLAZGOS DEL WORKSHOP</div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding:22px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Crecimiento dependiente de personas</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Información y conocimiento concentrados en individuos.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding:22px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Información fragmentada</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Hojas de cálculo, correo, mensajes y criterios individuales.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding:22px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Visibilidad limitada</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Poca consolidación de la información operativa.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;padding:22px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Complejidad creciente</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Más clientes, más proyectos y más operación simultánea.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Tesis original" data-screen-label="07 La tesis original de transformación" data-speaker-notes="El ERP no fue concebido como software aislado: fue la consecuencia tecnológica de una estrategia más amplia." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">La tesis original de transformación</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">07 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:36ch;">El ERP no fue un software aislado: fue la consecuencia tecnológica de una estrategia.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">SISTEMA</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 12px;">ERP propio</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Diseñado desde la operación real del negocio.</div></div>
+        <div style="flex:0 0 40px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:31px;color:#09606D;">+</div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">DATOS</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 12px;">Visibilidad</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Inteligencia, rentabilidad y alertas operativas.</div></div>
+        <div style="flex:0 0 40px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:31px;color:#09606D;">+</div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 40px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">CULTURA</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 12px;">Adopción</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Disciplina operativa y decisiones consistentes.</div></div>
+        <div style="flex:0 0 40px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:31px;color:#09606D;">=</div>
+        <div style="flex:1.05;border-top:2px solid #09606D;padding:26px 0 0 40px;background:rgba(9,96,109,0.08);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">RESULTADO</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;margin:16px 0 12px;color:#09606D;">Operación escalable</div><div style="font-size:25px;color:#5c666b;line-height:1.42;">Capacidad de crecer sin perder control.</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#6d7679;">LA TECNOLOGÍA HABILITA · LOS DATOS GUÍAN · LA CULTURA EJECUTA</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Acto II" data-screen-label="08 Enero 2026 · Desarrollo del ERP" data-speaker-notes="Acto II. El ERP se convirtió en la traducción operativa de la estrategia de transformación." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-2-1.png" alt="De la estrategia al software" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.34;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.86) 52%, rgba(13,21,34,0.5) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO II · DE LA ESTRATEGIA AL SOFTWARE</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">08 / 28</span>
+      </div>
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;">
+        <div>
+          <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.036em;font-weight:700;margin:0 0 30px;">El ERP se convirtió en la traducción operativa de la estrategia.</h2>
+          <p style="font-size:27px;line-height:1.5;color:#b8c2ce;margin:0;font-weight:400;">Enero de 2026 marca el momento en que el proyecto cruza de transformación digital hacia ingeniería de software.</p>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:26px;padding:14px 0;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#7f8a99;width:52px;">01</span><span style="flex:1;height:1px;background:rgba(255,255,255,0.18);"></span><span style="font-size:33px;font-weight:700;letter-spacing:-0.024em;width:250px;text-align:right;">Negocio</span></div>
+          <div style="display:flex;align-items:center;gap:26px;padding:14px 0;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#7f8a99;width:52px;">02</span><span style="flex:1;height:1px;background:rgba(255,255,255,0.18);"></span><span style="font-size:33px;font-weight:700;letter-spacing:-0.024em;width:250px;text-align:right;">Procesos</span></div>
+          <div style="display:flex;align-items:center;gap:26px;padding:14px 0;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#7f8a99;width:52px;">03</span><span style="flex:1;height:1px;background:rgba(255,255,255,0.18);"></span><span style="font-size:33px;font-weight:700;letter-spacing:-0.024em;width:250px;text-align:right;">Datos</span></div>
+          <div style="display:flex;align-items:center;gap:26px;padding:14px 0;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#7f8a99;width:52px;">04</span><span style="flex:1;height:1px;background:rgba(255,255,255,0.18);"></span><span style="font-size:33px;font-weight:700;letter-spacing:-0.024em;width:250px;text-align:right;">Software</span></div>
+          <div style="display:flex;align-items:center;gap:26px;padding:14px 0;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#7fc4cb;width:52px;">05</span><span style="flex:1;height:2px;background:#7fc4cb;"></span><span style="font-size:33px;font-weight:700;letter-spacing:-0.024em;width:250px;text-align:right;color:#7fc4cb;">Operación</span></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;">El ERP no fue un producto empaquetado vendido previamente: se construyó sobre la operación observada.</div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Cómo construye Atlas" data-screen-label="09 Cómo Atlas construye" data-speaker-notes="Ciclo iterativo: el sistema evoluciona desde evidencia operativa, no desde supuestos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Cómo Atlas construye</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">09 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:36ch;">El sistema evoluciona desde evidencia operativa, no desde supuestos.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);column-gap:32px;">
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">01</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Discover</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Entender la operación real.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">02</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Model</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Traducir procesos a entidades.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">03</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Build</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Desarrollar los módulos.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">04</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Deploy</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Llevarlos a producción.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">05</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Observe</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Aprender del uso real.</div></div>
+        <div style="border-top:2px solid #09606D;padding-top:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">06</div><div style="font-size:33px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;color:#09606D;">Improve</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Iterar y volver a descubrir.</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;margin-top:36px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;white-space:nowrap;">CICLO CONTINUO</span>
+        <span style="flex:1;height:2px;background:repeating-linear-gradient(90deg, #09606D 0 26px, transparent 26px 44px);"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;white-space:nowrap;">VUELVE A DISCOVER</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">Software vivo: cada iteración parte de lo que la operación demostró en producción.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Capability map" data-screen-label="10 DASIC Operating Platform" data-speaker-notes="Mapa de capacidades con niveles de madurez distintos. No todos los módulos están igual de maduros." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">DASIC OPERATING PLATFORM</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">10 / 28</span>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:26px;">
+      <div style="display:flex;align-items:center;gap:40px;margin-bottom:32px;">
+        <div style="flex:0 0 auto;border:2px solid #7fc4cb;padding:20px 32px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:10px;">NÚCLEO</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;">Plataforma operativa DASIC</div></div>
+        <div style="flex:1;height:1px;background:rgba(127,196,203,0.4);"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#7f8a99;text-align:right;line-height:1.5;">MADUREZ<br />DESIGUAL POR MÓDULO</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);column-gap:50px;row-gap:0;">
+        <div style="border-top:2px solid #7fc4cb;padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">Comercial</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">cotizaciones · líneas · eventos</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.75);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">Inventario</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">productos · stock · movimientos</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.75);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">Seguridad</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">usuarios · accesos · identidad</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.5);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">Finanzas</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">cuentas por cobrar</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.5);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">Entregas</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">remisiones</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.32);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;">CRM</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">clientes · contactos</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.18);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;color:#8d97a5;">Emergentes</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">compras · servicios · activos</div></div>
+        <div style="border-top:2px solid rgba(127,196,203,0.18);padding:22px 0;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-bottom:9px;color:#8d97a5;">Inteligencia</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;line-height:1.45;">reporting · BI</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#7f8a99;">
+        <span>INTENSIDAD DE USO</span><span style="flex:0 0 240px;height:8px;background:linear-gradient(90deg, #7fc4cb 0%, rgba(127,196,203,0.18) 100%);"></span><span>ALTA → EMERGENTE</span>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="MVP a producción" data-screen-label="11 De MVP a producción" data-speaker-notes="No todos los módulos son maduros, pero la plataforma ya contiene datos operativos reales." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">De MVP a producción</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">11 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:40ch;">No todos los módulos son maduros, pero la plataforma ya contiene datos operativos reales.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;padding-bottom:16px;">
+        <div style="display:flex;align-items:flex-end;gap:0;height:150px;">
+          <div style="flex:1;height:16%;background:rgba(9,96,109,0.18);margin-right:4px;"></div>
+          <div style="flex:1;height:32%;background:rgba(9,96,109,0.3);margin-right:4px;"></div>
+          <div style="flex:1;height:58%;background:#09606D;margin-right:4px;"></div>
+          <div style="flex:1;height:74%;background:#09606D;margin-right:4px;"></div>
+          <div style="flex:1;height:88%;background:rgba(9,96,109,0.3);margin-right:4px;"></div>
+          <div style="flex:1;height:100%;background:rgba(9,96,109,0.18);"></div>
+        </div>
+        <div style="position:absolute;left:33.3%;right:33.3%;top:-12px;border-top:2px solid #09606D;"></div>
+        <div style="position:absolute;left:33.3%;right:33.3%;top:-52px;text-align:center;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;font-weight:600;">POSICIÓN ACTUAL</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);column-gap:30px;">
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Concepto</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Idea y necesidad identificada.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">MVP</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Algunos módulos siguen aquí.</div></div>
+        <div style="border-top:2px solid #09606D;padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;color:#09606D;">Producción</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Módulos comerciales y de stock.</div></div>
+        <div style="border-top:2px solid #09606D;padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;color:#09606D;">Adopción</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Uso diario con usuarios reales.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Datos</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Historial transaccional consolidado.</div></div>
+        <div style="border-top:1px solid rgba(18,41,44,0.16);padding-top:20px;"><div style="font-size:29px;font-weight:700;letter-spacing:-0.024em;margin-bottom:8px;">Optimización</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Siguiente horizonte de valor.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Señales productivas" data-screen-label="12 Señales de producción" data-speaker-notes="Transacciones reales, usuarios reales, historia operativa real." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Señales de producción</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">12 / 28</span>
+    </div>
+    <h2 style="font-size:50px;line-height:1.04;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:32ch;">Transacciones reales. Usuarios reales. Historia operativa real.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:36px;border-bottom:1px solid rgba(18,41,44,0.16);padding-bottom:26px;">
+        <div style="flex:1.3 1 0;min-width:0;"><div style="font-size:82px;font-weight:700;letter-spacing:-0.05em;line-height:0.9;color:#09606D;">1,026</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">MOVIMIENTOS DE STOCK</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">618</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">LÍNEAS DE COTIZACIÓN</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">510</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">EVENTOS DE COTIZACIÓN</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">473</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">GHOST ITEMS</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">192</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">COTIZACIONES</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">75</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">COTIZACIONES PENDIENTES</div></div>
+        <div style="flex:1 1 0;min-width:0;"><div style="font-size:70px;font-weight:700;letter-spacing:-0.045em;line-height:0.9;">11</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;line-height:1.35;letter-spacing:0.05em;color:#6d7679;margin-top:14px;min-height:68px;">REMISIONES</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:110px;padding-top:32px;">
+        <div style="border-top:2px solid #09606D;padding-top:22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:14px;">SEÑAL DE MADUREZ</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;">El sistema ya opera procesos transaccionales reales.</div></div>
+        <div style="border-top:2px solid rgba(18,41,44,0.4);padding-top:22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#6d7679;margin-bottom:14px;">OPORTUNIDAD DE NORMALIZACIÓN</div><div style="font-size:29px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;">17 productos y 1 servicio frente al alto uso de ghost items.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Lectura de los datos" data-screen-label="13 Qué nos dicen los datos" data-speaker-notes="Señal, interpretación y acción. Las brechas no son errores: son información que el uso real permitió descubrir." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Qué nos dicen los datos</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">13 / 28</span>
+    </div>
+    <div style="display:flex;gap:100px;align-items:flex-start;padding-top:36px;">
+      <h2 style="font-size:46px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:0;flex:0 0 44%;">Señal → interpretación → acción</h2>
+      <p style="font-size:26px;line-height:1.5;color:#5c666b;margin:6px 0 0;flex:1;">Estas brechas no son errores del sistema. Son información que solo el uso real del ERP permitió descubrir.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:22px;">
+      <div style="display:flex;gap:44px;padding-bottom:12px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;text-transform:uppercase;"><div style="width:330px;">Señal</div><div style="flex:1;">Interpretación</div><div style="width:400px;">Acción</div></div>
+      <div style="display:flex;gap:44px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:30px;font-weight:700;letter-spacing:-0.022em;">Adopción comercial</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Cotizaciones fue el primer motor real de adopción.</div><div style="width:400px;font-size:25px;line-height:1.4;">Consolidar el módulo y extender el patrón.</div></div>
+      <div style="display:flex;gap:44px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:30px;font-weight:700;letter-spacing:-0.022em;">Brecha de catálogo</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">473 ghost items frente a un catálogo todavía pequeño.</div><div style="width:400px;font-size:25px;line-height:1.4;">Normalizar productos, unidades y precios.</div></div>
+      <div style="display:flex;gap:44px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:30px;font-weight:700;letter-spacing:-0.022em;">Brecha de CRM</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">La actividad comercial supera la estructuración del CRM.</div><div style="width:400px;font-size:25px;line-height:1.4;">Estructurar clientes, contactos y actividad.</div></div>
+      <div style="display:flex;gap:44px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:330px;font-size:30px;font-weight:700;letter-spacing:-0.022em;">Brecha de compras</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">El módulo de compras todavía se utiliza poco.</div><div style="width:400px;font-size:25px;line-height:1.4;">Definir flujo y responsables antes de ampliar.</div></div>
+      <div style="display:flex;gap:44px;align-items:baseline;padding:15px 0 18px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="width:330px;font-size:30px;font-weight:700;letter-spacing:-0.022em;color:#09606D;">Siguiente paso</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">La madurez pasa por normalización y visibilidad.</div><div style="width:400px;font-size:25px;line-height:1.4;">Normalización + reporting + adopción.</div></div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Valor creado" data-screen-label="14 Valor creado" data-speaker-notes="El valor creado es mayor que la suma de los entregables individuales." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Valor creado</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">14 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:38ch;">El valor creado es mayor que la suma de los entregables individuales.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Marca</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Identidad renovada y consistente.</div></div>
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Presencia digital</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Sitio corporativo y estructura comercial.</div></div>
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Infraestructura</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Hosting saneado y seguridad restablecida.</div></div>
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Procesos</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Operación modelada y documentada.</div></div>
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Software</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">ERP en operación con módulos productivos.</div></div>
+          <div style="display:flex;align-items:baseline;gap:30px;padding:16px 0;border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);"><div style="width:290px;font-size:30px;font-weight:700;letter-spacing:-0.024em;">Datos</div><div style="flex:1;font-size:25px;color:#5c666b;line-height:1.4;">Historial transaccional acumulado.</div></div>
+        </div>
+        <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:0 0 400px;border-left:2px solid #09606D;padding-left:50px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">RESULTADO ACUMULADO</div>
+          <div style="font-size:46px;font-weight:700;letter-spacing:-0.034em;line-height:1.05;color:#09606D;">Nueva capacidad organizacional</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Referencia económica" data-screen-label="15 Referencia económica histórica" data-speaker-notes="Cifras documentadas en el workshop de diciembre 2025. Contexto, no cobranza." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO III · INVERSIÓN Y ALINEACIÓN</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">15 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:34ch;">Referencia económica histórica</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:110px;">
+        <div style="border-top:1px solid rgba(255,255,255,0.18);padding:26px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;margin-bottom:16px;">REFERENCIA DE MERCADO · TOTAL</div><div style="font-size:64px;font-weight:700;letter-spacing:-0.04em;line-height:1;">$359,000</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;margin-top:10px;">MXN</div></div>
+        <div style="border-top:2px solid #7fc4cb;padding:26px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7fc4cb;margin-bottom:16px;">REFERENCIA PREFERENCIAL DASIC</div><div style="font-size:64px;font-weight:700;letter-spacing:-0.04em;line-height:1;color:#7fc4cb;">$125,500</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#8d97a5;margin-top:10px;">MXN</div></div>
+      </div>
+      <div style="margin-top:44px;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:22px;">DENTRO DE ESA REFERENCIA · DISEÑO DEL ERP</div>
+        <div style="display:flex;align-items:center;gap:44px;">
+          <div style="flex:1;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#8d97a5;margin-bottom:12px;">REFERENCIA DE MERCADO</div><div style="font-size:44px;font-weight:700;letter-spacing:-0.032em;">$250,000 <span style="font-size:26px;color:#8d97a5;">MXN</span></div></div>
+          <div style="flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:31px;color:#7fc4cb;">→</div>
+          <div style="flex:1;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#8d97a5;margin-bottom:12px;">REFERENCIA PREFERENCIAL</div><div style="font-size:44px;font-weight:700;letter-spacing:-0.032em;color:#7fc4cb;">$90,000 <span style="font-size:26px;color:#8d97a5;">MXN</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;">Referencia histórica documentada en el workshop de diciembre de 2025. Se presenta como contexto de la conversación, no como estado de cuenta.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Pagos recibidos" data-screen-label="16 Pagos recibidos" data-speaker-notes="Dos pagos registrados. Dato de conciliación, no interpretación de saldo." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Pagos recibidos</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">16 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:34ch;">Pagos registrados a la fecha</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;gap:0;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:30px 50px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:20px;">PAGO 01</div><div style="font-size:64px;font-weight:700;letter-spacing:-0.04em;line-height:1;">$10,000</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#6d7679;margin-top:10px;">MXN</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:30px 50px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:20px;">PAGO 02</div><div style="font-size:64px;font-weight:700;letter-spacing:-0.04em;line-height:1;">$10,000</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#6d7679;margin-top:10px;">MXN</div></div>
+        <div style="flex:1.2;border-top:2px solid #09606D;padding:30px 0 0 50px;background:rgba(9,96,109,0.08);"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:20px;">TOTAL RECIBIDO</div><div style="font-size:76px;font-weight:700;letter-spacing:-0.042em;line-height:1;color:#09606D;">$20,000</div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#6d7679;margin-top:10px;">MXN</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;">
+      <div style="font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;margin-bottom:14px;">Siguiente paso: conciliar trabajo histórico, referencias comerciales y pagos en un modelo claro hacia adelante.</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">Los pagos se presentan como registro, sin interpretarlos automáticamente como abonos contra un monto determinado.</div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Valor ≠ precio ≠ pago" data-screen-label="17 Valor, precio y pago" data-speaker-notes="Cinco conceptos que no son idénticos ni jurídica ni económicamente. El objetivo de conciliar es claridad." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Valor, precio y pago</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">17 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:38ch;">Cinco conceptos que no son idénticos ni jurídica ni económicamente.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="width:100%;">
+        <div style="display:flex;align-items:stretch;gap:0;margin-bottom:26px;">
+          <div style="flex:1;height:14px;background:rgba(9,96,109,0.85);margin-right:4px;"></div>
+          <div style="flex:1;height:14px;background:rgba(9,96,109,0.68);margin-right:4px;"></div>
+          <div style="flex:1;height:14px;background:rgba(9,96,109,0.5);margin-right:4px;"></div>
+          <div style="flex:1;height:14px;background:rgba(9,96,109,0.34);margin-right:4px;"></div>
+          <div style="flex:1;height:14px;background:rgba(9,96,109,0.2);"></div>
+        </div>
+        <div style="display:flex;gap:0;">
+          <div style="flex:1;padding-right:36px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">01</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Valor creado</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Capacidad que hoy existe en la organización.</div></div>
+          <div style="flex:1;padding:0 36px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">02</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Valor de referencia</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Cifras documentadas como marco comparativo.</div></div>
+          <div style="flex:1;padding:0 36px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">03</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Acuerdo comercial</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Lo que las partes convienen explícitamente.</div></div>
+          <div style="flex:1;padding:0 36px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">04</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;">Facturado</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Lo formalmente emitido en documentos fiscales.</div></div>
+          <div style="flex:1;padding-left:36px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;">05</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;margin:14px 0 10px;color:#09606D;">Pagado</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Lo efectivamente liquidado a la fecha.</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">El propósito de conciliar es claridad, no supuestos retroactivos.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Punto de inflexión" data-screen-label="18 El proyecto superó su modelo original" data-speaker-notes="El proyecto evolucionó más rápido que su estructura de gobierno. Punto de inflexión de madurez." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">ACTO IV · POR QUÉ FORMALIZAR AHORA</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">18 / 28</span>
+    </div>
+    <h2 style="font-size:52px;line-height:1.06;letter-spacing:-0.036em;font-weight:700;margin:36px 0 0;max-width:34ch;">El proyecto evolucionó más rápido que su estructura de gobierno.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(255,255,255,0.16);padding:26px 44px 0 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7f8a99;margin-bottom:20px;">ENTONCES</div>
+          <div style="font-size:26px;color:#8d97a5;line-height:1.85;">Colaboración basada en confianza<br />Alcance acotado<br />Soporte digital puntual<br />Dependencia operativa limitada</div>
+        </div>
+        <div style="flex:0 0 300px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;">
+          <div style="width:100%;height:2px;background:#7fc4cb;"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.16em;color:#7fc4cb;text-align:center;margin:18px 0;line-height:1.5;">PUNTO DE<br />INFLEXIÓN DE<br />MADUREZ</div>
+          <div style="width:100%;height:2px;background:#7fc4cb;"></div>
+        </div>
+        <div style="flex:1.2;border-top:2px solid #7fc4cb;padding:26px 0 0 44px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:20px;">AHORA</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:44px;font-size:26px;color:#e3e8ef;line-height:1.85;">
+            <div>Software en producción<br />Datos de negocio<br />Soporte recurrente</div>
+            <div>Procesos operativos<br />Propiedad intelectual<br />Responsabilidades de seguridad</div>
+          </div>
+          <div style="font-size:26px;color:#e3e8ef;line-height:1.85;margin-top:6px;">Requerimientos de continuidad</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;">El alcance actual creció más allá del marco operativo informal con el que inició la relación.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Gobierno como capa" data-screen-label="19 El gobierno es la siguiente capa de ingeniería" data-speaker-notes="El gobierno no reemplaza la ingeniería: la protege." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Gobierno como capa de ingeniería</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">19 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:34ch;">El gobierno no reemplaza la ingeniería: la protege.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;gap:44px;">
+        <div style="flex:1;">
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.05);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Negocio</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.08);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Procesos</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.11);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Aplicación</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.14);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Datos</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.17);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Infraestructura</div></div>
+          <div style="border-top:1px solid rgba(18,41,44,0.16);border-bottom:1px solid rgba(18,41,44,0.16);padding:15px 26px;background:rgba(9,96,109,0.2);"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;">Seguridad</div></div>
+        </div>
+        <div style="flex:0 0 520px;border:2px solid #09606D;padding:32px 38px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">CAPA TRANSVERSAL NUEVA</div>
+          <div style="font-size:46px;font-weight:700;letter-spacing:-0.034em;line-height:1.05;color:#09606D;margin-bottom:26px;">Gobierno</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.8;">Comercial<br />Legal<br />Seguridad<br />Propiedad intelectual<br />Continuidad</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:24px;font-size:29px;font-weight:700;line-height:1.32;letter-spacing:-0.02em;">Atraviesa todas las capas técnicas y por eso no puede añadirse al final.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Revisión legal" data-screen-label="20 Revisión legal y de compliance" data-speaker-notes="Cuatro áreas de análisis especializado incorporadas al modelo de gobierno propuesto." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-6-1.png" alt="Marco de gobierno tecnológico" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.42;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(96deg, rgba(13,21,34,0.97) 0%, rgba(13,21,34,0.88) 52%, rgba(13,21,34,0.5) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">REVISIÓN LEGAL Y DE COMPLIANCE</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">20 / 28</span>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:44px;margin-bottom:34px;">
+          <div style="flex:0 0 auto;border:2px solid #7fc4cb;padding:20px 32px;"><div style="font-size:38px;font-weight:700;letter-spacing:-0.028em;color:#7fc4cb;">Modelo de gobierno</div></div>
+          <div style="flex:1;height:1px;background:rgba(127,196,203,0.4);"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);column-gap:60px;">
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:22px;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;">Transacciones tecnológicas</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:22px;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;">Software y propiedad intelectual</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:22px;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;">Privacidad y protección de datos</div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:22px;"><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;line-height:1.22;">Software compliance</div></div>
+        </div>
+        <p style="font-size:27px;line-height:1.5;color:#b8c2ce;margin:40px 0 0;max-width:76ch;font-weight:400;">Atlas ha incorporado análisis especializado de derecho tecnológico, propiedad intelectual, privacidad y software compliance al modelo de gobierno propuesto para la siguiente etapa de la plataforma DASIC.</p>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.18);padding-top:24px;display:flex;justify-content:space-between;align-items:baseline;gap:44px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.14em;color:#7f8a99;">MARCO APLICABLE · MÉXICO · LFDA · LFPPI · LFPDPPP · MARCO CIVIL Y MERCANTIL</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#7f8a99;white-space:nowrap;">Análisis profesional, no una conclusión unilateral.</span>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Confidencialidad" data-screen-label="21 La confidencialidad es bilateral" data-speaker-notes="Ambas partes aportan información sensible. Protección legal más controles técnicos más disciplina operativa." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">La confidencialidad es bilateral</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">21 / 28</span>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:32px;">
+      <div style="display:flex;align-items:stretch;gap:0;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 44px 0 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:18px;">INFORMACIÓN DASIC</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.8;">Clientes · proveedores<br />Cotizaciones · precios<br />Procesos e información financiera<br />Conocimiento operativo</div>
+        </div>
+        <div style="flex:0 0 330px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 20px;">
+          <div style="width:100%;height:2px;background:#09606D;"></div>
+          <div style="font-size:34px;font-weight:700;letter-spacing:-0.026em;color:#09606D;text-align:center;margin:18px 0;line-height:1.15;">Confidencialidad mutua</div>
+          <div style="width:100%;height:2px;background:#09606D;"></div>
+        </div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 0 0 44px;text-align:right;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin-bottom:18px;">INFORMACIÓN ATLAS</div>
+          <div style="font-size:26px;color:#5c666b;line-height:1.8;">Código · arquitectura<br />Repositorios · documentación<br />Roadmap · know-how<br />Información de seguridad</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:46px;padding-top:28px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:70px;">
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:12px;">PROTECCIÓN LEGAL</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">NDA bilateral, vigencia, excepciones y uso permitido.</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:12px;">CONTROLES TÉCNICOS</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">MFA, repositorios privados, secretos, logs y ambientes.</div></div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:12px;">DISCIPLINA OPERATIVA</div><div style="font-size:26px;color:#5c666b;line-height:1.45;">Need-to-know, clasificación y gestión de accesos.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="PI por capas" data-screen-label="22 La propiedad intelectual no es un solo activo" data-speaker-notes="La propiedad del software no se analiza como una pregunta binaria. Primero se clasifican los activos." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Propiedad intelectual</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">22 / 28</span>
+    </div>
+    <div style="display:flex;gap:90px;align-items:flex-start;padding-top:34px;">
+      <h2 style="font-size:44px;line-height:1.08;letter-spacing:-0.03em;font-weight:700;margin:0;flex:0 0 54%;">La propiedad del software no puede analizarse como una pregunta binaria.</h2>
+      <p style="font-size:26px;line-height:1.5;color:#5c666b;margin:6px 0 0;flex:1;">El enfoque correcto es clasificar primero los activos y después definir condiciones para cada uno.</p>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.6fr 0.4fr;gap:60px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Datos DASIC</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Operación, registros y contenido del negocio.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Materiales DASIC</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Marca, catálogos y documentación propia.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Configuración específica</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Parámetros, flujos y reglas del tenant DASIC.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Desarrollos custom</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Pendiente de clasificar por SOW.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Tecnología previa Atlas</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Arquitectura y know-how anteriores al proyecto.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0;border-top:1px solid rgba(18,41,44,0.16);"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Componentes reutilizables Atlas</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Piezas de plataforma multicliente.</div></div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:7px 0 12px;border-top:1px solid rgba(18,41,44,0.16);border-bottom:2px solid #09606D;"><div style="flex:1;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Terceros y open source</div><div style="font-size:25px;color:#5c666b;width:470px;line-height:1.35;">Sujeto a sus licencias; no se cede lo que no se posee.</div></div>
+      </div>
+      <div style="border-left:2px solid #09606D;padding-left:40px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:20px;">CONDICIONES DISTINTAS</div>
+        <div style="font-size:29px;font-weight:700;letter-spacing:-0.022em;line-height:1.65;">Propiedad<br />Licencia<br />Derechos de uso<br />Confidencialidad</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);margin-top:20px;padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">La clasificación de los desarrollos custom se define conjuntamente en el SOW; este material no anticipa un reparto definitivo.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Datos y seguridad" data-screen-label="23 Gobierno de datos y seguridad" data-speaker-notes="DASIC conserva el control de sus datos de negocio; Atlas aporta los mecanismos tecnológicos para operar y proteger la plataforma." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Gobierno de datos y seguridad</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">23 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:38ch;">DASIC conserva el control de sus datos; Atlas aporta los mecanismos para operarlos y protegerlos.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;align-items:stretch;gap:0;">
+        <div style="flex:1;border-top:2px solid rgba(9,96,109,0.3);padding:20px 22px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">01</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;">Crear</div></div>
+        <div style="flex:1;border-top:2px solid rgba(9,96,109,0.42);padding:20px 22px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">02</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;">Procesar</div></div>
+        <div style="flex:1;border-top:2px solid rgba(9,96,109,0.54);padding:20px 22px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">03</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;">Acceder</div></div>
+        <div style="flex:1;border-top:2px solid rgba(9,96,109,0.66);padding:20px 22px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">04</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;">Almacenar</div></div>
+        <div style="flex:1;border-top:2px solid rgba(9,96,109,0.8);padding:20px 22px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#949a9d;">05</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;">Respaldar</div></div>
+        <div style="flex:1.25;border-top:2px solid #09606D;padding:20px 0 0 22px;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;color:#09606D;">06</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.024em;margin-top:12px;color:#09606D;">Exportar / eliminar</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:80px;margin-top:48px;">
+        <div style="background:rgba(9,96,109,0.09);border-left:3px solid #09606D;padding:22px 28px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:12px;">CAPA DE SEGURIDAD</div>
+          <div style="font-size:26px;color:#48555a;line-height:1.5;">Roles · MFA · secretos · logs · respaldos · gestión de incidentes</div>
+        </div>
+        <div style="background:rgba(9,96,109,0.09);border-left:3px solid #09606D;padding:22px 28px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:12px;">CAPA DE PRIVACIDAD</div>
+          <div style="font-size:26px;color:#48555a;line-height:1.5;">Finalidad · acceso · responsabilidades · conservación</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.06em;color:#6d7679;">Los controles descritos corresponden a prácticas implementadas en la plataforma; no se declara certificación externa alguna.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Stack de formalización" data-screen-label="24 El stack de formalización" data-speaker-notes="Formalizar solo lo que la madurez actual de la plataforma realmente requiere." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">El stack de formalización</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">24 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:38ch;">Formalizar solo lo que la madurez actual de la plataforma realmente requiere.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:16px;">
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 230px;">RELACIÓN</span>
+        <div style="flex:1;background:rgba(9,96,109,0.3);border-top:2px solid #09606D;padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:33px;font-weight:700;letter-spacing:-0.026em;">MSA</span><span style="font-size:25px;color:#48555a;">marco general de la relación</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 230px;">PROYECTO</span>
+        <div style="flex:1;background:rgba(9,96,109,0.22);border-top:1px solid rgba(18,41,44,0.2);padding:18px 30px;display:flex;align-items:baseline;gap:26px;"><span style="font-size:33px;font-weight:700;letter-spacing:-0.026em;">SOW</span><span style="font-size:25px;color:#5c666b;">alcance, entregables y criterios de aceptación</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;flex:0 0 230px;">INFORMACIÓN Y ACTIVOS</span>
+        <div style="flex:1;display:flex;gap:18px;">
+          <div style="flex:1;background:rgba(9,96,109,0.15);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">NDA</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">confidencialidad</div></div>
+          <div style="flex:1;background:rgba(9,96,109,0.15);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">DPA</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">datos personales</div></div>
+          <div style="flex:1;background:rgba(9,96,109,0.15);border-top:1px solid rgba(18,41,44,0.2);padding:18px 26px;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;">IP Schedule</div><div style="font-size:25px;color:#5c666b;margin-top:6px;">clasificación de activos</div></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#09606D;flex:0 0 230px;">OPERACIÓN</span>
+        <div style="flex:1;display:flex;gap:18px;">
+          <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 24px;font-size:29px;font-weight:700;letter-spacing:-0.022em;">SLA</div>
+          <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 24px;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Seguridad</div>
+          <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 24px;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Change Orders</div>
+          <div style="flex:1;border-top:1px solid rgba(18,41,44,0.2);padding:18px 24px;font-size:29px;font-weight:700;letter-spacing:-0.022em;">Exit Plan</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(18,41,44,0.2);padding-top:22px;font-size:27px;font-weight:700;letter-spacing:-0.018em;">Gobierno sin burocracia: cada documento resuelve una pregunta que hoy no tiene respuesta escrita.</div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Qué proponemos alinear" data-screen-label="25 Qué proponemos alinear" data-speaker-notes="Cinco decisiones conjuntas que convergen en un acuerdo operativo Atlas × DASIC." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Acto V · Siguiente etapa</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">25 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:38px 0 0;max-width:32ch;">Cinco decisiones que proponemos alinear juntos.</h2>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;">
+      <div style="display:flex;align-items:stretch;width:100%;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 28px 0 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">01</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 10px;">Alcance</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Qué incluye hoy la plataforma.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 28px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">02</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 10px;">Comercial</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Cómo se estructura inversión y soporte.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 28px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">03</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 10px;">Propiedad intelectual</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Clasificación de activos y derechos.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 28px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">04</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 10px;">Datos y seguridad</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Responsabilidades y controles.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:26px 28px 0;"><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;">05</div><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin:16px 0 10px;">Roadmap</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Prioridades de la siguiente etapa.</div></div>
+        <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:33px;color:#09606D;">→</div>
+        <div style="flex:0 0 330px;border-left:2px solid #09606D;padding-left:44px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin-bottom:16px;">CONVERGEN EN</div>
+          <div style="font-size:40px;font-weight:700;letter-spacing:-0.03em;line-height:1.08;color:#09606D;">Acuerdo operativo Atlas × DASIC</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Próximos 90 días" data-screen-label="26 Próximos 90 días" data-speaker-notes="Tres horizontes con la producción continuando en paralelo. Formalizar no significa detener el ERP." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">Próximos 90 días</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">26 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:34ch;">De la línea base al control ejecutivo.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;gap:34px;">
+        <div style="flex:1;">
+          <div style="height:10px;background:rgba(9,96,109,0.35);"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin:20px 0 14px;">0–30 DÍAS</div>
+          <div style="font-size:34px;font-weight:700;letter-spacing:-0.026em;margin-bottom:16px;">Línea base</div>
+          <div style="font-size:25px;color:#5c666b;line-height:1.7;">Conciliación · NDA<br />Inventario de activos<br />Baseline técnico · alcance</div>
+        </div>
+        <div style="flex:1;">
+          <div style="height:10px;background:rgba(9,96,109,0.6);"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#949a9d;margin:20px 0 14px;">31–60 DÍAS</div>
+          <div style="font-size:34px;font-weight:700;letter-spacing:-0.026em;margin-bottom:16px;">Normalización</div>
+          <div style="font-size:25px;color:#5c666b;line-height:1.7;">Catálogo · CRM · compras<br />Flujos operativos<br />Capacitación</div>
+        </div>
+        <div style="flex:1;">
+          <div style="height:10px;background:#09606D;"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;margin:20px 0 14px;">61–90 DÍAS</div>
+          <div style="font-size:34px;font-weight:700;letter-spacing:-0.026em;margin-bottom:16px;color:#09606D;">Control ejecutivo</div>
+          <div style="font-size:25px;color:#5c666b;line-height:1.7;">Reportes · KPIs · BI<br />SLA<br />Cadencia de gobierno</div>
+        </div>
+      </div>
+      <div style="margin-top:50px;background:rgba(9,96,109,0.09);border-left:3px solid #09606D;padding:22px 30px;display:flex;align-items:center;gap:40px;">
+        <div style="flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#09606D;">LA PRODUCCIÓN CONTINÚA</div>
+        <div style="flex:1;height:2px;background:repeating-linear-gradient(90deg, #09606D 0 30px, transparent 30px 48px);"></div>
+        <div style="flex:0 0 auto;font-size:26px;color:#48555a;">Formalizar no significa detener el ERP.</div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="De proyecto a plataforma" data-screen-label="27 De proyecto a plataforma" data-speaker-notes="La siguiente oportunidad no es más software: es más inteligencia operativa." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#12292c;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#DFDFDE;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(18,41,44,0.2);padding-bottom:22px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;text-transform:uppercase;color:#09606D;font-weight:600;">De proyecto a plataforma</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#949a9d;">27 / 28</span>
+    </div>
+    <h2 style="font-size:48px;line-height:1.06;letter-spacing:-0.032em;font-weight:700;margin:36px 0 0;max-width:36ch;">La siguiente oportunidad no es más software: es más inteligencia operativa.</h2>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;padding-bottom:14px;">
+        <div style="display:flex;align-items:flex-end;gap:0;height:170px;">
+          <div style="flex:1;height:18%;background:rgba(9,96,109,0.2);margin-right:4px;"></div>
+          <div style="flex:1;height:38%;background:rgba(9,96,109,0.34);margin-right:4px;"></div>
+          <div style="flex:1;height:60%;background:rgba(9,96,109,0.5);margin-right:4px;"></div>
+          <div style="flex:1;height:80%;background:#09606D;margin-right:4px;"></div>
+          <div style="flex:1;height:100%;background:rgba(9,96,109,0.22);"></div>
+        </div>
+        <div style="position:absolute;left:60%;right:20%;top:-14px;border-top:2px solid #09606D;"></div>
+        <div style="position:absolute;left:60%;right:20%;top:-54px;text-align:center;"><span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#09606D;font-weight:600;">ESTAMOS AQUÍ</span></div>
+      </div>
+      <div style="display:flex;gap:0;">
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 30px 0 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:10px;">Soporte digital</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Web, hosting y seguridad.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 30px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:10px;">Transformación</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Estrategia, procesos y datos.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 30px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:10px;">ERP</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Módulos en operación real.</div></div>
+        <div style="flex:1;border-top:2px solid #09606D;padding:22px 30px 0;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:10px;color:#09606D;">Plataforma operativa</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Datos, adopción y gobierno.</div></div>
+        <div style="flex:1;border-top:1px solid rgba(18,41,44,0.16);padding:22px 0 0 30px;"><div style="font-size:31px;font-weight:700;letter-spacing:-0.024em;margin-bottom:10px;">Sistema inteligente</div><div style="font-size:25px;color:#5c666b;line-height:1.4;">Decisiones asistidas por datos.</div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:#a3a9ab;"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+  <section data-label="Cierre" data-screen-label="28 Cierre" data-speaker-notes="Construir sobre lo que ya funciona. Formalizar lo que creció, proteger lo construido, escalar lo que genera valor." style="position:relative;box-sizing:border-box;padding:74px 145px 118px;color:#eef1f6;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;overflow:hidden;background:#0D1522;">
+    <img src="assets/deck-imagery/image-3-1.png" alt="Siguiente etapa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.2;" />
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(13,21,34,0.94) 0%, rgba(13,21,34,0.88) 58%, rgba(13,21,34,0.96) 100%);"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:22px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.3em;color:#7fc4cb;">SIGUIENTE ETAPA</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.18em;color:#7f8a99;">28 / 28</span>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="font-size:82px;line-height:1.0;letter-spacing:-0.045em;font-weight:700;margin:0 0 40px;max-width:20ch;">Construir sobre lo que <span style="color:#7fc4cb;">ya funciona</span>.</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);column-gap:70px;border-top:1px solid rgba(255,255,255,0.18);padding-top:28px;">
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">FORMALIZAR</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;line-height:1.25;">lo que creció</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">PROTEGER</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;line-height:1.25;">lo que se ha construido</div></div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#7fc4cb;margin-bottom:14px;">ESCALAR</div><div style="font-size:32px;font-weight:700;letter-spacing:-0.024em;line-height:1.25;">lo que genera valor</div></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;border-top:1px solid rgba(255,255,255,0.18);padding-top:26px;">
+        <div style="font-size:38px;font-weight:700;letter-spacing:-0.03em;">ATLAS <span style="color:#7fc4cb;">×</span> DASIC</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.2em;color:#8d97a5;">SIGUIENTE ETAPA</div>
+      </div>
+    </div>
+    <div style="position:absolute;left:145px;right:145px;bottom:46px;z-index:5;display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:25px;letter-spacing:0.22em;color:rgba(255,255,255,0.42);"><span>ATLAS × DASIC · CONFIDENCIAL</span><span>ATLASTECH.MX</span></div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
