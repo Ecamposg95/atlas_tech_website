@@ -1,0 +1,39 @@
+/* Home */
+.noir .hero { padding: clamp(48px, 8vw, 112px) 0 clamp(56px, 8vw, 104px); position: relative; }
+.noir .hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+}
+.noir .hero__eyebrow { color: var(--accent); margin-bottom: 26px; }
+.noir .hero h1 { max-width: 13ch; }
+.noir .hero__sub { margin-top: 28px; }
+.noir .hero__visual { display: flex; justify-content: flex-end; margin-right: calc(var(--gutter) * -0.6); }
+@media (max-width: 960px) {
+  .noir .hero__grid { grid-template-columns: 1fr; }
+  .noir .hero__visual {
+    position: absolute;
+    right: -140px;
+    top: 40px;
+    width: 420px;
+    opacity: 0.45;
+    pointer-events: none;
+    margin: 0;
+  }
+  .noir .hero__copy { position: relative; z-index: 1; }
+}
+
+.noir .como { scroll-margin-top: 80px; }
+
+.noir .moonshot__title { max-width: 15ch; }
+.noir .moonshot__text {
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 34ch;
+}
+.noir .moonshot__note { margin-top: 20px; max-width: 52ch; }
+
+.noir .one__price { margin-top: 20px; color: var(--ink); font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.06em; }

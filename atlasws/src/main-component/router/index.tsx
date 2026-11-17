@@ -4,7 +4,7 @@ import WowInit from "../../components/wowInit/wowInit";
 import SeoRouter from "../../seo/SeoRouter";
 
 // ✅ Pages
-import Homepage from "../HomePage";
+import Homepage from "../../site/pages/HomePage";
 import AboutPage from "../AboutPage/AboutPage";
 import ServicePage from "../ServicePage/ServicePage";
 import SeviceSinglePage from "../SeviceSinglePage/SeviceSinglePage";
