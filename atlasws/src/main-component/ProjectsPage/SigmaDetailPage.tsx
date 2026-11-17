@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, Navigate } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/footer/Footer";
+import { ChromeHeader, ChromeFooter } from "../../site/components/SiteChrome";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 import { getProjectBySlug } from "../../data/projects";
 
@@ -120,7 +119,7 @@ const SigmaDetailPage: React.FC = () => {
     <Fragment>
       <div className="service-page inner-page">
         <div className="body_wrap sg">
-          <Header />
+          <ChromeHeader />
           <SigmaStyles />
           <main>
 
@@ -434,7 +433,7 @@ const SigmaDetailPage: React.FC = () => {
             </section>
 
           </main>
-          <Footer />
+          <ChromeFooter />
           <Scrollbar />
         </div>
       </div>

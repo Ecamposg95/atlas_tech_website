@@ -132,3 +132,7 @@
 @media (prefers-reduced-motion: reduce) {
   .noir .orbit__ring { animation: none; }
 }
+
+/* ---------- Marco sobre páginas con estética propia ---------- */
+.noir.noir--chrome { display: contents; }
+.noir .site-footer { background: var(--bg); position: relative; z-index: 1; }

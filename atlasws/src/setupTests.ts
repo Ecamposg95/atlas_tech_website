@@ -7,3 +7,6 @@ import '@testing-library/jest-dom';
 // react-router v7 usa TextEncoder/TextDecoder, que jsdom (Jest 27 de CRA) no trae.
 import { TextEncoder, TextDecoder } from "util";
 Object.assign(global, { TextEncoder, TextDecoder });
+
+// jsdom no implementa scrollTo (lo usa ScrollToTop al cambiar de ruta).
+window.scrollTo = jest.fn();

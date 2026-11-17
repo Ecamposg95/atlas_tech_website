@@ -1,69 +1,64 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import WowInit from "../../components/wowInit/wowInit";
 import SeoRouter from "../../seo/SeoRouter";
+import ScrollToTop from "./ScrollToTop";
 
-// ✅ Pages
-import Homepage from "../../site/pages/HomePage";
-import AboutPage from "../AboutPage/AboutPage";
-import ServicePage from "../ServicePage/ServicePage";
-import SeviceSinglePage from "../SeviceSinglePage/SeviceSinglePage";
-import ProjectsPage from "../ProjectsPage/ProjectsPage";
-import ProjectDetailPage from "../ProjectsPage/ProjectDetailPage";
-import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
-import SigmaDetailPage from "../ProjectsPage/SigmaDetailPage";
-import OpenCashbackDetailPage from "../ProjectsPage/OpenCashbackDetailPage";
-import ContactPage from "../ContactPage/ContactPage";
+// Páginas del sitio (identidad NOIR)
+import HomePage from "../../site/pages/HomePage";
 import CortexPage from "../../site/pages/CortexPage";
 import AtlasOnePage from "../../site/pages/AtlasOnePage";
 import PortfolioPage from "../../site/pages/PortfolioPage";
 import NosotrosPage from "../../site/pages/NosotrosPage";
 import ContactoPage from "../../site/pages/ContactoPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import ScrollToTop from "./ScrollToTop";
 
-// ✅ Router Component
-const AllRoute: React.FC = () => {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <WowInit />
-        <ScrollToTop />
-        <SeoRouter />
+// Detalles del portafolio (conservan su estética propia)
+import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
+import SigmaDetailPage from "../ProjectsPage/SigmaDetailPage";
+import OpenCashbackDetailPage from "../ProjectsPage/OpenCashbackDetailPage";
 
-        <Routes>
-          {/* Home */}
-          <Route path="/" element={<Homepage />} />
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/about" element={<AboutPage />} />
+// Direcciones anteriores → nuevas. Las mismas reglas viven como 301 en public/.htaccess.
+const REDIRECTS: [string, string][] = [
+  ["/home", "/"],
+  ["/about", "/nosotros"],
+  ["/contact", "/contacto"],
+  ["/service", "/cortex"],
+  ["/service-details", "/cortex"],
+  ["/proyectos", "/portafolio"],
+  ["/proyectos/atlas-one", "/atlas-one"],
+];
 
-          <Route path="/cortex" element={<CortexPage />} />
-          <Route path="/atlas-one" element={<AtlasOnePage />} />
-          <Route path="/portafolio" element={<PortfolioPage />} />
-          <Route path="/nosotros" element={<NosotrosPage />} />
-          <Route path="/contacto" element={<ContactoPage />} />
+export const AppRoutes: React.FC = () => (
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/cortex" element={<CortexPage />} />
+    <Route path="/atlas-one" element={<AtlasOnePage />} />
+    <Route path="/portafolio" element={<PortfolioPage />} />
+    <Route path="/nosotros" element={<NosotrosPage />} />
+    <Route path="/contacto" element={<ContactoPage />} />
 
-          {/* Servicios */}
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/service-details" element={<SeviceSinglePage />} />
+    <Route path="/proyectos/harvestt" element={<HarvesttDetailPage />} />
+    <Route path="/proyectos/sigma" element={<SigmaDetailPage />} />
+    <Route path="/proyectos/open-cashback" element={<OpenCashbackDetailPage />} />
 
-          {/* ✅ Proyectos data-driven (nueva sección) */}
-          <Route path="/proyectos" element={<ProjectsPage />} />
-          <Route path="/proyectos/harvestt" element={<HarvesttDetailPage />} />
-          <Route path="/proyectos/sigma" element={<SigmaDetailPage />} />
-          <Route path="/proyectos/open-cashback" element={<OpenCashbackDetailPage />} />
-          <Route path="/proyectos/:slug" element={<ProjectDetailPage />} />
+    {REDIRECTS.map(([from, to]) => (
+      <Route key={from} path={from} element={<Navigate to={to} replace />} />
+    ))}
 
-          {/* Contacto */}
-          <Route path="/contact" element={<ContactPage />} />
+    <Route path="*" element={<ErrorPage />} />
+  </Routes>
+);
 
-          {/* Error */}
-          <Route path="/404" element={<ErrorPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-};
+const AllRoute: React.FC = () => (
+  <div className="App">
+    <BrowserRouter>
+      <WowInit />
+      <ScrollToTop />
+      <SeoRouter />
+      <AppRoutes />
+    </BrowserRouter>
+  </div>
+);
 
 export default AllRoute;
