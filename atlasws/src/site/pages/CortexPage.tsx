@@ -21,7 +21,7 @@ const CortexPage: React.FC = () => (
             <StatusTag status={c.cortexStatus} />
           </div>
           <h1>
-            Atlas Cortex. <em className="accent">{c.tagline}</em>
+            Atlas Cortex. De la intención empresarial a la <em className="accent">ejecución verificable.</em>
           </h1>
           <p className="lead">{c.intro.text}</p>
           <div className="cta-row">

@@ -1,0 +1,86 @@
+/* /portafolio, /nosotros, /contacto */
+
+/* ---------- Formulario ---------- */
+.noir .lead-form { display: flex; flex-direction: column; gap: 20px; }
+.noir .lead-form label { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+.noir .lead-form label span {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.noir .lead-form input,
+.noir .lead-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  padding: 8px 0 12px;
+  height: auto;
+  box-shadow: none;
+  resize: vertical;
+}
+.noir .lead-form input:focus,
+.noir .lead-form textarea:focus { outline: none; border-bottom-color: var(--accent); }
+.noir .lead-form__error { color: var(--accent); font-size: 0.92rem; }
+.noir .lead-form__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 4px; }
+.noir .lead-form__mail { color: var(--muted); border-bottom: 1px solid var(--rule-strong); font-size: 0.92rem; }
+.noir .lead-form__mail:hover { color: var(--ink); }
+
+/* ---------- Contacto ---------- */
+.noir .contacto { align-items: start; }
+.noir .contacto h1 { margin-top: 0; }
+.noir .contacto__data { margin: clamp(36px, 5vw, 64px) 0 0; border-top: 1px solid var(--rule); }
+.noir .contacto__data > div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.noir .contacto__data dt { color: var(--dim); font-size: 0.66rem; }
+.noir .contacto__data dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; text-align: right; }
+.noir .contacto__form { border: 1px solid var(--rule); border-radius: 16px; padding: clamp(22px, 3.5vw, 40px); }
+.noir .contacto__form-title { font-size: 1.3rem; letter-spacing: -0.02em; margin-bottom: 28px; }
+
+/* ---------- Portafolio ---------- */
+.noir .portfolio { padding-bottom: clamp(48px, 8vw, 104px); }
+.noir .portfolio__item { border-top: 1px solid var(--rule); padding: clamp(32px, 5vw, 64px) 0; }
+.noir .portfolio__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--dim); font-size: 0.66rem; margin-bottom: 22px; }
+.noir .portfolio__state { color: var(--accent); }
+.noir .portfolio__body { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(20px, 5vw, 72px); align-items: start; }
+.noir .portfolio__body h2 { font-size: clamp(2.2rem, 5.6vw, 4.4rem); }
+.noir .portfolio__body h2 a:hover { color: var(--accent); }
+.noir .portfolio__tagline { margin-top: 12px; font-size: 0.95rem; }
+.noir .portfolio__news { margin-top: 28px; border-left: 1px solid var(--accent); padding-left: 18px; }
+.noir .portfolio__news-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: var(--ink); }
+.noir .portfolio__news-head strong { font-weight: 500; }
+.noir .portfolio__news p { margin-top: 8px; font-size: 0.92rem; }
+.noir .portfolio__links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 30px; }
+.noir .portfolio__links > a:not(.cta) { color: var(--muted); border-bottom: 1px solid var(--rule-strong); font-size: 0.92rem; }
+.noir .portfolio__links > a:not(.cta):hover { color: var(--ink); }
+@media (max-width: 860px) { .noir .portfolio__body { grid-template-columns: 1fr; } }
+
+/* ---------- Nosotros ---------- */
+.noir .nosotros__title { max-width: 22ch; }
+.noir .page-head .nosotros__title { max-width: 22ch; }
+.noir .story { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 5vw, 72px); border-top: 1px solid var(--rule); }
+.noir .story__item { padding: 26px 0 30px; border-bottom: 1px solid var(--rule); }
+.noir .story dt { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); }
+.noir .story dd { margin: 10px 0 0; color: var(--muted); max-width: 48ch; }
+@media (max-width: 720px) { .noir .story { grid-template-columns: 1fr; } }
+
+.noir .manifesto li {
+  font-size: clamp(1.4rem, 3.4vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.noir .manifesto li:first-child { border-top: 1px solid var(--rule); }
+
+/* moonshot (compartido con Home) */
+.noir .moonshot__text { font-size: clamp(1.2rem, 2.2vw, 1.75rem); line-height: 1.35; letter-spacing: -0.015em; color: var(--ink); max-width: 34ch; }
+.noir .moonshot__note { margin-top: 20px; max-width: 52ch; }

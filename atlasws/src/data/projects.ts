@@ -47,6 +47,8 @@ export interface Project {
   pricingDesc?: string;
   repoUrl?: string;
   demoUrl?: string;
+  // Novedad del proyecto que la ficha del portafolio destaca (con su estado real).
+  novedad?: { titulo: string; texto: string; estado: string };
   imagenCard: string;
   colorAccent: string;
   colorAccent2: string;
@@ -70,6 +72,14 @@ export const projects: Project[] = [
     categoria: "AgroTech / IoT / IA",
     estado: "Premiado",
     año: "2017–2026",
+    demoUrl: "https://harvestt-production.up.railway.app",
+    repoUrl: "https://github.com/Ecamposg95/harvestt",
+    novedad: {
+      titulo: "HarvestT Cortex",
+      texto:
+        "La etapa 2026 del proyecto: una plataforma de investigación agronómica, software primero, con ontología pública de cultivos. Hoy opera con telemetría simulada; la integración con hardware está planeada.",
+      estado: "En desarrollo",
+    },
     descripcion:
       "Harvestt es un sistema automatizado de agrotecnología que integra inteligencia artificial: un invernadero controlado que acelera la germinación y el cultivo sin exposición al aire libre. Nacido en la ESIME Zacatenco del IPN, combina electrónica, termodinámica y software en una cámara a presión atmosférica con control de humedad, temperatura y fotoperiodo. Usa lógica difusa y visión por computadora con machine learning para identificar plantas por inspección de hojas y entregar nutrientes de forma óptima. Su evolución 2026 es un invernadero geodésico modular y desplegable, pensado para seguridad alimentaria en condiciones adversas.",
     features: [

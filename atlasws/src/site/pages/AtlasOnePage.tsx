@@ -21,7 +21,7 @@ const AtlasOnePage: React.FC = () => (
           <StatusTag status={one.atlasOneStatus} />
         </div>
         <h1 className="one-head__title">
-          Atlas ONE. <em className="accent">{one.head.title}</em>
+          Atlas ONE. El problema no es cobrar — es <em className="accent">operar sin visibilidad.</em>
         </h1>
         <p className="lead">{one.head.text}</p>
         <div className="cta-row">
