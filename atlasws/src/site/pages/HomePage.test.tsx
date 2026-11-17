@@ -25,9 +25,10 @@ test("hero con el mensaje y el CTA a contacto", () => {
   );
 });
 
-test("las ocho secciones en orden", () => {
+test("la portada y las ocho secciones en orden", () => {
   renderHome();
   expect(screen.getAllByTestId(/^sec-/).map((e) => e.getAttribute("data-testid"))).toEqual([
+    "sec-portada",
     "sec-hero",
     "sec-como",
     "sec-moonshot",
@@ -87,7 +88,23 @@ test("portafolio enlaza a las tres páginas existentes y no a Atlas ONE", () => 
   expect(s.querySelector('a[href*="atlas-one"]')).toBeNull();
 });
 
-test("el hero muestra el horizonte de luz hecho en CSS (sin WebGL ni imágenes)", () => {
+test("portada: imagen a pantalla completa antes de la primera sección, con texto alternativo", () => {
   renderHome();
-  expect(within(screen.getByTestId("sec-hero")).getByTestId("atmosphere")).toHaveClass("atmo--horizon");
+  const cover = screen.getByTestId("sec-portada");
+  const img = within(cover).getByRole("img");
+  // El texto va dentro de la imagen: el alt lo hace legible para lectores de pantalla y buscadores.
+  expect(img).toHaveAttribute("alt", "Atlas Tech. Tecnología de frontera, aplicada.");
+  expect(img.getAttribute("src")).toMatch(/\/images\/hero\/.+\.webp$/);
+  expect(img).toHaveAttribute("width");
+  expect(img).toHaveAttribute("height");
+  // La portada es lo primero que carga: no debe ser lazy.
+  expect(img).not.toHaveAttribute("loading", "lazy");
+  // El titular principal sigue siendo el de Cortex, no la portada.
+  expect(within(cover).queryByRole("heading")).toBeNull();
+});
+
+test("una sola fuente de luz por vista: el horizonte pasa al cierre", () => {
+  renderHome();
+  expect(within(screen.getByTestId("sec-hero")).queryByTestId("atmosphere")).toBeNull();
+  expect(within(screen.getByTestId("sec-cierre")).getByTestId("atmosphere")).toHaveClass("atmo--horizon");
 });

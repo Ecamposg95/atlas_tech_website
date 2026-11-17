@@ -19,7 +19,7 @@ Atlas Tech es una startup que construye **sistemas agénticos**, **ontologías d
 ## 01 / Mapa del sitio
 
 ```
-/                         Home: Cortex al frente, cómo funciona, moonshot y cifras, Atlas ONE, clientes, portafolio
+/                         Home: portada, Cortex al frente, cómo funciona, moonshot y cifras, Atlas ONE, clientes, portafolio
 /cortex                   Producto principal: hoy / en construcción / visión, agentes, autonomía, gobierno
 /atlas-one                Producto: cifras con fuente, demo interactivo, módulos, giros, precio
 /portafolio               Harvestt, SIGMA, Open Cashback
@@ -54,9 +54,11 @@ la tecnología de frontera vista como el borde iluminado de algo que apenas empi
 
 - **Tipografía:** Inter en peso 300 para titulares, cifras y cuerpo grande; 400–500 para botones y nombres.
   Nunca 700. JetBrains Mono solo para folios, etiquetas de estado, teléfonos y datos técnicos.
+- **Portada:** el Home abre con una imagen de marca a pantalla completa (`public/images/hero/`), antes del
+  titular de Cortex. Para cambiarla basta con sustituir esos archivos; los originales están en `contex/`.
 - **Luz:** una fuente principal por sección, siempre detrás del contenido. El **horizonte** (arco iluminado
-  con el logo sobre la línea) es el motivo de la marca y abre el Home; el **haz** acompaña cifras y cierres;
-  el **resplandor** va en una esquina de las páginas de contenido. Todo es CSS: sin imágenes ni WebGL.
+  con el logo sobre la línea) es el motivo de la marca y cierra el Home; el **haz** acompaña cifras y cierres;
+  el **resplandor** va en una esquina de las páginas de contenido. Salvo la portada, toda la luz es CSS.
 - **Formas:** botones y barra de navegación en píldora; cards de vidrio con radio de 22px; una card
   **ember** para lo destacado; grano de película sobre toda la página.
 - **Lockup:** marca + `Atlas` (500) + segundo nombre (300, atenuado): `Atlas Tech`, `Atlas ONE`.
@@ -95,7 +97,7 @@ El contenido vive como datos tipados en `atlasws/src/site/content/` y está prot
 | Estilos | CSS propio con tokens (`.noir`); Bootstrap solo para las páginas de detalle del portafolio |
 | Scroll | Lenis (se apaga con "reducir movimiento") |
 | SEO | Meta por ruta + inyector estático en build + JSON-LD + sitemap |
-| Pruebas | Jest + React Testing Library (100 pruebas) |
+| Pruebas | Jest + React Testing Library (101 pruebas) |
 | Hosting | Hostinger (Apache) |
 
 ---
@@ -108,6 +110,7 @@ atlas_tech_website/
 │   ├── public/
 │   │   ├── .htaccess                Apache: redirecciones 301, SPA, HTTPS, cache, seguridad
 │   │   ├── favicon.svg              Marca Atlas (fuente de los iconos PNG)
+│   │   ├── images/hero/             Imagen de portada del Home (WebP)
 │   │   └── images/og-atlas.png      Imagen de vista previa al compartir
 │   ├── scripts/
 │   │   ├── seo-build.cjs            Post-build: meta por ruta + sitemap + robots

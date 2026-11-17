@@ -1,20 +1,42 @@
 /* Home (Atlas Horizon): hero centrado sobre el horizonte, statement con cifras, cards. */
-.noir .hero {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 82px);
-  padding-top: clamp(56px, 9vh, 112px);
+/* Portada: la imagen llena la primera pantalla y pasa por debajo de la navbar flotante. */
+.noir .cover { position: relative; margin-top: -70px; background: var(--bg); overflow: hidden; }
+.noir .cover__img {
+  display: block;
+  width: 100%;
+  height: min(100vh, 56.28vw); /* 16:9 de la imagen; nunca más alta que la pantalla */
+  min-height: 420px;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
 }
+/* La imagen se funde con el negro de la página en su borde inferior. */
+.noir .cover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, var(--bg) 100%);
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  /* En vertical se recorta a 4:5 centrado: conserva el nombre, el lema y parte de la escena. */
+  .noir .cover__img { height: auto; min-height: 0; aspect-ratio: 4 / 5; max-height: 92vh; }
+}
+
+.noir .hero { position: relative; padding: clamp(56px, 9vw, 120px) 0 clamp(40px, 6vw, 80px); }
 .noir .hero__copy { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .noir .hero__eyebrow { color: var(--muted); margin-bottom: 26px; }
 .noir .hero h1 { max-width: 17ch; }
 .noir .hero__sub { margin-top: 26px; max-width: 54ch; }
 .noir .hero__cta { margin-top: 30px; justify-content: center; }
-/* El horizonte ocupa su propia franja bajo el texto: nunca queda detrás de él. */
-.noir .hero__horizon { position: relative; flex: 1; min-height: clamp(220px, 36vh, 380px); margin-top: clamp(24px, 4vh, 48px); }
-.noir .hero__horizon .atmo--horizon { inset: 0; height: auto; }
+
+/* Cierre sobre el horizonte: el arco ocupa su propia franja bajo el texto. */
+.noir .closing--horizon { padding-bottom: 0; }
+.noir .closing__horizon { position: relative; height: clamp(220px, 34vh, 360px); margin-top: clamp(40px, 6vw, 72px); }
+.noir .closing__horizon .atmo--horizon { inset: 0; height: auto; }
 
 .noir .como { scroll-margin-top: 90px; }
 

@@ -65,7 +65,9 @@ Redirecciones 301 (router + `.htaccess`): `/home`→`/`, `/about`→`/nosotros`,
 | Motivo | **Horizonte**: arco de luz con el logo sobre la línea (hero del Home). Haz en cifras y cierres; resplandor en páginas de contenido |
 | Lockup | `Atlas Tech`; el producto protagonista en ember (`Atlas Cortex`) |
 
-Toda la luz es CSS (`src/site/components/Atmosphere.tsx`): sin imágenes ni WebGL. Lo nuevo vive en
+El Home abre con una **portada**: la imagen "Atlas Tech on the Ember Horizon" a pantalla completa
+(`public/images/hero/`, WebP), antes del titular de Cortex. El horizonte en CSS pasó al cierre del Home.
+El resto de la luz es CSS (`src/site/components/Atmosphere.tsx`), sin WebGL. Lo nuevo vive en
 `atlasws/src/site/` bajo la clase `.noir` (nombre histórico). Las páginas de detalle del portafolio
 conservan su estética y solo comparten header y footer. `src/site/brand.test.ts` hace cumplir la paleta
 y los pesos tipográficos.
@@ -109,7 +111,7 @@ prellenado; el formulario arma el mensaje y abre WhatsApp, con `mailto:` como al
 
 React 19 + TypeScript (CRA), React Router 7, Lenis, Bootstrap (solo para las páginas de detalle).
 Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, entre otras) y
-305 archivos de la plantilla. 100 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
+305 archivos de la plantilla. 101 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
 y favicon propios de la identidad Atlas Horizon.
 
 ---
@@ -134,8 +136,9 @@ y favicon propios de la identidad Atlas Horizon.
 > - [ ] La guía pide todo en español salvo nombres de producto y propone "Agenda un diagnóstico" como
 >       llamada a la acción; el sitio usa "Consulting as a Service" y "Agenda una llamada" (decisiones
 >       del dueño). Confirmar que se mantienen.
-> - [ ] La guía sugiere fotografía (siluetas, paisajes con luz rasante) y el producto en pantalla sobre
->       el horizonte. Hoy la luz es solo CSS; faltarían imágenes aprobadas o capturas reales.
+> - [ ] Portada: el nombre y el lema van dentro de la imagen (no son texto real). Si se quiere texto
+>       seleccionable y que se adapte mejor al móvil, hace falta la misma imagen **sin texto**.
+> - [ ] Las cinco imágenes originales en `contex/` (7 MB en PNG) no están en git; decidir si se suben.
 
 > [!note] Mejoras menores detectadas en la revisión final (no aplicadas)
 > - URLs inexistentes responden 200 con la página de error (falta marcarla `noindex`).

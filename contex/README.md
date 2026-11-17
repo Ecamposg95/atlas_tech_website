@@ -10,6 +10,7 @@ Para la documentación técnica del proyecto, ver el [README raíz](../README.md
 |---|---|---|
 | `INFORME-estado-2026-11.md` | **Informe vigente**: reestructura con Atlas Cortex al frente, identidad Atlas Horizon, mapa del sitio nuevo, pendientes | Todo el proyecto |
 | `INFORME-estado-2026-06.md` | Informe anterior (junio 2026, sitio "venture studio"). Histórico | Todo el proyecto |
+| `Atlas Tech *.png`, `ATLAS Tech *.png` | Imágenes de marca Atlas Horizon (5 variantes). "on the Ember Horizon" es la portada del Home | Home (portada) · `public/images/hero/` |
 | `open_cashback_master_brief.md` | Brief técnico maestro de Open Cashback (ledger, blockchain, MVP, API) | `/proyectos/open-cashback` |
 | `sigma.mb` | Contexto de la división **Atlas GovTech** y el producto **SIGMA** | `/proyectos/sigma` |
 | `harvestt_fotos_prompt_maestro.mb` | Prompt maestro para generar las fotos de Harvestt (estética SpaceX) | `/proyectos/harvestt` |

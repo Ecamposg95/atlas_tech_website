@@ -16,13 +16,33 @@ import { waLink, TRIAL_MESSAGE } from "../lib/whatsapp";
 import "./pages.css";
 import "./HomePage.css";
 
-// Una fuente de luz por sección: horizonte en el hero, haz tras el statement, haz en el cierre.
-// Toda la luz es CSS (sin WebGL ni imágenes) y estática.
+// Una fuente de luz por vista: la imagen de portada arriba, el haz tras el statement
+// y el horizonte (motivo de la marca, en CSS) en el cierre.
+// Para cambiar la portada basta con sustituir los archivos de /public/images/hero/.
+const COVER = {
+  src: "/images/hero/atlas-horizon.webp",
+  srcSet: "/images/hero/atlas-horizon-960.webp 960w, /images/hero/atlas-horizon.webp 1672w",
+};
 const HomePage: React.FC = () => {
   const portfolio = projects.filter((p) => p.slug !== "atlas-one");
 
   return (
     <SiteLayout>
+      {/* Portada: imagen de marca a pantalla completa, antes de la primera sección.
+          El texto va dentro de la imagen; el alt lo expone a lectores de pantalla y buscadores. */}
+      <section className="cover" data-testid="sec-portada">
+        <img
+          className="cover__img"
+          src={COVER.src}
+          srcSet={COVER.srcSet}
+          sizes="100vw"
+          width={1672}
+          height={941}
+          alt="Atlas Tech. Tecnología de frontera, aplicada."
+          decoding="async"
+        />
+      </section>
+
       <section className="hero" data-testid="sec-hero">
         <div className="wrap hero__copy">
           <p className="hero__eyebrow mono">{hero.eyebrow}</p>
@@ -36,9 +56,6 @@ const HomePage: React.FC = () => {
               Cómo funciona
             </CtaButton>
           </div>
-        </div>
-        <div className="hero__horizon">
-          <Atmosphere variant="horizon" />
         </div>
       </section>
 
@@ -128,14 +145,16 @@ const HomePage: React.FC = () => {
         </div>
       </Section>
 
-      <section className="closing" data-testid="sec-cierre">
-        <Atmosphere variant="close" />
+      <section className="closing closing--horizon" data-testid="sec-cierre">
         <div className="wrap">
           <h2>{closing.title}</h2>
           <p className="lead">{closing.text}</p>
           <div className="cta-row">
             <CtaButton to="/contacto">Agenda una llamada</CtaButton>
           </div>
+        </div>
+        <div className="closing__horizon">
+          <Atmosphere variant="horizon" />
         </div>
       </section>
     </SiteLayout>
