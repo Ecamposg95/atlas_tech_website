@@ -925,7 +925,7 @@ export const AtlasOneDemosPlayer: React.FC = () => {
     }}>
       {/* Preset selector bar */}
       <div style={{ marginBottom: 28 }}>
-        <div style={{ fontSize: 11, fontFamily: ATLAS_MONO, color: "#a855f7", letterSpacing: 0.15, textTransform: "uppercase", marginBottom: 12 }}>
+        <div style={{ fontSize: 11, fontFamily: ATLAS_MONO, color: "#9a9a9a", letterSpacing: 0.15, textTransform: "uppercase", marginBottom: 12 }}>
           Paso 1: Selecciona una industria (Preset)
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>

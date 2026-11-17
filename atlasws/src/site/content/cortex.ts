@@ -17,7 +17,7 @@ export const intro = {
       text: "La consultoría la entrega hoy el equipo de Atlas Tech, apoyado en Cortex. No es un módulo de autoservicio: es un servicio continuo con personas responsables.",
     },
     {
-      title: "Suscripción, no proyecto",
+      title: "Servicio continuo",
       text: "En lugar de un entregable único, un ciclo permanente: actúa, registra, aprende y se reconstruye.",
     },
     {
@@ -36,7 +36,7 @@ export interface Step {
 export const steps: Step[] = [
   { n: "01", title: "Diagnóstico", text: "Entendemos tu operación y la modelamos: entidades, procesos, decisiones y reglas." },
   { n: "02", title: "Plan", text: "Objetivos, procesos y responsables. Qué hace una persona y qué hace un agente." },
-  { n: "03", title: "Ejecución", text: "Los agentes proponen y actúan en tus sistemas, bajo las reglas que tú defines." },
+  { n: "03", title: "Ejecución", text: "El agente propone cada acción y tú la apruebas; nuestro equipo la lleva a tus sistemas, bajo tus reglas." },
   { n: "04", title: "Evidencia", text: "Cada resultado queda trazado y medido, y alimenta el siguiente ciclo." },
 ];
 

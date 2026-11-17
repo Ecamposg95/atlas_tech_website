@@ -4,7 +4,7 @@
   "titleTemplate": "%s | Atlas Tech",
   "locale": "es_MX",
   "twitter": "@atlastech",
-  "defaultImage": "/images/projects/harvestt/mars-domes-branded.png",
+  "defaultImage": "/images/og-atlas.png",
   "themeColor": "#0b0b0b",
   "organization": {
     "name": "Atlas Tech",
@@ -16,9 +16,9 @@
     {
       "path": "/",
       "title": "Atlas Tech — Sistemas agénticos y consultoría como servicio | Atlas Cortex",
-      "description": "Consultoría que no entrega un PDF: entrega ejecución. Atlas Cortex combina consultores y agentes de IA que diagnostican, planean y ejecutan sobre tus sistemas.",
+      "description": "Consultoría que no entrega un PDF: entrega ejecución. Atlas Cortex combina consultores y agentes de IA para diagnosticar, planear y ejecutar con evidencia.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "keywords": "Atlas Tech, Atlas Cortex, sistemas agénticos, agentes de IA, consulting as a service, ontologías de conocimiento, automatización empresarial, Atlas ONE, México",
       "jsonld": [
         {
@@ -44,9 +44,9 @@
     {
       "path": "/cortex",
       "title": "Atlas Cortex — Consulting as a Service con agentes de IA",
-      "description": "De la intención empresarial a la ejecución verificable. Nuestro equipo y nuestros agentes diagnostican tu operación, arman el plan y lo ejecutan con evidencia.",
+      "description": "De la intención empresarial a la ejecución verificable. Nuestro equipo diagnostica tu operación y arma el plan; el agente propone cada acción y tú la apruebas.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "keywords": "Atlas Cortex, consulting as a service, agentes de IA, sistemas agénticos, automatización de procesos, orquestación de agentes, consultoría con IA",
       "jsonld": [
         {
@@ -56,7 +56,7 @@
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
           "url": "{siteUrl}/cortex",
-          "description": "Consultoría como servicio ligada al software: agentes de IA que proponen y ejecutan acciones con aprobación humana y evidencia.",
+          "description": "Consultoría como servicio ligada al software: un agente de IA propone acciones y las personas las aprueban, con evidencia de cada paso.",
           "publisher": {
             "@type": "Organization",
             "name": "Atlas Tech",
@@ -70,7 +70,7 @@
       "title": "Atlas ONE — Punto de venta y operación para negocios físicos",
       "description": "La suite todo-en-uno para vender, controlar y crecer: punto de venta, caja, inventario y clientes en una sola plataforma. Desde $12 MXN al día, 1 mes gratis.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "keywords": "Atlas ONE, punto de venta, POS México, software para negocios, inventario, caja, restaurante, barbería, ferretería",
       "jsonld": [
         {
@@ -94,7 +94,7 @@
       "title": "Portafolio — Harvestt, SIGMA y Open Cashback",
       "description": "Proyectos que hemos construido además de Cortex y Atlas ONE: agrotecnología premiada, gobierno digital y lealtad programable. Cada uno con su etapa real.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "jsonld": []
     },
     {
@@ -102,7 +102,7 @@
       "title": "Nosotros — la startup detrás de Atlas Cortex y Atlas ONE",
       "description": "Somos una startup de Ciudad de México. Nuestro moonshot: empresas operadas por un equipo humano compacto y una red coordinada de agentes digitales.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "jsonld": []
     },
     {
@@ -110,7 +110,7 @@
       "title": "Agenda una llamada",
       "description": "Cuéntanos qué proceso quieres automatizar. Te respondemos por WhatsApp o correo y te decimos con franqueza qué podemos ejecutar hoy.",
       "type": "website",
-      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "image": "/images/og-atlas.png",
       "jsonld": []
     },
     {

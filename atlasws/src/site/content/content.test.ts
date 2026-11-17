@@ -63,3 +63,10 @@ test("Atlas ONE: 11 giros, precio y stack real", () => {
   expect(atlasOne.stack.join(" ")).toMatch(/FastAPI/);
   expect(atlasOne.stack.join(" ")).not.toMatch(/Node|Railway/i);
 });
+
+test("no se afirma como hecho la ejecución autónoma ni un modelo comercial no definido", () => {
+  expect(all).not.toMatch(/agentes proponen y actúan|suscripción/i);
+  // Hoy el agente propone y la persona confirma (spec §7).
+  expect(cortex.steps[2].text).toMatch(/propone/i);
+  expect(cortex.steps[2].text).toMatch(/equipo|aprob|confirm/i);
+});

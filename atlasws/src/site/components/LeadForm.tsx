@@ -22,9 +22,15 @@ const LeadForm: React.FC = () => {
     window.open(waLink(leadMessage(f)), "_blank", "noopener");
   };
 
+  // El correo conserva lo que la persona ya escribió, aunque falte algún campo.
+  const filled = [
+    f.nombre.trim() && `Nombre: ${f.nombre.trim()}`,
+    f.empresa.trim() && `Empresa: ${f.empresa.trim()}`,
+    f.objetivo.trim() && `Quiero automatizar: ${f.objetivo.trim()}`,
+  ].filter(Boolean);
   const mail = mailtoLink(
     `Llamada con Atlas Tech${f.nombre.trim() ? " — " + f.nombre.trim() : ""}`,
-    isLeadComplete(f) ? leadMessage(f) : "Hola, quiero agendar una llamada."
+    ["Hola, quiero agendar una llamada.", ...filled].join("\n")
   );
 
   return (

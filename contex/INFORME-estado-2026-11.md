@@ -97,7 +97,8 @@ prellenado; el formulario arma el mensaje y abre WhatsApp, con `mailto:` como al
 
 React 19 + TypeScript (CRA), React Router 7, Lenis, Bootstrap (solo para las páginas de detalle).
 Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, entre otras) y
-305 archivos de la plantilla. 84 pruebas automáticas.
+305 archivos de la plantilla. 90 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
+y favicon propios de la identidad NOIR.
 
 ---
 
@@ -114,8 +115,17 @@ Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, en
 > - [ ] Verificar los premios de Harvestt contra los diplomas: el repo registra INTARG 2017 (plata)
 >       e ICAN Toronto 2018 (oro); la página de detalle lista 2018, 2019 y 2021.
 > - [ ] Cambiar la descripción del repo `harvestt` en GitHub ("2016 awr wina toronto").
-> - [ ] Imágenes Open Graph propias para `/`, `/cortex` y `/atlas-one` (hoy usan la de Harvestt).
+> - [ ] Confirmar dos textos: "Nuestro primer cliente de Cortex somos nosotros mismos" (viene del documento de visión de Cortex) y "Desde 2016" (viene de la guía de marca).
 > - [ ] Calendario en línea (Cal.com / Calendly) si se quiere agenda directa.
+
+> [!note] Mejoras menores detectadas en la revisión final (no aplicadas)
+> - URLs inexistentes responden 200 con la página de error (falta marcarla `noindex`).
+> - Las páginas de detalle del portafolio aún enlazan `/contact` y `/proyectos` (funcionan por redirección).
+> - Abrir directo `/cortex#estado` o `/atlas-one#demo` no baja a la sección.
+> - Menú móvil: sin cierre con Escape; orden de tabulación mejorable. Formulario: sin `aria-invalid`.
+> - Con "reducir movimiento", el scroll al cambiar de página sigue siendo suave.
+> - Notas de fuente y etiquetas de estado son pequeñas en móvil (≈10 px).
+> - Sobras: `@types/react-slick`, lista de imágenes borradas en `optimize-images.cjs`.
 
 > [!todo] Despliegue (Hostinger)
 > ```bash
@@ -123,5 +133,7 @@ Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, en
 > CI=false npm run build      # postbuild inyecta SEO + sitemap + robots
 > # Subir TODO build/ a public_html (incluye .htaccess con las redirecciones 301)
 > ```
-> - [ ] Probar en producción las direcciones viejas (`/about`, `/service`, `/proyectos/atlas-one`).
+> - [ ] Probar en producción con `curl -I` las 7 direcciones viejas y las 6 nuevas. Las redirecciones solo se
+>       verificaron por prueba de contenido, no contra Apache real. Punto a vigilar: el build crea una carpeta
+>       por ruta, así que Apache puede redirigir `/cortex` → `/cortex/` (un salto extra frente a la URL canónica).
 > - [ ] Reenviar `sitemap.xml` a Google Search Console.

@@ -1,35 +1,9 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#9333ea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  <!-- Background -->
-  <rect width="32" height="32" rx="7" fill="#070710"/>
-  <!-- Diamond / Hexagon shape -->
-  <polygon
-    points="16,4 28,11 28,21 16,28 4,21 4,11"
-    fill="url(#grad)"
-    filter="url(#glow)"
-    opacity="0.9"
-  />
-  <!-- Letter A -->
-  <text
-    x="16"
-    y="21"
-    font-family="'Inter', 'Segoe UI', sans-serif"
-    font-size="13"
-    font-weight="800"
-    text-anchor="middle"
-    fill="white"
-    letter-spacing="-0.5"
-  >A</text>
+  <!-- Marca Atlas ("A" en círculo) en blanco sobre NOIR -->
+  <rect width="32" height="32" rx="7" fill="#0b0b0b"/>
+  <g transform="translate(3.2 4.3) scale(0.0681)" fill="#f2f2f2">
+    <polygon points="252.36 236.3 195.47 110.84 140.66 236.21 98.8 235.8 174.88 71.93 216.92 71.85 295.23 235.73 252.36 236.3"/>
+    <polygon points="235.1 264.18 156.85 264.18 169.04 236.37 222.59 236.45 235.1 264.18"/>
+    <path d="M322.77,271.46c-5.63,7.02-12.31,13.43-18.68,19.74-31,30.74-75.65,46.25-119.14,44.73-92.04-3.23-164.14-80-162.22-171.68C24.29,89.2,76.26,23.61,149.63,4.95,164.96,1.05,180.47-.39,196.78.09c49.74,1.45,95.91,25.54,126.33,64.35,47.43,60.52,48.14,146.58-.34,207.02ZM285.77,268.38c61.55-58.4,56.66-157.12-9.84-209.36-54.27-42.64-132.41-38.36-181.82,10.11-54.43,53.4-55.5,140.38-2.56,195.07,52.52,54.26,139.28,56.32,194.22,4.19Z"/>
+  </g>
 </svg>

@@ -79,3 +79,13 @@ test("nosotros muestra los reconocimientos con periodo", () => {
   expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   expect(screen.getByText(/Periodo: 2016–2021/)).toBeInTheDocument();
 });
+
+test("LeadForm: el correo conserva lo escrito aunque falte un campo", () => {
+  render(<LeadForm />);
+  fireEvent.change(screen.getByLabelText(/nombre/i), { target: { value: "Ana" } });
+  fireEvent.change(screen.getByLabelText(/automatizar/i), { target: { value: "cobranza & compras" } });
+  const href = screen.getByRole("link", { name: /prefiero correo/i }).getAttribute("href") as string;
+  const body = decodeURIComponent(href.split("body=")[1]);
+  expect(body).toContain("Ana");
+  expect(body).toContain("cobranza & compras");
+});
