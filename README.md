@@ -1,201 +1,188 @@
-# Atlas Tech — Landing Page
+# ATLAS / TECH — Sitio web
 
-> **Early-stage startup** B2B enfocada en Inteligencia Artificial y Blockchain para la transformación empresarial en Latinoamérica.
+**Frontier technology.** Sitio corporativo de Atlas Tech en [atlastech.mx](https://atlastech.mx).
+
+Atlas Tech es una startup que construye **sistemas agénticos**, **ontologías de conocimiento** e integra
+**tecnologías de frontera**. El sitio cuenta una sola historia y lleva a una sola acción: *Agenda una llamada*.
+
+| Producto | Qué es | Estado | Página |
+|---|---|---|---|
+| **ATLAS / CORTEX** | Consulting as a Service: consultoría ligada al software. Nuestro equipo y nuestros agentes diagnostican, planean y llevan a ejecución con evidencia. | `MVP` | `/cortex` |
+| **ATLAS / ONE** | Suite para operar negocios físicos: punto de venta, caja, inventario y clientes. | `Validado` | `/atlas-one` |
+| Portafolio | Harvestt (agrotecnología), SIGMA (gobierno digital), Open Cashback (lealtad programable). | por proyecto | `/portafolio` |
+
+> Moonshot: hacer posible que cualquier empresa se convierta en una organización AI-native, operada por un
+> equipo humano compacto y una red coordinada de agentes digitales.
 
 ---
 
-## 🚀 Misión
+## 01 / Mapa del sitio
 
-Construimos el futuro con **IA & Blockchain**. Desarrollamos plataformas inteligentes que integran Inteligencia Artificial, análisis de datos en tiempo real y tecnología descentralizada (Blockchain, Web3) para resolver necesidades reales de operación en sectores como retail, distribución e industria.
+```
+/                         Home: Cortex al frente, cómo funciona, moonshot, Atlas ONE, clientes, portafolio
+/cortex                   Producto principal: hoy / en construcción / visión, agentes, autonomía, gobierno
+/atlas-one                Producto: cifras con fuente, demo interactivo, módulos, giros, precio
+/portafolio               Harvestt, SIGMA, Open Cashback
+/nosotros                 La startup, el moonshot, reconocimientos
+/contacto                 Agenda una llamada (WhatsApp o correo; sin backend)
+/proyectos/harvestt       Detalle (estética propia)
+/proyectos/sigma          Detalle (estética propia)
+/proyectos/open-cashback  Detalle (estética propia)
+```
+
+Direcciones anteriores, redirigidas con 301 (router y `.htaccess`):
+`/home` → `/` · `/about` → `/nosotros` · `/contact` → `/contacto` · `/service`, `/service-details` → `/cortex` ·
+`/proyectos` → `/portafolio` · `/proyectos/atlas-one` → `/atlas-one`.
 
 ---
 
-## ✨ Stack Técnico
+## 02 / Identidad: Atlas Noir
+
+Noir más un solo acento. Reglas de 1px, radio 0, sin degradados ni brillo. El único motivo gráfico es la órbita.
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--bg` (void) | `#0B0D10` | Fondo |
+| `--panel` | `#13171C` | Cards |
+| `--rule` / `--rule-strong` | `#242B33` / `#303741` | Reglas y bordes |
+| `--ink` | `#F4F5F7` | Texto principal |
+| `--muted` / `--dim` | `#A3ADB9` / `#77828F` | Bajadas / pies y metadatos |
+| `--accent` (hielo) | `#A9C9EB` | **Acento único**: label, frase clave del titular, botón primario, índices |
+| `--accent-2` | `#70A7E0` | Anillo activo de la órbita, foco |
+| `--signal` | `#8FD9B6` | Solo la etiqueta `Validado` |
+
+- **Tipografía:** Inter para todo (titulares 700, labels 600 en mayúsculas espaciadas). JetBrains Mono solo
+  para índices, teléfonos, datos técnicos y etiquetas de estado.
+- **Lockup:** marca + `ATLAS` + `/ TECH`; en producto, `ATLAS / CORTEX` y `ATLAS / ONE` con el nombre en hielo.
+- **Etiquetas de estado:** `Validado` · `MVP` · `En desarrollo` · `Concepto` · `Investigación`.
+  Todo producto o capacidad lleva una. Un concepto nunca se presenta como producto.
+
+Los tokens viven en `atlasws/src/site/tokens.css`, bajo la clase `.noir`. Las pruebas de
+`atlasws/src/site/brand.test.ts` fallan si reaparece un color fuera de la marca, un brillo o una esquina redondeada.
+
+---
+
+## 03 / Reglas de contenido
+
+1. **Nada de roadmap como hecho.** Cada capacidad declara su estado real.
+2. **Ninguna cifra sin fuente, periodo y fecha de corte**, en un pie visible.
+3. **Clientes:** solo los logos ya publicados.
+4. **Sin backend:** el formulario arma el mensaje y abre WhatsApp; no guarda datos.
+
+Cifras publicadas hoy: $80.1M MXN en ventas registradas, 134,844 tickets y $593.93 de ticket promedio
+(Atlas ONE, 90 días, corte 09.09.2026), y 13 reconocimientos internacionales (2016–2021).
+
+El contenido vive como datos tipados en `atlasws/src/site/content/` y está protegido por
+`content.test.ts`: las pruebas fallan ante una cifra pendiente, un cliente no autorizado o un término prohibido.
+
+---
+
+## 04 / Stack
 
 | Capa | Tecnología |
 |---|---|
-| Framework UI | React 19 + TypeScript 4 |
-| Enrutamiento | React Router DOM 7 |
-| Animación 3D | **Three.js** `v0.128` — Globo interactivo de red neuronal |
-| Estilos | CSS personalizado + Bootstrap 5 |
-| Animaciones | GSAP 3, WOW.js, Lenis (smooth scroll) |
+| UI | React 19 + TypeScript |
+| Rutas | React Router 7 |
 | Build | Create React App (react-scripts 5) |
-| Proyectos | Data-driven (`src/data/projects.ts`) + páginas custom premium |
+| Estilos | CSS propio con tokens (`.noir`); Bootstrap solo para las páginas de detalle del portafolio |
+| Scroll | Lenis (se apaga con "reducir movimiento") |
 | SEO | Meta por ruta + inyector estático en build + JSON-LD + sitemap |
-| Imágenes | Optimización a WebP con `sharp` |
-| Deploy | Hostinger (Apache) — **atlastech.mx** |
-| Idioma | Español (LATAM) |
+| Pruebas | Jest + React Testing Library (95 pruebas) |
+| Hosting | Hostinger (Apache) |
 
 ---
 
-## 🎨 Identidad Visual — Deep Violet & Neon
-
-La paleta de color fue migrada completamente desde verde-neón a una identidad **Premium Deep Violet**:
-
-```css
---color-primary:   #9333ea;   /* Violeta principal */
---color-secondary: #a855f7;   /* Violeta claro / acento neon */
---color-bg-dark:   #020617;   /* Azul espacial profundo */
---color-bg-mid:    #0f172a;   /* Azul marino */
-```
-
-### Hero Section — 3D Globe "Horizonte"
-
-La sección inicial cuenta con un **globo 3D interactivo** renderizado en Three.js:
-- Distribución Fibonacci de 1 400 puntos de red sobre la esfera
-- Atmósfera con shader Fresnel (efecto borde brillante)
-- Campo estelar de 2 000 estrellas con colores de marca
-- Interactividad con el cursor del mouse
-- **Sticky background**: el globo permanece visible mientras el usuario hace scroll hacia las secciones siguientes
-- **Glassmorphism acrílico** (`backdrop-filter: blur`) en la tarjeta de contenido secundaria
-- Pausa automática cuando la pestaña está oculta (optimización de rendimiento)
-
-> 📄 Documentación completa de patrones UI: [`contex/Hero 3D Horizonte - Patrones UI.md`](./contex/Hero%203D%20Horizonte%20-%20Patrones%20UI.md)
-
----
-
-## 📁 Estructura del Proyecto
+## 05 / Estructura
 
 ```
 atlas_tech_website/
-├── atlasws/                        # App React principal
+├── atlasws/                         App React
 │   ├── public/
-│   │   ├── favicon.svg             # Favicon personalizado (hexágono violeta + A)
-│   │   ├── .htaccess               # Apache/Hostinger: SPA + HTTPS + cache + seguridad
-│   │   ├── robots.txt
-│   │   └── index.html              # Bloque SEO base (reemplazado por ruta en build)
+│   │   ├── .htaccess                Apache: redirecciones 301, SPA, HTTPS, cache, seguridad
+│   │   ├── favicon.svg              Marca Atlas (fuente de los iconos PNG)
+│   │   └── images/og-atlas.png      Imagen de vista previa al compartir
 │   ├── scripts/
-│   │   ├── seo-build.cjs           # Post-build: inyecta meta por ruta + sitemap + robots
-│   │   └── optimize-images.cjs     # Convierte imágenes pesadas a WebP (sharp)
+│   │   ├── seo-build.cjs            Post-build: meta por ruta + sitemap + robots
+│   │   ├── gen-favicons.cjs         Iconos PNG desde favicon.svg
+│   │   └── optimize-images.cjs      Imágenes pesadas a WebP
 │   └── src/
-│       ├── components/             # Hero 3D, Header (+ menú móvil), AtlasOneDemos, footer…
-│       ├── data/
-│       │   └── projects.ts         # ★ Fuente de datos de proyectos (interfaz + array)
-│       ├── seo/
-│       │   ├── seo.config.json     # ★ Fuente única SEO (dominio, meta y JSON-LD por ruta)
-│       │   ├── resolveSeo.ts        # Resuelve meta por pathname
-│       │   └── SeoRouter.tsx        # Aplica meta al <head> en cada navegación (sin deps)
+│       ├── site/                    ★ El sitio (identidad Atlas Noir)
+│       │   ├── tokens.css           Tokens y base de la marca
+│       │   ├── content/             Textos y datos tipados + pruebas de honestidad
+│       │   ├── components/          Header, footer, lockup, órbita, botones, etiquetas, formulario
+│       │   ├── pages/               Home, Cortex, Atlas ONE, Portafolio, Nosotros, Contacto
+│       │   └── lib/whatsapp.ts      Enlaces y mensajes de WhatsApp y correo
 │       ├── main-component/
-│       │   ├── HomePage/  AboutPage/  ContactPage/  SeviceSinglePage/
-│       │   ├── router/             # Rutas (incluye páginas de proyecto + SeoRouter)
-│       │   └── ProjectsPage/
-│       │       ├── ProjectsPage.tsx          # /proyectos — grid auto de cards
-│       │       ├── ProjectDetailPage.tsx     # /proyectos/:slug — detalle genérico
-│       │       ├── HarvesttDetailPage.tsx    # Página custom (SpaceX / AgroTech)
-│       │       ├── SigmaDetailPage.tsx       # Página custom (GovTech / institucional)
-│       │       └── OpenCashbackDetailPage.tsx# Página custom (Web3 / fintech)
-│       ├── css/
-│       │   ├── main.css            # Estilos globales + tokens de diseño
-│       │   └── responsive.css      # .r-stack (colapso de grids) + safety overflow
-│       └── images/                 # Assets visuales, logos e iconos SVG (WebP donde pesa)
-├── contex/                         # Documentación, briefs y prototipos de referencia
-│   ├── open_cashback_master_brief.md      # Brief técnico de Open Cashback
-│   ├── sigma.mb                            # Contexto / brief de SIGMA (GovTech)
-│   ├── harvestt_fotos_prompt_maestro.mb    # Prompt maestro para fotos de Harvestt
-│   ├── Atlas Hero - Horizonte.html         # Prototipo HTML del hero 3D
-│   └── Hero 3D Horizonte - Patrones UI.md  # Guía de patrones UI
+│       │   ├── router/              Rutas y redirecciones
+│       │   ├── App/                 Arranque y límite de errores
+│       │   └── ProjectsPage/        Detalles de Harvestt, SIGMA y Open Cashback
+│       ├── components/AtlasOneDemos/  Demo interactivo de Atlas ONE
+│       ├── data/projects.ts         Datos del portafolio
+│       └── seo/                     seo.config.json (fuente única), SeoRouter, resolveSeo
+├── contex/                          Informes de estado, briefs y referencias (no se compila)
+├── docs/superpowers/                Diseño aprobado y plan de implementación
 └── README.md
 ```
 
 ---
 
-## 🗂️ Proyectos & Portafolio
+## 06 / Desarrollo
 
-La sección de proyectos es **data-driven**: todo sale de `src/data/projects.ts`.
-
-- `/proyectos` → `ProjectsPage.tsx` lista automáticamente cada proyecto del array como card.
-- `/proyectos/:slug` → `ProjectDetailPage.tsx` genera una página de detalle genérica (agregar al array = página gratis).
-- Algunos proyectos tienen **página custom premium** (ruta explícita antes de `:slug`):
-
-| Proyecto | Slug | Categoría | Estética |
-|---|---|---|---|
-| **Atlas One** | `atlas-one` | SaaS / POS / ERP | Detalle genérico + demo player interactivo |
-| **Harvestt** | `harvestt` | AgroTech / IoT / IA | SpaceX — negro, fotografía full-bleed |
-| **SIGMA** | `sigma` | GovTech / Sector Público | Institucional — navy + azul acero |
-| **Open Cashback** | `open-cashback` | Blockchain / Fintech | Web3 — neón violeta + cyan |
-
-> Para agregar un proyecto: mínimo, añade una entrada a `projects.ts`. Para algo espectacular, crea un `*DetailPage.tsx` y registra la ruta antes de `:slug`.
-
-**Responsive:** las páginas custom usan estilos inline; `src/css/responsive.css` aporta la clase `.r-stack` (colapsa grids de 2→1 columna < 860px) y las rejillas auto-fit usan `minmax(min(Npx, 100%), 1fr)` para no desbordar. El demo de Atlas One se auto-escala con un componente `FitStage`.
-
----
-
-## 🔍 SEO
-
-SEO potente sobre CRA, sin migrar de framework. **Fuente única de verdad:** `src/seo/seo.config.json`.
-
-- **Runtime** (`SeoRouter.tsx`): sin dependencias (compatible con React 19); actualiza `<title>`, meta, Open Graph, Twitter, canonical y JSON-LD en cada navegación.
-- **Build** (`scripts/seo-build.cjs`, corre solo en `postbuild`): genera un `index.html` por ruta con su meta real (clave para crawlers sociales que no ejecutan JS) + `sitemap.xml` + `robots.txt`.
-- **Cambiar el dominio** = editar `siteUrl` en `seo.config.json` (actual: `https://atlastech.mx`) y reconstruir.
-
----
-
-## 🛠️ Instalación y Desarrollo Local
-
-Requisitos: **Node.js ≥ 18** (recomendado 20+; `sharp` requiere ≥ 18)
+Requisito: Node.js 18 o superior.
 
 ```bash
-# 1. Entrar al directorio de la app
 cd atlasws
-
-# 2. Instalar dependencias
 npm install
-
-# 3. Levantar servidor de desarrollo (http://localhost:3000)
-npm start
+npm start                                        # http://localhost:3000
+CI=true npx react-scripts test --watchAll=false  # pruebas
 ```
+
+En WSL con el repo en `/mnt/c` la recarga en caliente no funciona: hay que reiniciar `npm start`,
+o compilar y servir `build/`.
 
 ---
 
-## 📦 Build de Producción y Despliegue (Hostinger)
+## 07 / Compilación y despliegue (Hostinger)
 
 ```bash
 cd atlasws
-
-# (opcional) re-optimizar imágenes pesadas a WebP
-npm run optimize-images
-
-# build de producción — el postbuild inyecta SEO por ruta + sitemap + robots
-CI=false npm run build
+CI=false npm run build    # el postbuild inyecta SEO por ruta + sitemap + robots
 ```
 
-Esto genera `atlasws/build/` con: HTML por ruta (SEO), `sitemap.xml`, `robots.txt` y `.htaccess`.
+1. hPanel → Administrador de archivos → `public_html`.
+2. Subir **todo el contenido de `atlasws/build/`**, incluido el `.htaccess` oculto.
+3. Confirmar SSL activo para `atlastech.mx`.
+4. Verificar con `curl -I` las direcciones anteriores y las nuevas, y reenviar `sitemap.xml` a Google Search Console.
 
-**Subir a Hostinger:**
-1. hPanel → Administrador de archivos → `public_html` (vacíalo si hay algo viejo).
-2. Sube **todo el contenido de `atlasws/build/`** — incluido el `.htaccess` oculto.
-3. Confirma **SSL activo** para `atlastech.mx`.
-4. Verifica: abre una subruta directa (p. ej. `atlastech.mx/proyectos/sigma`, sin 404), prueba el Open Graph en el [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) y envía `sitemap.xml` en Google Search Console.
-
-> El `.htaccess` (en `atlasws/public/`, se copia al build) maneja el rewrite SPA respetando el HTML por ruta, fuerza HTTPS y www→no-www, compresión, cache y headers de seguridad.
+Para cambiar el dominio: editar `siteUrl` en `atlasws/src/seo/seo.config.json` y volver a compilar.
 
 ---
 
-## 📝 Historial de Cambios
+## 08 / Documentación
 
-### v3.0 — Portafolio, SEO y Optimización (2026-06)
-- **Proyectos data-driven**: nueva sección `/proyectos` con cards automáticas desde `src/data/projects.ts`
-- **Páginas custom premium**: **SIGMA** (GovTech, institucional navy), **Open Cashback** (Web3, neón violeta/cyan) y rediseño de **Harvestt** (estética SpaceX, fotografía full-bleed)
-- **SEO potente** sobre CRA: meta por ruta + Open Graph + Twitter + JSON-LD vía `SeoRouter` (runtime, sin deps) y un inyector estático en `postbuild` (`scripts/seo-build.cjs`) que escribe HTML por ruta + `sitemap.xml` + `robots.txt`. Dominio: `atlastech.mx`
-- **`.htaccess`** completo para Apache/Hostinger: SPA, HTTPS, www→no-www, cache, compresión y seguridad
-- **Responsividad**: `responsive.css` (`.r-stack`), rejillas auto-fit blindadas con `min(…,100%)` y `FitStage` que auto-escala el demo de Atlas One
-- **Optimización de imágenes**: conversión a **WebP** con `sharp` (`scripts/optimize-images.cjs`) — imágenes de Harvestt y del template −90/96%
-- **Fundamentos**: `lang="es"`, `homepage:"/"`, canonical, theme-color
-
-### v2.0 — Renovación Visual Completa (2026-04)
-- **Hero 3D**: Nuevo bloque inicial con globo interactivo Three.js (variante "Horizonte"), sticky background y capa acrílica de glassmorphism
-- **Identidad Visual**: Migración completa de paleta verde-neón → Deep Violet & Neon (`#9333ea` / `#a855f7`)
-- **Favicon**: Ícono SVG personalizado (hexágono violeta + letra A)
-- **ContactSection**: Eliminadas estadísticas de plantilla; rediseñada con formulario centrado y glassmorphism
-- **Copy del Hero**: Posicionamiento como early-stage startup de IA & Blockchain para Latinoamérica
-- **Limpieza**: Eliminación de assets, rutas y páginas de la plantilla original sin uso (blog, career, team, testimonial)
-- **SVGs**: Todos los íconos migrados de verde a violeta mediante script automatizado
-
-### v1.0 — Configuración Inicial
-- Adaptación de plantilla base al español
-- Router configurado para la landing principal
-- Branding inicial Atlas Tech
+| Documento | Contenido |
+|---|---|
+| `contex/INFORME-estado-2026-11.md` | Estado vigente, decisiones y pendientes |
+| `docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md` | Diseño aprobado |
+| `docs/superpowers/plans/2026-11-17-reestructura-sitio-cortex.md` | Plan de implementación |
+| `contex/README.md` | Índice de briefs y referencias |
 
 ---
 
-© 2026 Atlas Tech. Todos los derechos reservados.
+## 09 / Historial
+
+**v4.0 — Cortex al frente, Atlas Noir (2026-11).** Reposicionamiento como startup de sistemas agénticos.
+Atlas Cortex pasa a producto principal (Consulting as a Service) y Atlas ONE a producto con página propia.
+Seis páginas nuevas, rutas en español con redirecciones 301, contenido con etiquetas de estado y cifras con
+fuente, identidad Atlas Noir, formulario por WhatsApp. Se retiran 305 archivos y 17 dependencias de la plantilla.
+
+**v3.0 — Portafolio, SEO y optimización (2026-06).** Proyectos data-driven, páginas de SIGMA, Open Cashback
+y Harvestt, SEO por ruta, `.htaccess`, imágenes WebP.
+
+**v2.0 — Renovación visual (2026-04).** Hero 3D y paleta Deep Violet (ambos retirados en v4.0).
+
+**v1.0 — Configuración inicial.**
+
+---
+
+ATLAS TECH / FRONTIER TECHNOLOGY · Ciudad de México · Desde 2016 · © 2026 Atlas Tech

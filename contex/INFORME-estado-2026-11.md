@@ -47,19 +47,26 @@ Redirecciones 301 (router + `.htaccess`): `/home`→`/`, `/about`→`/nosotros`,
 
 ---
 
-## 🎨 Identidad: NOIR con chispa lima
+## 🎨 Identidad: Atlas Noir
+
+> [!info] Cambio de marca durante la reestructura
+> El diseño se aprobó como "NOIR con chispa lima". El mismo día la guía de marca pasó a **Atlas Noir**
+> (azul hielo como único acento; el lima queda fuera) y el sitio se alineó a ella.
 
 | Elemento | Valor |
 |---|---|
-| Fondo | `#0b0b0b` |
-| Texto | `#f2f2f2` · secundario `#9a9a9a` |
-| Acento único | lima `#C6FF3D` |
-| Titulares / cuerpo | Inter 500 / 400 |
-| Etiquetas, navegación, botones | JetBrains Mono, mayúsculas |
-| Motivo | órbitas finas con un punto lima (SVG, sin WebGL) |
+| Fondo (void) | `#0B0D10` · cards `#13171C` · reglas `#242B33` / `#303741` |
+| Texto | `#F4F5F7` · secundario `#A3ADB9` · tenue `#77828F` |
+| Acento único | azul hielo `#A9C9EB` (anillo activo y foco `#70A7E0`) |
+| Señal | `#8FD9B6`, solo para la etiqueta `Validado` |
+| Tipografía | Inter (titulares 700, labels 600 en mayúsculas); JetBrains Mono solo en índices, datos y etiquetas |
+| Forma | radio 0, reglas de 1px, sin degradados ni brillo |
+| Lockup | `ATLAS / TECH`; en producto `ATLAS / CORTEX`, `ATLAS / ONE` |
+| Motivo | órbita: anillos concéntricos, un anillo activo, nodos y el logo al centro (SVG, sin WebGL) |
 
 Todo lo nuevo vive en `atlasws/src/site/` bajo la clase `.noir`. Las páginas de detalle del
-portafolio conservan su estética y solo comparten header y footer.
+portafolio conservan su estética y solo comparten header y footer. `src/site/brand.test.ts`
+falla si reaparece un color fuera de la marca.
 
 ---
 
@@ -97,8 +104,8 @@ prellenado; el formulario arma el mensaje y abre WhatsApp, con `mailto:` como al
 
 React 19 + TypeScript (CRA), React Router 7, Lenis, Bootstrap (solo para las páginas de detalle).
 Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, entre otras) y
-305 archivos de la plantilla. 90 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
-y favicon propios de la identidad NOIR.
+305 archivos de la plantilla. 95 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
+y favicon propios de la identidad Atlas Noir.
 
 ---
 
@@ -117,6 +124,10 @@ y favicon propios de la identidad NOIR.
 > - [ ] Cambiar la descripción del repo `harvestt` en GitHub ("2016 awr wina toronto").
 > - [ ] Confirmar dos textos: "Nuestro primer cliente de Cortex somos nosotros mismos" (viene del documento de visión de Cortex) y "Desde 2016" (viene de la guía de marca).
 > - [ ] Calendario en línea (Cal.com / Calendly) si se quiere agenda directa.
+> - [ ] Contacto: la guía de marca lista `ecamposg@atlastech.mx` y `722 142 5755`; el sitio conserva
+>       `hola@atlastech.mx` y WhatsApp `722 149 5215`. Confirmar cuál debe ir en la web.
+> - [ ] La guía pide todo en español salvo nombres de producto; el sitio usa "Consulting as a Service"
+>       como nombre de categoría (decisión del dueño). Confirmar que se mantiene.
 
 > [!note] Mejoras menores detectadas en la revisión final (no aplicadas)
 > - URLs inexistentes responden 200 con la página de error (falta marcarla `noindex`).
