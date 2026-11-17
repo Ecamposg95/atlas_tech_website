@@ -71,5 +71,11 @@
     "@types/react-slick": "^0.23.13",
     "sass": "^1.93.3",
     "sharp": "^0.34.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
+      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
+    }
   }
 }

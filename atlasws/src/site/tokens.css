@@ -1,0 +1,167 @@
+/* ============================================================
+ * Identidad "NOIR con chispa lima" — tokens y base.
+ * Todo cuelga de .noir para no chocar con el CSS del template
+ * ni con las páginas de detalle del portafolio.
+ * ============================================================ */
+.noir {
+  --bg: #0b0b0b;
+  --panel: #111111;
+  --rule: #222222;
+  --rule-strong: #333333;
+  --ink: #f2f2f2;
+  --muted: #9a9a9a;
+  --dim: #8a8a8a;
+  --accent: #c6ff3d;
+  --on-accent: #000000;
+  --f-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter: clamp(20px, 5vw, 72px);
+  --maxw: 1240px;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.noir *,
+.noir *::before,
+.noir *::after {
+  box-sizing: border-box;
+}
+
+.noir h1,
+.noir h2,
+.noir h3,
+.noir h4 {
+  font-family: var(--f-sans);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0;
+  text-transform: none;
+}
+
+.noir h1 { font-size: clamp(2.5rem, 6.4vw, 5.25rem); }
+.noir h2 { font-size: clamp(1.9rem, 4.2vw, 3.25rem); }
+.noir h3 { font-size: clamp(1.15rem, 1.8vw, 1.45rem); letter-spacing: -0.02em; line-height: 1.2; }
+
+.noir p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--f-sans);
+  font-size: inherit;
+  line-height: 1.6;
+}
+
+.noir a { color: inherit; text-decoration: none; }
+.noir ul, .noir ol { margin: 0; padding: 0; list-style: none; }
+.noir img { max-width: 100%; }
+.noir em.accent { font-style: normal; color: var(--accent); }
+
+.noir .wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.noir .mono {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.noir .lead {
+  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+  max-width: 58ch;
+}
+
+.noir :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Section ---------- */
+.noir .section {
+  border-top: 1px solid var(--rule);
+  padding: clamp(64px, 9vw, 128px) 0;
+}
+.noir .section__label {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+/* ---------- CtaButton ---------- */
+.noir .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.noir .cta:hover { border-color: var(--ink); }
+.noir .cta--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.noir .cta--primary:hover { background: #d6ff70; border-color: #d6ff70; color: var(--on-accent); }
+.noir .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- StatusTag ---------- */
+.noir .status-tag {
+  display: inline-block;
+  padding: 4px 9px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.noir .status-tag--validated { color: var(--ink); border-color: var(--ink); }
+.noir .status-tag--research { border-style: dashed; }
+
+/* ---------- FigureNote ---------- */
+.noir .figure-note {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--dim);
+  margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noir *, .noir *::before, .noir *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
