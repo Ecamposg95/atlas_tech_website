@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
 import FigureNote from "../components/FigureNote";
+import { Lockup } from "../components/SiteHeader";
 import { AtlasOneDemosPlayer } from "../../components/AtlasOneDemos/AtlasOneDemos";
 import * as one from "../content/atlasOne";
 import { waLink, TRIAL_MESSAGE } from "../lib/whatsapp";
@@ -17,7 +18,7 @@ const AtlasOnePage: React.FC = () => (
     <section className="page-head" data-testid="one-head">
       <div className="wrap">
         <div className="page-head__meta mono">
-          <span>Suite para negocios físicos</span>
+          <Lockup product="ONE" />
           <StatusTag status={one.atlasOneStatus} />
         </div>
         <h1 className="one-head__title">
@@ -97,7 +98,7 @@ const AtlasOnePage: React.FC = () => (
               atlasone.com.mx
             </a>
           </p>
-          <p className="one-stack mono">{one.stack.join(" / ")}</p>
+          <p className="one-stack data">{one.stack.join(" / ")}</p>
         </div>
       </div>
     </Section>

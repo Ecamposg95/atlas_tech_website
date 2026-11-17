@@ -5,6 +5,7 @@ import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
 import OrbitMotif from "../components/OrbitMotif";
 import StepsStrip from "../components/StepsStrip";
+import { Lockup } from "../components/SiteHeader";
 import * as c from "../content/cortex";
 import "./pages.css";
 import "./CortexPage.css";
@@ -17,7 +18,7 @@ const CortexPage: React.FC = () => (
       <div className="wrap cortex-head__grid">
         <div>
           <div className="page-head__meta mono">
-            <span>Consulting as a Service</span>
+            <Lockup product="CORTEX" />
             <StatusTag status={c.cortexStatus} />
           </div>
           <h1>

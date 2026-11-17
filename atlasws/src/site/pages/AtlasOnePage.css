@@ -7,7 +7,7 @@
 @media (max-width: 720px) { .noir .figures--row { grid-template-columns: 1fr; gap: 0; } }
 
 /* El demo trae su propio sistema visual (IBM Plex, colores por giro): se enmarca, no se reestiliza. */
-.noir .one-demo { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #050505; }
+.noir .one-demo { border: 1px solid var(--rule); overflow: hidden; background: var(--base); }
 
 .noir .modules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 5vw, 72px); border-top: 1px solid var(--rule); }
 .noir .modules__item { padding: 22px 0 24px; border-bottom: 1px solid var(--rule); }
@@ -21,4 +21,4 @@
 
 .noir .one-landing { margin-top: 28px; font-size: 0.92rem; }
 .noir .one-landing a { color: var(--ink); border-bottom: 1px solid var(--accent); }
-.noir .one-stack { margin-top: 14px; color: var(--dim); font-size: 0.64rem; }
+.noir .one-stack { margin-top: 14px; color: var(--dim); font-size: 0.72rem; }

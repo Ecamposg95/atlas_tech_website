@@ -48,3 +48,18 @@ test("Section muestra su etiqueta y contenido", () => {
   expect(screen.getByText("01 · Cómo funciona")).toBeInTheDocument();
   expect(screen.getByText("cuerpo")).toBeInTheDocument();
 });
+
+test("StatusTag aplica el color de estado de Atlas Noir", () => {
+  render(
+    <>
+      <StatusTag status="Validado" />
+      <StatusTag status="MVP" />
+      <StatusTag status="En desarrollo" />
+      <StatusTag status="Concepto" />
+    </>
+  );
+  expect(screen.getByText("Validado")).toHaveClass("status-tag--validated");
+  expect(screen.getByText("MVP")).toHaveClass("status-tag--mvp");
+  expect(screen.getByText("En desarrollo")).toHaveClass("status-tag--dev");
+  expect(screen.getByText("Concepto")).toHaveClass("status-tag--concept");
+});

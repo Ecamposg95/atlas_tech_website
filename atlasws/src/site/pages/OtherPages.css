@@ -4,9 +4,10 @@
 .noir .lead-form { display: flex; flex-direction: column; gap: 20px; }
 .noir .lead-form label { display: flex; flex-direction: column; gap: 8px; margin: 0; }
 .noir .lead-form label span {
-  font-family: var(--f-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--dim);
 }
@@ -40,7 +41,7 @@
 .noir .contacto__data > div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
 .noir .contacto__data dt { color: var(--dim); font-size: 0.66rem; }
 .noir .contacto__data dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; text-align: right; }
-.noir .contacto__form { border: 1px solid var(--rule); border-radius: 16px; padding: clamp(22px, 3.5vw, 40px); }
+.noir .contacto__form { background: var(--panel); border: 1px solid var(--rule-strong); padding: clamp(22px, 3.5vw, 40px); }
 .noir .contacto__form-title { font-size: 1.3rem; letter-spacing: -0.02em; margin-bottom: 28px; }
 
 /* ---------- Portafolio ---------- */

@@ -26,3 +26,46 @@ test("las rutas compartidas usan una imagen de vista previa propia, no la de Har
 test("los metadatos no afirman que los agentes ya ejecutan solos", () => {
   expect(JSON.stringify(cfg)).not.toMatch(/proponen y ejecutan|agentes[^."]{0,80}lo ejecutan/i);
 });
+
+// ---------- Atlas Noir (guía de marca vigente) ----------
+const walk = (dir: string): string[] =>
+  fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const full = path.join(dir, e.name);
+    return e.isDirectory() ? walk(full) : [full];
+  });
+const siteSources = walk(path.join(root, "src/site"))
+  .filter((f) => /\.(css|tsx|ts)$/.test(f) && !/\.test\./.test(f))
+  .map((f) => [f, fs.readFileSync(f, "utf8")] as const);
+
+test("tokens de Atlas Noir: void, hielo como único acento y grises pizarra", () => {
+  const t = read("src/site/tokens.css").toLowerCase();
+  [
+    "--bg: #0b0d10",
+    "--panel: #13171c",
+    "--rule: #242b33",
+    "--rule-strong: #303741",
+    "--ink: #f4f5f7",
+    "--muted: #a3adb9",
+    "--dim: #77828f",
+    "--accent: #a9c9eb",
+    "--accent-2: #70a7e0",
+    "--on-accent: #0b0d10",
+    "--signal: #8fd9b6",
+  ].forEach((decl) => expect(t).toContain(decl));
+});
+
+test("no queda lima, ni glow, ni esquinas redondeadas en el sitio", () => {
+  siteSources.forEach(([f, src]) => {
+    expect([f, /c6ff3d|d6ff70/i.test(src)]).toEqual([f, false]);
+    expect([f, /drop-shadow|box-shadow:\s*0 0/i.test(src)]).toEqual([f, false]);
+    expect([f, /border-radius:\s*(999px|1[0-9]px|[4-9]px)/i.test(src)]).toEqual([f, false]);
+  });
+  expect(read("public/favicon.svg")).not.toMatch(/c6ff3d/i);
+  expect(read("src/components/scrollbar/style.css")).not.toMatch(/c6ff3d/i);
+});
+
+test("color de tema Atlas Noir en HTML, manifest y SEO", () => {
+  expect(read("public/index.html")).toMatch(/theme-color" content="#0B0D10"/i);
+  expect(JSON.parse(read("public/manifest.json")).theme_color.toLowerCase()).toBe("#0b0d10");
+  expect(cfg.themeColor.toLowerCase()).toBe("#0b0d10");
+});

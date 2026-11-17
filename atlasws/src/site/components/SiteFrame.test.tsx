@@ -52,3 +52,11 @@ test("OrbitMotif es decorativo", () => {
   render(<OrbitMotif />);
   expect(screen.getByTestId("orbit-motif")).toHaveAttribute("aria-hidden", "true");
 });
+
+test("lockup de marca ATLAS / TECH y descriptor en el pie", () => {
+  frame();
+  const brand = screen.getAllByRole("link", { name: "Atlas Tech, inicio" })[0];
+  expect(brand).toHaveTextContent("ATLAS/ TECH");
+  expect(screen.getByText("ATLAS TECH / FRONTIER TECHNOLOGY")).toBeInTheDocument();
+  expect(screen.getByText("Ciudad de México · Desde 2016")).toBeInTheDocument();
+});

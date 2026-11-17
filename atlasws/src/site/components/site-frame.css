@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 11, 11, 0.86);
+  background: rgba(11, 13, 16, 0.9);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
@@ -26,18 +26,16 @@
   color: var(--ink);
   flex-shrink: 0;
 }
-.noir .site-header__word {
-  font-family: var(--f-mono);
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.32em;
-  white-space: nowrap;
-}
+.noir .lockup { display: inline-flex; gap: 0.5em; font-family: var(--f-sans); font-size: 0.82rem; white-space: nowrap; }
+.noir .lockup__atlas { font-weight: 700; letter-spacing: 0.22em; color: var(--ink); }
+.noir .lockup__sub { font-weight: 300; letter-spacing: 0.22em; color: var(--muted); }
+.noir .lockup__sub--product { font-weight: 700; color: var(--accent); }
 .noir .site-header__nav { display: flex; gap: clamp(18px, 2.6vw, 38px); }
 .noir .site-header__link {
-  font-family: var(--f-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-family: var(--f-sans);
+  font-weight: 400;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--dim);
   padding: 8px 0;
@@ -47,19 +45,19 @@
 .noir .site-header__link:hover { color: var(--ink); }
 .noir .site-header__link.active { color: var(--ink); border-bottom-color: var(--accent); }
 .noir .site-header__actions { display: flex; align-items: center; gap: 10px; }
-.noir .site-header__cta { padding: 11px 18px; }
+.noir .site-header__cta { padding: 12px 18px; }
 .noir .site-header__toggle {
   display: none;
   background: transparent;
   border: 1px solid var(--rule-strong);
-  border-radius: 999px;
+  border-radius: 0;
   color: var(--ink);
-  font-family: var(--f-mono);
-  font-size: 0.72rem;
+  font-family: var(--f-sans);
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 11px 16px;
+  padding: 12px 16px;
   line-height: 1;
   cursor: pointer;
 }
@@ -87,7 +85,7 @@
   .noir .site-header__link.active { border-bottom-color: var(--rule); color: var(--accent); }
 }
 @media (max-width: 520px) {
-  .noir .site-header__word { display: none; }
+  .noir .site-header .lockup { display: none; } /* en móvil la marca sola: deja sitio al CTA y al menú */
   .noir .site-header__bar { gap: 12px; }
   .noir .site-header__cta { padding: 10px 14px; font-size: 0.66rem; letter-spacing: 0.08em; }
   .noir .site-header__toggle { padding: 10px 12px; font-size: 0.66rem; }
@@ -114,20 +112,17 @@
   padding-top: 20px;
   border-top: 1px solid var(--rule);
   color: var(--dim);
-  font-size: 0.64rem;
+  font-size: 0.68rem;
+  font-weight: 400;
 }
 @media (max-width: 720px) {
   .noir .site-footer__grid { grid-template-columns: 1fr 1fr; }
   .noir .site-footer__brand { grid-column: 1 / -1; }
 }
 
-/* ---------- Órbitas ---------- */
+/* ---------- Órbita ---------- */
 .noir .orbit { display: block; max-width: 100%; height: auto; }
-.noir .orbit__ring { transform-origin: 200px 200px; animation: orbit-spin linear infinite; }
-.noir .orbit__ring--slow { animation-duration: 90s; }
-.noir .orbit__ring--mid { animation-duration: 54s; animation-direction: reverse; }
-.noir .orbit__ring--fast { animation-duration: 22s; }
-.noir .orbit__dot { filter: drop-shadow(0 0 10px #c6ff3d); }
+.noir .orbit__ring { transform-origin: 350px 350px; animation: orbit-spin 120s linear infinite; }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
   .noir .orbit__ring { animation: none; }

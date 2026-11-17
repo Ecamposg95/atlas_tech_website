@@ -12,16 +12,8 @@
 .noir .hero__visual { display: flex; justify-content: flex-end; margin-right: calc(var(--gutter) * -0.6); }
 @media (max-width: 960px) {
   .noir .hero__grid { grid-template-columns: 1fr; }
-  .noir .hero__visual {
-    position: absolute;
-    right: -140px;
-    top: 40px;
-    width: 420px;
-    opacity: 0.45;
-    pointer-events: none;
-    margin: 0;
-  }
-  .noir .hero__copy { position: relative; z-index: 1; }
+  /* Bajo 960px la órbita (con el logo al centro) competiría con el titular: se oculta. */
+  .noir .hero__visual { display: none; }
 }
 
 .noir .como { scroll-margin-top: 80px; }
@@ -36,4 +28,4 @@
 }
 .noir .moonshot__note { margin-top: 20px; max-width: 52ch; }
 
-.noir .one__price { margin-top: 20px; color: var(--ink); font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.06em; }
+.noir .one__price { margin-top: 20px; color: var(--ink); font-weight: 600; }

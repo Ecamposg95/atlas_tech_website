@@ -13,9 +13,9 @@
 .noir .steps__n {
   display: block;
   font-family: var(--f-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
   margin-bottom: 14px;
 }
 .noir .steps__item p { margin-top: 8px; font-size: 0.92rem; }
@@ -115,7 +115,7 @@
 /* ---------- Encabezado de página interior ---------- */
 .noir .page-head { padding: clamp(56px, 9vw, 120px) 0 clamp(48px, 7vw, 96px); position: relative; }
 .noir .page-head h1 { font-size: clamp(2.2rem, 5.4vw, 4.4rem); max-width: 18ch; margin: 18px 0 24px; }
-.noir .page-head__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: var(--accent); }
+.noir .page-head__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; color: var(--accent); }
 
 /* ---------- Cierre ---------- */
 .noir .closing { border-top: 1px solid var(--rule); padding: clamp(80px, 12vw, 168px) 0; }

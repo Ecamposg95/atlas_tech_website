@@ -28,7 +28,7 @@ const ContactoPage: React.FC = () => (
             </div>
             <div>
               <dt className="mono">WhatsApp</dt>
-              <dd>+52 722 149 5215</dd>
+              <dd className="data">+52 722 149 5215</dd>
             </div>
             <div>
               <dt className="mono">Ubicación</dt>

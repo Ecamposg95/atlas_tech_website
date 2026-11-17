@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NAV, AtlasMark } from "./SiteHeader";
+import { NAV, AtlasMark, Lockup } from "./SiteHeader";
 import { EMAIL, WA_NUMBER } from "../lib/whatsapp";
 
 const SOCIAL = [
@@ -15,7 +15,7 @@ const SiteFooter: React.FC = () => (
       <div className="site-footer__brand">
         <Link to="/" className="site-header__brand" aria-label="Atlas Tech, inicio">
           <AtlasMark />
-          <span className="site-header__word">ATLAS TECH</span>
+          <Lockup />
         </Link>
         <p>Sistemas agénticos, ontologías de conocimiento y tecnologías de frontera. Ciudad de México.</p>
       </div>
@@ -41,8 +41,8 @@ const SiteFooter: React.FC = () => (
       </div>
     </div>
     <div className="wrap site-footer__legal mono">
-      <span>© {new Date().getFullYear()} Atlas Tech</span>
-      <span>Hecho en México</span>
+      <span>ATLAS TECH / FRONTIER TECHNOLOGY</span>
+      <span>Ciudad de México · Desde 2016</span>
     </div>
   </footer>
 );

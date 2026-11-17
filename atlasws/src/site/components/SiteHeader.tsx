@@ -19,6 +19,14 @@ export const AtlasMark: React.FC<{ height?: number }> = ({ height = 30 }) => (
   </svg>
 );
 
+// Lockup con slash de Atlas Noir: marca madre "ATLAS / TECH"; producto "ATLAS / CORTEX".
+export const Lockup: React.FC<{ product?: string }> = ({ product }) => (
+  <span className="lockup">
+    <span className="lockup__atlas">ATLAS</span>
+    <span className={product ? "lockup__sub lockup__sub--product" : "lockup__sub"}>/ {product ?? "TECH"}</span>
+  </span>
+);
+
 const SiteHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
@@ -31,7 +39,7 @@ const SiteHeader: React.FC = () => {
       <div className="wrap site-header__bar">
         <Link to="/" className="site-header__brand" aria-label="Atlas Tech, inicio">
           <AtlasMark />
-          <span className="site-header__word">ATLAS TECH</span>
+          <Lockup />
         </Link>
 
         <nav id="site-nav" className="site-header__nav" aria-label="Principal">
