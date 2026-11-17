@@ -1,0 +1,134 @@
+/* Marco del sitio: header, footer, motivo de órbitas. Todo bajo .noir. */
+.noir.site { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; }
+.noir.site > main { flex: 1; }
+
+/* ---------- Header ---------- */
+.noir .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 11, 11, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.noir .site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 68px;
+}
+.noir .site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.noir .site-header__word {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  white-space: nowrap;
+}
+.noir .site-header__nav { display: flex; gap: clamp(18px, 2.6vw, 38px); }
+.noir .site-header__link {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.noir .site-header__link:hover { color: var(--ink); }
+.noir .site-header__link.active { color: var(--ink); border-bottom-color: var(--accent); }
+.noir .site-header__actions { display: flex; align-items: center; gap: 10px; }
+.noir .site-header__cta { padding: 11px 18px; }
+.noir .site-header__toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .noir .site-header__toggle { display: inline-block; }
+  .noir .site-header__nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px var(--gutter) 20px;
+  }
+  .noir .site-header.is-open .site-header__nav { display: flex; }
+  .noir .site-header__link {
+    padding: 16px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .noir .site-header__link.active { border-bottom-color: var(--rule); color: var(--accent); }
+}
+@media (max-width: 520px) {
+  .noir .site-header__word { display: none; }
+  .noir .site-header__bar { gap: 12px; }
+  .noir .site-header__cta { padding: 10px 14px; font-size: 0.66rem; letter-spacing: 0.08em; }
+  .noir .site-header__toggle { padding: 10px 12px; font-size: 0.66rem; }
+}
+
+/* ---------- Footer ---------- */
+.noir .site-footer { border-top: 1px solid var(--rule); padding: clamp(48px, 7vw, 88px) 0 28px; }
+.noir .site-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+}
+.noir .site-footer__brand p { margin-top: 18px; max-width: 36ch; font-size: 0.92rem; }
+.noir .site-footer__col { display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; }
+.noir .site-footer__col a { color: var(--muted); overflow-wrap: anywhere; }
+.noir .site-footer__col a:hover { color: var(--ink); }
+.noir .site-footer__title { color: var(--dim); margin-bottom: 6px; }
+.noir .site-footer__legal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(40px, 6vw, 72px);
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  color: var(--dim);
+  font-size: 0.64rem;
+}
+@media (max-width: 720px) {
+  .noir .site-footer__grid { grid-template-columns: 1fr 1fr; }
+  .noir .site-footer__brand { grid-column: 1 / -1; }
+}
+
+/* ---------- Órbitas ---------- */
+.noir .orbit { display: block; max-width: 100%; height: auto; }
+.noir .orbit__ring { transform-origin: 200px 200px; animation: orbit-spin linear infinite; }
+.noir .orbit__ring--slow { animation-duration: 90s; }
+.noir .orbit__ring--mid { animation-duration: 54s; animation-direction: reverse; }
+.noir .orbit__ring--fast { animation-duration: 22s; }
+.noir .orbit__dot { filter: drop-shadow(0 0 10px #c6ff3d); }
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .noir .orbit__ring { animation: none; }
+}
