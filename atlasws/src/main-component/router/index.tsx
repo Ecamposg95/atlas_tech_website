@@ -15,6 +15,7 @@ import SigmaDetailPage from "../ProjectsPage/SigmaDetailPage";
 import OpenCashbackDetailPage from "../ProjectsPage/OpenCashbackDetailPage";
 import ContactPage from "../ContactPage/ContactPage";
 import CortexPage from "../../site/pages/CortexPage";
+import AtlasOnePage from "../../site/pages/AtlasOnePage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
 
@@ -34,6 +35,7 @@ const AllRoute: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
 
           <Route path="/cortex" element={<CortexPage />} />
+          <Route path="/atlas-one" element={<AtlasOnePage />} />
 
           {/* Servicios */}
           <Route path="/service" element={<ServicePage />} />

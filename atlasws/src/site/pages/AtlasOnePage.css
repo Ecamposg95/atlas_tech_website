@@ -1,0 +1,24 @@
+/* /atlas-one */
+.noir .one-head__title { max-width: 20ch; }
+
+.noir .figures--row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 56px); }
+.noir .figures--row .figures__item,
+.noir .figures--row .figures__item:last-child { border-bottom: 0; border-top: 1px solid var(--rule-strong); }
+@media (max-width: 720px) { .noir .figures--row { grid-template-columns: 1fr; gap: 0; } }
+
+/* El demo trae su propio sistema visual (IBM Plex, colores por giro): se enmarca, no se reestiliza. */
+.noir .one-demo { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #050505; }
+
+.noir .modules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 5vw, 72px); border-top: 1px solid var(--rule); }
+.noir .modules__item { padding: 22px 0 24px; border-bottom: 1px solid var(--rule); }
+.noir .modules__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.noir .modules__item p { margin-top: 8px; font-size: 0.92rem; max-width: 46ch; }
+@media (max-width: 720px) { .noir .modules { grid-template-columns: 1fr; } }
+
+.noir .verticals { columns: 2; column-gap: 32px; border-top: 1px solid var(--rule); padding-top: 8px; }
+.noir .verticals li { padding: 12px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; color: var(--ink); }
+@media (max-width: 520px) { .noir .verticals { columns: 1; } }
+
+.noir .one-landing { margin-top: 28px; font-size: 0.92rem; }
+.noir .one-landing a { color: var(--ink); border-bottom: 1px solid var(--accent); }
+.noir .one-stack { margin-top: 14px; color: var(--dim); font-size: 0.64rem; }
