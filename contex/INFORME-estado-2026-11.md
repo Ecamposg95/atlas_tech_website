@@ -2,7 +2,7 @@
 title: "Atlas Tech — Sitio Web · Informe de Estado (reestructura Cortex)"
 date: 2026-11-17
 type: informe
-status: listo-para-revisión
+status: listo-para-deploy
 domain: atlastech.mx
 repo: github.com/Ecamposg95/atlas_tech_website
 aliases:
@@ -41,6 +41,20 @@ graph TD
   Port --> S["/proyectos/sigma"]
   Port --> O["/proyectos/open-cashback"]
 ```
+
+### Estructura del Home
+
+| # | Sección | Contenido |
+|---|---|---|
+| 0 | Portada | Imagen de marca a pantalla completa ("Atlas Tech. Tecnología de frontera, aplicada.") |
+| 1 | Hero | "Consultoría que no entrega un PDF. Entrega ejecución." + botón *Agenda una llamada* |
+| 2 | Cómo funciona | Diagnóstico → Plan → Ejecución → Evidencia |
+| 3 | Moonshot y cifras | Empresas operadas por humanos y agentes; cuatro cifras con fuente |
+| 4 | Qué construimos | Sistemas agénticos (card ember), ontologías de conocimiento, tecnologías de frontera |
+| 5 | Atlas ONE | Base operativa en producción; prueba de 1 mes gratis |
+| 6 | Clientes | Nueve logos ya publicados |
+| 7 | Portafolio | Harvestt, SIGMA, Open Cashback |
+| 8 | Cierre | *Agenda una llamada* sobre el horizonte de luz |
 
 Redirecciones 301 (router + `.htaccess`): `/home`→`/`, `/about`→`/nosotros`, `/contact`→`/contacto`,
 `/service` y `/service-details`→`/cortex`, `/proyectos`→`/portafolio`, `/proyectos/atlas-one`→`/atlas-one`.
@@ -116,6 +130,18 @@ y favicon propios de la identidad Atlas Horizon.
 
 ---
 
+## 🔎 Verificación
+
+- **Pruebas:** 101 automáticas en verde (`CI=true npx react-scripts test --watchAll=false`).
+- **Compilación:** `CI=false npm run build` sin errores; genera HTML por ruta, `sitemap.xml` (9 URLs) y `robots.txt`.
+- **Visual:** capturas en 360, 768 y 1440 px de las seis páginas, un detalle de portafolio y la página
+  de error, sin desbordes ni errores de consola. La portada se revisó en 360 y 1440 px.
+- **Revisión independiente** del código antes del cambio de marca: sin hallazgos críticos; los
+  importantes se corrigieron y los menores están listados abajo.
+- **Sin verificar:** las redirecciones 301 contra el Apache real de Hostinger.
+
+---
+
 ## 🧩 Pendientes del dueño
 
 > [!warning] Seguridad (fuera de este repo)
@@ -159,3 +185,27 @@ y favicon propios de la identidad Atlas Horizon.
 >       verificaron por prueba de contenido, no contra Apache real. Punto a vigilar: el build crea una carpeta
 >       por ruta, así que Apache puede redirigir `/cortex` → `/cortex/` (un salto extra frente a la URL canónica).
 > - [ ] Reenviar `sitemap.xml` a Google Search Console.
+
+---
+
+## 📜 Historial de commits (reestructura)
+
+| Commit | Descripción |
+|---|---|
+| `770919d` | docs: diseño y plan de la reestructura del sitio (Cortex al frente) |
+| `3ae392d` | feat(site): cimientos NOIR — tokens, estado, botones y WhatsApp |
+| `47c7e2e` | feat(site): contenido tipado de Cortex, Atlas ONE, Home y Nosotros con pruebas de honestidad |
+| `1cdcdbf` | feat(site): header, footer, layout y motivo de órbitas |
+| `f27560d` | feat(site): nuevo Home con Cortex al frente |
+| `9c2e8ff` | feat(site): página de Atlas Cortex |
+| `5f88f8a` | feat(site): Atlas ONE como producto con página propia |
+| `c9f61ba` | feat(site): portafolio, nosotros y contacto con WhatsApp |
+| `a2e6043` | feat(site): rutas en español, redirecciones 301 y marco compartido |
+| `2452d1f` | feat(seo): metadatos y sitemap del nuevo sitio |
+| `18e5779` | chore: limpieza del template e informe de estado 2026-11 |
+| `5e39df7` | fix(site): correcciones de la revisión final |
+| `e2466cb` | feat(brand): identidad Atlas Noir en todo el sitio |
+| `5b30571` | docs: documentación alineada a Atlas Noir y al sitio reestructurado |
+| `07ca5d3` | feat(brand): acento verde lima en lugar del azul hielo |
+| `e357a59` | feat(brand): identidad Atlas Horizon en el sitio y la documentación |
+| `3596109` | feat(home): portada con la imagen de marca antes de la primera sección |

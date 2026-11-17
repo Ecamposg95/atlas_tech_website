@@ -183,6 +183,7 @@ Para cambiar el dominio: editar `siteUrl` en `atlasws/src/seo/seo.config.json` y
 ## 09 / Historial
 
 **v4.0 — Cortex al frente, Atlas Horizon (2026-11).** Reposicionamiento como startup de sistemas agénticos.
+Portada con imagen de marca, hero centrado, cifras con fuente bajo el moonshot y horizonte de luz en el cierre.
 Atlas Cortex pasa a producto principal (Consulting as a Service) y Atlas ONE a producto con página propia.
 Seis páginas nuevas, rutas en español con redirecciones 301, contenido con etiquetas de estado y cifras con
 fuente, identidad Atlas Horizon, formulario por WhatsApp. Se retiran 305 archivos y 17 dependencias de la plantilla.

@@ -61,7 +61,8 @@ El sitio debe contar esa historia nueva y convertir visitas en **llamadas agenda
 > dueño pidió aplicar la marca a todo. El sitio construido usa **Atlas Horizon**, no la mezcla descrita abajo:
 > fondo `#050505`, acento ember `#FF6A1F` con luz ámbar, titulares en Inter 300 (nunca 700), botones y navbar
 > en píldora, cards de vidrio, grano, y el **horizonte** de luz como motivo (reemplaza a las órbitas).
-> El hero del Home va centrado sobre el horizonte, y las cifras de Atlas ONE aparecen bajo el moonshot con
+> El Home abre con una portada (imagen de marca a pantalla completa) antes del titular de Cortex, que va
+> centrado; el horizonte en CSS cierra la página. Las cifras de Atlas ONE aparecen bajo el moonshot con
 > la leyenda "en Atlas ONE" (se relaja la regla de §7 de mostrarlas solo en la sección de Atlas ONE).
 > Lo que sigue se conserva como registro de lo aprobado originalmente. Valores vigentes: `README.md` §02
 > y `atlasws/src/site/tokens.css`.
