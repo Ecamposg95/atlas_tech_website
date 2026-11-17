@@ -14,6 +14,7 @@ import HarvesttDetailPage from "../ProjectsPage/HarvesttDetailPage";
 import SigmaDetailPage from "../ProjectsPage/SigmaDetailPage";
 import OpenCashbackDetailPage from "../ProjectsPage/OpenCashbackDetailPage";
 import ContactPage from "../ContactPage/ContactPage";
+import CortexPage from "../../site/pages/CortexPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
 
@@ -31,6 +32,8 @@ const AllRoute: React.FC = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
+
+          <Route path="/cortex" element={<CortexPage />} />
 
           {/* Servicios */}
           <Route path="/service" element={<ServicePage />} />

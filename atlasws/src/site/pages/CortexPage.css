@@ -1,0 +1,95 @@
+/* /cortex */
+.noir .cortex-head__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.noir .cortex-head h1 { max-width: 16ch; }
+.noir .cortex-head__visual { display: flex; justify-content: flex-end; }
+@media (max-width: 960px) {
+  .noir .cortex-head__grid { grid-template-columns: 1fr; }
+  .noir .cortex-head__visual { display: none; }
+}
+
+.noir .sec-title { max-width: 20ch; margin-bottom: clamp(32px, 5vw, 64px); }
+.noir .anchor { scroll-margin-top: 72px; }
+
+/* Hoy / En construcción / Visión */
+.noir .stage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3.5vw, 48px); }
+.noir .stage__title {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.noir .stage__col[data-group="hoy"] .stage__title { border-bottom-color: var(--accent); }
+.noir .stage__item { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.noir .stage__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.noir .stage__name { font-weight: 500; color: var(--ink); letter-spacing: -0.01em; line-height: 1.3; }
+.noir .stage__item p { margin-top: 8px; font-size: 0.9rem; }
+.noir .stage__col[data-group="vision"] .stage__name { color: var(--muted); }
+@media (max-width: 960px) { .noir .stage { grid-template-columns: 1fr; gap: 40px; } }
+
+/* Agentes */
+.noir .agents__note { margin-top: 20px; }
+.noir .agents__line { margin-top: 24px; color: var(--ink); font-size: 1.05rem; }
+.noir .agents { border-top: 1px solid var(--rule); }
+.noir .agents__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.noir .agents__name { font-weight: 500; color: var(--ink); }
+.noir .agents__item p { font-size: 0.88rem; margin-top: 2px; }
+
+/* Escalera de autonomía */
+.noir .ladder { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: 0; }
+.noir .ladder__item {
+  border: 1px solid var(--rule);
+  border-right-width: 0;
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.noir .ladder__item:last-child { border-right-width: 1px; }
+.noir .ladder__item:nth-child(1) { min-height: 220px; }
+.noir .ladder__item:nth-child(2) { min-height: 268px; }
+.noir .ladder__item:nth-child(3) { min-height: 316px; }
+.noir .ladder__item:nth-child(4) { min-height: 364px; }
+.noir .ladder__item.is-current { border-color: var(--accent); border-right-width: 1px; }
+.noir .ladder__item.is-current + .ladder__item { border-left-width: 0; }
+.noir .ladder__n { color: var(--dim); font-size: 0.64rem; }
+.noir .ladder__item p { font-size: 0.9rem; flex: 1; }
+.noir .ladder__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.noir .ladder__now { color: var(--accent); font-size: 0.64rem; }
+@media (max-width: 860px) {
+  .noir .ladder { grid-template-columns: 1fr; }
+  .noir .ladder__item,
+  .noir .ladder__item:nth-child(n) { min-height: 0; border-right-width: 1px; border-bottom-width: 0; }
+  .noir .ladder__item:last-child { border-bottom-width: 1px; }
+  .noir .ladder__item.is-current { border-bottom-width: 1px; }
+  .noir .ladder__item.is-current + .ladder__item { border-left-width: 1px; border-top-width: 0; }
+}
+
+/* Principios */
+.noir .principles { margin: 0; border-top: 1px solid var(--rule); }
+.noir .principles__item { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.noir .principles dt { font-weight: 500; color: var(--ink); }
+.noir .principles dd { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }
+
+.noir .bridge {
+  font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 30ch;
+}
