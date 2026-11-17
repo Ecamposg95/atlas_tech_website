@@ -44,6 +44,6 @@ test("resolveSeo entrega canónicos de las rutas nuevas", () => {
   expect(resolveSeo("/cortex").title).toMatch(/Atlas Cortex/);
 });
 
-test("tema oscuro Atlas Noir", () => {
-  expect(cfg.themeColor.toLowerCase()).toBe("#0b0d10");
+test("tema oscuro", () => {
+  expect(cfg.themeColor.toLowerCase()).toBe("#050505");
 });

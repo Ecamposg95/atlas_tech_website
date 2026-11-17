@@ -84,7 +84,7 @@ const AtlasOnePage: React.FC = () => (
       <div className="split">
         <div>
           <h2>
-            {one.pricing.from}. <em className="accent">{one.pricing.trial}.</em>
+            {one.pricing.from}. {one.pricing.trial}.
           </h2>
         </div>
         <div>

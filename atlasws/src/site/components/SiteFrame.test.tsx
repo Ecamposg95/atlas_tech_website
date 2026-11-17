@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, within, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import SiteLayout from "./SiteLayout";
-import OrbitMotif from "./OrbitMotif";
+import Atmosphere from "./Atmosphere";
 
 const frame = () =>
   render(
@@ -48,15 +48,19 @@ test("el layout envuelve el contenido en la identidad noir", () => {
   expect(screen.getByRole("main")).toContainElement(screen.getByText("contenido"));
 });
 
-test("OrbitMotif es decorativo", () => {
-  render(<OrbitMotif />);
-  expect(screen.getByTestId("orbit-motif")).toHaveAttribute("aria-hidden", "true");
+test("la atmósfera de luz es decorativa", () => {
+  render(<Atmosphere variant="horizon" />);
+  const atmo = screen.getByTestId("atmosphere");
+  expect(atmo).toHaveAttribute("aria-hidden", "true");
+  // El horizonte es el motivo de la marca: arco de luz con el logo sobre la línea.
+  expect(atmo.querySelector(".atmo__arc")).not.toBeNull();
+  expect(atmo.querySelector(".atmo__mark")).not.toBeNull();
 });
 
-test("lockup de marca ATLAS / TECH y descriptor en el pie", () => {
+test("lockup de marca Atlas Tech y descriptor en el pie", () => {
   frame();
   const brand = screen.getAllByRole("link", { name: "Atlas Tech, inicio" })[0];
-  expect(brand).toHaveTextContent("ATLAS/ TECH");
+  expect(brand).toHaveTextContent("Atlas Tech");
   expect(screen.getByText("ATLAS TECH / FRONTIER TECHNOLOGY")).toBeInTheDocument();
   expect(screen.getByText("Ciudad de México · Desde 2016")).toBeInTheDocument();
 });

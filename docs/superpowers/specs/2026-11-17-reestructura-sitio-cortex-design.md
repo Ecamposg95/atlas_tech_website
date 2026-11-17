@@ -57,10 +57,12 @@ El sitio debe contar esa historia nueva y convertir visitas en **llamadas agenda
 
 ## 5. Identidad visual
 
-> **Actualización 2026-11-17 (posterior a la aprobación).** La guía de marca cambió a **Atlas Noir** y el
-> dueño pidió aplicar la marca a todo. El sitio construido usa Atlas Noir, no la mezcla descrita abajo:
-> fondo `#0B0D10`, único acento azul hielo `#A9C9EB` (sin lima), radio 0, titulares Inter 700, labels en
-> Inter 600, JetBrains Mono solo para índices y datos, lockup `ATLAS / TECH`, y la órbita de la guía.
+> **Actualización 2026-11-17 (posterior a la aprobación).** La guía de marca cambió dos veces ese día y el
+> dueño pidió aplicar la marca a todo. El sitio construido usa **Atlas Horizon**, no la mezcla descrita abajo:
+> fondo `#050505`, acento ember `#FF6A1F` con luz ámbar, titulares en Inter 300 (nunca 700), botones y navbar
+> en píldora, cards de vidrio, grano, y el **horizonte** de luz como motivo (reemplaza a las órbitas).
+> El hero del Home va centrado sobre el horizonte, y las cifras de Atlas ONE aparecen bajo el moonshot con
+> la leyenda "en Atlas ONE" (se relaja la regla de §7 de mostrarlas solo en la sección de Atlas ONE).
 > Lo que sigue se conserva como registro de lo aprobado originalmente. Valores vigentes: `README.md` §02
 > y `atlasws/src/site/tokens.css`.
 

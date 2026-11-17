@@ -1,25 +1,27 @@
 /* ============================================================
- * Identidad Atlas Noir — tokens y base (guía de marca atlas-tech-brand).
- * Noir + un solo acento, reglas de 1px, radio 0, sin glow.
- * El acento es verde lima por preferencia del dueño (la guía propone azul hielo).
- * Todo cuelga de .noir para no chocar con el CSS del template
- * ni con las páginas de detalle del portafolio.
+ * Identidad Atlas Horizon — tokens y base (guía atlas-tech-brand).
+ * Negro cinematográfico + luz ámbar, tipografía ligera y grande,
+ * vidrio y grano. La idea central es "luz en el horizonte".
+ * Todo cuelga de .noir (nombre histórico de la clase raíz) para no
+ * chocar con el CSS del template ni con los detalles del portafolio.
  * ============================================================ */
 .noir {
-  --bg: #0b0d10; /* void */
-  --base: #101318;
-  --panel: #13171c;
-  --panel-2: #1a2028;
-  --rule: #242b33; /* line */
-  --rule-strong: #303741; /* line-2 */
-  --ink: #f4f5f7;
-  --muted: #a3adb9;
-  --dim: #77828f;
-  --accent: #c6ff3d; /* lima: acento único */
-  --accent-2: #a8e024; /* anillo activo, link, focus */
-  --accent-deep: #2a3a12;
-  --on-accent: #0b0d10;
-  --signal: #8fd9b6; /* solo tag "Validado" */
+  --bg: #050505; /* black */
+  --night: #0b0a09;
+  --glass: rgba(255, 255, 255, 0.045);
+  --glass-line: rgba(255, 255, 255, 0.12);
+  --rule: rgba(255, 255, 255, 0.14);
+  --rule-strong: rgba(255, 255, 255, 0.22);
+  --ink: #f5f2ee; /* blanco cálido */
+  --muted: #a8a29a;
+  --dim: #6e6862;
+  --accent: #ff6a1f; /* ember: una palabra o frase clave por vista */
+  --amber: #ffa14a; /* luz media, tag MVP, foco */
+  --glow: #ffd3a8; /* núcleo de la luz, logo en el horizonte */
+  --deep: #7a240a; /* sombra cálida */
+  --dawn: #c9dbea; /* toque frío al final de un haz; nunca como texto */
+  --signal: #9fe0c0; /* solo tag "Validado" */
+  --on-accent: #050505;
   --f-sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --gutter: clamp(20px, 5vw, 72px);
@@ -29,7 +31,7 @@
   color: var(--ink);
   font-family: var(--f-sans);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -46,30 +48,31 @@
 .noir h3,
 .noir h4 {
   font-family: var(--f-sans);
-  font-weight: 700;
+  font-weight: 300;
   color: var(--ink);
-  letter-spacing: -0.025em;
-  line-height: 1.02;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
   margin: 0;
   text-transform: none;
 }
 
-.noir h1 { font-size: clamp(2.5rem, 6.2vw, 5.1rem); letter-spacing: -0.035em; line-height: 0.98; }
-.noir h2 { font-size: clamp(1.9rem, 4vw, 3.1rem); }
-.noir h3 { font-size: clamp(1.15rem, 1.8vw, 1.4rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+.noir h1 { font-size: clamp(2.5rem, 6.2vw, 5.2rem); line-height: 1; }
+.noir h2 { font-size: clamp(1.9rem, 4.2vw, 3.4rem); line-height: 1.04; }
+.noir h3 { font-size: clamp(1.2rem, 1.9vw, 1.5rem); letter-spacing: -0.02em; line-height: 1.15; }
 
 .noir p {
   margin: 0;
   color: var(--muted);
   font-family: var(--f-sans);
   font-size: inherit;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
 }
 
 .noir a { color: inherit; text-decoration: none; }
 .noir ul, .noir ol { margin: 0; padding: 0; list-style: none; }
-.noir dt { font-weight: 400; }
+.noir dt { font-weight: 300; }
+.noir strong { font-weight: 500; }
 .noir img { max-width: 100%; }
 .noir em.accent { font-style: normal; color: var(--accent); }
 
@@ -81,16 +84,16 @@
   padding-right: var(--gutter);
 }
 
-/* Label / eyebrow: Inter 600, mayúsculas espaciadas (la clase conserva su nombre histórico). */
+/* Label / eyebrow: Inter 400, mayúsculas espaciadas (la clase conserva su nombre histórico). */
 .noir .mono {
   font-family: var(--f-sans);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
-/* Mono real: solo índices, folios, teléfonos y datos técnicos. */
+/* Mono real: solo folios, tags de estado, teléfonos y códigos. */
 .noir .data {
   font-family: var(--f-mono);
   font-weight: 400;
@@ -98,97 +101,108 @@
 }
 
 .noir .lead {
-  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
-  font-weight: 400;
-  max-width: 58ch;
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+  font-weight: 300;
+  max-width: 56ch;
 }
 
 .noir :focus-visible {
-  outline: 2px solid var(--accent-2);
+  outline: 2px solid var(--amber);
   outline-offset: 3px;
 }
 
-/* ---------- Section ---------- */
+/* ---------- Section: el aire separa, sin reglas horizontales ---------- */
 .noir .section {
-  border-top: 1px solid var(--rule);
-  padding: clamp(64px, 9vw, 128px) 0;
+  position: relative;
+  padding: clamp(64px, 9vw, 132px) 0;
 }
 .noir .section__label {
   font-family: var(--f-sans);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: clamp(24px, 3vw, 40px);
+  color: var(--dim);
+  margin-bottom: clamp(20px, 2.6vw, 32px);
 }
 
-/* ---------- CtaButton ---------- */
+/* ---------- CtaButton: píldoras ---------- */
+/* Primario: fondo tinta, texto negro, termina con ↗. Secundario: contorno de vidrio. */
 .noir .cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 15px 22px;
-  border-radius: 0;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
   font-family: var(--f-sans);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  line-height: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  line-height: 1.2;
   white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
-.noir .cta:hover { background: var(--accent-deep); color: var(--ink); }
+.noir .cta:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.08); color: var(--ink); }
 .noir .cta--primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--ink);
+  border-color: var(--ink);
   color: var(--on-accent);
 }
-.noir .cta--primary:hover { background: #d6ff70; border-color: #d6ff70; color: var(--on-accent); }
+.noir .cta--primary:hover { background: var(--glow); border-color: var(--glow); color: var(--on-accent); }
+.noir .cta__arrow { line-height: 1; }
 .noir .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- Cards ---------- */
+.noir .card {
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  border-radius: 22px;
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  padding: clamp(24px, 2.6vw, 34px);
+}
+/* Card ember: una por vista como máximo, para lo destacado. */
+.noir .card--ember {
+  border-color: rgba(255, 190, 140, 0.35);
+  background: radial-gradient(120% 90% at 30% 110%, #ffb061 0%, #ff6a1f 35%, #8a2b0c 70%, #2a0e05 100%);
+  color: #fff4ea;
+}
+.noir .card--ember h3,
+.noir .card--ember p { color: #fff4ea; }
+.noir .card--ember p { font-weight: 400; }
 
 /* ---------- StatusTag ---------- */
 .noir .status-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 10px;
-  border: 1px solid var(--rule-strong);
-  border-radius: 0;
+  padding: 4px 12px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
   font-family: var(--f-mono);
-  font-size: 0.64rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 1.3;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
   white-space: nowrap;
 }
-.noir .status-tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
-}
-.noir .status-tag--validated { color: var(--signal); border-color: #2e5a48; }
-.noir .status-tag--mvp { color: var(--accent); border-color: var(--accent-deep); }
-.noir .status-tag--dev { color: var(--muted); border-color: var(--rule-strong); }
-.noir .status-tag--concept { color: var(--dim); border-color: var(--rule-strong); }
-.noir .status-tag--research { color: var(--dim); border-style: dashed; }
+.noir .status-tag--validated { color: var(--signal); }
+.noir .status-tag--mvp { color: var(--amber); }
+.noir .status-tag--dev { color: var(--ink); border-color: var(--rule-strong); }
+.noir .status-tag--concept { color: var(--muted); border-color: var(--rule); }
+.noir .status-tag--research { color: var(--muted); border-style: dashed; border-color: var(--rule-strong); }
 
-/* ---------- FigureNote (pie de fuente) ---------- */
+/* ---------- FigureNote (fuente de datos) ---------- */
 .noir .figure-note {
   font-family: var(--f-sans);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   color: var(--dim);
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 @media (prefers-reduced-motion: reduce) {

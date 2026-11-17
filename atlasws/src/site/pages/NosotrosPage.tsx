@@ -2,6 +2,7 @@ import React from "react";
 import SiteLayout from "../components/SiteLayout";
 import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
+import Atmosphere from "../components/Atmosphere";
 import FigureNote from "../components/FigureNote";
 import ClientLogos from "../components/ClientLogos";
 import { head, story, awardsFigure } from "../content/nosotros";
@@ -78,6 +79,7 @@ const NosotrosPage: React.FC = () => (
     </Section>
 
     <section className="closing">
+      <Atmosphere variant="close" />
       <div className="wrap">
         <h2>Hablemos de tu operación.</h2>
         <div className="cta-row">

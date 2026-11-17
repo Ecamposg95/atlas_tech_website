@@ -19,11 +19,12 @@ export const AtlasMark: React.FC<{ height?: number }> = ({ height = 30 }) => (
   </svg>
 );
 
-// Lockup con slash de Atlas Noir: marca madre "ATLAS / TECH"; producto "ATLAS / CORTEX".
-export const Lockup: React.FC<{ product?: string }> = ({ product }) => (
+// Lockup de Atlas Horizon: "Atlas" (500) + segundo nombre (300, atenuado).
+// Solo el producto protagonista de la página va en ember.
+export const Lockup: React.FC<{ product?: string; lead?: boolean }> = ({ product, lead }) => (
   <span className="lockup">
-    <span className="lockup__atlas">ATLAS</span>
-    <span className={product ? "lockup__sub lockup__sub--product" : "lockup__sub"}>/ {product ?? "TECH"}</span>
+    <span className="lockup__atlas">Atlas</span>{" "}
+    <span className={lead ? "lockup__sub lockup__sub--lead" : "lockup__sub"}>{product ?? "Tech"}</span>
   </span>
 );
 
@@ -36,9 +37,9 @@ const SiteHeader: React.FC = () => {
 
   return (
     <header className={"site-header" + (open ? " is-open" : "")}>
-      <div className="wrap site-header__bar">
+      <div className="site-header__bar">
         <Link to="/" className="site-header__brand" aria-label="Atlas Tech, inicio">
-          <AtlasMark />
+          <AtlasMark height={26} />
           <Lockup />
         </Link>
 

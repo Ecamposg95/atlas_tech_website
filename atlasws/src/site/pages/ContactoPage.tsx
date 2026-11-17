@@ -1,6 +1,7 @@
 import React from "react";
 import SiteLayout from "../components/SiteLayout";
 import CtaButton from "../components/CtaButton";
+import Atmosphere from "../components/Atmosphere";
 import LeadForm from "../components/LeadForm";
 import { CALL_MESSAGE, EMAIL, waLink } from "../lib/whatsapp";
 import "./pages.css";
@@ -9,6 +10,7 @@ import "./OtherPages.css";
 const ContactoPage: React.FC = () => (
   <SiteLayout>
     <section className="page-head">
+      <Atmosphere variant="glow" />
       <div className="wrap split contacto">
         <div>
           <h1>Agenda una llamada</h1>

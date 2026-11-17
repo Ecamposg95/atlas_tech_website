@@ -2,12 +2,10 @@
 .noir .one-head__title { max-width: 20ch; }
 
 .noir .figures--row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 56px); }
-.noir .figures--row .figures__item,
-.noir .figures--row .figures__item:last-child { border-bottom: 0; border-top: 1px solid var(--rule-strong); }
 @media (max-width: 720px) { .noir .figures--row { grid-template-columns: 1fr; gap: 0; } }
 
 /* El demo trae su propio sistema visual (IBM Plex, colores por giro): se enmarca, no se reestiliza. */
-.noir .one-demo { border: 1px solid var(--rule); overflow: hidden; background: var(--base); }
+.noir .one-demo { border: 1px solid var(--glass-line); border-radius: 22px; overflow: hidden; background: var(--night); }
 
 .noir .modules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 5vw, 72px); border-top: 1px solid var(--rule); }
 .noir .modules__item { padding: 22px 0 24px; border-bottom: 1px solid var(--rule); }

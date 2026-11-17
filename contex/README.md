@@ -8,7 +8,7 @@ Para la documentación técnica del proyecto, ver el [README raíz](../README.md
 
 | Archivo / carpeta | Qué es | Página / uso en el sitio |
 |---|---|---|
-| `INFORME-estado-2026-11.md` | **Informe vigente**: reestructura con Atlas Cortex al frente, identidad Atlas Noir, mapa del sitio nuevo, pendientes | Todo el proyecto |
+| `INFORME-estado-2026-11.md` | **Informe vigente**: reestructura con Atlas Cortex al frente, identidad Atlas Horizon, mapa del sitio nuevo, pendientes | Todo el proyecto |
 | `INFORME-estado-2026-06.md` | Informe anterior (junio 2026, sitio "venture studio"). Histórico | Todo el proyecto |
 | `open_cashback_master_brief.md` | Brief técnico maestro de Open Cashback (ledger, blockchain, MVP, API) | `/proyectos/open-cashback` |
 | `sigma.mb` | Contexto de la división **Atlas GovTech** y el producto **SIGMA** | `/proyectos/sigma` |
@@ -27,5 +27,5 @@ nuevos se prefiere `.md` (GitHub los renderiza).
 
 Sitio reestructurado: **Atlas Cortex** (Consulting as a Service, MVP) es el producto principal,
 **Atlas ONE** (Validado) tiene página propia y **Harvestt**, **SIGMA** y **Open Cashback** forman
-el portafolio. Identidad **Atlas Noir** (azul hielo como único acento). Detalle en `INFORME-estado-2026-11.md`;
+el portafolio. Identidad **Atlas Horizon** (negro, luz ámbar, tipografía ligera). Detalle en `INFORME-estado-2026-11.md`;
 diseño y plan en `docs/superpowers/`.

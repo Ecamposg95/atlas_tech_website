@@ -10,23 +10,34 @@ type Props = {
 // `to` = ruta interna (o ancla #id); `href` = enlace externo en pestaña nueva.
 const CtaButton: React.FC<Props> = ({ variant = "primary", children, className, to, href }) => {
   const cls = ["cta", `cta--${variant}`, className].filter(Boolean).join(" ");
+  // La flecha es decorativa: no forma parte del nombre accesible del botón.
+  const body = (
+    <>
+      <span>{children}</span>
+      {variant === "primary" && (
+        <span className="cta__arrow" aria-hidden="true">
+          ↗
+        </span>
+      )}
+    </>
+  );
   if (href !== undefined) {
     return (
       <a className={cls} href={href} target="_blank" rel="noopener noreferrer">
-        {children}
+        {body}
       </a>
     );
   }
   if (to.startsWith("#")) {
     return (
       <a className={cls} href={to}>
-        {children}
+        {body}
       </a>
     );
   }
   return (
     <Link className={cls} to={to}>
-      {children}
+      {body}
     </Link>
   );
 };

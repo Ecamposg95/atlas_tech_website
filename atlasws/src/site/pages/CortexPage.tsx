@@ -3,7 +3,7 @@ import SiteLayout from "../components/SiteLayout";
 import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
-import OrbitMotif from "../components/OrbitMotif";
+import Atmosphere from "../components/Atmosphere";
 import StepsStrip from "../components/StepsStrip";
 import { Lockup } from "../components/SiteHeader";
 import * as c from "../content/cortex";
@@ -15,10 +15,11 @@ const GROUPS: c.Capability["group"][] = ["hoy", "construccion", "vision"];
 const CortexPage: React.FC = () => (
   <SiteLayout>
     <section className="page-head cortex-head" data-testid="cortex-head">
+      <Atmosphere variant="glow" />
       <div className="wrap cortex-head__grid">
         <div>
           <div className="page-head__meta mono">
-            <Lockup product="CORTEX" />
+            <Lockup product="Cortex" lead />
             <StatusTag status={c.cortexStatus} />
           </div>
           <h1>
@@ -32,20 +33,17 @@ const CortexPage: React.FC = () => (
             </CtaButton>
           </div>
         </div>
-        <div className="cortex-head__visual">
-          <OrbitMotif size={360} />
-        </div>
       </div>
     </section>
 
     <Section label="Consultoría + software">
       <h2 className="sec-title">{c.intro.title}</h2>
-      <div className="cols3">
-        {c.intro.points.map((p) => (
-          <div className="cols3__item" key={p.title}>
+      <div className="cards3">
+        {c.intro.points.map((p, i) => (
+          <article className={"card pillar" + (i === 2 ? " card--ember" : "")} key={p.title}>
             <h3>{p.title}</h3>
             <p>{p.text}</p>
-          </div>
+          </article>
         ))}
       </div>
     </Section>
@@ -152,8 +150,9 @@ const CortexPage: React.FC = () => (
     </Section>
 
     <section className="closing">
+      <Atmosphere variant="close" />
       <div className="wrap">
-        <h2>¿Qué objetivo quieres llevar a ejecución?</h2>
+        <h2>¿Qué objetivo quieres llevar a <em className="accent">ejecución?</em></h2>
         <p className="lead">Cuéntanos el caso. Te decimos qué podemos hacer hoy y qué todavía no.</p>
         <div className="cta-row">
           <CtaButton to="/contacto">Agenda una llamada</CtaButton>

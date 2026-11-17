@@ -11,8 +11,9 @@
 **Spec:** `docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md` (leerlo completo antes de cualquier tarea; §5 identidad, §6 estructura, §7 honestidad).
 
 > **Estado: ejecutado (2026-11-17).** Las 10 tareas están en `main`. Después de la ejecución la identidad
-> pasó de "NOIR con chispa lima" a **Atlas Noir** (azul hielo `#A9C9EB`, radio 0, Inter 700); los valores de
-> paleta y tipografía de este plan quedaron superados. Ver `README.md` §02.
+> pasó de "NOIR con chispa lima" a **Atlas Horizon** (negro, luz ámbar, Inter 300, píldoras, cards de vidrio,
+> horizonte de luz en lugar de órbitas); los valores de paleta, tipografía y motivo de este plan quedaron
+> superados. Ver `README.md` §02.
 
 ## Global Constraints
 

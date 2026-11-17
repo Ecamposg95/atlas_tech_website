@@ -47,11 +47,27 @@ test("cómo funciona muestra los cuatro pasos", () => {
   );
 });
 
-test("Atlas ONE: cifras con pie de fuente, estado y prueba gratis", () => {
+test("cifras con regla vertical tras el statement, con atribución explícita y pie de fuente", () => {
+  renderHome();
+  const sec = screen.getByTestId("sec-moonshot");
+  const stats = within(sec).getByTestId("home-stats");
+  ["$80.1M", "134,844", "$593.93", "13"].forEach((v) => expect(within(stats).getByText(v)).toBeInTheDocument());
+  // Las tres cifras de operación dicen de qué producto son: no deben leerse como tracción de Cortex.
+  expect(within(stats).getAllByText(/Atlas ONE/)).toHaveLength(3);
+  expect(within(stats).getByText(/2016–2021/)).toBeInTheDocument();
+  expect(within(sec).getByText(/Corte: 09\.09\.2026/)).toBeInTheDocument();
+});
+
+test("qué construimos: tres cards, una sola destacada en ember", () => {
+  renderHome();
+  const cards = within(screen.getByTestId("sec-construimos")).getAllByTestId("card");
+  expect(cards).toHaveLength(3);
+  expect(cards.filter((c) => c.classList.contains("card--ember"))).toHaveLength(1);
+});
+
+test("Atlas ONE: estado, prueba gratis y enlace al producto", () => {
   renderHome();
   const s = screen.getByTestId("sec-atlas-one");
-  expect(within(s).getByText("$80.1M MXN")).toBeInTheDocument();
-  expect(within(s).getByText(/Corte: 09\.09\.2026/)).toBeInTheDocument();
   expect(within(s).getByText("Validado")).toBeInTheDocument();
   expect(within(s).getByRole("link", { name: /1 mes gratis/i })).toHaveAttribute("href", waLink(TRIAL_MESSAGE));
   expect(within(s).getByRole("link", { name: /conoce atlas one/i })).toHaveAttribute("href", "/atlas-one");
@@ -71,7 +87,7 @@ test("portafolio enlaza a las tres páginas existentes y no a Atlas ONE", () => 
   expect(s.querySelector('a[href*="atlas-one"]')).toBeNull();
 });
 
-test("sin WebGL el hero muestra el motivo estático", () => {
+test("el hero muestra el horizonte de luz hecho en CSS (sin WebGL ni imágenes)", () => {
   renderHome();
-  expect(within(screen.getByTestId("sec-hero")).getByTestId("orbit-motif")).toBeInTheDocument();
+  expect(within(screen.getByTestId("sec-hero")).getByTestId("atmosphere")).toHaveClass("atmo--horizon");
 });

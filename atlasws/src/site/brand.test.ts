@@ -37,34 +37,47 @@ const siteSources = walk(path.join(root, "src/site"))
   .filter((f) => /\.(css|tsx|ts)$/.test(f) && !/\.test\./.test(f))
   .map((f) => [f, fs.readFileSync(f, "utf8")] as const);
 
-test("tokens de Atlas Noir con acento verde lima (preferencia del dueño sobre el azul hielo)", () => {
+test("tokens de Atlas Horizon: negro, tinta cálida y luz ámbar", () => {
   const t = read("src/site/tokens.css").toLowerCase();
   [
-    "--bg: #0b0d10",
-    "--panel: #13171c",
-    "--rule: #242b33",
-    "--rule-strong: #303741",
-    "--ink: #f4f5f7",
-    "--muted: #a3adb9",
-    "--dim: #77828f",
-    "--accent: #c6ff3d",
-    "--accent-2: #a8e024",
-    "--on-accent: #0b0d10",
-    "--signal: #8fd9b6",
+    "--bg: #050505",
+    "--night: #0b0a09",
+    "--ink: #f5f2ee",
+    "--muted: #a8a29a",
+    "--dim: #6e6862",
+    "--accent: #ff6a1f",
+    "--amber: #ffa14a",
+    "--glow: #ffd3a8",
+    "--deep: #7a240a",
+    "--dawn: #c9dbea",
+    "--signal: #9fe0c0",
   ].forEach((decl) => expect(t).toContain(decl));
 });
 
-test("no queda azul hielo, ni glow, ni esquinas redondeadas en el sitio", () => {
+test("no quedan acentos de marcas anteriores (lima, azul hielo, violeta)", () => {
   siteSources.forEach(([f, src]) => {
-    expect([f, /a9c9eb|70a7e0|c3daf2|25364a/i.test(src)]).toEqual([f, false]);
-    expect([f, /drop-shadow|box-shadow:\s*0 0/i.test(src)]).toEqual([f, false]);
-    expect([f, /border-radius:\s*(999px|1[0-9]px|[4-9]px)/i.test(src)]).toEqual([f, false]);
+    expect([f, /c6ff3d|d6ff70|a8e024|a9c9eb|70a7e0|ff6a2b|9333ea|a855f7/i.test(src)]).toEqual([f, false]);
   });
-  expect(read("src/components/scrollbar/style.css")).not.toMatch(/a9c9eb/i);
+  expect(read("src/components/scrollbar/style.css")).not.toMatch(/c6ff3d|a9c9eb|ff6a2b/i);
 });
 
-test("color de tema Atlas Noir en HTML, manifest y SEO", () => {
-  expect(read("public/index.html")).toMatch(/theme-color" content="#0B0D10"/i);
-  expect(JSON.parse(read("public/manifest.json")).theme_color.toLowerCase()).toBe("#0b0d10");
-  expect(cfg.themeColor.toLowerCase()).toBe("#0b0d10");
+test("tipografía ligera: titulares en 300 y ningún peso 700", () => {
+  expect(read("src/site/tokens.css")).toMatch(/\.noir h1,[\s\S]{0,120}font-weight: 300;/);
+  siteSources.forEach(([f, src]) => {
+    expect([f, /font-weight:\s*(600|700|800|900|bold)/i.test(src)]).toEqual([f, false]);
+  });
+});
+
+test("botones en píldora, cards de vidrio y grano de película", () => {
+  const t = read("src/site/tokens.css");
+  expect(t).toMatch(/\.noir \.cta \{[^}]*border-radius: 999px/);
+  expect(t).toMatch(/\.noir \.card \{[^}]*border-radius: 22px/);
+  expect(t).toMatch(/\.noir \.card--ember \{/);
+  expect(read("src/site/components/site-frame.css")).toMatch(/feTurbulence/);
+});
+
+test("color de tema oscuro en HTML, manifest y SEO", () => {
+  expect(read("public/index.html")).toMatch(/theme-color" content="#050505"/i);
+  expect(JSON.parse(read("public/manifest.json")).theme_color.toLowerCase()).toBe("#050505");
+  expect(cfg.themeColor.toLowerCase()).toBe("#050505");
 });

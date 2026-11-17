@@ -4,11 +4,11 @@ import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
 import FigureNote from "../components/FigureNote";
-import OrbitMotif from "../components/OrbitMotif";
+import Atmosphere from "../components/Atmosphere";
 import StepsStrip from "../components/StepsStrip";
 import ClientLogos from "../components/ClientLogos";
 import ProjectRows from "../components/ProjectRows";
-import { hero, moonshot, pillars, closing } from "../content/home";
+import { hero, heroStats, moonshot, pillars, closing } from "../content/home";
 import { steps } from "../content/cortex";
 import * as one from "../content/atlasOne";
 import { projects } from "../../data/projects";
@@ -16,57 +16,72 @@ import { waLink, TRIAL_MESSAGE } from "../lib/whatsapp";
 import "./pages.css";
 import "./HomePage.css";
 
-// El hero usa el motivo de órbitas en SVG (no WebGL): se ve igual sin GPU
-// y queda estático con prefers-reduced-motion.
+// Una fuente de luz por sección: horizonte en el hero, haz tras el statement, haz en el cierre.
+// Toda la luz es CSS (sin WebGL ni imágenes) y estática.
 const HomePage: React.FC = () => {
   const portfolio = projects.filter((p) => p.slug !== "atlas-one");
 
   return (
     <SiteLayout>
       <section className="hero" data-testid="sec-hero">
-        <div className="wrap hero__grid">
-          <div className="hero__copy">
-            <p className="hero__eyebrow mono">{hero.eyebrow}</p>
-            <h1>
-              {hero.title} <em className="accent">{hero.accent}</em>
-            </h1>
-            <p className="lead hero__sub">{hero.sub}</p>
-            <div className="cta-row">
-              <CtaButton to="/contacto">Agenda una llamada</CtaButton>
-              <CtaButton to="#como" variant="secondary">
-                Cómo funciona
-              </CtaButton>
-            </div>
+        <div className="wrap hero__copy">
+          <p className="hero__eyebrow mono">{hero.eyebrow}</p>
+          <h1>
+            {hero.title} <em className="accent">{hero.accent}</em>
+          </h1>
+          <p className="lead hero__sub">{hero.sub}</p>
+          <div className="cta-row hero__cta">
+            <CtaButton to="/contacto">Agenda una llamada</CtaButton>
+            <CtaButton to="#como" variant="secondary">
+              Cómo funciona
+            </CtaButton>
           </div>
-          <div className="hero__visual">
-            <OrbitMotif size={520} />
-          </div>
+        </div>
+        <div className="hero__horizon">
+          <Atmosphere variant="horizon" />
         </div>
       </section>
 
-      <section id="como" className="como" data-testid="sec-como">
+      <section id="como" className="section como" data-testid="sec-como">
         <div className="wrap">
+          <div className="section__label">Cómo funciona</div>
           <StepsStrip steps={steps} />
         </div>
       </section>
 
-      <Section testId="sec-moonshot" label={moonshot.label} className="moonshot">
-        <div className="split">
-          <h2 className="moonshot__title">{moonshot.title}</h2>
-          <div>
-            <p className="moonshot__text">{moonshot.text}</p>
-            <p className="moonshot__note">{moonshot.note}</p>
+      <section className="section statement" data-testid="sec-moonshot">
+        <Atmosphere variant="beam" />
+        <div className="wrap">
+          <div className="statement__grid">
+            <div className="section__label">{moonshot.label}</div>
+            <div>
+              <h2 className="statement__title">
+                Empresas operadas por <em className="accent">humanos y agentes.</em>
+              </h2>
+              <p className="lead statement__text">{moonshot.text}</p>
+              <p className="statement__note">{moonshot.note}</p>
+            </div>
           </div>
+          <dl className="stats" data-testid="home-stats">
+            {heroStats.map((st) => (
+              <div className="stats__item" key={st.value}>
+                <dt>{st.value}</dt>
+                <dd>{st.label}</dd>
+              </div>
+            ))}
+          </dl>
+          <FigureNote source={one.figures[0].source} period={one.figures[0].period} cutoff={one.figures[0].cutoff} />
         </div>
-      </Section>
+      </section>
 
       <Section testId="sec-construimos" label="Qué construimos">
-        <div className="cols3">
-          {pillars.map((p) => (
-            <div className="cols3__item" key={p.title}>
+        <h2 className="sec-title">Tecnología de frontera, puesta a operar.</h2>
+        <div className="cards3">
+          {pillars.map((p, i) => (
+            <article className={"card pillar" + (i === 0 ? " card--ember" : "")} data-testid="card" key={p.title}>
               <h3>{p.title}</h3>
               <p>{p.text}</p>
-            </div>
+            </article>
           ))}
         </div>
         <div className="cta-row section__cta">
@@ -92,21 +107,11 @@ const HomePage: React.FC = () => {
               </CtaButton>
             </div>
           </div>
-          <div>
-            <dl className="figures">
-              {one.figures.map((f) => (
-                <div className="figures__item" key={f.value}>
-                  <dt>{f.value}</dt>
-                  <dd>{f.label}</dd>
-                </div>
-              ))}
-            </dl>
-            <FigureNote
-              source={one.figures[0].source}
-              period={one.figures[0].period}
-              cutoff={one.figures[0].cutoff}
-            />
-          </div>
+          <ul className="one__modules">
+            {one.modules.slice(0, 6).map((m) => (
+              <li key={m.name}>{m.name}</li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -124,13 +129,12 @@ const HomePage: React.FC = () => {
       </Section>
 
       <section className="closing" data-testid="sec-cierre">
-        <div className="wrap closing__grid">
-          <div>
-            <h2>{closing.title}</h2>
-            <p className="lead">{closing.text}</p>
-            <div className="cta-row">
-              <CtaButton to="/contacto">Agenda una llamada</CtaButton>
-            </div>
+        <Atmosphere variant="close" />
+        <div className="wrap">
+          <h2>{closing.title}</h2>
+          <p className="lead">{closing.text}</p>
+          <div className="cta-row">
+            <CtaButton to="/contacto">Agenda una llamada</CtaButton>
           </div>
         </div>
       </section>

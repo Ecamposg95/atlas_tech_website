@@ -6,22 +6,22 @@ ul.smothscroll {
     z-index: 99;
 }
 ul.smothscroll a {
-    background-color: #0B0D10;
+    background-color: #050505;
     width: 40px;
     height: 40px;
     line-height: 40px;
-    border-radius:0;
+    border-radius:999px;
     display: block;
     text-align: center;
-    color: #F4F5F7;
+    color: #F5F2EE;
     background-size: 200%,1px;
     background-position: 0;
-    border: 1px solid #303741;
+    border: 1px solid rgba(255,255,255,.12);
 }
 ul.smothscroll a:hover {
-    background-color: #C6FF3D;
-    border-color: #C6FF3D;
-    color: #0B0D10;
+    background-color: #F5F2EE;
+    border-color: #F5F2EE;
+    color: #050505;
 }
 
 @media(max-width:767px){

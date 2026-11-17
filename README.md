@@ -1,14 +1,14 @@
-# ATLAS / TECH — Sitio web
+# Atlas Tech — Sitio web
 
-**Frontier technology.** Sitio corporativo de Atlas Tech en [atlastech.mx](https://atlastech.mx).
+**Frontier technology consulting.** Sitio corporativo de Atlas Tech en [atlastech.mx](https://atlastech.mx).
 
 Atlas Tech es una startup que construye **sistemas agénticos**, **ontologías de conocimiento** e integra
 **tecnologías de frontera**. El sitio cuenta una sola historia y lleva a una sola acción: *Agenda una llamada*.
 
 | Producto | Qué es | Estado | Página |
 |---|---|---|---|
-| **ATLAS / CORTEX** | Consulting as a Service: consultoría ligada al software. Nuestro equipo y nuestros agentes diagnostican, planean y llevan a ejecución con evidencia. | `MVP` | `/cortex` |
-| **ATLAS / ONE** | Suite para operar negocios físicos: punto de venta, caja, inventario y clientes. | `Validado` | `/atlas-one` |
+| **Atlas Cortex** | Consulting as a Service: consultoría ligada al software. Nuestro equipo y nuestros agentes diagnostican, planean y llevan a ejecución con evidencia. | `MVP` | `/cortex` |
+| **Atlas ONE** | Suite para operar negocios físicos: punto de venta, caja, inventario y clientes. | `Validado` | `/atlas-one` |
 | Portafolio | Harvestt (agrotecnología), SIGMA (gobierno digital), Open Cashback (lealtad programable). | por proyecto | `/portafolio` |
 
 > Moonshot: hacer posible que cualquier empresa se convierta en una organización AI-native, operada por un
@@ -19,7 +19,7 @@ Atlas Tech es una startup que construye **sistemas agénticos**, **ontologías d
 ## 01 / Mapa del sitio
 
 ```
-/                         Home: Cortex al frente, cómo funciona, moonshot, Atlas ONE, clientes, portafolio
+/                         Home: Cortex al frente, cómo funciona, moonshot y cifras, Atlas ONE, clientes, portafolio
 /cortex                   Producto principal: hoy / en construcción / visión, agentes, autonomía, gobierno
 /atlas-one                Producto: cifras con fuente, demo interactivo, módulos, giros, precio
 /portafolio               Harvestt, SIGMA, Open Cashback
@@ -36,29 +36,37 @@ Direcciones anteriores, redirigidas con 301 (router y `.htaccess`):
 
 ---
 
-## 02 / Identidad: Atlas Noir
+## 02 / Identidad: Atlas Horizon
 
-Noir más un solo acento. Reglas de 1px, radio 0, sin degradados ni brillo. El único motivo gráfico es la órbita.
+Negro cinematográfico, luz ámbar y tipografía ligera. La idea central es **luz en el horizonte**:
+la tecnología de frontera vista como el borde iluminado de algo que apenas empieza.
 
 | Token | Valor | Uso |
 |---|---|---|
-| `--bg` (void) | `#0B0D10` | Fondo |
-| `--panel` | `#13171C` | Cards |
-| `--rule` / `--rule-strong` | `#242B33` / `#303741` | Reglas y bordes |
-| `--ink` | `#F4F5F7` | Texto principal |
-| `--muted` / `--dim` | `#A3ADB9` / `#77828F` | Bajadas / pies y metadatos |
-| `--accent` (hielo) | `#A9C9EB` | **Acento único**: label, frase clave del titular, botón primario, índices |
-| `--accent-2` | `#70A7E0` | Anillo activo de la órbita, foco |
-| `--signal` | `#8FD9B6` | Solo la etiqueta `Validado` |
+| `--bg` | `#050505` | Fondo |
+| `--glass` / `--glass-line` | blanco al 4.5% / 12% | Cards de vidrio y sus bordes |
+| `--rule` | blanco al 14% | Reglas y divisores |
+| `--ink` | `#F5F2EE` | Texto principal (blanco cálido) |
+| `--muted` / `--dim` | `#A8A29A` / `#6E6862` | Bajadas / labels y metadatos |
+| `--accent` (ember) | `#FF6A1F` | **Acento**: una palabra o frase clave por vista, card destacada |
+| `--amber` / `--glow` | `#FFA14A` / `#FFD3A8` | Luz media, etiqueta `MVP`, foco / núcleo de la luz |
+| `--signal` | `#9FE0C0` | Solo la etiqueta `Validado` |
 
-- **Tipografía:** Inter para todo (titulares 700, labels 600 en mayúsculas espaciadas). JetBrains Mono solo
-  para índices, teléfonos, datos técnicos y etiquetas de estado.
-- **Lockup:** marca + `ATLAS` + `/ TECH`; en producto, `ATLAS / CORTEX` y `ATLAS / ONE` con el nombre en hielo.
+- **Tipografía:** Inter en peso 300 para titulares, cifras y cuerpo grande; 400–500 para botones y nombres.
+  Nunca 700. JetBrains Mono solo para folios, etiquetas de estado, teléfonos y datos técnicos.
+- **Luz:** una fuente principal por sección, siempre detrás del contenido. El **horizonte** (arco iluminado
+  con el logo sobre la línea) es el motivo de la marca y abre el Home; el **haz** acompaña cifras y cierres;
+  el **resplandor** va en una esquina de las páginas de contenido. Todo es CSS: sin imágenes ni WebGL.
+- **Formas:** botones y barra de navegación en píldora; cards de vidrio con radio de 22px; una card
+  **ember** para lo destacado; grano de película sobre toda la página.
+- **Lockup:** marca + `Atlas` (500) + segundo nombre (300, atenuado): `Atlas Tech`, `Atlas ONE`.
+  Solo el producto protagonista de la página va en ember (`Atlas Cortex` en `/cortex`).
 - **Etiquetas de estado:** `Validado` · `MVP` · `En desarrollo` · `Concepto` · `Investigación`.
   Todo producto o capacidad lleva una. Un concepto nunca se presenta como producto.
 
-Los tokens viven en `atlasws/src/site/tokens.css`, bajo la clase `.noir`. Las pruebas de
-`atlasws/src/site/brand.test.ts` fallan si reaparece un color fuera de la marca, un brillo o una esquina redondeada.
+Los tokens viven en `atlasws/src/site/tokens.css` y la luz en `atlasws/src/site/components/Atmosphere.tsx`,
+bajo la clase `.noir` (nombre histórico de la clase raíz). Las pruebas de `atlasws/src/site/brand.test.ts`
+fallan si reaparece un acento de marcas anteriores o un peso tipográfico grueso.
 
 ---
 
@@ -87,7 +95,7 @@ El contenido vive como datos tipados en `atlasws/src/site/content/` y está prot
 | Estilos | CSS propio con tokens (`.noir`); Bootstrap solo para las páginas de detalle del portafolio |
 | Scroll | Lenis (se apaga con "reducir movimiento") |
 | SEO | Meta por ruta + inyector estático en build + JSON-LD + sitemap |
-| Pruebas | Jest + React Testing Library (95 pruebas) |
+| Pruebas | Jest + React Testing Library (100 pruebas) |
 | Hosting | Hostinger (Apache) |
 
 ---
@@ -106,10 +114,10 @@ atlas_tech_website/
 │   │   ├── gen-favicons.cjs         Iconos PNG desde favicon.svg
 │   │   └── optimize-images.cjs      Imágenes pesadas a WebP
 │   └── src/
-│       ├── site/                    ★ El sitio (identidad Atlas Noir)
+│       ├── site/                    ★ El sitio (identidad Atlas Horizon)
 │       │   ├── tokens.css           Tokens y base de la marca
 │       │   ├── content/             Textos y datos tipados + pruebas de honestidad
-│       │   ├── components/          Header, footer, lockup, órbita, botones, etiquetas, formulario
+│       │   ├── components/          Header, footer, lockup, luz (Atmosphere), botones, etiquetas, formulario
 │       │   ├── pages/               Home, Cortex, Atlas ONE, Portafolio, Nosotros, Contacto
 │       │   └── lib/whatsapp.ts      Enlaces y mensajes de WhatsApp y correo
 │       ├── main-component/
@@ -171,10 +179,10 @@ Para cambiar el dominio: editar `siteUrl` en `atlasws/src/seo/seo.config.json` y
 
 ## 09 / Historial
 
-**v4.0 — Cortex al frente, Atlas Noir (2026-11).** Reposicionamiento como startup de sistemas agénticos.
+**v4.0 — Cortex al frente, Atlas Horizon (2026-11).** Reposicionamiento como startup de sistemas agénticos.
 Atlas Cortex pasa a producto principal (Consulting as a Service) y Atlas ONE a producto con página propia.
 Seis páginas nuevas, rutas en español con redirecciones 301, contenido con etiquetas de estado y cifras con
-fuente, identidad Atlas Noir, formulario por WhatsApp. Se retiran 305 archivos y 17 dependencias de la plantilla.
+fuente, identidad Atlas Horizon, formulario por WhatsApp. Se retiran 305 archivos y 17 dependencias de la plantilla.
 
 **v3.0 — Portafolio, SEO y optimización (2026-06).** Proyectos data-driven, páginas de SIGMA, Open Cashback
 y Harvestt, SEO por ruta, `.htaccess`, imágenes WebP.

@@ -47,26 +47,31 @@ Redirecciones 301 (router + `.htaccess`): `/home`→`/`, `/about`→`/nosotros`,
 
 ---
 
-## 🎨 Identidad: Atlas Noir
+## 🎨 Identidad: Atlas Horizon
 
-> [!info] Cambio de marca durante la reestructura
-> El diseño se aprobó como "NOIR con chispa lima". El mismo día la guía de marca pasó a **Atlas Noir**
-> (azul hielo como único acento; el lima queda fuera) y el sitio se alineó a ella.
+> [!info] Tres iteraciones de marca el mismo día
+> El diseño se aprobó como "NOIR con chispa lima"; pasó por Atlas Noir (azul hielo) y terminó en
+> **Atlas Horizon**, la guía vigente: negro cinematográfico, luz ámbar y tipografía ligera.
 
 | Elemento | Valor |
 |---|---|
-| Fondo (void) | `#0B0D10` · cards `#13171C` · reglas `#242B33` / `#303741` |
-| Texto | `#F4F5F7` · secundario `#A3ADB9` · tenue `#77828F` |
-| Acento único | azul hielo `#A9C9EB` (anillo activo y foco `#70A7E0`) |
-| Señal | `#8FD9B6`, solo para la etiqueta `Validado` |
-| Tipografía | Inter (titulares 700, labels 600 en mayúsculas); JetBrains Mono solo en índices, datos y etiquetas |
-| Forma | radio 0, reglas de 1px, sin degradados ni brillo |
-| Lockup | `ATLAS / TECH`; en producto `ATLAS / CORTEX`, `ATLAS / ONE` |
-| Motivo | órbita: anillos concéntricos, un anillo activo, nodos y el logo al centro (SVG, sin WebGL) |
+| Fondo | `#050505` |
+| Texto | `#F5F2EE` (blanco cálido) · secundario `#A8A29A` · tenue `#6E6862` |
+| Acento | ember `#FF6A1F`, una palabra o frase clave por vista |
+| Luz | ámbar `#FFA14A`, núcleo `#FFD3A8`, sombra cálida `#7A240A`, toque frío `#C9DBEA` al final del haz |
+| Señal | `#9FE0C0`, solo para la etiqueta `Validado` |
+| Tipografía | Inter 300 en titulares y cifras; 400–500 en botones. Nunca 700. JetBrains Mono solo en folios y etiquetas |
+| Formas | Botones y navbar en píldora, cards de vidrio (radio 22px), una card ember destacada, grano de película |
+| Motivo | **Horizonte**: arco de luz con el logo sobre la línea (hero del Home). Haz en cifras y cierres; resplandor en páginas de contenido |
+| Lockup | `Atlas Tech`; el producto protagonista en ember (`Atlas Cortex`) |
 
-Todo lo nuevo vive en `atlasws/src/site/` bajo la clase `.noir`. Las páginas de detalle del
-portafolio conservan su estética y solo comparten header y footer. `src/site/brand.test.ts`
-falla si reaparece un color fuera de la marca.
+Toda la luz es CSS (`src/site/components/Atmosphere.tsx`): sin imágenes ni WebGL. Lo nuevo vive en
+`atlasws/src/site/` bajo la clase `.noir` (nombre histórico). Las páginas de detalle del portafolio
+conservan su estética y solo comparten header y footer. `src/site/brand.test.ts` hace cumplir la paleta
+y los pesos tipográficos.
+
+Las cifras de Atlas ONE aparecen también en el Home, bajo el moonshot, cada una con la leyenda
+"en Atlas ONE" y su pie de fuente, para que no se lean como tracción de Cortex.
 
 ---
 
@@ -104,8 +109,8 @@ prellenado; el formulario arma el mensaje y abre WhatsApp, con `mailto:` como al
 
 React 19 + TypeScript (CRA), React Router 7, Lenis, Bootstrap (solo para las páginas de detalle).
 Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, entre otras) y
-305 archivos de la plantilla. 95 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
-y favicon propios de la identidad Atlas Noir.
+305 archivos de la plantilla. 100 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
+y favicon propios de la identidad Atlas Horizon.
 
 ---
 
@@ -126,8 +131,11 @@ y favicon propios de la identidad Atlas Noir.
 > - [ ] Calendario en línea (Cal.com / Calendly) si se quiere agenda directa.
 > - [ ] Contacto: la guía de marca lista `ecamposg@atlastech.mx` y `722 142 5755`; el sitio conserva
 >       `hola@atlastech.mx` y WhatsApp `722 149 5215`. Confirmar cuál debe ir en la web.
-> - [ ] La guía pide todo en español salvo nombres de producto; el sitio usa "Consulting as a Service"
->       como nombre de categoría (decisión del dueño). Confirmar que se mantiene.
+> - [ ] La guía pide todo en español salvo nombres de producto y propone "Agenda un diagnóstico" como
+>       llamada a la acción; el sitio usa "Consulting as a Service" y "Agenda una llamada" (decisiones
+>       del dueño). Confirmar que se mantienen.
+> - [ ] La guía sugiere fotografía (siluetas, paisajes con luz rasante) y el producto en pantalla sobre
+>       el horizonte. Hoy la luz es solo CSS; faltarían imágenes aprobadas o capturas reales.
 
 > [!note] Mejoras menores detectadas en la revisión final (no aplicadas)
 > - URLs inexistentes responden 200 con la página de error (falta marcarla `noindex`).

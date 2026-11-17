@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "../components/SiteLayout";
 import CtaButton from "../components/CtaButton";
+import Atmosphere from "../components/Atmosphere";
 import { projects } from "../../data/projects";
 import "./pages.css";
 import "./OtherPages.css";
@@ -64,6 +65,7 @@ const PortfolioPage: React.FC = () => (
     </section>
 
     <section className="closing">
+      <Atmosphere variant="close" />
       <div className="wrap">
         <h2>¿Tienes un proyecto que no cabe en una categoría?</h2>
         <p className="lead">Así empezaron varios de estos.</p>

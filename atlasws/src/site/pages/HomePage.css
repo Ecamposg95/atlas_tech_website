@@ -1,31 +1,36 @@
-/* Home */
-.noir .hero { padding: clamp(48px, 8vw, 112px) 0 clamp(56px, 8vw, 104px); position: relative; }
-.noir .hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  align-items: center;
-  gap: clamp(24px, 4vw, 64px);
+/* Home (Atlas Horizon): hero centrado sobre el horizonte, statement con cifras, cards. */
+.noir .hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 82px);
+  padding-top: clamp(56px, 9vh, 112px);
 }
-.noir .hero__eyebrow { color: var(--accent); margin-bottom: 26px; }
-.noir .hero h1 { max-width: 13ch; }
-.noir .hero__sub { margin-top: 28px; }
-.noir .hero__visual { display: flex; justify-content: flex-end; margin-right: calc(var(--gutter) * -0.6); }
-@media (max-width: 960px) {
-  .noir .hero__grid { grid-template-columns: 1fr; }
-  /* Bajo 960px la órbita (con el logo al centro) competiría con el titular: se oculta. */
-  .noir .hero__visual { display: none; }
-}
+.noir .hero__copy { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.noir .hero__eyebrow { color: var(--muted); margin-bottom: 26px; }
+.noir .hero h1 { max-width: 17ch; }
+.noir .hero__sub { margin-top: 26px; max-width: 54ch; }
+.noir .hero__cta { margin-top: 30px; justify-content: center; }
+/* El horizonte ocupa su propia franja bajo el texto: nunca queda detrás de él. */
+.noir .hero__horizon { position: relative; flex: 1; min-height: clamp(220px, 36vh, 380px); margin-top: clamp(24px, 4vh, 48px); }
+.noir .hero__horizon .atmo--horizon { inset: 0; height: auto; }
 
-.noir .como { scroll-margin-top: 80px; }
+.noir .como { scroll-margin-top: 90px; }
 
-.noir .moonshot__title { max-width: 15ch; }
-.noir .moonshot__text {
-  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  max-width: 34ch;
-}
-.noir .moonshot__note { margin-top: 20px; max-width: 52ch; }
+/* Statement: eyebrow a la izquierda, párrafo grande a la derecha, cifras debajo. */
+.noir .statement { overflow: hidden; }
+.noir .statement > .wrap { position: relative; z-index: 1; }
+.noir .statement__grid { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 64px); }
+.noir .statement__title { font-size: clamp(2rem, 4.6vw, 3.9rem); line-height: 1.06; letter-spacing: -0.03em; max-width: 18ch; }
+.noir .statement__text { margin-top: clamp(20px, 2.6vw, 32px); color: var(--ink); max-width: 46ch; }
+.noir .statement__note { margin-top: 16px; max-width: 52ch; }
+.noir .statement .stats { margin-top: clamp(56px, 8vw, 112px); }
+@media (max-width: 860px) { .noir .statement__grid { grid-template-columns: 1fr; gap: 0; } }
 
-.noir .one__price { margin-top: 20px; color: var(--ink); font-weight: 600; }
+.noir .pillar { display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(220px, 24vw, 320px); }
+.noir .pillar p { margin-top: 12px; }
+
+.noir .one__price { margin-top: 20px; color: var(--ink); }
+.noir .one__modules li { padding: 15px 0; border-bottom: 1px solid var(--rule); color: var(--ink); font-size: 1.15rem; letter-spacing: -0.015em; }
+.noir .one__modules li:first-child { border-top: 1px solid var(--rule); }

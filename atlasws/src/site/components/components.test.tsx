@@ -30,6 +30,16 @@ test("CtaButton externo abre en pestaña nueva con rel seguro", () => {
   expect(a).toHaveAttribute("target", "_blank");
 });
 
+test("el botón principal lleva flecha decorativa sin alterar su nombre accesible", () => {
+  render(
+    <MemoryRouter>
+      <CtaButton to="/contacto">Agenda una llamada</CtaButton>
+    </MemoryRouter>
+  );
+  const a = screen.getByRole("link", { name: "Agenda una llamada" });
+  expect(a.querySelector('.cta__arrow[aria-hidden="true"]')).not.toBeNull();
+});
+
 test("CtaButton interno enlaza por router", () => {
   render(
     <MemoryRouter>

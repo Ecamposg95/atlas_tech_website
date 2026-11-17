@@ -1,64 +1,78 @@
-/* Marco del sitio: header, footer, motivo de órbitas. Todo bajo .noir. */
-.noir.site { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; }
+/* Marco del sitio (Atlas Horizon): navbar en píldora flotante, footer, luz y grano. Todo bajo .noir. */
+.noir.site { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; position: relative; isolation: isolate; }
 .noir.site > main { flex: 1; }
 
-/* ---------- Header ---------- */
+/* ---------- Grano de película (siempre presente) ---------- */
+.noir.site::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Header: píldora negra flotante ---------- */
 .noir .site-header {
   position: sticky;
-  top: 0;
+  top: 12px;
   z-index: 50;
-  background: rgba(11, 13, 16, 0.9);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--rule);
+  padding: 0 var(--gutter);
+  margin-top: 12px;
 }
 .noir .site-header__bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  min-height: 68px;
+  gap: 20px;
+  max-width: var(--maxw);
+  min-height: 58px;
+  margin: 0 auto;
+  padding: 7px 8px 7px 22px;
+  background: rgba(5, 5, 5, 0.78);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-line);
+  border-radius: 999px;
 }
 .noir .site-header__brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   color: var(--ink);
   flex-shrink: 0;
 }
-.noir .lockup { display: inline-flex; gap: 0.5em; font-family: var(--f-sans); font-size: 0.82rem; white-space: nowrap; }
-.noir .lockup__atlas { font-weight: 700; letter-spacing: 0.22em; color: var(--ink); }
-.noir .lockup__sub { font-weight: 300; letter-spacing: 0.22em; color: var(--muted); }
-.noir .lockup__sub--product { font-weight: 700; color: var(--accent); }
-.noir .site-header__nav { display: flex; gap: clamp(18px, 2.6vw, 38px); }
+.noir .lockup { font-family: var(--f-sans); font-size: 1.12rem; letter-spacing: -0.01em; white-space: nowrap; }
+.noir .lockup__atlas { font-weight: 500; color: var(--ink); }
+.noir .lockup__sub { font-weight: 300; color: var(--muted); }
+.noir .lockup__sub--lead { color: var(--accent); }
+.noir .site-header__nav { display: flex; gap: clamp(16px, 2.4vw, 34px); }
 .noir .site-header__link {
   font-family: var(--f-sans);
   font-weight: 400;
-  font-size: 0.74rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--dim);
+  font-size: 0.9rem;
+  color: var(--muted);
   padding: 8px 0;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease;
 }
-.noir .site-header__link:hover { color: var(--ink); }
-.noir .site-header__link.active { color: var(--ink); border-bottom-color: var(--accent); }
-.noir .site-header__actions { display: flex; align-items: center; gap: 10px; }
-.noir .site-header__cta { padding: 12px 18px; }
+.noir .site-header__link:hover,
+.noir .site-header__link.active { color: var(--ink); }
+.noir .site-header__actions { display: flex; align-items: center; gap: 8px; }
+.noir .site-header__cta { padding: 11px 20px; font-size: 0.88rem; }
 .noir .site-header__toggle {
   display: none;
-  background: transparent;
-  border: 1px solid var(--rule-strong);
-  border-radius: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-line);
+  border-radius: 999px;
   color: var(--ink);
   font-family: var(--f-sans);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 12px 16px;
-  line-height: 1;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 11px 16px;
+  line-height: 1.2;
   cursor: pointer;
 }
 
@@ -69,37 +83,35 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;
+    top: calc(100% + 8px);
     flex-direction: column;
     gap: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--rule);
-    padding: 8px var(--gutter) 20px;
+    background: rgba(5, 5, 5, 0.94);
+    border: 1px solid var(--glass-line);
+    border-radius: 22px;
+    padding: 8px 22px;
   }
   .noir .site-header.is-open .site-header__nav { display: flex; }
-  .noir .site-header__link {
-    padding: 16px 0;
-    font-size: 0.85rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .noir .site-header__link.active { border-bottom-color: var(--rule); color: var(--accent); }
+  .noir .site-header__link { padding: 15px 0; font-size: 1rem; border-bottom: 1px solid var(--rule); }
+  .noir .site-header__link:last-child { border-bottom: 0; }
 }
 @media (max-width: 520px) {
+  .noir .site-header { padding: 0 12px; }
+  .noir .site-header__bar { padding-left: 14px; gap: 8px; }
   .noir .site-header .lockup { display: none; } /* en móvil la marca sola: deja sitio al CTA y al menú */
-  .noir .site-header__bar { gap: 12px; }
-  .noir .site-header__cta { padding: 10px 14px; font-size: 0.66rem; letter-spacing: 0.08em; }
-  .noir .site-header__toggle { padding: 10px 12px; font-size: 0.66rem; }
+  .noir .site-header__cta { padding: 10px 14px; font-size: 0.82rem; gap: 8px; }
+  .noir .site-header__toggle { padding: 10px 13px; font-size: 0.82rem; }
 }
 
 /* ---------- Footer ---------- */
-.noir .site-footer { border-top: 1px solid var(--rule); padding: clamp(48px, 7vw, 88px) 0 28px; }
+.noir .site-footer { background: var(--bg); position: relative; z-index: 1; padding: clamp(56px, 8vw, 104px) 0 28px; }
 .noir .site-footer__grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
 }
-.noir .site-footer__brand p { margin-top: 18px; max-width: 36ch; font-size: 0.92rem; }
-.noir .site-footer__col { display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; }
+.noir .site-footer__brand p { margin-top: 18px; max-width: 36ch; font-size: 0.95rem; }
+.noir .site-footer__col { display: flex; flex-direction: column; gap: 10px; font-size: 0.98rem; }
 .noir .site-footer__col a { color: var(--muted); overflow-wrap: anywhere; }
 .noir .site-footer__col a:hover { color: var(--ink); }
 .noir .site-footer__title { color: var(--dim); margin-bottom: 6px; }
@@ -108,26 +120,88 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: clamp(40px, 6vw, 72px);
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
+  margin-top: clamp(48px, 7vw, 88px);
   color: var(--dim);
-  font-size: 0.68rem;
-  font-weight: 400;
+  font-size: 0.7rem;
 }
 @media (max-width: 720px) {
   .noir .site-footer__grid { grid-template-columns: 1fr 1fr; }
   .noir .site-footer__brand { grid-column: 1 / -1; }
 }
 
-/* ---------- Órbita ---------- */
-.noir .orbit { display: block; max-width: 100%; height: auto; }
-.noir .orbit__ring { transform-origin: 350px 350px; animation: orbit-spin 120s linear infinite; }
-@keyframes orbit-spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .noir .orbit__ring { animation: none; }
+/* ---------- Luz ---------- */
+.noir .atmo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+
+/* Horizonte: arco gigante con el borde superior iluminado y resplandor hacia arriba. */
+.noir .atmo--horizon { top: auto; height: clamp(220px, 36vh, 380px); }
+.noir .atmo__arc {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translateX(-50%);
+  width: max(1500px, 136vw);
+  aspect-ratio: 2600 / 900;
+  border-radius: 50%;
+  border-top: 2px solid #ffb27a;
+  box-shadow: 0 -6px 40px rgba(255, 140, 60, 0.9), 0 -30px 140px rgba(255, 106, 31, 0.55);
+  background: radial-gradient(50% 30% at 50% 0%, rgba(255, 140, 60, 0.55), rgba(122, 36, 10, 0.35) 45%, rgba(5, 5, 5, 0) 75%);
+}
+.noir .atmo__ring {
+  position: absolute;
+  left: 50%;
+  top: calc(44% + 34px);
+  transform: translateX(-50%);
+  width: max(880px, 78vw);
+  aspect-ratio: 1500 / 560;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255, 200, 160, 0.35);
+}
+/* El logo sobre la línea del horizonte: único caso en que lleva luz. */
+.noir .atmo__mark {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  height: 42px;
+  transform: translate(-50%, -50%);
+  color: var(--glow);
+  filter: drop-shadow(0 0 18px rgba(255, 140, 60, 0.9));
+}
+
+/* Haz: de transparente a ember, a glow, y un toque de amanecer al final. */
+.noir .atmo__beam {
+  position: absolute;
+  left: -12%;
+  top: 22%;
+  width: 124%;
+  height: 300px;
+  transform: rotate(-14deg);
+  filter: blur(70px);
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255, 106, 31, 0) 5%, rgba(255, 106, 31, 0.5) 45%, rgba(255, 215, 180, 0.55) 75%, rgba(201, 219, 234, 0.35) 95%);
+  opacity: 0.75;
+}
+.noir .atmo--close .atmo__beam { left: 30%; top: 30%; width: 90%; opacity: 0.8; }
+/* El haz se desvanece hacia los bordes de su sección: sin cortes duros entre secciones. */
+.noir .atmo--beam,
+.noir .atmo--close {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+
+/* Resplandor: mancha radial suave en la esquina superior derecha. */
+.noir .atmo__glow {
+  position: absolute;
+  right: -14%;
+  top: -34%;
+  width: min(1100px, 80vw);
+  height: 700px;
+  filter: blur(50px);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 106, 31, 0.36), rgba(255, 106, 31, 0));
+}
+@media (max-width: 860px) {
+  .noir .atmo__beam { opacity: 0.5; height: 220px; }
+  .noir .atmo__mark { height: 34px; }
 }
 
 /* ---------- Marco sobre páginas con estética propia ---------- */
 .noir.noir--chrome { display: contents; }
-.noir .site-footer { background: var(--bg); position: relative; z-index: 1; }
