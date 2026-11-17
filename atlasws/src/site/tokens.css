@@ -1,6 +1,7 @@
 /* ============================================================
  * Identidad Atlas Noir — tokens y base (guía de marca atlas-tech-brand).
- * Noir + un solo acento (azul hielo), reglas de 1px, radio 0, sin glow.
+ * Noir + un solo acento, reglas de 1px, radio 0, sin glow.
+ * El acento es verde lima por preferencia del dueño (la guía propone azul hielo).
  * Todo cuelga de .noir para no chocar con el CSS del template
  * ni con las páginas de detalle del portafolio.
  * ============================================================ */
@@ -14,9 +15,9 @@
   --ink: #f4f5f7;
   --muted: #a3adb9;
   --dim: #77828f;
-  --accent: #a9c9eb; /* ice: acento único */
-  --accent-2: #70a7e0; /* ice-2: anillo activo, link, focus */
-  --accent-deep: #25364a;
+  --accent: #c6ff3d; /* lima: acento único */
+  --accent-2: #a8e024; /* anillo activo, link, focus */
+  --accent-deep: #2a3a12;
   --on-accent: #0b0d10;
   --signal: #8fd9b6; /* solo tag "Validado" */
   --f-sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -148,7 +149,7 @@
   border-color: var(--accent);
   color: var(--on-accent);
 }
-.noir .cta--primary:hover { background: #c3daf2; border-color: #c3daf2; color: var(--on-accent); }
+.noir .cta--primary:hover { background: #d6ff70; border-color: #d6ff70; color: var(--on-accent); }
 .noir .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- StatusTag ---------- */

@@ -37,7 +37,7 @@ const siteSources = walk(path.join(root, "src/site"))
   .filter((f) => /\.(css|tsx|ts)$/.test(f) && !/\.test\./.test(f))
   .map((f) => [f, fs.readFileSync(f, "utf8")] as const);
 
-test("tokens de Atlas Noir: void, hielo como único acento y grises pizarra", () => {
+test("tokens de Atlas Noir con acento verde lima (preferencia del dueño sobre el azul hielo)", () => {
   const t = read("src/site/tokens.css").toLowerCase();
   [
     "--bg: #0b0d10",
@@ -47,21 +47,20 @@ test("tokens de Atlas Noir: void, hielo como único acento y grises pizarra", ()
     "--ink: #f4f5f7",
     "--muted: #a3adb9",
     "--dim: #77828f",
-    "--accent: #a9c9eb",
-    "--accent-2: #70a7e0",
+    "--accent: #c6ff3d",
+    "--accent-2: #a8e024",
     "--on-accent: #0b0d10",
     "--signal: #8fd9b6",
   ].forEach((decl) => expect(t).toContain(decl));
 });
 
-test("no queda lima, ni glow, ni esquinas redondeadas en el sitio", () => {
+test("no queda azul hielo, ni glow, ni esquinas redondeadas en el sitio", () => {
   siteSources.forEach(([f, src]) => {
-    expect([f, /c6ff3d|d6ff70/i.test(src)]).toEqual([f, false]);
+    expect([f, /a9c9eb|70a7e0|c3daf2|25364a/i.test(src)]).toEqual([f, false]);
     expect([f, /drop-shadow|box-shadow:\s*0 0/i.test(src)]).toEqual([f, false]);
     expect([f, /border-radius:\s*(999px|1[0-9]px|[4-9]px)/i.test(src)]).toEqual([f, false]);
   });
-  expect(read("public/favicon.svg")).not.toMatch(/c6ff3d/i);
-  expect(read("src/components/scrollbar/style.css")).not.toMatch(/c6ff3d/i);
+  expect(read("src/components/scrollbar/style.css")).not.toMatch(/a9c9eb/i);
 });
 
 test("color de tema Atlas Noir en HTML, manifest y SEO", () => {

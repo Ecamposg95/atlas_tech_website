@@ -1,7 +1,7 @@
 import React from "react";
 
 // Motivo único de la marca: el círculo del logo expandido en anillos concéntricos,
-// un anillo activo en hielo y nodos sobre el anillo exterior. Decorativo.
+// un anillo activo en lima y nodos sobre el anillo exterior. Decorativo.
 // La rotación lenta de los nodos se apaga con prefers-reduced-motion.
 const RINGS = [330, 290, 250, 210, 170, 90];
 const NODES: [number, number][] = [
@@ -30,8 +30,8 @@ const OrbitMotif: React.FC<{ size?: number; className?: string }> = ({ size = 42
         <circle key={r} cx="350" cy="350" r={r} />
       ))}
     </g>
-    <circle cx="350" cy="350" r="130" stroke="#70A7E0" strokeWidth="2" />
-    <g className="orbit__ring" fill="#A9C9EB">
+    <circle cx="350" cy="350" r="130" stroke="#A8E024" strokeWidth="2" />
+    <g className="orbit__ring" fill="#C6FF3D">
       {NODES.map(([x, y]) => (
         <circle key={`${x}-${y}`} cx={x} cy={y} r="6" />
       ))}
