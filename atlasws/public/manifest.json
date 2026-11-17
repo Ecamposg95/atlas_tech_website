@@ -1,6 +1,6 @@
 {
   "short_name": "Atlas Tech",
-  "name": "Atlas Tech — Venture studio e ingeniería de software",
+  "name": "Atlas Tech — Sistemas agénticos y consultoría como servicio",
   "icons": [
     {
       "src": "favicon-32.png",
@@ -20,6 +20,6 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#0a0a12",
-  "background_color": "#0a0a12"
+  "theme_color": "#0b0b0b",
+  "background_color": "#0b0b0b"
 }

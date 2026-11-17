@@ -5,21 +5,21 @@
   "locale": "es_MX",
   "twitter": "@atlastech",
   "defaultImage": "/images/projects/harvestt/mars-domes-branded.png",
-  "themeColor": "#0a0a12",
+  "themeColor": "#0b0b0b",
   "organization": {
     "name": "Atlas Tech",
     "legalName": "Atlas Tech",
-    "description": "Venture studio, consultoría IT e ingeniería de software. Construimos plataformas empresariales, IA, blockchain y productos digitales a la medida para Latinoamérica.",
+    "description": "Startup que construye sistemas agénticos, ontologías de conocimiento e integra tecnologías de frontera. Atlas Cortex: consultoría como servicio ligada al software.",
     "sameAs": []
   },
   "routes": [
     {
       "path": "/",
-      "title": "Atlas Tech — Venture studio e ingeniería de software en Latinoamérica",
-      "description": "Atlas Tech construye plataformas empresariales, IA, blockchain y productos digitales a la medida para negocios e instituciones en México y Latinoamérica.",
+      "title": "Atlas Tech — Sistemas agénticos y consultoría como servicio | Atlas Cortex",
+      "description": "Consultoría que no entrega un PDF: entrega ejecución. Atlas Cortex combina consultores y agentes de IA que diagnostican, planean y ejecutan sobre tus sistemas.",
       "type": "website",
       "image": "/images/projects/harvestt/mars-domes-branded.png",
-      "keywords": "Atlas Tech, venture studio, software a la medida, ERP, POS, IA, blockchain, transformación digital, Latinoamérica",
+      "keywords": "Atlas Tech, Atlas Cortex, sistemas agénticos, agentes de IA, consulting as a service, ontologías de conocimiento, automatización empresarial, Atlas ONE, México",
       "jsonld": [
         {
           "@context": "https://schema.org",
@@ -27,8 +27,11 @@
           "name": "Atlas Tech",
           "url": "{siteUrl}/",
           "logo": "{siteUrl}/logo512.png",
-          "description": "Venture studio, consultoría IT e ingeniería de software para Latinoamérica.",
-          "sameAs": []
+          "description": "Startup que construye sistemas agénticos, ontologías de conocimiento e integra tecnologías de frontera. Atlas Cortex: consultoría como servicio ligada al software.",
+          "email": "hola@atlastech.mx",
+          "sameAs": [
+            "https://www.instagram.com/atlas_tech.mx/"
+          ]
         },
         {
           "@context": "https://schema.org",
@@ -39,44 +42,76 @@
       ]
     },
     {
-      "path": "/about",
-      "title": "Nosotros",
-      "description": "Conoce a Atlas Tech: venture studio e ingeniería de software que moderniza la operación de negocios e instituciones con tecnología modular, segura y escalable.",
-      "type": "website",
-      "keywords": "Atlas Tech, sobre nosotros, equipo, venture studio, ingeniería de software"
-    },
-    {
-      "path": "/service",
-      "title": "Servicios — software, IA y blockchain a la medida",
-      "description": "Desarrollo de plataformas empresariales, ERP, POS, CRM, automatización, dashboards, IA, blockchain e integraciones. Consultoría tecnológica y transformación digital.",
-      "type": "website",
-      "keywords": "desarrollo de software, ERP, POS, CRM, inteligencia artificial, blockchain, APIs, consultoría tecnológica"
-    },
-    {
-      "path": "/proyectos",
-      "title": "Proyectos — lo que estamos construyendo",
-      "description": "Productos reales de IA, GovTech, AgroTech y blockchain en construcción para negocios e instituciones de Latinoamérica.",
-      "type": "website",
-      "keywords": "proyectos Atlas Tech, Atlas One, Harvestt, SIGMA, Open Cashback, IA, blockchain"
-    },
-    {
-      "path": "/proyectos/atlas-one",
-      "title": "Atlas One — software todo-en-uno para vender, controlar y crecer",
-      "description": "Plataforma modular de software comercial (POS, caja, inventario, clientes y reportes) con 11 configuraciones de industria, para negocios físicos en México y Latinoamérica.",
+      "path": "/cortex",
+      "title": "Atlas Cortex — Consulting as a Service con agentes de IA",
+      "description": "De la intención empresarial a la ejecución verificable. Nuestro equipo y nuestros agentes diagnostican tu operación, arman el plan y lo ejecutan con evidencia.",
       "type": "website",
       "image": "/images/projects/harvestt/mars-domes-branded.png",
-      "keywords": "Atlas One, POS, punto de venta, ERP, inventario, software para negocios, México",
+      "keywords": "Atlas Cortex, consulting as a service, agentes de IA, sistemas agénticos, automatización de procesos, orquestación de agentes, consultoría con IA",
       "jsonld": [
         {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          "name": "Atlas One",
+          "name": "Atlas Cortex",
           "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Windows, macOS, Linux, Web, Móvil",
-          "description": "Software comercial modular: POS, caja, inventario, clientes y reportes con 11 presets de industria.",
-          "brand": { "@type": "Brand", "name": "Atlas Tech" }
+          "operatingSystem": "Web",
+          "url": "{siteUrl}/cortex",
+          "description": "Consultoría como servicio ligada al software: agentes de IA que proponen y ejecutan acciones con aprobación humana y evidencia.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Atlas Tech",
+            "url": "{siteUrl}/"
+          }
         }
       ]
+    },
+    {
+      "path": "/atlas-one",
+      "title": "Atlas ONE — Punto de venta y operación para negocios físicos",
+      "description": "La suite todo-en-uno para vender, controlar y crecer: punto de venta, caja, inventario y clientes en una sola plataforma. Desde $12 MXN al día, 1 mes gratis.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "keywords": "Atlas ONE, punto de venta, POS México, software para negocios, inventario, caja, restaurante, barbería, ferretería",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Atlas ONE",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "{siteUrl}/atlas-one",
+          "description": "Suite modular para operar negocios físicos: punto de venta, caja, inventario, clientes y reportes, configurable por giro.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Atlas Tech",
+            "url": "{siteUrl}/"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/portafolio",
+      "title": "Portafolio — Harvestt, SIGMA y Open Cashback",
+      "description": "Proyectos que hemos construido además de Cortex y Atlas ONE: agrotecnología premiada, gobierno digital y lealtad programable. Cada uno con su etapa real.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "jsonld": []
+    },
+    {
+      "path": "/nosotros",
+      "title": "Nosotros — la startup detrás de Atlas Cortex y Atlas ONE",
+      "description": "Somos una startup de Ciudad de México. Nuestro moonshot: empresas operadas por un equipo humano compacto y una red coordinada de agentes digitales.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "jsonld": []
+    },
+    {
+      "path": "/contacto",
+      "title": "Agenda una llamada",
+      "description": "Cuéntanos qué proceso quieres automatizar. Te respondemos por WhatsApp o correo y te decimos con franqueza qué podemos ejecutar hoy.",
+      "type": "website",
+      "image": "/images/projects/harvestt/mars-domes-branded.png",
+      "jsonld": []
     },
     {
       "path": "/proyectos/harvestt",
@@ -91,7 +126,10 @@
           "@type": "Product",
           "name": "Harvestt",
           "description": "Sistema automatizado de agrotecnología con IA: invernadero controlado y domos geodésicos modulares.",
-          "brand": { "@type": "Brand", "name": "Atlas Tech" },
+          "brand": {
+            "@type": "Brand",
+            "name": "Atlas Tech"
+          },
           "category": "AgroTech"
         }
       ]
@@ -111,7 +149,10 @@
           "applicationCategory": "GovernmentApplication",
           "operatingSystem": "Web",
           "description": "Plataforma GovTech modular para modernizar la gestión administrativa pública.",
-          "brand": { "@type": "Brand", "name": "Atlas GovTech" }
+          "brand": {
+            "@type": "Brand",
+            "name": "Atlas GovTech"
+          }
         }
       ]
     },
@@ -130,16 +171,12 @@
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
           "description": "Plataforma API-first de cashback, lealtad y recompensas programables con capa blockchain de auditoría.",
-          "brand": { "@type": "Brand", "name": "Atlas Web3" }
+          "brand": {
+            "@type": "Brand",
+            "name": "Atlas Web3"
+          }
         }
       ]
-    },
-    {
-      "path": "/contact",
-      "title": "Contacto",
-      "description": "Hablemos de tu proyecto. Agenda una demo o cuéntanos qué quieres construir con Atlas Tech.",
-      "type": "website",
-      "keywords": "contacto Atlas Tech, agenda demo, cotización software"
     },
     {
       "path": "/404",

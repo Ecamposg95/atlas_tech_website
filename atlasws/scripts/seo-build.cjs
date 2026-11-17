@@ -121,7 +121,8 @@ function main() {
   const urls = routes
     .filter((r) => !r.noindex)
     .map((r) => {
-      const priority = r.path === "/" ? "1.0" : r.path.startsWith("/proyectos/") ? "0.8" : "0.6";
+      const priority =
+        r.path === "/" ? "1.0" : ["/cortex", "/atlas-one"].includes(r.path) ? "0.9" : r.path.startsWith("/proyectos/") ? "0.7" : "0.6";
       return `  <url>\n    <loc>${abs(r.path)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
     })
     .join("\n");
