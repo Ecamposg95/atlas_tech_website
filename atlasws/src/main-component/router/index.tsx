@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import WowInit from "../../components/wowInit/wowInit";
 import SeoRouter from "../../seo/SeoRouter";
 import ScrollToTop from "./ScrollToTop";
 
@@ -53,7 +52,6 @@ export const AppRoutes: React.FC = () => (
 const AllRoute: React.FC = () => (
   <div className="App">
     <BrowserRouter>
-      <WowInit />
       <ScrollToTop />
       <SeoRouter />
       <AppRoutes />

@@ -6,21 +6,22 @@ ul.smothscroll {
     z-index: 99;
 }
 ul.smothscroll a {
-    background-color: #A855F7;
+    background-color: #0b0b0b;
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius:5px;
     display: block;
     text-align: center;
-    color: #00020f;
+    color: #f2f2f2;
     background-size: 200%,1px;
     background-position: 0;
-    border: 2px solid #A855F7;
+    border: 1px solid #333;
 }
 ul.smothscroll a:hover {
-    background-color: #A855F7;
-    color: #00020f;
+    background-color: #c6ff3d;
+    border-color: #c6ff3d;
+    color: #000;
 }
 
 @media(max-width:767px){
