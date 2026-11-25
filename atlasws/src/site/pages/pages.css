@@ -24,6 +24,9 @@
 /* ---------- Cards en fila ---------- */
 .noir .cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); }
 @media (max-width: 860px) { .noir .cards3 { grid-template-columns: 1fr; } }
+.noir .cards4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); }
+@media (max-width: 1080px) { .noir .cards4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .noir .cards4 { grid-template-columns: 1fr; } }
 
 /* ---------- Tres columnas con regla vertical ---------- */
 .noir .cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); }

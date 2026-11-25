@@ -12,6 +12,7 @@
 .noir .modules__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .noir .modules__item p { margin-top: 8px; font-size: 0.92rem; max-width: 46ch; }
 @media (max-width: 720px) { .noir .modules { grid-template-columns: 1fr; } }
+.noir .modules--single { grid-template-columns: 1fr; }
 
 .noir .verticals { columns: 2; column-gap: 32px; border-top: 1px solid var(--rule); padding-top: 8px; }
 .noir .verticals li { padding: 12px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; color: var(--ink); }

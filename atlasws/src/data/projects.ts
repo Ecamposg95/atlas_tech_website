@@ -69,7 +69,7 @@ export const projects: Project[] = [
     titulo: "Harvestt",
     subtitulo: "Agrotecnología con IA, premiada internacionalmente",
     tagline: "Germinar, cultivar y monitorear — desde tu casa hasta entornos extremos",
-    categoria: "AgroTech / IoT / IA",
+    categoria: "Inteligencia ciberfísica / AgroTech",
     estado: "Premiado",
     año: "2017–2026",
     demoUrl: "https://harvestt-production.up.railway.app",

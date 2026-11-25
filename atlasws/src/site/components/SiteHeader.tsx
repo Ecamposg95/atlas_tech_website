@@ -6,6 +6,7 @@ export const NAV = [
   { label: "Cortex", to: "/cortex" },
   { label: "Atlas ONE", to: "/atlas-one" },
   { label: "Portafolio", to: "/portafolio" },
+  { label: "Visión", to: "/vision" },
   { label: "Nosotros", to: "/nosotros" },
 ];
 

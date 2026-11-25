@@ -22,10 +22,17 @@ const NosotrosPage: React.FC = () => (
 
     <Section label={moonshot.label}>
       <div className="split">
-        <h2>{moonshot.title}</h2>
+        <h2>
+          {moonshot.title} <em className="accent">{moonshot.accent}</em>
+        </h2>
         <div>
           <p className="moonshot__text">{moonshot.text}</p>
           <p className="moonshot__note">{moonshot.note}</p>
+          <div className="cta-row">
+            <CtaButton to="/vision" variant="secondary">
+              Conoce nuestra visión
+            </CtaButton>
+          </div>
         </div>
       </div>
     </Section>

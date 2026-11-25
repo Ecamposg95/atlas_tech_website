@@ -37,6 +37,19 @@ export const modules: { name: string; text: string; status: Status }[] = [
   { name: "Atlas ONE AI", text: "Copilotos y predicciones sobre tu operación: qué comprar, quién dejó de venir, dónde se pierde margen.", status: "En desarrollo" },
 ];
 
+// Atlas Core: el núcleo de Atlas ONE (en los repos, Atlas BOS). Cada otro software de
+// Atlas es un módulo que se activa sobre él. Estados según los repos al 25.11.2026.
+export const core = {
+  label: "Atlas Core",
+  title: "Un núcleo. Cada software, un módulo.",
+  text: "Atlas ONE se construye sobre Atlas Core: el núcleo API-first que comparten todos nuestros sistemas, con usuarios y roles, productos, inventario, ventas, caja y la estructura de datos. Encima se activan módulos y presets por giro, y sobre la misma base construimos las implementaciones a la medida de Atlas Solutions.",
+  modules: [
+    { name: "Atlas Financials", text: "Finanzas y contabilidad sin saber contabilidad: registras en tu lenguaje y por debajo corre la partida doble.", status: "MVP" },
+    { name: "Atlas Booking", text: "Reservas y agenda: eliges profesional, ves disponibilidad real y confirmas la cita.", status: "MVP" },
+    { name: "Print Agent", text: "Impresión de tickets y etiquetas desde la caja, en producción en Atlas ONE.", status: "Validado" },
+  ] as { name: string; text: string; status: Status }[],
+};
+
 export const verticalsLine =
   "Una barbería, una ferretería y un restaurante no operan igual. El software tampoco debería sentirse igual.";
 

@@ -13,8 +13,9 @@ const PortfolioPage: React.FC = () => (
       <div className="wrap">
         <h1>Portafolio</h1>
         <p className="lead">
-          Proyectos que hemos construido además de Cortex y Atlas ONE: agrotecnología, gobierno digital y lealtad
-          programable. Cada uno dice en qué etapa está.
+          Proyectos que hemos construido además de Cortex y Atlas ONE: inteligencia ciberfísica, gobierno digital y
+          lealtad programable. Las implementaciones a la medida para empresas son Atlas Solutions. Cada proyecto dice
+          en qué etapa está.
         </p>
       </div>
     </section>

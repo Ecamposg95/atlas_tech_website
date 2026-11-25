@@ -1,0 +1,65 @@
+/* Visión (Atlas Horizon): tesis de largo plazo. Reglas de 1px y aire; sin luz salvo en el cierre. */
+.noir .vision__title { max-width: 18ch; }
+
+/* Declaración en cuatro tiempos: cuándo · qué · estado. */
+.noir .stages { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.noir .stages__item {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.32fr) 1fr 150px;
+  align-items: center;
+  gap: 12px clamp(16px, 3vw, 40px);
+  padding: clamp(18px, 2.4vw, 28px) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.noir .stages__when { color: var(--dim); }
+.noir .stages__item .status-tag { justify-self: end; }
+.noir .stages__text { font-size: clamp(1.3rem, 2.8vw, 2.2rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1.15; color: var(--ink); }
+@media (max-width: 720px) {
+  .noir .stages__item { grid-template-columns: 1fr auto; }
+  .noir .stages__item .status-tag { justify-self: start; }
+  .noir .stages__text { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* Lista secundaria: misma regla, texto más contenido. */
+.noir .manifesto--quiet li { font-size: clamp(1.15rem, 2.2vw, 1.6rem); color: var(--muted); }
+
+/* Principios: rejilla de cuatro con regla vertical. */
+.noir .principles {
+  margin: clamp(40px, 6vw, 80px) 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 48px) clamp(16px, 3vw, 40px);
+}
+.noir .principles__item { border-left: 1px solid var(--rule); padding-left: clamp(14px, 2vw, 24px); }
+.noir .principles dt { font-size: 1.15rem; font-weight: 400; letter-spacing: -0.02em; color: var(--ink); }
+.noir .principles dd { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; max-width: 26ch; }
+@media (max-width: 860px) { .noir .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Tres horizontes. */
+.noir .horizons__n { display: block; color: var(--dim); font-size: 0.8rem; margin-bottom: clamp(18px, 3vw, 36px); }
+.noir .horizons__measure { color: var(--dim); font-size: 0.9rem; }
+
+/* Hoja de ruta: años en mono, nombre, meta y puerta de avance. */
+.noir .roadmap { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.noir .roadmap__item {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 0.7fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px clamp(16px, 3vw, 40px);
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.noir .roadmap__years { color: var(--dim); font-size: 0.85rem; }
+.noir .roadmap__name { font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); }
+.noir .roadmap__goal { color: var(--muted); }
+.noir .roadmap__gate { color: var(--dim); font-size: 0.92rem; }
+@media (max-width: 860px) {
+  .noir .roadmap__item { grid-template-columns: 110px 1fr; }
+  .noir .roadmap__goal, .noir .roadmap__gate { grid-column: 2; }
+}
+
+/* Líneas de investigación. */
+.noir .lines { margin: 0; border-top: 1px solid var(--rule); }
+.noir .lines__item { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.noir .lines dt { font-weight: 400; color: var(--ink); }
+.noir .lines dd { margin: 6px 0 0; color: var(--muted); }

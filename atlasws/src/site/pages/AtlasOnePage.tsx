@@ -69,6 +69,26 @@ const AtlasOnePage: React.FC = () => (
       </ul>
     </Section>
 
+    <Section label={one.core.label} testId="one-core">
+      <div className="split">
+        <div>
+          <h2 className="split__title">{one.core.title}</h2>
+          <p className="lead">{one.core.text}</p>
+        </div>
+        <ul className="modules modules--single">
+          {one.core.modules.map((m) => (
+            <li className="modules__item" key={m.name}>
+              <div className="modules__head">
+                <h3>{m.name}</h3>
+                <StatusTag status={m.status} />
+              </div>
+              <p>{m.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Section>
+
     <Section label="Giros">
       <div className="split">
         <h2>{one.verticalsLine}</h2>
