@@ -13,20 +13,23 @@ const MARK = (
 );
 
 // Luz de Atlas Horizon, hecha solo con CSS (sin WebGL ni imágenes). Una fuente de luz por vista:
-//   horizon — el motivo de la marca: arco iluminado con el logo sobre la línea (hero)
+//   horizon — el motivo de la marca: arco iluminado con el logo sobre la línea y un
+//             contraluz índigo tenue en la esquina opuesta (hero)
 //   beam    — haz diagonal de ember a un toque frío de amanecer (statement / datos)
 //   glow    — resplandor en una esquina (páginas de contenido)
-//   close   — haz desde la derecha (cierre)
+//   close   — haz desde la derecha con contraluz índigo abajo a la izquierda (cierre)
 // Decorativa y estática. Va detrás del contenido, nunca detrás de texto pequeño.
 const Atmosphere: React.FC<{ variant?: Variant }> = ({ variant = "glow" }) => (
   <div className={`atmo atmo--${variant}`} data-testid="atmosphere" aria-hidden="true">
     {variant === "horizon" && (
       <>
+        <div className="atmo__counter" />
         <div className="atmo__arc" />
         <div className="atmo__ring" />
         {MARK}
       </>
     )}
+    {variant === "close" && <div className="atmo__counter" />}
     {(variant === "beam" || variant === "close") && <div className="atmo__beam" />}
     {variant === "glow" && <div className="atmo__glow" />}
   </div>

@@ -1,6 +1,6 @@
 /* ============================================================
  * Identidad Atlas Horizon — tokens y base (guía atlas-tech-brand).
- * Negro cinematográfico + luz ámbar, tipografía ligera y grande,
+ * Negro cinematográfico + luz ember con contraluz índigo, tipografía ligera y grande,
  * vidrio y grano. La idea central es "luz en el horizonte".
  * Todo cuelga de .noir (nombre histórico de la clase raíz) para no
  * chocar con el CSS del template ni con los detalles del portafolio.
@@ -14,12 +14,15 @@
   --rule-strong: rgba(255, 255, 255, 0.22);
   --ink: #f5f2ee; /* blanco cálido */
   --muted: #a8a29a;
-  --dim: #6e6862;
+  --dim: #8a837b; /* labels, pies, metadatos (5.4:1 sobre negro) */
+  --dim-line: #6e6862; /* SOLO líneas y detalles; como texto no alcanza 4.5:1 */
   --accent: #ff6a1f; /* ember: una palabra o frase clave por vista */
   --amber: #ffa14a; /* luz media, tag MVP, foco */
   --glow: #ffd3a8; /* núcleo de la luz, logo en el horizonte */
   --deep: #7a240a; /* sombra cálida */
   --dawn: #c9dbea; /* toque frío al final de un haz; nunca como texto */
+  --indigo: #5b58b8; /* segundo color: contraluz frío, nunca le gana al ember */
+  --lavanda: #9aa6e0; /* índigo claro: cifra o texto secundario sobre negro (8:1) */
   --signal: #9fe0c0; /* solo tag "Validado" */
   --on-accent: #050505;
   --f-sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
