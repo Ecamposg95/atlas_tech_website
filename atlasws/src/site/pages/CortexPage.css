@@ -1,6 +1,28 @@
 /* /cortex */
+.noir .cortex-head__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
 .noir .cortex-head__grid > div { max-width: 760px; }
-.noir .cortex-head h1 { max-width: 16ch; }
+.noir .cortex-head h1 { max-width: 16ch; font-size: clamp(2.4rem, 4.9vw, 4.4rem); }
+@media (max-width: 960px) {
+  .noir .cortex-head__grid { grid-template-columns: 1fr; }
+  .noir .cortex-head .kgraph { justify-self: center; }
+}
+
+/* La consola del agente */
+.noir .ui-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+.noir .ui-intro h2 { max-width: 16ch; }
+@media (max-width: 860px) { .noir .ui-intro { grid-template-columns: 1fr; } }
+.noir .agents__orbit { margin-top: clamp(32px, 4vw, 56px); }
 
 .noir .pillar { display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(200px, 22vw, 300px); }
 .noir .pillar p { margin-top: 12px; }

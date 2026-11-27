@@ -6,6 +6,8 @@ import Atmosphere from "../components/Atmosphere";
 import FigureNote from "../components/FigureNote";
 import ClientLogos from "../components/ClientLogos";
 import { head, story, awardsFigure } from "../content/nosotros";
+import { Timeline } from "../components/Numbers";
+import { CountUp } from "../lib/motion";
 import { moonshot } from "../content/home";
 import { manifesto } from "../content/cortex";
 import "./pages.css";
@@ -35,6 +37,7 @@ const NosotrosPage: React.FC = () => (
           </div>
         </div>
       </div>
+      <Timeline />
     </Section>
 
     <Section label="La startup">
@@ -61,7 +64,9 @@ const NosotrosPage: React.FC = () => (
         <div>
           <dl className="figures">
             <div className="figures__item">
-              <dt>{awardsFigure.value}</dt>
+              <dt>
+                <CountUp value={awardsFigure.value} />
+              </dt>
               <dd>{awardsFigure.label}</dd>
             </div>
           </dl>

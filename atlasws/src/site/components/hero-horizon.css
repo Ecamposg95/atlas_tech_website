@@ -1,0 +1,141 @@
+/* Portada del Home (Atlas Horizon): amanecer desde órbita, solo CSS y SVG. */
+.noir .epic {
+  /* Geometría: diámetro del planeta, altura de la línea del horizonte y ángulo del sol. */
+  --d: max(1900px, 210vw);
+  --limb: clamp(180px, 30svh, 330px);
+  --sun: 11deg;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--bg);
+}
+
+.noir .epic__stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 62%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 62%);
+}
+
+/* Contraluz índigo, en la esquina opuesta al sol. Parte de la misma composición de luz. */
+.noir .epic__counter {
+  position: absolute;
+  left: -22%;
+  top: -34%;
+  width: min(1100px, 95vw);
+  height: 640px;
+  filter: blur(60px);
+  opacity: 0.6;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(91, 88, 184, 0.5), rgba(91, 88, 184, 0));
+}
+
+.noir .epic__orbit {
+  position: absolute;
+  left: 50%;
+  top: var(--limb);
+  width: var(--d);
+  height: var(--d);
+  transform: translateX(-50%);
+}
+
+/* El brazo gira sobre el centro del planeta: lo que cuelga de él queda sobre el borde. */
+.noir .epic__arm { position: absolute; inset: 0; transform: rotate(var(--sun)); }
+
+/* Sol: detrás del planeta, asoma por encima de la línea. */
+.noir .epic__sun {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(1300px, 170vw);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(closest-side, rgba(255, 246, 232, 0.95) 0%, rgba(255, 211, 168, 0.7) 5%, rgba(255, 150, 70, 0.42) 13%, rgba(255, 106, 31, 0.2) 30%, rgba(122, 36, 10, 0.08) 58%, rgba(5, 5, 5, 0) 100%);
+  animation: epic-rise 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Cuerpo: negro, con la luz rasante entrando por el borde superior. */
+.noir .epic__body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background:
+    radial-gradient(34% 7% at 60% 0%, rgba(255, 150, 70, 0.5), rgba(122, 36, 10, 0.28) 45%, rgba(5, 5, 5, 0) 100%),
+    radial-gradient(60% 16% at 56% 0%, rgba(122, 36, 10, 0.4), rgba(5, 5, 5, 0) 100%),
+    linear-gradient(180deg, #0a0706 0%, #050505 22%);
+}
+/* Relieve iluminado de costado; se apaga hacia abajo para dejar limpio el texto. */
+.noir .epic__terrain {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(100%, 230vw);
+  height: clamp(280px, 46svh, 520px);
+  transform: translateX(-50%);
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  -webkit-mask-image: radial-gradient(46% 62% at 60% 0%, #000 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  mask-image: radial-gradient(46% 62% at 60% 0%, #000 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+}
+
+/* Borde iluminado: la atmósfera. Cálida donde está el sol, índigo hacia el lado opuesto. */
+.noir .epic__rim {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border-top: 2px solid #ffb27a;
+  box-shadow:
+    0 -4px 26px rgba(255, 140, 60, 0.85),
+    0 -22px 110px rgba(255, 106, 31, 0.42),
+    inset 0 5px 22px rgba(255, 170, 110, 0.38);
+  -webkit-mask-image: linear-gradient(100deg, rgba(0, 0, 0, 0.3) 30%, #000 50%, #000 62%, rgba(0, 0, 0, 0.45) 74%);
+  mask-image: linear-gradient(100deg, rgba(0, 0, 0, 0.3) 30%, #000 50%, #000 62%, rgba(0, 0, 0, 0.45) 74%);
+}
+
+/* Destello: núcleo y línea de luz sobre el borde, por delante del planeta. */
+.noir .epic__flare {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(900px, 120vw);
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(5% 20% at 50% 50%, #fff, rgba(255, 240, 220, 0.9) 40%, rgba(255, 211, 168, 0) 100%),
+    radial-gradient(50% 5% at 50% 50%, rgba(255, 232, 205, 0.95), rgba(255, 180, 120, 0.35) 55%, rgba(255, 140, 60, 0) 100%),
+    radial-gradient(16% 46% at 50% 50%, rgba(255, 190, 130, 0.55), rgba(255, 140, 60, 0) 100%);
+  animation: epic-breathe 9s ease-in-out 2.6s infinite alternate, epic-rise 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* La portada se funde con el negro de la página en su borde inferior. */
+.noir .epic__fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 26%;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0), var(--bg));
+}
+
+@keyframes epic-rise {
+  from { opacity: 0; transform: translate(-50%, -30%); }
+}
+@keyframes epic-breathe {
+  from { opacity: 0.86; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 860px) {
+  .noir .epic { --sun: 5.5deg; --limb: clamp(170px, 27svh, 300px); }
+}
+
+/* Las estrellas titilan a ritmos distintos. */
+.noir .epic__stars ellipse { animation: epic-twinkle 4s ease-in-out infinite alternate; }
+.noir .epic__stars ellipse:nth-child(3n) { animation-duration: 6.5s; animation-delay: -2s; }
+.noir .epic__stars ellipse:nth-child(5n) { animation-duration: 3s; animation-delay: -1s; }
+@keyframes epic-twinkle { from { opacity: 0.15; } }

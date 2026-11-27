@@ -1,3 +1,4 @@
+import { CountUp } from "../lib/motion";
 import React from "react";
 import StatusTag from "./StatusTag";
 import CtaButton from "./CtaButton";
@@ -27,7 +28,9 @@ const SolutionsBlock: React.FC<{ full?: boolean }> = ({ full }) => (
     <dl className="figures figures--four section__block" data-testid="solutions-figures">
       {s.figures.map((f) => (
         <div className="figures__item" key={f.value}>
-          <dt>{f.value}</dt>
+          <dt>
+            <CountUp value={f.value} />
+          </dt>
           <dd>{f.label}</dd>
         </div>
       ))}

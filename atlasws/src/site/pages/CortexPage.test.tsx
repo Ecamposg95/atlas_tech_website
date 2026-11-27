@@ -46,3 +46,15 @@ test("aclara que la consultoría la entrega el equipo, no un autoservicio", () =
   renderCortex();
   expect(screen.getByText(/No es un módulo de autoservicio/)).toBeInTheDocument();
 });
+
+test("ilustraciones: grafo, consola con aprobación humana y equipo de agentes", () => {
+  renderCortex();
+  expect(within(screen.getByTestId("cortex-head")).getByTestId("cortex-graph")).toBeInTheDocument();
+  const ui = screen.getByTestId("cortex-console");
+  ["Pasos del agente", "Esperando tu confirmación", "Confirmar", "Rechazar"].forEach((t) =>
+    expect(within(ui).getByText(t)).toBeInTheDocument()
+  );
+  // Es una demostración y lo dice.
+  expect(within(ui).getByText(/Demostración de la interfaz con datos de ejemplo/)).toBeInTheDocument();
+  expect(within(screen.getByTestId("cortex-agents")).getByTestId("cortex-orbit")).toHaveAttribute("role", "img");
+});

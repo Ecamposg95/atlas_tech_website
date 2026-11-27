@@ -85,3 +85,60 @@
 /* moonshot (compartido con Home) */
 .noir .moonshot__text { font-size: clamp(1.2rem, 2.2vw, 1.75rem); line-height: 1.35; letter-spacing: -0.015em; color: var(--ink); max-width: 34ch; }
 .noir .moonshot__note { margin-top: 20px; max-width: 52ch; }
+
+/* ---------- Contacto: vista previa, reloj, pasos, rutas y preguntas ---------- */
+.noir .lead-preview { border: 1px solid var(--rule); border-radius: 16px; padding: 14px 16px; background: rgba(5, 5, 5, 0.4); }
+.noir .lead-preview__head { display: flex; justify-content: space-between; gap: 12px; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+.noir .lead-preview__count { font-family: var(--f-mono); letter-spacing: 0.02em; text-transform: none; font-size: 0.72rem; }
+.noir .lead-preview__bubble {
+  margin-top: 12px;
+  padding: 12px 15px;
+  border-radius: 14px 14px 4px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+.noir .lead-preview__bubble.is-ready { background: rgba(159, 224, 192, 0.12); box-shadow: 0 0 0 1px rgba(159, 224, 192, 0.4); }
+.noir .lead-preview__gap { color: var(--dim); border-bottom: 1px dashed var(--dim-line); }
+.noir .lead-preview__in { color: var(--glow); }
+.noir .lead-preview__bar { height: 2px; margin-top: 12px; border-radius: 2px; background: var(--rule); overflow: hidden; }
+.noir .lead-preview__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--glow)); transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+.noir .contacto__clock { display: inline-flex; align-items: center; gap: 7px; margin-left: 10px; color: var(--muted); font-size: 0.86rem; }
+.noir .contacto__clock i { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); animation: ct-live 1.8s ease-in-out infinite alternate; }
+@keyframes ct-live { from { opacity: 0.35; } }
+
+/* Pasos unidos por una línea de luz que avanza. */
+.noir .steps--flow { position: relative; padding-top: 22px; }
+.noir .steps--flow::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--rule); }
+.noir .steps--flow::after { content: ""; position: absolute; top: 0; left: 0; width: 24%; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); animation: track-run 6s ease-in-out infinite; }
+.noir .steps--flow { overflow: hidden; }
+
+.noir a.path { display: flex; flex-direction: column; min-height: clamp(210px, 20vw, 270px); color: inherit; }
+.noir .path p { margin-top: 12px; }
+.noir .path__cta { margin-top: auto; padding-top: 24px; color: var(--ink); font-weight: 500; font-size: 0.95rem; }
+.noir .path__cta span { display: inline-block; margin-left: 6px; transition: transform 0.3s ease; }
+.noir .path:hover .path__cta span { transform: translateX(6px); }
+.noir .card--ember .path__cta { color: #fff4ea; }
+
+.noir .faq { border-top: 1px solid var(--rule); }
+.noir .faq__item { border-bottom: 1px solid var(--rule); }
+.noir .faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  letter-spacing: -0.015em;
+}
+.noir .faq__item summary::-webkit-details-marker { display: none; }
+.noir .faq__item summary::after { content: "+"; flex-shrink: 0; color: var(--amber); font-size: 1.4rem; font-weight: 300; line-height: 1; transition: transform 0.3s ease; }
+.noir .faq__item[open] summary::after { transform: rotate(45deg); }
+.noir .faq__item p { padding: 0 0 22px; max-width: 58ch; animation: gate-in 0.4s ease both; }

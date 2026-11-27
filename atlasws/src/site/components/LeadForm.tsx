@@ -33,6 +33,11 @@ const LeadForm: React.FC = () => {
     ["Hola, quiero agendar una llamada.", ...filled].join("\n")
   );
 
+  // Vista previa en vivo: el mismo mensaje que se abrirá en WhatsApp, con lo que falta marcado.
+  const part = (v: string, hint: string) =>
+    v.trim() ? <span className="lead-preview__in">{v.trim()}</span> : <span className="lead-preview__gap">{hint}</span>;
+  const typed = [f.nombre, f.empresa, f.objetivo].filter((v) => v.trim()).length;
+
   return (
     <form className="lead-form" onSubmit={submit} noValidate>
       <label>
@@ -47,6 +52,19 @@ const LeadForm: React.FC = () => {
         <span>¿Qué quieres automatizar?</span>
         <textarea name="objetivo" rows={4} value={f.objetivo} onChange={set("objetivo")} />
       </label>
+      <div className="lead-preview" data-testid="lead-preview" aria-hidden="true">
+        <div className="lead-preview__head">
+          <span>Así se verá tu mensaje</span>
+          <span className="lead-preview__count">{typed} de 3</span>
+        </div>
+        <p className={"lead-preview__bubble" + (typed === 3 ? " is-ready" : "")}>
+          Hola, soy {part(f.nombre, "tu nombre")} de {part(f.empresa, "tu empresa")}. Queremos automatizar:{" "}
+          {part(f.objetivo, "el proceso")}
+        </p>
+        <div className="lead-preview__bar">
+          <i style={{ width: `${(typed / 3) * 100}%` }} />
+        </div>
+      </div>
       {error && (
         <p role="alert" className="lead-form__error">
           Completa los tres campos.

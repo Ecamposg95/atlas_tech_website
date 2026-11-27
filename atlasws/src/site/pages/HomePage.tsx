@@ -1,65 +1,74 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SiteLayout from "../components/SiteLayout";
 import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
-import FigureNote from "../components/FigureNote";
 import Atmosphere from "../components/Atmosphere";
+import HeroHorizon from "../components/HeroHorizon";
 import StepsStrip from "../components/StepsStrip";
 import ClientLogos from "../components/ClientLogos";
 import ProjectRows from "../components/ProjectRows";
 import SolutionsBlock from "../components/SolutionsBlock";
-import { head as solutionsHead } from "../content/solutions";
-import { hero, heroStats, moonshot, buildTitle, pillars, closing } from "../content/home";
-import { steps } from "../content/cortex";
+import { PosMock } from "../components/ProductVisuals";
+import { KnowledgeGraph } from "../components/CortexVisuals";
+import { FigureGroups, Timeline, Marquee } from "../components/Numbers";
+import { head as solutionsHead, solutionsStatus } from "../content/solutions";
+import { hero, marquee, moonshot, buildTitle, pillars, closing } from "../content/home";
+import { steps, cortexStatus } from "../content/cortex";
 import * as one from "../content/atlasOne";
 import { projects } from "../../data/projects";
 import { waLink, TRIAL_MESSAGE } from "../lib/whatsapp";
 import "./pages.css";
 import "./HomePage.css";
 
-// Una fuente de luz por vista: la imagen de portada arriba, el haz tras el statement
-// y el horizonte (motivo de la marca, en CSS) en el cierre.
-// Para cambiar la portada basta con sustituir los archivos de /public/images/hero/.
-const COVER = {
-  src: "/images/hero/atlas-horizon.webp",
-  srcSet: "/images/hero/atlas-horizon-960.webp 960w, /images/hero/atlas-horizon.webp 1672w",
-};
+// Una composición de luz por vista: el amanecer de la portada arriba, el haz tras el
+// statement y el horizonte en el cierre.
+const RAIL = [
+  { to: "/cortex", name: "Atlas Cortex", text: "Consultoría y agentes sobre una misma plataforma", status: cortexStatus },
+  { to: "/atlas-one", name: "Atlas ONE", text: "ERP y punto de venta en operación", status: one.atlasOneStatus },
+  { to: "/portafolio#solutions", name: "Atlas Solutions", text: "Ingeniería a la medida de cada reto", status: solutionsStatus },
+];
+
 const HomePage: React.FC = () => {
   const portfolio = projects.filter((p) => p.slug !== "atlas-one");
 
   return (
     <SiteLayout>
-      {/* Portada: imagen de marca a pantalla completa, antes de la primera sección.
-          El texto va dentro de la imagen; el alt lo expone a lectores de pantalla y buscadores. */}
-      <section className="cover" data-testid="sec-portada">
-        <img
-          className="cover__img"
-          src={COVER.src}
-          srcSet={COVER.srcSet}
-          sizes="100vw"
-          width={1672}
-          height={941}
-          alt="Atlas Tech. Tecnología de frontera, aplicada."
-          decoding="async"
-        />
-      </section>
-
-      <section className="hero" data-testid="sec-hero">
-        <div className="wrap hero__copy">
-          <p className="hero__eyebrow mono">{hero.eyebrow}</p>
-          <h1>
-            {hero.title} <em className="accent">{hero.accent}</em>
-          </h1>
-          <p className="lead hero__sub">{hero.sub}</p>
-          <div className="cta-row hero__cta">
-            <CtaButton to="/contacto">Agenda una llamada</CtaButton>
-            <CtaButton to="#como" variant="secondary">
-              Cómo funciona
-            </CtaButton>
+      {/* Portada: el amanecer de la marca a pantalla completa, bajo la navbar flotante. */}
+      <section className="hero hero--epic" data-testid="sec-hero">
+        <HeroHorizon />
+        <div className="wrap hero__inner">
+          <div className="hero__copy">
+            <p className="hero__eyebrow mono">{hero.eyebrow}</p>
+            <h1>
+              {hero.title} <em className="accent">{hero.accent}</em>
+            </h1>
+            <p className="lead hero__sub">{hero.sub}</p>
+            <div className="cta-row hero__cta">
+              <CtaButton to="/contacto">Agenda una llamada</CtaButton>
+              <CtaButton to="#como" variant="secondary">
+                Cómo funciona
+              </CtaButton>
+            </div>
           </div>
+          <ul className="hero__rail" data-testid="hero-rail">
+            {RAIL.map((r) => (
+              <li key={r.name}>
+                <Link className="hero__rail-item" to={r.to}>
+                  <span className="hero__rail-head">
+                    <span className="hero__rail-name">{r.name}</span>
+                    <StatusTag status={r.status} />
+                  </span>
+                  <span className="hero__rail-text">{r.text}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+
+      <Marquee items={marquee} />
 
       <section id="como" className="section como" data-testid="sec-como">
         <div className="wrap">
@@ -86,17 +95,14 @@ const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-          <dl className="stats" data-testid="home-stats">
-            {heroStats.map((st) => (
-              <div className="stats__item" key={st.value}>
-                <dt>{st.value}</dt>
-                <dd>{st.label}</dd>
-              </div>
-            ))}
-          </dl>
-          <FigureNote source={one.figures[0].source} period={one.figures[0].period} cutoff={one.figures[0].cutoff} />
         </div>
       </section>
+
+      <Section testId="sec-cifras" label="Atlas en números">
+        <h2 className="sec-title">Diez años construyendo. Esto es lo que hoy opera.</h2>
+        <FigureGroups />
+        <Timeline />
+      </Section>
 
       <Section testId="sec-construimos" label="Qué construimos">
         <h2 className="sec-title">{buildTitle}</h2>
@@ -109,10 +115,21 @@ const HomePage: React.FC = () => {
             </article>
           ))}
         </div>
-        <div className="cta-row section__cta">
-          <CtaButton to="/cortex" variant="secondary">
-            Conoce Atlas Cortex
-          </CtaButton>
+        <div className="build__cortex">
+          <KnowledgeGraph />
+          <div>
+            <StatusTag status={cortexStatus} />
+            <h3 className="build__title">Atlas Cortex conecta lo que tu empresa sabe.</h3>
+            <p className="lead">
+              Clientes, proyectos, personas y decisiones en un solo grafo de conocimiento. Sobre él trabaja el agente:
+              busca, propone la acción y espera a que una persona la confirme.
+            </p>
+            <div className="cta-row">
+              <CtaButton to="/cortex" variant="secondary">
+                Conoce Atlas Cortex
+              </CtaButton>
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -131,12 +148,13 @@ const HomePage: React.FC = () => {
                 Conoce Atlas ONE
               </CtaButton>
             </div>
+            <ul className="one__modules">
+              {one.modules.slice(0, 6).map((m) => (
+                <li key={m.name}>{m.name}</li>
+              ))}
+            </ul>
           </div>
-          <ul className="one__modules">
-            {one.modules.slice(0, 6).map((m) => (
-              <li key={m.name}>{m.name}</li>
-            ))}
-          </ul>
+          <PosMock />
         </div>
       </Section>
 

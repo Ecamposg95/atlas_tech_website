@@ -1,0 +1,206 @@
+/* Ilustraciones de Cortex (Atlas Horizon): grafo, consola del agente y equipo de agentes. */
+
+/* ---------- Grafo de conocimiento ---------- */
+.noir .kgraph { margin: 0; width: 100%; max-width: 560px; justify-self: end; }
+.noir .kgraph__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.noir .kgraph__edge { stroke: rgba(255, 255, 255, 0.2); stroke-width: 1; }
+.noir .kgraph__edge.is-live {
+  stroke: rgba(255, 161, 74, 0.75);
+  stroke-dasharray: 3 7;
+  animation: kg-flow 2.4s linear infinite;
+}
+.noir .kgraph__halo { animation: kg-pulse 5s ease-in-out infinite alternate; transform-origin: 280px 250px; }
+.noir .kgraph__pred { font-family: var(--f-mono); font-size: 9.5px; fill: var(--dim); letter-spacing: 0.02em; }
+.noir .kgraph__label { font-family: var(--f-sans); font-size: 13px; fill: var(--ink); letter-spacing: -0.01em; }
+.noir .kgraph__node { stroke: var(--bg); stroke-width: 2; }
+.noir .kgraph__node--proyecto, .noir .kgraph__dot--proyecto { fill: var(--accent); background: var(--accent); }
+.noir .kgraph__node--cliente, .noir .kgraph__dot--cliente { fill: var(--glow); background: var(--glow); }
+.noir .kgraph__node--persona, .noir .kgraph__dot--persona { fill: var(--lavanda); background: var(--lavanda); }
+.noir .kgraph__node--decision, .noir .kgraph__dot--decision { fill: var(--ink); background: var(--ink); }
+.noir .kgraph__node--proveedor, .noir .kgraph__dot--proveedor { fill: var(--indigo); background: var(--indigo); }
+.noir .kgraph__node--nota, .noir .kgraph__dot--nota { fill: var(--dim-line); background: var(--dim-line); }
+.noir .kgraph__legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; color: var(--muted); font-size: 0.8rem; }
+.noir .kgraph__key { display: inline-flex; align-items: center; gap: 7px; }
+.noir .kgraph__dot { width: 8px; height: 8px; border-radius: 50%; }
+@keyframes kg-flow { to { stroke-dashoffset: -20; } }
+@keyframes kg-pulse { from { opacity: 0.55; transform: scale(0.92); } to { opacity: 1; transform: scale(1.06); } }
+
+/* ---------- Consola del agente ---------- */
+.noir .console { margin: 0; }
+.noir .console__win {
+  border: 1px solid var(--glass-line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+}
+.noir .console__bar { display: flex; align-items: center; gap: 14px; padding: 13px 18px; border-bottom: 1px solid var(--rule); }
+.noir .console__dots { display: inline-flex; gap: 6px; }
+.noir .console__dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.16); }
+.noir .console__title { font-family: var(--f-mono); font-size: 0.74rem; color: var(--dim); }
+.noir .console__body { display: grid; grid-template-columns: 172px minmax(0, 1fr); }
+.noir .console__nav { padding: 18px 12px; border-right: 1px solid var(--rule); }
+.noir .console__nav li { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-size: 0.9rem; }
+.noir .console__nav li.is-active { background: rgba(255, 255, 255, 0.07); color: var(--ink); }
+.noir .console__chat { padding: clamp(16px, 2.4vw, 30px); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.noir .console__msg {
+  align-self: flex-end;
+  max-width: 46ch;
+  padding: 12px 16px;
+  border-radius: 16px 16px 4px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.noir .console__cap {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 8px;
+}
+.noir .console__steps ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.noir .console__steps li {
+  padding: 5px 12px 5px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.noir .console__steps li::before { content: "✓"; margin-right: 7px; color: var(--signal); font-size: 0.74rem; }
+.noir .console__card { border: 1px solid var(--rule); border-radius: 16px; padding: 14px 16px; max-width: 560px; }
+.noir .console__card.is-waiting { border-color: rgba(255, 161, 74, 0.5); background: rgba(255, 106, 31, 0.06); padding-bottom: 16px; }
+.noir .console__card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.noir .console__card.is-waiting .console__card-head { margin-bottom: 14px; }
+.noir .console__card code { font-family: var(--f-mono); font-size: 0.82rem; color: var(--ink); background: none; padding: 0; }
+.noir .console__state { font-family: var(--f-mono); font-size: 0.7rem; color: var(--amber); }
+.noir .console__state--done { color: var(--signal); }
+.noir .console__preview { margin: 0; display: grid; gap: 6px; }
+.noir .console__preview div { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 10px; font-size: 0.88rem; }
+.noir .console__preview dt { color: var(--dim); }
+.noir .console__preview dd { margin: 0; color: var(--ink); }
+.noir .console__diff {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(159, 224, 192, 0.07);
+  color: var(--signal);
+  font-family: var(--f-mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  white-space: normal;
+  overflow: hidden;
+}
+.noir .console__diff span { display: block; }
+.noir .console__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.noir .console__btn {
+  padding: 8px 18px;
+  border: 1px solid var(--glass-line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+.noir .console__btn--ok { background: var(--ink); border-color: var(--ink); color: var(--on-accent); }
+.noir .console__input {
+  margin-top: 6px;
+  padding: 13px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+@media (max-width: 720px) {
+  .noir .console__body { grid-template-columns: 1fr; }
+  .noir .console__nav { display: none; }
+  .noir .console__preview div { grid-template-columns: 92px minmax(0, 1fr); }
+}
+
+/* ---------- Equipo de agentes ---------- */
+.noir .orbit { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin: 0 auto; }
+.noir .orbit__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.noir .orbit__ring { fill: none; stroke: rgba(255, 255, 255, 0.2); stroke-width: 0.25; stroke-dasharray: 0.8 1.4; }
+.noir .orbit__ring--inner { stroke: rgba(255, 161, 74, 0.4); stroke-dasharray: none; }
+.noir .orbit__spoke { stroke: rgba(255, 255, 255, 0.13); stroke-width: 0.25; }
+.noir .orbit__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 25%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 190, 140, 0.4);
+  background: radial-gradient(120% 90% at 30% 110%, #ffb061 0%, #ff6a1f 35%, #8a2b0c 70%, #2a0e05 100%);
+  box-shadow: 0 0 70px rgba(255, 106, 31, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff4ea;
+  line-height: 1.2;
+}
+.noir .orbit__core-name { font-size: clamp(0.95rem, 2vw, 1.25rem); font-weight: 400; letter-spacing: -0.02em; }
+.noir .orbit__core-role { font-size: clamp(0.56rem, 1.1vw, 0.68rem); letter-spacing: 0.08em; text-transform: uppercase; }
+.noir .orbit__agent {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 6px 13px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: clamp(0.72rem, 1.5vw, 0.86rem);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  /* En móvil el grafo se reduce: se quitan los predicados y crecen las etiquetas. */
+  .noir .kgraph__pred { display: none; }
+  .noir .kgraph__label { font-size: 19px; }
+  .noir .orbit__agent { white-space: normal; max-width: 92px; text-align: center; line-height: 1.2; padding: 6px 10px; border-radius: 14px; }
+}
+
+/* ================= Movimiento ================= */
+/* Grafo: los nodos aparecen en cascada y viajan pulsos por las relaciones. */
+.noir .kgraph__n { animation: kg-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; transform-box: fill-box; transform-origin: center; }
+.noir .kgraph__pulses circle { fill: var(--glow); filter: drop-shadow(0 0 4px rgba(255, 180, 120, 0.9)); }
+@keyframes kg-in { from { opacity: 0; transform: scale(0.2); } }
+@media (prefers-reduced-motion: reduce) { .noir .kgraph__pulses { display: none; } }
+
+/* Consola: cada pieza entra cuando le toca en el guion. */
+.noir .console__fx { opacity: 0; transform: translateY(10px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.noir .console__fx.is-on { opacity: 1; transform: none; }
+.noir .console__card { transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.4s ease, background-color 0.4s ease; }
+.noir .console__card.is-done:not(:first-of-type) { border-color: rgba(159, 224, 192, 0.4); }
+.noir .console__thinking { margin-left: auto; font-size: 0.74rem; color: var(--amber); opacity: 0; transition: opacity 0.3s ease; }
+.noir .console__thinking.is-on { opacity: 1; animation: cs-blink 1.2s ease-in-out infinite; }
+.noir .console__actions { transition: opacity 0.4s ease; }
+.noir .console__actions.is-off { opacity: 0.25; }
+.noir .console__btn { transition: transform 0.15s ease, box-shadow 0.2s ease; }
+.noir .console__btn.is-pressed { transform: scale(0.94); box-shadow: 0 0 0 6px rgba(255, 161, 74, 0.25); }
+.noir .console__input.is-typing { color: var(--ink); border-color: var(--rule-strong); }
+.noir .console__typed {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 1px solid var(--amber);
+  animation: cs-type 1.7s steps(46, end) both;
+}
+@keyframes cs-type { from { width: 0; } to { width: 100%; } }
+@keyframes cs-blink { 50% { opacity: 0.45; } }
+
+/* Órbita: el anillo gira despacio y el orquestador llama a un agente a la vez. */
+.noir .orbit__ring:not(.orbit__ring--inner) { transform-origin: 50px 50px; animation: ob-spin 60s linear infinite; }
+.noir .orbit__ring--inner { transform-origin: 50px 50px; animation: ob-breathe 4s ease-in-out infinite alternate; }
+.noir .orbit__spoke { transition: stroke 0.4s ease, stroke-width 0.4s ease; }
+.noir .orbit__spoke.is-active { stroke: var(--amber); stroke-width: 0.5; }
+.noir .orbit__agent { transition: border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease; }
+.noir .orbit__agent.is-active { border-color: var(--amber); border-style: solid; box-shadow: 0 0 26px rgba(255, 106, 31, 0.35); }
+@keyframes ob-spin { to { transform: rotate(360deg); } }
+@keyframes ob-breathe { from { transform: scale(0.94); opacity: 0.5; } to { transform: scale(1.08); opacity: 1; } }

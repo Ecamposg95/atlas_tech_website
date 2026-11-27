@@ -47,7 +47,9 @@ test("LeadForm ofrece correo con los mismos datos y no pide archivos", () => {
 test("contacto: titular, WhatsApp directo y formulario", () => {
   renderAt(<ContactoPage />);
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Agenda una llamada");
-  expect(screen.getByRole("link", { name: /escríbenos por whatsapp/i })).toHaveAttribute("href", waLink(CALL_MESSAGE));
+  screen
+    .getAllByRole("link", { name: /escríbenos por whatsapp/i })
+    .forEach((a) => expect(a).toHaveAttribute("href", waLink(CALL_MESSAGE)));
   expect(screen.getByRole("button", { name: /enviar por whatsapp/i })).toBeInTheDocument();
 });
 
@@ -99,4 +101,33 @@ test("portafolio: Atlas Solutions con cifras, fuente y metodología", () => {
   const sec = screen.getByTestId("portfolio-solutions");
   expect(within(sec).getByText(/Fuente: Atlas Tech, datos internos\. Periodo: 2026\./)).toBeInTheDocument();
   expect(within(screen.getByTestId("solutions-method")).getAllByRole("listitem")).toHaveLength(5);
+});
+
+test("portafolio: Harvestt muestra el domo y un panel marcado como simulado", () => {
+  renderAt(<PortfolioPage />);
+  const v = screen.getByTestId("harvestt-visual");
+  expect(within(v).getByRole("img", { name: /render conceptual/i })).toHaveAttribute("loading", "lazy");
+  expect(within(v).getAllByText("Simulado")).toHaveLength(2);
+  expect(within(v).getByText(/La telemetría es simulada/)).toBeInTheDocument();
+});
+
+test("contacto: pasos siguientes, rutas a los tres productos y preguntas frecuentes", () => {
+  renderAt(<ContactoPage />);
+  expect(within(screen.getByTestId("contacto-pasos")).getAllByRole("listitem")).toHaveLength(4);
+  const rutas = within(screen.getByTestId("contacto-rutas")).getAllByRole("link");
+  expect(rutas.map((a) => a.getAttribute("href"))).toEqual(["/atlas-one", "/cortex", "/portafolio#solutions"]);
+  expect(within(screen.getByTestId("contacto-faq")).getAllByRole("group")).toHaveLength(4);
+  expect(screen.getByTestId("contacto-clock")).toHaveTextContent(/^\d{2}:\d{2}$/);
+});
+
+test("LeadForm: la vista previa refleja lo escrito y marca cuando está completo", () => {
+  render(<LeadForm />);
+  const preview = screen.getByTestId("lead-preview");
+  expect(preview).toHaveTextContent("0 de 3");
+  expect(preview).toHaveTextContent("Hola, soy tu nombre de tu empresa.");
+  fireEvent.change(screen.getByLabelText("Nombre"), { target: { value: "Ana" } });
+  fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
+  fireEvent.change(screen.getByLabelText("¿Qué quieres automatizar?"), { target: { value: "cobranza" } });
+  expect(preview).toHaveTextContent("3 de 3");
+  expect(preview).toHaveTextContent("Hola, soy Ana de Acme. Queremos automatizar: cobranza");
 });

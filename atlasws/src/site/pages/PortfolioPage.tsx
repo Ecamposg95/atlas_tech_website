@@ -5,6 +5,7 @@ import CtaButton from "../components/CtaButton";
 import Atmosphere from "../components/Atmosphere";
 import Section from "../components/Section";
 import SolutionsBlock from "../components/SolutionsBlock";
+import { GreenhouseVisual } from "../components/ProductVisuals";
 import { head as solutionsHead } from "../content/solutions";
 import { projects } from "../../data/projects";
 import "./pages.css";
@@ -64,6 +65,7 @@ const PortfolioPage: React.FC = () => (
               </div>
             </div>
           </div>
+          {p.slug === "harvestt" && <GreenhouseVisual />}
         </article>
       ))}
     </section>

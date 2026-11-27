@@ -34,5 +34,14 @@ test("visión: una sola composición de luz", () => {
 test("visión: siete capas del software y cuatro niveles de acción", () => {
   renderVision();
   expect(within(screen.getByTestId("vision-layers")).getAllByRole("listitem")).toHaveLength(7);
-  expect(within(screen.getByTestId("vision-governance")).getByText("Prohibida para agentes")).toBeInTheDocument();
+  expect(within(screen.getByTestId("vision-governance")).getByText("Prohibida para agentes", { selector: "dt" })).toBeInTheDocument();
+});
+
+test("visión: portada moonshot decorativa y esquemas con texto alternativo", () => {
+  renderVision();
+  expect(within(screen.getByTestId("vision-head")).getByTestId("vision-moonshot")).toHaveAttribute("aria-hidden", "true");
+  expect(screen.getByTestId("vision-stack")).toHaveAttribute("aria-label", expect.stringMatching(/capa Agéntico/));
+  expect(screen.getByTestId("vision-org")).toHaveAttribute("aria-label", expect.stringMatching(/propósito humano/));
+  // En reposo el esquema muestra el caso que exige revisión humana.
+  expect(within(screen.getByTestId("vision-gate")).getByText("Espera revisión humana")).toBeInTheDocument();
 });

@@ -1,37 +1,52 @@
 /* Home (Atlas Horizon): hero centrado sobre el horizonte, statement con cifras, cards. */
-/* Portada: la imagen llena la primera pantalla y pasa por debajo de la navbar flotante. */
-.noir .cover { position: relative; margin-top: -70px; background: var(--bg); overflow: hidden; }
-.noir .cover__img {
-  display: block;
-  width: 100%;
-  height: min(100vh, 56.28vw); /* 16:9 de la imagen; nunca más alta que la pantalla */
-  min-height: 420px;
-  max-width: none;
-  object-fit: cover;
-  object-position: center;
+/* Portada: ocupa la primera pantalla y pasa por debajo de la navbar flotante.
+   El texto se apoya abajo, sobre el cuerpo oscuro del planeta; la luz queda arriba. */
+.noir .hero--epic {
+  position: relative;
+  isolation: isolate;
+  margin-top: -82px;
+  min-height: max(100svh, 640px);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(250px, 36svh, 400px) 0 clamp(36px, 6vh, 72px);
 }
-/* La imagen se funde con el negro de la página en su borde inferior. */
-.noir .cover::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 22%;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, var(--bg) 100%);
-  pointer-events: none;
+.noir .hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: end;
 }
-@media (max-width: 860px) {
-  /* En vertical se recorta a 4:5 centrado: conserva el nombre, el lema y parte de la escena. */
-  .noir .cover__img { height: auto; min-height: 0; aspect-ratio: 4 / 5; max-height: 92vh; }
-}
+.noir .hero__eyebrow { color: var(--muted); margin-bottom: clamp(16px, 2vw, 26px); }
+.noir .hero--epic h1 { max-width: 17ch; font-size: clamp(2.5rem, min(5.4vw, 8.6svh), 4.9rem); text-wrap: balance; }
+.noir .hero__sub { margin-top: clamp(18px, 2vw, 26px); max-width: 50ch; color: #c9c3bb; }
+.noir .hero__cta { margin-top: clamp(22px, 2.4vw, 30px); }
 
-.noir .hero { position: relative; padding: clamp(56px, 9vw, 120px) 0 clamp(40px, 6vw, 80px); }
-.noir .hero__copy { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
-.noir .hero__eyebrow { color: var(--muted); margin-bottom: 26px; }
-.noir .hero h1 { max-width: 17ch; }
-.noir .hero__sub { margin-top: 26px; max-width: 54ch; }
-.noir .hero__cta { margin-top: 30px; justify-content: center; }
+/* Carril de productos: vidrio, con el estado real de cada uno. */
+.noir .hero__rail {
+  border: 1px solid var(--glass-line);
+  border-radius: 22px;
+  background: rgba(5, 5, 5, 0.55);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  padding: 6px clamp(16px, 1.6vw, 22px);
+}
+.noir .hero__rail li + li { border-top: 1px solid var(--rule); }
+.noir .hero__rail-item { display: block; padding: 15px 0; }
+.noir .hero__rail-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.noir .hero__rail-name { color: var(--ink); font-size: 1.08rem; letter-spacing: -0.015em; transition: color 0.2s ease; }
+.noir .hero__rail-item:hover .hero__rail-name { color: var(--glow); }
+.noir .hero__rail-text { display: block; margin-top: 3px; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
+
+@media (max-width: 960px) {
+  .noir .hero__inner { grid-template-columns: 1fr; }
+  .noir .hero--epic { padding-top: clamp(240px, 33svh, 360px); }
+}
+@media (max-width: 520px) {
+  .noir .hero--epic h1 { font-size: clamp(2.2rem, 10.4vw, 2.9rem); }
+  .noir .hero__cta .cta { flex: 1 1 100%; }
+}
 
 /* Cierre sobre el horizonte: el arco ocupa su propia franja bajo el texto. */
 .noir .closing--horizon { padding-bottom: 0; }
@@ -58,5 +73,19 @@
 .noir .pillar h3 { margin-top: clamp(28px, 4vw, 56px); }
 
 .noir .one__price { margin-top: 20px; color: var(--ink); }
-.noir .one__modules li { padding: 15px 0; border-bottom: 1px solid var(--rule); color: var(--ink); font-size: 1.15rem; letter-spacing: -0.015em; }
-.noir .one__modules li:first-child { border-top: 1px solid var(--rule); }
+/* Módulos como fila de píldoras bajo los botones. */
+.noir .one__modules { display: flex; flex-wrap: wrap; gap: 8px; margin-top: clamp(28px, 3vw, 40px); }
+.noir .one__modules li { padding: 6px 14px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); font-size: 0.86rem; }
+.noir [data-testid="sec-atlas-one"] .split { align-items: center; }
+
+/* Cortex dentro de "Qué construimos": grafo a la izquierda, texto a la derecha. */
+.noir .build__cortex {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 96px);
+  align-items: center;
+  margin-top: clamp(56px, 8vw, 112px);
+}
+.noir .build__cortex .kgraph { justify-self: start; }
+.noir .build__title { font-size: clamp(1.7rem, 3.4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.08; margin: 18px 0 18px; max-width: 16ch; }
+@media (max-width: 860px) { .noir .build__cortex { grid-template-columns: 1fr; } }

@@ -14,7 +14,7 @@ const renderHome = () =>
 test("hero con el mensaje y el CTA a contacto", () => {
   renderHome();
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-    "Consultoría que no entrega un PDF. Entrega ejecución."
+    "Lleva tu empresa a la frontera de lo posible."
   );
   expect(
     within(screen.getByTestId("sec-hero")).getByRole("link", { name: "Agenda una llamada" })
@@ -25,13 +25,13 @@ test("hero con el mensaje y el CTA a contacto", () => {
   );
 });
 
-test("la portada y las nueve secciones en orden", () => {
+test("las diez secciones en orden, con la portada como primera", () => {
   renderHome();
   expect(screen.getAllByTestId(/^sec-/).map((e) => e.getAttribute("data-testid"))).toEqual([
-    "sec-portada",
     "sec-hero",
     "sec-como",
     "sec-moonshot",
+    "sec-cifras",
     "sec-construimos",
     "sec-atlas-one",
     "sec-solutions",
@@ -49,15 +49,21 @@ test("cómo funciona muestra los cuatro pasos", () => {
   );
 });
 
-test("cifras con regla vertical tras el statement, con atribución explícita y pie de fuente", () => {
+test("Atlas en números: todas las cifras publicadas, por origen y con su fuente", () => {
   renderHome();
-  const sec = screen.getByTestId("sec-moonshot");
-  const stats = within(sec).getByTestId("home-stats");
-  ["$80.1M", "134,844", "$593.93", "13"].forEach((v) => expect(within(stats).getByText(v)).toBeInTheDocument());
-  // Las tres cifras de operación dicen de qué producto son: no deben leerse como tracción de Cortex.
-  expect(within(stats).getAllByText(/Atlas ONE/)).toHaveLength(3);
-  expect(within(stats).getByText(/2016–2021/)).toBeInTheDocument();
-  expect(within(sec).getByText(/Corte: 09\.09\.2026/)).toBeInTheDocument();
+  const sec = screen.getByTestId("sec-cifras");
+  const nums = within(sec).getByTestId("numbers");
+  ["$350M MXN", "$80.1M MXN", "134,844", "$593.93", "7", "25", "100+", "2 sem", "2016"].forEach((v) =>
+    expect(within(nums).getByText(v)).toBeInTheDocument()
+  );
+  // Las cifras de operación dicen de qué producto son: no deben leerse como tracción de Cortex.
+  expect(within(nums).getAllByText(/en Atlas ONE/)).toHaveLength(3);
+  expect(within(nums).getByText(/2016–2021/, { selector: "dd" })).toBeInTheDocument();
+  // Cada grupo trae su pie de fuente.
+  expect(within(nums).getAllByText(/^Fuente:/)).toHaveLength(4);
+  expect(within(nums).getByText(/Corte: 09\.09\.2026/)).toBeInTheDocument();
+  // Línea de tiempo de 2016 a 2026.
+  expect(within(within(sec).getByTestId("timeline")).getAllByRole("listitem")).toHaveLength(6);
 });
 
 test("qué construimos: cuatro cards con estado, una sola destacada en ember", () => {
@@ -90,19 +96,32 @@ test("portafolio enlaza a las tres páginas existentes y no a Atlas ONE", () => 
   expect(s.querySelector('a[href*="atlas-one"]')).toBeNull();
 });
 
-test("portada: imagen a pantalla completa antes de la primera sección, con texto alternativo", () => {
+test("portada: el amanecer de la marca va detrás del titular y es decorativo", () => {
   renderHome();
-  const cover = screen.getByTestId("sec-portada");
-  const img = within(cover).getByRole("img");
-  // El texto va dentro de la imagen: el alt lo hace legible para lectores de pantalla y buscadores.
-  expect(img).toHaveAttribute("alt", "Atlas Tech. Tecnología de frontera, aplicada.");
-  expect(img.getAttribute("src")).toMatch(/\/images\/hero\/.+\.webp$/);
-  expect(img).toHaveAttribute("width");
-  expect(img).toHaveAttribute("height");
-  // La portada es lo primero que carga: no debe ser lazy.
-  expect(img).not.toHaveAttribute("loading", "lazy");
-  // El titular principal sigue siendo el de Cortex, no la portada.
-  expect(within(cover).queryByRole("heading")).toBeNull();
+  const hero = screen.getByTestId("sec-hero");
+  const art = within(hero).getByTestId("hero-horizon");
+  expect(art).toHaveAttribute("aria-hidden", "true");
+  // El titular es texto real (no va dentro de una imagen) y vive en la misma sección.
+  expect(within(hero).getByRole("heading", { level: 1 })).toBeInTheDocument();
+  expect(within(hero).queryByRole("img")).toBeNull();
+});
+
+test("portada: carril de productos con su estado y enlace", () => {
+  renderHome();
+  const rail = screen.getByTestId("hero-rail");
+  const links = within(rail).getAllByRole("link");
+  expect(links.map((l) => l.getAttribute("href"))).toEqual(["/cortex", "/atlas-one", "/portafolio#solutions"]);
+  expect(within(rail).getByText("MVP")).toBeInTheDocument();
+  expect(within(rail).getAllByText("Validado")).toHaveLength(2);
+});
+
+test("Atlas ONE: la ilustración del punto de venta no muestra importes", () => {
+  renderHome();
+  const pos = screen.getByTestId("one-pos");
+  ["Carrito", "Subtotal", "IVA 16%", "Efectivo", "Tarjeta", "Mixto"].forEach((t) =>
+    expect(within(pos).getByText(t)).toBeInTheDocument()
+  );
+  expect(pos.textContent).not.toMatch(/\$\s?\d/);
 });
 
 test("una sola fuente de luz por vista: el horizonte pasa al cierre", () => {
