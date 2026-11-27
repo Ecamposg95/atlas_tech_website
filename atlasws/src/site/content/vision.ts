@@ -24,10 +24,28 @@ export interface Stage {
 
 // Declaración final del documento (§28), cada tiempo con su estado real.
 export const stages: Stage[] = [
-  { when: "Hoy", text: "Construimos sistemas agénticos.", status: "MVP" },
+  { when: "Hoy", text: "Construimos sistemas agénticos.", status: "Validado" },
   { when: "Siguiente", text: "Desarrollamos software autónomo y autoevolutivo.", status: "En desarrollo" },
   { when: "Nuestra plataforma", text: "Construimos hacia sistemas operativos cognitivos.", status: "MVP" },
   { when: "Nuestro moonshot", text: "Investigamos las organizaciones sintéticas.", status: "Investigación" },
+];
+
+// Las siete capas del software (brochure 2026, p. 02). No se sustituyen: se apilan.
+export const era = {
+  label: "La próxima era del software",
+  title: "Primero digitalizamos registros.",
+  accent: "Ahora el software actúa.",
+  text: "La IA permite que el software interprete situaciones, formule planes y ejecute acciones. Estas capas no se sustituyen: la inteligencia probabilística complementa la integridad transaccional, nunca la erosiona.",
+};
+
+export const layers: { n: string; name: string; text: string; atlas: string; current?: boolean }[] = [
+  { n: "01", name: "Determinista", text: "Ejecuta reglas: contabilidad, inventario, autorizaciones.", atlas: "Base" },
+  { n: "02", name: "Generativo", text: "Produce artefactos: textos, código, análisis.", atlas: "Base" },
+  { n: "03", name: "Agéntico", text: "Planifica y actúa mediante herramientas autorizadas.", atlas: "Hoy", current: true },
+  { n: "04", name: "Autónomo", text: "Persigue objetivos persistentes dentro de políticas.", atlas: "Siguiente" },
+  { n: "05", name: "Autoevolutivo", text: "Mejora capacidades mediante evaluación controlada.", atlas: "Siguiente" },
+  { n: "06", name: "Cognitivo", text: "Integra memoria, objetivos, simulación y coordinación.", atlas: "Plataforma" },
+  { n: "07", name: "Organización sintética", text: "Usa todas las capas como arquitectura institucional.", atlas: "Moonshot" },
 ];
 
 export const manifesto: string[] = [
@@ -62,6 +80,30 @@ export const notGoals: string[] = [
   "Maximizar la autonomía como fin en sí mismo.",
   "Que un agente pueda cambiar sus propios permisos.",
   "Presentar una simulación de departamentos como prueba de una organización que funciona.",
+];
+
+// Gobernanza (brochure 2026, p. 09): qué puede hacer un agente según el riesgo de la acción.
+export const governance = {
+  label: "Gobernanza",
+  title: "Confianza por diseño.",
+  accent: "Autonomía con responsabilidad.",
+  text: "La autonomía se concede por capacidad y contexto, nunca por una etiqueta comercial. Cada herramienta tiene esquema, permisos, tiempo límite, clasificación de riesgo y registro de ejecución.",
+};
+
+export const actionLevels: { n: string; name: string; text: string }[] = [
+  { n: "N1", name: "Lectura", text: "Bajo riesgo." },
+  { n: "N2", name: "Escritura reversible", text: "Con registro y posibilidad de revertir." },
+  { n: "N3", name: "Operación sensible", text: "Revisión humana según el riesgo." },
+  { n: "N4", name: "Prohibida para agentes", text: "Transferencias, permisos y despliegues críticos." },
+];
+
+export const controls: string[] = [
+  "Identidad humana y de agente separadas",
+  "Mínimo privilegio y autorización del lado del servidor",
+  "Aislamiento entre organizaciones",
+  "Secretos fuera de las instrucciones del agente",
+  "Interruptor de paro, recuperación y reversión",
+  "Auditoría basada en evidencia observable",
 ];
 
 export const horizons: { n: string; name: string; text: string; measure: string }[] = [
@@ -113,7 +155,7 @@ export const roadmap: { years: string; name: string; goal: string; gate: string 
     gate: "Resultados longitudinales y evaluación independiente cuando sea viable.",
   },
   {
-    years: "2035–2040",
+    years: "2035–2040+",
     name: "Moonshot",
     goal: "Demostraciones de organizaciones sintéticas.",
     gate: "Viabilidad técnica, económica, humana y jurídica.",
@@ -123,18 +165,25 @@ export const roadmap: { years: string; name: string; goal: string; gate: string 
 export const labs = {
   label: "Atlas Labs",
   title: "Las preguntas que investigamos.",
-  text: "Atlas Labs es nuestra unidad de investigación aplicada. Cada línea parte de una hipótesis, se compara contra alternativas simples y documenta también los resultados negativos.",
+  text: "Atlas Labs es nuestra unidad de investigación aplicada, en formación e inicialmente virtual: IA, cibernética, sistemas complejos, teoría organizacional, métodos formales y simulación.",
   status: "Investigación" as Status,
 };
 
-export const researchLines: { name: string; question: string }[] = [
-  { name: "Memoria", question: "¿Qué representación del conocimiento mejora las decisiones repetidas?" },
-  { name: "Autonomía", question: "¿Cuánto trabajo puede completarse bien sin intervención?" },
-  { name: "Evolución", question: "¿Puede un agente mejorar un flujo de trabajo sin introducir regresiones?" },
-  { name: "Simulación", question: "¿Qué modelos anticipan mejor los resultados operativos?" },
-  { name: "Coordinación", question: "¿Cuándo aporta valor un equipo de agentes frente a uno solo?" },
-  { name: "Gobernanza", question: "¿Qué controles reducen las acciones indebidas?" },
-  { name: "Inteligencia física", question: "¿Cómo se adapta un controlador a condiciones cambiantes? Lo probamos en Harvestt." },
+export const labsMethod: string[] = [
+  "Hipótesis y métricas definidas de antemano",
+  "Comparación con alternativas simples",
+  "Incertidumbre y resultados negativos reportados",
+  "Datos de clientes solo con autorización contractual",
+];
+
+export const researchLines: { name: string; question: string; experiment: string }[] = [
+  { name: "Memoria", question: "¿Qué representación del conocimiento mejora las decisiones repetidas?", experiment: "RAG frente a memoria estructurada y grafo." },
+  { name: "Autonomía", question: "¿Cuánto trabajo puede completarse bien sin intervención?", experiment: "Tareas durables con fallos inducidos." },
+  { name: "Evolución", question: "¿Puede un agente mejorar un flujo de trabajo sin introducir regresiones?", experiment: "Candidatos evaluados en un entorno aislado." },
+  { name: "Simulación", question: "¿Qué modelos anticipan mejor los resultados operativos?", experiment: "Contraste de escenarios de inventario con datos históricos." },
+  { name: "Coordinación", question: "¿Cuándo aporta valor un equipo de agentes frente a uno solo?", experiment: "Agente único frente a equipo de agentes." },
+  { name: "Gobernanza", question: "¿Qué controles reducen las acciones indebidas?", experiment: "Pruebas adversariales de permisos." },
+  { name: "Inteligencia física", question: "¿Cómo se adapta un controlador a condiciones cambiantes?", experiment: "Experimentos controlados en Harvestt." },
 ];
 
 export const closing = {

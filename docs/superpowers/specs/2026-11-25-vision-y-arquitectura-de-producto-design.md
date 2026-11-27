@@ -51,3 +51,17 @@ Project Genesis, SOMM, OCGR y la métrica VAO hasta que se validen. Las referenc
 
 - Actualizar el skill `atlas-tech-brand` (sección 11): Atlas Core = núcleo de Atlas ONE, Atlas Solutions, Harvestt y el lema. El skill se sincroniza desde claude.ai; se edita allá.
 - Confirmar teléfono y correo públicos (el skill dice 722 142 5755 y ecamposg@; el sitio usa 722 149 5215 por WhatsApp y hola@).
+
+## Afinación con el brochure institucional 2026 (26.11.2026)
+
+El brochure "The Road to Synthetic Organizations" (12 páginas) se hizo para terminar de afinar el sitio. Se integró lo que el sitio no tenía, traducido al español:
+
+- **`/vision`:** las siete capas del software ("Primero digitalizamos registros. Ahora el software actúa."), la sección de gobernanza con los cuatro niveles de acción (N1–N4) y los controles base, el método de Atlas Labs y el primer experimento de cada línea.
+- **`/cortex`:** alcance del MVP con su criterio de salida por capacidad, y lo que queda fuera del MVP.
+- **`/atlas-one`:** cifras anuales ($350M MXN procesados en 2026 y 13 sucursales activas).
+- **Atlas Solutions:** bloque compacto en Home y completo en `/portafolio#solutions` (cifras, metodología en cinco pasos, casos frecuentes y modelos de trabajo).
+- **Estado:** "Sistemas agénticos" pasa de MVP a Validado (el brochure lo marca "Oferta actual").
+
+Las cifras $350M, 13 sucursales, 7 clientes, 25 integraciones, 100+ usuarios y MVP en 2 semanas estaban "pendientes del dueño" en el spec del 17.11.2026. Se publican ahora porque la skill de marca las lista como autorizadas y el brochure les da producto, fuente y periodo. **Falta la fecha de corte exacta** de cada una.
+
+No se tomó del brochure: los mensajes en inglés (decisión de idioma), "Project Genesis" en la hoja de ruta, "Somos pioneros" (se mantiene "Investigamos"), los tags "Oferta actual", "Piloto · I+D" y "En formación" (no existen en la skill; se usan Validado e Investigación), y la lista de seis áreas de módulos de Atlas ONE (People/RH no está confirmado en los repos).

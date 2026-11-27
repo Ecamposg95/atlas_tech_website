@@ -68,6 +68,22 @@ export const capabilities: Capability[] = [
   { group: "vision", status: "Investigación", name: "GraphRAG", text: "Respuestas que combinan el grafo de conocimiento con los documentos." },
 ];
 
+// Alcance del MVP y su criterio de salida (brochure 2026, p. 07).
+export const mvpScope: { name: string; exit: string }[] = [
+  { name: "Ingesta", exit: "Documentos indexados con fuente, versión y permisos." },
+  { name: "Recuperación", exit: "Respuestas evaluadas y citas verificables." },
+  { name: "Herramientas", exit: "Acciones registradas, validadas y limitadas por rol." },
+  { name: "Memoria", exit: "Contexto persistente útil, sin fuga entre organizaciones." },
+  { name: "Flujos", exit: "Reanudación tras fallos y escalamiento de excepciones." },
+  { name: "Gobernanza", exit: "Revocación, auditoría y aprobación de acciones sensibles." },
+  { name: "Evaluación", exit: "Línea base y conjunto de regresión antes de liberar cambios." },
+];
+
+export const mvpSuccess =
+  "Que una organización encuentre conocimiento confiable y ejecute procesos delimitados mejor que con su flujo anterior.";
+export const mvpLater =
+  "Aprendizaje de pesos, simulación integral de empresas y generación autónoma de módulos son investigación posterior: no forman parte del MVP.";
+
 export const agentsTitle = "El equipo de agentes que estamos construyendo";
 export const agentsNote =
   "Hoy Cortex opera con un agente dentro de la plataforma. Este es el equipo por función que estamos diseñando sobre él.";

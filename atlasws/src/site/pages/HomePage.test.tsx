@@ -25,7 +25,7 @@ test("hero con el mensaje y el CTA a contacto", () => {
   );
 });
 
-test("la portada y las ocho secciones en orden", () => {
+test("la portada y las nueve secciones en orden", () => {
   renderHome();
   expect(screen.getAllByTestId(/^sec-/).map((e) => e.getAttribute("data-testid"))).toEqual([
     "sec-portada",
@@ -34,6 +34,7 @@ test("la portada y las ocho secciones en orden", () => {
     "sec-moonshot",
     "sec-construimos",
     "sec-atlas-one",
+    "sec-solutions",
     "sec-clientes",
     "sec-portafolio",
     "sec-cierre",

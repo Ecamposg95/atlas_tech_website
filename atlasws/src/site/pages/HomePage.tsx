@@ -8,6 +8,8 @@ import Atmosphere from "../components/Atmosphere";
 import StepsStrip from "../components/StepsStrip";
 import ClientLogos from "../components/ClientLogos";
 import ProjectRows from "../components/ProjectRows";
+import SolutionsBlock from "../components/SolutionsBlock";
+import { head as solutionsHead } from "../content/solutions";
 import { hero, heroStats, moonshot, buildTitle, pillars, closing } from "../content/home";
 import { steps } from "../content/cortex";
 import * as one from "../content/atlasOne";
@@ -136,6 +138,10 @@ const HomePage: React.FC = () => {
             ))}
           </ul>
         </div>
+      </Section>
+
+      <Section testId="sec-solutions" label={solutionsHead.label}>
+        <SolutionsBlock />
       </Section>
 
       <Section testId="sec-clientes" label="Empresas e instituciones con las que hemos trabajado">

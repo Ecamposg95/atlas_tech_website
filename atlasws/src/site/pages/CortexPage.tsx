@@ -77,6 +77,24 @@ const CortexPage: React.FC = () => (
       </div>
     </Section>
 
+    <Section label="Alcance del MVP" testId="cortex-mvp">
+      <div className="split">
+        <div>
+          <h2>Cada capacidad del MVP tiene un criterio de salida.</h2>
+          <p className="lead agents__note">{c.mvpSuccess}</p>
+          <p className="mvp__later">{c.mvpLater}</p>
+        </div>
+        <dl className="rows rows--plain">
+          {c.mvpScope.map((m) => (
+            <div className="rows__item" key={m.name}>
+              <dt className="rows__name">{m.name}</dt>
+              <dd className="rows__text">{m.exit}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </Section>
+
     <Section testId="cortex-agents" label="Agentes">
       <div className="split">
         <div>

@@ -32,7 +32,7 @@ export const pillars: { title: string; text: string; status: Status }[] = [
   {
     title: "Sistemas agénticos",
     text: "Agentes conectados a tus datos, herramientas y procesos reales. Proponen, ejecutan acciones autorizadas y dejan evidencia.",
-    status: "MVP",
+    status: "Validado",
   },
   {
     title: "Software autónomo",

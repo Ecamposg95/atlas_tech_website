@@ -63,3 +63,6 @@
 .noir .lines__item { padding: 18px 0; border-bottom: 1px solid var(--rule); }
 .noir .lines dt { font-weight: 400; color: var(--ink); }
 .noir .lines dd { margin: 6px 0 0; color: var(--muted); }
+.noir .lines .lines__exp { color: var(--dim); font-size: 0.9rem; }
+.noir .labs__method { margin-top: clamp(24px, 3vw, 40px); border-top: 1px solid var(--rule); }
+.noir .levels__n { display: block; color: var(--dim); font-size: 0.8rem; margin-bottom: 14px; }

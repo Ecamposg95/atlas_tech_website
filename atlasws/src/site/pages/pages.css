@@ -119,3 +119,47 @@
 .noir .closing { padding: clamp(96px, 14vw, 190px) 0; position: relative; overflow: hidden; }
 .noir .closing > .wrap { position: relative; z-index: 1; }
 .noir .closing h2 { max-width: 16ch; margin-bottom: 22px; }
+
+/* ---------- Filas con regla: número · nombre · texto (· marca) ---------- */
+.noir .rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.noir .rows__item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 0.5fr) minmax(0, 1fr);
+  gap: 6px clamp(16px, 3vw, 40px);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.noir .rows--plain .rows__item { grid-template-columns: minmax(0, 0.4fr) minmax(0, 1fr); }
+.noir .rows--tag .rows__item { grid-template-columns: 56px minmax(0, 0.5fr) minmax(0, 1fr) 110px; }
+.noir .rows__n { color: var(--dim); font-size: 0.8rem; }
+.noir .rows__name { color: var(--ink); font-size: 1.15rem; letter-spacing: -0.02em; }
+.noir .rows__text { color: var(--muted); }
+.noir .rows__tag { color: var(--dim); font-size: 0.8rem; text-align: right; }
+.noir .rows__item.is-current .rows__n,
+.noir .rows__item.is-current .rows__name,
+.noir .rows__item.is-current .rows__tag { color: var(--accent); }
+.noir .rows__item.is-current .rows__text { color: var(--ink); }
+@media (max-width: 720px) {
+  .noir .rows__item,
+  .noir .rows--tag .rows__item { grid-template-columns: 40px minmax(0, 1fr) auto; }
+  .noir .rows--plain .rows__item { grid-template-columns: 1fr; }
+  .noir .rows__item .rows__text { grid-column: 2 / -1; }
+  .noir .rows--plain .rows__text { grid-column: 1; }
+  .noir .rows--tag .rows__tag { grid-column: 3; grid-row: 1; }
+}
+
+/* Dos listas lado a lado con su etiqueta. */
+.noir .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); margin-top: clamp(40px, 6vw, 80px); }
+.noir .duo h3 { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dim); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+.noir .plain-list { margin: 0; padding: 0; list-style: none; }
+.noir .plain-list li { padding: 13px 0; border-bottom: 1px solid var(--rule); color: var(--muted); }
+@media (max-width: 720px) { .noir .duo { grid-template-columns: 1fr; } }
+
+/* Cifras en fila de cuatro. */
+.noir .figures--four { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 3vw, 48px); }
+.noir .figures--four dt { font-size: clamp(2rem, 4.2vw, 3.8rem); }
+.noir .figures--two { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 56px); margin-top: clamp(36px, 5vw, 64px); }
+@media (max-width: 860px) { .noir .figures--four { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
+@media (max-width: 720px) { .noir .figures--two { grid-template-columns: 1fr; row-gap: 28px; } }
+.noir .section__block { margin-top: clamp(40px, 6vw, 80px); }

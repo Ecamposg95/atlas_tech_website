@@ -30,3 +30,9 @@ test("visión: una sola composición de luz", () => {
   renderVision();
   expect(screen.getAllByTestId("atmosphere")).toHaveLength(1);
 });
+
+test("visión: siete capas del software y cuatro niveles de acción", () => {
+  renderVision();
+  expect(within(screen.getByTestId("vision-layers")).getAllByRole("listitem")).toHaveLength(7);
+  expect(within(screen.getByTestId("vision-governance")).getByText("Prohibida para agentes")).toBeInTheDocument();
+});

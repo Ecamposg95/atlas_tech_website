@@ -44,6 +44,15 @@ const AtlasOnePage: React.FC = () => (
         ))}
       </dl>
       <FigureNote source={one.figures[0].source} period={one.figures[0].period} cutoff={one.figures[0].cutoff} />
+      <dl className="figures figures--two" data-testid="one-year">
+        {one.yearFigures.map((f) => (
+          <div className="figures__item" key={f.value}>
+            <dt>{f.value}</dt>
+            <dd>{f.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="figure-note">{one.yearFiguresNote}</p>
     </Section>
 
     <Section label="Demo interactivo" id="demo" className="anchor">

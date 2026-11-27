@@ -27,6 +27,14 @@ export const figures: Figure[] = [
   { value: "$593.93", label: "ticket promedio", ...SOURCE },
 ];
 
+// Cifras anuales (brochure 2026, p. 06; autorizadas en la skill de marca).
+// Llevan fuente y periodo; falta la fecha de corte exacta (pendiente de los founders).
+export const yearFigures: { value: string; label: string }[] = [
+  { value: "$350M MXN", label: "procesados en la plataforma durante 2026" },
+  { value: "13", label: "sucursales activas operando sobre Atlas ONE" },
+];
+export const yearFiguresNote = "Fuente: datos de operación de Atlas ONE. Periodo: 2026.";
+
 export const modules: { name: string; text: string; status: Status }[] = [
   { name: "Punto de venta y caja", text: "Cobro rápido, apertura y cierre, arqueo y cortes por turno.", status: "Validado" },
   { name: "Inventario y catálogo", text: "Existencias, kardex, variantes, etiquetas y lectura por cámara.", status: "Validado" },

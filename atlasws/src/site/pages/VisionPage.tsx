@@ -22,6 +22,25 @@ const VisionPage: React.FC = () => (
       </div>
     </section>
 
+    <Section label={v.era.label} testId="vision-layers">
+      <div className="split">
+        <h2>
+          {v.era.title} <em className="accent">{v.era.accent}</em>
+        </h2>
+        <p className="lead">{v.era.text}</p>
+      </div>
+      <ol className="rows rows--tag section__block">
+        {v.layers.map((l) => (
+          <li className={"rows__item" + (l.current ? " is-current" : "")} key={l.n}>
+            <span className="rows__n data">{l.n}</span>
+            <span className="rows__name">{l.name}</span>
+            <span className="rows__text">{l.text}</span>
+            <span className="rows__tag mono">{l.atlas}</span>
+          </li>
+        ))}
+      </ol>
+    </Section>
+
     <Section label="Hacia dónde vamos" testId="vision-stages">
       <ol className="stages">
         {v.stages.map((s) => (
@@ -68,6 +87,42 @@ const VisionPage: React.FC = () => (
       </ul>
     </Section>
 
+    <Section label={v.governance.label} testId="vision-governance">
+      <div className="split">
+        <h2>
+          {v.governance.title} <em className="accent">{v.governance.accent}</em>
+        </h2>
+        <p className="lead">{v.governance.text}</p>
+      </div>
+      <dl className="principles">
+        {v.actionLevels.map((a) => (
+          <div className="principles__item" key={a.n}>
+            <span className="data levels__n">{a.n}</span>
+            <dt>{a.name}</dt>
+            <dd>{a.text}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="duo">
+        <div>
+          <h3>Controles base</h3>
+          <ul className="plain-list">
+            {v.controls.slice(0, 3).map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 aria-hidden="true">&nbsp;</h3>
+          <ul className="plain-list">
+            {v.controls.slice(3).map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+
     <Section label="Cómo lo financiamos">
       <h2 className="sec-title">El negocio de hoy financia la investigación de mañana.</h2>
       <div className="cols3">
@@ -102,12 +157,18 @@ const VisionPage: React.FC = () => (
           <StatusTag status={v.labs.status} />
           <h2 className="split__title">{v.labs.title}</h2>
           <p className="lead">{v.labs.text}</p>
+          <ul className="plain-list labs__method">
+            {v.labsMethod.map((m) => (
+              <li key={m}>{m}</li>
+            ))}
+          </ul>
         </div>
         <dl className="lines">
           {v.researchLines.map((l) => (
             <div className="lines__item" key={l.name}>
               <dt>{l.name}</dt>
               <dd>{l.question}</dd>
+              <dd className="lines__exp">Primer experimento: {l.experiment}</dd>
             </div>
           ))}
         </dl>
