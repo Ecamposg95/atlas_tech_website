@@ -1,6 +1,6 @@
 ---
 title: "Atlas Tech — Sitio Web · Informe de Estado"
-date: 2026-11-26
+date: 2026-11-27
 type: informe
 status: listo-para-deploy
 domain: atlastech.mx
@@ -26,7 +26,14 @@ tags:
 > **Actualización del 26.11.2026 (v4.1).** Se integraron el documento fundacional y el brochure
 > institucional "The Road to Synthetic Organizations": página `/vision`, Atlas Core, Atlas Solutions,
 > cuatro familias de producto con estado, alcance del MVP de Cortex, gobernanza y cifras anuales.
-> El hero del Home sigue comercial; la tesis de largo plazo vive en `/vision`, en español.
+> La tesis de largo plazo vive en `/vision`, en español.
+>
+> **Actualización del 27.11.2026 (v4.2).** El sitio ahora se mueve y se deja usar. Portada nueva en
+> código (un amanecer visto desde órbita) con el titular **"Lleva tu empresa a la frontera de lo
+> posible."**, sección "Atlas en números" con todas las cifras publicadas y una línea de tiempo
+> 2016–2026, ilustraciones animadas de Cortex tomadas de su repositorio, un **demo jugable** de
+> punto de venta en Atlas ONE, portada Moonshot y esquemas en Visión, y Contacto ampliado.
+> Todo el movimiento se apaga con "reducir movimiento".
 >
 > Diseño de la visión: `docs/superpowers/specs/2026-11-25-vision-y-arquitectura-de-producto-design.md`
 > Diseño de la reestructura: `docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md`
@@ -54,16 +61,29 @@ graph TD
 
 | # | Sección | Contenido |
 |---|---|---|
-| 0 | Portada | Imagen de marca a pantalla completa ("Atlas Tech. Tecnología de frontera, aplicada.") |
-| 1 | Hero | "Consultoría que no entrega un PDF. Entrega ejecución." + botón *Agenda una llamada* |
+| 1 | Portada | Amanecer orbital a pantalla completa, en CSS y SVG. Encima, el titular "Lleva tu empresa a la frontera de lo posible.", los botones y un carril con Cortex, ONE y Solutions y su estado |
+| — | Franja | Lo que construimos, en movimiento continuo |
 | 2 | Cómo funciona | Diagnóstico → Plan → Ejecución → Evidencia |
-| 3 | Moonshot y cifras | "De agentes a organizaciones sintéticas", con enlace a `/vision`; cuatro cifras con fuente |
-| 4 | Qué construimos | Cuatro familias con estado: sistemas agénticos (card ember), software autónomo, software autoevolutivo y sistemas operativos cognitivos |
-| 5 | Atlas ONE | Base operativa en producción; prueba de 1 mes gratis |
-| 6 | Atlas Solutions | Ingeniería a la medida: cuatro cifras con fuente y enlace a la metodología |
-| 7 | Clientes | Nueve logos ya publicados |
-| 8 | Portafolio | Harvestt, SIGMA, Open Cashback |
-| 9 | Cierre | *Agenda una llamada* sobre el horizonte de luz |
+| 3 | Moonshot | "De agentes a organizaciones sintéticas", con enlace a `/vision` |
+| 4 | Atlas en números | Todas las cifras publicadas en cuatro grupos, cada uno con su fuente, y línea de tiempo 2016–2026 |
+| 5 | Qué construimos | Cuatro familias con estado y, debajo, el grafo de conocimiento de Cortex |
+| 6 | Atlas ONE | Base operativa en producción, prueba de 1 mes gratis y demostración de la pantalla Cobrar |
+| 7 | Atlas Solutions | Ingeniería a la medida: cuatro cifras con fuente y enlace a la metodología |
+| 8 | Clientes | Nueve logos ya publicados |
+| 9 | Portafolio | Harvestt, SIGMA, Open Cashback |
+| 10 | Cierre | *Agenda una llamada* sobre el horizonte de luz |
+
+### Páginas ampliadas en v4.2
+
+| Página | Qué cambió |
+|---|---|
+| `/` | Portada orbital, titular nuevo, franja en movimiento, "Atlas en números", grafo de Cortex y demostración de Cobrar |
+| `/cortex` | Grafo de conocimiento en el encabezado, sección "El agente en la consola" (pasos del agente, vista previa, Confirmar / Rechazar) y el equipo de agentes alrededor del orquestador |
+| `/atlas-one` | Demostraciones de Cobrar y "¿Cómo voy?", y un **demo jugable**: se elige giro, se arma el carrito, se cobra con cambio, sale el ticket y se actualiza el tablero de la sesión. La galería anterior queda como "Pantallas por giro" |
+| `/vision` | Portada Moonshot (horizonte, luna y trayectoria), capas apiladas, esquema de la organización sintética, niveles de acción en bucle y hoja de ruta con "Estamos aquí" |
+| `/contacto` | Vista previa en vivo del mensaje de WhatsApp, hora de Ciudad de México, "Qué pasa después", "Por dónde empezar", preguntas frecuentes y cierre con el horizonte |
+| `/portafolio` | Harvestt con el render del domo geodésico y el panel del invernadero virtual, marcado como "Simulado" |
+| `/nosotros` | Línea de tiempo 2016–2026 |
 
 ### Páginas añadidas o ampliadas en v4.1
 
@@ -95,18 +115,42 @@ Redirecciones 301 (router + `.htaccess`): `/home`→`/`, `/about`→`/nosotros`,
 | Señal | `#9FE0C0`, solo para la etiqueta `Validado` |
 | Tipografía | Inter 300 en titulares y cifras; 400–500 en botones. Nunca 700. JetBrains Mono solo en folios y etiquetas |
 | Formas | Botones y navbar en píldora, cards de vidrio (radio 22px), una card ember destacada, grano de película |
-| Motivo | **Horizonte**: arco de luz con el logo sobre la línea (hero del Home). Haz en cifras y cierres; resplandor en páginas de contenido |
+| Motivo | **Horizonte**: abre el Home como un amanecer visto desde órbita y lo cierra como arco. Haz en el statement y los cierres; resplandor en páginas de contenido; variante **Moonshot** (horizonte, luna y trayectoria) en Visión |
 | Lockup | `Atlas Tech`; el producto protagonista en ember (`Atlas Cortex`) |
 
-El Home abre con una **portada**: la imagen "Atlas Tech on the Ember Horizon" a pantalla completa
-(`public/images/hero/`, WebP), antes del titular de Cortex. El horizonte en CSS pasó al cierre del Home.
-El resto de la luz es CSS (`src/site/components/Atmosphere.tsx`), sin WebGL. Lo nuevo vive en
-`atlasws/src/site/` bajo la clase `.noir` (nombre histórico). Las páginas de detalle del portafolio
-conservan su estética y solo comparten header y footer. `src/site/brand.test.ts` hace cumplir la paleta
-y los pesos tipográficos.
+Desde la v4.2 la **portada** del Home está hecha en código (`components/HeroHorizon.tsx`): no depende
+de una fotografía, así que no se recorta mal en ningún tamaño, y el titular es texto real. La imagen
+anterior ("Atlas Tech on the Ember Horizon", en `public/images/hero/`) ya no se usa, pero sigue en el
+repositorio. Toda la luz es CSS y SVG (`Atmosphere.tsx`, `HeroHorizon.tsx`, `VisionVisuals.tsx`), sin WebGL.
+Lo nuevo vive en `atlasws/src/site/` bajo la clase `.noir` (nombre histórico). Las páginas de detalle del
+portafolio conservan su estética y solo comparten header y footer. `src/site/brand.test.ts` hace cumplir
+la paleta y los pesos tipográficos.
 
-Las cifras de Atlas ONE aparecen también en el Home, bajo el moonshot, cada una con la leyenda
+Las cifras de Atlas ONE aparecen en el Home dentro de "Atlas en números", cada una con la leyenda
 "en Atlas ONE" y su pie de fuente, para que no se lean como tracción de Cortex.
+
+---
+
+## Movimiento y demostraciones (v4.2)
+
+El movimiento explica; no decora. Cada pieza tiene un estado de reposo completo y todo se apaga si la
+persona pidió reducir el movimiento. La base está en `src/site/lib/motion.tsx`.
+
+| Pieza | Dónde | Qué hace |
+|---|---|---|
+| Portada orbital | Home | El sol asoma sobre el borde del planeta; las estrellas titilan |
+| Cifras | Home, Atlas ONE, Portafolio, Nosotros | Cuentan hasta su valor al entrar en pantalla |
+| Grafo de conocimiento | Home, Cortex | Nodos en cascada y pulsos por las relaciones |
+| Consola del agente | Cortex | La persona escribe, el agente muestra sus pasos, propone y espera la confirmación |
+| Equipo de agentes | Cortex | El orquestador resalta un agente a la vez |
+| Cobrar y "¿Cómo voy?" | Home, Atlas ONE | Demostraciones en bucle, sin cifras de operación |
+| Demo jugable | Atlas ONE | Punto de venta funcional con productos y precios de ejemplo; todo ocurre en el navegador |
+| Capas, niveles de acción, hoja de ruta | Visión | Esquemas en bucle |
+| Vista previa del mensaje | Contacto | Refleja en vivo lo que se abrirá en WhatsApp |
+| Aparición al hacer scroll | Todo el sitio | Secciones y cards entran en cascada |
+
+Las ilustraciones de Cortex, Atlas ONE y Harvestt usan los nombres reales de cada interfaz, tomados de
+sus repositorios el 27.11.2026.
 
 ---
 
@@ -125,6 +169,15 @@ Las cifras de Atlas ONE aparecen también en el Home, bajo el moonshot, cada una
 - Cifras añadidas en v4.1, autorizadas por la guía de marca y publicadas en el brochure, con fuente y
   periodo 2026: $350M MXN procesados y 13 sucursales activas (Atlas ONE); 7 clientes enterprise,
   25 integraciones activas, 100+ usuarios directos y MVP en 2 semanas (Atlas Solutions).
+- Desde la v4.2 el Home reúne todas las cifras en "Atlas en números". **Faltan los acumulados
+  históricos de Atlas ONE**: solo se tienen las cifras de 90 días y de 2026, y no se inventó ninguna.
+- Una ilustración no es una captura: las interfaces dibujadas en código lo dicen en su pie. Las
+  demostraciones en bucle no muestran importes; el demo jugable usa productos y precios de ejemplo y lo
+  aclara; el panel de Harvestt va marcado como "Simulado".
+- El titular del Home ya no dice que los agentes "diagnostican": el módulo de diagnósticos se retiró del
+  código de Cortex el 22.10.2026 y hoy esa parte la entrega el equipo.
+- Las acciones de ejemplo del esquema de niveles de acción (Visión) son ilustrativas, no vienen de un
+  documento de los fundadores.
 - Pruebas automáticas (`src/site/content/content.test.ts`) fallan si aparece una cifra sin fuente,
   un cliente no autorizado, un término prohibido o un mensaje en inglés.
 
@@ -155,17 +208,23 @@ prellenado; el formulario arma el mensaje y abre WhatsApp, con `mailto:` como al
 
 React 19 + TypeScript (CRA), React Router 7, Lenis, Bootstrap (solo para las páginas de detalle).
 Se retiraron 17 dependencias sin uso (three, gsap, MUI, swiper, slick, wowjs, entre otras) y
-305 archivos de la plantilla. 111 pruebas automáticas. Imagen de vista previa (`/images/og-atlas.png`)
+305 archivos de la plantilla. 119 pruebas automáticas. La animación es CSS y SVG con ganchos propios,
+sin librerías añadidas. Imagen de vista previa (`/images/og-atlas.png`)
 y favicon propios de la identidad Atlas Horizon.
 
 ---
 
 ## Verificación
 
-- **Pruebas:** 111 automáticas en verde (`CI=true npx react-scripts test --watchAll=false`).
+- **Pruebas:** 119 automáticas en verde (`CI=true npx react-scripts test --watchAll=false`).
 - **Compilación:** `CI=false npm run build` sin errores; genera HTML por ruta, `sitemap.xml` (9 URLs) y `robots.txt`.
 - **Visual:** capturas en 360, 768 y 1440 px de las seis páginas, un detalle de portafolio y la página
-  de error, sin desbordes ni errores de consola. La portada se revisó en 360 y 1440 px.
+  de error, sin desbordes ni errores de consola.
+- **v4.2:** todas las páginas revisadas en 1440, 820, 390 y 360 px, sin desbordes ni errores de consola.
+  El demo jugable se probó con clics reales (carrito, cobro en efectivo con cambio, ticket y tablero) y
+  tiene una prueba automática del flujo completo.
+- **Compilación v4.2:** `CI=false npm run build` volvió a correrse el 27.11.2026 sin errores; el paso de SEO
+  inyectó metadatos en 11 rutas y generó `sitemap.xml` (10 URLs) y `robots.txt`.
 - **Revisión independiente** del código antes del cambio de marca: sin hallazgos críticos; los
   importantes se corrigieron y los menores están listados abajo.
 - **Sin verificar:** las redirecciones 301 contra el Apache real de Hostinger.
@@ -180,6 +239,12 @@ y favicon propios de la identidad Atlas Horizon.
 > y rotar esas credenciales.
 
 > [!todo] Contenido
+> - [ ] **Acumulados históricos de Atlas ONE** con su fecha de corte, para "Atlas en números"
+>       (se agregan en `atlasws/src/site/content/figures.ts`).
+> - [ ] Confirmar el titular nuevo del Home, "Lleva tu empresa a la frontera de lo posible."; es una
+>       propuesta. Alternativas: "El futuro de tu empresa, en operación hoy." y "Construimos empresas
+>       que operan con inteligencia."
+> - [ ] Decidir si se borra la imagen anterior de la portada (`public/images/hero/`), que ya no se usa.
 > - [ ] Fecha de corte exacta de las cifras anuales y de Atlas Solutions (hoy llevan fuente y periodo 2026).
 > - [ ] Confirmar los estados de Financials, Booking y Print Agent (tomados de los repos).
 > - [ ] Actualizar la guía de marca (sección 11): Atlas Core como núcleo de Atlas ONE, Atlas Solutions,
@@ -190,11 +255,10 @@ y favicon propios de la identidad Atlas Horizon.
 > - [ ] Confirmar dos textos: "Nuestro primer cliente de Cortex somos nosotros mismos" (viene del documento de visión de Cortex) y "Desde 2016" (viene de la guía de marca).
 > - [ ] Calendario en línea (Cal.com / Calendly) si se quiere agenda directa.
 > - [x] Contacto: resuelto. La web conserva `hola@atlastech.mx` y WhatsApp `722 149 5215`.
-> - [ ] La guía pide todo en español salvo nombres de producto y propone "Agenda un diagnóstico" como
->       llamada a la acción; el sitio usa "Consulting as a Service" y "Agenda una llamada" (decisiones
->       del dueño). Confirmar que se mantienen.
-> - [ ] Portada: el nombre y el lema van dentro de la imagen (no son texto real). Si se quiere texto
->       seleccionable y que se adapte mejor al móvil, hace falta la misma imagen **sin texto**.
+> - [ ] La guía propone "Agenda un diagnóstico" como llamada a la acción; el sitio usa "Agenda una
+>       llamada" (decisión del dueño). Confirmar que se mantiene.
+> - [x] "Consulting as a Service" ya no aparece en la portada: el rótulo es "Tecnología de frontera, aplicada".
+> - [x] Portada con texto real y adaptable al móvil: resuelto en la v4.2 al hacerla en código.
 > - [ ] Las cinco imágenes originales en `contex/` (7 MB en PNG) no están en git; decidir si se suben.
 
 > [!note] Mejoras menores detectadas en la revisión final (no aplicadas)
@@ -243,3 +307,6 @@ y favicon propios de la identidad Atlas Horizon.
 | `03b1aef` | fix(brand): contraste de --dim y contraluz índigo de Atlas Horizon |
 | `6b9c9fb` | feat(vision): página /vision, Atlas Core y familias de producto con estado |
 | `9e34098` | feat(brochure): capas, gobernanza, alcance del MVP y Atlas Solutions |
+| `5a476f2` | docs: README, informe de estado y visor local de la documentación |
+| `d305216` | feat(sitio): portada épica, demos animadas y demo jugable de Atlas ONE |
+| `94d037e` | docs(readme): versión 4.2 con la experiencia animada y el demo jugable |
