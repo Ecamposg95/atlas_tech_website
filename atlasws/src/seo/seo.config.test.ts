@@ -47,3 +47,8 @@ test("resolveSeo entrega canónicos de las rutas nuevas", () => {
 test("tema oscuro", () => {
   expect(cfg.themeColor.toLowerCase()).toBe("#050505");
 });
+
+test("ningún título repite la marca que ya agrega la plantilla", () => {
+  // titleTemplate añade " | Atlas Tech" a todas las rutas salvo el Home.
+  routes.filter((r) => r.path !== "/").forEach((r) => expect(r.title).not.toMatch(/\|\s*Atlas Tech\s*$/));
+});

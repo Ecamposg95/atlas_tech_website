@@ -283,7 +283,7 @@ CI=false npm run build    # el postbuild inyecta SEO por ruta, sitemap y robots
 ```
 
 1. En hPanel, abrir el administrador de archivos en `public_html`.
-2. Subir **todo el contenido de `atlasws/build/`**, incluido el `.htaccess` oculto.
+2. Subir **todo el contenido de `atlasws/build/`**, incluido el `.htaccess` oculto. El build genera un archivo por ruta (`cortex.html`, `proyectos/harvestt.html`) que el `.htaccess` sirve sin extensión; lo que no existe responde 404.
 3. Confirmar que el SSL está activo para `atlastech.mx`.
 4. Verificar con `curl -I` las direcciones anteriores y las nuevas, y reenviar `sitemap.xml` a Google
    Search Console.

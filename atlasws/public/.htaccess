@@ -4,6 +4,9 @@
 # (Se copia automáticamente a build/.htaccess al hacer `npm run build`)
 # ============================================================
 
+# Sin listados de carpetas.
+Options -Indexes
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -26,14 +29,25 @@
   RewriteRule ^proyectos/?$ /portafolio [R=301,L]
   RewriteRule ^proyectos/atlas-one/?$ /atlas-one [R=301,L]
 
-  # --- SPA fallback ---
-  # Si el archivo o carpeta existe (incluye los index.html por ruta que
-  # genera el SEO), Apache lo sirve tal cual. Si no, carga la app.
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
+  # --- Páginas por ruta, sin salto extra ---
+  # El build genera un archivo por ruta (cortex.html, proyectos/harvestt.html…),
+  # no una carpeta: así Apache no redirige /cortex → /cortex/.
+  # La barra final se quita con un solo 301 hacia la dirección canónica.
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # /cortex sirve cortex.html (ya trae sus metadatos; React hidrata el cuerpo).
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^.]+)$ /$1.html [L]
+
+  # Los .html por ruta no son direcciones públicas: van a su forma canónica.
+  RewriteCond %{THE_REQUEST} \s/([^.\s?]+)\.html[\s?]
+  RewriteCond %1 !^(index|404)$
+  RewriteRule ^ /%1 [R=301,L]
+
+  # --- SPA fallback ---
+  # No hay comodín hacia index.html: toda ruta válida tiene su archivo.
+  # Lo que no existe responde 404 con la página de error de la app (ver abajo).
 </IfModule>
 
 # --- Compresión ---
@@ -74,4 +88,5 @@
 </IfModule>
 
 # --- Páginas de error ---
-ErrorDocument 404 /index.html
+# 404 real: se sirve la página de error de la app (noindex) con estado 404.
+ErrorDocument 404 /404.html
