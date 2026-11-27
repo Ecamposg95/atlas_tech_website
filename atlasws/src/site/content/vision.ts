@@ -63,6 +63,9 @@ export const definition = {
   note: "Usamos el término como hipótesis de ingeniería, no como categoría científica ni forma jurídica. Una empresa con muchos agentes no se vuelve por eso una organización sintética: hace falta coordinación, responsabilidad, memoria y aprendizaje colectivo verificable.",
 };
 
+// Las cuatro partes de la definición, para el esquema.
+export const orgParts: string[] = ["Personas", "Agentes inteligentes", "Sistemas computacionales", "Recursos físicos"];
+
 export const principles: { name: string; text: string }[] = [
   { name: "Percepción", text: "Captar eventos relevantes y distinguir evidencia de inferencia." },
   { name: "Memoria", text: "Conservar conocimiento con procedencia y vigencia." },

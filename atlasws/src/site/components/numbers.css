@@ -1,0 +1,116 @@
+/* Atlas en números, línea de tiempo y franja en movimiento (Atlas Horizon). */
+.noir .numbers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(36px, 5vw, 72px) clamp(28px, 5vw, 80px); }
+.noir .numbers__group[data-group="anual"], .noir .numbers__group[data-group="operacion"] { grid-column: 1 / -1; }
+.noir .numbers__group[data-group="solutions"] { grid-column: span 2; }
+.noir .numbers__group[data-group="anual"] .numbers__grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.noir .numbers__group[data-group="solutions"] .numbers__grid, .noir .numbers__group[data-group="trayectoria"] .numbers__grid { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); }
+.noir .numbers__group[data-group="solutions"] dt, .noir .numbers__group[data-group="trayectoria"] dt { font-size: clamp(1.9rem, 3.3vw, 2.9rem); }
+.noir .numbers__title {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 16px;
+  margin-bottom: clamp(20px, 2.6vw, 32px);
+  border-bottom: 1px solid var(--rule);
+}
+.noir .numbers__group[data-group="anual"] .numbers__title { border-bottom-color: var(--amber); color: var(--ink); }
+.noir .numbers__grid { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(24px, 3vw, 44px) clamp(16px, 3vw, 44px); }
+.noir .numbers__item { border-left: 1px solid var(--rule); padding-left: clamp(14px, 2vw, 26px); }
+.noir .numbers__item dt {
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.noir .numbers__group[data-group="anual"] .numbers__item dt { font-size: clamp(2.4rem, 5.6vw, 4.8rem); }
+.noir .numbers__group[data-group="anual"] .numbers__item:first-child dt { color: var(--accent); }
+.noir .numbers__group[data-group="solutions"] .numbers__item dt { color: var(--lavanda); }
+.noir .numbers__item dd { margin: clamp(12px, 1.6vw, 20px) 0 0; color: var(--muted); font-size: 0.92rem; line-height: 1.45; max-width: 26ch; }
+@media (max-width: 960px) {
+  .noir .numbers { grid-template-columns: 1fr; }
+  .noir .numbers__group[data-group] { grid-column: auto; }
+}
+
+/* Línea de tiempo: una regla con un punto por hito. */
+.noir .timeline {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0 clamp(14px, 2vw, 28px);
+  margin-top: clamp(48px, 7vw, 96px);
+  border-top: 1px solid var(--rule);
+}
+.noir .timeline__item { position: relative; padding-top: 26px; }
+.noir .timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--dim-line);
+}
+.noir .timeline__item:last-child::before { background: var(--accent); box-shadow: 0 0 18px rgba(255, 106, 31, 0.9); animation: tl-pulse 2.4s ease-in-out infinite alternate; }
+.noir .timeline__year { display: block; color: var(--dim); font-size: 0.8rem; margin-bottom: 12px; }
+.noir .timeline__item:last-child .timeline__year { color: var(--amber); }
+.noir .timeline__item h3 { font-size: 1.08rem; line-height: 1.2; }
+.noir .timeline__item p { margin-top: 8px; font-size: 0.86rem; line-height: 1.45; }
+@keyframes tl-pulse { from { box-shadow: 0 0 6px rgba(255, 106, 31, 0.5); } to { box-shadow: 0 0 22px rgba(255, 106, 31, 1); } }
+@media (max-width: 960px) {
+  .noir .timeline { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid var(--rule); }
+  .noir .timeline__item { padding: 0 0 28px 24px; }
+  .noir .timeline__item::before { left: -5px; top: 5px; }
+  .noir .timeline__item:last-child { padding-bottom: 0; }
+}
+
+/* Franja en movimiento. */
+.noir .marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.noir .marquee__track { display: flex; width: max-content; animation: mq-run 38s linear infinite; }
+.noir .marquee ul { display: flex; flex-shrink: 0; }
+.noir .marquee li { padding: 18px clamp(18px, 2.6vw, 36px); color: var(--muted); font-size: clamp(0.95rem, 1.5vw, 1.2rem); letter-spacing: -0.01em; white-space: nowrap; }
+.noir .marquee li::after { content: "·"; margin-left: clamp(36px, 5.2vw, 72px); color: var(--accent); }
+.noir .marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes mq-run { to { transform: translateX(-50%); } }
+
+/* Aparición al hacer scroll (solo si .reveal-on está puesto por JS). */
+.noir.reveal-on .section > .wrap,
+.noir.reveal-on .closing > .wrap,
+.noir.reveal-on [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.noir.reveal-on .section.is-in > .wrap,
+.noir.reveal-on .closing.is-in > .wrap,
+.noir.reveal-on [data-reveal].is-in { opacity: 1; transform: none; }
+/* Dentro de una sección visible, cards, pasos y filas entran en cascada. */
+.noir.reveal-on .section .card,
+.noir.reveal-on .section .steps__item,
+.noir.reveal-on .section .ladder__item,
+.noir.reveal-on .section .numbers__item,
+.noir.reveal-on .section .timeline__item { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.noir.reveal-on .section.is-in .card,
+.noir.reveal-on .section.is-in .steps__item,
+.noir.reveal-on .section.is-in .ladder__item,
+.noir.reveal-on .section.is-in .numbers__item,
+.noir.reveal-on .section.is-in .timeline__item { opacity: 1; transform: none; }
+.noir.reveal-on .section.is-in :is(.card, .steps__item, .ladder__item, .numbers__item, .timeline__item):nth-child(2) { transition-delay: 0.1s; }
+.noir.reveal-on .section.is-in :is(.card, .steps__item, .ladder__item, .numbers__item, .timeline__item):nth-child(3) { transition-delay: 0.2s; }
+.noir.reveal-on .section.is-in :is(.card, .steps__item, .ladder__item, .numbers__item, .timeline__item):nth-child(4) { transition-delay: 0.3s; }
+.noir.reveal-on .section.is-in :is(.card, .steps__item, .ladder__item, .numbers__item, .timeline__item):nth-child(5) { transition-delay: 0.4s; }
+.noir.reveal-on .section.is-in :is(.card, .steps__item, .ladder__item, .numbers__item, .timeline__item):nth-child(6) { transition-delay: 0.5s; }
+/* Las cards responden al cursor. */
+.noir .card { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.35s ease; }
+@media (hover: hover) { .noir .section.is-in .card:hover, .noir .card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.28); } }
+@media (max-width: 520px) {
+  /* Las cifras largas van una por renglón para que no se toquen. */
+  .noir .numbers__group[data-group="anual"] .numbers__grid,
+  .noir .numbers__group[data-group="operacion"] .numbers__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,134 @@
+/* Ilustraciones de Visión (Atlas Horizon). */
+
+/* ---------- Portada Moonshot ---------- */
+.noir .vision-head { min-height: clamp(520px, 78vh, 760px); display: flex; align-items: center; }
+.noir .vision-head > .wrap { width: 100%; }
+.noir .moon { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.noir .moon__arc {
+  position: absolute;
+  left: 50%;
+  bottom: -1%;
+  width: max(1700px, 150vw);
+  height: 600px;
+  transform: translate(-50%, 86%);
+  border-radius: 50%;
+  border-top: 2px solid #ffb27a;
+  box-shadow: 0 -5px 34px rgba(255, 140, 60, 0.8), 0 -26px 120px rgba(255, 106, 31, 0.4);
+  background: radial-gradient(50% 30% at 50% 0%, rgba(255, 140, 60, 0.45), rgba(122, 36, 10, 0.3) 45%, rgba(5, 5, 5, 0) 75%);
+}
+.noir .moon__sky { position: absolute; inset: 0; }
+.noir .moon__path { position: absolute; inset: 0; width: 100%; height: 100%; }
+.noir .moon__path path { fill: none; stroke: rgba(255, 192, 143, 0.55); stroke-width: 1.4; stroke-dasharray: 6 14; vector-effect: non-scaling-stroke; animation: moon-flow 2.4s linear infinite; }
+.noir .moon__probe { fill: var(--glow); filter: drop-shadow(0 0 8px rgba(255, 180, 120, 1)); }
+.noir .moon__moon {
+  position: absolute;
+  left: 86.8%;
+  top: 19.6%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 36%, #fff6e8, var(--glow) 45%, var(--amber) 100%);
+  box-shadow: 0 0 40px rgba(255, 190, 130, 0.75), 0 0 130px rgba(255, 106, 31, 0.45);
+  animation: moon-glow 5s ease-in-out infinite alternate;
+}
+@keyframes moon-flow { to { stroke-dashoffset: -20; } }
+@keyframes moon-glow { from { box-shadow: 0 0 26px rgba(255, 190, 130, 0.55), 0 0 90px rgba(255, 106, 31, 0.3); } }
+@media (max-width: 860px) {
+  /* En móvil la escena baja a su propia franja, debajo del texto. */
+  .noir .vision-head { align-items: flex-start; min-height: 0; padding-bottom: clamp(260px, 70vw, 360px); }
+  .noir .moon__sky { inset: auto 0 0 0; height: clamp(260px, 70vw, 360px); }
+  .noir .moon__moon { width: 38px; height: 38px; }
+  .noir .stack__row { margin: 0 calc(var(--i) * 1.4%); padding: 0 12px; grid-template-columns: 26px minmax(0, 1fr); }
+  .noir .stack__name { font-size: 0.82rem; }
+}
+@media (prefers-reduced-motion: reduce) { .noir .moon__probe { display: none; } }
+
+/* ---------- Capas apiladas ---------- */
+.noir .stack { display: flex; flex-direction: column-reverse; gap: 7px; width: 100%; max-width: 440px; justify-self: end; }
+.noir .stack__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  height: clamp(44px, 5.2vw, 54px);
+  padding: 0 18px;
+  /* Cada capa es un poco más angosta que la de abajo. */
+  margin: 0 calc(var(--i) * 3.2%);
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.noir .stack__plate {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px dashed var(--rule-strong);
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 0.45s ease, background-color 0.45s ease, box-shadow 0.45s ease;
+}
+.noir .stack__row.is-built .stack__plate { border-style: solid; background: var(--glass); }
+.noir .stack__row.is-now .stack__plate {
+  border-color: rgba(255, 190, 140, 0.45);
+  background: radial-gradient(120% 160% at 20% 120%, #ffb061 0%, #ff6a1f 30%, #8a2b0c 66%, #2a0e05 100%);
+}
+.noir .stack__row.is-lit { transform: translateY(-3px); }
+.noir .stack__row.is-lit .stack__plate { border-color: var(--amber); box-shadow: 0 0 34px rgba(255, 106, 31, 0.32); }
+.noir .stack__n, .noir .stack__name { position: relative; }
+.noir .stack__n { color: var(--dim); font-size: 0.72rem; }
+.noir .stack__name { color: var(--muted); font-size: clamp(0.86rem, 1.3vw, 1rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.noir .stack__row.is-built .stack__name { color: var(--ink); }
+.noir .stack__row.is-now .stack__name, .noir .stack__row.is-now .stack__n { color: #fff4ea; }
+@media (max-width: 860px) { .noir .stack { justify-self: start; } }
+
+/* ---------- Niveles de acción ---------- */
+.noir .gate { margin: clamp(32px, 4vw, 56px) 0 0; }
+.noir .gate__box { border: 1px solid var(--glass-line); border-radius: 22px; background: var(--glass); padding: clamp(18px, 2.4vw, 30px); }
+.noir .gate__levels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.noir .gate__levels li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  transition: border-color 0.4s ease, color 0.4s ease, background-color 0.4s ease;
+}
+.noir .gate__levels .data { font-size: 0.7rem; color: var(--dim); }
+.noir .gate__levels li.is-on { color: var(--ink); border-color: var(--amber); background: rgba(255, 106, 31, 0.08); }
+.noir .gate__levels li.is-on[data-tone="ok"] { border-color: var(--signal); background: rgba(159, 224, 192, 0.07); }
+.noir .gate__levels li.is-on[data-tone="stop"] { border-color: var(--rule-strong); background: rgba(255, 255, 255, 0.06); }
+.noir .gate__flow { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 18px; animation: gate-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.noir .gate__cell { display: flex; flex-direction: column; gap: 6px; min-height: 74px; justify-content: center; }
+.noir .gate__cap { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+.noir .gate__action { color: var(--ink); font-size: clamp(1rem, 1.7vw, 1.3rem); letter-spacing: -0.015em; line-height: 1.25; }
+.noir .gate__cell--out[data-tone="ok"] .gate__action { color: var(--signal); }
+.noir .gate__cell--out[data-tone="wait"] .gate__action { color: var(--amber); }
+.noir .gate__cell--out[data-tone="stop"] .gate__action { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--dim-line); }
+.noir .gate__arrow { height: 1px; background: linear-gradient(90deg, var(--rule), var(--amber)); position: relative; }
+.noir .gate__arrow::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid var(--amber); border-right: 1px solid var(--amber); transform: rotate(45deg); }
+@keyframes gate-in { from { opacity: 0; transform: translateY(8px); } }
+@media (max-width: 600px) {
+  .noir .gate__levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .noir .gate__flow { grid-template-columns: 1fr; }
+  .noir .gate__arrow { width: 1px; height: 26px; background: linear-gradient(180deg, var(--rule), var(--amber)); margin-left: 4px; }
+  .noir .gate__arrow::after { right: -3px; top: auto; bottom: 0; transform: rotate(135deg); }
+  .noir .gate__cell { min-height: 0; }
+}
+
+/* ---------- Hoja de ruta ---------- */
+.noir .track { position: relative; margin-bottom: clamp(36px, 5vw, 64px); padding-top: 4px; }
+.noir .track::before { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 1px; background: var(--rule); }
+.noir .track__light { position: absolute; top: 8px; left: 0; width: 22%; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); animation: track-run 7s ease-in-out infinite; }
+.noir .track ol { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.noir .track li { display: flex; flex-direction: column; gap: 6px; }
+.noir .track i { width: 9px; height: 9px; border-radius: 50%; background: var(--dim-line); margin-bottom: 12px; }
+.noir .track li.is-now i { background: var(--accent); animation: tl-pulse 2.4s ease-in-out infinite alternate; }
+.noir .track .data { color: var(--dim); font-size: 0.74rem; }
+.noir .track strong { font-weight: 400; color: var(--muted); font-size: 0.95rem; }
+.noir .track li.is-now strong { color: var(--ink); }
+.noir .track em { font-style: normal; color: var(--amber); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; }
+@keyframes track-run { from { left: -22%; } to { left: 100%; } }
+@media (max-width: 700px) { .noir .track { display: none; } }

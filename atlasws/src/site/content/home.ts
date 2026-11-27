@@ -2,11 +2,22 @@ import type { Status } from "./status";
 
 // Home — mensaje principal (valores del hero y moonshot fijados por el spec §3).
 export const hero = {
-  eyebrow: "Consulting as a Service · Atlas Cortex",
-  title: "Consultoría que no entrega un PDF.",
-  accent: "Entrega ejecución.",
-  sub: "Consultores y agentes de IA que diagnostican tu empresa, arman el plan y lo ejecutan sobre tus sistemas. De la intención empresarial a la ejecución verificable.",
+  eyebrow: "Tecnología de frontera, aplicada",
+  title: "Lleva tu empresa a",
+  accent: "la frontera de lo posible.",
+  sub: "Agentes de IA, software de operación y un equipo de ingeniería que entienden tu empresa y la llevan de la intención a la ejecución verificable.",
 };
+
+// Franja bajo la portada: lo que construimos, en movimiento.
+export const marquee: string[] = [
+  "Sistemas agénticos",
+  "Grafos de conocimiento",
+  "ERP y punto de venta",
+  "Integraciones a la medida",
+  "Inteligencia ciberfísica",
+  "Gobierno digital",
+  "Consultoría con ejecución",
+];
 
 // Fila de cifras del hero. Las de operación son de Atlas ONE y lo dicen en su etiqueta:
 // no deben leerse como tracción de Cortex. El pie de fuente va debajo de la fila.

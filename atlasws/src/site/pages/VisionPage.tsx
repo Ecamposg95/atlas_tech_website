@@ -4,15 +4,19 @@ import Section from "../components/Section";
 import CtaButton from "../components/CtaButton";
 import StatusTag from "../components/StatusTag";
 import Atmosphere from "../components/Atmosphere";
+import { MoonshotScene, LayerStack, ActionGate, RoadmapTrack } from "../components/VisionVisuals";
+import { AgentOrbit } from "../components/CortexVisuals";
 import * as v from "../content/vision";
 import "./pages.css";
 import "./OtherPages.css";
 import "./VisionPage.css";
 
-// Una sola composición de luz: el cierre. El resto de la página respira sobre negro.
+// Luz en dos momentos: la portada "Moonshot" de la marca (horizonte, luna y trayectoria)
+// y el cierre. Entre ambos la página respira sobre negro, con esquemas de línea.
 const VisionPage: React.FC = () => (
   <SiteLayout>
-    <section className="page-head" data-testid="vision-head">
+    <section className="page-head vision-head" data-testid="vision-head">
+      <MoonshotScene />
       <div className="wrap">
         <div className="section__label">{v.head.label}</div>
         <h1 className="vision__title">
@@ -23,11 +27,14 @@ const VisionPage: React.FC = () => (
     </section>
 
     <Section label={v.era.label} testId="vision-layers">
-      <div className="split">
-        <h2>
-          {v.era.title} <em className="accent">{v.era.accent}</em>
-        </h2>
-        <p className="lead">{v.era.text}</p>
+      <div className="split split--center">
+        <div>
+          <h2>
+            {v.era.title} <em className="accent">{v.era.accent}</em>
+          </h2>
+          <p className="lead era__text">{v.era.text}</p>
+        </div>
+        <LayerStack layers={v.layers} />
       </div>
       <ol className="rows rows--tag section__block">
         {v.layers.map((l) => (
@@ -62,8 +69,18 @@ const VisionPage: React.FC = () => (
     </Section>
 
     <Section label="Nuestro moonshot" testId="vision-definition">
-      <div className="split">
-        <h2>{v.definition.title}</h2>
+      <div className="split split--center">
+        <div>
+          <h2>{v.definition.title}</h2>
+          <div className="definition__orbit">
+            <AgentOrbit
+              testId="vision-org"
+              agents={v.orgParts}
+              core={{ name: "Propósito", role: "humano" }}
+              label={`Esquema de una organización sintética: ${v.orgParts.join(", ")}, coordinados alrededor de un propósito humano.`}
+            />
+          </div>
+        </div>
         <div>
           <p className="moonshot__text">{v.definition.text}</p>
           <p className="moonshot__note">{v.definition.note}</p>
@@ -103,6 +120,7 @@ const VisionPage: React.FC = () => (
           </div>
         ))}
       </dl>
+      <ActionGate levels={v.actionLevels} />
       <div className="duo">
         <div>
           <h3>Controles base</h3>
@@ -138,6 +156,7 @@ const VisionPage: React.FC = () => (
     </Section>
 
     <Section label="Hoja de ruta" testId="vision-roadmap">
+      <RoadmapTrack phases={v.roadmap} />
       <ol className="roadmap">
         {v.roadmap.map((r) => (
           <li className="roadmap__item" key={r.years}>

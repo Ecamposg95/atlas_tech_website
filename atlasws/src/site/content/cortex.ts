@@ -27,6 +27,12 @@ export const intro = {
   ],
 };
 
+// Texto de la sección que muestra la consola (lo que hoy hace el agente, verificado en el repo).
+export const consoleIntro = {
+  title: "El agente propone. Una persona confirma.",
+  text: "El agente busca en la memoria de la organización, muestra cada paso que dio y prepara la acción con su vista previa. Nada se escribe hasta que alguien la confirma, y cada acción queda en la auditoría.",
+};
+
 export interface Step {
   n: string;
   title: string;

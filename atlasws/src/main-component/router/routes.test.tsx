@@ -18,8 +18,8 @@ const at = (p: string) =>
   );
 
 test.each([
-  ["/", /entrega ejecución/i],
-  ["/home", /entrega ejecución/i],
+  ["/", /frontera de lo posible/i],
+  ["/home", /frontera de lo posible/i],
   ["/cortex", /atlas cortex/i],
   ["/atlas-one", /atlas one/i],
   ["/portafolio", /portafolio/i],

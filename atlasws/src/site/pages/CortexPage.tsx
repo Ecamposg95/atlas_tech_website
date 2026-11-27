@@ -6,6 +6,7 @@ import StatusTag from "../components/StatusTag";
 import Atmosphere from "../components/Atmosphere";
 import StepsStrip from "../components/StepsStrip";
 import { Lockup } from "../components/SiteHeader";
+import { KnowledgeGraph, AgentConsole, AgentOrbit } from "../components/CortexVisuals";
 import * as c from "../content/cortex";
 import "./pages.css";
 import "./CortexPage.css";
@@ -33,6 +34,7 @@ const CortexPage: React.FC = () => (
             </CtaButton>
           </div>
         </div>
+        <KnowledgeGraph />
       </div>
     </section>
 
@@ -46,6 +48,14 @@ const CortexPage: React.FC = () => (
           </article>
         ))}
       </div>
+    </Section>
+
+    <Section label="El agente en la consola" testId="cortex-ui">
+      <div className="ui-intro">
+        <h2>{c.consoleIntro.title}</h2>
+        <p className="lead">{c.consoleIntro.text}</p>
+      </div>
+      <AgentConsole />
     </Section>
 
     <Section label="Cómo funciona">
@@ -101,6 +111,9 @@ const CortexPage: React.FC = () => (
           <h2>{c.agentsTitle}</h2>
           <p className="lead agents__note">{c.agentsNote}</p>
           <p className="agents__line">{c.orchestratorLine}</p>
+          <div className="agents__orbit">
+            <AgentOrbit agents={c.agents.map((a) => a.name)} />
+          </div>
         </div>
         <ul className="agents">
           {c.agents.map((a) => (

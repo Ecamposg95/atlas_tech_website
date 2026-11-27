@@ -6,6 +6,9 @@ import StatusTag from "../components/StatusTag";
 import FigureNote from "../components/FigureNote";
 import { Lockup } from "../components/SiteHeader";
 import { AtlasOneDemosPlayer } from "../../components/AtlasOneDemos/AtlasOneDemos";
+import { PosMock, DashboardMock } from "../components/ProductVisuals";
+import { CountUp } from "../lib/motion";
+import PosPlayground from "../components/PosPlayground";
 import * as one from "../content/atlasOne";
 import { waLink, TRIAL_MESSAGE } from "../lib/whatsapp";
 import "./pages.css";
@@ -38,7 +41,9 @@ const AtlasOnePage: React.FC = () => (
       <dl className="figures figures--row">
         {one.figures.map((f) => (
           <div className="figures__item" key={f.value}>
-            <dt>{f.value}</dt>
+            <dt>
+              <CountUp value={f.value} />
+            </dt>
             <dd>{f.label}</dd>
           </div>
         ))}
@@ -47,7 +52,9 @@ const AtlasOnePage: React.FC = () => (
       <dl className="figures figures--two" data-testid="one-year">
         {one.yearFigures.map((f) => (
           <div className="figures__item" key={f.value}>
-            <dt>{f.value}</dt>
+            <dt>
+              <CountUp value={f.value} />
+            </dt>
             <dd>{f.label}</dd>
           </div>
         ))}
@@ -55,7 +62,20 @@ const AtlasOnePage: React.FC = () => (
       <p className="figure-note">{one.yearFiguresNote}</p>
     </Section>
 
-    <Section label="Demo interactivo" id="demo" className="anchor">
+    <Section label="Así se ve" testId="one-screens">
+      <h2 className="sec-title">Cobras en segundos. Sabes cómo vas en una pantalla.</h2>
+      <div className="one-screens">
+        <PosMock />
+        <DashboardMock />
+      </div>
+    </Section>
+
+    <Section label="Demo interactivo" id="demo" className="anchor" testId="one-play">
+      <h2 className="sec-title">Pruébalo aquí mismo: cobra una venta.</h2>
+      <PosPlayground />
+    </Section>
+
+    <Section label="Pantallas por giro" testId="one-gallery">
       <h2 className="sec-title">Un solo software, una experiencia por giro.</h2>
       <div className="one-demo">
         <AtlasOneDemosPlayer />

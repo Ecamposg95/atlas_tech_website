@@ -65,10 +65,10 @@ test("estados según el spec", () => {
 });
 
 test("mensaje del hero y moonshot fijados por el spec", () => {
-  expect(home.hero.eyebrow).toBe("Consulting as a Service · Atlas Cortex");
-  expect(home.hero.title).toBe("Consultoría que no entrega un PDF.");
-  expect(home.hero.accent).toBe("Entrega ejecución.");
-  expect(home.hero.sub.endsWith("De la intención empresarial a la ejecución verificable.")).toBe(true);
+  expect(home.hero.eyebrow).toBe("Tecnología de frontera, aplicada");
+  expect(home.hero.title).toBe("Lleva tu empresa a");
+  expect(home.hero.accent).toBe("la frontera de lo posible.");
+  expect(home.hero.sub.endsWith("de la intención a la ejecución verificable.")).toBe(true);
   expect(home.moonshot.accent).toBe("organizaciones sintéticas.");
   expect(home.moonshot.note).toMatch(/no una promesa de disponibilidad/);
   expect(home.pillars.map((p) => [p.title, p.status])).toEqual([

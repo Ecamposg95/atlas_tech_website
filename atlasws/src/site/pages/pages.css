@@ -163,3 +163,6 @@
 @media (max-width: 860px) { .noir .figures--four { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
 @media (max-width: 720px) { .noir .figures--two { grid-template-columns: 1fr; row-gap: 28px; } }
 .noir .section__block { margin-top: clamp(40px, 6vw, 80px); }
+.noir .closing--horizon { padding-bottom: 0; }
+.noir .closing__horizon { position: relative; height: clamp(220px, 34vh, 360px); margin-top: clamp(40px, 6vw, 72px); }
+.noir .closing__horizon .atmo--horizon { inset: 0; height: auto; }
