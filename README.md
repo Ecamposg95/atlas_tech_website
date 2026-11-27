@@ -1,200 +1,281 @@
-# Atlas Tech — Sitio web
+<div align="center">
 
-**Frontier technology consulting.** Sitio corporativo de Atlas Tech en [atlastech.mx](https://atlastech.mx).
+# Atlas Tech
 
-Atlas Tech es una startup que construye **sistemas agénticos**, **ontologías de conocimiento** e integra
-**tecnologías de frontera**. El sitio cuenta una sola historia y lleva a una sola acción: *Agenda una llamada*.
+**Ingeniería para el futuro de las organizaciones.**
+
+Sitio corporativo de Atlas Tech · [atlastech.mx](https://atlastech.mx)
+
+`v4.1` · React 19 + TypeScript · 111 pruebas · Identidad Atlas Horizon
+
+</div>
+
+---
+
+Atlas Tech construye **sistemas agénticos** que resuelven problemas reales hoy y, con eso, financia la
+investigación de cómo operarán las organizaciones de mañana. El sitio cuenta esa historia con una regla:
+**cada capacidad dice en qué etapa está** y cada cifra lleva su fuente. Toda la conversión lleva a una
+sola acción: *Agenda una llamada*.
+
+## Contenido
+
+1. [Productos](#1-productos)
+2. [Mapa del sitio](#2-mapa-del-sitio)
+3. [Reglas de contenido](#3-reglas-de-contenido)
+4. [Identidad: Atlas Horizon](#4-identidad-atlas-horizon)
+5. [Arquitectura](#5-arquitectura)
+6. [Desarrollo](#6-desarrollo)
+7. [Compilación y despliegue](#7-compilación-y-despliegue)
+8. [Documentación](#8-documentación)
+9. [Historial](#9-historial)
+
+---
+
+## 1. Productos
 
 | Producto | Qué es | Estado | Página |
 |---|---|---|---|
-| **Atlas Cortex** | Consulting as a Service: consultoría ligada al software. Nuestro equipo y nuestros agentes diagnostican, planean y llevan a ejecución con evidencia. | `MVP` | `/cortex` |
+| **Atlas Cortex** | Consultoría como servicio, ligada al software. Nuestro equipo y nuestros agentes diagnostican, planean y llevan a ejecución con evidencia. | `MVP` | `/cortex` |
 | **Atlas ONE** | Suite para operar negocios físicos: punto de venta, caja, inventario y clientes. | `Validado` | `/atlas-one` |
-| Portafolio | Harvestt (agrotecnología), SIGMA (gobierno digital), Open Cashback (lealtad programable). | por proyecto | `/portafolio` |
+| **Atlas Core** | El núcleo de Atlas ONE. Cada otro software de Atlas es un módulo sobre él: Financials (`MVP`), Booking (`MVP`), Print Agent (`Validado`). | por módulo | `/atlas-one` |
+| **Atlas Solutions** | Ingeniería a la medida, integración y consultoría para empresas. | `Validado` | `/portafolio#solutions` |
+| **Atlas Labs** | Unidad de investigación aplicada, en formación. | `Investigación` | `/vision` |
+| Portafolio | Harvestt (inteligencia ciberfísica), SIGMA (gobierno digital), Open Cashback (lealtad programable). | por proyecto | `/portafolio` |
 
-> Moonshot: hacer posible que cualquier empresa se convierta en una organización AI-native, operada por un
-> equipo humano compacto y una red coordinada de agentes digitales.
+Las cuatro familias de lo que construimos, tal como aparecen en el Home:
 
----
+| Familia | Estado |
+|---|---|
+| Sistemas agénticos | `Validado` |
+| Software autónomo | `En desarrollo` |
+| Software autoevolutivo | `Investigación` |
+| Sistemas operativos cognitivos | `MVP` |
 
-## 01 / Mapa del sitio
-
-```
-/                         Home: portada, Cortex al frente, cómo funciona, moonshot y cifras, Atlas ONE, clientes, portafolio
-/cortex                   Producto principal: hoy / en construcción / visión, agentes, autonomía, gobierno
-/atlas-one                Producto: cifras con fuente, demo interactivo, módulos, giros, precio
-/portafolio               Harvestt, SIGMA, Open Cashback
-/nosotros                 La startup, el moonshot, reconocimientos
-/contacto                 Agenda una llamada (WhatsApp o correo; sin backend)
-/proyectos/harvestt       Detalle (estética propia)
-/proyectos/sigma          Detalle (estética propia)
-/proyectos/open-cashback  Detalle (estética propia)
-```
-
-Direcciones anteriores, redirigidas con 301 (router y `.htaccess`):
-`/home` → `/` · `/about` → `/nosotros` · `/contact` → `/contacto` · `/service`, `/service-details` → `/cortex` ·
-`/proyectos` → `/portafolio` · `/proyectos/atlas-one` → `/atlas-one`.
+> **Moonshot.** Investigamos las organizaciones sintéticas: personas, agentes, sistemas digitales y recursos
+> físicos coordinados como una organización capaz de aprender y evolucionar, con propósito y responsabilidad
+> humanos. Es una apuesta de investigación, no una promesa de disponibilidad.
 
 ---
 
-## 02 / Identidad: Atlas Horizon
+## 2. Mapa del sitio
 
-Negro cinematográfico, luz ámbar y tipografía ligera. La idea central es **luz en el horizonte**:
-la tecnología de frontera vista como el borde iluminado de algo que apenas empieza.
+```mermaid
+graph LR
+  Home["/ · Home"]
+  Home --> Cortex["/cortex"]
+  Home --> One["/atlas-one"]
+  Home --> Port["/portafolio"]
+  Home --> Vision["/vision"]
+  Home --> Nos["/nosotros"]
+  Home --> Con["/contacto"]
+  Port --> H["/proyectos/harvestt"]
+  Port --> S["/proyectos/sigma"]
+  Port --> O["/proyectos/open-cashback"]
+```
+
+| Ruta | Contenido |
+|---|---|
+| `/` | Portada, hero comercial, cómo funciona, moonshot y cifras, las cuatro familias, Atlas ONE, Atlas Solutions, clientes, portafolio |
+| `/cortex` | Qué funciona hoy, qué está en construcción y qué es visión; alcance del MVP con criterio de salida; agentes; autonomía progresiva; gobierno |
+| `/atlas-one` | Cifras con fuente, demo interactivo, módulos, Atlas Core, giros y precio |
+| `/portafolio` | Harvestt, SIGMA y Open Cashback; Atlas Solutions con cifras, metodología, casos y modelos de trabajo |
+| `/vision` | La tesis de largo plazo: siete capas del software, declaración en cuatro tiempos, manifiesto, organización sintética, gobernanza, tres horizontes, hoja de ruta 2026–2040 y Atlas Labs |
+| `/nosotros` | La startup, el moonshot y los reconocimientos |
+| `/contacto` | Agenda una llamada por WhatsApp o correo, sin backend |
+| `/proyectos/…` | Detalle de Harvestt, SIGMA y Open Cashback, con estética propia |
+
+Direcciones anteriores, redirigidas con 301 en el router y en `.htaccess`:
+
+| Antes | Ahora |
+|---|---|
+| `/home` | `/` |
+| `/about` | `/nosotros` |
+| `/contact` | `/contacto` |
+| `/service`, `/service-details` | `/cortex` |
+| `/proyectos` | `/portafolio` |
+| `/proyectos/atlas-one` | `/atlas-one` |
+
+---
+
+## 3. Reglas de contenido
+
+1. **Nada de hoja de ruta presentada como hecho.** Todo producto o capacidad lleva una etiqueta de estado:
+   `Validado` · `MVP` · `En desarrollo` · `Concepto` · `Investigación`.
+2. **Ninguna cifra sin fuente y periodo**, en un pie visible junto a la cifra.
+3. **Todo en español**, salvo nombres de producto.
+4. **Clientes:** solo los logos ya publicados.
+5. **Sin backend:** el formulario arma el mensaje y abre WhatsApp; no guarda datos.
+6. **No se publican** nombres internos sin validar (Project Genesis, SOMM, OCGR, VAO).
+
+### Cifras publicadas
+
+| Cifra | Dónde | Fuente y periodo |
+|---|---|---|
+| $80.1M MXN en ventas registradas | Home, Atlas ONE | Datos de operación de Atlas ONE · 90 días · corte 09.09.2026 |
+| 134,844 tickets procesados | Home, Atlas ONE | Mismo periodo y corte |
+| $593.93 de ticket promedio | Home, Atlas ONE | Mismo periodo y corte |
+| $350M MXN procesados | Atlas ONE | Datos de operación de Atlas ONE · 2026 |
+| 13 sucursales activas | Atlas ONE | Datos de operación de Atlas ONE · 2026 |
+| 7 clientes enterprise · 25 integraciones · 100+ usuarios · MVP en 2 semanas | Home, Portafolio | Atlas Tech, datos internos · 2026 |
+| 13 reconocimientos internacionales | Home, Nosotros | 2016–2021 |
+
+El contenido vive como datos tipados en `atlasws/src/site/content/` y lo protege `content.test.ts`: las
+pruebas fallan ante una cifra sin fuente, un término prohibido, un mensaje en inglés o un estado distinto
+al acordado.
+
+### Contacto público
+
+El sitio usa **`hola@atlastech.mx`** y WhatsApp **+52 722 149 5215**. Es una decisión de los fundadores: el
+contacto del brochure institucional no se usa en la web. Se define en `atlasws/src/site/lib/whatsapp.ts`.
+
+---
+
+## 4. Identidad: Atlas Horizon
+
+Negro cinematográfico, luz cálida y tipografía ligera. La idea central es **luz en el horizonte**: la
+tecnología de frontera vista como el borde iluminado de algo que apenas empieza. La marca tiene dos
+colores: **ember** (cálido, principal) e **índigo** (frío, su contraluz).
 
 | Token | Valor | Uso |
 |---|---|---|
 | `--bg` | `#050505` | Fondo |
-| `--glass` / `--glass-line` | blanco al 4.5% / 12% | Cards de vidrio y sus bordes |
-| `--rule` | blanco al 14% | Reglas y divisores |
-| `--ink` | `#F5F2EE` | Texto principal (blanco cálido) |
-| `--muted` / `--dim` | `#A8A29A` / `#6E6862` | Bajadas / labels y metadatos |
-| `--accent` (ember) | `#FF6A1F` | **Acento**: una palabra o frase clave por vista, card destacada |
-| `--amber` / `--glow` | `#FFA14A` / `#FFD3A8` | Luz media, etiqueta `MVP`, foco / núcleo de la luz |
+| `--ink` | `#F5F2EE` | Texto principal, blanco cálido |
+| `--muted` | `#A8A29A` | Bajadas y cuerpo secundario |
+| `--dim` | `#8A837B` | Etiquetas, pies y metadatos (contraste 5.4:1) |
+| `--dim-line` | `#6E6862` | Solo líneas y detalles; no se usa en texto |
+| `--accent` (ember) | `#FF6A1F` | Una palabra o frase clave por vista y la card destacada |
+| `--amber` / `--glow` | `#FFA14A` / `#FFD3A8` | Luz media y etiqueta `MVP` / núcleo de la luz |
+| `--indigo` / `--lavanda` | `#5B58B8` / `#9AA6E0` | Contraluz frío; nunca le gana al ember |
 | `--signal` | `#9FE0C0` | Solo la etiqueta `Validado` |
+| `--glass` / `--rule` | blanco al 4.5% / 14% | Cards de vidrio / reglas y divisores |
 
-- **Tipografía:** Inter en peso 300 para titulares, cifras y cuerpo grande; 400–500 para botones y nombres.
-  Nunca 700. JetBrains Mono solo para folios, etiquetas de estado, teléfonos y datos técnicos.
-- **Portada:** el Home abre con una imagen de marca a pantalla completa (`public/images/hero/`), antes del
-  titular de Cortex. Para cambiarla basta con sustituir esos archivos; los originales están en `contex/`.
-- **Luz:** una fuente principal por sección, siempre detrás del contenido. El **horizonte** (arco iluminado
-  con el logo sobre la línea) es el motivo de la marca y cierra el Home; el **haz** acompaña cifras y cierres;
-  el **resplandor** va en una esquina de las páginas de contenido. Salvo la portada, toda la luz es CSS.
-- **Formas:** botones y barra de navegación en píldora; cards de vidrio con radio de 22px; una card
-  **ember** para lo destacado; grano de película sobre toda la página.
-- **Lockup:** marca + `Atlas` (500) + segundo nombre (300, atenuado): `Atlas Tech`, `Atlas ONE`.
-  Solo el producto protagonista de la página va en ember (`Atlas Cortex` en `/cortex`).
-- **Etiquetas de estado:** `Validado` · `MVP` · `En desarrollo` · `Concepto` · `Investigación`.
-  Todo producto o capacidad lleva una. Un concepto nunca se presenta como producto.
+- **Tipografía.** Inter en peso 300 para titulares, cifras y cuerpo grande; 400–500 para botones y nombres.
+  Nunca 700. JetBrains Mono solo para folios, etiquetas de estado y datos técnicos.
+- **Luz.** Una composición por vista, siempre detrás del contenido. El **horizonte** es el motivo de la
+  marca y cierra el Home; el **haz** acompaña las cifras; el **resplandor** va en una esquina. El contraluz
+  índigo forma parte de la misma composición. Salvo la portada, toda la luz es CSS.
+- **Formas.** Botones y navegación en píldora, cards de vidrio con radio de 22 px, una sola card ember por
+  vista y grano de película sobre toda la página.
+- **Lockup.** Marca + `Atlas` (500) + segundo nombre (300, atenuado). Solo el producto protagonista de la
+  página va en ember.
 
-Los tokens viven en `atlasws/src/site/tokens.css` y la luz en `atlasws/src/site/components/Atmosphere.tsx`,
-bajo la clase `.noir` (nombre histórico de la clase raíz). Las pruebas de `atlasws/src/site/brand.test.ts`
-fallan si reaparece un acento de marcas anteriores o un peso tipográfico grueso.
+Los tokens están en `atlasws/src/site/tokens.css` y la luz en `components/Atmosphere.tsx`, bajo la clase
+raíz `.noir` (nombre histórico). `brand.test.ts` falla si reaparece un acento de marcas anteriores o un
+peso tipográfico grueso.
 
 ---
 
-## 03 / Reglas de contenido
-
-1. **Nada de roadmap como hecho.** Cada capacidad declara su estado real.
-2. **Ninguna cifra sin fuente, periodo y fecha de corte**, en un pie visible.
-3. **Clientes:** solo los logos ya publicados.
-4. **Sin backend:** el formulario arma el mensaje y abre WhatsApp; no guarda datos.
-
-Cifras publicadas hoy: $80.1M MXN en ventas registradas, 134,844 tickets y $593.93 de ticket promedio
-(Atlas ONE, 90 días, corte 09.09.2026), y 13 reconocimientos internacionales (2016–2021).
-
-El contenido vive como datos tipados en `atlasws/src/site/content/` y está protegido por
-`content.test.ts`: las pruebas fallan ante una cifra pendiente, un cliente no autorizado o un término prohibido.
-
----
-
-## 04 / Stack
+## 5. Arquitectura
 
 | Capa | Tecnología |
 |---|---|
 | UI | React 19 + TypeScript |
 | Rutas | React Router 7 |
 | Build | Create React App (react-scripts 5) |
-| Estilos | CSS propio con tokens (`.noir`); Bootstrap solo para las páginas de detalle del portafolio |
-| Scroll | Lenis (se apaga con "reducir movimiento") |
-| SEO | Meta por ruta + inyector estático en build + JSON-LD + sitemap |
-| Pruebas | Jest + React Testing Library (101 pruebas) |
+| Estilos | CSS propio con tokens; Bootstrap solo en las páginas de detalle del portafolio |
+| Scroll | Lenis, apagado con "reducir movimiento" |
+| SEO | Metadatos por ruta, inyector estático en el build, JSON-LD y sitemap |
+| Pruebas | Jest + React Testing Library · 13 suites, 111 pruebas |
 | Hosting | Hostinger (Apache) |
-
----
-
-## 05 / Estructura
 
 ```
 atlas_tech_website/
-├── atlasws/                         App React
+├── atlasws/                         Aplicación React
 │   ├── public/
-│   │   ├── .htaccess                Apache: redirecciones 301, SPA, HTTPS, cache, seguridad
-│   │   ├── favicon.svg              Marca Atlas (fuente de los iconos PNG)
-│   │   ├── images/hero/             Imagen de portada del Home (WebP)
-│   │   └── images/og-atlas.png      Imagen de vista previa al compartir
-│   ├── scripts/
-│   │   ├── seo-build.cjs            Post-build: meta por ruta + sitemap + robots
-│   │   ├── gen-favicons.cjs         Iconos PNG desde favicon.svg
-│   │   └── optimize-images.cjs      Imágenes pesadas a WebP
+│   │   ├── .htaccess                Redirecciones 301, SPA, HTTPS, caché y seguridad
+│   │   └── images/                  Portada del Home, vista previa al compartir
+│   ├── scripts/                     seo-build, gen-favicons, optimize-images
 │   └── src/
-│       ├── site/                    ★ El sitio (identidad Atlas Horizon)
+│       ├── site/                    El sitio (identidad Atlas Horizon)
 │       │   ├── tokens.css           Tokens y base de la marca
-│       │   ├── content/             Textos y datos tipados + pruebas de honestidad
-│       │   ├── components/          Header, footer, lockup, luz (Atmosphere), botones, etiquetas, formulario
-│       │   ├── pages/               Home, Cortex, Atlas ONE, Portafolio, Nosotros, Contacto
-│       │   └── lib/whatsapp.ts      Enlaces y mensajes de WhatsApp y correo
-│       ├── main-component/
-│       │   ├── router/              Rutas y redirecciones
-│       │   ├── App/                 Arranque y límite de errores
-│       │   └── ProjectsPage/        Detalles de Harvestt, SIGMA y Open Cashback
-│       ├── components/AtlasOneDemos/  Demo interactivo de Atlas ONE
+│       │   ├── content/             Textos y datos tipados, con pruebas de honestidad
+│       │   │                        home · cortex · atlasOne · solutions · vision · nosotros
+│       │   ├── components/          Header, footer, luz, botones, etiquetas, formulario, SolutionsBlock
+│       │   ├── pages/               Home, Cortex, Atlas ONE, Portafolio, Visión, Nosotros, Contacto
+│       │   └── lib/whatsapp.ts      Contacto público y mensajes
+│       ├── main-component/          Rutas, arranque y páginas de detalle del portafolio
+│       ├── components/AtlasOneDemos Demo interactivo de Atlas ONE
 │       ├── data/projects.ts         Datos del portafolio
-│       └── seo/                     seo.config.json (fuente única), SeoRouter, resolveSeo
+│       └── seo/                     seo.config.json (fuente única) y resolución por ruta
 ├── contex/                          Informes de estado, briefs y referencias (no se compila)
-├── docs/superpowers/                Diseño aprobado y plan de implementación
+├── docs/
+│   ├── index.html                   Visor local de la documentación
+│   └── superpowers/                 Diseños aprobados y plan de implementación
 └── README.md
 ```
 
+**Para cambiar un texto o una cifra** se edita el archivo correspondiente en `src/site/content/`; las
+páginas solo lo presentan. Si el cambio rompe una regla de contenido, la prueba lo dice.
+
 ---
 
-## 06 / Desarrollo
+## 6. Desarrollo
 
 Requisito: Node.js 18 o superior.
 
 ```bash
 cd atlasws
-npm install
+npm ci
 npm start                                        # http://localhost:3000
 CI=true npx react-scripts test --watchAll=false  # pruebas
 ```
 
-En WSL con el repo en `/mnt/c` la recarga en caliente no funciona: hay que reiniciar `npm start`,
+Para leer la documentación con formato, desde la raíz del repositorio:
+
+```bash
+python3 -m http.server 4100                      # http://localhost:4100/docs/
+```
+
+En WSL con el repositorio en `/mnt/c` la recarga en caliente no funciona: hay que reiniciar `npm start`
 o compilar y servir `build/`.
 
 ---
 
-## 07 / Compilación y despliegue (Hostinger)
+## 7. Compilación y despliegue
 
 ```bash
 cd atlasws
-CI=false npm run build    # el postbuild inyecta SEO por ruta + sitemap + robots
+CI=false npm run build    # el postbuild inyecta SEO por ruta, sitemap y robots
 ```
 
-1. hPanel → Administrador de archivos → `public_html`.
+1. En hPanel, abrir el administrador de archivos en `public_html`.
 2. Subir **todo el contenido de `atlasws/build/`**, incluido el `.htaccess` oculto.
-3. Confirmar SSL activo para `atlastech.mx`.
-4. Verificar con `curl -I` las direcciones anteriores y las nuevas, y reenviar `sitemap.xml` a Google Search Console.
+3. Confirmar que el SSL está activo para `atlastech.mx`.
+4. Verificar con `curl -I` las direcciones anteriores y las nuevas, y reenviar `sitemap.xml` a Google
+   Search Console.
 
-Para cambiar el dominio: editar `siteUrl` en `atlasws/src/seo/seo.config.json` y volver a compilar.
+Para cambiar el dominio se edita `siteUrl` en `atlasws/src/seo/seo.config.json` y se vuelve a compilar.
 
 ---
 
-## 08 / Documentación
+## 8. Documentación
 
 | Documento | Contenido |
 |---|---|
-| `contex/INFORME-estado-2026-11.md` | Estado vigente, decisiones y pendientes |
-| `docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md` | Diseño aprobado |
-| `docs/superpowers/plans/2026-11-17-reestructura-sitio-cortex.md` | Plan de implementación |
-| `contex/README.md` | Índice de briefs y referencias |
+| [`contex/INFORME-estado-2026-11.md`](contex/INFORME-estado-2026-11.md) | Estado vigente, decisiones y pendientes |
+| [`docs/superpowers/specs/2026-11-25-vision-y-arquitectura-de-producto-design.md`](docs/superpowers/specs/2026-11-25-vision-y-arquitectura-de-producto-design.md) | Visión, mapa de productos y afinación con el brochure 2026 |
+| [`docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md`](docs/superpowers/specs/2026-11-17-reestructura-sitio-cortex-design.md) | Diseño de la reestructura con Cortex al frente |
+| [`docs/superpowers/plans/2026-11-17-reestructura-sitio-cortex.md`](docs/superpowers/plans/2026-11-17-reestructura-sitio-cortex.md) | Plan de implementación de la reestructura |
+| [`contex/README.md`](contex/README.md) | Índice de briefs y referencias |
 
 ---
 
-## 09 / Historial
+## 9. Historial
 
-**v4.0 — Cortex al frente, Atlas Horizon (2026-11).** Reposicionamiento como startup de sistemas agénticos.
-Portada con imagen de marca, hero centrado, cifras con fuente bajo el moonshot y horizonte de luz en el cierre.
-Atlas Cortex pasa a producto principal (Consulting as a Service) y Atlas ONE a producto con página propia.
-Seis páginas nuevas, rutas en español con redirecciones 301, contenido con etiquetas de estado y cifras con
-fuente, identidad Atlas Horizon, formulario por WhatsApp. Se retiran 305 archivos y 17 dependencias de la plantilla.
-
-**v3.0 — Portafolio, SEO y optimización (2026-06).** Proyectos data-driven, páginas de SIGMA, Open Cashback
-y Harvestt, SEO por ruta, `.htaccess`, imágenes WebP.
-
-**v2.0 — Renovación visual (2026-04).** Hero 3D y paleta Deep Violet (ambos retirados en v4.0).
-
-**v1.0 — Configuración inicial.**
+| Versión | Fecha | Cambio |
+|---|---|---|
+| **v4.1** | 2026-11 | Visión y arquitectura de producto. Página `/vision`, Atlas Core, Atlas Solutions, cuatro familias con estado, alcance del MVP de Cortex, gobernanza y cifras anuales. Contraluz índigo y mejor contraste en textos tenues. |
+| **v4.0** | 2026-11 | Cortex al frente e identidad Atlas Horizon. Seis páginas nuevas, rutas en español con redirecciones 301, etiquetas de estado y cifras con fuente. Se retiran 305 archivos y 17 dependencias de la plantilla. |
+| **v3.0** | 2026-06 | Portafolio con datos tipados, páginas de SIGMA, Open Cashback y Harvestt, SEO por ruta e imágenes WebP. |
+| **v2.0** | 2026-04 | Renovación visual (retirada en v4.0). |
+| **v1.0** | — | Configuración inicial. |
 
 ---
 
-ATLAS TECH / FRONTIER TECHNOLOGY · Ciudad de México · Desde 2016 · © 2026 Atlas Tech
+<div align="center">
+
+Atlas Tech · Tecnología de frontera · Ciudad de México · Desde 2016
+
+© 2026 Atlas Tech
+
+</div>

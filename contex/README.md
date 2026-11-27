@@ -8,7 +8,7 @@ Para la documentación técnica del proyecto, ver el [README raíz](../README.md
 
 | Archivo / carpeta | Qué es | Página / uso en el sitio |
 |---|---|---|
-| `INFORME-estado-2026-11.md` | **Informe vigente**: reestructura con Atlas Cortex al frente, identidad Atlas Horizon, mapa del sitio nuevo, pendientes | Todo el proyecto |
+| `INFORME-estado-2026-11.md` | **Informe vigente**: Atlas Cortex al frente, visión y arquitectura de producto, identidad Atlas Horizon, mapa del sitio y pendientes | Todo el proyecto |
 | `INFORME-estado-2026-06.md` | Informe anterior (junio 2026, sitio "venture studio"). Histórico | Todo el proyecto |
 | `Atlas Tech *.png`, `ATLAS Tech *.png` | Imágenes de marca Atlas Horizon (5 variantes). "on the Ember Horizon" es la portada del Home | Home (portada) · `public/images/hero/` |
 | `open_cashback_master_brief.md` | Brief técnico maestro de Open Cashback (ledger, blockchain, MVP, API) | `/proyectos/open-cashback` |
@@ -26,7 +26,11 @@ nuevos se prefiere `.md` (GitHub los renderiza).
 
 ## Estado del producto (nov 2026)
 
-Sitio reestructurado: **Atlas Cortex** (Consulting as a Service, MVP) es el producto principal,
-**Atlas ONE** (Validado) tiene página propia y **Harvestt**, **SIGMA** y **Open Cashback** forman
-el portafolio. Identidad **Atlas Horizon** (negro, luz ámbar, tipografía ligera). Detalle en `INFORME-estado-2026-11.md`;
-diseño y plan en `docs/superpowers/`.
+**Atlas Cortex** (consultoría como servicio, `MVP`) es el producto principal. **Atlas ONE** (`Validado`)
+tiene página propia y se construye sobre **Atlas Core**. **Atlas Solutions** (`Validado`) agrupa las
+implementaciones a la medida. **Harvestt**, **SIGMA** y **Open Cashback** forman el portafolio, y la tesis
+de largo plazo vive en `/vision`. Identidad **Atlas Horizon**: negro, luz ember con contraluz índigo y
+tipografía ligera.
+
+Detalle en `INFORME-estado-2026-11.md`; diseños y plan en `docs/superpowers/`. Para leer todo con formato:
+`python3 -m http.server 4100` desde la raíz y abrir `http://localhost:4100/docs/`.
