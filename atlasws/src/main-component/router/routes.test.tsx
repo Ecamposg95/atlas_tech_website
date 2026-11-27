@@ -73,6 +73,11 @@ describe(".htaccess", () => {
     expect(ht.indexOf(line)).toBeLessThan(ht.indexOf("SPA fallback"));
   });
 
+  test("404 real y sin comodín hacia index.html", () => {
+    expect(ht).toContain("ErrorDocument 404 /404.html");
+    expect(ht).not.toMatch(/RewriteRule \. \/index\.html/);
+  });
+
   test("no redirige los detalles vivos del portafolio", () => {
     expect(ht).not.toMatch(/RewriteRule \^proyectos\/(harvestt|sigma|open-cashback)/);
   });

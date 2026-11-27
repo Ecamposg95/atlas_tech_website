@@ -1,11 +1,11 @@
 /* ============================================================
  * scripts/seo-build.cjs
  * Post-build SEO: inyecta <title>, meta, Open Graph, Twitter y JSON-LD
- * por ruta dentro de build/<ruta>/index.html, y genera sitemap.xml + robots.txt.
+ * por ruta en build/<ruta>.html, y genera sitemap.xml + robots.txt.
  *
  * Por qué: Hostinger sirve estático (Apache, sin SSR). Los crawlers sociales
  * (WhatsApp/Facebook/X/LinkedIn) NO ejecutan JS, así que cada URL necesita su
- * meta real en el HTML entregado. Este script crea un index.html por ruta con
+ * meta real en el HTML entregado. Este script crea un archivo HTML por ruta con
  * los metadatos correctos; el cuerpo lo sigue hidratando React.
  *
  * Se ejecuta solo tras `npm run build` (lifecycle npm: "postbuild").
@@ -106,14 +106,11 @@ function main() {
 
   for (const route of routes) {
     const html = injectInto(template, route);
-    let outDir;
-    if (route.path === "/") {
-      outDir = BUILD;
-    } else {
-      outDir = path.join(BUILD, route.path);
-      fs.mkdirSync(outDir, { recursive: true });
-    }
-    fs.writeFileSync(path.join(outDir, "index.html"), html, "utf8");
+    // Un archivo por ruta (cortex.html), no una carpeta con index.html: una carpeta
+    // haría que Apache redirigiera /cortex → /cortex/. El .htaccess sirve el archivo.
+    const outFile = route.path === "/" ? path.join(BUILD, "index.html") : path.join(BUILD, route.path + ".html");
+    fs.mkdirSync(path.dirname(outFile), { recursive: true });
+    fs.writeFileSync(outFile, html, "utf8");
     count++;
   }
 
