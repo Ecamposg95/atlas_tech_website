@@ -52,6 +52,10 @@
 
 .noir .pillar { display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(220px, 24vw, 320px); }
 .noir .pillar p { margin-top: 12px; }
+/* Tag arriba, título y texto abajo. Sobre la card ember el tag va en tinta clara. */
+.noir .pillar .status-tag { align-self: flex-start; margin-bottom: auto; }
+.noir .pillar.card--ember .status-tag { color: #fff4ea; border-color: rgba(255, 230, 210, 0.5); }
+.noir .pillar h3 { margin-top: clamp(28px, 4vw, 56px); }
 
 .noir .one__price { margin-top: 20px; color: var(--ink); }
 .noir .one__modules li { padding: 15px 0; border-bottom: 1px solid var(--rule); color: var(--ink); font-size: 1.15rem; letter-spacing: -0.015em; }

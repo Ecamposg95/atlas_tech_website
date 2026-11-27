@@ -98,9 +98,17 @@
       "jsonld": []
     },
     {
+      "path": "/vision",
+      "title": "Visión — de agentes a organizaciones sintéticas | Atlas Tech",
+      "description": "Ingeniería para el futuro de las organizaciones. Construimos sistemas agénticos hoy e investigamos organizaciones sintéticas: personas y agentes con gobernanza humana.",
+      "type": "website",
+      "image": "/images/og-atlas.png",
+      "jsonld": []
+    },
+    {
       "path": "/nosotros",
       "title": "Nosotros — la startup detrás de Atlas Cortex y Atlas ONE",
-      "description": "Somos una startup de Ciudad de México. Nuestro moonshot: empresas operadas por un equipo humano compacto y una red coordinada de agentes digitales.",
+      "description": "Somos una startup de Ciudad de México. Construimos sistemas agénticos hoy; nuestro moonshot es la ingeniería de organizaciones sintéticas.",
       "type": "website",
       "image": "/images/og-atlas.png",
       "jsonld": []

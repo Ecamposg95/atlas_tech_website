@@ -27,7 +27,7 @@ test("los metadatos no afirman que los agentes ya ejecutan solos", () => {
   expect(JSON.stringify(cfg)).not.toMatch(/proponen y ejecutan|agentes[^."]{0,80}lo ejecutan/i);
 });
 
-// ---------- Atlas Noir (guía de marca vigente) ----------
+// ---------- Atlas Horizon (guía de marca vigente) ----------
 const walk = (dir: string): string[] =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const full = path.join(dir, e.name);
@@ -37,14 +37,17 @@ const siteSources = walk(path.join(root, "src/site"))
   .filter((f) => /\.(css|tsx|ts)$/.test(f) && !/\.test\./.test(f))
   .map((f) => [f, fs.readFileSync(f, "utf8")] as const);
 
-test("tokens de Atlas Horizon: negro, tinta cálida y luz ámbar", () => {
+test("tokens de Atlas Horizon: negro, tinta cálida, ember e índigo", () => {
   const t = read("src/site/tokens.css").toLowerCase();
   [
     "--bg: #050505",
     "--night: #0b0a09",
     "--ink: #f5f2ee",
     "--muted: #a8a29a",
-    "--dim: #6e6862",
+    "--dim: #8a837b",
+    "--dim-line: #6e6862",
+    "--indigo: #5b58b8",
+    "--lavanda: #9aa6e0",
     "--accent: #ff6a1f",
     "--amber: #ffa14a",
     "--glow: #ffd3a8",

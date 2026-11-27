@@ -41,7 +41,9 @@ test("Atlas ONE AI aparece como En desarrollo", () => {
 test("cifras con pie de fuente", () => {
   renderOne();
   expect(screen.getByText("134,844")).toBeInTheDocument();
-  expect(screen.getByText(/Fuente: datos de operación de Atlas ONE/)).toBeInTheDocument();
+  // Una nota por bloque de cifras: las de 90 días (con corte) y las anuales.
+  expect(screen.getAllByText(/Fuente: datos de operación de Atlas ONE/)).toHaveLength(2);
+  expect(within(screen.getByTestId("one-year")).getByText("$350M MXN")).toBeInTheDocument();
 });
 
 test("monta el demo interactivo y lista los 11 giros", () => {

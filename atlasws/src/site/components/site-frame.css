@@ -188,6 +188,18 @@
   mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 
+/* Contraluz índigo: en la esquina opuesta a la luz ember. Es parte de la misma composición,
+   no una segunda fuente; ocupa como mucho un tercio de la luz. */
+.noir .atmo__counter {
+  position: absolute;
+  width: min(1200px, 90vw);
+  height: 700px;
+  filter: blur(50px);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(91, 88, 184, 0.45), rgba(91, 88, 184, 0));
+}
+.noir .atmo--horizon .atmo__counter { left: -30%; top: -60%; opacity: 0.7; }
+.noir .atmo--close .atmo__counter { left: -24%; bottom: -30%; height: 600px; }
+
 /* Resplandor: mancha radial suave en la esquina superior derecha. */
 .noir .atmo__glow {
   position: absolute;

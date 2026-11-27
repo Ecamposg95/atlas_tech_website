@@ -17,7 +17,7 @@ const SiteFooter: React.FC = () => (
           <AtlasMark />
           <Lockup />
         </Link>
-        <p>Sistemas agénticos, ontologías de conocimiento y tecnologías de frontera. Ciudad de México.</p>
+        <p>Ingeniería para el futuro de las organizaciones. Sistemas agénticos, Atlas ONE y Atlas Cortex, desde Ciudad de México.</p>
       </div>
 
       <nav aria-label="Pie de página" className="site-footer__col">

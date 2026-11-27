@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import SiteLayout from "../components/SiteLayout";
 import CtaButton from "../components/CtaButton";
 import Atmosphere from "../components/Atmosphere";
+import Section from "../components/Section";
+import SolutionsBlock from "../components/SolutionsBlock";
+import { head as solutionsHead } from "../content/solutions";
 import { projects } from "../../data/projects";
 import "./pages.css";
 import "./OtherPages.css";
@@ -13,8 +16,9 @@ const PortfolioPage: React.FC = () => (
       <div className="wrap">
         <h1>Portafolio</h1>
         <p className="lead">
-          Proyectos que hemos construido además de Cortex y Atlas ONE: agrotecnología, gobierno digital y lealtad
-          programable. Cada uno dice en qué etapa está.
+          Proyectos que hemos construido además de Cortex y Atlas ONE: inteligencia ciberfísica, gobierno digital y
+          lealtad programable. Las implementaciones a la medida para empresas son Atlas Solutions, al final de esta
+          página. Cada proyecto dice en qué etapa está.
         </p>
       </div>
     </section>
@@ -63,6 +67,10 @@ const PortfolioPage: React.FC = () => (
         </article>
       ))}
     </section>
+
+    <Section label={solutionsHead.label} id="solutions" className="anchor" testId="portfolio-solutions">
+      <SolutionsBlock full />
+    </Section>
 
     <section className="closing">
       <Atmosphere variant="close" />

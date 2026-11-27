@@ -24,6 +24,7 @@ test.each([
   ["/atlas-one", /atlas one/i],
   ["/portafolio", /portafolio/i],
   ["/nosotros", /startup/i],
+  ["/vision", /futuro de las organizaciones/i],
   ["/contacto", /agenda una llamada/i],
   ["/about", /startup/i],
   ["/about/", /startup/i],

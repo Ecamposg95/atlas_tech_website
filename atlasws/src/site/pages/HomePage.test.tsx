@@ -25,7 +25,7 @@ test("hero con el mensaje y el CTA a contacto", () => {
   );
 });
 
-test("la portada y las ocho secciones en orden", () => {
+test("la portada y las nueve secciones en orden", () => {
   renderHome();
   expect(screen.getAllByTestId(/^sec-/).map((e) => e.getAttribute("data-testid"))).toEqual([
     "sec-portada",
@@ -34,6 +34,7 @@ test("la portada y las ocho secciones en orden", () => {
     "sec-moonshot",
     "sec-construimos",
     "sec-atlas-one",
+    "sec-solutions",
     "sec-clientes",
     "sec-portafolio",
     "sec-cierre",
@@ -59,10 +60,11 @@ test("cifras con regla vertical tras el statement, con atribución explícita y 
   expect(within(sec).getByText(/Corte: 09\.09\.2026/)).toBeInTheDocument();
 });
 
-test("qué construimos: tres cards, una sola destacada en ember", () => {
+test("qué construimos: cuatro cards con estado, una sola destacada en ember", () => {
   renderHome();
   const cards = within(screen.getByTestId("sec-construimos")).getAllByTestId("card");
-  expect(cards).toHaveLength(3);
+  expect(cards).toHaveLength(4);
+  cards.forEach((c) => expect(c.querySelector(".status-tag")).not.toBeNull());
   expect(cards.filter((c) => c.classList.contains("card--ember"))).toHaveLength(1);
 });
 

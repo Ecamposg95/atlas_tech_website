@@ -1,3 +1,5 @@
+import type { Status } from "./status";
+
 // Home — mensaje principal (valores del hero y moonshot fijados por el spec §3).
 export const hero = {
   eyebrow: "Consulting as a Service · Atlas Cortex",
@@ -17,23 +19,35 @@ export const heroStats: { value: string; label: string }[] = [
 
 export const moonshot = {
   label: "Nuestro moonshot",
-  title: "Empresas operadas por humanos y agentes.",
-  text: "Hacer posible que cualquier empresa se convierta en una organización AI-native, operada por un equipo humano compacto y una red coordinada de agentes digitales.",
-  note: "Es hacia donde vamos, no donde estamos. Por eso en este sitio cada capacidad dice en qué etapa está.",
+  title: "De agentes a",
+  accent: "organizaciones sintéticas.",
+  text: "Investigamos cómo personas, agentes, sistemas digitales y recursos físicos pueden coordinarse como una organización capaz de aprender y evolucionar, con propósito y responsabilidad humanos.",
+  note: "Es nuestra apuesta de investigación, no una promesa de disponibilidad. Por eso en este sitio cada capacidad dice en qué etapa está.",
 };
 
-export const pillars: { title: string; text: string }[] = [
+// Las cuatro familias del documento fundacional (§5), cada una con su estado real.
+export const buildTitle = "De los sistemas agénticos a la infraestructura cognitiva.";
+
+export const pillars: { title: string; text: string; status: Status }[] = [
   {
     title: "Sistemas agénticos",
-    text: "Agentes que no solo responden: proponen, ejecutan y dejan evidencia, con una persona en cada punto de control.",
+    text: "Agentes conectados a tus datos, herramientas y procesos reales. Proponen, ejecutan acciones autorizadas y dejan evidencia.",
+    status: "Validado",
   },
   {
-    title: "Ontologías de conocimiento",
-    text: "Modelamos tu empresa —entidades, procesos, reglas— para que los agentes razonen sobre tu negocio y no sobre texto suelto.",
+    title: "Software autónomo",
+    text: "Objetivos persistentes con ejecución acotada: permisos, presupuesto, escalamiento y condiciones de parada.",
+    status: "En desarrollo",
   },
   {
-    title: "Tecnologías de frontera",
-    text: "Integramos los modelos y herramientas más recientes en operación real. Somos una startup: probamos pronto y medimos todo.",
+    title: "Software autoevolutivo",
+    text: "Mejora controlada de flujos y capacidades: cada cambio se prueba, se aprueba y puede revertirse.",
+    status: "Investigación",
+  },
+  {
+    title: "Sistemas operativos cognitivos",
+    text: "Memoria, contexto, objetivos y coordinación de la organización en una sola capa. Atlas Cortex es nuestro MVP.",
+    status: "MVP",
   },
 ];
 

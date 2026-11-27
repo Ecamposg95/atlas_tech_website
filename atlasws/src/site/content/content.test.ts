@@ -2,15 +2,34 @@ import * as cortex from "./cortex";
 import * as atlasOne from "./atlasOne";
 import * as home from "./home";
 import * as nosotros from "./nosotros";
+import * as vision from "./vision";
+import * as solutions from "./solutions";
 
-const all = JSON.stringify({ cortex, atlasOne, home, nosotros });
+const all = JSON.stringify({ cortex, atlasOne, home, nosotros, vision });
 
 test("no hay términos prohibidos", () => {
   expect(all).not.toMatch(/sophia|dataxpos|blockchain|sinergia|revolucionari|kaory|eleven|ginebra|imaltzin/i);
 });
 
-test("no aparecen cifras pendientes ni metas aspiracionales", () => {
-  expect(all).not.toMatch(/350M|13 sucursales|7 clientes|25 integraciones|100\+|2 semanas|80 ?%/);
+test("no aparecen metas aspiracionales", () => {
+  expect(all).not.toMatch(/80 ?%/);
+});
+
+// Autorizadas por la skill de marca y publicadas en el brochure institucional 2026.
+test("cifras anuales y de Atlas Solutions: las autorizadas, con fuente y periodo", () => {
+  expect(atlasOne.yearFigures.map((f) => f.value)).toEqual(["$350M MXN", "13"]);
+  expect(atlasOne.yearFiguresNote).toMatch(/Fuente: .+ Periodo: 2026/);
+  expect(solutions.figures.map((f) => f.value)).toEqual(["7", "25", "100+", "2 sem"]);
+  expect(solutions.figuresNote).toMatch(/Fuente: .+ Periodo: 2026/);
+});
+
+test("brochure 2026: siete capas, cuatro niveles de acción y alcance del MVP", () => {
+  expect(vision.layers).toHaveLength(7);
+  expect(vision.layers.filter((l) => l.current).map((l) => l.name)).toEqual(["Agéntico"]);
+  expect(vision.actionLevels.map((a) => a.n)).toEqual(["N1", "N2", "N3", "N4"]);
+  expect(cortex.mvpScope).toHaveLength(7);
+  expect(cortex.mvpLater).toMatch(/no forman parte del MVP/);
+  expect(solutions.method).toHaveLength(5);
 });
 
 test("toda cifra trae fuente, periodo y corte", () => {
@@ -50,10 +69,32 @@ test("mensaje del hero y moonshot fijados por el spec", () => {
   expect(home.hero.title).toBe("Consultoría que no entrega un PDF.");
   expect(home.hero.accent).toBe("Entrega ejecución.");
   expect(home.hero.sub.endsWith("De la intención empresarial a la ejecución verificable.")).toBe(true);
-  expect(home.moonshot.text).toBe(
-    "Hacer posible que cualquier empresa se convierta en una organización AI-native, operada por un equipo humano compacto y una red coordinada de agentes digitales."
-  );
-  expect(home.pillars).toHaveLength(3);
+  expect(home.moonshot.accent).toBe("organizaciones sintéticas.");
+  expect(home.moonshot.note).toMatch(/no una promesa de disponibilidad/);
+  expect(home.pillars.map((p) => [p.title, p.status])).toEqual([
+    ["Sistemas agénticos", "Validado"],
+    ["Software autónomo", "En desarrollo"],
+    ["Software autoevolutivo", "Investigación"],
+    ["Sistemas operativos cognitivos", "MVP"],
+  ]);
+});
+
+test("visión: el moonshot es investigación y la hoja de ruta, escenarios", () => {
+  expect(vision.stages.find((s) => s.when === "Nuestro moonshot")?.status).toBe("Investigación");
+  expect(vision.labs.status).toBe("Investigación");
+  expect(vision.roadmapNote).toMatch(/no predicciones/);
+  // Nombres internos pendientes de validación (§27 del documento fundacional).
+  expect(JSON.stringify(vision)).not.toMatch(/Genesis|SOMM|OCGR|VAO/);
+  // Todo en español: los mensajes del documento van traducidos.
+  expect(JSON.stringify(vision)).not.toMatch(/Engineering the future|Pioneering|Synthetic Organizations/);
+});
+
+test("Atlas Core: núcleo de Atlas ONE con módulos y su estado", () => {
+  expect(atlasOne.core.modules.map((m) => [m.name, m.status])).toEqual([
+    ["Atlas Financials", "MVP"],
+    ["Atlas Booking", "MVP"],
+    ["Print Agent", "Validado"],
+  ]);
 });
 
 test("Atlas ONE: 11 giros, precio y stack real", () => {

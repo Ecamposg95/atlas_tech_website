@@ -8,7 +8,9 @@ import Atmosphere from "../components/Atmosphere";
 import StepsStrip from "../components/StepsStrip";
 import ClientLogos from "../components/ClientLogos";
 import ProjectRows from "../components/ProjectRows";
-import { hero, heroStats, moonshot, pillars, closing } from "../content/home";
+import SolutionsBlock from "../components/SolutionsBlock";
+import { head as solutionsHead } from "../content/solutions";
+import { hero, heroStats, moonshot, buildTitle, pillars, closing } from "../content/home";
 import { steps } from "../content/cortex";
 import * as one from "../content/atlasOne";
 import { projects } from "../../data/projects";
@@ -73,10 +75,15 @@ const HomePage: React.FC = () => {
             <div className="section__label">{moonshot.label}</div>
             <div>
               <h2 className="statement__title">
-                Empresas operadas por <em className="accent">humanos y agentes.</em>
+                {moonshot.title} <em className="accent">{moonshot.accent}</em>
               </h2>
               <p className="lead statement__text">{moonshot.text}</p>
               <p className="statement__note">{moonshot.note}</p>
+              <div className="cta-row">
+                <CtaButton to="/vision" variant="secondary">
+                  Conoce nuestra visión
+                </CtaButton>
+              </div>
             </div>
           </div>
           <dl className="stats" data-testid="home-stats">
@@ -92,10 +99,11 @@ const HomePage: React.FC = () => {
       </section>
 
       <Section testId="sec-construimos" label="Qué construimos">
-        <h2 className="sec-title">Tecnología de frontera, puesta a operar.</h2>
-        <div className="cards3">
+        <h2 className="sec-title">{buildTitle}</h2>
+        <div className="cards4">
           {pillars.map((p, i) => (
             <article className={"card pillar" + (i === 0 ? " card--ember" : "")} data-testid="card" key={p.title}>
+              <StatusTag status={p.status} />
               <h3>{p.title}</h3>
               <p>{p.text}</p>
             </article>
@@ -130,6 +138,10 @@ const HomePage: React.FC = () => {
             ))}
           </ul>
         </div>
+      </Section>
+
+      <Section testId="sec-solutions" label={solutionsHead.label}>
+        <SolutionsBlock />
       </Section>
 
       <Section testId="sec-clientes" label="Empresas e instituciones con las que hemos trabajado">

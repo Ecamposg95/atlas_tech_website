@@ -10,6 +10,7 @@ import AtlasOnePage from "../../site/pages/AtlasOnePage";
 import PortfolioPage from "../../site/pages/PortfolioPage";
 import NosotrosPage from "../../site/pages/NosotrosPage";
 import ContactoPage from "../../site/pages/ContactoPage";
+import VisionPage from "../../site/pages/VisionPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
 // Detalles del portafolio (conservan su estética propia)
@@ -34,6 +35,7 @@ export const AppRoutes: React.FC = () => (
     <Route path="/cortex" element={<CortexPage />} />
     <Route path="/atlas-one" element={<AtlasOnePage />} />
     <Route path="/portafolio" element={<PortfolioPage />} />
+    <Route path="/vision" element={<VisionPage />} />
     <Route path="/nosotros" element={<NosotrosPage />} />
     <Route path="/contacto" element={<ContactoPage />} />
 

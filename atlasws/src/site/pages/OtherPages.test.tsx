@@ -89,3 +89,14 @@ test("LeadForm: el correo conserva lo escrito aunque falte un campo", () => {
   expect(body).toContain("Ana");
   expect(body).toContain("cobranza & compras");
 });
+
+test("portafolio: Atlas Solutions con cifras, fuente y metodología", () => {
+  render(
+    <MemoryRouter>
+      <PortfolioPage />
+    </MemoryRouter>
+  );
+  const sec = screen.getByTestId("portfolio-solutions");
+  expect(within(sec).getByText(/Fuente: Atlas Tech, datos internos\. Periodo: 2026\./)).toBeInTheDocument();
+  expect(within(screen.getByTestId("solutions-method")).getAllByRole("listitem")).toHaveLength(5);
+});

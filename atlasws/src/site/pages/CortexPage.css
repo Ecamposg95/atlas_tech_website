@@ -86,3 +86,7 @@
   color: var(--ink);
   max-width: 30ch;
 }
+
+/* Alcance del MVP */
+.noir .rows dd { margin: 0; }
+.noir .mvp__later { margin-top: 20px; color: var(--dim); font-size: 0.92rem; max-width: 46ch; }
